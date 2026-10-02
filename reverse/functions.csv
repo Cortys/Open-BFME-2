@@ -47810,3 +47810,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva00427611@@QAE@XZ,,0x004275D4,47,Code/GameEngine/Source/Common/System/Rva00427611Ctor.cpp,matched,MI ctor via baseConstruct Snapshot shared vtable and rowed Vector_base
 ?rva00057DA0@Rva00056CF8@@QAEXU?$_Rb_tree_iterator@VAsciiString@@U?$_Nonconst_traits@VAsciiString@@@_STL@@@_STL@@0@Z,,0x00057DA0,68,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_set_base.cpp,matched,range erase via rowed clear rva00057B74 and rowed Rb_tree AsciiString erase with increment
 ?rva00449FE8@LANAPI@@QAEXPAX@Z,,0x00449FE8,231,Code/GameEngine/Source/GameNetwork/LANAPIRva00449FE8.cpp,matched,vslot 17 LANAPI vtable type-0x12 message fillIn send
+??0Rva0022E0E5@@QAE@XZ,,0x0022E0E5,60,Code/GameEngine/Source/Common/Rva0022E0E5Ctor.cpp,matched,ctor via baseConstruct and rowed List_base BfmePod72 member
