@@ -31,6 +31,7 @@ class BfmeThingTYA
 {
 public:
 	void *bfmeDelTYA(unsigned char flags);
+	void rva008020D0();
 	void *m_bfmeVft;
 	int m_bfme04;
 	char m_bfmePad[8];
@@ -59,4 +60,22 @@ void *BfmeThingTYA::bfmeDelTYA(unsigned char flags)
 	if (flags & 1)
 		bfmeFreeTYA(this, 0xd8);
 	return this;
+}
+
+// Retail non-deleting cleanup at 0x008020D0 (BFME 1; here 0x0066E390, 0x40
+// before the deleting wrapper, as in BFME 1): the deleting wrapper above proves
+// the shared owner layout, vtable transitions and member-release order. Carried
+// from the same donor, byte-identical; its name keeps the BFME 1 address token.
+void BfmeThingTYA::rva008020D0()
+{
+	m_bfmeVft = g_bfmeVftATYA;
+	m_bfme04 = 0;
+	m_bfme28 = 0;
+	m_bfme30 = 0;
+	m_bfme55 = 0;
+	m_bfme2c = 0;
+	m_bfmeA.bfmeDtorATYA();
+	m_bfmeB.bfmeDtorBTYA();
+	m_bfmeC.bfmeDtorBTYA();
+	m_bfmeVft = g_bfmeVftBTYA;
 }
