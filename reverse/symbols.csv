@@ -7235,3 +7235,7 @@ _D3DXQuaternionSlerp@16,0x0075B4C6,PE-named d3dx9_27.dll D3DXQuaternionSlerp std
 ??1LightPoint@@QAE@XZ,0x00425801,LightPoint destructor thunk called by Rva00425B75Delete at 0x00425B80
 ??RRva00425B75Deleter@@QBEXPAVLightPoint@@@Z,0x00425B75,"thiscall functor spelling of Rva00425B75Delete called by for_each at 0x00425CBE"
 ?_M_increment@?$_Deque_iterator_base@PAVLightPoint@@@_STL@@QAEXXZ,0x0042187F,"ICF twin of rowed _Deque_iterator_base<void*>::_M_increment at 0x0042187F called by for_each at 0x00425CD0"
+?checkForCrateToPickup@AIUpdateInterface@@QAEPAVObject@@XZ,0x00268B79,AIUpdateInterface::checkForCrateToPickup called by AIAttackFollowWaypointPathState::update at 0x00354326
+?getNextMoodTarget@AIUpdateInterface@@QAEPAVObject@@_N0@Z,0x00268EB8,AIUpdateInterface::getNextMoodTarget called by AIAttackFollowWaypointPathState::update at 0x0035434E
+?computeGoal@AIFollowWaypointPathState@@QAEX_N@Z,0x00345D00,AIFollowWaypointPathState::computeGoal called by AIAttackFollowWaypointPathState::update at 0x00354386
+?update@AIFollowWaypointPathState@@UAE?AW4StateReturnType@@XZ,0x00353F13,AIFollowWaypointPathState::update base update tail-jumped by AIAttackFollowWaypointPathState::update at 0x003543BA
