@@ -46846,3 +46846,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva005644A9@Rva005644A9@@QAEXPAVXfer@@@Z,,0x005644A9,96,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005644A9Xfer.cpp,matched,chain xfer Version1 plus TerrainCollisionModuleInfo plus bools plus uint
 ?rva00564E0D@Rva00564E0D@@QAE?AVAsciiString@@XZ,,0x00564E0D,27,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00564E0DGetter.cpp,matched,AsciiString at 0xC via StringBase copy getter
 ?rva0028EBDA@Object@@QAEX_N@Z,,0x0028EBDA,110,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028EBDA.cpp,matched,static EnragedBehavior key via TheNameKeyGenerator then findModule then 0x004590C5 or 0x004590E6
+?rva0028E58E@Rva0028E58E@@QAEHXZ,,0x0028E58E,60,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028E58E.cpp,matched,int query holder +4 byte 0x5F0 provider +0x250 slot10 bit 0x10E; callers 0x000501FA 0x002D8006 0x002D81A1
