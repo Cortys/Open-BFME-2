@@ -169,7 +169,10 @@ void MD5Digest(const unsigned char *text, unsigned int length, char *digest);
 void piChatDisconnectedA(void);
 void piChatPrivateMessageA(void);
 void piConnectNickErrorCallbackA(void);
-void piConnectFillInUserCallbackA(void);
+void piConnectFillInUserCallbackA(void *chat, unsigned int IP, char user[128],
+	void *param);
+int chatGetProfileID(void *chat);
+void piMangleUser(char *user, unsigned int IP, int profileID);
 void piConnectConnectCallback(void *chat, int success,
 	int failureReason, void *param);
 void *chatConnectSecureA(const char *server, int port, const char *nick,
@@ -278,6 +281,25 @@ PEERBool piNewConnectOperation(PEER peer, int connectType, const char *nick,
 		return 0;
 	}
 	return 1;
+}
+
+/* GameSpy peerOperations.c piConnectFillInUserCallback (retail 0x006A01B0):
+ * record the public IP, pick up the chat profile ID when there is one, and
+ * mangle both into the user string chat sends. */
+void piConnectFillInUserCallbackA(void *chat, unsigned int IP, char user[128],
+	void *param)
+{
+	piOperation *operation = (piOperation *)param;
+	PEER peer = operation->peer;
+	piConnection *connection = (piConnection *)peer;
+	int profileID;
+
+	connection->publicIP = IP;
+	profileID = chatGetProfileID(connection->chat);
+	if (profileID)
+		connection->profileID = profileID;
+
+	piMangleUser(user, connection->publicIP, connection->profileID);
 }
 
 void piConnectConnectCallback(void *chat, int success,
