@@ -47353,3 +47353,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva0035BB4B@@UAEPAXI@Z,,0x0035BCBB,28,Code/GameEngine/Source/Common/Rva0035BB4BDtor.cpp,matched,deleting dtor via own ??1 unit vtable 0x00816204
 ?rva0035BE8F@Shell@@QAEXXZ,,0x0035BE8F,27,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,Shell guarded tail reverseAnimateWindow global flag
 ?Rva00444525Init@@YAXXZ,,0x00444525,55,Code/GameEngine/Source/Common/Rva00444525Init.cpp,matched,precedent Rva005185D8Init Shell push LanLobby apt caller 0x005148D1
+??1Rva001FDB55@@UAE@XZ,,0x001FDBA1,74,Code/GameEngine/Source/Common/Rva001FDB55Dtor.cpp,matched,dtor via ctor layout caller 0x001FDD64 vtable 0x007E1BB0
