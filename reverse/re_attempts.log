@@ -5923,3 +5923,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?_M_fill_insert@?$vector@UBfmeVectorRecord0002154F3@@V?$allocator@UBfmeVectorRecord0002154F3@@@_STL@@@_STL@@QAEXPAUBfmeVectorRecord0002154F3@@IABU3@@Z	0x00215949	264	blocked	scheduler wall 0.95 whole-class 258B vs 264B no NEW idea per section-8 t=10 model=muse-02
 ?Rva0051C2E2Update@@YGXPAHHH@Z	0x0051C2E2	201	partial	pops vs add esp after unicode format t=18 model=muse-09 score=0.99 stash=reverse/attempts/0x0051c2e2.cpp
 ?Rva0051C2E2Update@@YGXPAHHH@Z	0x0051C2E2	201	blocked	pops vs add esp after unicode format t=22 model=muse-09 (stash 0.99 kept)
+?rva005D4A66@Rva005D4A66@@QAEXPAVRva005D48DB@@@Z	0x005D4A66	106	partial	count sub-reg-reg-test vs sub-reg-mem-sar and lea vs mov-inc t=22 model=muse-spark score=0.91 stash=reverse/attempts/0x005d4a66.cpp
