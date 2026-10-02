@@ -5550,3 +5550,6 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva0016AFD0@Rva0016AFD0@@QAE_NAAVChunkLoadClass@@@Z	0x0016AFD0	72	partial	72B exact size with vertex-count locals but callee-saved wall esi-vs-edi for this-vertex; needs definition-order lever t=25 model=muse-10 score=0.82 stash=reverse/attempts/0x0016afd0.cpp
 ?rva0016AF80@Rva0016AF80@@QAE_NAAVChunkLoadClass@@@Z	0x0016AF80	72	partial	72B exact size sibling of 0x0016AFD0 with same callee-saved wall esi-vs-edi for this-vertex; needs definition-order lever t=5 model=muse-10 score=0.82 stash=reverse/attempts/0x0016af80.cpp
 ?rva0016AF40@Rva0016AF40@@QAE_NAAVChunkLoadClass@@_N@Z	0x0016AF40	50	blocked	ecx-esi register wall with lea recompute vs CSE and Os worsens to imul-sbb t=18 model=muse-10
+?rva002B693F@Rva002B693F@@QAEXPAX@Z	0x002B693F	103	blocked	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; do-while and ptr-model tried t=12 model=muse-03 (stash 0.92 kept)
+?rva004BE3EF@Rva004BE3EF@@QAEXXZ	0x004BE3EF	142	blocked	extra implicit handle dtor plus or-state before vs after; donor ActiveBody_deleteAllParticleSystems shows implicit-only but retail needs explicit-only t=10 model=muse-03 (stash 0.94 kept)
+?rva003B56DC@Rva003B56DC@@QAEXXZ	0x003B56DC	98	blocked	holder-vs-direct link unclear plus EBP frame and imul-vs-lea walls t=20 model=muse-03
