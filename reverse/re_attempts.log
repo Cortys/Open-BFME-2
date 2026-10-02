@@ -5306,3 +5306,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?xfer@Weapon@@UAEXPAVXfer@@@Z	0x002CDD47	579	partial	stack slots ebp-0x20 vs 0x1c plus ebp-plus-8 reuse for name-temp vs frame plus ebx-vs-edi vector base plus 6B extra moves for idx-tmp t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x002cdd47.cpp
 ?rva002086C5@ScriptEngine@@QAEPAXVAsciiString@@@Z	0x002086C5	134	partial	extra mov ebp-4 2 before find vs retail none plus arg-order plus const-pair fixed t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x002086c5.cpp
 ?rva00351570@Rva00351570@@QAEXABURva00351570Src@@@Z	0x00351570	222	partial	branch inversion jne vs je in two string empties else exact t=25 model=muse-14 score=0.97 stash=reverse/attempts/0x00351570.cpp
+?rva002ADC03@Rva002ADC03@@QAEXXZ	0x002ADC03	127	blocked	1 vs 127B stub only full Player list erase plus pair plus global plus Equal needs STL layout plus time exceeds box t=5 model=muse-06
+?rva002ADCE1@Rva000427195@@QAEXPAPAX@Z	0x002ADCE1	80	blocked	80B 0 structural eax-ecx swap 6 variants already by muse-03 with lever 25 key-local no NEW idea skip per dead-ends t=2 model=muse-06
