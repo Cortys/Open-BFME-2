@@ -7,7 +7,7 @@
 // No donor: honest address name.
 //
 // ?rva0027D1EF@Rva0027D244@@QAEXPAV1@0@Z, retail 0x0027D1EF, 85 bytes, the
-// method right before it in the same TU: "keep the nearer of two" — squared
+// method right before it in the same TU: "keep the nearer of two" -- squared
 // 2D distance from b's position to a's; unless this record is already taken
 // (+0xC) and its stored distance (+0x10) is not greater, copy a's slot, its
 // position (three movsd), the distance and a itself (+0x14). Retail loads both
@@ -37,7 +37,7 @@ private:
 
 Rva0027D244 *Rva0027D244::rva0027D244(int v)
 {
-	float t = *(volatile float *)0x00BC876C;
+	float t = 10000000.0f;
 	Rva0027D244 *s = this;
 	int u = v;
 	s->m_0C = 0;
