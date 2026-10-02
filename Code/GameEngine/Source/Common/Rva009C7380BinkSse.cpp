@@ -55,3 +55,7 @@ void __cdecl rva009C7380BinkSse(const unsigned char *rowA, const unsigned char *
 			stride, rva009C7380Weights(horizontalIndex),
 			rva009C7380Weights(verticalIndex));
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009C7380@@YAXXZ=?rva009C7380BinkSse@@YAXPBE0PAXHHH@Z")

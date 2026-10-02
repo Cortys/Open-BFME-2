@@ -41,3 +41,7 @@ void __cdecl rva009C7760BinkSse(void *unusedParam, void *destination,
 		pop esi
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?d_009c7760@@YAXXZ=?rva009C7760BinkSse@@YAXPAX0PBX11H@Z")

@@ -31,3 +31,7 @@ void __cdecl Rva009C3CF0(const short *coeffs, const short *quant, short *out)
 		memset(out, 0, 128);
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009C3CF0@@YAXXZ=?Rva009C3CF0@@YAXPBF0PAF@Z")

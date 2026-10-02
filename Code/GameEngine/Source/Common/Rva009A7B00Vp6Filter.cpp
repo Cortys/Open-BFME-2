@@ -98,3 +98,7 @@ void __cdecl Rva009A7B00Vp6Filter(
 			Rva009A79D0Vp6Filter(source1, destination, sourcePitch, g_012D7818[modeX], g_012D7818[modeY]);
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009A7B00@@YAXXZ=?Rva009A7B00Vp6Filter@@YAXPBE0PAGIHHH@Z")

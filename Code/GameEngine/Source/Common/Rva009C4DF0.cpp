@@ -24,3 +24,7 @@ void __cdecl Rva009C4DF0(short *work, unsigned char *dst, const short *samples,
 
 	bfmeClampBlock(dst, work, dstStride, 8);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009C4DF0@@YAXXZ=?Rva009C4DF0@@YAXPAFPAEPBFH@Z")

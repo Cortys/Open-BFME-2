@@ -43,3 +43,7 @@ void __cdecl rva009C6D30BinkCopy(const void *source, void *destination, int stri
 		movq qword ptr [ebx + edx], mm3
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?d_009c6d30@@YAXXZ=?rva009C6D30BinkCopy@@YAXPBXPAXH@Z")

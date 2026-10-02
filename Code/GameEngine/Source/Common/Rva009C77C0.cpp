@@ -325,3 +325,7 @@ void __cdecl rva009C77C0(const void *coefficients, const void *multipliers,
         pop ebx
     }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009C77C0@@YAXXZ=?rva009C77C0@@YAXPBX0PAX@Z")

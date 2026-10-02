@@ -56,3 +56,7 @@ void __cdecl Rva009C4E90(short *work, unsigned char *output,
 
 	bfmeClampBlock(output, work, stride, 8);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009C4E90@@YAXXZ=?Rva009C4E90@@YAXPAFPAEPBEPBFH@Z")

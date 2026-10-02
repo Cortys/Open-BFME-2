@@ -82,3 +82,7 @@ void bfmeEmitBfmeVectorRecord0002154F3Assign(BfmeVectorRecord0002154F3 *record)
 	*record = *record;
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??$_Construct@UBfmeVectorRecord0002154F3@@U1@@_STL@@YAXPAUBfmeVectorRecord0002154F3@@ABU1@@Z=??$_Construct@UBfmeVectorRecord002154F3@@U1@@_STL@@YAXPAUBfmeVectorRecord002154F3@@ABU1@@Z")
