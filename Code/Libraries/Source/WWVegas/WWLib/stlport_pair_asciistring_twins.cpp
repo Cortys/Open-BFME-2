@@ -21,6 +21,7 @@
 
 #include "ascii_string.h"
 #include <utility>
+#include <memory>
 
 class MapMetaData
 {
@@ -56,3 +57,5 @@ template _STL::pair<const AsciiString, Rva0045EF90Object>::pair(const AsciiStrin
 template _STL::pair<const AsciiString, Gen_003A8BE0>::pair(const AsciiString &, const Gen_003A8BE0 &);
 template _STL::pair<const AsciiString, Rva0045EF90Object>::pair(const _STL::pair<const AsciiString, Rva0045EF90Object> &);
 template _STL::pair<const AsciiString, Gen_003A8BE0>::pair(const _STL::pair<const AsciiString, Gen_003A8BE0> &);
+
+template void _STL::_Construct<_STL::pair<const AsciiString, Rva0045EF90Object>, _STL::pair<const AsciiString, Rva0045EF90Object> >(_STL::pair<const AsciiString, Rva0045EF90Object> *, const _STL::pair<const AsciiString, Rva0045EF90Object> &);
