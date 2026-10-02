@@ -125,3 +125,6 @@ void Rva00534BDCParse(INI *ini, void *instance, void *, const void *)
 	INI::parseCoord3D(ini, 0, &pos, 0);
 	((Rva00534BDCHolder *)instance)->m_listAC.push_front(pos);
 }
+
+// The map<AsciiString, MapMetaData> node copy in stlport_rb_tree_hint_00304bef.cpp calls this copy constructor through an opaque spelling pinned to the same 0x003039E8 (thiscall, one const reference); bind that spelling here.
+#pragma comment(linker, "/alternatename:??0TreeHintOpaque00304573@@QAE@ABU0@@Z=??0MapMetaData@@QAE@ABV0@@Z")

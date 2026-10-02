@@ -1332,3 +1332,7 @@ extern "C" void *Rva007FD660( char *temp, void *address )
 	}
 	return address;
 }
+
+
+// The BFME 1-style C caller in Y4CommRingIdle.c names this body _Rva007FDEE0 (pinned to the same 0x0066A3B0, no arguments, returns the address); bind that spelling here.
+#pragma comment(linker, "/alternatename:_Rva007FDEE0=?Rva00804440LocalAddr@@YAIXZ")
