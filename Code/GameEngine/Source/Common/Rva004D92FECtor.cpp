@@ -11,6 +11,8 @@
 // FLT_MAX,-FLT_MAX,FLT_MAX. The three movss loads are DIR32-masked; literals
 // would hoist and CSE, while the extern global keeps retail order.
 
+#include <float.h>
+
 struct Coord3DBase
 {
     float x;
@@ -18,7 +20,9 @@ struct Coord3DBase
     float z;
 };
 
-extern Coord3DBase g_bfmeCoordDefault; // FLT_MAX,-FLT_MAX,FLT_MAX at retail 0x00DCFC18 (DIR32-masked)
+// g_bfmeCoordDefault: VA 0x00DCFC18 (.data); retail bytes encode FLT_MAX,
+// -FLT_MAX, FLT_MAX in the Coord3DBase layout.
+Coord3DBase g_bfmeCoordDefault = { FLT_MAX, -FLT_MAX, FLT_MAX };
 
 class Rva004D92FE
 {
