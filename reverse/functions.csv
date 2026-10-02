@@ -48660,3 +48660,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??0Rva005C45B6@@QAE@II@Z,,0x005C45B6,28,Code/GameEngine/Source/Common/Rva005C45B6Ctor.cpp,matched,ctor forwards two uints to rowed base then vtable store
 ?Rva003BD46ESum@@YAHPAX@Z,,0x003BD46E,23,Code/GameEngine/Source/GameLogic/Object/Rva003BD46ESum.cpp,matched,finish lane sum-first definition order sibling callers
 ?rva005426DB@Rva005426DB@@QAE_NPAE@Z,,0x005426DB,96,Code/GameEngine/Source/Common/Rva005426DBDecode.cpp,matched,XML entity decoder with 5-entry table strlen strncmp caller 0x005427A7
+?rva005F93DB@Rva005F93DB@@QAEX_N@Z,,0x005F93DB,8,Code/GameEngine/Source/Common/Rva005F93DBForward.cpp,matched,jmp to rowed 0x005F92D5 callers 0x005E96C3 0x005E9E11 neighbour Rva005F93D3Forward
