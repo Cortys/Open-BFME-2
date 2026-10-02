@@ -1,6 +1,8 @@
 // cl: /DNDEBUG /MD /EHsc /O2 /Ob2 /G6 /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/shims/moduledata
 // stlport
-// Open-BFME: GeometryInfo::calcBoundingStuff, retail 0x0087EE60, 301 bytes.
+// Open-BFME: GeometryInfo::calcBoundingStuff, target 0x006BE700, 301 bytes.
+// BFME 1 address labels below preserve donor naming; target helpers are
+// planar 0x006BE5A0 / sphere 0x006BE610 / bounds 0x006BDEE0.
 //
 // Identity: the matched GeometryInfo::parseGeometryIsSmall (0x0087F160)
 // tail-calls this body (jmp at +0x1B) on the INI store, and the matched
@@ -58,14 +60,15 @@ typedef char GeometryShape_size_check[sizeof(GeometryShape) == 0x24 ? 1 : -1];
 // Six-float bounds the 0x0087E650 helper fills: minimum x/y/z then maximum x/y/z.
 struct Rva0087E650Bounds
 {
-	Real m_minX;
-	Real m_minY;
-	Real m_minZ;
-	Real m_maxX;
-	Real m_maxY;
-	Real m_maxZ;
+	Coord3D lo, hi;
 };
+typedef char GeometryBounds_size_check[sizeof(Rva0087E650Bounds) == 24 ? 1 : -1];
 
+template <class T>
+inline const T &bfmeMin(const T &a, const T &b)
+{
+    return (a < b) ? a : b;
+}
 
 class GeometryInfo : public Snapshot
 {
@@ -169,9 +172,57 @@ void GeometryInfo::calcBoundingStuff()
 	Rva0087E650Bounds bounds;
 	rva0087E650(&bounds);
 	m_boundsCenter18.zero();
-	m_boundsCenter18.x = (bounds.m_maxX + bounds.m_minX) * 0.5f;
-	m_boundsCenter18.y = (bounds.m_maxY + bounds.m_minY) * 0.5f;
-	m_boundsCenter18.z = (bounds.m_maxZ + bounds.m_minZ) * 0.5f;
-	m_extent24 = bfmeMax(bounds.m_maxX, -bounds.m_minX);
-	m_extent28 = bfmeMax(bounds.m_maxY, -bounds.m_minY);
+	m_boundsCenter18.x = (bounds.hi.x + bounds.lo.x) * 0.5f;
+	m_boundsCenter18.y = (bounds.hi.y + bounds.lo.y) * 0.5f;
+	m_boundsCenter18.z = (bounds.hi.z + bounds.lo.z) * 0.5f;
+	m_extent24 = bfmeMax(bounds.hi.x, -bounds.lo.x);
+	m_extent28 = bfmeMax(bounds.hi.y, -bounds.lo.y);
+}
+
+// ?rva0087E650@GeometryInfo@@QAEXPAURva0087E650Bounds@@@Z
+// Target 0x006BDEE0: Ghidra boundary 636 bytes. Matched caller 0x006BE782
+// independently establishes this GeometryInfo owner and a six-float bounds
+// output; the target traverses enabled 0x24-byte shapes at receiver +0x2C.
+// BFME 1 GeometryInfoRva0087E650.cpp at 10af19f44a89ab7ecc23195bb9a842ceafbc02c9
+// supplies the min/max structure and scalar control flow. The BFME 1
+// address is folded, so it cannot establish an original method name.
+// Coord3D::zero on each half reproduces the native clear; full bytes match.
+void GeometryInfo::rva0087E650(Rva0087E650Bounds *bounds)
+{
+	bounds->lo.zero();
+	bounds->hi.zero();
+
+	for (std::vector<GeometryShape>::const_iterator it = m_shapes.begin(); it != m_shapes.end(); ++it)
+	{
+		if (!it->m_enabled)
+			continue;
+
+		switch (it->m_type)
+		{
+		case GEOMETRY_SPHERE:
+			bounds->lo.x = bfmeMin(bounds->lo.x, it->m_offset.x - it->m_majorRadius);
+			bounds->lo.y = bfmeMin(bounds->lo.y, it->m_offset.y - it->m_majorRadius);
+			bounds->lo.z = bfmeMin(bounds->lo.z, it->m_offset.z - it->m_majorRadius);
+			bounds->hi.x = bfmeMax(bounds->hi.x, it->m_offset.x + it->m_majorRadius);
+			bounds->hi.y = bfmeMax(bounds->hi.y, it->m_offset.y + it->m_majorRadius);
+			bounds->hi.z = bfmeMax(bounds->hi.z, it->m_offset.z + it->m_majorRadius);
+			break;
+		case GEOMETRY_CYLINDER:
+			bounds->lo.x = bfmeMin(bounds->lo.x, it->m_offset.x - it->m_majorRadius);
+			bounds->lo.y = bfmeMin(bounds->lo.y, it->m_offset.y - it->m_majorRadius);
+			bounds->lo.z = bfmeMin(bounds->lo.z, it->m_offset.z);
+			bounds->hi.x = bfmeMax(bounds->hi.x, it->m_offset.x + it->m_majorRadius);
+			bounds->hi.y = bfmeMax(bounds->hi.y, it->m_offset.y + it->m_majorRadius);
+			bounds->hi.z = bfmeMax(bounds->hi.z, it->m_offset.z + it->m_height);
+			break;
+		case GEOMETRY_BOX:
+			bounds->lo.x = bfmeMin(bounds->lo.x, it->m_offset.x - it->m_majorRadius);
+			bounds->lo.y = bfmeMin(bounds->lo.y, it->m_offset.y - it->m_minorRadius);
+			bounds->lo.z = bfmeMin(bounds->lo.z, it->m_offset.z);
+			bounds->hi.x = bfmeMax(bounds->hi.x, it->m_offset.x + it->m_majorRadius);
+			bounds->hi.y = bfmeMax(bounds->hi.y, it->m_offset.y + it->m_minorRadius);
+			bounds->hi.z = bfmeMax(bounds->hi.z, it->m_offset.z + it->m_height);
+			break;
+		}
+	}
 }
