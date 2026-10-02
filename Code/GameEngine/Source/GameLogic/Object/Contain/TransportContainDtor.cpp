@@ -53,9 +53,19 @@ private:
 	_STL::vector<AsciiString> m_110;
 };
 
-TransportContain::~TransportContain()
+inline TransportContain::~TransportContain()
 {
 }
+
+// This anchor only makes this unit emit its copy for the ledger row;
+// it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitTransportContainDtor@@YAXPAVTransportContain@@@Z present-unmatched
+void bfmeEmitTransportContainDtor(TransportContain *p)
+{
+	p->TransportContain::~TransportContain();
+}
+#pragma inline_depth()
 
 // Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
 // each one has the same function in that slot (vftable addresses from matched vptr
