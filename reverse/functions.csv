@@ -5788,7 +5788,6 @@ _XMP_Move,,0x0061BE10,19,Code/Libraries/Source/WWVegas/WWLib/mpmath.cpp,matched,
 ?addObjectCreationNugget@ObjectCreationListStore@@QAEXPAVObjectCreationNugget@@@Z,,0x001F0AC4,16,Code/GameEngine/Source/GameLogic/Object/ObjectCreationList.cpp,matched,
 ??0BfmeDynamicNativeVB@@QAE@IGII@Z,,0x0013AC00,106,Code/Libraries/Source/WWVegas/WW3D2/bfmedynamicvertexbuffer.cpp,matched,native vertex-buffer ctor; base type 0 with the caller fvf and fvf_size read from the call site then Create(usage)
 ?Get_Hash_Value@FaceHasherClass@@UAEHH@Z,,0x006C0BC9,6,Code/Libraries/Source/WWVegas/WW3D2/meshbuild.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
-?dup_00481faf@@YAXXZ,,0x00481FAF,14,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/JetAIUpdate.cpp,matched,gen-alias;object-symbol=?Set_Z_Translation@Matrix3D@@QAEXM@Z;C++ alias
 ?dup_004583af@@YAXXZ,,0x004583AF,14,Code/Libraries/Source/WWVegas/WW3D2/linegrp_float_setters.cpp,matched,gen-alias;object-symbol=?Set_Line_Size@LineGroupClass@@QAEXM@Z;C++ alias
 ??1?$VectorClass@VVector4@@@@UAE@XZ,,0x0017EB60,45,Code/Libraries/Source/WWVegas/WW3D2/pointgr.cpp,matched,gen-alias;object-symbol=??1?$VectorClass@VVector4@@@@UAE@XZ;C++ alias
 ??_G?$VectorClass@VVector4@@@@UAEPAXI@Z,,0x0017F060,71,Code/Libraries/Source/WWVegas/WW3D2/pointgr.cpp,matched,gen-alias;object-symbol=??_G?$VectorClass@VVector4@@@@UAEPAXI@Z;C++ alias
