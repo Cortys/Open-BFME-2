@@ -1,23 +1,4 @@
-// ?rva005321D1@Rva005321D1@@QAEXGG@Z
-// partial score=0.94 date=2026-10-02
-void rva_192000_swap_unsigned_short(unsigned short *left, unsigned short *right)
-{
-    unsigned short temporary = *left;
-    *left = *right;
-    *right = temporary;
-}
-
-// ?rva_53229d_copy_unsigned_short@@YAXPAG0@Z @ 0x0053229D 27B
-// Null-guarded 4-byte copy as two word moves. Unblocks 0x005322B8,
-// 0x005322DE, 0x005334A4 (callers push two pointers, callee plain ret).
-void rva_53229d_copy_unsigned_short(unsigned short *dst, unsigned short *src)
-{
-    if (dst) {
-        dst[0] = src[0];
-        dst[1] = src[1];
-    }
-}
-
+// cl: /O1 /MD
 // ?rva005321D1@Rva005321D1@@QAEXGG@Z @ 0x005321D1 94B.
 // Union-style with indirection: order two words, parent map via +4,
 // remap via +0xC/+0x10 tables, rank bytes via +8 with 0xFE cap.
@@ -36,7 +17,6 @@ private:
     unsigned short *m_remap;
 };
 
-// ?rva005321D1@Rva005321D1@@QAEXGG@Z present-unmatched
 void Rva005321D1::rva005321D1(unsigned short a, unsigned short b)
 {
     if (a == b)
