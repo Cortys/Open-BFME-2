@@ -48898,3 +48898,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005C3EA5@Rva005C3EA5@@QAEXXZ,,0x005C3EA5,59,Code/GameEngine/Source/Common/Rva005C3EA5Show.cpp,matched,gap Show via rowed Fire plus empty fallback plus manager
 ?rva005C3EE0@Rva005C3EE0@@QAEXXZ,,0x005C3EE0,8,Code/GameEngine/Source/Common/Rva005C3EA5Show.cpp,matched,forwarder via member +4 to rowed 0x005C3EA5 caller 0x005680C3
 ?rva005FC8FD@Rva005FC8FD@@QAEXXZ,,0x005FC8FD,227,Code/GameEngine/Source/Common/Rva005FC8FDApt.cpp,matched,triple Apt overlay setter via rowed AptCall
+??0Rva0021572A@@QAE@PAVINI@@@Z,,0x0021572A,89,Code/Libraries/Source/WWVegas/WWLib/Rva0021572AMethod.cpp,matched,INI ctor with AsciiString at +0 and BfmeE16 vector at +4 via 0x00211E58 plus getNextToken and set and initFromINI with g_00BE574C
