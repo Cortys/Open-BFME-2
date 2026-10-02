@@ -43,10 +43,7 @@ class DamageModule : public BehaviorModule,
 	public ModuleInterface
 {
 public:
-	DamageModule( Thing *thing, const ModuleData *moduleData )
-		: BehaviorModule( thing, moduleData )
-	{
-	}
+	DamageModule( Thing *thing, const ModuleData *moduleData );
 };
 
 class ReflectDamage : public DamageModule
