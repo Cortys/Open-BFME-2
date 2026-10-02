@@ -79,3 +79,7 @@ char BfmeThingRE::bfmeGoRE(BfmeOtherRE *o)
 	++m_bfmeB;
 	return 1;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?getPtr@Rva00803620Getter@@QAEPAXPAX0@Z=?bfmeGoRF@BfmeThingRF@@QAEPAXPAX0@Z")

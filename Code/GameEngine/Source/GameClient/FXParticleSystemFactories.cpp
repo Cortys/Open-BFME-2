@@ -130,11 +130,15 @@ public:
 };
 
 
-// The remaining info classes, sized off the same clone bodies: 4 bytes for a
-// vtable-only one, 36 for the default physics info, 48 for the lightning draw
-// and terrain fire ones, 72 for the category 7 default, 104 for the default
-// update info, 132 and 144 for the default alpha and color ones, 140 for the
-// lightning emission info and 152 for the render object update info.
+// Retail clone/createTemplate immediates put the complete GPU- and
+// RenderObject-draw wrappers at 0x1c and 0x48 bytes. Their first two bases are
+// 4 bytes each, so the info subobjects are 0x14 and 0x40 bytes respectively;
+// their otherwise opaque payloads are kept as padding. The remaining info
+// classes are sized off the same clone bodies: 4 bytes for vtable-only ones,
+// 36 for the default physics info, 48 for the lightning draw and terrain fire
+// ones, 72 for the category 7 default, 104 for the default update info, 132
+// and 144 for the default alpha and color ones, 140 for the lightning emission
+// info and 152 for the render object update info.
 struct FXKeyframe
 {
     FXCoord3D m_value;
@@ -144,11 +148,31 @@ struct FXKeyframe
 #define FX_VTABLE_ONLY_INFO(NAME)                                                                      class NAME                                                                                         {                                                                                                  public:                                                                                                virtual ~NAME();                                                                                   virtual void v1() = 0;                                                                         };
 
 FX_VTABLE_ONLY_INFO(DefaultDrawModuleInfo)
-FX_VTABLE_ONLY_INFO(RenderObjectDrawModuleInfo)
-FX_VTABLE_ONLY_INFO(GpuDrawModuleInfo)
 FX_VTABLE_ONLY_INFO(QuadDrawModuleInfo)
 FX_VTABLE_ONLY_INFO(StreakDrawModuleInfo)
 FX_VTABLE_ONLY_INFO(ButterflyDrawModuleInfo)
+
+class RenderObjectDrawModuleInfo
+{
+public:
+    virtual ~RenderObjectDrawModuleInfo();
+    virtual void v1() = 0;
+
+    unsigned int m_unknown04[15];
+};
+
+class GpuDrawModuleInfo
+{
+public:
+    virtual ~GpuDrawModuleInfo();
+    virtual void v1() = 0;
+
+    unsigned int m_unknown04[4];
+};
+
+typedef char RenderObjectDrawModuleInfo_size[
+    (sizeof(RenderObjectDrawModuleInfo) == 0x40) ? 1 : -1];
+typedef char GpuDrawModuleInfo_size[(sizeof(GpuDrawModuleInfo) == 0x14) ? 1 : -1];
 
 // Category 8 (LifeEvent and TerrainCollision) puts its info's vtable at 0x0C
 // rather than 0x08: the first base is CategoryModuleTemplate<8>, whose third

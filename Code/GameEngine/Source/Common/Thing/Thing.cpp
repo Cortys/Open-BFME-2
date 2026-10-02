@@ -372,3 +372,7 @@ void carrierThingSetYTranslation()
 	Matrix3D m;
 	m.Set_Y_Translation(0.0f);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?setPeer@Rva007F9B80@@QAEXPAX@Z=?Set_Y_Translation@Matrix3D@@QAEXM@Z")

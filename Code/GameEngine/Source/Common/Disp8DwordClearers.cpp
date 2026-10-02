@@ -45,3 +45,7 @@ BFME_DISP8_DWORD_CLEAR(Rva005C494DDwordClearer, 0x14)
 	}
 BFME_DISP8_DWORD_MASK(Rva006DBD90DwordMask, 0x04, ~0x08)
 BFME_DISP8_DWORD_MASK(Rva006DBDC0DwordMask, 0x04, ~0x04)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?ClearReleaseAtEnd@AptValue@@QAEXXZ=?clear@Rva006DBDC0DwordMask@@QAEXXZ")

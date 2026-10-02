@@ -16,3 +16,7 @@ void BfmeThingCIB::bfmeGoCIB(void *one, void *two)
 	if (Rva007EC5C0((char *)m_bfmeA, (int)m_bfmeB, (const char *)one, (int)two) < 0)
 		m_bfmeErr = -100;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeWriteAlt@BfmeSetupRecord@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")

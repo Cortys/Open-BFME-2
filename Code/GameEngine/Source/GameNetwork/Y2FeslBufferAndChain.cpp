@@ -275,3 +275,7 @@ void *Rva00800520Alloc( void *owner )
 	*(void **)node = 0;
 	return node;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Gen_dtor_007f6d20@@UAE@XZ=?reset@Rva00800290Buffer@@QAEXXZ")

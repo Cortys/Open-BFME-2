@@ -100,3 +100,7 @@ BFME_DISP8_SHRN_AND_DWORD_GETTER(Rva006DB3B0ShrNAndField, 0x1C, 9)
 BFME_DISP8_SHRN_AND_DWORD_GETTER(Rva006DBB60ShrNAndField, 0x04, 4)
 BFME_DISP8_SHRN_AND_DWORD_GETTER(Rva006DBDA0ShrNAndField, 0x04, 3)
 BFME_DISP8_SHRN_AND_DWORD_GETTER(Rva006DBDD0ShrNAndField, 0x04, 2)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?IsReleaseAtEnd@AptValue@@QBEHXZ=?get@Rva006DBDD0ShrNAndField@@QBEHXZ")
