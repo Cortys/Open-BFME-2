@@ -20,6 +20,7 @@ public:
     {
     public:
         Exception(const Exception &other);
+        virtual ~Exception();
     };
     class LoadFailure : public Exception
     {
