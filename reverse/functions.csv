@@ -48341,3 +48341,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005FBEBA@Rva005FBEBA@@QAEXXZ,,0x005FBEBA,30,Code/GameEngine/Source/Common/Rva005FBEBA.cpp,matched,audio remove-event via TheAudio slot 0x6c plus handle reset to 1 per Rva004CBF9A precedent
 ??0BfmeQuickMatchScreenBase@@QAE@XZ,,0x00538C0E,81,Code/GameEngine/Source/GameClient/GUI/BfmeQuickMatchScreenBaseDefaultCtor.cpp,matched,vtable 0x00839608 EmptyLayout via StringBase set caller 0x00317734
 ??0Rva00568A20@@QAE@ABV0@@Z,,0x00568A20,33,Code/GameEngine/Source/Common/Rva00568A20Copy.cpp,matched,copy ctor via rowed BfmePoolRef10 copy at 0x00051950 plus int and byte
+??0Rva000A7E7A@@QAE@XZ,,0x000A7E7A,31,Code/GameEngine/Source/GameLogic/Object/Rva000A7E7ACtor.cpp,matched,honest ctor same shape as Armor hash_map 0x00360B99 with Armor hashtable callee dup 0x000A7DF1 and caller 0x000A8531
