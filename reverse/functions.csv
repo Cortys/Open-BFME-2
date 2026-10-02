@@ -46844,3 +46844,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva0040AEE3@@QAE@ABV0@@Z,,0x0040AEE3,27,Code/GameEngine/Source/Common/Thing/Rva0040AEE3CopyCtor.cpp,matched,unlock lane calls rowed vector copy 0x54878E copies +0xC caller 0x40B16A
 ??0Rva0040A530@@QAE@_N@Z,,0x0040A530,28,Code/Libraries/Source/WWVegas/WWLib/Rva0040A530Ctor.cpp,matched,unlock lane calls rowed Vector_base 0x211E58 copies byte to +0xC callers 0x21FEC3 0x5B582C
 ?rva005644A9@Rva005644A9@@QAEXPAVXfer@@@Z,,0x005644A9,96,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005644A9Xfer.cpp,matched,chain xfer Version1 plus TerrainCollisionModuleInfo plus bools plus uint
+?rva00564E0D@Rva00564E0D@@QAE?AVAsciiString@@XZ,,0x00564E0D,27,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00564E0DGetter.cpp,matched,AsciiString at 0xC via StringBase copy getter
