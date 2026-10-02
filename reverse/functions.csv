@@ -46858,3 +46858,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00800b30@Rva00800920Owner@@QAEXPAURva00800A40Slot@@@Z,,0x0066CF10,58,Code/GameEngine/Source/Common/Rva00800A40Owner.cpp,matched,BFME1 byte-identical donor; b1 0x00800B30; merged into the existing BFME2 copy of the donor file
 ?rva007F2230@Rva007F2350StatsCursor@@QAE_NPAVRva007F2350StatsRecord@@@Z,,0x0065ED20,283,Code/GameEngine/Source/GameNetwork/Rva007F2350StatsCursor.cpp,matched,BFME1 byte-identical donor; b1 0x007F2230 (ICF-folded with next in BFME1 but BFME2 rows next separately at 0x0065EE40; the address-derived name is kept)
 ?rva005ACDA9@Rva004ECECD@@QAEHXZ,,0x005ACDA9,13,Code/GameEngine/Source/Common/Rva005ACDA9Check.cpp,matched,chain via rowed 0x004ECECD push 0 null check passthrough this
+?rva005AC98A@Rva005AC98A@@QAE_NXZ,,0x005AC98A,158,Code/GameEngine/Source/Common/Rva005AC98ACheck.cpp,matched,unlock RingHero enemy scan via ThePlayerList TheUpgradeCenter bool
