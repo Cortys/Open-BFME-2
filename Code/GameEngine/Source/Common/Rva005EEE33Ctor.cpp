@@ -32,3 +32,14 @@ Rva005EEE33::Rva005EEE33()
 	: Rva0058AD7A(1)
 {
 }
+
+class Rva005D9A1E : public Rva005EEE33
+{
+public:
+	Rva005D9A1E();
+	virtual ~Rva005D9A1E();
+};
+
+Rva005D9A1E::Rva005D9A1E()
+{
+}
