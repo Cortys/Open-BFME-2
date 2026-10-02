@@ -94,3 +94,8 @@ GeometryInfo copyGeometryInfo(const GeometryInfo &other)
 {
 	return other;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?copyFrom@BfmeElem440@@QAEXPBU1@@Z=??0GeometryInfo@@QAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:?copyFrom@BfmeElemFC@@QAEXPAU1@@Z=??0GeometryInfo@@QAE@ABV0@@Z")

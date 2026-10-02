@@ -34,3 +34,8 @@ void BfmeOwnerYX::bfmeCleanupYX()
 	if (m_bfmeArrayYX != 0)
 		delete [] m_bfmeArrayYX;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_bfmeFreeAYX@4=?ji_0065477e@@YAXXZ")
+#pragma comment(linker, "/alternatename:_bfmeFreeBYX@4=?ji_0065478a@@YAXXZ")

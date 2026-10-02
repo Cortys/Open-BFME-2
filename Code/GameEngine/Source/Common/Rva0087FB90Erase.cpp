@@ -51,3 +51,7 @@ BfmeElem60 *BfmeVec60::erase(BfmeElem60 *first, BfmeElem60 *last)
 	_M_finish = i;
 	return first;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?erase@BfmeVec60@@QAEXPAUBfmeElem60@@0@Z=?erase@BfmeVec60@@QAEPAUBfmeElem60@@PAU2@0@Z")

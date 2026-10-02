@@ -37,3 +37,7 @@ Rva002CFA30Node *__stdcall Rva002CFA30Clone(const Rva002CFA30Node *src)
 	node->m_link0C = 0;
 	return node;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?rva002CFA30@Rva002CFC7B@@QAEPAURva002CFA30Node@@PBU2@@Z=?Rva002CFA30Clone@@YGPAURva002CFA30Node@@PBU1@@Z")
