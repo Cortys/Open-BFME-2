@@ -25,6 +25,11 @@ private:
 	static PatternListEntry *lastPatternEntry;
 };
 
+// Profile::lastPatternEntry: matched DIR32 witnesses (w=2) place this
+// zero-initialized four-byte pointer at VA 0x00E0C1E0 (.data BSS); it ends at
+// the next known global, firstPatternEntry at VA 0x00E0C1E4.
+Profile::PatternListEntry *Profile::lastPatternEntry;
+
 // ?RemovePatternEntry@Profile@@CAXPAUPatternListEntry@1@@Z
 void Profile::RemovePatternEntry(PatternListEntry *entry)
 {
