@@ -48922,3 +48922,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?isEffectivelyDead@Object@@QBE_NXZ,,0x0006DFF1,10,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedUnit.cpp,matched,
 ?Set_Z_Translation@Matrix3D@@QAEXM@Z,,0x00481FAF,14,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/JetAIUpdate.cpp,matched,
 ?get_polys@MeshGeometryClass@@IAEPAVVector3i16@@XZ,,0x000B49A1,7,Code/Libraries/Source/WWVegas/WW3D2/meshgeometry.cpp,matched,
+??0WeaponBonus@@QAE@XZ,,0x00235A0E,19,Code/GameEngine/Source/GameLogic/Object/WeaponReloadAmmo.cpp,matched,Ghidra boundary is 19B at 235A0E; the 22x24 bonus array constructor invokes this element ctor; target append and computeBonus rows establish six float fields; the BFME2 TU initializes all six to 1.0f
