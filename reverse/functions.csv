@@ -47462,3 +47462,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva00575EEA@@UAEPAXI@Z,,0x005760CD,28,Code/GameEngine/Source/Common/Rva00575EEADtor.cpp,matched,deleting dtor from own ??1 unit slot 0
 ??1Rva00546982@@UAE@XZ,,0x005468E1,59,Code/GameEngine/Source/Common/Rva00546982Dtor.cpp,matched,dtor via ctor 0x00546982 layout vtable 0x0086A314
 ??_GRva00546982@@UAEPAXI@Z,,0x00546966,28,Code/GameEngine/Source/Common/Rva00546982Dtor.cpp,matched,deleting dtor slot0 vtable 0x0086A314 calls 0x005468E1
+?rva004783F4@Rva004783F4@@QAEPAVTeam@@XZ,,0x004783F4,24,Code/GameEngine/Source/GameLogic/Object/Contain/Rva004783F4.cpp,matched,team lookup via TheTeamFactory findInstance caller 0x00480BFD
