@@ -48671,3 +48671,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0057C57B@AptMapPreview@@QAEHH@Z,,0x0057C57B,28,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewSetMapDescription.cpp,matched,AptMapPreview 8-window index search via m_windows plus 0x30
 ?rva005F3272@Rva005F2A32@@QAEXABVUnicodeString@@@Z,,0x005F3272,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder via plus4 to rowed rva005F2FEF same caller family
 ?rva004EE5D2@Rva004EE5D2@@QAEXXZ,,0x004EE5D2,195,Code/GameEngine/Source/Common/Rva004EE5D2Erase.cpp,matched,removes 8 embedded entries via rowed erase
+?rva005C462B@Rva005C462B@@QAEPAVRva005C45B6@@I@Z,,0x005C462B,60,Code/GameEngine/Source/Common/Rva005C462BCreate.cpp,matched,chain new plus ctor with EH unwind
