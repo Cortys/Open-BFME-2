@@ -48874,3 +48874,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0057BAF8@Rva0057BAF8@@QAEX_N@Z,,0x0057BAF8,86,Code/GameEngine/Source/Common/Rva0057BAF8Toggle.cpp,matched,Apt toggle via rowed AptCall with enabled disabled SetToggleButtonState
 ?rva00426612@Rva00426612@@QAEXPAVCreateAHeroData@@@Z,,0x00426612,76,Code/GameEngine/Source/Common/Rva00426612Hero.cpp,matched,hero registry move via rowed find erase pushback
 ?Rva0057A9B7Fire@@YAHPAX0PBD1PAH0@Z,,0x0057A9B7,104,Code/GameEngine/Source/Common/Rva0057A9B7Fire.cpp,matched,unlock lane plus callers 0x0057AB16 0x005ED7CC 0x005FE122 plus rowed Get AptCall
+?rva0057AB16@Rva0057AB16@@QAEXH@Z,,0x0057AB16,186,Code/GameEngine/Source/Common/Rva0057AB16Phase.cpp,matched,chain via 0x0057A9B7 plus Get Set callers none
