@@ -45,7 +45,7 @@
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-CashHackSpecialPowerModuleData::CashHackSpecialPowerModuleData( void )
+inline CashHackSpecialPowerModuleData::CashHackSpecialPowerModuleData( void )
 {
 	m_upgrades.clear();
 	m_defaultAmountToSteal = 0;
@@ -62,11 +62,16 @@ static void parseCashHackUpgradePair( INI* ini, void * /*instance*/, void *store
 
 	std::vector<CashHackSpecialPowerModuleData::Upgrades>* s = (std::vector<CashHackSpecialPowerModuleData::Upgrades>*)store;
 	s->push_back(up);
-} 
+}
+
+// Keep the Upgrades default ctor (rowed from this TU) emitted after the
+// ModuleData buildFieldParse below becomes select-any: taking the parse
+// helper's address forces the parser (and hence Upgrades::Upgrades) to stay.
+void (*g_keepCashHackParseForUpgrades)(INI*, void*, void*, const void*) = parseCashHackUpgradePair;
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-/*static*/ void CashHackSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse& p)
+/*static*/ inline void CashHackSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse& p)
 {
 	SpecialPowerModuleData::buildFieldParse( p );
 	
