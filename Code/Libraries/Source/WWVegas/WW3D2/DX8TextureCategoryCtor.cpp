@@ -83,13 +83,7 @@ template <class T> class RefCountPtr
 {
 public:
 	RefCountPtr() : Referent(0) {}
-	~RefCountPtr()
-	{
-		if (Referent != 0) {
-			Referent->Release_Ref();
-			Referent = 0;
-		}
-	}
+	~RefCountPtr();
 	T *Referent;
 };
 
