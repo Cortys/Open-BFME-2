@@ -21,6 +21,7 @@ class Rva00512CE9
 {
 public:
 	void rva00512CE9(int player, bool show);
+	bool rva00512D47(int player);
 private:
 	char m_pad00[0x274];
 	void *m_274;
@@ -35,4 +36,11 @@ void Rva00512CE9::rva00512CE9(int player, bool show)
 	const char *which = show ? "ShowKickButton" : "HideKickButton";
 	TheRva00222A8BTarget->invoke(m_274, which, 1, buf, 0, 0, 0, 0);
 	m_286[player] = show;
+}
+
+// ?rva00512D47@Rva00512CE9@@QAE_NH@Z @0x00512D47 14B: getter for m_286[player] bool array at +0x286.
+// Evidence: same +0x286 indexed store in rva00512CE9 setter in this TU; callers at 0x004D45CB 0x004D45E4.
+bool Rva00512CE9::rva00512D47(int player)
+{
+	return m_286[player];
 }
