@@ -712,3 +712,53 @@ Rva0022C7C9 *Rva0022C7C9::rva0022C7C9(void *a1, void *a2)
 	m_1c ^= e;
 	return this;
 }
+// ?rva0022C6B6@Rva0022C6B6@@QAEPAU1@PAX0@Z @0x0022C6B6 141B
+// Chain from 0x00229A18 via Rva00229A18Pick sibling of 0x0022C7C9.
+// Evidence: same 8-int obfuscated init shape with three constants 0x008C0A84 0x008C0A80 0x1C0C404F; caller 0x0022CB36 passes this plus two ptrs.
+struct Rva0022C6B6
+{
+	int m_00;
+	int m_04;
+	int m_08;
+	int m_0c;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	Rva0022C6B6 *rva0022C6B6(void *a1, void *a2);
+};
+Rva0022C6B6 *Rva0022C6B6::rva0022C6B6(void *a1, void *a2)
+{
+	int p;
+	int q;
+	Rva00229A18Pick(&p, &q);
+	m_00 = p;
+	m_04 = 0x008C0A84;
+	m_08 = 0x008C0A80;
+	m_0c = 0x1C0C404F;
+	m_10 = *(int *)a1;
+	m_14 = *(int *)a2;
+	int b = q;
+	int e = b;
+	e *= b;
+	e ^= 0x008C0A84;
+	m_04 = e;
+	e *= b;
+	e ^= 0x008C0A80;
+	m_08 = e;
+	e *= b;
+	e ^= 0x1C0C404F;
+	m_0c = e;
+	e *= b;
+	m_10 ^= e;
+	e = m_10;
+	e *= b;
+	m_14 ^= e;
+	e = m_14;
+	e *= b;
+	m_18 ^= e;
+	e = m_18;
+	e *= b;
+	m_1c ^= e;
+	return this;
+}
