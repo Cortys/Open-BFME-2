@@ -109,7 +109,7 @@ __forceinline void ProxyClass::Initialize()
 	Field70 = 0;
 }
 
-ProxyClass &ProxyClass::operator=(ProxyClass const &other)
+inline ProxyClass &ProxyClass::operator=(ProxyClass const &other)
 {
 	if (other.Texture)
 		other.Texture->Add_Ref();
@@ -239,3 +239,13 @@ void Render2DClass::Reset()
 }
 
 template void std::_Destroy<ProxyClass *>(ProxyClass *, ProxyClass *);
+
+// ProxyClass's assignment operator is a header inline in copier units. This
+// anchor retains its matched row body here, but the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeProxyClassAssignInlineAnchor@@YAXPAVProxyClass@@@Z absent-from-retail
+void _bfmeProxyClassAssignInlineAnchor(ProxyClass *proxy)
+{
+	proxy->ProxyClass::operator=(*proxy);
+}
+#pragma inline_depth()
