@@ -482,3 +482,7 @@ void UpgradeCenter::parseUpgradeDefinition( INI *ini )
 
 }
 
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?push_back@?$BfmeVector@VAsciiString@@@@QAEXABVAsciiString@@@Z=?push_back@?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEXABVAsciiString@@@Z")
