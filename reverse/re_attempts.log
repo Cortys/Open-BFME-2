@@ -5566,3 +5566,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva004F5473@Rva004F54BF@@QAE_NPAVObject@@_N@Z	0x004F5473	76	partial	true tail middle vs end plus final count-limit load order and edx-vs-ecx allocation t=18 model=muse-02 score=0.93 stash=reverse/attempts/0x004f5473.cpp
 ?_M_insert_overflow@?$vector@VRva0040AF66@@V?$allocator@VRva0040AF66@@@_STL@@@_STL@@IAEXPAVRva0040AF66@@ABV3@ABU__false_type@2@I_N@Z	0x0040B8E8	183	partial	M_insert_overflow exact bytes but calls generic templates not free helpers t=12 model=muse-spark score=0.95 stash=reverse/attempts/0x0040b8e8.cpp
 ??0AwardSystemManager@@QAE@XZ	0x0040BF17	147	blocked	ctor needs baseConstruct-as-base plus Debug vtable slots 60-6C plus g_ singletons t=10 model=muse-spark
+?rva00490ECF@Rva00490D3F@@QAEXXZ	0x00490ECF	102	blocked	update slot22 needs dec-chain switch plus direct-mem flag ORs t=8 model=muse-spark
