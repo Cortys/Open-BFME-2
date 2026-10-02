@@ -47553,3 +47553,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva003058F9@@QAE@XZ,,0x003058F9,46,Code/GameEngine/Source/GameLogic/Object/BfmeCtor001B3A20.cpp,matched,virtual-base ctor: bytes equal ??0BfmeCtor001B3A20 except the derived vftable VA 0xc4ef80
 ??1Rva00341D26@@UAE@XZ,,0x00341D26,91,Code/GameEngine/Source/Common/Rva0033FC42Dtor.cpp,matched,sibling dtor: bytes equal ??1Rva0033FC42 except the vftable VA 0xc11740 stored on entry
 ?rva0049797F@BattlePlanUpdate@@QAEXXZ,,0x0049797F,204,Code/GameEngine/Source/GameLogic/Object/Update/BattlePlanUpdateRva0049797F.cpp,matched,slot 5 vtable 0x0084FBAC plus rowed callees plus BattlePlanUpdate m_object at 8
+??1Rva000899E5@@QAE@XZ,,0x000899E5,60,Code/GameEngine/Source/Common/Rva000899E5Clear.cpp,matched,nonvirtual dtor via EH prolog and two AsciiString releases
