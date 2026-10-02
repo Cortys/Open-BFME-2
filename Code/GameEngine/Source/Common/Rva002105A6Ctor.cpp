@@ -1,4 +1,4 @@
-// cl: /O1 /EHs /MD /D_STLP_USE_STATIC_LIB /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHs /MD /D_STLP_USE_STATIC_LIB /arch:SSE
 // Fix over the banked 0.93 attempt, from the retail unwind map: state 0
 // destroys the member at +4 through the folded 7-byte virtual dtor 0x0049B47C,
 // so Rva000D1930 has a virtual destructor; state 1 destroys +0x20 through the
@@ -17,25 +17,9 @@
 
 #include <vector>
 
+#include "ascii_string.h"
+
 struct BfmeE16 { float x, y, z, w; };
-
-class AsciiString
-{
-public:
-	AsciiString();
-	~AsciiString();
-private:
-	void *m_data;
-};
-
-template <class T> class StringBase
-{
-	void *m_data;
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-};
 
 class Rva000D1930
 {
@@ -66,10 +50,10 @@ private:
 	int m_1C;
 	_STL::vector<AsciiString> m_vec20;
 	_STL::vector<BfmeE16> m_vec2C;
-	StringBase<char> m_str38;
+	AsciiString m_str38;
 	int m_3C;
 	int m_40;
-	StringBase<char> m_str44;
+	AsciiString m_str44;
 	float m_48;
 	float m_4C;
 	float m_50;
