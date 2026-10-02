@@ -400,3 +400,17 @@ public:
 Rva0045232D::~Rva0045232D()
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f1@Rva0024A797_Mid@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?fe@Rva00458402_E1@@UAEXXZ=?setPositions@BridgeScaffoldBehavior@@UAEXPBUCoord3D@@00@Z")
+#pragma comment(linker, "/alternatename:?fe@Rva00487F3A_E1@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
+#pragma comment(linker, "/alternatename:?fe@Rva0048FFB4_E1@@UAEXXZ=?get@Rva001DAF7DByteField@@QBEEXZ")
+#pragma comment(linker, "/alternatename:?fe@Rva0049BFB7_E1@@UAEXXZ=?Is_Valid@RegistryClass@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?fe@Rva004A1855_E1@@UAEXXZ=?getKey@?$CategoryModuleClass@$0A@@FXParticleSystem@@QBEPBDXZ")
+#pragma comment(linker, "/alternatename:?fe@Rva004A653D_E1@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
+#pragma comment(linker, "/alternatename:?fe@Rva004B8732_E1@@UAEXXZ=?rva004B8851@Rva004B8732@@UBE?AVAsciiString@@XZ")
+#pragma comment(linker, "/alternatename:?ff@Rva0045232D_E2@@UAEXXZ=?onDamage@AutoHealBehavior@@UAEXPAVDamageInfo@@@Z")
+#pragma comment(linker, "/alternatename:?fe@Rva0045232D_E1@@UAEXXZ=?Is_Valid@RegistryClass@@QAE_NXZ")

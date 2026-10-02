@@ -868,3 +868,9 @@ int StreamingArchiveFile::read( void *buffer, int bytes )
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1Rva00605CA7@@UAE@XZ=??1LocalFile@@UAE@XZ")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?wideOpenStub@LocalFile@@UAE_NPBGH@Z=?open@LocalFile@@UAE_NPBDH@Z")
+#pragma comment(linker, "/alternatename:?convertToRAMFile@File@@UAEPAV1@XZ=??0Coord2D@@QAE@XZ")

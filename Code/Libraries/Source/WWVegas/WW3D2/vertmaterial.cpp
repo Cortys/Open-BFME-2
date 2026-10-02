@@ -1114,3 +1114,13 @@ VertexMaterialClass * VertexMaterialClass::Get_Preset(PresetType type)
 	Presets[type]->Add_Ref();
 	return Presets[type];
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?Apply@ClassicEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSClassicEnvironmentMapperClass@@UAEXH@Z")
+#pragma comment(linker, "/alternatename:?Apply@EnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSEnvironmentMapperClass@@UAEXH@Z")
+#pragma comment(linker, "/alternatename:?Apply@WSClassicEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSClassicEnvironmentMapperClass@@UAEXH@Z")
+#pragma comment(linker, "/alternatename:?Apply@WSEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSEnvironmentMapperClass@@UAEXH@Z")
+#pragma comment(linker, "/alternatename:?Apply@GridEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSEnvironmentMapperClass@@UAEXH@Z")
+#pragma comment(linker, "/alternatename:?Apply@GridClassicEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSClassicEnvironmentMapperClass@@UAEXH@Z")

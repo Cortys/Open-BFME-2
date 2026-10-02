@@ -952,3 +952,10 @@ void Animatable3DObjClass::Set_HTree(HTreeClass * new_htree)
 
 
 // EOF - animobj.cpp
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?Cast_AABox@CompositeRenderObjClass@@UAE_NAAVAABoxCollisionTestClass@@@Z=?Set_Animation_Frame_Rate_Multiplier@Animatable3DObjClass@@UAEXM@Z")
+#pragma comment(linker, "/alternatename:?Cast_OBBox@CompositeRenderObjClass@@UAE_NAAVOBBoxCollisionTestClass@@@Z=?Peek_Animation_And_Info@Animatable3DObjClass@@UAEPAVHAnimClass@@AAMAAH10@Z")
+#pragma comment(linker, "/alternatename:?Intersect_AABox@CompositeRenderObjClass@@UAE_NAAVAABoxIntersectionTestClass@@@Z=?Is_Animation_Complete@Animatable3DObjClass@@UBE_NXZ")

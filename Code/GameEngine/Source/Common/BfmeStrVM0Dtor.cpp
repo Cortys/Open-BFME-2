@@ -443,3 +443,26 @@ void BfmeStrVM0::rva00049F94(AsciiString s)
 	AsciiString &dst = *(AsciiString *)&m_sF0;
 	dst = s;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v01@BfmeStrVM0@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?v03@BfmeStrVM0@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?v04@BfmeStrVM0@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
+#pragma comment(linker, "/alternatename:?v05@BfmeStrVM0@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
+#pragma comment(linker, "/alternatename:?v06@BfmeStrVM0@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?v08@BfmeStrVM0@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?v09@BfmeStrVM0@@UAEXXZ=?rva0025D9E3@BfmeStrVM0@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?v11@BfmeStrVM0@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
+#pragma comment(linker, "/alternatename:?v14@BfmeStrVM0@@UAEXXZ=?setHeight@Display@@UAEXI@Z")
+#pragma comment(linker, "/alternatename:?v15@BfmeStrVM0@@UAEXXZ=?setWidth@Display@@UAEXI@Z")
+#pragma comment(linker, "/alternatename:?v16@BfmeStrVM0@@UAEXXZ=?getNext@?$CategoryModuleClass@$0A@@FXParticleSystem@@QBEPBV12@XZ")
+#pragma comment(linker, "/alternatename:?v17@BfmeStrVM0@@UAEXXZ=?get@Rva001DB09DDwordField@@QBEHXZ")
+#pragma comment(linker, "/alternatename:?v19@BfmeStrVM0@@UAEXXZ=?get@Rva0057E556DwordField@@QBEHXZ")
+#pragma comment(linker, "/alternatename:?v21@BfmeStrVM0@@UAEXXZ=?get@Rva004C9990ByteField@@QBEEXZ")
+#pragma comment(linker, "/alternatename:?v23@BfmeStrVM0@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?v30@BfmeStrVM0@@UAEXXZ=?Set_Fog_Color@SceneClass@@UAEXABVVector3@@@Z")
+#pragma comment(linker, "/alternatename:?v35@BfmeStrVM0@@UAEXXZ=?rva0025C134@BfmeStrVM0@@UAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?v36@BfmeStrVM0@@UAEXXZ=?getData@NetWrapperCommandMsg@@QAEPAEXZ")
+#pragma comment(linker, "/alternatename:?v68@BfmeStrVM0@@UAEXXZ=?rva0025D19E@BfmeStrVM0@@QAEXXZ")

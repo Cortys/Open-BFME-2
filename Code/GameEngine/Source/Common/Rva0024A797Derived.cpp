@@ -600,3 +600,12 @@ public:
 Rva004DF7C2::~Rva004DF7C2()
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f2@Rva0033EEC9_B2@@UAEXXZ=?update@ProjectileStreamUpdate@@UAE?AW4UpdateSleepTime@@XZ")
+#pragma comment(linker, "/alternatename:?f2@Rva00486E18_B2@@UAEXXZ=?Rva004A6563Get@@YAHXZ")
+#pragma comment(linker, "/alternatename:?f2@Rva00488338_B2@@UAEXXZ=?update@DeletionUpdate@@UAE?AW4UpdateSleepTime@@XZ")
+#pragma comment(linker, "/alternatename:?f2@Rva0049FE7B_B2@@UAEXXZ=?update@ProneUpdate@@UAE?AW4UpdateSleepTime@@XZ")
+#pragma comment(linker, "/alternatename:?f2@Rva004A0C0E_B2@@UAEXXZ=?update@RadarUpdate@@UAE?AW4UpdateSleepTime@@XZ")

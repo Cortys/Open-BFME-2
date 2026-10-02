@@ -284,3 +284,10 @@ void bfmeEmitDockUpdateCtor(ObjectIDVector *v)
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0SupplyCenterDockUpdateBase@@QAE@PAVThing@@PBVModuleData@@@Z=??0DockUpdate@@QAE@PAVThing@@PBVModuleData@@@Z")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?unused@BehaviorModuleOther@@EAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?objectModuleAnchor@DockUpdate@@UAEXXZ=?name@Rva0058A171Named@@QBEPBDXZ")
+#pragma comment(linker, "/alternatename:?behaviorAnchor@DockUpdate@@UAEXXZ=?xfer@DockUpdate@@MAEXPAVXfer@@@Z")

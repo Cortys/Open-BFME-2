@@ -271,3 +271,13 @@ class Rva0035FF76 : public Rva001DBAC3Base { public: virtual ~Rva0035FF76(); int
 Rva0035FF76::~Rva0035FF76() { m_field = 0; }
 void famgenDelete(Rva0035FF76 *p) { delete p; }
 
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot1@Rva0035DCF9@@UAEXXZ=?init@MainMenuMediumScaleUpTransition@@UAEXPAVGameWindow@@@Z")
+#pragma comment(linker, "/alternatename:?slot5@Rva0035DCF9@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?slot7@Rva0035DCF9@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?slot1@Rva0035E00F@@UAEXXZ=?init@MainMenuScaleUpTransition@@UAEXPAVGameWindow@@@Z")
+#pragma comment(linker, "/alternatename:?slot5@Rva0035E00F@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?slot7@Rva0035E00F@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")

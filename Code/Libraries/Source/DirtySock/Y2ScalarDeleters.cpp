@@ -367,3 +367,11 @@ Gen0080ACD0::~Gen0080ACD0()
 
 	m_flag174 = 0;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot0@Gen0080ACD0@@UAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?slot1@Gen0080ACD0@@UAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?slot2@Gen0080ACD0@@UAEXXZ=?imbue@?$basic_streambuf@GV?$char_traits@G@_STL@@@_STL@@MAEXABVlocale@2@@Z")
+#pragma comment(linker, "/alternatename:?slot3@Gen0080ACD0@@UAEXXZ=?rva0080A680@BfmeThingUNC@@QAEXPAURva0080A680Input@@@Z")
