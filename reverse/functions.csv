@@ -47350,3 +47350,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva00567847@@QAE@II@Z,,0x00567847,25,Code/GameEngine/Source/Common/Rva0059B7CBCtor.cpp,matched,two-field ctor: bytes equal ??0Rva0059B7CB except the vtable VA 0xc6ced8
 ?rva002A1B1D@Rva002A1B1D@@QAEXPBURva002A1B1DChunk@@000@Z,,0x002A1B1D,54,Code/Libraries/Source/WWVegas/WWLib/Rva002A1B1D.cpp,matched,Four 12B chunk copies then List_base clear via rowed 0x002934A8
 ??1Rva0035BB4B@@UAE@XZ,,0x0035BB4B,368,Code/GameEngine/Source/Common/Rva0035BB4BDtor.cpp,matched,vptr 0x00816204 base Rva001E3624 EH states callers 0x001DB060 0x0035BCBE
+??_GRva0035BB4B@@UAEPAXI@Z,,0x0035BCBB,28,Code/GameEngine/Source/Common/Rva0035BB4BDtor.cpp,matched,deleting dtor via own ??1 unit vtable 0x00816204
