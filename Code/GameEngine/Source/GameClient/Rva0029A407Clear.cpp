@@ -30,3 +30,32 @@ void *Rva0029A407::rva0029B53C(unsigned int flag)
 		delete this;
 	return this;
 }
+
+class RGBColor
+{
+public:
+	int getAsInt() const;
+};
+
+class Shadow
+{
+public:
+	void rva00330995(int color);
+};
+
+class Rva0029A41A
+{
+public:
+	void rva0029A41A(RGBColor *color);
+private:
+	Shadow *m_shadow;
+};
+
+void Rva0029A41A::rva0029A41A(RGBColor *color)
+{
+	Shadow *shadow = m_shadow;
+	if (shadow != 0) {
+		int asInt = color->getAsInt();
+		shadow->rva00330995(asInt);
+	}
+}

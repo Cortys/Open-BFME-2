@@ -5377,3 +5377,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva003A0E08@Rva003A0E08@@QAEXABVRva0039D769@@@Z	0x003A0E08	102	partial	imul ebx ebx 0x18 vs lea eax ebx+ebx*2; lea ebx+esi vs lea esi+eax*8 exact size 102 t=20 model=muse-04 score=0.97 stash=reverse/attempts/0x003a0e08.cpp
 ?rva0025F3F3@Rva0025F3F3@@QAEXXZ	0x0025F3F3	19	partial	extra mov ecx esi between tail and clear calls ecx reload t=10 model=muse-04 score=0.9 stash=reverse/attempts/0x0025f3f3.cpp
 ?rva0058977F@Rva0058977F@@QAEXXZ	0x0058977F	124	blocked	virtual slot 0x38 plus this-0x18 base plus 5 calls frame 0x98 needs vtable and outer layout t=10 model=muse-04
+?rva0025FF8F@Rva0025FF8F@@QAEXXZ	0x0025FF8F	175	blocked	fabs import void vs double plus Debug slots 0x60 0x6c beyond known 0x5C plus 3 rets switch plus this-0x18 t=15 model=muse-04

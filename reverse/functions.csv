@@ -47295,3 +47295,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??4Rva00564E0D@@QAEAAV0@AAV0@@Z,,0x000898B0,92,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00564E0DAssign.cpp,matched,copyassign via rowed getter set releaseBuffer movsd
 ??0Rva00089822@@QAE@ABV0@@Z,,0x00089822,35,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00089822CopyCtor.cpp,matched,copyctor via rowed set mov head unblocks 0x0008A173
 ?rva00330995@Shadow@@QAEXH@Z,,0x00330995,162,Code/GameEngine/Source/GameClient/Shadow_setOpacity.cpp,matched,Shadow color setter sibling of setOpacity same TU offsets Float-ref
+?rva0029A41A@Rva0029A41A@@QAEXPAVRGBColor@@@Z,,0x0029A41A,28,Code/GameEngine/Source/GameClient/Rva0029A407Clear.cpp,matched,chain lane caller 0x002A4774 rowed callees getAsInt Shadow
