@@ -21,11 +21,6 @@ protected:
 	unsigned char m_pad[0x38 - 4];
 };
 
-// ??1Rva00253510@@UAE@XZ present-unmatched
-Rva00253510::~Rva00253510()
-{
-}
-
 class Rva003623E5Filter
 {
 public:
