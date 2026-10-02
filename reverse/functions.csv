@@ -48897,3 +48897,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005D4E63@Rva005D4E63@@QAEXXZ,,0x005D4E63,12,Code/GameEngine/Source/Common/Rva005D4E63Forward.cpp,matched,unlock null-guarded tail slot0 via plus0xC caller 0x005D4E86
 ?rva005C3EA5@Rva005C3EA5@@QAEXXZ,,0x005C3EA5,59,Code/GameEngine/Source/Common/Rva005C3EA5Show.cpp,matched,gap Show via rowed Fire plus empty fallback plus manager
 ?rva005C3EE0@Rva005C3EE0@@QAEXXZ,,0x005C3EE0,8,Code/GameEngine/Source/Common/Rva005C3EA5Show.cpp,matched,forwarder via member +4 to rowed 0x005C3EA5 caller 0x005680C3
+?rva005FC8FD@Rva005FC8FD@@QAEXXZ,,0x005FC8FD,227,Code/GameEngine/Source/Common/Rva005FC8FDApt.cpp,matched,triple Apt overlay setter via rowed AptCall
