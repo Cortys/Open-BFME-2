@@ -79,29 +79,9 @@ Bool PartitionFilterFlammable::allow(Object *objOther)
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
-FireSpreadUpdateModuleData::FireSpreadUpdateModuleData()
-{
-	m_minSpreadTryDelayData = 0;
-	m_maxSpreadTryDelayData = 0;
-	m_oclEmbers = NULL;
-	m_spreadTryRange = 0;
-}
-
-//-------------------------------------------------------------------------------------------------
-/*static*/ void FireSpreadUpdateModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "OCLEmbers",				INI::parseObjectCreationList,		NULL, offsetof( FireSpreadUpdateModuleData, m_oclEmbers ) },
-		{ "MinSpreadDelay",		INI::parseDurationUnsignedInt,	NULL, offsetof( FireSpreadUpdateModuleData, m_minSpreadTryDelayData ) },
-		{ "MaxSpreadDelay",		INI::parseDurationUnsignedInt,	NULL, offsetof( FireSpreadUpdateModuleData, m_maxSpreadTryDelayData ) },
-		{ "SpreadTryRange",		INI::parseReal,									NULL, offsetof( FireSpreadUpdateModuleData, m_spreadTryRange ) },
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-}
+// FireSpreadUpdateModuleData ctor and buildFieldParse are defined in their
+// owner units (FireSpreadUpdateModuleDataCtor.cpp, ModuleDataBuildFieldParse.cpp);
+// declared via FireSpreadUpdate.h, merely referenced here.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
