@@ -5321,3 +5321,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0044F881@Rva0044F881@@QAEHXZ	0x0044F881	277	blocked	register allocator wall frame 0x54 vs 0x58 flag in bl vs stack self-target swapped early-return shrink-wrap t=25 model=muse-07
 ?rva005CD938@Rva005CD938@@QAEXXZ	0x005CD938	118	blocked	object store and EH arm before rva vs after retail only scheduling t=10 model=muse-07 (stash 0.96 kept)
 ?Rva005CDC18Create@@YAPAPAVRva005CDB8F@@PAPAV1@PBUPayload@1@@Z	0x005CDC18	50	blocked	mov ebp-4 0 vs retail and ebp-4 0 plus push order 53B vs 50B t=12 model=muse-07 (stash 0.94 kept)
+?rva004723F2@Rva004723F2@@QAE_NPAVObject@@ABVAsciiString@@@Z	0x004723F2	82	blocked	push SIB base-index swapped tried 6 spellings t=12 model=muse-03 (stash 0.99 kept)
+?rva000903B0@Rva00090360@@QAEXXZ	0x000903B0	103	blocked	branch vs cmov for m_10 select and dec-at-top vs dec-at-bottom loop tried if-form and O2 and predec t=12 model=muse-03 (stash 0.93 kept)
