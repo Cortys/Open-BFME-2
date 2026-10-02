@@ -19,7 +19,10 @@ public:
 	char m_pad[0xFC];
 	int m_FC;
 };
-#define TheThing (*(Rva00DFEF10 *const *)0x00DFEF10)
+// Use the linked singleton's established Living World logic pointer name and
+// type; the local view below only describes the target's +0xFC integer read.
+class Rva002BA8F1Logic;
+extern Rva002BA8F1Logic *g_009FEF10;
 extern "C" __declspec(dllimport) long __cdecl time(long *value);
 namespace _STL
 {
@@ -71,7 +74,7 @@ unsigned Rva004EE037::rva004EE037()
 int Rva004EE037::rva004EE043()
 {
 	if (m_78 == -1)
-		return TheThing->m_FC;
+		return ((Rva00DFEF10 *)g_009FEF10)->m_FC;
 	return m_78;
 }
 
