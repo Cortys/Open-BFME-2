@@ -96,3 +96,29 @@ private:
 Rva005D3731::~Rva005D3731()
 {
 }
+
+// ?rva005D37F1@Rva005D37F1@@QAEX_N@Z retail 0x005D37F1 85B
+// Evidence: guard bool at +0x1c; _show else _hide reusing arg slot; prefix from +4 else g_Rva0107301CEmptyString; level at +0; SetState via rowed 0x0050E9FE; global TheRva00222A8BTarget; chain from 0x005D321D
+class Rva00222A8BTarget;
+extern Rva00222A8BTarget *TheRva00222A8BTarget;
+extern const char g_Rva0107301CEmptyString[];
+int __cdecl Rva0050E9FEAptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, const char **a0ptr);
+class Rva005D37F1
+{
+public:
+	void rva005D37F1(bool flag);
+private:
+	void *m_level00;
+	Rva005D2FD0Inner *m_inner04;
+	char m_pad08[0x1c - 0x08];
+	bool m_flag1c;
+};
+void Rva005D37F1::rva005D37F1(bool flag)
+{
+	if (flag == m_flag1c)
+		return;
+	const char *state = flag ? "_show" : "_hide";
+	const char *prefix = m_inner04 ? m_inner04->m_name : g_Rva0107301CEmptyString;
+	Rva0050E9FEAptCall(TheRva00222A8BTarget, m_level00, prefix, "SetState", &state);
+	m_flag1c = flag;
+}
