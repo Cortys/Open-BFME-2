@@ -24,12 +24,6 @@ class TextureClassWide : public TextureBaseClassWide
 {
 };
 
-// ?Add_Ref@TextureBaseClassWide@@ present-unmatched
-void TextureBaseClassWide::Add_Ref()
-{
-	++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
-}
-
 template<class T>
 class RefCountPtrWide
 {
@@ -284,10 +278,7 @@ template VectorClassWide<TextureStatisticsStructWide>::~VectorClassWide();
 
 static DynamicVectorClassWide<TextureStatisticsStructWide> texture_statistics_wide;
 
-void Record_Texture_Wide_Begin()
-{
-	texture_statistics_wide.Resize(0);
-}
+void Record_Texture_Wide_Begin();
 
 // Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
 // each one has the same function in that slot (vftable addresses from matched vptr
