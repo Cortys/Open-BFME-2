@@ -8,11 +8,25 @@
 // delete resolve via the rowed bodies; the GameMessageList base dtor resolves
 // via the existing 0x0030F57C pin until that dtor lands.
 
+class GameMessage
+{
+public:
+	enum Type
+	{
+		DUMMY_TYPE
+	};
+};
+
 class SubsystemInterface
 {
 public:
 	SubsystemInterface();
 	virtual ~SubsystemInterface();
+	virtual void init() = 0;
+	virtual void postProcessLoad();
+	virtual void reset() = 0;
+	virtual void update() = 0;
+	virtual void draw();
 
 private:
 	unsigned char m_pad[0xC - 4]; // +0x04..+0x0B
@@ -25,6 +39,13 @@ class GameMessageList : public SubsystemInterface
 public:
 	GameMessageList();
 	virtual ~GameMessageList();
+	virtual void init();
+	virtual void reset();
+	virtual void update();
+	virtual void appendMessage(GameMessage *msg);
+	virtual void insertMessage(GameMessage *msg, GameMessage *messageToInsertAfter);
+	virtual void removeMessage(GameMessage *msg);
+	virtual bool containsMessageOfType(GameMessage::Type type);
 
 	void *m_firstMessage; // +0x0C
 	void *m_lastMessage; // +0x10
@@ -42,6 +63,11 @@ class MessageStream : public GameMessageList
 public:
 	MessageStream();
 	virtual ~MessageStream();
+	virtual void init();
+	virtual void reset();
+	virtual void update();
+	virtual GameMessage *appendMessage(GameMessage::Type type);
+	virtual GameMessage *insertMessage(GameMessage::Type type, GameMessage *messageToInsertAfter);
 
 	struct TranslatorData
 	{
