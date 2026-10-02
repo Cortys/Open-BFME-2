@@ -7246,7 +7246,6 @@ _piStopReporting,,0x006A75E0,36,Code/GameEngine/Source/GameNetwork/GameSpy/peer/
 ??$_Construct@VBuddyRequest@@V1@@_STL@@YAXPAVBuddyRequest@@ABV1@@Z,,0x00550798,24,Code/GameEngine/Source/GameNetwork/GameSpy/BuddyRequestDequePushBackAux.cpp,matched,bfme1 GameSpy sweep exact placement; verbatim source import
 _PeerOperationsComplete,,0x0069FF40,95,Code/GameEngine/Source/GameNetwork/GameSpy/PeerOperationsComplete.cpp,matched,bfme1 GameSpy sweep exact placement; verbatim source import
 ?initTimes@BoneFXUpdate@@IAEXXZ,,0x0048750B,297,Code/GameEngine/Source/GameLogic/Object/Update/BoneFXUpdate_initTimes.cpp,matched,
-?recalculate@LineSegClass@@IAEXXZ,,0x0006A1E4,233,Code/GameEngineDevice/Source/W3DDevice/GameClient/LineSeg_recalculate.cpp,matched,
 ?resetKeys@Keyboard@@QAEXXZ,,0x00232BDD,16,Code/GameEngine/Source/GameClient/Input/KeyboardResetKeys.cpp,matched,Unbanked reconstruction; identity from two WndProc focus-change calls; independent Ghidra boundary; direct-call and tail-jump targets decoded from retail
 ?Rva00A6BD30FormatOctets@@YAPADPBEPADH@Z,,0x0066BD30,303,Code/Libraries/Source/DirtySock/Y2ProtoMangleHelpers.cpp,matched,bfme1 DirtySock formatter exact source; unique masked hit
 ?Rva007FFB50AddrText@@YAPADI@Z,,0x0066C020,186,Code/Libraries/Source/DirtySock/Y2ProtoMangleHelpers.cpp,matched,bfme1 DirtySock protomangle exact source; unique masked hit; callee pinned
@@ -47270,7 +47269,6 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0052A786@Rva0052A786@@QAEAAV1@PBUDelegateDesc@@@Z,,0x0052A786,59,Code/GameEngine/Source/Common/Rva00579E47Delegate.cpp,matched,delegate-wrapper ctor: bytes equal rva00579E47 except the impl vtable it installs
 ?rva0052A7C1@Rva0052A7C1@@QAEAAV1@PBUDelegateDesc@@@Z,,0x0052A7C1,59,Code/GameEngine/Source/Common/Rva00579E47Delegate.cpp,matched,delegate-wrapper ctor: bytes equal rva00579E47 except the impl vtable it installs
 ?Rva00498B8BGet@@YAEPAVObject@@@Z,,0x00498B8B,36,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498B8BCheck.cpp,matched,unlock free predicate flag 0x108 bit2 plus rowed call 0x0028B511
-?rva00498DF3@Rva00498DF3@@QAEXPAURva00498DF3Arg@@M@Z,,0x00498DF3,59,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498DF3Cmd.cpp,matched,unlock method plus rowed calls 0x00262DD3 0x0026C411
 ?rva004989DF@Rva004989D7@@QBE?AW4Relationship@@PBVPlayer@@@Z,,0x004989DF,15,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004989D7Get.cpp,matched,unlock forwards plus0C to rowed Player getRelationship
 ?rva00498831@GateOpenAndCloseBehavior@@QAEXH@Z,,0x00498831,30,Code/GameEngine/Source/GameLogic/Object/Behavior/GateOpenAndCloseBehaviorRva00498831.cpp,matched,gap lane GateOpenAndCloseBehavior m_40 offset from ctor shard
 ?rva00498707@Rva00498707@@QAEHXZ,,0x00498707,15,Code/GameEngine/Source/Common/Rva00498707Get.cpp,matched,leaf getter global compare m_44 vs m_0C
@@ -47657,3 +47655,5 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0040B14EConstruct@@YAXPAVRva0040AEE3@@ABV1@@Z,,0x0040B14E,45,Code/GameEngine/Source/Common/Thing/Rva0040AEE3Construct.cpp,matched,chain via rowed copy ctor 0x0040AEE3 placement new
 ?rva00596FF5@Rva00596F18@@QAEXE@Z,,0x00596FF5,28,Code/GameEngine/Source/Common/Rva00596FF5.cpp,matched,setter byte 0x64 clears 0x24 0x68 calls slot7 neighbours prove class
 ??1Rva005D791C@@UAE@XZ,,0x005D78E1,59,Code/GameEngine/Source/Common/Rva005D791CDtor.cpp,matched,vtable 0x00875DFC plus member 0x002F0B52 at +0x28 plus base 0x005EE30C
+?rva00498DF3@Rva00498DF3@@QAEXPAURva00498DF3Arg@@M@Z,,0x00498DF3,59,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498F46Cmd.cpp,matched,unlock method plus rowed calls 0x00262DD3 0x0026C411; row moved home from Rva00498DF3Cmd.cpp
+?recalculate@LineSegClass@@IAEXXZ,,0x0006A1E4,233,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DRoadBuffer.cpp,matched,row moved home from LineSeg_recalculate.cpp
