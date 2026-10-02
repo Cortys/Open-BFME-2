@@ -11,7 +11,42 @@
 // landed one commit at a time.
 
 #include "PreRTS.h"
-#include "GameLogic/Module/FireWeaponWhenDeadBehavior.h"
+
+// TU-scoped minimal view of FireWeaponWhenDeadBehavior. The Zero Hour module
+// header defines getDie/getUpgrade/performUpgradeFX/processUpgradeRemoval/
+// getModuleNameKey/getClassMemoryPool inline, so this TU emitted copies that
+// differ from the kept BFME2 bodies in FireWeaponWhenDeadBehavior.cpp
+// (LINK-COMDAT). Only the destructor is declared here, so no base copies are
+// emitted. The four vptrs (+0/+0x0C/+0x10/+0x18) and the protected virtual
+// base dtor (rowed ??1FireWeaponWhenDeadBehavior@@MAE@XZ at 0x0046089D) are
+// preserved, which is all the derived tail-jmp dtors below need.
+class FWWDDerivedBaseA
+{
+	virtual ~FWWDDerivedBaseA();
+	unsigned char m_pad[8];
+};
+
+class FWWDDerivedBaseB
+{
+	virtual ~FWWDDerivedBaseB();
+};
+
+class FWWDDerivedBaseC
+{
+	virtual ~FWWDDerivedBaseC();
+	unsigned char m_pad[4];
+};
+
+class FWWDDerivedBaseD
+{
+	virtual ~FWWDDerivedBaseD();
+};
+
+class FireWeaponWhenDeadBehavior : public FWWDDerivedBaseA, public FWWDDerivedBaseB, public FWWDDerivedBaseC, public FWWDDerivedBaseD
+{
+protected:
+	virtual ~FireWeaponWhenDeadBehavior();
+};
 
 // TU-scoped shims for ?loadPostProcess@Rva004B4CDF@@MAEXXZ @0x004B4D05 (25B,
 // slot 1 of primary vtable 0x00857C40; tail-jmp to pinned
