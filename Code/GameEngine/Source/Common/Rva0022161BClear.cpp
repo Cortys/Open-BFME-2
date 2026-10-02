@@ -27,3 +27,20 @@ void Rva0022161B::rva0022161B()
 		::operator delete(p);
 	}
 }
+// ??1Rva0022167C@@QAE@XZ, retail 0x0022167C 14B.
+// Non-virtual dtor of 8-byte polymorphic holder: stores vtable 0x00BE6BA8 at +0
+// then tail-jumps to member at +4 via Rva0022161B::rva0022161B at 0x0022161B.
+// Evidence: chain lane calls just-landed 0x0022161B plus 27 callers plus LINK BONUS 3 files plus vtable 0x00BE6BA8.
+extern const void *const g_00BE6BA8[];
+class __declspec(novtable) Rva0022167C {
+public:
+	~Rva0022167C();
+	virtual void _pure() = 0;
+private:
+	Rva0022161B m_at4;
+};
+Rva0022167C::~Rva0022167C()
+{
+	*(const void **)this = g_00BE6BA8;
+	m_at4.rva0022161B();
+}
