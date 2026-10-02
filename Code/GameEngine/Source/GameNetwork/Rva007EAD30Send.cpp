@@ -12,6 +12,11 @@ public:
 	virtual void sendPairD(char *a, char *b, int tag, void *self);
 };
 
+class Rva007EA320Owner;
+class Rva007EA380Owner;
+void __cdecl rva007EAD10BindCallback(Rva007EA320Owner *owner, void *first, void *second);
+void __cdecl rva007EADA0BindCallback(Rva007EA380Owner *owner, void *first, void *second);
+
 class Rva007EAD30Owner
 {
 public:
@@ -46,9 +51,8 @@ private:
 	int m_n;
 };
 
-// The message tags below are the retail-measured BFME2 literals (0x00A57CB0
-// for the D30 sender, 0x00A57D40 for the DC0 sender); the BFME1 donor spells
-// its own 0x00BEAD10/0x00BEADA0 here.
+// The D30 and DC0 sends target their matched BFME2 callbacks at 0x00A57CB0
+// and 0x00A57D40, respectively; the BFME1 donor uses different addresses.
 void Rva007EAD30Owner::send()
 {
 	prepare();
@@ -58,11 +62,13 @@ void Rva007EAD30Owner::send()
 		int n = m_n;
 		if (n <= 0)
 			n = 0x34C1;
-		m_iface->sendFlag(flag, n, 0x00A57CB0, this);
+		m_iface->sendFlag(flag, n,
+			reinterpret_cast<int>(&rva007EAD10BindCallback), this);
 	}
 	else
 	{
-		m_iface->sendPairC(m_buf30, m_buf70, 0x00A57CB0, this);
+		m_iface->sendPairC(m_buf30, m_buf70,
+			reinterpret_cast<int>(&rva007EAD10BindCallback), this);
 	}
 }
 
@@ -75,10 +81,12 @@ void Rva007EADC0Owner::send()
 		int n = m_n;
 		if (n <= 0)
 			n = 0x37DC;
-		m_iface->sendFlag(flag, n, 0x00A57D40, this);
+		m_iface->sendFlag(flag, n,
+			reinterpret_cast<int>(&rva007EADA0BindCallback), this);
 	}
 	else
 	{
-		m_iface->sendPairD(m_buf30, m_buf70, 0x00A57D40, this);
+		m_iface->sendPairD(m_buf30, m_buf70,
+			reinterpret_cast<int>(&rva007EADA0BindCallback), this);
 	}
 }
