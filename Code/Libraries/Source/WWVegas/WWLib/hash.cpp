@@ -2,6 +2,14 @@
 // WWLib HashTableClass, verbatim from the Generals Zero Hour reference
 // (GeneralsMD/.../WWVegas/WWLib/hash.cpp). /DNDEBUG makes WWASSERT a no-op; /MD
 // matches the retail CRT (_strcmpi). Hash() calls the already-matched CRC_Stringi.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "hash.h"
 #include "wwdebug.h"
