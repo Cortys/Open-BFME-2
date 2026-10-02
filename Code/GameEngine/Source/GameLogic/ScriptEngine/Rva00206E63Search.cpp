@@ -8,11 +8,21 @@
 
 #include "ascii_string.h"
 
-struct FieldParse;
+class INI;
+typedef void (*INIFieldParseProc)(INI *, void *, void *, const void *);
+struct FieldParse
+{
+	const char *token;
+	INIFieldParseProc parse;
+	const void *userData;
+	int offset;
+};
+
 class INI
 {
 public:
     void initFromINI(void *what, const FieldParse *table);
+    static void parseAsciiString(INI *ini, void *instance, void *store, const void *userData);
 };
 
 struct Rva003B39C7
@@ -31,7 +41,19 @@ struct Rva003B39C7
     ~Rva003B39C7();
 };
 
-extern const FieldParse g_00BE3908[];
+// Matched DIR32 references in the two ScriptEngine search rows place this
+// FieldParse table at VA 0x00BE3908 (.rdata). Four 16-byte entries plus the
+// zero sentinel occupy 0x50 bytes, ending at VA 0x00BE3958 where the HelpText
+// token begins. The local literals reproduce the target token text; their
+// pointer identity is not asserted. parseAsciiString is rowed at VA 0x0042F11E.
+// Target offsets agree with Rva003B39C7's recovered layout.
+extern const FieldParse g_00BE3908[] = {
+    { "InternalName", &INI::parseAsciiString, 0, 0x0C },
+    { "UIName", &INI::parseAsciiString, 0, 0x04 },
+    { "UIName2", &INI::parseAsciiString, 0, 0x08 },
+    { "HelpText", &INI::parseAsciiString, 0, 0x7C },
+    { 0, 0, 0, 0 }
+};
 
 struct Arg205A8D
 {
