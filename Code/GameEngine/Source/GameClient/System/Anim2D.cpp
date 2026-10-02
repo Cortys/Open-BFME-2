@@ -657,14 +657,13 @@ Anim2DTemplate* Anim2DCollection::getNextTemplate( Anim2DTemplate *animTemplate 
 // ------------------------------------------------------------------------------------------------
 /** Allocate a new template, assign name, and link to our internal list */
 // ------------------------------------------------------------------------------------------------
-// ?newTemplate@Anim2DCollection@@QAEPAVAnim2DTemplate@@ABVAsciiString@@@Z
+// newTemplate@Anim2DCollection@@QAEPAVAnim2DTemplate@@ABVAsciiString@@@Z
 // Readable body in Code/GameEngine/Source/GameClient/System/Anim2DCollectionTemplates.cpp.
 
 // ------------------------------------------------------------------------------------------------
 /** Register animation instance with us.  When an animation instance is registered it can
 	* be updated even when it's not drawn */
 // ------------------------------------------------------------------------------------------------
-// ?registerAnimation@Anim2DCollection@@QAEXPAVAnim2D@@@Z present-unmatched
 void Anim2DCollection::registerAnimation( Anim2D *anim )
 {
 
@@ -678,12 +677,12 @@ void Anim2DCollection::registerAnimation( Anim2D *anim )
 										 ("Registering animation instance, instance '%s' is already in a system\n",
 										 anim->getAnimTemplate()->getName().str()) );
 
-	// tie to our list
+	// tie to our list (retail head at +0x10; cf. unRegisterAnimation below)
 	anim->m_collectionSystemPrev = NULL;
-	anim->m_collectionSystemNext = m_instanceList;
-	if( m_instanceList )
-		m_instanceList->m_collectionSystemPrev = anim;
-	m_instanceList = anim;
+	anim->m_collectionSystemNext = *(Anim2D **)((unsigned char *)this + 0x10);
+	if( *(Anim2D **)((unsigned char *)this + 0x10) )
+		(*(Anim2D **)((unsigned char *)this + 0x10))->m_collectionSystemPrev = anim;
+	*(Anim2D **)((unsigned char *)this + 0x10) = anim;
 
 }  // end registerAnimation
 
