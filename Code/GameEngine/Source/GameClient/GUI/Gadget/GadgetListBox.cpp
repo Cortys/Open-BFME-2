@@ -403,3 +403,36 @@ void Rva003248F5Show(GameWindow *listbox, Bool hide)
 	if (slider != 0 && slider->winIsHidden() != hide)
 		slider->winHide(hide);
 }
+
+// ?Rva0032431FSet@@YAXPAVGameWindow@@HE@Z, retail 0x0032431F, 43 bytes.
+// Listbox row flag store: null-guards listbox and user data, bounds row
+// against Short listLength at +0x00, stores byte value at rows[row]+0x0C.
+// Rows hang at +0x18 with 16B stride like Rva0032434ASet. Caller at
+// 0x00322732 cleans 0xC (3 __cdecl args). Evidence: rowed winGetUserData.
+struct Rva2431FRow
+{
+	Int f00;
+	Int f04;
+	Int f08;
+	unsigned char f0C;
+	char pad0D[3];
+};
+
+struct Rva2431FData
+{
+	Short listLength;
+	char pad02[0x16];
+	Rva2431FRow *rows;
+};
+
+void Rva0032431FSet(GameWindow *listbox, Int row, unsigned char value)
+{
+	if (listbox == 0)
+		return;
+	Rva2431FData *data = (Rva2431FData *)listbox->winGetUserData();
+	if (data == 0)
+		return;
+	if ((unsigned)row >= (unsigned)data->listLength)
+		return;
+	data->rows[row].f0C = value;
+}
