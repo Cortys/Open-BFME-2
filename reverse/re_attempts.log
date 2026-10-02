@@ -5554,3 +5554,5 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva004BE3EF@Rva004BE3EF@@QAEXXZ	0x004BE3EF	142	blocked	extra implicit handle dtor plus or-state before vs after; donor ActiveBody_deleteAllParticleSystems shows implicit-only but retail needs explicit-only t=10 model=muse-03 (stash 0.94 kept)
 ?rva003B56DC@Rva003B56DC@@QAEXXZ	0x003B56DC	98	blocked	holder-vs-direct link unclear plus EBP frame and imul-vs-lea walls t=20 model=muse-03
 ?rva004D51ED@Transport@@QAEXGPAX@Z	0x004D51ED	44	partial	eax-edx swap plus add-combined vs SIB indexed t=15 model=muse-06 score=0.93 stash=reverse/attempts/0x004d51ed.cpp
+??0Rva0052CFB1@@QAE@ABVAsciiString@@@Z	0x0052CF0F	156	blocked	trailing int float store order movss hoist reorder-no-effect volatile-worse t=12 model=muse-01 (stash 0.93 kept)
+?_M_insert_overflow@?$vector@VRva003A6360Record@@V?$allocator@VRva003A6360Record@@@_STL@@@_STL@@IAEXPAVRva003A6360Record@@ABV3@ABU__false_type@2@I_N@Z	0x00565FC1	183	blocked	STLport instantiation 180B calls generic helpers not custom Fill-direct-copyctor t=15 model=muse-01
