@@ -1160,3 +1160,7 @@ HTreeClass * HTreeClass::Create_Interpolated(const HTreeClass * tree_base,
 	return new_tree;
 }
 
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_strcpy=?ji_00629176@@YAXXZ")

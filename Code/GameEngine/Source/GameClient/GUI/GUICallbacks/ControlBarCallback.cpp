@@ -23,3 +23,7 @@ WindowMsgHandledType ControlBarInput( GameWindow *window, UnsignedInt msg,
 {
 	return MSG_IGNORED;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?DebugGetDefaultCommands@@YAPBDXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")

@@ -63,3 +63,7 @@ FX_PARTICLE_PARSER(GpuDrawModuleTemplate, 0x00C6CA20)
 
 #undef FX_PARTICLE_PARSER
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?parse@HemisphericalEmissionVelocityModuleTemplate@FXParticleSystem@@QAEXPAVINI@@@Z=?parse@SphericalEmissionVelocityModuleTemplate@FXParticleSystem@@QAEXPAVINI@@@Z")

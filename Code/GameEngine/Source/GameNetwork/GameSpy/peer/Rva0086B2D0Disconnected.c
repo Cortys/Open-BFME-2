@@ -23,3 +23,7 @@ void Rva0086B2D0Disconnected(void *unused, const char *reason,
     connection->disconnected = 1;
     piAddDisconnectedCallback(connection, reason);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:_piChatDisconnectedA=_Rva0086B2D0Disconnected")

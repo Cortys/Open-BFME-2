@@ -15,3 +15,7 @@ template <> void _Construct<BfmePod80, BfmePod80>(BfmePod80 *__p, const BfmePod8
 	new ((void *)__p) Rva0051F87B((const Rva0051F87B &)__val);
 }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??$_Construct@URva00520211Element@@U1@@_STL@@YAXPAURva00520211Element@@ABU1@@Z=??$_Construct@UBfmePod80@@U1@@_STL@@YAXPAUBfmePod80@@ABU1@@Z")

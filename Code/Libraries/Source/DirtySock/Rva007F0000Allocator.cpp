@@ -19,3 +19,7 @@ void *Rva007F0000Alloc(int a)
 
 	return g_bfmeS1019->bfmeDoB1019(a, 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:_Rva007F0000Alloc=?Rva007F0000Alloc@@YAPAXH@Z")

@@ -839,3 +839,8 @@ HRESULT CImage::CreateFromGdiplusBitmap(Gdiplus::Bitmap &bmSrc) throw()
 }
 
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?GdiplusShutdown@Gdiplus@@YGXK@Z=?ji_00628f6e@@YAXXZ")
+#pragma comment(linker, "/alternatename:?GdiplusStartup@Gdiplus@@YG?AW4Status@1@PAKPBUGdiplusStartupInput@1@PAUGdiplusStartupOutput@1@@Z=?ji_00628f68@@YAXXZ")
