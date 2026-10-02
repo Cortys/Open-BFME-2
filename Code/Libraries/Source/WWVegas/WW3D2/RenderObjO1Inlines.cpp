@@ -4,6 +4,10 @@
 // retail holds one size-optimised (/O1) out-of-line copy of each header body (0x0006CF0C 0x0006CF2C 0x0006CF52 0x0006CECD).
 // The anchor below only makes this TU emit them out of line (qualified calls with inlining disabled); it is not retail code.
 //
+
+// rendobj.h: this unit holds the retail rows of Set_Hidden, Set_Animation_Hidden,
+// Set_Translucent and Is_Really_Visible; every other unit only declares them.
+#define BFME_RO_DEFINE_VISIBILITY
 #include "rendobj.h"	// the bfme2renderobj shim has to win the include guard
 #include "boxrobj.h"
 #include "w3d_util.h"
