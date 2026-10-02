@@ -494,3 +494,471 @@ void Rva0041331E::rva0041334B()
 	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
 	m_04Flag = 0;
 }
+
+// owner Rva0043B2E2: erase 0x0043B2E2, clear 0x0043B334
+class Rva0043B2E2
+{
+public:
+	void rva0043B2E2(void *node);
+	void rva0043B334();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva0043B2E2::rva0043B2E2(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva0043B2E2(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva0043B2E2::rva0043B334()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva0043B2E2(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva0043EA9C: erase 0x0043EA9C, clear 0x0043F124
+class Rva0043EA9C
+{
+public:
+	void rva0043EA9C(void *node);
+	void rva0043F124();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva0043EA9C::rva0043EA9C(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva0043EA9C(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva0043EA9C::rva0043F124()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva0043EA9C(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004D0545: erase 0x004D0545, clear 0x004D0F82
+class Rva004D0545
+{
+public:
+	void rva004D0545(void *node);
+	void rva004D0F82();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004D0545::rva004D0545(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004D0545(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004D0545::rva004D0F82()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004D0545(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004D0572: erase 0x004D0572, clear 0x004D0FAB
+class Rva004D0572
+{
+public:
+	void rva004D0572(void *node);
+	void rva004D0FAB();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004D0572::rva004D0572(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004D0572(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004D0572::rva004D0FAB()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004D0572(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004E7B13: erase 0x004E7B13, clear 0x004E7BAF
+class Rva004E7B13
+{
+public:
+	void rva004E7B13(void *node);
+	void rva004E7BAF();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004E7B13::rva004E7B13(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004E7B13(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004E7B13::rva004E7BAF()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004E7B13(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004E9419: erase 0x004E9419, clear 0x004E94A1
+class Rva004E9419
+{
+public:
+	void rva004E9419(void *node);
+	void rva004E94A1();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004E9419::rva004E9419(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004E9419(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004E9419::rva004E94A1()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004E9419(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004EA149: erase 0x004EA149, clear 0x004EA264
+class Rva004EA149
+{
+public:
+	void rva004EA149(void *node);
+	void rva004EA264();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004EA149::rva004EA149(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004EA149(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004EA149::rva004EA264()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004EA149(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004FCA9C: erase 0x004FCA9C, clear 0x004FCBCD
+class Rva004FCA9C
+{
+public:
+	void rva004FCA9C(void *node);
+	void rva004FCBCD();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004FCA9C::rva004FCA9C(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004FCA9C(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004FCA9C::rva004FCBCD()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004FCA9C(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004FCAC9: erase 0x004FCAC9, clear 0x004FCBF6
+class Rva004FCAC9
+{
+public:
+	void rva004FCAC9(void *node);
+	void rva004FCBF6();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004FCAC9::rva004FCAC9(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004FCAC9(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004FCAC9::rva004FCBF6()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004FCAC9(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004FCAF6: erase 0x004FCAF6, clear 0x004FCC1F
+class Rva004FCAF6
+{
+public:
+	void rva004FCAF6(void *node);
+	void rva004FCC1F();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004FCAF6::rva004FCAF6(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004FCAF6(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004FCAF6::rva004FCC1F()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004FCAF6(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004FF3DB: erase 0x004FF3DB, clear 0x004FF49F
+class Rva004FF3DB
+{
+public:
+	void rva004FF3DB(void *node);
+	void rva004FF49F();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004FF3DB::rva004FF3DB(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004FF3DB(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004FF3DB::rva004FF49F()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004FF3DB(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva004FF408: erase 0x004FF408, clear 0x004FF4C8
+class Rva004FF408
+{
+public:
+	void rva004FF408(void *node);
+	void rva004FF4C8();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva004FF408::rva004FF408(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva004FF408(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva004FF408::rva004FF4C8()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva004FF408(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+// owner Rva0053BAE1: erase 0x0053BAE1, clear 0x0053BCC4
+class Rva0053BAE1
+{
+public:
+	void rva0053BAE1(void *node);
+	void rva0053BCC4();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva0053BAE1::rva0053BAE1(void *node)
+{
+	if (!node)
+		return;
+	RvaTreeFamilyNode *cur = (RvaTreeFamilyNode *)node;
+	do {
+		rva0053BAE1(cur->m_child);
+		RvaTreeFamilyNode *next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
+
+void Rva0053BAE1::rva0053BCC4()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeFamilyHead *h = (RvaTreeFamilyHead *)m_00Head;
+	rva0053BAE1(h->m_first);
+	((RvaTreeFamilyHead *)m_00Head)->m_next = (RvaTreeFamilyHead *)m_00Head;
+	((RvaTreeFamilyHead *)m_00Head)->m_first = 0;
+	((RvaTreeFamilyHead *)m_00Head)->m_child = (RvaTreeFamilyHead *)m_00Head;
+	m_04Flag = 0;
+}
