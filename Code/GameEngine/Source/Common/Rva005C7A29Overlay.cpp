@@ -62,6 +62,7 @@ class Rva005C7C5D
 {
 public:
 	void rva005C7C5D(bool show);
+	void rva005C7C65(bool show);
 
 private:
 	char _pad0[4];
@@ -71,4 +72,9 @@ private:
 void Rva005C7C5D::rva005C7C5D(bool show)
 {
 	return m_04->rva005C7A29(show);
+}
+
+void Rva005C7C5D::rva005C7C65(bool show)
+{
+	return m_04->rva005C7A85(show);
 }

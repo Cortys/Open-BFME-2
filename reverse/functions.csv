@@ -48646,3 +48646,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005C7A29@Rva005C7A29@@QAEX_N@Z,,0x005C7A29,92,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,overlay show hide via AptCall 0x0050E9FE caller 0x005C7C5D
 ?rva005C7C5D@Rva005C7C5D@@QAEX_N@Z,,0x005C7C5D,8,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,thunk loads this plus 4 tail-jmps to 0x005C7A29
 ?rva005C7A85@Rva005C7A29@@QAEX_N@Z,,0x005C7A85,92,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,flash overlay via AptCall 0x0050E9FE sibling of 0x005C7A29
+?rva005C7C65@Rva005C7C5D@@QAEX_N@Z,,0x005C7C65,8,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,thunk to flash 0x005C7A85 sibling of 0x005C7C5D
