@@ -10,7 +10,66 @@
 #include "ascii_string.h"
 
 
-extern const char *g_00DB9058[];
+// g_00DB9058: VA 0x00DB9058 (.data); retail's 56 string pointers are bounded
+// by the lookup's 0..0x37 loop. compareNoCase observes text, not literal addresses.
+const char *g_00DB9058[] = {
+	"None",
+	"Normal",
+	"Arrow",
+	"Scroll",
+	"Target",
+	"Move",
+	"AttackMove",
+	"AttackObj",
+	"ForceAttackObj",
+	"ForceAttackGround",
+	"Build",
+	"InvalidBuild",
+	"GenericInvalid",
+	"Select",
+	"EnterFriendly",
+	"EnterAggressive",
+	"SetRallyPoint",
+	"GetRepaired",
+	"GetHealed",
+	"DoRepair",
+	"ResumeConstruction",
+	"CaptureBuilding",
+	"SnipeVehicle",
+	"LaserGuidedMissiles",
+	"TankHunterTNTAttack",
+	"StabAttack",
+	"PlaceRemoteCharge",
+	"PlaceTimedCharge",
+	"Defector",
+	"Dock",
+	"FireFlame",
+	"FireBomb",
+	"PlaceBeacon",
+	"DisguiseAsVehicle",
+	"Waypoint",
+	"OutRange",
+	"StabAttackInvalid",
+	"PlaceChargeInvalid",
+	"Hack",
+	"ParticleUplinkCannon",
+	"LivingWorldZoom",
+	"JoinHorde",
+	"WeaponUpgrade",
+	"ArmorUpgrade",
+	"Beam",
+	"Bombard",
+	"Axe",
+	"EvilAbilityObj",
+	"PickUp",
+	"WallInsufficientFunds",
+	"WallInvalidTerrain",
+	"WallExceedsDistance",
+	"WallBlockedByObstacle",
+	"SendToDeath",
+	"DeliverRing",
+	"Patrol"
+};
 
 int __stdcall Rva001EF291Find(const AsciiString &s)
 {
