@@ -314,7 +314,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void AutoHealBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void AutoHealBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BF3CE0), 0);
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 8);
@@ -400,7 +400,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void UpgradeDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void UpgradeDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE52EGet()), 8);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BF0958), 0);
@@ -412,7 +412,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void CrushDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void CrushDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE52EGet()), 8);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BF0868), 0);
@@ -463,7 +463,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void SpecialPowerCompletionDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void SpecialPowerCompletionDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE52EGet()), 8);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BF0928), 0);
@@ -686,7 +686,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void SpawnBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void SpawnBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 0x5C);
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE52EGet()), 0x2C);
@@ -775,7 +775,7 @@ public:
 // image-wide); the CaveContain pool key plus name getter are rowed in their
 // own file-unit. The TimeForFullHeal factory shares the class ctor (fold);
 // that name stays unclaimed.
-void CaveContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void CaveContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	OpenContainModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BEEAC8), 0);
@@ -803,7 +803,7 @@ void OpenContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
 // table at 0x00BF3360 (five of five BFME1 GarrisonContain fields in order).
 // The owning factory at 0x00254F90 pushes this proc's VA (unique
 // image-wide). Row supersedes the chained pin; HordeGarrison chains above.
-void GarrisonContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void GarrisonContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	OpenContainModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BF3360), 0);
@@ -903,7 +903,7 @@ public:
 // 0x002537DC pushes this proc VA and calls the pinned ctor at 0x253737;
 // ModuleFactory registers the FireWeaponWhenDeadBehavior literal with that
 // factory and the proc ends where the factory begins. Row supersedes pin.
-void FireWeaponWhenDeadBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void FireWeaponWhenDeadBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(g_00BF0508FireWeaponWhenDeadBehaviorFieldParse, 0);
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 8);
@@ -930,7 +930,7 @@ public:
 // votes ReactionWeaponPristine to FireWeaponWhenDamagedBehaviorModuleData;
 // behavior pool key at 0x4827AA names the family. Row supersedes pin when
 // the factory lands.
-void FireWeaponWhenDamagedBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void FireWeaponWhenDamagedBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BF0400), 0);
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 8);
@@ -1075,3 +1075,22 @@ void FellBeastSwoopPowerModuleData::buildFieldParse(MultiIniFieldParse &parse)
 #pragma comment(linker, "/alternatename:?SpecialAbilityUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@TeleportToCasterSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
 #pragma comment(linker, "/alternatename:?SupplyCenterProductionExitUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@StoreObjectsSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
 #pragma comment(linker, "/alternatename:?SupplyWarehouseDockUpdateModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@SupplyWarehouseDockUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+
+// These functions are header inlines; their ordinary owner definitions
+// collided with select-any copies. The anchor keeps this unit's row copies;
+// it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeModuleDataBuildFieldParseChainedInlineAnchor@@YAXPAVMultiIniFieldParse@@@Z absent-from-retail
+void _bfmeModuleDataBuildFieldParseChainedInlineAnchor(MultiIniFieldParse *parse)
+{
+	AutoHealBehaviorModuleData::buildFieldParse(*parse);
+	CaveContainModuleData::buildFieldParse(*parse);
+	CrushDieModuleData::buildFieldParse(*parse);
+	FireWeaponWhenDamagedBehaviorModuleData::buildFieldParse(*parse);
+	FireWeaponWhenDeadBehaviorModuleData::buildFieldParse(*parse);
+	GarrisonContainModuleData::buildFieldParse(*parse);
+	SpawnBehaviorModuleData::buildFieldParse(*parse);
+	SpecialPowerCompletionDieModuleData::buildFieldParse(*parse);
+	UpgradeDieModuleData::buildFieldParse(*parse);
+}
+#pragma inline_depth()
