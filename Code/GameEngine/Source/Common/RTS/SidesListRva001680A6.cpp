@@ -6,6 +6,7 @@ class Rva001680A6
 {
 public:
 	void rva001680A6(int index, void *src, float f);
+	void rva001680ED(int index, void *dst, float *out);
 private:
 	char m_pad00[0x12];
 	unsigned char m_12;
@@ -29,4 +30,24 @@ void Rva001680A6::rva001680A6(int index, void *src, float f)
 		m_d8[index] = f;
 	}
 	m_12 &= (unsigned char)0xFD;
+}
+void Rva001680A6::rva001680ED(int index, void *dst, float *out)
+{
+	if ((unsigned int)index < (unsigned int)m_d0)
+	{
+		float *src = (float *)((char *)m_c8 + index * 12);
+		float *d = (float *)dst;
+		d[0] = src[0];
+		((int *)d)[1] = ((int *)src)[1];
+		((int *)d)[2] = ((int *)src)[2];
+		*out = m_d8[index];
+	}
+	else
+	{
+		float *d = (float *)dst;
+		d[0] = 0.0f;
+		d[1] = 0.0f;
+		d[2] = 0.0f;
+		*out = 0.0f;
+	}
 }
