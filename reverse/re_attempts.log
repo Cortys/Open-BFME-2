@@ -5956,3 +5956,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva005E0E99@Rva005E0E99@@QAEX_N@Z	0x005E0E99	72	partial	param in al with reload vs retail bl kept in ebx t=18 model=muse-spark score=0.93 stash=reverse/attempts/0x005e0e99.cpp
 ??1Rva005E0B0F@@UAE@XZ	0x005E0B0F	128	partial	missing push 0 before first forwarder and missing EH state 2 before Release t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x005e0b0f.cpp
 ?rva003A3763@Rva000427195@@QAEAAUTreeHintPayload00207343@@ABVAsciiString@@@Z	0x003A3763	121	blocked	hashtableAsciiString-index 110B-vs-121B 8-structural-regions missing flag-state-stores and find-insert-tail shape STLport-vs-custom-table wall t=5 model=muse-09
+?Rva000754DEInit@@YAXXZ	0x000754DE	363	blocked	mov ecx eax plus add eax 4 missing for refs addr mode dec cmp via ecx+4 not eax tried inline decrement variants t=12 model=muse-04 (stash 0.96 kept)
