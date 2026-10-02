@@ -14,11 +14,13 @@ struct Rva002E36D5Holder
 {
 	Rva002E36D5Node *m_head;
 };
-#define Rva00DBD0F4Holder (*(Rva002E36D5Holder **)0x00DBD0F4)
+
+struct Rva002E373CHolder;
+extern Rva002E373CHolder *g_Va00DBD0F4;
 
 void *Rva002E36D5Find(int id)
 {
-	Rva002E36D5Node *cur = Rva00DBD0F4Holder->m_head;
+	Rva002E36D5Node *cur = ((Rva002E36D5Holder *)g_Va00DBD0F4)->m_head;
 	while (cur != 0) {
 		if (cur->m_id44 == id)
 			break;
