@@ -3138,3 +3138,45 @@ void Rva0060006A::clear()
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?f1@Rva00494A97_S1@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+// ?rva0057C339@Rva0057C339@@QAEXABVAsciiString@@ABUTreeHintRef00217D4C@@@Z @ 0x0057C339 91B gap via rowed AptCall TreeHintRef copy.
+// Apt LoadContent loader with TreeHintRef member +0x14 flag +0x18 level +0x0 team +0x4.
+// Evidence: TreeHintRef copy 0x002174A4, Version? no, AptCall 0x0050E9FE, LoadContent literal,
+// empty g_Rva0107301CEmptyString, manager TheRva00222A8BTarget, caller jmp 0x0057C397.
+class AsciiString;
+struct TreeHintRef00217D4C
+{
+    void *m_ptr;
+    TreeHintRef00217D4C &operator=(const TreeHintRef00217D4C &other);
+};
+class Rva00222A8BTarget;
+extern Rva00222A8BTarget *TheRva00222A8BTarget;
+extern const char g_Rva0107301CEmptyString[];
+int Rva0050E9FEAptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, const char **a0ptr);
+class Rva0057C339
+{
+public:
+    void rva0057C339(const AsciiString &a1, const TreeHintRef00217D4C &a2);
+private:
+    void *m_level;
+    char *m_teamData;
+    char m_pad08[0x14 - 8];
+    TreeHintRef00217D4C m_hint;
+    unsigned char m_flag;
+};
+void Rva0057C339::rva0057C339(const AsciiString &a1, const TreeHintRef00217D4C &a2)
+{
+    m_hint = a2;
+    const char *team1;
+    const char *a1data = *(char *const *)&a1;
+    if (a1data)
+        team1 = a1data + 8;
+    else
+        team1 = g_Rva0107301CEmptyString;
+    const char *team2;
+    if (m_teamData)
+        team2 = m_teamData + 8;
+    else
+        team2 = g_Rva0107301CEmptyString;
+    Rva0050E9FEAptCall(TheRva00222A8BTarget, m_level, team2, "LoadContent", &team1);
+    m_flag = 1;
+}

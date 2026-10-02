@@ -48475,3 +48475,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005695F2@Rva00569543@@QAEXPBVModuleData@@@Z,,0x005695F2,54,Code/GameEngine/Source/Common/Thing/Rva00569543DedupPush.cpp,matched,sorted dedup insert via rowed lower_bound 0x00568F5B and rowed insert 0x003B67B3
 ?rva005796B3@Rva005796B3@@QAEXPAX@Z,,0x005796B3,73,Code/GameEngine/Source/Common/Rva005796B3Method.cpp,matched,unlock setter via caller 0x0042DBFC and rowed callees with two pins
 ??0Rva00496ADE@@QAE@XZ,,0x00496ADE,78,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496ADE.cpp,matched,ctor via shared AsciiString defaults caller 0x00497174
+?rva0057C339@Rva0057C339@@QAEXABVAsciiString@@ABUTreeHintRef00217D4C@@@Z,,0x0057C339,91,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,gap loader via TreeHintRef copy AptCall LoadContent flag 0x18
