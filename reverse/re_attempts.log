@@ -5475,3 +5475,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??1Rva002186EB@@UAE@XZ	0x00218744	67	blocked	dtor vtable 0x7C6F20 vs ctor 0x7E5B10 plus AsciiString map layout unclear t=10 model=muse-06
 ??1Rva004D58DE@@UAE@XZ	0x004D5902	35	partial	scalar delete vs retail vector delete 0x2FD80; EHs-c- gives exact 35B but scalar and EHsc gives vector but 64B EH frame; shape-lever throw operator delete not tried t=15 model=muse-06 score=0.93 stash=reverse/attempts/0x004d5902.cpp
 ?rva000556AB@Rva000556AB@@QAE?AUOut@2@ABVRva00051C6C@@@Z	0x000556AB	112	blocked	frameless esp retail vs ebp frame ours plus bucket divmod shape differs with 8 structural regions t=8 model=muse-06
+?d_009acb60@@YAXXZ	0x001BD550	28	blocked	YAXXZ-pin-vs-YAHPAE-honest-wrapper ESI-ABI-matches-but-neg-sbb-vs-test-jne-plus-mov-eax-edi t=25 model=muse-13
