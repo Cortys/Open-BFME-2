@@ -17,8 +17,12 @@
  */
 // STLport 4.5.3: reference X4Iostream.cpp global streams and filebuf factories.
 // Modified for BFME2: factories omit exception wrappers as in the matched retail.
+// _S_initialize retains the BFME1 donor body at 10af19f44a. Its independent
+// BFME2 start (0x166C0) and complete 977 bytes agree. Its four stdio
+// constructors call the RTTI-identified base at
+// 0x1CDB0. The stream globals and class layouts remain the STLport donor's.
 // Original stream context also emits the complete920B wide seekoff at149F0.
-// cl: /O2 /GR- /EHsc- /Ireference/open-bfme-1/vendor/stlport/src /Ireference/open-bfme-1/vendor/stlport /Ireference/open-bfme-1/vendor/stlport/stl /Ireference/open-bfme-1/vendor/stlport/using /Ireference/open-bfme-1/Code/stlport
+// cl: /MD /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/vendor/stlport/src /Ireference/open-bfme-1/vendor/stlport /Ireference/open-bfme-1/vendor/stlport/stl /Ireference/open-bfme-1/vendor/stlport/using /Ireference/open-bfme-1/Code/stlport
 #include "stlport_prefix.h"
 #include <istream>
 #include <stl/_fstream.h>
@@ -142,3 +146,69 @@ _STLP_END_NAMESPACE
 // Retail's data references in this unit's matched rows land on globals defined
 // under other spellings at the same addresses (addend-corrected DIR32). Bind them.
 #pragma comment(linker, "/alternatename:?_S_count@_Loc_init@ios_base@_STL@@0JA=?_S_count@_Loc_init@ios_base@_STL@@2JA")
+
+_STLP_BEGIN_NAMESPACE
+bool ios_base::_S_was_synced = true;
+void  _STLP_CALL ios_base::_S_initialize()
+{
+# if !defined(_STLP_HAS_NO_NAMESPACES) && !defined(_STLP_WINCE)
+  using _SgI::stdio_istreambuf;
+  using _SgI::stdio_ostreambuf;
+# endif
+  if (Init::_S_count > 0)
+    return;
+
+  // Run constructors for the four narrow stream objects.
+  // check with locale system
+  if (_Loc_init::_S_count == 0) {
+    locale::_S_initialize();
+  }
+  istream* ptr_cin  = new((void*)&cin)  istream(0);
+  ostream* ptr_cout = new((void*)&cout) ostream(0);
+  ostream* ptr_cerr = new((void*)&cerr) ostream(0);
+  ostream* ptr_clog = new((void*)&clog) ostream(0);
+
+  // Initialize the four narrow stream objects.
+  if (_S_was_synced) {
+    ptr_cin->init(new stdio_istreambuf(stdin));
+    ptr_cout->init(new stdio_ostreambuf(stdout));
+    ptr_cerr->init(new stdio_ostreambuf(stderr));
+    ptr_clog->init(new stdio_ostreambuf(stderr));
+  } else {
+    ptr_cin->init(_Stl_create_filebuf(stdin, ios_base::in));
+    ptr_cin->init(_Stl_create_filebuf(stdout, ios_base::out));
+    ptr_cin->init(_Stl_create_filebuf(stderr, ios_base::out));
+    ptr_cin->init(_Stl_create_filebuf(stderr, ios_base::out));
+  }
+  ptr_cin->tie(ptr_cout);
+  ptr_cerr->setf(ios_base::unitbuf);
+
+  // Run constructors for the four wide stream objects.
+  wistream* ptr_wcin  = new(&wcin)  wistream(0);
+  wostream* ptr_wcout = new(&wcout) wostream(0);
+  wostream* ptr_wcerr = new(&wcerr) wostream(0);
+  wostream* ptr_wclog = new(&wclog) wostream(0);
+
+  wfilebuf* win  = _Stl_create_wfilebuf(stdin, ios_base::in);
+  wfilebuf* wout = _Stl_create_wfilebuf(stdout, ios_base::out);
+  wfilebuf* werr = _Stl_create_wfilebuf(stderr, ios_base::out);
+  wfilebuf* wlog = _Stl_create_wfilebuf(stderr, ios_base::out);
+
+  ptr_wcin->init(win);
+  ptr_wcout->init(wout);
+  ptr_wcerr->init(werr);
+  ptr_wclog->init(wlog);
+
+  ptr_wcin->tie(ptr_wcout);
+  ptr_wcerr->setf(ios_base::unitbuf);
+
+  --Init::_S_count;
+}
+
+_STLP_END_NAMESPACE
+
+// The two derived stdio destructors fold to the recovered base destructor:
+// all three retail stdio vtables use its deleting destructor at 0x1CED0.
+// Header-generated deleting wrappers call these spellings with the same ABI.
+#pragma comment(linker, "/alternatename:??1stdio_istreambuf@_SgI@@UAE@XZ=??1stdio_streambuf_base@_SgI@@UAE@XZ")
+#pragma comment(linker, "/alternatename:??1stdio_ostreambuf@_SgI@@UAE@XZ=??1stdio_streambuf_base@_SgI@@UAE@XZ")

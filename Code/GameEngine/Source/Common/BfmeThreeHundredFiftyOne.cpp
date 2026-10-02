@@ -81,3 +81,9 @@ BfmeThingTL *BfmeThingTL::bfmeInitTL(void *what)
 // Retail's data references in this unit's matched rows land on globals defined
 // under other spellings at the same addresses (addend-corrected DIR32). Bind them.
 #pragma comment(linker, "/alternatename:_bfmeVftTL=??_7stdio_streambuf_base@_SgI@@6B@")
+
+// RTTI names the vtable installed by bfmeInitTL as _SgI::stdio_streambuf_base.
+// Retail callers in ios_base::_S_initialize and sync_with_stdio invoke this
+// 32-byte body at RVA 0x0001CDB0: one FILE* argument, thiscall, ret 4, and
+// this returned in EAX. The existing opaque view has that same ABI and layout.
+#pragma comment(linker, "/alternatename:??0stdio_streambuf_base@_SgI@@QAE@PAU_iobuf@@@Z=?bfmeInitTL@BfmeThingTL@@QAEPAV1@PAX@Z")
