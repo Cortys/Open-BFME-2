@@ -26,7 +26,7 @@ public:
 	};
 };
 
-FastCriticalSectionClass::LockClass::LockClass(FastCriticalSectionClass &critical_section) : cs(critical_section)
+inline FastCriticalSectionClass::LockClass::LockClass(FastCriticalSectionClass &critical_section) : cs(critical_section)
 {
 	spin(&cs.Flag);
 }
@@ -45,3 +45,12 @@ __declspec(noinline) FastCriticalSectionClass::LockClass *forceFastCriticalLockC
 {
 	return new (storage) FastCriticalSectionClass::LockClass(section);
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitFastCriticalSectionLockCtor@@YAXPAVLockClass@FastCriticalSectionClass@@AAV2@@Z present-unmatched
+void bfmeEmitFastCriticalSectionLockCtor(
+	FastCriticalSectionClass::LockClass *p, FastCriticalSectionClass &section)
+{
+	p->LockClass::LockClass(section);
+}
+#pragma inline_depth()
