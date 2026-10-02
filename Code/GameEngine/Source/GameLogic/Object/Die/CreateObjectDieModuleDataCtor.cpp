@@ -67,7 +67,3 @@ CreateObjectDieModuleData::CreateObjectDieModuleData()
 
 // CreateObjectDieModuleData::~CreateObjectDieModuleData: defined in CreateObjectDieModuleDataDtor.cpp (its row's unit).
 
-// ??1Rva00253510@@UAE@XZ present-unmatched
-Rva00253510::~Rva00253510()
-{
-}
