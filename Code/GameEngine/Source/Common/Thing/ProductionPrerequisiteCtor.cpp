@@ -82,7 +82,7 @@ namespace _STL
 // tag (rowed at 0x002CF594). noinline keeps both out of line so erase and
 // the vector dtor keep retail's shape; the bodies are verbatim generic.
 template <>
-__declspec(noinline) void _Destroy<ProductionPrerequisite::PrereqUnitRec *>(ProductionPrerequisite::PrereqUnitRec *__first, ProductionPrerequisite::PrereqUnitRec *__last)
+inline __declspec(noinline) void _Destroy<ProductionPrerequisite::PrereqUnitRec *>(ProductionPrerequisite::PrereqUnitRec *__first, ProductionPrerequisite::PrereqUnitRec *__last)
 {
 	for ( ; __first != __last; ++__first)
 		_Destroy(&*__first);
@@ -97,7 +97,7 @@ __declspec(noinline) ProductionPrerequisite::PrereqUnitRec *__copy_ptrs<Producti
 
 }
 
-ProductionPrerequisite::PrereqUnitRec::~PrereqUnitRec()
+inline __declspec(noinline) ProductionPrerequisite::PrereqUnitRec::~PrereqUnitRec()
 {
 }
 
@@ -115,3 +115,12 @@ ProductionPrerequisite::ProductionPrerequisite()
 ProductionPrerequisite::~ProductionPrerequisite()
 {
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitProductionPrerequisiteInlines@@YAXPAUPrereqUnitRec@ProductionPrerequisite@@@Z present-unmatched
+void bfmeEmitProductionPrerequisiteInlines(ProductionPrerequisite::PrereqUnitRec *p)
+{
+	p->ProductionPrerequisite::PrereqUnitRec::~PrereqUnitRec();
+	_STL::_Destroy(p, p);
+}
+#pragma inline_depth()
