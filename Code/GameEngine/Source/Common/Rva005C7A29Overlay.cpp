@@ -16,6 +16,7 @@ class Rva005C7A29
 {
 public:
 	void rva005C7A29(bool show);
+	void rva005C7A85(bool show);
 
 private:
 	char _pad0[8];
@@ -25,6 +26,7 @@ private:
 	bool m_4C;
 	char _pad2[7];
 	bool m_54;
+	bool m_55;
 };
 
 void Rva005C7A29::rva005C7A29(bool show)
@@ -39,6 +41,21 @@ void Rva005C7A29::rva005C7A29(bool show)
 	const char *prefix = m_0C ? (const char *)((char *)m_0C + 8) : g_Rva0107301CEmptyString;
 	Rva0050E9FEAptCall(TheRva00222A8BTarget, m_08, prefix, "SetAutoAbilityOverlayState", &which);
 	m_54 = show;
+}
+
+// ?rva005C7A85@Rva005C7A29@@QAEX_N@Z @0x005C7A85 (92B) FlashEffect state +0x55 same pattern.
+void Rva005C7A29::rva005C7A85(bool show)
+{
+	if (!m_4C)
+		return;
+	if (show == m_55)
+		return;
+	const char *which = "_show";
+	if (!show)
+		which = "_hide";
+	const char *prefix = m_0C ? (const char *)((char *)m_0C + 8) : g_Rva0107301CEmptyString;
+	Rva0050E9FEAptCall(TheRva00222A8BTarget, m_08, prefix, "SetFlashEffectState", &which);
+	m_55 = show;
 }
 
 class Rva005C7C5D
