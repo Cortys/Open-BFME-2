@@ -40,6 +40,7 @@ struct Rva0043B2E2 {
   void rva0043B3A1(Rva0043B2E2Node *&out, Rva0043B2E2Node *a, Rva0043B2E2Node *b, const int *v, Rva0043B2E2Node *c);
   iterator rva0043B3A1Hidden(Rva0043B2E2Node *a, Rva0043B2E2Node *b, const int *v, Rva0043B2E2Node *c);
   _STL::pair<iterator, bool> rva0043B429(const V &v);
+  iterator rva0043B535(iterator position, const V &v);
 };
 void Rva0043B2E2::rva0043B35D(iterator first, iterator last) {
   typedef V VV;
@@ -119,6 +120,67 @@ _STL::pair<Rva0043B2E2::iterator, bool> Rva0043B2E2::rva0043B429(const V &v)
 		return _STL::pair<iterator, bool>(rva0043B3A1Hidden(x, y, (const int *)&v, 0), true);
 	}
 	return _STL::pair<iterator, bool>(j, false);
+}
+
+// ?rva0043B535@Rva0043B2E2@@QAE?AU?$_Rb_tree_iterator@U?$pair@$$CBHPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@U23@ABU?$pair@$$CBHPAX@3@@Z @0x0043B535 294B via STLPort hint insert_unique plus rowed insert and _M_insert
+// Evidence: chain packet calls rowed 0x0043B3A1 plus rowed 0x0043B429 plus rowed increment 0x00024250 decrement 0x000242C0; ret 0xC hidden iterator; vendor/stlport/stl/_tree.c insert_unique(iterator position const V&)
+Rva0043B2E2::iterator Rva0043B2E2::rva0043B535(iterator position, const V &v)
+{
+	if (position._M_node == (::_STL::_Rb_tree_node_base *)header00->left08) {
+		if (count04 <= 0)
+			return rva0043B429(v).first;
+		if (_STL::less<int>()(v.first, ((Rva0043B2E2Node *)position._M_node)->m_key10))
+			return rva0043B3A1Hidden((Rva0043B2E2Node *)position._M_node, (Rva0043B2E2Node *)position._M_node, (const int *)&v, 0);
+		else {
+			bool comp_pos_v = _STL::less<int>()(((Rva0043B2E2Node *)position._M_node)->m_key10, v.first);
+			if (!comp_pos_v)
+				return position;
+			iterator after = position;
+			++after;
+			if (after._M_node == (::_STL::_Rb_tree_node_base *)header00)
+				return rva0043B3A1Hidden(0, (Rva0043B2E2Node *)position._M_node, (const int *)&v, (Rva0043B2E2Node *)position._M_node);
+			if (_STL::less<int>()(v.first, ((Rva0043B2E2Node *)after._M_node)->m_key10)) {
+				if (((Rva0043B2E2Node *)position._M_node)->right0C == 0)
+					return rva0043B3A1Hidden(0, (Rva0043B2E2Node *)position._M_node, (const int *)&v, (Rva0043B2E2Node *)position._M_node);
+				else
+					return rva0043B3A1Hidden((Rva0043B2E2Node *)after._M_node, (Rva0043B2E2Node *)after._M_node, (const int *)&v, 0);
+			} else {
+				return rva0043B429(v).first;
+			}
+		}
+	} else if (position._M_node == (::_STL::_Rb_tree_node_base *)header00) {
+		if (_STL::less<int>()(((Rva0043B2E2Node *)header00->right0C)->m_key10, v.first))
+			return rva0043B3A1Hidden(0, header00->right0C, (const int *)&v, (Rva0043B2E2Node *)position._M_node);
+		else
+			return rva0043B429(v).first;
+	} else {
+		iterator before = position;
+		--before;
+		bool comp_v_pos = _STL::less<int>()(v.first, ((Rva0043B2E2Node *)position._M_node)->m_key10);
+		if (comp_v_pos && _STL::less<int>()(((Rva0043B2E2Node *)before._M_node)->m_key10, v.first)) {
+			if (((Rva0043B2E2Node *)before._M_node)->right0C == 0)
+				return rva0043B3A1Hidden(0, (Rva0043B2E2Node *)before._M_node, (const int *)&v, (Rva0043B2E2Node *)before._M_node);
+			else
+				return rva0043B3A1Hidden((Rva0043B2E2Node *)position._M_node, (Rva0043B2E2Node *)position._M_node, (const int *)&v, 0);
+		} else {
+			iterator after = position;
+			++after;
+			bool comp_pos_v = !comp_v_pos;
+			if (!comp_v_pos)
+				comp_pos_v = _STL::less<int>()(((Rva0043B2E2Node *)position._M_node)->m_key10, v.first);
+			if ((!comp_v_pos) && comp_pos_v && (after._M_node == (::_STL::_Rb_tree_node_base *)header00 || _STL::less<int>()(v.first, ((Rva0043B2E2Node *)after._M_node)->m_key10))) {
+				if (((Rva0043B2E2Node *)position._M_node)->right0C == 0)
+					return rva0043B3A1Hidden(0, (Rva0043B2E2Node *)position._M_node, (const int *)&v, (Rva0043B2E2Node *)position._M_node);
+				else
+					return rva0043B3A1Hidden((Rva0043B2E2Node *)after._M_node, (Rva0043B2E2Node *)after._M_node, (const int *)&v, 0);
+			} else {
+				if (comp_v_pos == comp_pos_v)
+					return position;
+				else
+					return rva0043B429(v).first;
+			}
+		}
+	}
 }
 
 void Rva0043B2E2::clear()
