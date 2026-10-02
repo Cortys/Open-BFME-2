@@ -1,5 +1,5 @@
 // ??0Rva005AD9FF@@QAE@IPAX@Z
-// partial score=0.93 date=2026-09-30
+// partial score=0.96 date=2026-10-02
 // ??0Rva005AD9FF@@QAE@IPAX@Z
 // partial score=0.93 date=2026-09-30
 // cl: /O1 /EHsc /MD /arch:SSE2 /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
@@ -14,6 +14,9 @@
 // differs (both `and [m],0` hoisted early; retail splits them around xorps and
 // the last movss). Tried /arch:SSE, /Os, /G7, body-order split: identical.
 #include <vector>
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 struct BfmeE16 { float x, y, z, w; };
 
@@ -35,7 +38,19 @@ private:
 
 // ??0Rva005AD9FF@@QAE@IPAX@Z present-unmatched
 Rva005AD9FF::Rva005AD9FF(unsigned int a, void *b)
-	: m_vec(_STL::allocator<BfmeE16>()), m_0c(a), m_10(0), m_14(b),
-	  m_18(0.0f), m_1c(0.0f), m_20(0.0f), m_24(0.0f), m_28(0)
+	: m_vec(_STL::allocator<BfmeE16>())
 {
+	unsigned int ta = a;
+	_ReadWriteBarrier();
+	m_10 = 0;
+	_ReadWriteBarrier();
+	m_0c = ta;
+	m_14 = b;
+	m_18 = 0.0f;
+	m_1c = 0.0f;
+	m_20 = 0.0f;
+	_ReadWriteBarrier();
+	m_28 = 0;
+	_ReadWriteBarrier();
+	m_24 = 0.0f;
 }
