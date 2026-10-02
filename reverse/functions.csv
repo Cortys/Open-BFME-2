@@ -46901,3 +46901,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00319159@Rva00319159@@QAEPAXXZ,,0x00319159,33,Code/GameEngine/Source/Common/Rva00319159Get.cpp,matched,AsciiString empty check plus global lookup
 ?rva0031964D@Rva00319159@@QAE?AVUnicodeString@@XZ,,0x0031964D,61,Code/GameEngine/Source/Common/Rva00319159Get.cpp,matched,empty returns TheEmptyString else record+0x30 copy via rowed isEmpty and rva00319159
 ?Rva0040A937Equal@@YA_NPBVRva0040A7D5@@0@Z,,0x0040A937,98,Code/GameEngine/Source/Common/Rva0040A937Equal.cpp,matched,chain lane equal-size nonempty compare via rowed getter
+?rva0040A424@Rva0040A424@@QAE_NPAVCreateAHeroData@@@Z,,0x0040A424,29,Code/Libraries/Source/WWVegas/WWLib/Rva0040A424Compare.cpp,matched,unlock lane caller 0x0040A46F StringBase compareNoCase null returns false
