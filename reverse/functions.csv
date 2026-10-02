@@ -47691,3 +47691,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva00576C4B@@UAE@XZ,,0x00576C4B,186,Code/GameEngine/Source/Common/Rva00576C4BDtor.cpp,matched,virtual dtor with erase 0x002B7250 plus conditional ptr-chase release plus member teardown via deleting-dtor caller 0x00576DD5
 ??_GRva00576C4B@@UAEPAXI@Z,,0x00576DD5,28,Code/GameEngine/Source/Common/Rva00576C4BDtor.cpp,matched,scalar deleting dtor via base dtor plus operator delete same TU as rowed dtor
 ?rva004D50CE@Rva004D50CE@@QAEMXZ,,0x004D50CE,68,Code/GameEngine/Source/GameNetwork/Rva004D50CE.cpp,matched,Transport-family unsigned average skipping index via continue plus x87 fixup via caller 0x0025DE45
+??1Rva0022E1BC@@QAE@XZ,,0x0022E1BC,53,Code/GameEngine/Source/Common/Rva0022E1BCDtor.cpp,matched,nonvirtual dtor vector at +0x0C plus base member via deleting-dtor caller 0x0022E1A0
