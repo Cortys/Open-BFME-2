@@ -451,11 +451,7 @@ void ParticleEmitterClass::Stop(void)
 }
 
 
-// ?ParticleEmitterClass::Is_Stopped present-unmatched
-bool ParticleEmitterClass::Is_Stopped(void)
-{
-	return (Active == false);
-}
+// ParticleEmitterClass::Is_Stopped: defined in part_emt_is_stopped.cpp (its row's unit).
 
 
 // ?ParticleEmitterClass::Set_Position_Randomizer present-unmatched
@@ -865,34 +861,10 @@ ParticleEmitterClass::Save (ChunkSaveClass &chunk_save) const
 }
 
 
-void
-ParticleEmitterClass::Set_Name (const char *pname)
-{
-	// Free the old name if necessary
-	if (NameString != NULL) {
-		::free (NameString);
-		NameString = NULL;
-	}
-
-	// Copy the provided name
-	NameString = ::_strdup (pname);
-	return ;
-}
+// ParticleEmitterClass::Set_Name: defined in ParticleEmitterSetName.cpp (its row's unit).
 
 
-void
-ParticleEmitterClass::Update_On_Visibilty(void)
-{
-	// Simply start or stop the emission based on
-	// the visibility state of the emitter.
-	if (Is_Not_Hidden_At_All() && !IsInvisible && Is_Stopped() && IsInScene) {
-		Start ();
-	} else if ((!Is_Not_Hidden_At_All() || IsInvisible) && !Is_Stopped()) {
-		Stop ();
-	}
-
-	return ;
-}
+// ParticleEmitterClass::Update_On_Visibilty: defined in particle_emitter_update_visibility.cpp (its row's unit).
 
 
 void
