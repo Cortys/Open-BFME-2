@@ -273,48 +273,10 @@ void BitChannelClass::Free(void)
  * HISTORY:                                                                                    *
  *   1/21/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?BitChannelClass::Load_W3D present-unmatched
-inline bool BitChannelClass::Load_W3D(ChunkLoadClass & cload)
-{
-	Free();
-	
-	int chunk_size = cload.Cur_Chunk_Length();
-
-	W3dBitChannelStruct chan;
-	if (cload.Read(&chan,sizeof(W3dBitChannelStruct)) != sizeof(W3dBitChannelStruct)) {
-		return false;
-	}
-
-	FirstFrame = chan.FirstFrame;
-	LastFrame = chan.LastFrame;
-	Type = chan.Flags;
-	PivotIdx = chan.Pivot;
-	DefaultVal = chan.DefaultVal;
-
-	uint32 numbits = LastFrame - FirstFrame + 1;
-	uint32 numbytes = (numbits + 7) / 8;
-	uint32 bytesleft = numbytes - 1;
-
-	assert((sizeof(W3dBitChannelStruct) + bytesleft) == (unsigned)chunk_size);
-
-	Bits = MSGW3DNEWARRAY("BitChannelClass::Bits") uint8[numbytes];
-	assert(Bits);
-
-	Bits[0] = chan.Data[0];
-	
-	if (bytesleft > 0) {
-		if (cload.Read(&(Bits[1]),bytesleft) != bytesleft) {
-			Free();
-			return false;
-		}	
-	}
-
-	return true;
-}
 
 
-/*********************************************************************************************** 
- * TimeCodedMotionChannelClass::TimeCodedMotionChannelClass -- constructor                                       * 
+/***********************************************************************************************
+ * TimeCodedMotionChannelClass::TimeCodedMotionChannelClass -- constructor                                       *
  *                                                                                             * 
  * INPUT:                                                                                      * 
  *                                                                                             * 
