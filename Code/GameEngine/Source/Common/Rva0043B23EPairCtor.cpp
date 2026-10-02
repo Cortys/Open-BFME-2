@@ -13,6 +13,7 @@ class Rva0043B23E
 {
 public:
 	Rva0043B23E(const int &first, const Rva0043B196 &second);
+	Rva0043B23E(const Rva0043B23E &src);
 private:
 	int m_first;
 	Rva0043B196 m_second;
@@ -21,5 +22,11 @@ private:
 Rva0043B23E::Rva0043B23E(const int &first, const Rva0043B196 &second)
 	: m_first(first)
 	, m_second(second)
+{
+}
+
+Rva0043B23E::Rva0043B23E(const Rva0043B23E &src)
+	: m_first(src.m_first)
+	, m_second(src.m_second)
 {
 }
