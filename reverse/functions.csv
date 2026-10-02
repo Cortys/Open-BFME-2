@@ -48877,3 +48877,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0057AB16@Rva0057AB16@@QAEXH@Z,,0x0057AB16,186,Code/GameEngine/Source/Common/Rva0057AB16Phase.cpp,matched,chain via 0x0057A9B7 plus Get Set callers none
 ??_GRva00586D8E@@UAEPAXI@Z,,0x00586E35,28,Code/Libraries/Source/WWVegas/WWLib/FamilyDeletingDtors_Rva00586D8E.cpp,matched,deleting dtor via rowed 00586E51 plus delete 002FD60 chain lane
 ?rva005D37F1@Rva005D37F1@@QAEX_N@Z,,0x005D37F1,85,Code/GameEngine/Source/Common/Rva005D2FD0Apt.cpp,matched,guard bool at +0x1c show hide via arg slot prefix from +4 level at +0 SetState via rowed 0x0050E9FE
+?Rva0030BFE8Equal@@YAHPBURva0030BFE8Range@@0@Z,,0x0030BFE8,61,Code/GameEngine/Source/Common/Rva0030BFE8Equal.cpp,matched,range equal via len xor plus rowed float equal
