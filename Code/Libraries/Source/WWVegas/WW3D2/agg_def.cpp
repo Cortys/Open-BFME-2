@@ -2,6 +2,11 @@
 // Ported verbatim from the Generals Zero Hour reference
 // /MT preserves retail's direct free/strdup calls in the assignment operator.
 // (Libraries/Source/WWVegas/WW3D2/agg_def.cpp); this unit had no counterpart under Code/.
+
+// BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
+#include "always.h"
+#undef W3DMPO_GLUE
+#define W3DMPO_GLUE(ARGCLASS)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 /*
 **	Command & Conquer Generals Zero Hour(tm)

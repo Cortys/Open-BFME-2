@@ -3,6 +3,11 @@
 // Dedicated TU: boxrobj.cpp cannot take another row (bulk import left defs
 // without rows or markers, failing find_declared_unmatched on any staging).
 // Same headers as the landed Box/OBBox ctor TUs. Verbatim BFME1 body.
+
+// BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
+#include "always.h"
+#undef W3DMPO_GLUE
+#define W3DMPO_GLUE(ARGCLASS)
 #include "rendobj.h"
 #include "boxrobj.h"
 

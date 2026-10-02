@@ -4,6 +4,11 @@
 // MaterialInfoClass::Get_Vertex_Material (0x000B49A8) and UVBufferClass(int,const char*) (0x000D1EF8): retail holds one size-optimised (/O1) out-of-line copy of each header body.
 // The pointer constants or anchors below only make this TU emit the inline bodies out of line; they are not retail code or data.
 //
+
+// BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
+#include "always.h"
+#undef W3DMPO_GLUE
+#define W3DMPO_GLUE(ARGCLASS)
 #define Matrix4x4 Matrix4  // BFME renamed it
 #include "dynamesh.h"
 #include "dx8vertexbuffer.h"

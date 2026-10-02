@@ -2,6 +2,11 @@
 // stlport
 // Ported verbatim from the Generals Zero Hour reference
 // (Libraries/Source/WWVegas/WW3D2/collect.cpp); this unit had no counterpart under Code/.
+
+// BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
+#include "always.h"
+#undef W3DMPO_GLUE
+#define W3DMPO_GLUE(ARGCLASS)
 /*
 **	Command & Conquer Generals Zero Hour(tm)
 **	Copyright 2025 Electronic Arts Inc.

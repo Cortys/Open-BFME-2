@@ -3,6 +3,11 @@
 // Dedicated TU: boxrobj.cpp cannot take another row. BFME1 twin is 147B via
 // set_aabox_ctor_position helper; BFME2 retail (262B) inlines Set_Position +
 // update, so both are defined in-TU (proven OBBox/AABox-def pattern).
+
+// BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
+#include "always.h"
+#undef W3DMPO_GLUE
+#define W3DMPO_GLUE(ARGCLASS)
 #include "rendobj.h"
 #include "boxrobj.h"
 

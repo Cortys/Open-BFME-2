@@ -4,6 +4,11 @@
 // without rows or markers, failing find_declared_unmatched on any staging).
 // Same headers and /arch:SSE2 (retail inlines the vector/matrix ops as SSE),
 // so layout and codegen match the home TU. Verbatim BFME1 body.
+
+// BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
+#include "always.h"
+#undef W3DMPO_GLUE
+#define W3DMPO_GLUE(ARGCLASS)
 #include "rendobj.h"
 #include "boxrobj.h"
 
