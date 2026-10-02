@@ -45,7 +45,7 @@ private:
 };
 
 // ??0SphericalEmissionVelocityInfo@FXParticleSystem@@QAE@XZ @0x3A721F
-SphericalEmissionVelocityInfo::SphericalEmissionVelocityInfo()
+inline SphericalEmissionVelocityInfo::SphericalEmissionVelocityInfo()
 {
 	m_var0.setRange(0.0f, 0.0f);
 }
@@ -132,3 +132,15 @@ TerrainFireEmissionInfo::TerrainFireEmissionInfo()
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0OutwardEmissionVelocityInfo@FXParticleSystem@@QAE@XZ=??0CylindricalEmissionVelocityInfo@FXParticleSystem@@QAE@XZ")
+
+// ??0SphericalEmissionVelocityInfo is a header inline elsewhere: another unit
+// emits a select-any copy of it, so a strong definition here was a duplicate
+// symbol in the linked build. This anchor only makes this unit emit its copy
+// for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitEmissionInfoDefaultCtors@@YAXPAVSphericalEmissionVelocityInfo@FXParticleSystem@@@Z present-unmatched
+void bfmeEmitEmissionInfoDefaultCtors(FXParticleSystem::SphericalEmissionVelocityInfo *p)
+{
+	p->SphericalEmissionVelocityInfo::SphericalEmissionVelocityInfo();
+}
+#pragma inline_depth()
