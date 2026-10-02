@@ -33,15 +33,39 @@ public:
 	void rva005F2953();
 	void rva005F298F();
 	void rva005F29CB();
+	void rva005F2B76(int rank);
 private:
 	char m_pad00[8];
 	void *m_level08;
 	Rva005F2FEFTeam *m_team0C;
 	char m_pad10[0x48 - 0x10];
 	UnicodeString m_cached48;
-	char m_pad4C[0x58 - 0x4C];
+	int m_rank4C;
+	char m_pad50[0x58 - 0x50];
 	unsigned char m_flags58;
 };
+
+class GameTextInterface
+{
+public:
+	virtual void slot00();
+	virtual void slot01();
+	virtual void slot02();
+	virtual void slot03();
+	virtual void slot04();
+	virtual void slot05();
+	virtual void slot06();
+	virtual void slot07();
+	virtual void slot08();
+	virtual void slot09();
+	virtual void slot10();
+	virtual void slot11();
+	virtual void slot12();
+	virtual void slot13();
+	virtual UnicodeString fetch(const AsciiString &label, int x);
+};
+
+extern GameTextInterface *TheGameText;
 
 int __cdecl Rva005FB5E6AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, const char *a0);
 
@@ -148,4 +172,26 @@ __forceinline const char *GetStr005F2A52(const AsciiString &s)
 int __cdecl Rva005F2A52AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, int *pInt, float *pF1, float *pF2)
 {
 	return target->rva00222B19(level, prefix, function, 3, GetStr005F2A52(Rva00222834Get(*pInt)), (void *)GetStr005F2A52(Rva002228E8Get(*pF1)), (void *)GetStr005F2A52(Rva002228E8Get(*pF2)), 0, 0);
+}
+
+void Rva005F2FEF::rva005F2B76(int rank)
+{
+	if (rank != m_rank4C) {
+		UnicodeString tmp;
+		if (rank >= 0) {
+			static AsciiString s_rankLabel("APT:RankLabel");
+			UnicodeString fetched = TheGameText->fetch(s_rankLabel, 0);
+			tmp.format(fetched.str(), rank);
+		}
+		AsciiString key;
+		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
+		key.format("APT:_level%u.%s_MemberRank", m_level08, team);
+		((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, tmp, false);
+		m_rank4C = rank;
+	}
+	if (!(m_flags58 & 2)) {
+		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level08, team, "SetMemberRankState", "_show");
+		m_flags58 |= 2;
+	}
 }

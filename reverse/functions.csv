@@ -48634,3 +48634,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005F921F@Rva005F921F@@QAEX_N@Z,,0x005F921F,91,Code/GameEngine/Source/Common/Rva005F921FButton.cpp,matched,Apt SetButtonState via rowed AptCall no commas
 ?rva005F93CB@Rva005F93CB@@QAEX_N@Z,,0x005F93CB,8,Code/GameEngine/Source/Common/Rva005F93CBForward.cpp,matched,forwarder to rowed 0x005F921F no commas
 ?Rva005F2A52AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPAM4@Z,,0x005F2A52,208,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,level AptCall argc3 via int plus 2 float Gets same pattern
+?rva005F2B76@Rva005F2FEF@@QAEXH@Z,,0x005F2B76,324,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,show MemberRank via GameText RankLabel plus AptCall same precedent
