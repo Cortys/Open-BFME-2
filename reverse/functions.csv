@@ -49004,3 +49004,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?setModelConditionState@Object@@QAEXI@Z,,0x001E49B4,49,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,Object set model condition state and notify on change
 ?clearAndSetModelConditionState@Object@@QAEXII@Z,,0x001E49E5,105,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,Object clear and set model condition state and notify on change
 
+?getTemplateName@Locomotor@@QBE?AVAsciiString@@XZ,,0x001E4A63,30,Code/GameEngine/Source/GameLogic/Object/LocomotorGetTemplateName.cpp,matched,Locomotor getTemplateName returns m_template->m_name
