@@ -47211,3 +47211,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva00319331Destroy@@YAXPAURva00319331Item@@0@Z,,0x00319331,26,Code/GameEngine/Source/Common/Rva00319331Destroy.cpp,matched,honest Rva range loop over 0x10 vtable items slot0 with 0
 ?rva0029D3FB@Rva0029D3FB@@QAEXXZ,,0x0029D3FB,83,Code/GameEngine/Source/GameClient/Rva0029D3FBClear.cpp,matched,list clearer via holder ptr pattern from Rva0029D30A
 ?rva0029D7CA@Rva0029D7CA@@QAEXXZ,,0x0029D7CA,83,Code/GameEngine/Source/GameClient/Rva0029D7CAClear.cpp,matched,list clearer sibling of 0x0029D3FB at 0x8D0
+?Rva0009FE01Get@@YAHH@Z,,0x0009FE01,72,Code/GameEngine/Source/Common/System/color_ops.cpp,matched,invert RGB keep alpha via GameGetColorComponents caller 0x0009FE49

@@ -55,3 +55,18 @@ int __cdecl Rva0004D76EBlend(int color1, int color2)
 	result |= blue;
 	return result;
 }
+
+// ?Rva0009FE01Get@@YAHH@Z @ 0x0009FE01 (72B): invert RGB keep alpha.
+// Calls rowed ?GameGetColorComponents@@YAXHPAE000@Z; caller 0x0009FE49.
+// Opaque address-derived name.
+int __cdecl Rva0009FE01Get(int color)
+{
+	UnsignedByte red, green, blue, alpha;
+	GameGetColorComponents(color, &red, &green, &blue, &alpha);
+	int result = (alpha << 8) | (UnsignedByte)(255 - red);
+	result <<= 8;
+	result |= (UnsignedByte)(255 - green);
+	result <<= 8;
+	result |= (UnsignedByte)(255 - blue);
+	return result;
+}
