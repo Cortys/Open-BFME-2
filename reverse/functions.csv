@@ -48182,3 +48182,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??_GRva00214ADC@@QAEPAXI@Z,,0x00214AE4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00214ADC.cpp,matched,scalar deleting dtor same-shape sibling of Rva00216108 selected by its dtor callee
 ?rva00433434@Rva00433434@@QAEX_N@Z,,0x00433434,31,Code/GameEngine/Source/Common/Rva00433434Flag.cpp,matched,or C4 2 then set-clear bit0 of 4C via rowed helpers caller 0x433999
 ?rva00538A0B@Rva005388C2@@QAEXAAVDataChunkInput@@H@Z,,0x00538A0B,165,Code/GameEngine/Source/Common/Rva00538A0BLoad.cpp,matched,prev holder copy same layout precedent Rva0030BAF8Parse ret8
+?xfer@Rva0052CFB1@@UAEXPAVXfer@@@Z,,0x0052BAFE,42,Code/GameEngine/Source/Common/Rva0052CFB1Xfer.cpp,matched,slot 3 xfer vtable 0x00868780 IsLightCRC Version1 int at 0x08
