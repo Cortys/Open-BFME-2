@@ -7,6 +7,7 @@
 // and parameter destroyed via rowed
 // releaseBuffer 0x00036410. Reverse of the 0x004D632D getter.
 // Evidence: callers 0x004D19D4 0x004D2E21 plus TheGameState 0x009FF08C.
+#pragma optimize("sy", on)
 template <typename T> class StringBase
 {
 public:
@@ -21,6 +22,7 @@ class AsciiString : public StringBase<char>
 public:
 	__forceinline AsciiString &operator=(const AsciiString &other) { set(other); return *this; }
 };
+#pragma optimize("", on)
 class GameState
 {
 public:
