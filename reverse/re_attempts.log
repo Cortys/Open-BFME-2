@@ -5347,3 +5347,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00564AB8@Rva00564AB8@@QAEXPAVCoord3D@@HH@Z	0x00564AB8	78	blocked	x87 fld-fmul-fstp vs retail SSE movss-mulss; O1 fixes frame but SSE and SSE2 both emit x87 with no shape lever t=12 model=muse-02
 ?Rva005F8FA2Copy@@YAXPAURva005F8FA2Dst@@PAURva005F8FA2Src@@H@Z	0x005F8FA2	42	partial	mov edi,[ebp+8] vs mov eax,[ebp+8]+mov edi,eax t=18 model=muse-04 score=0.95 stash=reverse/attempts/0x005f8fa2.cpp
 ?rva005F8408@Rva005F8408@@QAEHXZ	0x005F8408	15	blocked	add ecx,0x20 folds to [ecx+0x20] t=14 model=muse-04
+?rva00758590@Rva00758590@@QAEHH@Z	0x00758590	343	blocked	unknown class 343B x87 virtual-call update with tiling-factor globals no donor t=12 model=muse-spark
