@@ -20,7 +20,9 @@
 
 typedef unsigned short UnsignedShort;
 
-enum { BFME_MAX_DYNAMIC_BUFFERS = 21 };
+// The matched target-side deinit traverses 15 slots; the adjacent
+// bfmeDynamicVBs table at VA 0x00DF2A04 rules out the 21-slot donor view.
+enum { BFME_MAX_DYNAMIC_BUFFERS = 15 };
 
 class BfmeDynamicVertexBuffer
 {
@@ -39,8 +41,8 @@ public:
 
 extern bool BfmeDynamicDX8VertexBufferInUse[BFME_MAX_DYNAMIC_BUFFERS];		// 0x01346740
 extern UnsignedShort BfmeDynamicDX8VertexBufferOffset[BFME_MAX_DYNAMIC_BUFFERS];	// 0x01346794
-// BFME2 retail zero-filled .data storage; the 21-slot bounds follow this
-// unit's declarations and slot-indexed accesses.
+// BFME2 retail zero-filled .data storage. Matched DIR32 witnesses pin both
+// starts; the shared 15-slot deinit and adjacent arrays bound these extents.
 bool BfmeDynamicDX8VertexBufferInUse[BFME_MAX_DYNAMIC_BUFFERS];		// VA 0x00DF29F0, RVA 0x009F29F0
 UnsignedShort BfmeDynamicDX8VertexBufferOffset[BFME_MAX_DYNAMIC_BUFFERS];	// VA 0x00DF2A44, RVA 0x009F2A44
 extern UnsignedShort BfmeDynamicSortingVertexArrayOffset;			// 0x013467E4
