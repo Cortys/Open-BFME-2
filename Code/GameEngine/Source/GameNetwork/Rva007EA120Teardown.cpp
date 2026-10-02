@@ -129,3 +129,21 @@ void T_007ea120::m()
 	m_2AC = 0;
 	m_230 = 1;
 }
+
+// ?rva006572A0@Rva006572A0@@QAEXXZ retail 0x006572A0 8 bytes.
+// Forwarder to the rowed T_007ea120::m through the pointer at +4: single
+// unclaimed caller at 0x005521F8; neighbours are the callee row 0x006570D0
+// and forwardSentinel 0x006572B0.
+class Rva006572A0
+{
+public:
+	void rva006572A0();
+
+	char m_pad[4];
+	T_007ea120 *m_ptr04;
+};
+
+void Rva006572A0::rva006572A0()
+{
+	m_ptr04->m();
+}
