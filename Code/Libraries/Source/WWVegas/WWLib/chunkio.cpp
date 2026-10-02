@@ -6,6 +6,14 @@
 // member and reads through a two-way virtual dispatch), so none of its methods
 // match these verbatim bodies. The ChunkHeader/MicroChunkHeader inline accessors
 // still emit out-of-line copies that match.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "chunkio.h"
 #include <string.h>
