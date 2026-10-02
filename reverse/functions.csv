@@ -48086,3 +48086,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva0022181D@@QAE@XZ,,0x0022181D,61,Code/GameEngine/Source/Common/Rva0022181DCtor.cpp,matched,retail bytes caller 0x00222061 rowed FontDesc ctor 0x00376900
 ?Rva002213D9Get@@YAPAV?$map@HPAXU?$less@H@_STL@@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@XZ,,0x002213D9,69,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_ptr_init_002213D9.cpp,matched,static map init returns map pointer callers use return
 ?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z,,0x003B573E,80,Code/GameEngine/Source/Common/System/Rva003B573ESearch.cpp,matched,Sorted record lower_bound over 0x14 records via rowed compare
+??0Rva005A9562@@QAE@PAX@Z,,0x005A9562,38,Code/Libraries/Source/WWVegas/WWLib/Rva005A9562Ctor.cpp,matched,ctor via rowed Vector_base BfmeE16 0x00211E58 caller 0x0050547C
