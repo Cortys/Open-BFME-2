@@ -48954,3 +48954,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005FFA4E@Rva005FFA4E@@QAEXH@Z,,0x005FFA4E,8,Code/GameEngine/Source/Common/Rva005FFA4EForward.cpp,matched,chain via 0x005FF9D8 icon count forwarder plus4
 ?rva005FFED5@Rva005FFED5@@QAEXH@Z,,0x005FFED5,8,Code/GameEngine/Source/Common/Rva005FFED5Forward.cpp,matched,unlock via 0x005FFC26 SetState forwarder plus4
 ??0Rva0007517F@@QAE@XZ,,0x0007517F,112,Code/GameEngine/Source/Common/System/Rva0007517FCtor.cpp,matched,chain from rowed 0x0030B0E3 base plus 20x RubbleFXVec array
+??_GRva0055B0CC@@UAEPAXI@Z,,0x0055B166,28,Code/GameEngine/Source/Common/Rva0055B0CCDestructor.cpp,matched,deleting dtor via own ??1 unit emits exact copy
