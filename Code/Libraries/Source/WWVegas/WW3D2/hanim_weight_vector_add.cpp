@@ -3,10 +3,12 @@
 // DynamicVectorClass<NamedPivotMapClass::WeightInfoStruct>::Add at 0x00196880,
 // split out of hanim.cpp because retail built it with /G7 -- it tests the
 // allocation flag with a single cmp byte ptr [esi+0xD],0 -- while hanim.cpp's
-// HAnimComboDataClass::Set_HAnim only matches without that flag.  The element
-// type is private to NamedPivotMapClass, so the template is instantiated the way
-// hanim.cpp does it, from NamedPivotMapClass::Add; the element assignment is
-// inlined into it.  Both are copied verbatim from hanim.cpp, as are the headers.
+// HAnimComboDataClass::Set_HAnim only matches without that flag.
+// LINK-DUP: the WeightInfoStruct::operator= and NamedPivotMapClass::Add bodies
+// live rowed in hanim.cpp; this unit keeps operator= as inline (select-any,
+// inlined into Add) and emits Add via explicit instantiation, so it defines
+// no plain duplicate. Element replica is public for access, which changes no
+// bytes (hanim_weight_vector_resize.cpp precedent).
 // The compiler-generated vector constructor iterator (??_H) takes the
 // optimization state of the first function that needs it. Retail links one
 // copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
@@ -18,33 +20,40 @@ struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
 #pragma optimize("gsy", on)
 static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #pragma optimize("", on)
-#define Matrix4x4 Matrix4
-#include "rendobj.h"	// the bfmerendobj shim has to win the include guard
-#include "winbase_shim.h"
-#include "hanim.h"
-#include "assetmgr.h"
-#include "htree.h"
-#include "motchan.h"
-#include "chunkio.h"
-#include "w3d_file.h"
-#include "wwdebug.h"
-#include <string.h>
+#include <new.h>
+#include <assert.h>
 #include "nstrdup.h"
+#include "vector.h"
 
-NamedPivotMapClass::WeightInfoStruct & NamedPivotMapClass::WeightInfoStruct::operator = (WeightInfoStruct const &that)
-{	
+extern void *__cdecl operator new[](size_t size);
+extern void __cdecl operator delete[](void *pointer);
+
+// upstream layout: reference/open-bfme-1/game/Libraries/Source/WWVegas/WW3D2/hanim.h
+// (nested scope replica; public here for access, which changes no bytes)
+class NamedPivotMapClass
+{
+public:
+	struct WeightInfoStruct {
+		WeightInfoStruct() : Name(0) {}
+		~WeightInfoStruct() { if(Name) delete [] Name; }
+
+		char *Name;
+		float Weight;
+
+		WeightInfoStruct & operator = (WeightInfoStruct const &that);
+		bool operator == (WeightInfoStruct const &that) const { return &that == this; }
+		bool operator != (WeightInfoStruct const &that) const { return &that != this; }
+	};
+};
+
+inline NamedPivotMapClass::WeightInfoStruct & NamedPivotMapClass::WeightInfoStruct::operator = (WeightInfoStruct const &that)
+{
 	if(Name) delete [] Name;
 	assert(that.Name != 0);
-	Name = nstrdup(that.Name); 
-	Weight = that.Weight; 
-	return *this; 
+	Name = nstrdup(that.Name);
+	Weight = that.Weight;
+	return *this;
 }
 
-void NamedPivotMapClass::Add(const char *Name, float Weight)
-{
-	WeightInfoStruct info;
-	info.Name = (char *) Name;
-	info.Weight = Weight;
-	WeightInfo.Add(info);	
-	info.Name = 0;
-}
+// ?Add@?$DynamicVectorClass@UWeightInfoStruct@NamedPivotMapClass@@@@QAE_NABUWeightInfoStruct@NamedPivotMapClass@@@Z
+template bool DynamicVectorClass<NamedPivotMapClass::WeightInfoStruct>::Add(NamedPivotMapClass::WeightInfoStruct const &);
