@@ -48027,3 +48027,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0059AFC2Copy@@YAPAURva0059AFC2Out@@PAU1@PAURva0059AFC2In@@PBD@Z,,0x0059AFC2,57,Code/GameEngine/Source/Common/Rva0059AFC2Copy.cpp,matched,unlock 20B from 12B plus Pair init rowed 0x000B3F84 via callers
 ?Rva0059AFFBCopy@@YAPAURva0059AFFBOut@@PAU1@PAURva0059AFFBIn@@PBD@Z,,0x0059AFFB,59,Code/GameEngine/Source/Common/Rva0059AFFBCopy.cpp,matched,unlock 28B from 20B plus Pair init rowed 0x000B3F84 via caller
 ?Rva003BF96FDo@@YGXABVAsciiString@@0@Z,,0x003BF96F,89,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF96F.cpp,matched,unit player slot7 via mask caller 0x003CB866
+?Rva003BF903Do@@YGXABVAsciiString@@H@Z,,0x003BF903,108,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF903.cpp,matched,team waypoint via terrain slot caller 0x003CB797
