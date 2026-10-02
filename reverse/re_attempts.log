@@ -5755,3 +5755,5 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ??A?$map@VAsciiString@@UTreeHintPayload0005808E@@U?$less@VAsciiString@@@_STL@@V?$allocator@U?$pair@$$CBVAsciiString@@UTreeHintPayload0005808E@@@_STL@@@4@@_STL@@QAEAAUTreeHintPayload0005808E@@ABVAsciiString@@@Z	0x0005B67C	128	blocked	operator subscript Payload vs Ref template register and SSE shape mismatch t=12 model=muse-spark
 ?rva003B70CA@Rva003B573E@@QAEXXZ	0x003B70CA	116	blocked	outer lea-vs-add plus missing mov ecx plus test ebp je plus pop order t=10 model=muse-spark (stash 0.91 kept)
 ?clear@ScriptList@@QAEXXZ	0x003B7812	36	blocked	swap target uses ctor return mov ecx eax with this in esi all spellings give lea or drop esi t=8 model=muse-spark (stash 0.97 kept)
+?rva005E2460@Rva005E2460@@QAEXXZ	0x005E2460	120	blocked	missing push ecx before else Get and second pop after plus Get takes entry arg per 0056BC3D caller but passing entry swaps eax ecx t=13 model=muse-08 (stash 0.96 kept)
+?Rva00222278Parse@@YAXPAVINI@@PAX@Z	0x00222278	182	partial	double-load owner vs single esi plus EH order and tmp slot t=25 model=muse-08 score=0.95 stash=reverse/attempts/0x00222278.cpp
