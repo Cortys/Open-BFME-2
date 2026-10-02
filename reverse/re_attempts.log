@@ -5594,3 +5594,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?Rva004F53C3Cb@@YAXPAX0@Z	0x004F53C3	115	blocked	mov ecx-esi 2B scheduling only; ternary vs ifelse same; fcomi-fstp-jb ok t=15 model=muse-spark (stash 0.97 kept)
 ?positionStartSpotControls@@YAXPAVGameWindow@@0PAUCoord3D@@PAVMapMetaData@@QAPAV1@@Z	0x003001CD	396	blocked	Region3D copy inlines as movs vs rowed call plus loop shape wall t=15 model=muse-11
 ?rva0040C804@Rva0037DCA5@@QAE_NXZ	0x0040C804	279	blocked	279B chain with virtuals idiv and stack-sensitive locals - 2 shapes tried minimal-locals reload and unsigned final still 13 regions register swap edi-ebx t=25 model=muse-spark
+?rva0047DEE1@TunnelContain@@QAEPAXPAX@Z	0x0047DEE1	99	blocked	extra mov eax-ebp-4 plus mov ebx-eax vs mov ebx-ebp-4 only; rest exact 101B vs 99B 1 reg 1 mem t=15 model=muse-02 (stash 0.95 kept)
