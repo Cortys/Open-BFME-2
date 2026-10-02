@@ -7239,3 +7239,4 @@ _D3DXQuaternionSlerp@16,0x0075B4C6,PE-named d3dx9_27.dll D3DXQuaternionSlerp std
 ?getNextMoodTarget@AIUpdateInterface@@QAEPAVObject@@_N0@Z,0x00268EB8,AIUpdateInterface::getNextMoodTarget called by AIAttackFollowWaypointPathState::update at 0x0035434E
 ?computeGoal@AIFollowWaypointPathState@@QAEX_N@Z,0x00345D00,AIFollowWaypointPathState::computeGoal called by AIAttackFollowWaypointPathState::update at 0x00354386
 ?update@AIFollowWaypointPathState@@UAE?AW4StateReturnType@@XZ,0x00353F13,AIFollowWaypointPathState::update base update tail-jumped by AIAttackFollowWaypointPathState::update at 0x003543BA
+_rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte-identical two-DWORD body already covered by dup_0007e394; original template identity unknown
