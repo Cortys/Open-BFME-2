@@ -47056,3 +47056,23 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005CEAE6@@QAE@PBUPayload@0@@Z,,0x005CEAE6,29,Code/GameEngine/Source/Common/Rva005CEAE6Ctor.cpp,matched,vtable 0x008751DC at +0 with refcount 0 and 12B payload from caller 0x005CECA8
 ??0Rva005CE259@@QAE@PBUPayload@0@@Z,,0x005CE259,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,vtable 0x00875124 at +0 with refcount 0 and 8B payload from caller 0x005CE2BA
 ??0Rva005CEB57@@QAE@PBUPayload@0@@Z,,0x005CEB57,31,Code/GameEngine/Source/Common/Rva005CEB57Ctor.cpp,matched,vtable 0x008751E8 at +0 with refcount 0 and 24B payload from caller 0x005CECDA
+??1Rva00053DC5@@QAE@XZ,,0x000554FA,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00053DC5 clear; Ghidra or int3 bound
+??1Rva00056CF8@@QAE@XZ,,0x000589FB,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00056CF8 clear; Ghidra or int3 bound
+??1Rva00072FE6@@QAE@XZ,,0x000730DE,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00072FE6 clear; Ghidra or int3 bound
+??1Rva0007E971@@QAE@XZ,,0x0007FE1B,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0007E971 clear; Ghidra or int3 bound
+??1Rva0006F318@@QAE@XZ,,0x0008A612,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0006F318 clear; Ghidra or int3 bound
+??1Rva000B646B@@QAE@XZ,,0x000BB65C,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva000B646B clear; Ghidra or int3 bound
+??1Rva001DD70F@@QAE@XZ,,0x001DD9BB,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva001DD70F clear; Ghidra or int3 bound
+??1Rva001E6731@@QAE@XZ,,0x001E6F27,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva001E6731 clear; Ghidra or int3 bound
+??1Rva001F050B@@QAE@XZ,,0x001F0657,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva001F050B clear; Ghidra or int3 bound
+??1Rva00206667@@QAE@XZ,,0x002076E7,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00206667 clear; Ghidra or int3 bound
+??1Rva00206706@@QAE@XZ,,0x0020779E,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00206706 clear; Ghidra or int3 bound
+??1Rva0021119B@@QAE@XZ,,0x00211F05,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0021119B clear; Ghidra or int3 bound
+??1Rva002294A3@@QAE@XZ,,0x0022C917,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva002294A3 clear; Ghidra or int3 bound
+??1Rva002294D0@@QAE@XZ,,0x0022C94F,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva002294D0 clear; Ghidra or int3 bound
+??1Rva00439325@@QAE@XZ,,0x002418E2,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00439325 clear; Ghidra or int3 bound
+??1Rva00255CA8@@QAE@XZ,,0x00256429,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00255CA8 clear; Ghidra or int3 bound
+??1Rva00255CD1@@QAE@XZ,,0x00256461,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00255CD1 clear; Ghidra or int3 bound
+??1Rva0027F4CB@@QAE@XZ,,0x002819CE,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0027F4CB clear; Ghidra or int3 bound
+??1Rva0028881C@@QAE@XZ,,0x00288B51,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0028881C clear; Ghidra or int3 bound
+??1Rva002913EB@@QAE@XZ,,0x002923A7,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva002913EB clear; Ghidra or int3 bound
