@@ -817,3 +817,9 @@ void WW3D::_Invalidate_Mesh_Cache()
 // Callers elsewhere reach bodies in this unit through spellings pinned to the same
 // retail address (same cdecl/thiscall ABI); bind them here.
 #pragma comment(linker, "/alternatename:??0DX8VertexBufferClass@@QAE@IGW4UsageType@0@I@Z=??0BfmeDynamicNativeVB@@QAE@IGII@Z")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmeSortingVBAccess@@QAE@IIGI@Z=??0BfmeDynamicVBAccess@@QAE@IIGI@Z")
+#pragma comment(linker, "/alternatename:??0WriteLock@BfmeSortingVBAccess@@QAE@PAU1@@Z=??0WriteLock@BfmeDynamicVBAccess@@QAE@PAU1@@Z")
+#pragma comment(linker, "/alternatename:??1WriteLock@BfmeSortingVBAccess@@QAE@XZ=??1WriteLock@BfmeDynamicVBAccess@@QAE@XZ")

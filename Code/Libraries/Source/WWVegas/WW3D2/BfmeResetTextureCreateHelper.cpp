@@ -42,3 +42,7 @@ void *Rva00120720CreateTexture(
 }
 // ?g_bfmeD3DDevice8@@3PAXA: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
 #pragma comment(linker, "/alternatename:?g_bfmeD3DDevice8@@3PAXA=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_D3DXCreateTexture@32=?ji_0062af74@@YAXXZ")

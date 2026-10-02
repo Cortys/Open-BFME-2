@@ -1060,3 +1060,13 @@ int Rva007FEF80(void)
 #pragma comment(linker, "/alternatename:?Rva007FD4E0SocketShutdown@@YAXPAXH@Z=_Rva007FD4E0")
 #pragma comment(linker, "/alternatename:?Rva007FDB60SocketInfo@@YAXPAXH0H@Z=_Rva007FDB60")
 #pragma comment(linker, "/alternatename:?Rva007FE310SocketHost@@YAXPAURva00804440SockAddr@@H0H@Z=_Rva007FE310")
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_Rva0081BDE4=?ji_006556ac@@YAXXZ")
+#pragma comment(linker, "/alternatename:?Rva007FDA50Recv@@YAHPAXPADHH1PAH@Z=_Rva007FDA50")
+#pragma comment(linker, "/alternatename:?Rva007FDE80SetCallback@@YAHPAXHI00@Z=_Rva007FDE80")
+#pragma comment(linker, "/alternatename:?Rva007FEA20ListInit@@YAXPAX@Z=_Rva007FEA20")
+#pragma comment(linker, "/alternatename:?Rva007FEAA0ListReset@@YAXPAX@Z=_Rva007FEAA0")
+#pragma comment(linker, "/alternatename:?Rva007FEBD0Lock@@YAXPAX@Z=_Rva007FEBD0")
+#pragma comment(linker, "/alternatename:?Rva007FECB0Unlock@@YAXPAX@Z=_Rva007FECB0")

@@ -5409,3 +5409,13 @@ float bfmeProjectionBias;
 #pragma comment(linker, "/alternatename:?bfmeProjectionFar@@3MA=?ZFar@DX8Wrapper@@1MA")
 // ?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A: the global at VA 0xdee5d8 is ?render_state@DX8Wrapper@@1URenderStateStruct@@A.
 #pragma comment(linker, "/alternatename:?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A=?render_state@DX8Wrapper@@1URenderStateStruct@@A")
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_D3DXCreateTexture@32=?ji_0062af74@@YAXXZ")
+#pragma comment(linker, "/alternatename:?Device_Reset_Hook@BfmeResetMeshRenderer@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:_bfmeDirectXErrorName@4=_DXGetErrorString9A@4")
+#pragma comment(linker, "/alternatename:??1ShroudManagerImpl008FBA40Element@@QAE@XZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:??1BfmeCellFC@@QAE@XZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?Rva009A7030@@YAXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeReset@Gen_008812D0@@QAEXXZ=?DX8_Assert@@YAXXZ")

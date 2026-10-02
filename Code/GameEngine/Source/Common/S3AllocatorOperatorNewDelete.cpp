@@ -39,3 +39,25 @@ void Gen007F0170::operator delete(void *block)
 {
 	Gen007EFFC0()->release(block, 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??3Gen00809750@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?Gen007F0130@@YAPAXI@Z=??2Gen007F0130@@SAPAXI@Z")
+#pragma comment(linker, "/alternatename:??3Gen007E9B10@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007EB140@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F1BF0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F2120@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F2E30@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F33E0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F40C0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F47E0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F4D00@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007F86D0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007FA290@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007FBAF0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen007FCF50@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen008030A0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen00803D10@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen00808FB0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??3Gen0080ACD0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")

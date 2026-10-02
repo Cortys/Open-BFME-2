@@ -1434,3 +1434,16 @@ int Rva00812FD0( struct Rva00814700Comm *argument )
 	comm->m_state = 1;
 	return 0;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_Rva0081BDAE@4=?ji_00687cae@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva00814520=_Rva00680420")
+#pragma comment(linker, "/alternatename:_Rva0081BDA2@20=?ji_00687ca2@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva0081BDB4@36=?ji_00687cb4@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva0081BDBA@24=?ji_00687cba@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva0081BDC0@24=?ji_00687cc0@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva0081BDC6@20=?ji_00687cc6@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva0081BDCC@4=?ji_00687ccc@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva0081BDD2@20=?ji_00687cd2@@YAXXZ")
+#pragma comment(linker, "/alternatename:_Rva00817340Op=_Rva008144C0")
