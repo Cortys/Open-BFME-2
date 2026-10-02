@@ -17,7 +17,9 @@
 **	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma optimize("ty", on)
 #include "../../../../../reference/shims/bfmefrustum/plane.h"
+#pragma optimize("", on)
 inline void PlaneClass::Set(const Vector3 & point1, const Vector3 & point2, const Vector3 & point3) 
 {
 #ifdef ALLOW_TEMPORARIES
