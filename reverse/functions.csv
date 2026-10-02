@@ -47055,3 +47055,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005CE327@@QAE@PBUPayload@0@@Z,,0x005CE327,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,vtable 0x00875130 at +0 with refcount 0 and 12B payload from caller 0x005CE3F9
 ??0Rva005CEAE6@@QAE@PBUPayload@0@@Z,,0x005CEAE6,29,Code/GameEngine/Source/Common/Rva005CEAE6Ctor.cpp,matched,vtable 0x008751DC at +0 with refcount 0 and 12B payload from caller 0x005CECA8
 ??0Rva005CE259@@QAE@PBUPayload@0@@Z,,0x005CE259,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,vtable 0x00875124 at +0 with refcount 0 and 8B payload from caller 0x005CE2BA
+??0Rva005CEB57@@QAE@PBUPayload@0@@Z,,0x005CEB57,31,Code/GameEngine/Source/Common/Rva005CEB57Ctor.cpp,matched,vtable 0x008751E8 at +0 with refcount 0 and 24B payload from caller 0x005CECDA
