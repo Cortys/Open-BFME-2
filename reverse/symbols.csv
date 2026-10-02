@@ -7088,3 +7088,7 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?releaseBuffer@BFMERetailAsciiString@@QAEXXZ,0x00036410,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
 ?_M_insert_overflow@?$vector@URva0087FDC0Element@@V?$allocator@URva0087FDC0Element@@@_STL@@@_STL@@IAEXPAURva0087FDC0Element@@ABU3@ABU__false_type@2@I_N@Z,0x006BF5E0,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
 ??4BFMERetailAsciiString@@QAEAAV0@ABV0@@Z,0x000366F0,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+?bfmeCopyCD@@YAPAUBfmeElemCD@@PBU1@0PAU1@ABUBfmeFalseCD@@@Z,0x006BEEC0,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
+?bfmeFillCD@@YAPAUBfmeElemCD@@PAU1@IABU1@ABUBfmeFalseCD@@@Z,0x006BEF10,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
+?copyFrom@BfmeTailCD@@QAEXPBU1@@Z,0x000365F0,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
+?releaseBuffer@BfmeTailCD@@QAEXXZ,0x00036410,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
