@@ -18,7 +18,7 @@ private:
 
 // ?testSetAndClear@?$BitFlags@$0HE@@@QBE_NABV1@0@Z
 template <>
-bool BitFlags<116>::testSetAndClear(const BitFlags &mustBeSet, const BitFlags &mustBeClear) const
+inline bool BitFlags<116>::testSetAndClear(const BitFlags &mustBeSet, const BitFlags &mustBeClear) const
 {
 	const unsigned *mine = m_words;
 	const unsigned *set = mustBeSet.m_words;
@@ -31,3 +31,15 @@ bool BitFlags<116>::testSetAndClear(const BitFlags &mustBeSet, const BitFlags &m
 	}
 	return true;
 }
+
+// testSetAndClear is a header inline in retail: other units emit select-any
+// copies, so a strong definition here was a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is
+// not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitBitFlags116TestSetAndClear@@YAXPAV?$BitFlags@$0HE@@@ABV1@1@Z present-unmatched
+void bfmeEmitBitFlags116TestSetAndClear(BitFlags<116> *p, const BitFlags<116> &a, const BitFlags<116> &b)
+{
+	p->testSetAndClear(a, b);
+}
+#pragma inline_depth()
