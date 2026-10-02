@@ -16,10 +16,10 @@ template <typename T> struct BfmeStringData
 #include "ascii_string.h"
 
 
-// Opaque helper pinned at 0x0002C485 (StringBase _Construct flavor, whose
-// true _STL mangling is spent at 0x00142CC0). Declared with copy-construct
-// shape so the loop emits the retail 2-push call to 0x2C485.
-void __cdecl AsciiStringCopyConstructAtRva0002C485(AsciiString *dest, const AsciiString &src);
+// Rowed helper at 0x0002C485:
+// ??$_Construct@VAsciiString@@V1@@_STL@@YAXPAVAsciiString@@ABV1@@Z
+// (void __cdecl _STL::_Construct<class AsciiString,class AsciiString>).
+namespace _STL { template <class T1, class T2> void _Construct(T1 *p, const T2 &value); }
 
 namespace _STL
 {
@@ -32,7 +32,7 @@ ForwardIter __uninitialized_copy(InputIter first, InputIter last,
 {
 	ForwardIter cur = result;
 	for (; first != last; ++first, ++cur)
-		AsciiStringCopyConstructAtRva0002C485(cur, *first);
+		_Construct(cur, *first);
 	return cur;
 }
 
