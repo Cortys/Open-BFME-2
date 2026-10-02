@@ -48029,3 +48029,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva003BF96FDo@@YGXABVAsciiString@@0@Z,,0x003BF96F,89,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF96F.cpp,matched,unit player slot7 via mask caller 0x003CB866
 ?Rva003BF903Do@@YGXABVAsciiString@@H@Z,,0x003BF903,108,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF903.cpp,matched,team waypoint via terrain slot caller 0x003CB797
 ?Rva003BF045Do@@YGXABVAsciiString@@0_N@Z,,0x003BF045,442,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF045.cpp,matched,team centroid formatted waypoint via enemy index terrain slot 0x90
+??1Rva0032D279@@QAE@XZ,,0x0032D279,84,Code/GameEngine/Source/Common/Rva0032D279Dtor.cpp,matched,loop with ternary delete via virtual plus base vector dtor

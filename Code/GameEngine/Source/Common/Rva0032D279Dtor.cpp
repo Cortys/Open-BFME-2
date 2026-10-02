@@ -1,5 +1,3 @@
-// ??1Rva0032D279@@QAE@XZ
-// partial score=0.99 date=2026-10-02
 // cl: /O1 /EHsc /MD
 // ??1Rva0032D279@@QAE@XZ, retail 0x0032D279, 84 bytes.
 // Dtor for vector of 8-byte pairs (int key plus polymorphic value at +4):
@@ -36,14 +34,12 @@ public:
 	~Rva0032D279();
 };
 
-// ??1Rva0032D279@@QAE@XZ present-unmatched
 Rva0032D279::~Rva0032D279()
 {
 	Rva0032D279Pair *last = (Rva0032D279Pair *)m_finish;
 	Rva0032D279Pair *first = (Rva0032D279Pair *)m_start;
 	for (; first != last; ++first) {
 		Rva0032D279Value *v = first->m_value;
-		if (v)
-			::operator delete(v->deleteInstance(0));
+		::operator delete(v ? v->deleteInstance(0) : 0);
 	}
 }
