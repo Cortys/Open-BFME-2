@@ -38,3 +38,27 @@ private:
 Rva00735D80TreeType::~Rva00735D80TreeType()
 {
 }
+
+// ??1Rva000E86B8@@QAE@XZ, retail 0x000E86B8, 124 bytes: the same teardown for a
+// sibling class of this layout; only the EH handler record differs from
+// ~Rva00735D80TreeType's bytes. It directly follows the constructor rowed at
+// 0x000E8656, as 0x000EC67F precedes the destructor rowed at 0x000EC6E1, so retail
+// holds two such classes. Identity is not recovered.
+class Rva000E86B8
+{
+public:
+	~Rva000E86B8();
+private:
+	unsigned char m_treeData[0x24];
+	Coord2D m_primaryTextureCoords[2];
+	Coord2D m_secondaryTextureCoords[2];
+	unsigned char m_textureFlags[4];
+	AsciiStringMember m_modelName;
+	AsciiStringMember m_textureName;
+	AsciiStringMember m_shadowName;
+	AsciiStringMember m_animationName;
+};
+
+Rva000E86B8::~Rva000E86B8()
+{
+}
