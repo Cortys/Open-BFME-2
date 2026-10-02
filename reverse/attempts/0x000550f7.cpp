@@ -1,5 +1,5 @@
 // ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z
-// partial score=0.95 date=2026-09-30
+// partial score=0.96 date=2026-10-02
 // ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z
 // partial score=0.95 date=2026-09-30
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /arch:SSE2 /Oi /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
@@ -38,7 +38,7 @@ public:
 	char m_pad0[4];
 	float m_base[12];
 	float m_product[6];
-	char m_pad4c[0x94 - 0x4c];
+	_STL::vector<BfmePod8> m_vecs[6];
 	float m_atten;
 	float m_vol;
 	float m_scale;
@@ -64,11 +64,10 @@ void Rva00699180Owner::rva000550F7(Holder *o, int key)
 		if (idx == -1)
 			continue;
 		float outerVal = *(float *)&p->a[1];
-		char *base = (char *)this + idx * 12;
-		_STL::vector<BfmePod8> &inner = *(_STL::vector<BfmePod8> *)(base + 0x4c);
-		BfmePod8 *iend = inner.end();
-		BfmePod8 *ibeg = inner.begin();
-		for (BfmePod8 *q = ibeg; q != iend; ++q)
+		_STL::vector<BfmePod8> &inner = m_vecs[idx];
+		BfmePod8 *q = m_vecs[idx].begin();
+		BfmePod8 *iend = m_vecs[idx].end();
+		for (; q != iend; ++q)
 		{
 			if (*(float *)&q->a[0] == outerVal && q->a[1] == key)
 			{

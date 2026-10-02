@@ -1,8 +1,7 @@
-// ??1Rva004D58DE@@UAE@XZ
-// partial score=0.93 date=2026-10-02
-// cl: /O1 /DNDEBUG /MD /EHs-c-
+// cl: /O1 /DNDEBUG /MD /EHsc
 // ??1Rva004D58DE@@UAE@XZ @0x004D5902 35B: dtor freeing array member +0x24 then restoring base vtable.
 // Target evidence: mov eax [esi+0x24] test je; vtable 0x00860264 then delete[] 0x0002FD80 and [esi+0x24]=0 then vtable 0x00860130; caller 0x004D5B17 for its deleting dtor; donor ctor NetCommandMsgCtor.cpp.
+void __cdecl operator delete[](void *) throw();
 typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef int Int;
@@ -32,7 +31,6 @@ private:
 	char *m_24; // +0x24 array pointer
 	unsigned int m_28; // +0x28
 };
-// ??1Rva004D58DE@@UAE@XZ present-unmatched
 Rva004D58DE::~Rva004D58DE()
 {
 	if (m_24)
