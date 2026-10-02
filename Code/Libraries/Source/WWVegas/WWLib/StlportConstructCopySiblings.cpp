@@ -59,6 +59,12 @@ public:
 	Rva005DBCD1(const Rva005DBCD1 &other);
 };
 
+class Rva004E18A2
+{
+public:
+	Rva004E18A2(const Rva004E18A2 &other);
+};
+
 namespace _STL {
 template<> void _Construct<Rva00051C6C, Rva00051C6C>(Rva00051C6C *dest, const Rva00051C6C &source) throw() { new (dest) Rva00051C6C(source); }
 template<> void _Construct<Rva0014F480, Rva0014F480>(Rva0014F480 *dest, const Rva0014F480 &source) throw() { new (dest) Rva0014F480(source); }
@@ -68,4 +74,5 @@ template<> void _Construct<Rva0039B893, Rva0039B893>(Rva0039B893 *dest, const Rv
 template<> void _Construct<Rva004EE1A9, Rva004EE1A9>(Rva004EE1A9 *dest, const Rva004EE1A9 &source) throw() { new (dest) Rva004EE1A9(source); }
 template<> void _Construct<Rva003A6360Record, Rva003A6360Record>(Rva003A6360Record *dest, const Rva003A6360Record &source) throw() { new (dest) Rva003A6360Record(source); }
 template<> void _Construct<Rva005DBCD1, Rva005DBCD1>(Rva005DBCD1 *dest, const Rva005DBCD1 &source) throw() { new (dest) Rva005DBCD1(source); }
+template<> void _Construct<Rva004E18A2, Rva004E18A2>(Rva004E18A2 *dest, const Rva004E18A2 &source) throw() { new (dest) Rva004E18A2(source); }
 }
