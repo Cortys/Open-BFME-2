@@ -444,7 +444,7 @@ void Line3DClass::Get_Obj_Space_Bounding_Box(AABoxClass& box) const
 // Retail 0x167370 selects the same alpha/opaque shader globals, calls the
 // vtable Set_Sort_Level slot, and stores opacity in Color.W@0x13C. The target
 // Line3D constructor at 0x1673D0 performs the same sequence inline.
-void Line3DClass::Set_Opacity(float opacity)
+inline void Line3DClass::Set_Opacity(float opacity)
 {
     if (opacity < 1.0f) {
         Shader = ShaderClass::_PresetAlphaSolidShader;
@@ -532,3 +532,12 @@ int Line3DClass::Get_Sort_Level() const
 {
     return SortLevel;
 }
+
+// Set_Opacity is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeLine3DClassSetOpacityInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeLine3DClassSetOpacityInlineAnchor()
+{
+    static_cast<Line3DClass *>(0)->Set_Opacity(0.0f);
+}
+#pragma inline_depth()
