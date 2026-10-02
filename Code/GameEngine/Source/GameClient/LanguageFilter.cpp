@@ -182,39 +182,7 @@ void LanguageFilter::unHaxor(UnicodeString &word) {
 }
 
 // returning true means that there are more words in the file.
-// ?LanguageFilter::readWord present-unmatched
-Bool LanguageFilter::readWord(File *file1, UnsignedShort *buf) {
-	Int index = 0;
-	Bool retval = TRUE;
-	Int val = 0;
-
-	UnsignedShort c;
-
-	val = file1->read(&c, sizeof(UnsignedShort));
-	if ((val == -1) || (val == 0)) {
-		buf[index] = 0;
-		return FALSE;
-	}
-	buf[index] = c;
-
-	while (buf[index] != L' ') {
-		++index;
-		val = file1->read(&c, sizeof(UnsignedShort));
-		if ((val == -1) || (val == 0)) {
-			c = WEOF;
-		}
-
-		if ((c == WEOF) || (c == L' ')) {
-			buf[index] = 0;
-			if (c == WEOF) {
-				retval = FALSE;
-			}
-			break;
-		}
-		buf[index] = c;
-	}
-	return retval;
-}
+// LanguageFilter::readWord: defined in LanguageFilterReadWord.cpp (its row's unit).
 
 LanguageFilter * createLanguageFilter() 
 {
