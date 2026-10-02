@@ -65,11 +65,7 @@ void *Debug::PreStatic=&Debug::PreStaticInit;
 void *Debug::PostStatic=&Debug::PostStaticInit;
 #pragma data_seg()
 
-// ??0LogDescription@Debug@@QAE@PBD0@Z present-unmatched
-Debug::LogDescription::LogDescription(const char *fileOrGroup, const char *description)
-{
-  Debug::Instance.AddLogGroup(fileOrGroup,description);
-}
+// ??0LogDescription@Debug@@QAE@PBD0@Z defined in WWDebug/Debug_LogDescriptionCtor.cpp (its row's unit).
 
 // our global Debug instance
 Debug Debug::Instance;
@@ -77,16 +73,7 @@ Debug Debug::Instance;
 // more class static members
 unsigned Debug::curStackFrame;
 
-// this constructor is empty on purpose because all construction
-// work is done in PreStaticInit (and some in PostStaticInit)
-// ??0Debug@@AAE@XZ present-unmatched
-Debug::Debug(void)
-{
-  // do not put any code in here (but it's good for keeping module global todo's)
-  /// @todo what about frame based logging?
-  /// @todo have new DLOG with category, add DWARN, DPERF, DERR etc. based on that,
-  ///       make it possible to enable/disable categories by adding category to log ID
-}
+// ??0Debug@@AAE@XZ defined in WWDebug/DebugConstructor.cpp (its row's unit).
 
 // ?PreStaticInit@Debug@@CAXXZ present-unmatched
 void Debug::PreStaticInit(void)
@@ -125,123 +112,9 @@ void Debug::PreStaticInit(void)
   SetUnhandledExceptionFilter(DebugExceptionhandler::ExceptionFilter);
 }
 
-// ?PostStaticInit@Debug@@CAXXZ present-unmatched
-void Debug::PostStaticInit(void)
-{
-  InstallExceptionHandler();
+// ?PostStaticInit@Debug@@CAXXZ defined in WWDebug/DebugPostStaticInit.cpp (its row's unit).
 
-  // register our default IO classes
-  AddIOFactory("con","Console window",DebugIOCon::Create);
-  AddIOFactory("flat","Flat local file(s)",DebugIOFlat::Create);
-  AddIOFactory("net","Network via named pipe",DebugIONet::Create);
-  AddIOFactory("ods","OutputDebugString function",DebugIOOds::Create);
-
-  // add debug command handler
-  AddCommands("debug",new (DebugAllocMemory(sizeof(DebugCmdInterfaceDebug))) DebugCmdInterfaceDebug);
-
-  /// exec dbgcmd file
-  char ioBuffer[2048];
-  GetModuleFileName(NULL,ioBuffer,sizeof(ioBuffer));
-  char *q=strrchr(ioBuffer,'.');
-  if (q)
-    strcpy(q,".dbgcmd");
-  HANDLE h=CreateFile(ioBuffer,GENERIC_READ,0,NULL,OPEN_EXISTING,
-                      FILE_ATTRIBUTE_NORMAL,NULL);
-  if (h==INVALID_HANDLE_VALUE)
-    h=CreateFile("default.dbgcmd",GENERIC_READ,0,NULL,OPEN_EXISTING,
-                      FILE_ATTRIBUTE_NORMAL,NULL);
-  if (h!=INVALID_HANDLE_VALUE)
-  {
-    char cmdBuffer[512];
-    unsigned long ioCur=0,ioUsed=0,cmdCur=0;
-    ReadFile(h,ioBuffer,sizeof(ioBuffer),&ioUsed,NULL);
-    for (;;)
-    {
-      if (ioCur==ioUsed)
-      {
-        ReadFile(h,ioBuffer,sizeof(ioBuffer),&ioUsed,NULL);
-        ioCur=0;
-      }
-      if (ioCur==ioUsed||ioBuffer[ioCur]=='\n'||ioBuffer[ioCur]=='\r')
-      {
-        if (cmdCur)
-        {
-          Instance.ExecCommand(cmdBuffer,cmdBuffer+cmdCur);
-          cmdCur=0;
-        }
-        if (ioCur==ioUsed)
-          break;
-        ioCur++;
-      }
-      else
-      {
-        if (cmdCur<sizeof(cmdBuffer))
-          cmdBuffer[cmdCur++]=ioBuffer[ioCur];
-        ioCur++;
-      }
-    }
-    CloseHandle(h);
-  }
-  else
-  {
-    // exec default commands
-    const char *p=DebugGetDefaultCommands();
-    while (p&&*p)
-    {
-      const char *q=strchr(p,'\n');
-      if (!q)
-        q=p+strlen(p);
-      if (p!=q)
-      {
-        Instance.ExecCommand(p,q);
-        p=*q?q+1:NULL;
-      }
-    }
-  }
-
-  // check: are we using an old dbghelp.dll?
-  if (DebugStackwalk::IsOldDbghelp())
-  {
-    // give a serious hint
-    Instance.StartOutput(DebugIOInterface::Other,"");
-    Instance << RepeatChar('=',79) <<
-      "\nYou are using an older version of the DBGHELP.DLL library.\n"
-      "Please update to the newest available version in order to\n"
-      "get reliable stack and symbol information.\n\n";
-
-    char buf[256];
-    GetModuleFileName((HMODULE)DebugStackwalk::GetDbghelpHandle(),buf,sizeof(buf));
-    Instance <<
-      "Hint: The DLL got loaded as:\n" << buf << "\n" << RepeatChar('=',79) << "\n\n";
-
-    // flush output only if there is already an active I/O class
-    Instance.FlushOutput(false);
-  }
-}
-
-// ?StaticExit@Debug@@CAXXZ present-unmatched
-void Debug::StaticExit(void)
-{
-  // yes, we do leave memory 'leaks' but Win32 will take care of these
-
-  // however, I/O classes must be actively shut down
-  if (Instance.curType!=DebugIOInterface::StringType::MAX)
-    Instance.FlushOutput();
-  for (IOFactoryListEntry *io=Instance.firstIOFactory;io;io=io->next)
-    if (io->io)
-    {
-      io->io->Delete();
-      io->io=NULL;
-    }
-
-  // and command group interfaces...
-  for (CmdInterfaceListEntry *cmd=Instance.firstCmdGroup;cmd;cmd=cmd->next)
-    if (cmd->cmdif)
-    {
-      cmd->cmdif->Delete();
-      cmd->cmdif=NULL;
-    }
-}
+// ?StaticExit@Debug@@CAXXZ defined in WWDebug/DebugStaticExit.cpp (its row's unit).
 
 Debug& Debug::operator<<(RepeatChar &c)
 {
@@ -806,25 +679,7 @@ void Debug::SetPrefixAndRadix(const char *prefix, int radix)
   m_radix=radix;
 }
 
-Debug& Debug::operator<<(int val)
-{
-  // usually having a fixed size buffer and a function
-  // that doesn't check for buffer overflow isn't a good idea
-  // but in this case we know how long it can be at max...
-  char help[1+32+1]; // sign, 32 digits (binary), NUL
-  AddOutput(m_prefix,strlen(m_prefix));
-  return (*this) << _itoa(val,help,m_radix);
-}
-
-Debug& Debug::operator<<(unsigned val)
-{
-  // usually having a fixed size buffer and a function
-  // that doesn't check for buffer overflow isn't a good idea
-  // but in this case we know how long it can be at max...
-  char help[32+1]; // 32 digits, NUL
-  AddOutput(m_prefix,strlen(m_prefix));
-  return (*this) << _ultoa(val,help,m_radix);
-}
+// ??6Debug@@UAEAAV0@H@Z and ??6Debug@@UAEAAV0@I@Z defined in WWDebug/Debug_OperatorInteger.cpp (their rows' unit).
 
 Debug& Debug::operator<<(long val)
 {
@@ -1214,48 +1069,7 @@ void Debug::Update(void)
   }
 }
 
-// ?AddFrameEntry@Debug@@AAEPAUFrameHashEntry@1@IIPBDH@Z present-unmatched
-Debug::FrameHashEntry* Debug::AddFrameEntry(unsigned addr, unsigned type,
-                                            const char *fileOrGroup, int line)
-{
-  __ASSERT(LookupFrame(addr)==NULL);
-
-  // get new entry
-  if (!numAvailableFrameHash)
-  {
-    numAvailableFrameHash=FRAME_HASH_ALLOC_COUNT;
-    nextUnusedFrameHash=(FrameHashEntry *)
-      DebugAllocMemory(numAvailableFrameHash*sizeof(FrameHashEntry));
-  }
-  FrameHashEntry *e=nextUnusedFrameHash++;
-  --numAvailableFrameHash;
-
-  // fill entry
-  e->next=frameHash[addr%FRAME_HASH_SIZE];
-  e->frameAddr=addr;
-  e->frameType=type;
-  e->line=line;
-  e->status=Unknown;
-  e->hits=0;
-
-  // log?
-  if (type&FrameTypeLog)
-  {
-    // must add to list of known logs,
-    // store translated name 
-    e->fileOrGroup=AddLogGroup(fileOrGroup,NULL);
-  }
-  else
-  {
-    // no, just add file name (without path though)
-    e->fileOrGroup=fileOrGroup?strrchr(fileOrGroup,'\\'):NULL;
-    e->fileOrGroup=e->fileOrGroup?e->fileOrGroup+1:fileOrGroup;
-  }
-
-  // add to hash
-  frameHash[addr%FRAME_HASH_SIZE]=e;
-  return e;
-}
+// ?AddFrameEntry@Debug@@AAEPAUFrameHashEntry@1@IIPBDH@Z defined in WWDebug/Debug_AddFrameEntry.cpp (its row's unit).
 
 // ?UpdateFrameStatus@Debug@@EAEXAAUFrameHashEntry@1@@Z present-unmatched
 void Debug::UpdateFrameStatus(FrameHashEntry &entry)
@@ -1280,46 +1094,7 @@ void Debug::UpdateFrameStatus(FrameHashEntry &entry)
   entry.status=active?NoSkip:Skip;
 }
 
-const char *Debug::AddLogGroup(const char *fileOrGroup, const char *descr)
-{
-  // helper buffer for stripping down fileOrGroup
-  char help[200];
-
-  // do we need to strip down fileOrGroup?
-  const char *p=strrchr(fileOrGroup,'\\');
-  const char *q=strchr(p?p:fileOrGroup,'.');
-  if (p||q)
-  {
-    // this extracts everything beyond the last backslash
-    // up to the first dot
-    p=p?p+1:fileOrGroup;
-    if (!q) q=p+strlen(p);
-    if (q-p>=sizeof(help))
-      q=p+sizeof(help)-1;
-    memcpy(help,p,q-p);
-    help[q-p]=0;
-    fileOrGroup=help;
-  }
-
-  // is that log group known?
-  for (KnownLogGroupList *cur=firstLogGroup;cur;cur=cur->next)
-  {
-    if (!strcmp(cur->nameGroup,fileOrGroup))
-    {
-      // yes, return translated name
-      return cur->nameGroup;
-    }
-  }
-
-  // no, add new entry
-  cur=(KnownLogGroupList *)DebugAllocMemory(sizeof(KnownLogGroupList));
-  cur->next=firstLogGroup;
-  cur->nameGroup=(char *)DebugAllocMemory(strlen(fileOrGroup)+1);
-  strcpy(cur->nameGroup,fileOrGroup);
-  cur->descr=descr;
-  firstLogGroup=cur;
-  return cur->nameGroup;
-}
+// ?AddLogGroup@Debug@@AAEPBDPBD0@Z defined in WWDebug/Debug_AddLogGroup_0088A020.cpp (its row's unit).
 
 // ?StartOutput@Debug@@EAAXW4StringType@DebugIOInterface@@PBDZZ
 void Debug::StartOutput(DebugIOInterface::StringType type, const char *fmt, ...)
@@ -1506,18 +1281,7 @@ void Debug::AddPatternEntry(unsigned types, bool isActive, const char *pattern)
 
 // Debug::SimpleMatch: defined in WWDebug/DebugSimpleMatch.cpp (its row's unit).
 
-// ?SetBuildInfo@Debug@@SAXPBD00@Z present-unmatched
-void Debug::SetBuildInfo(const char *version,
-                         const char *internalVersion,
-                         const char *buildDate)
-{
-  if (version)
-    strncpy(Instance.m_version,version,sizeof(Instance.m_version)-1);
-  if (internalVersion)
-    strncpy(Instance.m_intVersion,internalVersion,sizeof(Instance.m_intVersion)-1);
-  if (buildDate)
-    strncpy(Instance.m_buildDate,buildDate,sizeof(Instance.m_buildDate)-1);
-}
+// ?SetBuildInfo@Debug@@SAXPBD00@Z defined in GameEngine/Source/Main/WinMain.cpp (its row's unit).
 
 // Retail Debug ABI in this TU: m_version/m_intVersion/m_buildDate sit 4 bytes
 // later than this TU's headers place them (retail reads m_version at
