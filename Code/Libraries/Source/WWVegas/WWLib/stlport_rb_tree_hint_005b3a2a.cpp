@@ -8,7 +8,23 @@
 // Comparison reaches the established AsciiString operator< at 0x5598C.
 // Semantic donor: BFME1 RvaTreeInsertUniqueHint.cpp and STLport pair/tree.
 #include <map>
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
+template <class T> class StringBase
+{
+    void *m_data;
+    StringBase(const StringBase<T> &);
+    friend class AsciiString;
+};
+class AsciiString
+{
+public:
+    __forceinline AsciiString(const AsciiString &that)
+    {
+        ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that);
+    }
+    ~AsciiString();
+private:
+    void *m_data;
+};
 bool operator<(const AsciiString &, const AsciiString &);
 // Retail pair copying transfers this 28-byte mapped value without further calls.
 // Its original application type and any ownership/destruction behavior are unknown.
