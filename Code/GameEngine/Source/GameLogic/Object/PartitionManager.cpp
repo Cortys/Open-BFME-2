@@ -5466,7 +5466,8 @@ Bool PartitionFilterRejectBehind::allow( Object *other )
 
 //const Coord3D *pos = m_obj->getPosition();
 //const Coord3D *dir = m_obj->getUnitDirectionVector2D();
-	Vector3 dir = m_obj->getTransformMatrix()->Get_X_Vector();
+	Vector3 dir;
+	m_obj->getTransformMatrix()->Get_X_Vector(&dir);
 	dir.Normalize();
 //const Coord3D *otherPos = other->getPosition();
 
@@ -6024,4 +6025,3 @@ SightingInfo::~SightingInfo()
 {
 
 }  // end loadPostProcess
-
