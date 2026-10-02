@@ -46961,3 +46961,9 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva00229A44Pick@@YAXPAH0@Z,,0x00229A44,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,esp pair pick over its own int[4] tables; bytes equal the rowed esp picker except the two table operands
 ??1Rva002B54F9@@QAE@XZ,,0x002B5FF1,56,Code/GameEngine/Source/Common/Rva002B5558Dtor.cpp,matched,list dtor: bytes equal ??1Rva002B5558 except the call to the rowed Rva002B54F9 clear; Ghidra start
 ??1Rva002B5522@@QAE@XZ,,0x002B602E,56,Code/GameEngine/Source/Common/Rva002B5558Dtor.cpp,matched,list dtor: bytes equal ??1Rva002B5558 except the call to the rowed Rva002B5522 clear; Ghidra start
+??1Rva0046A915@@QAE@XZ,,0x0046AAE3,56,Code/GameEngine/Source/Common/Rva0046A93EDtor.cpp,matched,clear-then-free dtor: bytes equal ??1Rva0046A93E except the call to the rowed Rva0046A915 clear
+??1Rva0046AB7D@@QAE@XZ,,0x0046E2D3,56,Code/GameEngine/Source/Common/Rva0046A93EDtor.cpp,matched,clear-then-free dtor: bytes equal ??1Rva0046A93E except the call to the rowed Rva0046AB7D clear
+??1Rva0021C459@@QAE@XZ,,0x0021D5D5,56,Code/GameEngine/Source/Common/Rva0046A93EDtor.cpp,matched,clear-then-free dtor: bytes equal ??1Rva0046A93E except the call to the rowed Rva0021C459 clear
+?rva0022994D@Rva00226829@@QAEXXZ,,0x0022994D,41,Code/GameEngine/Source/Common/Rva00226883TreeFree.cpp,matched,tree clear: bytes equal rva0022999F except the call to the rowed Rva00226829 recursive free
+?rva00229976@Rva00226856@@QAEXXZ,,0x00229976,41,Code/GameEngine/Source/Common/Rva00226883TreeFree.cpp,matched,tree clear: bytes equal rva0022999F except the call to the rowed Rva00226856 recursive free
+?rva002299C8@Rva002268B0@@QAEXXZ,,0x002299C8,41,Code/GameEngine/Source/Common/Rva00226883TreeFree.cpp,matched,tree clear: bytes equal rva0022999F except the call to the rowed Rva002268B0 recursive free
