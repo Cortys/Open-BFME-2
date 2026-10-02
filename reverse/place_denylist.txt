@@ -95,3 +95,9 @@ _io_writeto
 # that pin makes the full gate refuse it. Actual protected destructor at
 # 0x004BA47C is reached by vtable-linked deleting wrapper 0x004BA7C4.
 ??1TransitionDamageFX@@UAE@XZ
+
+# Refused 2026-10-02: 0x0031ED01/17 is a byte-only setCurPos placement.
+# No target caller or class evidence ties its +0x18/+0x1C fields to AnimateWindow;
+# it lacks the independently identified animation cluster supporting other helpers.
+# Revisit only with new target identity evidence, not the same unique byte shape.
+?setCurPos@AnimateWindow@@QAEXUICoord2D@@@Z
