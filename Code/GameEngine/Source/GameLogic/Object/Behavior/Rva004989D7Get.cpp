@@ -9,12 +9,24 @@ public:
 	class Player *getControllingPlayer() const;
 };
 
-class Player;
+enum Relationship
+{
+	ENEMIES = 0,
+	NEUTRAL = 1,
+	ALLIES = 2
+};
+
+class Player
+{
+public:
+	Relationship getRelationship(const Object *obj) const;
+};
 
 class Rva004989D7
 {
 public:
 	Player *rva004989D7() const;
+	Relationship rva004989DF(const Player *p) const;
 private:
 	char m_pad[0x0C];
 	Object *m_obj;
@@ -23,4 +35,9 @@ private:
 Player *Rva004989D7::rva004989D7() const
 {
 	return m_obj->getControllingPlayer();
+}
+
+Relationship Rva004989D7::rva004989DF(const Player *p) const
+{
+	return p->getRelationship(m_obj);
 }

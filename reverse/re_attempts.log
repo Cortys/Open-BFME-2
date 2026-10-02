@@ -5363,3 +5363,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva005CECC1Create@@YAPAVRva005CECC1@@PAV1@PBUPayload@Rva005CEB57@@@Z	0x005CECC1	50	partial	45B vs 50B missing push ecx and ebp-4 zero plus leave vs pop ebp with 0 reg-mem diffs under Os Oy- free cdecl twin of 0x005CE3F9 t=14 model=muse-spark score=0.9 stash=reverse/attempts/0x005cecc1.cpp
 ??0Rva0029D3B0@@QAE@XZ	0x0029D352	94	partial	single EH state store scheduling plus vtable-manager relocs; 0 structural 29 vs 29 insns t=15 model=muse-02 score=0.95 stash=reverse/attempts/0x0029d352.cpp
 ?rva00564743@Rva005646BC@@UAEXXZ	0x00564743	443	partial	rotation fpu sse scheduling and fxch ja vs jb t=20 model=muse-02 score=0.93 stash=reverse/attempts/0x00564743.cpp
+?rva00498F46@Rva00498DF3@@QAEXPAURva00498DF3Arg@@HH@Z	0x00498F46	100	partial	push ebx early vs late plus pop order t=20 model=muse-03 score=0.96 stash=reverse/attempts/0x00498f46.cpp
