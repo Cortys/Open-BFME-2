@@ -15,6 +15,7 @@ class Shadow
 {
 public:
 	void setOpacity(Int value);
+	void rva00330995(Int color);
 
 private:
 	char m_pad00[0x24];
@@ -39,6 +40,23 @@ inline void Shadow::setOpacity(Int value)
 		m_diffuse = (Int)((Real)(m_color & 0xff) * fvalue)
 			| ((Int)((Real)((m_color >> 8) & 0xff) * fvalue) << 8)
 			| ((Int)((Real)((m_color >> 16) & 0xff) * fvalue) << 16);
+	}
+}
+
+void Shadow::rva00330995(Int color)
+{
+	m_color = (UnsignedInt)color & 0xffffff;
+
+	if (m_type & 0x1420)
+	{
+		m_diffuse = ((Int)color & 0xffffff) | ((Int)m_opacity << 24);
+	}
+	else if (m_type & 0x0840)
+	{
+		Real fvalue = (Real)m_opacity / 255.0f;
+		m_diffuse = ((Int)((Real)((color >> 16) & 0xff) * fvalue) << 16)
+			| (((Int)((Real)((color >> 8) & 0xff) * fvalue)) << 8)
+			| (Int)((Real)(color & 0xff) * fvalue);
 	}
 }
 
