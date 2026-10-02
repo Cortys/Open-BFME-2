@@ -1,5 +1,5 @@
 // ?rva003FD398@Rva003FD398@@QAEXXZ
-// partial score=0.92 date=2026-09-30
+// partial score=0.96 date=2026-10-02
 // ?rva003FD398@Rva003FD398@@QAEXXZ
 // partial score=0.92 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
@@ -31,6 +31,7 @@ void Rva003FD398::rva003FD398()
 	m_04 = 0.0f;
 	m_08 = 0.0f;
 	m_0c = 0.0f;
-	m_10 = g_Va007C26F0;
-	m_14 = m_10;
+	float v = g_Va007C26F0;
+	m_10 = v;
+	m_14 = v;
 }
