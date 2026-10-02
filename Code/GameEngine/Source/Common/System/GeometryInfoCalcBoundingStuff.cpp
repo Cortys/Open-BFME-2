@@ -86,21 +86,27 @@ private:
 	std::vector<GeometryShape> m_shapes;
 };
 
-// ?rva0087ED00@GeometryShape@@QBEMXZ: a semantically faithful but not
-// byte-exact model of retail 0x0087ED00 (101 bytes; this compiles to 89),
-// kept visible only so calcBoundingStuff's register allocation matches.
+// ?rva0087ED00@GeometryShape@@QBEMXZ
+// Target 0x006BE5A0: Ghidra boundary 101 bytes; matched caller 0x006BE72C
+// folds this per-shape planar reach into the bounding-circle radius. The
+// BFME 1 model supplies the sphere/cylinder/box formulas. Target evidence
+// adds the copied coordinate local and separate sphere/cylinder branches:
+// MSVC merges the latter and reproduces the 16-byte frame and x87 stack.
+// The original method name remains unproven; the donor address labels it.
 __declspec(noinline) Real GeometryShape::rva0087ED00() const
 {
-	Real y = m_offset.y;
+	Coord3D offset = {m_offset.x, m_offset.y, m_offset.z};
 	Real result = 0.0f;
 	switch (m_type)
 	{
 		case GEOMETRY_SPHERE:
+			result = sqrt(sqr(offset.x) + sqr(offset.y)) + m_majorRadius;
+			break;
 		case GEOMETRY_CYLINDER:
-			result = sqrt(sqr(m_offset.x) + sqr(y)) + m_majorRadius;
+			result = sqrt(sqr(offset.x) + sqr(offset.y)) + m_majorRadius;
 			break;
 		case GEOMETRY_BOX:
-			result = sqrt(sqr(fabs(m_offset.x) + m_majorRadius) + sqr(fabs(y) + m_minorRadius));
+			result = sqrt(sqr(fabs(offset.x) + m_majorRadius) + sqr(fabs(offset.y) + m_minorRadius));
 			break;
 	}
 	return result;
