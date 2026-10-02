@@ -208,25 +208,14 @@ const Image* Anim2DTemplate::getFrame( UnsignedShort frameNumber ) const
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 // ??1Anim2D@@MAE@XZ
-// ??1Anim2D@@MAE@XZ present-unmatched
 Anim2D::~Anim2D( void )
 {
-	Anim2DCollection *collectionSystem = m_collectionSystem;
-	*(volatile void **)this = (void *)0x0110F29C;
 
-	if( collectionSystem )
-	{
-		if( m_collectionSystemNext )
-			m_collectionSystemNext->m_collectionSystemPrev = m_collectionSystemPrev;
+	// if we were registered with a system, un-register ourselves
+	if( m_collectionSystem )
+		m_collectionSystem->unRegisterAnimation( this );
 
-		if( m_collectionSystemPrev )
-			m_collectionSystemPrev->m_collectionSystemNext = m_collectionSystemNext;
-		else
-			*(Anim2D **)((unsigned char *)collectionSystem + 0x0C) = m_collectionSystemNext;
-	}
-
-	*(volatile void **)this = (void *)0x01073744;
-}
+}  // end ~Anim2D
 
 // ------------------------------------------------------------------------------------------------
 /** Set the current animation frame */
