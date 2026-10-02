@@ -47668,3 +47668,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva003FDE50@Rva003FDE50@@QAEXI@Z,,0x003FDE50,33,Code/GameEngine/Source/Common/Rva003FDE50.cpp,matched,chain lane pointer range loop via rowed Rva0056B970
 ?rva003FDE8C@Rva003FDE8C@@QAEXE@Z,,0x003FDE8C,33,Code/GameEngine/Source/Common/Rva003FDE8C.cpp,matched,chain lane pointer range loop via rowed Rva0056B929
 ?rva003FDE71@Rva003FDE71@@QAEXXZ,,0x003FDE71,27,Code/GameEngine/Source/Common/Rva003FDE71.cpp,matched,chain lane pointer range loop via rowed Rva0056B95E
+??1Rva0022CD2A@@QAE@XZ,,0x0022CD2A,59,Code/GameEngine/Source/Common/Rva0022CD2ADtor.cpp,matched,unlock packet calls rowed 0x0022C64A and rowed free 0x00030830
