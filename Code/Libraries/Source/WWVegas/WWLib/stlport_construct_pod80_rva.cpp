@@ -10,11 +10,21 @@ public:
 	Rva0051F87B(const Rva0051F87B &o);
 };
 namespace _STL {
-template <> void _Construct<BfmePod80, BfmePod80>(BfmePod80 *__p, const BfmePod80 &__val)
+template <> inline void _Construct<BfmePod80, BfmePod80>(BfmePod80 *__p, const BfmePod80 &__val)
 {
 	new ((void *)__p) Rva0051F87B((const Rva0051F87B &)__val);
 }
 }
+
+// This specialization is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStlportConstructPod80InlineAnchor@@YAXXZ absent-from-retail
+void _bfmeStlportConstructPod80InlineAnchor()
+{
+	_STL::_Construct<BfmePod80, BfmePod80>(
+		static_cast<BfmePod80 *>(0), *static_cast<const BfmePod80 *>(0));
+}
+#pragma inline_depth()
 
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
