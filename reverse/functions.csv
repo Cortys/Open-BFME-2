@@ -48716,3 +48716,10 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?f@Rva00023A00@@QAEXPAX@Z,,0x00023A00,31,Code/GameEngine/Source/Common/Rva000239D0Cluster.cpp,matched,address-derived free wrapper
 ?f@Rva00023AC0@@QAEPAXIPBX@Z,,0x00023AC0,53,Code/GameEngine/Source/Common/Rva000239D0Cluster.cpp,matched,address-derived raw byte allocator wrapper
 ?f@Rva00023B00@@QAEXPAXI@Z,,0x00023B00,31,Code/GameEngine/Source/Common/Rva000239D0Cluster.cpp,matched,address-derived free wrapper with unused second parameter
+?rva0024610Construct@@YAXPAHPBH@Z,,0x00024610,58,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived placement-new construct
+?rva0024720FillN@@YAPAHPAHIPBH@Z,,0x00024720,46,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived unsigned fill_n loop
+?rva00248A0Fill@@YAXPAHIPBH@Z,,0x000248A0,63,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived fill loop with moved parameter copies
+?f@Rva00248E0@@QAEHXZ,,0x000248E0,33,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived predecrement-copy getter
+?f@Rva0024910@@QAEPAV1@XZ,,0x00024910,27,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived predecrement-return-this
+?rva0024940Equal@@YAHPBH0@Z,,0x00024940,37,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived int equality helper
+?rva0024780Forward@@YAXPBX0PAX@Z,,0x00024780,28,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived forward to rowed __copy_trivial_backward
