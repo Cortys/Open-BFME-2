@@ -6,6 +6,7 @@
 typedef int Int;
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib/refcount.h
+#pragma optimize("t", on)
 class RefCountClass
 {
 public:
@@ -32,6 +33,7 @@ public:
 private:
 	HashableClass *NextHash;
 };
+#pragma optimize("", on)
 
 struct AsciiStringData;
 
