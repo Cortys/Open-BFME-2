@@ -79,9 +79,9 @@ template<class T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-	DynamicVectorClass(int size = 0, T const *array = 0);
-	virtual ~DynamicVectorClass() {}
-	virtual bool Resize(int size, T const *array = 0);
+  DynamicVectorClass(int size = 0, T const *array = 0);
+  virtual ~DynamicVectorClass();
+  virtual bool Resize(int size, T const *array = 0);
 	virtual void Clear();
 	virtual int ID(T const *);
 	virtual int ID(T const &);
