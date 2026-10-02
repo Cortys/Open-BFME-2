@@ -6,6 +6,12 @@ typedef float Real;
 class Thing;
 class ModuleData;
 
+class Xfer
+{
+public:
+	void Version1();
+};
+
 template<typename T>
 inline const T& max(const T& a, const T& b)
 {
@@ -48,7 +54,11 @@ public:
 	virtual ~ActiveBody();
 
 	virtual void slot0();
-	virtual void slot1();
+
+protected:
+	virtual void xfer( Xfer *xfer );
+
+public:
 	virtual Real getHealth() const;
 	virtual void slot3();
 	virtual void slot4();
@@ -63,6 +73,9 @@ public:
 	virtual ~ImmortalBody();
 
 	virtual void internalChangeHealth( Real delta, Bool something );
+
+protected:
+	virtual void xfer( Xfer *xfer );
 };
 
 ImmortalBody::ImmortalBody( Thing *thing, const ModuleData *moduleData )
@@ -73,6 +86,15 @@ ImmortalBody::ImmortalBody( Thing *thing, const ModuleData *moduleData )
 // ??1ImmortalBody@@UAE@XZ present-unmatched
 ImmortalBody::~ImmortalBody()
 {
+}
+
+// Open-BFME Zero Hour ImmortalBody::xfer (ImmortalBody.cpp:84-95) versions the
+// transfer then extends ActiveBody::xfer; retail calls Xfer::Version1 and the
+// 551-byte ActiveBody base body at 0x004BF1E8.
+void ImmortalBody::xfer( Xfer *xfer )
+{
+	xfer->Version1();
+	ActiveBody::xfer( xfer );
 }
 
 // ?internalChangeHealth@ImmortalBody@@UAEXM_N@Z present-unmatched
