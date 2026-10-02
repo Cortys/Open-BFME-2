@@ -5937,3 +5937,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva00311431@Rva00311431@@QAEPAV1@PBURva00311431Arg@@@Z	0x00311431	98	blocked	lea eax 0x30 middle base vs 0x34 end base same addrs tried direct plus flat both swap lea order t=12 model=muse-03 (stash 0.95 kept)
 ?rva00311F46@Rva00311F46@@QAE_NPBUCoord3D@@M@Z	0x00311F46	156	blocked	do-while 158B vs 156B dec-dec vs imul-lea plus push-esi plus xmm0-vs-xmm1 same as stash t=8 model=muse-03 (stash 0.91 kept)
 ?rva005D4949@Rva005D4949@@QAEX_N@Z	0x005D4949	66	blocked	al-vs-bl for bool arg plus push-ebx order plus mov-bl-al t=18 model=muse-12 (stash 0.93 kept)
+?rva001E3F4D@Rva001E3F4D@@QAEMPAURva001E3F4DArg@@H@Z	0x001E3F4D	96	partial	factor movss+mulss vs direct mulss xmm2 vs xmm1 +4B t=15 model=muse-10 score=0.93 stash=reverse/attempts/0x001e3f4d.cpp

@@ -49041,3 +49041,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva001680A6@Rva001680A6@@QAEXHPAXM@Z,,0x001680A6,71,Code/GameEngine/Source/Common/RTS/SidesListRva001680A6.cpp,matched,unlock guarded 12B copy plus float store plus flag clear prev SidesList contiguous
 ?rva001680ED@Rva001680A6@@QAEXHPAXPAM@Z,,0x001680ED,95,Code/GameEngine/Source/Common/RTS/SidesListRva001680A6.cpp,matched,chain guarded 12B get plus float out else zero prev 0x001680A6
 ?rva00168690@Rva00168690@@QAEXABVVector3@@M@Z,,0x00168690,42,Code/Libraries/Source/WWVegas/WWLib/Rva00168690Add.cpp,matched,unlock two SimpleDynVec Adds Vector3 float callees rowed
+?rva001E3E6D@Rva001E3E6D@@QAEMPAURva001E3E6DArg@@@Z,,0x001E3E6D,50,Code/GameEngine/Source/Common/Rva001E3E6DCalc.cpp,matched,sibling 0x001E3F08 offsets null BfmeZeroRange caller 0x0026C890
