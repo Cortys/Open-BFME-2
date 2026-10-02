@@ -56,3 +56,7 @@ void Rva009AB320BuildTables(Rva009AB320Tables* s)
         }
     }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:_ConvertBoolTrees=?Rva009AB320BuildTables@@YAXPAURva009AB320Tables@@@Z")

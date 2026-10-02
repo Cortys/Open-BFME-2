@@ -251,3 +251,7 @@ void Rva006573B0Holder::set(const char *a, const char *b, const char *c)
 	Rva00655700(m_inner->m_strB, 0x41, b ? b : "");
 	Rva00655700(m_inner->m_strC, 0x41, c ? c : "");
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva007E8640Copy@@YAXPADIPBD@Z=?Rva00655700@@YAXPADIPBD@Z")

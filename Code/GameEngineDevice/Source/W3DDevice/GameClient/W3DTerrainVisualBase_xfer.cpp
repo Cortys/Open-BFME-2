@@ -21,3 +21,7 @@ void W3DTerrainVisualBase::xfer(Xfer *xfer)
 	version.data[1] = 1;
 	*xfer == version;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeAccept@BfmeSinkA@@QAEXPAVBfmeFlagTarget@@@Z=?xfer@W3DTerrainVisualBase@@MAEXPAVXfer@@@Z")

@@ -8,3 +8,7 @@
 size_t _STL::_Filebuf_base::_M_page_size = 4096;
 
 template class _STL::basic_filebuf<char, _STL::char_traits<char> >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?_M_release_lock@NodeAllocMutex@_STL@@QAEXXZ=?_M_initialize@_STLP_mutex_base@_STL@@QAEXXZ")

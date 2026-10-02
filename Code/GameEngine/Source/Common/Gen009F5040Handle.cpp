@@ -167,3 +167,7 @@ void Gen009F5040::linkNode(Gen009F5040Node *node)
 	*slot = node;
 	node->m_index = index + 1;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeLinkEQR@BfmeHostEQR@@QAEXPAVBfmeRecEQR@@@Z=?linkNode@Gen009F5040@@QAEXPAUGen009F5040Node@@@Z")

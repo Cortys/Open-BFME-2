@@ -55,3 +55,7 @@ Rva00144690::~Rva00144690()
 		Internal_Remove_List_Head();
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1DX8PolygonRendererList@@UAE@XZ=??1Rva00144690@@UAE@XZ")

@@ -16,3 +16,7 @@ int rva006C8380()
 		TheProfileHook(1, 0);
 	return 1;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?FrameStart@ProfileFuncLevelTracer@@SAHXZ=?rva006C8380@@YAHXZ")
