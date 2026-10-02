@@ -543,3 +543,71 @@ void __cdecl Rva00229A44Pick(int *out1, int *out2)
 	*out1 = g_Va00DBA32C[i];
 	*out2 = g_Va00DBA31C[i];
 }
+
+// Three more pickers beside 0x00229A44, each over its own pair of int[4] tables
+// in retail .data that no other unit references: 0x00229A18 and 0x00229A70 take
+// the ebp form (as in Rva003F10D0Pick.cpp), 0x00229A9C the esp form; only the
+// table operands differ from the rowed picker of each form.
+
+// ?Rva00229A18Pick@@YAXPAH0@Z @0x00229A18 44B ebp pick
+// g_Va00DBA2FC: retail .data contents at VA 0xdba2fc.
+int g_Va00DBA2FC[4] = {
+	-880315382, -804461238, 0x3e79a00a, -1154241462
+};
+// g_Va00DBA30C: retail .data contents at VA 0xdba30c.
+int g_Va00DBA30C[4] = {
+	-888970165, -660034293, 0x32fde04b, -341853173
+};
+void __cdecl Rva00229A18Pick(int *out1, int *out2);
+void __cdecl Rva00229A18Pick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, ebp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DBA30C[i];
+	*out2 = g_Va00DBA2FC[i];
+}
+
+// ?Rva00229A70Pick@@YAXPAH0@Z @0x00229A70 44B ebp pick
+// g_Va00DBA33C: retail .data contents at VA 0xdba33c.
+int g_Va00DBA33C[4] = {
+	0x7ae8328a, -1994976438, 0x947890a, 0x1db904ca
+};
+// g_Va00DBA34C: retail .data contents at VA 0xdba34c.
+int g_Va00DBA34C[4] = {
+	0x326072cb, -1992357109, 0x167914b, 0x119148b
+};
+void __cdecl Rva00229A70Pick(int *out1, int *out2);
+void __cdecl Rva00229A70Pick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, ebp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DBA34C[i];
+	*out2 = g_Va00DBA33C[i];
+}
+
+// ?Rva00229A9CPick@@YAXPAH0@Z @0x00229A9C 44B esp pick
+// g_Va00DBA35C: retail .data contents at VA 0xdba35c.
+int g_Va00DBA35C[4] = {
+	-1048022134, -880315382, -804461238, 0x3e79a00a
+};
+// g_Va00DBA36C: retail .data contents at VA 0xdba36c.
+int g_Va00DBA36C[4] = {
+	-1716753461, -888970165, -660034293, 0x32fde04b
+};
+void __cdecl Rva00229A9CPick(int *out1, int *out2);
+void __cdecl Rva00229A9CPick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, esp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DBA36C[i];
+	*out2 = g_Va00DBA35C[i];
+}
