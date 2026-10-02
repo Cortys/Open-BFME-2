@@ -47563,3 +47563,6 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005D99BD@@QAE@XZ,,0x005D99AB,18,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005D9DCC precedes dtor 005D99BD
 ??0Rva005D9A1E@@QAE@XZ,,0x005D9A0C,18,Code/GameEngine/Source/Common/Rva005EEE33Ctor.cpp,matched,ctor calls base 005EEE1F precedes dtor 005D9A1E
 ??1Rva0054D54A@@UAE@XZ,,0x0054D55E,53,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,node-list dtor: bytes equal ~NetCommandWrapperList except the vtable VA 0xc6a774 stored on entry (the vtable the rowed ctor 0x0054D54A installs)
+??1BfmeStringRecord0033B1DE@@QAE@XZ,,0x0033B1DE,57,Code/GameEngine/Source/Common/StringRecord002CF550Dtor.cpp,matched,record dtor: bytes equal ~BfmeStringRecord002CF550 except the EH handler record
+??1Rva0023DBC3@@QAE@XZ,,0x0023DBC3,54,Code/GameEngine/Source/Common/Rva0048C200StringOwnerDtor.cpp,matched,member teardown: bytes equal ~Rva0048C200Owner except the EH handler record
+??0Rva00624D60@@QAE@XZ,,0x00624D60,72,Code/Libraries/Source/WWVegas/WWLib/Rva0016E400Ctor.cpp,matched,hash_map member ctor: bytes equal ??0Rva0016E400 except the EH handler record

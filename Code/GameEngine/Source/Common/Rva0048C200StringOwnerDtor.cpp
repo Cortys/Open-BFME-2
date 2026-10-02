@@ -25,3 +25,19 @@ private:
 Rva0048C200Owner::~Rva0048C200Owner()
 {
 }
+
+// ??1Rva0023DBC3@@QAE@XZ, retail 0x0023DBC3, 54 bytes: the same member teardown
+// (two strings after a pointer) for another class of this layout; only the EH
+// handler record differs from ~Rva0048C200Owner's bytes. Identity unknown.
+class Rva0023DBC3
+{
+public:
+	~Rva0023DBC3();
+private:
+	void *m_head00;
+	StringBase<char> m_first04;
+	StringBase<char> m_second08;
+};
+Rva0023DBC3::~Rva0023DBC3()
+{
+}

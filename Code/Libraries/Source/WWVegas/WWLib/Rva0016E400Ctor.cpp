@@ -15,3 +15,15 @@ private:
 };
 
 Rva0016E400::Rva0016E400() : m_map() {}
+
+// ??0Rva00624D60@@QAE@XZ, retail 0x00624D60, 72 bytes: the same constructor (a
+// default hash_map<int, int> member) for another class; only the EH handler
+// record differs from ??0Rva0016E400's bytes. Identity unknown.
+class Rva00624D60
+{
+public:
+    Rva00624D60();
+private:
+    _STL::hash_map<int, int> m_map;
+};
+Rva00624D60::Rva00624D60() : m_map() {}

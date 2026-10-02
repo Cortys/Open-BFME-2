@@ -24,3 +24,10 @@ void _bfmeBfmeStringRecord002CF550InlineAnchor(BfmeStringRecord002CF550 *p)
     p->BfmeStringRecord002CF550::~BfmeStringRecord002CF550();
 }
 #pragma inline_depth()
+
+// ??1BfmeStringRecord0033B1DE@@QAE@XZ, retail 0x0033B1DE, 57 bytes: the same
+// cleanup (owner reference released, then the string) for another record of this
+// layout. Only the EH handler record differs from ~BfmeStringRecord002CF550's
+// bytes. No other unit emits it, so it is defined plainly. Identity unknown.
+struct BfmeStringRecord0033B1DE { AsciiString text; Rva002390CB ref; ~BfmeStringRecord0033B1DE(); };
+BfmeStringRecord0033B1DE::~BfmeStringRecord0033B1DE() {}
