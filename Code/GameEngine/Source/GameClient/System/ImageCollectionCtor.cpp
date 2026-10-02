@@ -18,7 +18,7 @@
 //   real <map> header would drag in the whole tree machinery as extra
 //   COMDATs.
 
-// ??_GImageCollection@@MAEPAXI@Z present-unmatched
+// ??_GImageCollection@@UAEPAXI@Z present-unmatched
 class AsciiStringMember
 {
 public:
@@ -67,7 +67,7 @@ class ImageCollection : public GameEngineDeletingBase
 public:
 	ImageCollection();
 
-protected:
+public:
 	virtual ~ImageCollection();
 
 private:
