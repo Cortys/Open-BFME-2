@@ -9,3 +9,7 @@ void bfmeGoDAE()
 {
 	bfmeRegisterDAE(bfmeObjDAE, 4, 0xb2, bfmeDtorDAE);
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeRegisterDAE@@YGXPAXIIP6AX0@Z@Z=??_M@YGXPAXIHP6EX0@Z@Z")

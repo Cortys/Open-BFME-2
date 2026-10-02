@@ -74,3 +74,7 @@ void Rva005F09BC::rva005F09BC()
 	for (; begin != end; ++begin)
 		(*begin)->rva005F06EF();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva005F0C39Destroy@@YAXPAURva005F0647@@0PA_N@Z=?Rva005F0C39Destroy@@YAXPAURva005F0647@@0@Z")

@@ -2389,3 +2389,7 @@ void DX8MeshRendererClass::Invalidate( bool shutdown)
 }
 // ?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A: the global at VA 0xdf363c is ?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A.
 #pragma comment(linker, "/alternatename:?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A=?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva00145000@@UAE@XZ=??1DX8FVFCategoryContainer@@UAE@XZ")

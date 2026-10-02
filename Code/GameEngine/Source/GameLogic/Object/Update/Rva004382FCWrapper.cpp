@@ -57,3 +57,7 @@ Rva004382FC::Rva004382FC(const Rva004382FC &other)
 	, m_C0(other.m_C0)
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmePod196@@QAE@ABU0@@Z=??0Rva004382FC@@QAE@ABV0@@Z")

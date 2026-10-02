@@ -306,3 +306,7 @@ int Rva004B554FHolder::rva004B554F() const
 		ret = p->m_val;
 	return ret;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1StatusBitsUpgrade@@UAE@XZ=??1Rva004B48D3@@UAE@XZ")

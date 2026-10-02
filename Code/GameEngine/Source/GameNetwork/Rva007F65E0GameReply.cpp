@@ -127,3 +127,7 @@ void Rva007F65E0Owner::handleGameLobbyReply( Rva007E8810Message *msg, int flag )
 	if( done )
 		m_listener->onLobbyCounts( lid, 0 );
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDoBDB@BfmeSubBDB@@QAEXPAXH@Z=?handleGameLobbyReply@Rva007F65E0Owner@@QAEXPAVRva007E8810Message@@H@Z")
