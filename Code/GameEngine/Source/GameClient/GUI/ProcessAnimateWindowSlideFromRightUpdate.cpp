@@ -10,7 +10,9 @@
 // to the getVel result slot when the speed floor is reached.
 #include "PreRTS.h"
 #include "GameClient/ProcessAnimateWindow.h"
+#pragma optimize("y", off)
 #include "GameClient/AnimateWindowManager.h"
+#pragma optimize("", on)
 #include "GameClient/GameWindow.h"
 #include "GameClient/Display.h"
 
