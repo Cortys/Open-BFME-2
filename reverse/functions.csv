@@ -48815,3 +48815,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva002ADD31@Rva002ADD31@@QAEPAXPBX@Z,,0x002ADD31,68,Code/GameEngine/Source/Common/Rva002ADD31Insert.cpp,matched,hashtable insert same shape as 0x002CFB4C via pin resize plus rowed bucketIndex plus NewNode
 ?rva003743CF@Rva003743CF@@QAEXPAX_N@Z,,0x003743CF,79,Code/GameEngine/Source/GameLogic/Object/Update/Rva003743CFBehavior.cpp,matched,BehaviorModule m_object plus Object setStatus row plus flag at +0x115 plus vtable slot 0x110
 ?rva0052D394@Rva0052D394@@QAEXABVRva002E0A0A@@@Z,,0x0052D394,93,Code/GameEngine/Source/Common/Rva0052D394Dedup.cpp,matched,dedup via StringBase compare 0x000069D6 plus push_back 0x0052D31E stride 0x28 idiv caller 0x002E1DD4 loop-invariant argStr sunk below size guard
+?rva004FA659@Rva004FA659@@QAEXXZ,,0x004FA659,19,Code/GameEngine/Source/Common/Rva004FA659Method.cpp,matched,chain method compares m20 m24 forwards bool to rowed Rva004E060C
