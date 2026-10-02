@@ -37,9 +37,22 @@ OutputIter __copy_ptrs(InputIter first, InputIter last, OutputIter result, const
 typedef Rva002C99FB *(__cdecl *FiveCopyFn)(Rva002C99FB *, Rva002C99FB *, Rva002C99FB *, const void *, const void *);
 
 template <>
-BfmeAsciiScalarValue8 *_STL::__copy_ptrs<const BfmeAsciiScalarValue8 *, BfmeAsciiScalarValue8 *>(const BfmeAsciiScalarValue8 *first, const BfmeAsciiScalarValue8 *last, BfmeAsciiScalarValue8 *result, const __false_type &tag)
+inline BfmeAsciiScalarValue8 *_STL::__copy_ptrs<const BfmeAsciiScalarValue8 *, BfmeAsciiScalarValue8 *>(const BfmeAsciiScalarValue8 *first, const BfmeAsciiScalarValue8 *last, BfmeAsciiScalarValue8 *result, const __false_type &tag)
 {
     __false_type local;
     return (BfmeAsciiScalarValue8 *)((FiveCopyFn)&Rva0031BA18Copy)(
         (Rva002C99FB *)first, (Rva002C99FB *)last, (Rva002C99FB *)result, (const void *)&local, (const void *)0);
 }
+
+// This specialization is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeAsciiScalarValue8CopyPtrsInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeBfmeAsciiScalarValue8CopyPtrsInlineAnchor()
+{
+    _STL::__false_type tag;
+    _STL::__copy_ptrs<const BfmeAsciiScalarValue8 *, BfmeAsciiScalarValue8 *>(
+        static_cast<const BfmeAsciiScalarValue8 *>(0),
+        static_cast<const BfmeAsciiScalarValue8 *>(0),
+        static_cast<BfmeAsciiScalarValue8 *>(0), tag);
+}
+#pragma inline_depth()
