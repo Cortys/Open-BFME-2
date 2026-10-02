@@ -168,44 +168,4 @@ IDirect3DSurface9 *DX8Wrapper::_Get_DX8_Front_Buffer()
 // ?Find_Color_Mode@DX8Wrapper@@KA_NW4_D3DFORMAT@@HHPAI@Z
 // The adapter's mode list is walked twice: once to find the first mode of the
 // requested size and format, then on from there to find where that run ends.
-bool __cdecl DX8Wrapper::Find_Color_Mode(_D3DFORMAT colorbuffer, int resx, int resy, UINT *mode)
-{
-	UINT i, j, modemax;
-	UINT rx, ry;
-	D3DDISPLAYMODE dmode;
-	memset(&dmode, 0, sizeof(D3DDISPLAYMODE));
-
-	rx = static_cast<UINT>(resx);
-	ry = static_cast<UINT>(resy);
-	bool found = false;
-	modemax = D3DInterface->lpVtbl->GetAdapterModeCount(D3DInterface, 0, colorbuffer);
-
-	i = 0;
-	while (i < modemax && !found) {
-		D3DInterface->lpVtbl->EnumAdapterModes(D3DInterface, 0, colorbuffer, i, &dmode);
-		if (dmode.Width == rx && dmode.Height == ry && dmode.Format == colorbuffer)
-			found = true;
-		++i;
-	}
-
-	--i;
-	if (!found)
-		return false;
-
-	bool stillok = true;
-	j = i;
-	while (j < modemax && stillok) {
-		D3DInterface->lpVtbl->EnumAdapterModes(D3DInterface, 0, colorbuffer, j, &dmode);
-		if (dmode.Width == rx && dmode.Height == ry && dmode.Format == colorbuffer)
-			stillok = true;
-		else
-			stillok = false;
-		++j;
-	}
-
-	if (!stillok)
-		*mode = j - 2;
-	else
-		*mode = i;
-	return true;
-}
+// Defined in dx8wrapper.cpp (its row's unit).
