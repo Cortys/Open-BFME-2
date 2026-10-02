@@ -21,6 +21,8 @@
 
 #include "ascii_string.h"
 
+extern "C" const void *const vtbl_00BBB554[];  // ??_7BfmeSnapshotBase@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeSnapshotBase@@6B@")
 
 class Snapshot {
 public:
@@ -29,7 +31,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-    *(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(vtbl_00BBB554);
 }
 
 class Rva004E3184 : public Snapshot {
