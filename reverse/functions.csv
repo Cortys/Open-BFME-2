@@ -48932,3 +48932,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005FF328@Rva005FF328@@QAEX_N@Z,,0x005FF328,101,Code/GameEngine/Source/Common/Rva005FF328Overlay.cpp,matched,chain via 0x0050E9FE AptCall SetSelectionOverlayState show over hide
 ??_GRva005E7529@@QAEPAXI@Z,,0x005E7BFD,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-5E7BFD.cpp,matched,deleting dtor via own ??1 plus operator delete
 ?rva005E73B2@Rva005E73B2@@QAEXXZ,,0x005E73B2,42,Code/GameEngine/Source/Common/Bfme/Rva005E73B2Check.cpp,matched,unlock check via pinned noarg getter and forwarder tail
+?rva005E7855@Rva005E7855@@QAEXXZ,,0x005E7855,69,Code/GameEngine/Source/Common/Bfme/Rva005E7855Init.cpp,matched,chain five virtuals then check then clear via just-landed
