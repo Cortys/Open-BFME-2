@@ -46959,3 +46959,5 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0056ECAEPick@@YAXPAH0@Z,,0x0056ECAE,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,esp pair pick over its own int[4] tables; bytes equal the rowed esp picker except the two table operands
 ?Rva0056ED06Pick@@YAXPAH0@Z,,0x0056ED06,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,rdtsc pair pick over its own int[4] tables; bytes equal the rowed rdtsc picker except the two table operands
 ?Rva00229A44Pick@@YAXPAH0@Z,,0x00229A44,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,esp pair pick over its own int[4] tables; bytes equal the rowed esp picker except the two table operands
+??1Rva002B54F9@@QAE@XZ,,0x002B5FF1,56,Code/GameEngine/Source/Common/Rva002B5558Dtor.cpp,matched,list dtor: bytes equal ??1Rva002B5558 except the call to the rowed Rva002B54F9 clear; Ghidra start
+??1Rva002B5522@@QAE@XZ,,0x002B602E,56,Code/GameEngine/Source/Common/Rva002B5558Dtor.cpp,matched,list dtor: bytes equal ??1Rva002B5558 except the call to the rowed Rva002B5522 clear; Ghidra start

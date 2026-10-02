@@ -50,3 +50,40 @@ Rva002B5558::~Rva002B5558()
 {
 	rva002B5558();
 }
+
+// Two more list destructors of the same 56-byte shape, byte-identical to
+// ??1Rva002B5558 except for the clear they call: the rowed clears of the
+// Rva002B54F9 and Rva002B5522 lists (0x002B54F9 / 0x002B5522, each 41 bytes,
+// like 0x002B5558). The owners keep their address tokens.
+
+// ??1Rva002B54F9@@QAE@XZ @0x002B5FF1 56B.
+class Rva002B54F9
+{
+public:
+	void rva002B54F9();
+	~Rva002B54F9();
+private:
+	Rva002B5558HeadHandle m_handle;
+	int m_count;
+};
+
+Rva002B54F9::~Rva002B54F9()
+{
+	rva002B54F9();
+}
+
+// ??1Rva002B5522@@QAE@XZ @0x002B602E 56B.
+class Rva002B5522
+{
+public:
+	void rva002B5522();
+	~Rva002B5522();
+private:
+	Rva002B5558HeadHandle m_handle;
+	int m_count;
+};
+
+Rva002B5522::~Rva002B5522()
+{
+	rva002B5522();
+}
