@@ -34,3 +34,6 @@ int __stdcall Rva00222B19AptCall(void *level, const char *prefix, const char *fu
 	Rva006CCB80AptCall(function, g_00DFE5D8, s, argc, a0, a1, a2, a3, a4);
 	return (int)g_00DFE5D8;
 }
+
+// The UI firers call this body as a method of the APT call target (thiscall, ECX unused, the same nine arguments popped by the callee, ret 0x24), pinned to the same 0x00222B19; bind that spelling here.
+#pragma comment(linker, "/alternatename:?rva00222B19@Rva00222A8BTarget@@QAEHPAXPBD1H10000@Z=?Rva00222B19AptCall@@YGHPAXPBD1H10000@Z")
