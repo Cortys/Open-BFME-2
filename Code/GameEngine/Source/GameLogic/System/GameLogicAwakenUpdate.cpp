@@ -10,6 +10,8 @@
 // Evidence: pinned name, sole blocker Object::isInList 0x0028B47C now rowed,
 // caller UpdateModule::setWakeFrame 0x0044DF85, TheGameLogic 0x00DFE78C frame+0x40.
 
+extern class Debug *theDebug;
+
 #include <vector>
 
 typedef unsigned int UnsignedInt;
@@ -136,7 +138,7 @@ public:
 
 void _bfme_debugRecordCallsite(int);
 
-#define TheBfmeAwakenDebug (*(BfmeAwakenDebug **)0x00DE0880)
+#define TheBfmeAwakenDebug (*(BfmeAwakenDebug **)&theDebug)
 
 class GameLogic
 {

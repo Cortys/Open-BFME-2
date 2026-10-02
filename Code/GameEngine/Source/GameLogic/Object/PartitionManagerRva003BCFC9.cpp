@@ -5,6 +5,8 @@
 // shroud thunk void(bool); slot 0xDFE74C is TheShroudManager (PartitionManager*
 // view per W3DPropBuffer); caller 0x003CE614 in ScriptActions dispatch.
 
+extern class Rva002D3627Host *TheRva002D3627Host;
+
 class PartitionManager
 {
 public:
@@ -48,7 +50,7 @@ public:
 	void rva002D382E(int seconds);
 };
 
-#define TheRva002D382E (*(Rva002D382E **)0x00DFF028)
+#define TheRva002D382E (*(Rva002D382E **)&TheRva002D3627Host)
 
 void __stdcall Rva003BD444Set(int value)
 {
@@ -66,7 +68,7 @@ public:
 	void rva002D383F(int seconds);
 };
 
-#define TheRva002D383F (*(Rva002D383F **)0x00DFF028)
+#define TheRva002D383F (*(Rva002D383F **)&TheRva002D3627Host)
 
 void __stdcall Rva003BD459Set(int value)
 {

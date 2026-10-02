@@ -4,6 +4,8 @@
 // BFME2 adaptations: font-state global moved to 0x00DF6F24; /G7 so the
 // missing-scan loop emits add (not inc). Dedicated TU so the already-matched
 // Rva0093C870Owner::Check in Rva0093C870ChildCheck.cpp keeps its shape.
+extern class FontCharsClassGdiState *g_fontCharsGdiState;
+
 #include <windows.h>
 
 extern "C" __declspec(dllimport) DWORD WINAPI GetGlyphIndicesW(
@@ -18,7 +20,7 @@ struct FontCharsGDIState
 	void *dc;
 };
 
-#define TheFontCharsGDIState (*(FontCharsGDIState **)0x00DF6F24)
+#define TheFontCharsGDIState (*(FontCharsGDIState **)&g_fontCharsGdiState)
 
 class Rva0093C4A0Target
 {

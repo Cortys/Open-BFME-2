@@ -1,6 +1,8 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 // ??1Rva004978A3@@UAE@XZ retail 0x004978A3 114B
 // Evidence: unlock lane stores vtable 0x0084FBAC; base dtor 0x0024A797 rowed MI 0x20 with order +0x10/+0/+0xC; second base at +0x20 vtable 0x0084FB7C; array 4x0x10 at +0x44 with element dtor pin 0x0010F149 via EH vector dtor; virtual slot 0x6c on global 0x009FE6E8 with arg +0x84; neighbours BattlePlanUpdate TUs
+extern class AudioManager *TheAudio;
+
 struct BfmeStringTailRecord156
 {
 	~BfmeStringTailRecord156();
@@ -82,7 +84,7 @@ public:
 	virtual void f27(int v);
 };
 
-#define TheGlobalMgr004978A3 (*(GlobalMgr004978A3 **)0x00DFE6E8)
+#define TheGlobalMgr004978A3 (*(GlobalMgr004978A3 **)&TheAudio)
 
 class Rva004978A3 : public Rva0024A797, public SecondBase004978A3
 {

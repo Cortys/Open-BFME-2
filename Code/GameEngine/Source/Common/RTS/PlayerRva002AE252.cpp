@@ -5,6 +5,8 @@
 // vector assign dup 0x0021C21B), grants starting sciences from Store configs
 // via pinned get 0x002000D7 and pinned addScience 0x002AD661, then notifies
 // ScriptEngine via rowed notify 0x00357F43. Callers at 0x001EC6DA 0x0040F90D.
+extern class RankInfoStore *TheRankInfoStore;
+
 extern class GameLogic *TheGameLogic;
 
 enum ScienceType
@@ -58,7 +60,7 @@ public:
 	Rva002000D7Config *get(int index);
 };
 
-#define TheStore (*(Rva002000D7Store **)0x00DFE0EC)
+#define TheStore (*(Rva002000D7Store **)&TheRankInfoStore)
 
 class ScriptEngine
 {

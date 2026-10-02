@@ -2,7 +2,9 @@
 // ??0Rva00261790@@QAE@PAVArg00261790@@_N@Z, retail 0x00261790, 88 bytes.
 // Filter ctor: base +4 zero via and, vtable 0x007F9000, +8/+C/+10 from arg +0x38/+0x3C/+0x40, +0x18 flag, +0x14 globalD4*const7F8FFC+argB8.
 // Evidence: caller 0x00272B3E; GlobalData 0x00DFE758+0xD4 precedent TerrainLogic_setActiveBoundary; neighbours 0x00261723/0x0026185B.
-#define TheGlobalData758 (*(void **)0x00DFE758)
+extern class GlobalData *TheWritableGlobalData;
+
+#define TheGlobalData758 (*(void **)&TheWritableGlobalData)
 #define TheConst7F8FFC (*(float *)0x00BF8FFC)
 class Arg00261790
 {

@@ -8,6 +8,8 @@
 // - Latch at [0xDFE168]: set on proc success, cleared on next failure.
 // Human-readable names; opaque host (caller sets ecx, body ignores this).
 
+extern class GlobalData *TheWritableGlobalData;
+
 typedef int HMODULE;
 
 extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, const char *name);
@@ -19,7 +21,7 @@ public:
 };
 extern GameLogic *TheGameLogic;
 
-#define TheGlobalData (*(unsigned char **)0x00DFE758)
+#define TheGlobalData (*(unsigned char **)&TheWritableGlobalData)
 #define TheAppModule (*(HMODULE *)0x00DFE158)
 #define AppFastLatch (*(unsigned char *)0x00DFE168)
 

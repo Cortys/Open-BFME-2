@@ -3,6 +3,9 @@
 // ?Rva003BAAD6@@YAXXZ @0x003BAAD6 14B: free forwarder to virtual slot 0x1A0 via global 0xDFEA3C.
 // Evidence: mov ecx,[0xDFEA3C] mov eax,[ecx] jmp [eax+0x1A0]; callers 0x3CAD41 0x3CC8DF in ScriptActions dispatch with mov ecx,edi no pushes.
 
+extern class AudioManager *TheAudio;
+extern class Rva002D3627Host *TheRva002D3627Host;
+
 extern class InGameUI *TheInGameUI;
 extern class View *TheTacticalView;
 
@@ -128,7 +131,7 @@ public:
 
 #define Rva00DFEA3C (*(Rva003BAAD6Holder **)&TheTacticalView)
 #define Rva00DFEDF0 (*(Rva003BAAD6Holder **)&TheInGameUI)
-#define Rva00DFE6E8 (*(Rva003BAAD6Holder **)0x00DFE6E8)
+#define Rva00DFE6E8 (*(Rva003BAAD6Holder **)&TheAudio)
 
 void Rva003BAAD6()
 {
@@ -155,7 +158,7 @@ public:
 	void rva002D3615(bool value);
 };
 
-#define Rva00DFF028 (*(RadarWindowOverrideSource **)0x00DFF028)
+#define Rva00DFF028 (*(RadarWindowOverrideSource **)&TheRva002D3627Host)
 
 // ?Rva003BB7E2@@YAXXZ @0x003BB7E2 14B free caller of 0x002D3615 with false via global 0xDFF028 caller 0x003CBD39
 void Rva003BB7E2()

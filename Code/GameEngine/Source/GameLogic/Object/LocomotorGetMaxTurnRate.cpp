@@ -9,6 +9,8 @@
 // at +0x254, template periods at +0x2C/+0x30, max at +0x38, penalty at +0xB3C.
 // Callers at 0x001E4089 0x001E68B9 0x001E6ADF prove Object* + float shape.
 
+extern class GlobalData *TheWritableGlobalData;
+
 typedef float Real;
 typedef unsigned int UnsignedInt;
 
@@ -56,7 +58,7 @@ public:
 	BodyDamageType m_movementPenaltyDamageState;
 };
 
-#define TheGlobalData (*(GlobalData **)0x00DFE758)
+#define TheGlobalData TheWritableGlobalData
 
 class Locomotor
 {

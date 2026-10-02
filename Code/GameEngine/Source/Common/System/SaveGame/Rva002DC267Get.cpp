@@ -11,6 +11,8 @@
 // owner unproven so class Rva002DC267. Donor shape is GameState
 // getSaveDirectory in BFME1 GameState.cpp and BFME2 GameState.cpp.
 
+extern class GlobalData *TheWritableGlobalData;
+
 extern class FileSystem *TheFileSystem;
 
 typedef int Int;
@@ -29,7 +31,7 @@ public:
 	AsciiString rva002360DE() const;
 };
 
-#define TheGlobalData (*(GlobalData **)0x00DFE758)
+#define TheGlobalData TheWritableGlobalData
 
 class Rva002DC267
 {

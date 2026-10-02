@@ -4,13 +4,15 @@
 // 0x00DFE758 holder (GlobalData/GameLogic family); offset 0xA5C is opaque.
 // Opaque address-derived name; DIR32 global is gate-filled reloc.
 
+extern class GlobalData *TheWritableGlobalData;
+
 struct Rva002A9DACHolder
 {
 	char _pad[0xA5C];
 	int m_value;
 };
 
-#define TheRva002A9DAC (*(Rva002A9DACHolder **)0x00DFE758)
+#define TheRva002A9DAC (*(Rva002A9DACHolder **)&TheWritableGlobalData)
 
 int Rva002A9DACGet(void)
 {

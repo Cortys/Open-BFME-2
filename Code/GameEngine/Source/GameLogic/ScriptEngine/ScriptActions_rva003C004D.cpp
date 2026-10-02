@@ -7,6 +7,8 @@
 // slot +0x174 with the trigger plus a float argument (x87 push idiom).
 // Evidence: TheAudio at 0x00DFE6E8, getQualifiedTriggerAreaByName pin
 // 0x0035768D, TheScriptEngine at 0x00DFE16C. Prev doTeamExitAll shares flags.
+extern class AudioManager *TheAudio;
+
 #include "ascii_string.h"
 
 class PolygonTrigger
@@ -58,10 +60,10 @@ protected:
 
 void ScriptActions::rva003C004D(const AsciiString &areaName, float value)
 {
-    if (*(BfmeAudio **)0x00DFE6E8 == 0)
+    if (*(BfmeAudio **)&TheAudio == 0)
         return;
     PolygonTrigger *trig = TheScriptEngine->getQualifiedTriggerAreaByName((AsciiString &)areaName);
     if (!trig)
         return;
-    (*(BfmeAudio **)0x00DFE6E8)->audioSlot174(trig, value);
+    (*(BfmeAudio **)&TheAudio)->audioSlot174(trig, value);
 }

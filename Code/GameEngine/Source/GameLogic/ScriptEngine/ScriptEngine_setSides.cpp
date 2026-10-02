@@ -6,6 +6,9 @@
 // - Calls the proc with 11 pushed globals/zeros (caller cleans 0x2C).
 // Human-readable names; opaque free function (no this, no stack args).
 
+extern class AudioManager *TheAudio;
+extern class GlobalData *TheWritableGlobalData;
+
 extern class GameLogic *TheGameLogic;
 extern class NameKeyGenerator *TheNameKeyGenerator;
 extern class ScriptEngine *TheScriptEngine;
@@ -24,8 +27,8 @@ extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, 
 #define Rva00DFEC50 (*(void **)&TheTerrainLogic)
 #define Rva00DFEA3C (*(void **)&TheTacticalView)
 #define Rva00DF36A4 (*(void **)&TheNameKeyGenerator)
-#define Rva00DFE758 (*(void **)0x00DFE758)
-#define Rva00DFE6E8 (*(void **)0x00DFE6E8)
+#define Rva00DFE758 (*(void **)&TheWritableGlobalData)
+#define Rva00DFE6E8 (*(void **)&TheAudio)
 #define Rva00DFE16C (*(void **)&TheScriptEngine)
 #define Rva00E01D58 (*(void **)&TheSidesList)
 

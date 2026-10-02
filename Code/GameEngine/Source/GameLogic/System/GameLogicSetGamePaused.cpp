@@ -9,6 +9,8 @@
 // Mouse 0x00DFDCA0 plus rowed ?rva001EDE26@Mouse@@QBE_NXZ and ?_bfme_setEngineVisibility@Mouse@@QAEX_N@Z plus vtable slot 0x4C setCursor(2);
 // Audio 0x00DFE6E8 pause slot 0x40 resume slot 0x44 with audToAffect (mode!=1)+0x1E|0x20.
 
+extern class AudioManager *TheAudio;
+
 class GameLogic
 {
 public:
@@ -99,7 +101,7 @@ public:
 	virtual void resumeAudio(unsigned int which, int a, int b);
 };
 
-#define TheAudio (*(BfmeAudio **)0x00DFE6E8)
+#define TheAudio (*(BfmeAudio **)&TheAudio)
 
 void GameLogic::rva0023CD9E(bool paused, int pauseMode, bool affectMouse)
 {

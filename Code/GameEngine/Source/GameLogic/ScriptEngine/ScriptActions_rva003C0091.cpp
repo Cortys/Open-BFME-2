@@ -7,6 +7,8 @@
 // pin 0x0035768D with the by-value AsciiString temp pattern, then audio vtable
 // slot +0x178 fed with the trigger. TheScriptEngine at 0x00DFE16C.
 // Prev doTeamExitAll shares flags.
+extern class AudioManager *TheAudio;
+
 #include "ascii_string.h"
 
 class PolygonTrigger
@@ -58,10 +60,10 @@ protected:
 
 void ScriptActions::rva003C0091(const AsciiString &areaName)
 {
-    if (*(BfmeAudio **)0x00DFE6E8 == 0)
+    if (*(BfmeAudio **)&TheAudio == 0)
         return;
     PolygonTrigger *trig = TheScriptEngine->getQualifiedTriggerAreaByName((AsciiString &)areaName);
     if (!trig)
         return;
-    (*(BfmeAudio **)0x00DFE6E8)->audioSlot178(trig);
+    (*(BfmeAudio **)&TheAudio)->audioSlot178(trig);
 }
