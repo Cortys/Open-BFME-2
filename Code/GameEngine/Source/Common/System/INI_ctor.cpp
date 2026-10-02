@@ -8,7 +8,7 @@
 // +8/+C/+10, the line buffer from +0x14, six token strings at +0x418, the
 // end-of-file byte at +0x430 and the block-start buffer from +0x431; then
 // BFME 2's additions, a 0x34-byte helper object with its own constructor and
-// destructor at +0x838 (0x00601BBC / 0x00601BF3, vtable 0x00C7A6B0, pinned),
+// destructor at +0x838 (0x00601BBC / 0x00601BF3, vtable 0x00C7A6B0; INIHelperRva00601BBC.cpp),
 // an AsciiString at +0x86C and a vector<AsciiString> at +0x870. Everything up
 // to the helper is a member initialiser, which is why retail sets the strings
 // before constructing it; only the two buffer terminators are body stores.
@@ -21,10 +21,10 @@ class Rva00601BBCHelper
 {
 public:
 	Rva00601BBCHelper();
-	~Rva00601BBCHelper();
+	virtual ~Rva00601BBCHelper();
 
 private:
-	char m_body[0x34];
+	char m_body[0x30]; // after the vptr: 0x34 bytes in all
 };
 
 class INI
