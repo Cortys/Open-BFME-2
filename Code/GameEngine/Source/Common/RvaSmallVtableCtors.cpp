@@ -45,6 +45,286 @@ Rva00222A19::Rva00222A19(void *p) : m_04(p)
 {
 }
 
+// ??0Rva002293F9@@QAE@PAX@Z @0x002293F9 18B, vtable VA 0xbe73e4
+class Rva002293F9
+{
+public:
+	Rva002293F9(void *p);
+	virtual ~Rva002293F9() {}
+private:
+	void *m_04;
+};
+
+Rva002293F9::Rva002293F9(void *p) : m_04(p)
+{
+}
+
+// ??0Rva002AAD77@@QAE@PAX@Z @0x002AAD77 18B, vtable VA 0xbfdc60
+class Rva002AAD77
+{
+public:
+	Rva002AAD77(void *p);
+	virtual ~Rva002AAD77() {}
+private:
+	void *m_04;
+};
+
+Rva002AAD77::Rva002AAD77(void *p) : m_04(p)
+{
+}
+
+// ??0Rva002AAD9C@@QAE@PAX@Z @0x002AAD9C 18B, vtable VA 0xbfdc6c
+class Rva002AAD9C
+{
+public:
+	Rva002AAD9C(void *p);
+	virtual ~Rva002AAD9C() {}
+private:
+	void *m_04;
+};
+
+Rva002AAD9C::Rva002AAD9C(void *p) : m_04(p)
+{
+}
+
+// ??0Rva002B29D8@@QAE@PAX@Z @0x002B29D8 18B, vtable VA 0xbfe000
+class Rva002B29D8
+{
+public:
+	Rva002B29D8(void *p);
+	virtual ~Rva002B29D8() {}
+private:
+	void *m_04;
+};
+
+Rva002B29D8::Rva002B29D8(void *p) : m_04(p)
+{
+}
+
+// ??0Rva0032A3C6@@QAE@PAX@Z @0x0032A3C6 18B, vtable VA 0xc0d938
+class Rva0032A3C6
+{
+public:
+	Rva0032A3C6(void *p);
+	virtual ~Rva0032A3C6() {}
+private:
+	void *m_04;
+};
+
+Rva0032A3C6::Rva0032A3C6(void *p) : m_04(p)
+{
+}
+
+// ??0Rva003A538E@@QAE@PAX@Z @0x003A538E 18B, vtable VA 0xc1b320
+class Rva003A538E
+{
+public:
+	Rva003A538E(void *p);
+	virtual ~Rva003A538E() {}
+private:
+	void *m_04;
+};
+
+Rva003A538E::Rva003A538E(void *p) : m_04(p)
+{
+}
+
+// ??0Rva003EE734@@QAE@PAX@Z @0x003EE734 18B, vtable VA 0xc363c0
+class Rva003EE734
+{
+public:
+	Rva003EE734(void *p);
+	virtual ~Rva003EE734() {}
+private:
+	void *m_04;
+};
+
+Rva003EE734::Rva003EE734(void *p) : m_04(p)
+{
+}
+
+// ??0Rva003F3FEC@@QAE@PAX@Z @0x003F3FEC 18B, vtable VA 0xc37064
+class Rva003F3FEC
+{
+public:
+	Rva003F3FEC(void *p);
+	virtual ~Rva003F3FEC() {}
+private:
+	void *m_04;
+};
+
+Rva003F3FEC::Rva003F3FEC(void *p) : m_04(p)
+{
+}
+
+// ??0Rva003F424F@@QAE@PAX@Z @0x003F424F 18B, vtable VA 0xc37080
+class Rva003F424F
+{
+public:
+	Rva003F424F(void *p);
+	virtual ~Rva003F424F() {}
+private:
+	void *m_04;
+};
+
+Rva003F424F::Rva003F424F(void *p) : m_04(p)
+{
+}
+
+// ??0Rva003F82E2@@QAE@PAX@Z @0x003F82E2 18B, vtable VA 0xc37310
+class Rva003F82E2
+{
+public:
+	Rva003F82E2(void *p);
+	virtual ~Rva003F82E2() {}
+private:
+	void *m_04;
+};
+
+Rva003F82E2::Rva003F82E2(void *p) : m_04(p)
+{
+}
+
+// ??0Rva003FC428@@QAE@PAX@Z @0x003FC428 18B, vtable VA 0xc37c20
+class Rva003FC428
+{
+public:
+	Rva003FC428(void *p);
+	virtual ~Rva003FC428() {}
+private:
+	void *m_04;
+};
+
+Rva003FC428::Rva003FC428(void *p) : m_04(p)
+{
+}
+
+// ??0Rva004318C6@@QAE@PAX@Z @0x004318C6 18B, vtable VA 0xc3c970
+class Rva004318C6
+{
+public:
+	Rva004318C6(void *p);
+	virtual ~Rva004318C6() {}
+private:
+	void *m_04;
+};
+
+Rva004318C6::Rva004318C6(void *p) : m_04(p)
+{
+}
+
+// ??0Rva0057C50C@@QAE@PAX@Z @0x0057C50C 18B, vtable VA 0xc6f31c
+class Rva0057C50C
+{
+public:
+	Rva0057C50C(void *p);
+	virtual ~Rva0057C50C() {}
+private:
+	void *m_04;
+};
+
+Rva0057C50C::Rva0057C50C(void *p) : m_04(p)
+{
+}
+
+// ??0Rva0059B060@@QAE@PAX@Z @0x0059B060 18B, vtable VA 0xc70e60
+class Rva0059B060
+{
+public:
+	Rva0059B060(void *p);
+	virtual ~Rva0059B060() {}
+private:
+	void *m_04;
+};
+
+Rva0059B060::Rva0059B060(void *p) : m_04(p)
+{
+}
+
+// ??0Rva005B253F@@QAE@PAX@Z @0x005B253F 18B, vtable VA 0xc72b74
+class Rva005B253F
+{
+public:
+	Rva005B253F(void *p);
+	virtual ~Rva005B253F() {}
+private:
+	void *m_04;
+};
+
+Rva005B253F::Rva005B253F(void *p) : m_04(p)
+{
+}
+
+// ??0Rva005C1860@@QAE@PAX@Z @0x005C1860 18B, vtable VA 0xc743b8
+class Rva005C1860
+{
+public:
+	Rva005C1860(void *p);
+	virtual ~Rva005C1860() {}
+private:
+	void *m_04;
+};
+
+Rva005C1860::Rva005C1860(void *p) : m_04(p)
+{
+}
+
+// ??0Rva005CD9AE@@QAE@PAX@Z @0x005CD9AE 18B, vtable VA 0xc75014
+class Rva005CD9AE
+{
+public:
+	Rva005CD9AE(void *p);
+	virtual ~Rva005CD9AE() {}
+private:
+	void *m_04;
+};
+
+Rva005CD9AE::Rva005CD9AE(void *p) : m_04(p)
+{
+}
+
+// ??0Rva005CF872@@QAE@PAX@Z @0x005CF872 18B, vtable VA 0xc75290
+class Rva005CF872
+{
+public:
+	Rva005CF872(void *p);
+	virtual ~Rva005CF872() {}
+private:
+	void *m_04;
+};
+
+Rva005CF872::Rva005CF872(void *p) : m_04(p)
+{
+}
+
+// ??0Rva005EA1D5@@QAE@PAX@Z @0x005EA1D5 18B, vtable VA 0xc781b4
+class Rva005EA1D5
+{
+public:
+	Rva005EA1D5(void *p);
+	virtual ~Rva005EA1D5() {}
+private:
+	void *m_04;
+};
+
+Rva005EA1D5::Rva005EA1D5(void *p) : m_04(p)
+{
+}
+
+// ??0Rva00656090@@QAE@PAX@Z @0x00656090 18B, vtable VA 0xce0fb4
+class Rva00656090
+{
+public:
+	Rva00656090(void *p);
+	virtual ~Rva00656090() {}
+private:
+	void *m_04;
+};
+
+Rva00656090::Rva00656090(void *p) : m_04(p)
+{
+}
+
 // ??0Rva00040ECE@@QAE@XZ @0x00040ECE 13B, vtable VA 0xbc16b8
 class Rva00040ECE : public RvaSmallVtableZeroBase
 {
