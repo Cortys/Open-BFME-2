@@ -1,17 +1,18 @@
-// ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z
-// partial score=0.95 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // stlport
 // ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z
 // Target: 0x003584E9, 617 bytes (Ghidra boundary). The existing retail pin
 // and the dispatcher callers establish the identity and by-value ABI. Target
-// disassembly establishes the THIS_TEAM branch, ScriptEngine fields +0x1A110
+// disassembly establishes the "<This Team>" branch, ScriptEngine fields +0x1A110
 // / +0x1A118, the team-prototype fields, and the create-if-missing flag.
 // Donor: ZH ScriptEngine.cpp:5957-5994 supplies the named-team lookup,
 // current/condition-team fallback, singleton/instance handling, and warning
 // semantics. BFME2 diverges: it normalizes a name, checks a pair-keyed map,
 // and can activate/create an instance; those are represented by target-RVA
 // facades below until their independent identities are recovered.
+// Shape notes: the singleton branch keeps its own Team* so the instance lives
+// in ESI with the status byte in AL, and every null result funnels to one
+// trailing "return 0" (the whole lookup sits inside if (teamPrototype)).
 
 #include "ascii_string.h"
 #include <utility>
@@ -127,15 +128,16 @@ private:
     Team *conditionTeam; // +0x1A118 (target)
 };
 
-// Target address for the TeamFactory singleton, read directly by the retail
-// function. The wrapper identities below are intentionally address-derived.
-#define TheTeamFactory (*(Rva0039F761Owner **)0x00E028BC)
+// The TeamFactory singleton; its lookup/create entry points below keep
+// address-derived owner names until their identities are recovered.
+class TeamFactory;
+extern TeamFactory *TheTeamFactory;
 
 extern AsciiString Rva0032B389Join(const AsciiString &, const AsciiString &);
 
 Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
 {
-    if (name.compare("THIS_TEAM") == 0) {
+    if (name.compare("<This Team>") == 0) {
         if (callingTeam)
             return callingTeam;
         return conditionTeam;
@@ -143,15 +145,15 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
 
     AsciiString normalized = ((Rva002046C0Owner *)this)->resolveName(name);
 
-    AsciiString *emptyName = (AsciiString *)0x00DE0878;
+    const AsciiString *emptyName = &AsciiString::TheEmptyString;
     if (callingTeam) {
         TeamPrototypeNames *prototype = callingTeam->prototype;
-        AsciiString *primary = emptyName;
+        const AsciiString *primary = emptyName;
         if (prototype)
             primary = &prototype->primaryName;
         if (primary->compare(normalized) == 0) {
             prototype = callingTeam->prototype;
-            AsciiString *alternate = emptyName;
+            const AsciiString *alternate = emptyName;
             if (prototype)
                 alternate = &prototype->alternateName;
             if (alternate->compare(name) == 0)
@@ -161,12 +163,12 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
 
     if (conditionTeam) {
         TeamPrototypeNames *prototype = conditionTeam->prototype;
-        AsciiString *primary = emptyName;
+        const AsciiString *primary = emptyName;
         if (prototype)
             primary = &prototype->primaryName;
         if (primary->compare(normalized) == 0) {
             prototype = conditionTeam->prototype;
-            AsciiString *alternate = emptyName;
+            const AsciiString *alternate = emptyName;
             if (prototype)
                 alternate = &prototype->alternateName;
             if (alternate->compare(name) == 0)
@@ -180,41 +182,40 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
         Rva0032C07COwner *map = (Rva0032C07COwner *)((char *)this + 0x190C4);
         TeamMapNode *node = map->find(key);
         if (node != *(TeamMapNode **)map)
-            return TheTeamFactory->findInstance(node->value);
+            return ((Rva0039F761Owner *)TheTeamFactory)->findInstance(node->value);
     }
 
     Rva0039FE6COwner *factory = (Rva0039FE6COwner *)TheTeamFactory;
     TeamPrototype *teamPrototype = factory->findPrototype(normalized, name);
-    Team *team;
     if (teamPrototype) {
         if (teamPrototype->flags & 1) {
-            team = teamPrototype->firstInstance;
-            if (team) {
-                TeamState *status = &team->status;
-                if (!status->isActive()) {
-                    if (!createIfMissing)
-                        team = 0;
-                    else
-                        status->setActive();
-                }
-            }
-        } else {
-            if (teamPrototype->countTeamInstances() > 1) {
-                static int warnCount;
-                if (warnCount < 10) {
-                    ++warnCount;
-                    AppendDebugMessage(
-                        AsciiString("***Referencing multiple team by unspecific instance:***"), false);
-                    AppendDebugMessage(Rva0032B389Join(normalized, name), false);
-                }
-            }
-
-            team = teamPrototype->firstInstance;
-            if (!team && createIfMissing)
-                team = ((Rva003A3CBBOwner *)TheTeamFactory)->createInstance(normalized, name);
+            Team *team = teamPrototype->firstInstance;
+            if (!team)
+                return 0;
+            TeamState *status = &team->status;
+            if (status->isActive())
+                return team;
+            if (!createIfMissing)
+                return 0;
+            status->setActive();
+            return team;
         }
-    } else {
-        team = 0;
+
+        if (teamPrototype->countTeamInstances() > 1) {
+            static int warnCount;
+            if (warnCount < 10) {
+                ++warnCount;
+                AppendDebugMessage(
+                    AsciiString("***Referencing multiple team by unspecific instance:***"), false);
+                AppendDebugMessage(Rva0032B389Join(normalized, name), false);
+            }
+        }
+
+        Team *team = teamPrototype->firstInstance;
+        if (team)
+            return team;
+        if (createIfMissing)
+            return ((Rva003A3CBBOwner *)TheTeamFactory)->createInstance(normalized, name);
     }
-    return team;
+    return 0;
 }
