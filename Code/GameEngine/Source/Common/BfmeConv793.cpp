@@ -39,7 +39,12 @@ void BfmeThingDXB::bfmeGoDXB()
 // The donor's bfmeQueryDXE import slot is oleaut32!VariantClear in game.dat;
 // the failure helper resolves through the ledger pin at 0x00654B20.
 extern "C" __declspec(dllimport) int __stdcall VariantClear(void *what);
-extern unsigned char g_bfmeArgDXE[];
+// The 16-byte x86 VARIANTARG passed to VariantClear: VT_ERROR (0x000A) with
+// error value 0x80020004, matching retail .data at VA 0x00DD7F18.
+unsigned char g_bfmeArgDXE[16] = {
+	0x0A, 0, 0, 0, 0, 0, 0, 0,
+	0x04, 0, 0x02, 0x80, 0, 0, 0, 0,
+};
 void __stdcall bfmeFailDXE(int code);
 
 // ?bfmeGoDXE@@YAXXZ, retail 0x007B9B40 (22B).
