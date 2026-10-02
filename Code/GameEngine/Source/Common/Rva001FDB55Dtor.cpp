@@ -37,6 +37,15 @@ private:
 	int m_state24;
 };
 
-Rva001FDB55::~Rva001FDB55()
+inline Rva001FDB55::~Rva001FDB55()
 {
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva001FDB55DtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeRva001FDB55DtorInlineAnchor()
+{
+    static_cast<Rva001FDB55 *>(0)->Rva001FDB55::~Rva001FDB55();
+}
+#pragma inline_depth()
