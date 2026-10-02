@@ -29,3 +29,6 @@ bool __stdcall Rva002E56E2Greater(const char *left, const StringLookUp *right)
 {
 	return _strcmpi(left, right->label->str()) < 0;
 }
+
+// The sort helpers call this comparator as a functor (ECX ignored, two pointers, ret 8), pinned to 0x002E5678; bind that spelling here.
+#pragma comment(linker, "/alternatename:??RRva002E5678Cmp@@QBE_NABUStringLookUp@@0@Z=?compareStringLookUpLess@@YG_NPBX0@Z")

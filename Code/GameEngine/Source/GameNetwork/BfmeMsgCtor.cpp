@@ -48,3 +48,6 @@ void deleteBfmeMsg(BfmeMsg *p)
 {
     delete p;
 }
+
+// Generated callers name this vptr-reinstall destructor by its placeholder pin (0x00655780, thiscall, no args); bind that spelling here.
+#pragma comment(linker, "/alternatename:?m@Gen_007e86c0@@QAEXXZ=??1BfmeMsg@@UAE@XZ")

@@ -10,3 +10,6 @@ extern "C" void __cdecl free(void *block)
 {
 	__gameMemFreePtr(block, 3);
 }
+
+// STLport-side callers name this free _STL::free (cdecl, one pointer), pinned to 0x00030830; bind that spelling here.
+#pragma comment(linker, "/alternatename:?free@_STL@@YAXPAX@Z=_free")

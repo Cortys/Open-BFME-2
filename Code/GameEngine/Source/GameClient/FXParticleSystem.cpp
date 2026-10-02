@@ -2016,3 +2016,6 @@ void Rva001F42BA::call(int a)
     for (LoopItemB **p = m_begin; p != m_end; ++p)
         (*p)->m3(a);
 }
+
+// Callers spell the ICF-folded module-info destructor at 0x0049B47C by address; bind that spelling here.
+#pragma comment(linker, "/alternatename:??1Rva0049B47C@@UAE@XZ=??1WindModuleInfo@FXParticleSystem@@UAE@XZ")
