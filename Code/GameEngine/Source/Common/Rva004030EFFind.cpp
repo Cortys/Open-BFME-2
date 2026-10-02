@@ -9,7 +9,39 @@
 // inlined repz cmpsb.
 extern "C" int __cdecl strcmp(const char *a, const char *b);
 
-extern const char *g_00DC1B68[];
+// g_00DC1B68: VA 0x00DC1B68 (.data). Retail's 28 string pointers end at the
+// null sentinel at VA 0x00DC1BD8; strcmp observes text, not literal addresses.
+const char *g_00DC1B68[] = {
+	"ATTRIBUTE_NONE",
+	"ARMOR",
+	"DAMAGE_ADD",
+	"DAMAGE_MULT",
+	"RESIST_FEAR",
+	"RESIST_TERROR",
+	"EXPERIENCE",
+	"RANGE",
+	"SPEED",
+	"CRUSH_DECELERATE",
+	"RESIST_KNOCKBACK",
+	"SPELL_DAMAGE",
+	"RECHARGE_TIME",
+	"PRODUCTION",
+	"HEALTH",
+	"HEALTH_MULT",
+	"VISION",
+	"BOUNTY_PERCENTAGE",
+	"MINIMUM_CRUSH_VELOCITY",
+	"AUTO_HEAL",
+	"SHROUD_CLEARING",
+	"RATE_OF_FIRE",
+	"DAMAGE_STRUCTURE_BOUNTY_ADD",
+	"CRUSHER_LEVEL",
+	"COMMAND_POINT_BONUS",
+	"CRUSHABLE_LEVEL",
+	"CRUSHED_DECELERATE",
+	"INVULNERABLE",
+	0
+};
 
 int __stdcall Rva004030EFFind(const char *s)
 {
