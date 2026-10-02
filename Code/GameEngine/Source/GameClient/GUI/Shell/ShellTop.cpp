@@ -74,6 +74,7 @@ public:
 	virtual void a08() = 0;
 	virtual void reset() = 0;
 	void registerGameWindow(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int ms, unsigned int delayMs);
+	void reverseAnimateWindow();
 };
 
 class GameEngineDeletingBase
@@ -207,6 +208,7 @@ public:
 	virtual ~Shell();
 	WindowLayout *top();
 	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
+	void rva0035BE8F();
 	void loadScheme(AsciiString name);
 	void rva0035BEC7();
 	void rva0035BF0E();
@@ -315,6 +317,20 @@ void Shell::registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool
 	if (!TheGlobalData->m_animateWindows)
 		return;
 	m_animateWindowManager->registerGameWindow(win, animType, needsToFinish, 500, delayMS);
+}
+
+// ?rva0035BE8F@Shell@@QAEXXZ @0x0035BE8F 27B
+// Guarded tail reverse: null manager or disabled animateWindows returns,
+// else tail-jmps to AnimateWindowManager::reverseAnimateWindow.
+// Evidence: ecx-first thiscall ret; global TheWritableGlobalData flag +0xB00;
+// rowed callee 0x0053B417; callers 0x0050CF0E 0x0050CED9; Shell +0x60.
+void Shell::rva0035BE8F()
+{
+	if (!m_animateWindowManager)
+		return;
+	if (!TheGlobalData->m_animateWindows)
+		return;
+	return m_animateWindowManager->reverseAnimateWindow();
 }
 
 // ?loadScheme@Shell@@QAEXVAsciiString@@@Z @0x0035C49C 74B donor BFME1 Shell.cpp loadScheme forwards by-value name to m_schemeManager+0x64 setShellMenuScheme; callers none; chain via 0x002005DE.
