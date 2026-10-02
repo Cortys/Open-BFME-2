@@ -1128,3 +1128,33 @@ Rva005B3751::~Rva005B3751()
 {
 	rva005B3947();
 }
+
+// ??1Rva0032D3D3@@QAE@XZ @0x0032E4E3 56B -> Rva0032D3D3::rva0032DCB7
+class Rva0032D3D3
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0032DCB7();
+	~Rva0032D3D3();
+};
+
+Rva0032D3D3::~Rva0032D3D3()
+{
+	rva0032DCB7();
+}
+
+// ??1Rva0060126D@@QAE@XZ @0x0060137F 56B -> Rva0060126D::rva006012C4
+class Rva0060126D
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva006012C4();
+	~Rva0060126D();
+};
+
+Rva0060126D::~Rva0060126D()
+{
+	rva006012C4();
+}

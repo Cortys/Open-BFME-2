@@ -599,3 +599,204 @@ void Rva005B3751::rva005B3947()
 	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
 	m_04Flag = 0;
 }
+
+// Trees whose node value is a pair with a container second member at +4: the
+// value destructor is an 8-byte thunk (add ecx,4; jmp to the container's rowed
+// destructor), landed here as a placeholder pair whose empty destructor
+// tail-calls the member's. The key at +0 is not identified.
+
+class Rva0032BE80 { public: ~Rva0032BE80(); };
+
+// ??1Rva0032C2F7@@QAE@XZ @0x0032C2F7 8B: pair value, second member Rva0032BE80 at +4
+struct Rva0032C2F7
+{
+	int m_first;
+	Rva0032BE80 m_second;
+	~Rva0032C2F7();
+};
+
+Rva0032C2F7::~Rva0032C2F7()
+{
+}
+
+// owner Rva0032D3D3: erase 0x0032D3D3, clear 0x0032DCB7
+class Rva0032D3D3
+{
+public:
+	void rva0032D3D3(void *node);
+	void rva0032DCB7();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva0032D3D3::rva0032D3D3(void *p)
+{
+	RvaTreeValueNode *node = (RvaTreeValueNode *)p;
+	while (node) {
+		rva0032D3D3(node->right);
+		RvaTreeValueNode *left = node->left;
+		reinterpret_cast<Rva0032C2F7 *>(node + 1)->~Rva0032C2F7();
+		free(node);
+		node = left;
+	}
+}
+
+void Rva0032D3D3::rva0032DCB7()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeValueHead *h = (RvaTreeValueHead *)m_00Head;
+	rva0032D3D3(h->m_first);
+	((RvaTreeValueHead *)m_00Head)->m_next = (RvaTreeValueHead *)m_00Head;
+	((RvaTreeValueHead *)m_00Head)->m_first = 0;
+	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+class Rva004FF582 { public: ~Rva004FF582(); };
+
+// ??1Rva004FFE39@@QAE@XZ @0x004FFE39 8B: pair value, second member Rva004FF582 at +4
+struct Rva004FFE39
+{
+	int m_first;
+	Rva004FF582 m_second;
+	~Rva004FFE39();
+};
+
+Rva004FFE39::~Rva004FFE39()
+{
+}
+
+// owner Rva005007CF: erase 0x005007CF, clear 0x00500AA6
+class Rva005007CF
+{
+public:
+	void rva005007CF(void *node);
+	void rva00500AA6();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva005007CF::rva005007CF(void *p)
+{
+	RvaTreeValueNode *node = (RvaTreeValueNode *)p;
+	while (node) {
+		rva005007CF(node->right);
+		RvaTreeValueNode *left = node->left;
+		reinterpret_cast<Rva004FFE39 *>(node + 1)->~Rva004FFE39();
+		free(node);
+		node = left;
+	}
+}
+
+void Rva005007CF::rva00500AA6()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeValueHead *h = (RvaTreeValueHead *)m_00Head;
+	rva005007CF(h->m_first);
+	((RvaTreeValueHead *)m_00Head)->m_next = (RvaTreeValueHead *)m_00Head;
+	((RvaTreeValueHead *)m_00Head)->m_first = 0;
+	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+class Rva00053DC5 { public: ~Rva00053DC5(); };
+
+// ??1Rva005344C0@@QAE@XZ @0x005344C0 8B: pair value, second member Rva00053DC5 at +4
+struct Rva005344C0
+{
+	int m_first;
+	Rva00053DC5 m_second;
+	~Rva005344C0();
+};
+
+Rva005344C0::~Rva005344C0()
+{
+}
+
+// owner Rva00534641: erase 0x00534641, clear 0x00534693
+class Rva00534641
+{
+public:
+	void rva00534641(void *node);
+	void rva00534693();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva00534641::rva00534641(void *p)
+{
+	RvaTreeValueNode *node = (RvaTreeValueNode *)p;
+	while (node) {
+		rva00534641(node->right);
+		RvaTreeValueNode *left = node->left;
+		reinterpret_cast<Rva005344C0 *>(node + 1)->~Rva005344C0();
+		free(node);
+		node = left;
+	}
+}
+
+void Rva00534641::rva00534693()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeValueHead *h = (RvaTreeValueHead *)m_00Head;
+	rva00534641(h->m_first);
+	((RvaTreeValueHead *)m_00Head)->m_next = (RvaTreeValueHead *)m_00Head;
+	((RvaTreeValueHead *)m_00Head)->m_first = 0;
+	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
+	m_04Flag = 0;
+}
+
+class Rva006007A5 { public: ~Rva006007A5(); };
+
+// ??1Rva00600BBE@@QAE@XZ @0x00600BBE 8B: pair value, second member Rva006007A5 at +4
+struct Rva00600BBE
+{
+	int m_first;
+	Rva006007A5 m_second;
+	~Rva00600BBE();
+};
+
+Rva00600BBE::~Rva00600BBE()
+{
+}
+
+// owner Rva0060126D: erase 0x0060126D, clear 0x006012C4
+class Rva0060126D
+{
+public:
+	void rva0060126D(void *node);
+	void rva006012C4();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva0060126D::rva0060126D(void *p)
+{
+	RvaTreeValueNode *node = (RvaTreeValueNode *)p;
+	while (node) {
+		rva0060126D(node->right);
+		RvaTreeValueNode *left = node->left;
+		reinterpret_cast<Rva00600BBE *>(node + 1)->~Rva00600BBE();
+		free(node);
+		node = left;
+	}
+}
+
+void Rva0060126D::rva006012C4()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeValueHead *h = (RvaTreeValueHead *)m_00Head;
+	rva0060126D(h->m_first);
+	((RvaTreeValueHead *)m_00Head)->m_next = (RvaTreeValueHead *)m_00Head;
+	((RvaTreeValueHead *)m_00Head)->m_first = 0;
+	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
+	m_04Flag = 0;
+}
