@@ -1504,30 +1504,7 @@ void Debug::AddPatternEntry(unsigned types, bool isActive, const char *pattern)
   lastPatternEntry=cur;
 }
 
-// ?SimpleMatch@Debug@@SA_NPBD0@Z present-unmatched
-bool Debug::SimpleMatch(const char *str, const char *pattern)
-{
-  __ASSERT(str);
-  __ASSERT(pattern);
-  while (*str&&*pattern)
-  {
-    if (*pattern=='*')
-    {
-      pattern++;
-      while (*str)
-        if (SimpleMatch(str++,pattern))
-          return true;
-      return *str==*pattern;
-    }
-    else 
-    {
-      if (*str++!=*pattern++)
-        return false;
-    }
-  }
-
-  return *str==*pattern;
-}
+// Debug::SimpleMatch: defined in WWDebug/DebugSimpleMatch.cpp (its row's unit).
 
 // ?SetBuildInfo@Debug@@SAXPBD00@Z present-unmatched
 void Debug::SetBuildInfo(const char *version,
