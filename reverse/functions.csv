@@ -47622,3 +47622,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva000D3A17@@QAE@XZ,,0x000D3A8A,157,Code/GameEngine/Source/Common/Rva000D3A8ACtor.cpp,matched,chain from rowed 0x000D3A17 and 0x000D1C83 ehvec 10x0xC arrays caller 0x0006CD0F
 ?Rva0051280EEnable@@YAXXZ,,0x0051280E,21,Code/GameEngine/Source/Common/Rva0051280EEnable.cpp,matched,twin of Rva00433D27Enable via TheRva00222A8BTarget and g_obj12F495C
 ?rva0022C743@Rva0022C743@@QAEPAU1@PAX0@Z,,0x0022C743,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x00229A44 via Rva00229A44Pick same shape as 0x0056F2A5 caller 0x0022CB8F passes this plus two ptrs
+?rva0022C7C9@Rva0022C7C9@@QAEPAU1@PAX0@Z,,0x0022C7C9,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x00229A70 via Rva00229A70Pick same shape as 0x0022C743 caller 0x0022CBE8 passes this plus two ptrs
