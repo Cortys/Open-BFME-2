@@ -1,5 +1,5 @@
 // ??0Rva005CB35A@@QAE@XZ
-// partial score=0.9 date=2026-10-01
+// partial score=0.93 date=2026-10-01
 // cl: /O1 /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 //
 // ??0Rva005CB35A@@QAE@XZ @0x005CB35A 100B probe.
@@ -46,6 +46,7 @@ Rva005CB35A::Rva005CB35A()
 {
 	{
 		AsciiString tmp("RegionDisplay");
+		__assume(this != 0);
 		new (this) Rva00221635((int)&tmp);
 	}
 	*(const void **)this = g_00C74D90;
