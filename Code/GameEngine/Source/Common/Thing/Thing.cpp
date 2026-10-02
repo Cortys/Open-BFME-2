@@ -164,22 +164,6 @@ const ThingTemplate *Thing::getTemplate() const
 }
 
 //=============================================================================
-const Coord3D* Thing::getUnitDirectionVector2D() const
-{
-	//USE_PERF_TIMER(ThingMatrixStuff)
-	if (!(m_cacheFlags & VALID_DIRVECTOR))
-	{
-		Real angle = getOrientation();
-		m_cachedDirVector.x = Cos( angle );
-		m_cachedDirVector.y = Sin( angle );
-		m_cachedDirVector.z = 0;
-		m_cacheFlags |= VALID_DIRVECTOR;
-	}
-
-	return &m_cachedDirVector;
-}
-
-//=============================================================================
 #pragma optimize("s", on)
 void Thing::getUnitDirectionVector2D(Coord3D& dir) const
 {
