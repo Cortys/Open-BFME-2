@@ -1,36 +1,38 @@
 // cl: /G7 /arch:SSE /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
-// ?rva001431B0@Rva001431B0@@QAEXVAsciiString@@@Z, RVA 0x001431B0, 131B.
-// Push a by-value AsciiString into the member vector at +0x13c.
+// ?rva001431B0@Rva001431B0@@QAEXVRva00142DF0String@@@Z, RVA 0x001431B0, 131B.
+// Push a by-value Rva00142DF0String into the member vector at +0x13c: the
+// refcounted handle Rva001431B0Pop.cpp names (held as AsciiString until
+// 2026-10-02; see Rva00142DF0StringVector.cpp for why it is not).
 // Evidence: fast path inlines copy as test esi/mov [eax] esi/add [esi+4] 1,
-// slow path calls rowed vector<AsciiString>::_M_insert_overflow at 0x00143070,
+// slow path calls rowed vector<Rva00142DF0String>::_M_insert_overflow at 0x00143070,
 // trailing param release is dec-to-zero plus slot-0 call; callers at 0x0007DCD4
 // 0x000D7C00 0x00101386 0x001016C2 pass this from [ebp+8] with pre-inc copy;
 // layout proven by lea getter 0x00142C40 pop 0x00142DF0 and vector dtor 0x00142E30.
 
 #include <vector>
 
-class AsciiString
+class Rva00142DF0String
 {
-	struct AsciiStringData
+	struct Rva00142DF0StringData
 	{
 		virtual void _M_slot_00();
 		int m_refCount;
 	};
 
-	AsciiStringData *m_data;
+	Rva00142DF0StringData *m_data;
 
 public:
-	AsciiString(const AsciiString &that)
+	Rva00142DF0String(const Rva00142DF0String &that)
 	{
 		m_data = that.m_data;
 		if (m_data)
 			m_data->m_refCount++;
 	}
-	~AsciiString()
+	~Rva00142DF0String()
 	{
-		AsciiStringData *data = m_data;
+		Rva00142DF0StringData *data = m_data;
 		if (data && --data->m_refCount == 0)
 			data->_M_slot_00();
 	}
@@ -40,10 +42,10 @@ namespace _STL
 {
 
 template <>
-inline void _Construct<AsciiString, AsciiString>(AsciiString *dest, const AsciiString &src)
+inline void _Construct<Rva00142DF0String, Rva00142DF0String>(Rva00142DF0String *dest, const Rva00142DF0String &src)
 {
 	if (dest)
-		new (dest) AsciiString(src);
+		new (dest) Rva00142DF0String(src);
 }
 
 }
@@ -51,13 +53,13 @@ inline void _Construct<AsciiString, AsciiString>(AsciiString *dest, const AsciiS
 class Rva001431B0
 {
 	char m_pad[0x13c];
-	_STL::vector<AsciiString, _STL::allocator<AsciiString> > m_vec;
+	_STL::vector<Rva00142DF0String, _STL::allocator<Rva00142DF0String> > m_vec;
 
 public:
-	void rva001431B0(AsciiString str);
+	void rva001431B0(Rva00142DF0String str);
 };
 
-void Rva001431B0::rva001431B0(AsciiString str)
+void Rva001431B0::rva001431B0(Rva00142DF0String str)
 {
 	m_vec.push_back(str);
 }
