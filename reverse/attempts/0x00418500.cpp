@@ -1,7 +1,8 @@
 // ??4?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@QAEAAV01@ABV01@@Z
-// partial score=0.96 date=2026-10-02
+// partial score=0.97 date=2026-10-02
 // cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
+//
 // ??4?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@QAEAAV01@ABV01@@Z @0x00418500 115B: _Rb_tree<int,int> operator= via rowed clear 0x0022C409 and rowed _M_copy 0x0041848D; evidence callers 0x004186E7 0x004187EA, neighbours stlport_map_int_int_copy.
 #define _M_copy _M_copy_0041848D
 #include <map>
@@ -43,8 +44,10 @@ MapIntIntTree00418500::_Link_type MapIntIntTree00418500::_M_copy(MapIntIntTree00
 template <>
 MapIntIntTree00418500 &MapIntIntTree00418500::operator=(const MapIntIntTree00418500 &x)
 {
-	RvaLayout00418500 *me = (RvaLayout00418500 *)this;
-	const RvaLayout00418500 *other = (const RvaLayout00418500 *)&x;
+	RvaLayout00418500 *me;
+	const RvaLayout00418500 *other;
+	other = (const RvaLayout00418500 *)&x;
+	me = (RvaLayout00418500 *)this;
 	if (me != other) {
 		((Rva002294A3 *)this)->rva0022C409();
 		me->m_count = 0;
@@ -55,22 +58,23 @@ MapIntIntTree00418500 &MapIntIntTree00418500::operator=(const MapIntIntTree00418
 		}
 		else {
 			typedef MapIntIntTree00418500::_Link_type Link;
-			Link root = this->_M_copy((Link)other->m_head->m_parent, (Link)me->m_head);
-			me->m_head->m_parent = (RbNode00418500 *)root;
-			RbNode00418500 *cur = (RbNode00418500 *)root;
+			RbHead00418500 *header = me->m_head;
+			Link root = this->_M_copy((Link)other->m_head->m_parent, (Link)header);
+			header->m_parent = (RbNode00418500 *)root;
+			RbNode00418500 *cur = header->m_parent;
 			RbNode00418500 *left = cur->m_left;
 			while (left != 0) {
 				cur = left;
 				left = cur->m_left;
 			}
-			me->m_head->m_left = cur;
-			cur = (RbNode00418500 *)root;
+			header->m_left = cur;
+			cur = header->m_parent;
 			RbNode00418500 *right = cur->m_right;
 			while (right != 0) {
 				cur = right;
 				right = cur->m_right;
 			}
-			me->m_head->m_right = cur;
+			header->m_right = cur;
 		}
 		me->m_count = other->m_count;
 	}
