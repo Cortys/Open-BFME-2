@@ -40,6 +40,10 @@ struct FrameSource
 	virtual int v30();
 	virtual int getFrame();
 };
+
+class ClientFrameSubsystem;
+extern class ClientFrameSubsystem *TheGameClient;
+
 class Rva00330A37
 {
 public:
@@ -57,7 +61,7 @@ private:
 };
 void Rva00330A37::rva00330A37(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-	int frame = (*(FrameSource *const *)0x00DFE77C)->getFrame();
+	int frame = reinterpret_cast<FrameSource *>(TheGameClient)->getFrame();
 	int base1 = a1 + frame;
 	m_38 = base1;
 	if (a2 == -1)
