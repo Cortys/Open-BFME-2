@@ -46802,3 +46802,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva009AAD20@@YAXPAURva009AAD20State@@H@Z,,0x001BB760,208,Code/GameEngine/Source/Common/Rva009AAD20.cpp,matched,BFME1 byte-identical donor; b1 0x009AAD20
 ?rva0040A16E@Rva0040A16E@@QBE_NPBX@Z,,0x0040A16E,25,Code/GameEngine/Source/Common/Rva0040A16EEquals.cpp,matched,unlock lane null false else this equals argplus4 bool
 ??_GRva00587F69@@UAEPAXI@Z,,0x00587F4D,28,Code/Libraries/Source/WWVegas/WWLib/FamilyDeletingDtors_Rva00587F69.cpp,matched,deleting dtor via rowed 00587F69 plus delete 002FD60
+?Rva00270190Free@@YAXXZ,,0x00270190,24,Code/GameEngine/Source/Common/Rva00270190.cpp,matched,leaf free of g_00DFEB78 via rowed delete-array

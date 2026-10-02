@@ -5273,3 +5273,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?bfmeFwdSWA@BfmeThingSWA@@QAEXH@Z	0x0002A930	58	partial	exact 58B-23insns-0regions frame-end-4B plus bool-tag-68B layout only t=16 model=muse-04 score=0.93 stash=reverse/attempts/0x0002a930.cpp
 ?rva0045992F@SiegeDockingBehavior@@QAEXPAUDockPos@1@H@Z	0x0045992F	61	blocked	src-ecx-vs-eax single scratch-reg choice only all 22 insns same tried local starts and hidden-pointer return 65B t=15 model=muse-11 (stash 0.95 kept)
 ?rva00587912@Rva00587912@@QAEXH@Z	0x00587912	182	blocked	virtual list plus map plus idiv count keeps start in edx not mem and e in eax not ecx tried frame int typed volatile t=25 model=muse-11
+?Rva002701A8Scale@@YGXPAMM@Z	0x002701A8	76	partial	movss global mul reg vs movaps b mul mem 77B vs 76B scheduling only t=22 model=muse-08 score=0.93 stash=reverse/attempts/0x002701a8.cpp
+?rva00270B0F@Rva00270B0F@@QAEXHPAM@Z	0x00270B0F	153	partial	151B vs 153B clamp missing jmp movaps placement xmm swap t=30 model=muse-08 score=0.95 stash=reverse/attempts/0x00270b0f.cpp
