@@ -48107,3 +48107,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00657CA0@Rva00657CA0@@QAEXH@Z,,0x00657CA0,8,Code/GameEngine/Source/GameNetwork/Rva007EAC30Send.cpp,matched,leaf forwarder to rowed send via ptr at 4 same caller
 ??1Rva00214ADC@@QAE@XZ,,0x00214ADC,8,Code/GameEngine/Source/Common/Rva00214ADCForwarder.cpp,matched,leaf dtor tail to rowed vector dtor via member at 8 unwind callers
 ?rva00414148@Rva00414148@@QAEXXZ,,0x00414148,30,Code/GameEngine/Source/Common/Rva00414148DestroyFree.cpp,matched,chain destroy via 0x0022D941 then free via 0x00030830 caller 0x0041423A
+??0Rva004147CF@@QAE@ABVAsciiString@@@Z,,0x004148C0,114,Code/GameEngine/Source/GameLogic/Object/Rva004148C0Ctor.cpp,matched,ctor via StringBase copy 0x000365F0 member 0x003623E5 Vector_base 0x00211E58 vtable data
