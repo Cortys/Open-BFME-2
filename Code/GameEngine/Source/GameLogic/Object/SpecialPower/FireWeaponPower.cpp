@@ -24,11 +24,6 @@ protected:
 	unsigned char m_pad04[0x14];
 };
 
-// ??1SpecialPowerModuleData@@UAE@XZ present-unmatched
-SpecialPowerModuleData::~SpecialPowerModuleData()
-{
-}
-
 class FireWeaponPowerModuleData : public SpecialPowerModuleData
 {
 public:
