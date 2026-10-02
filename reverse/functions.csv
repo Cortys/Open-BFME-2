@@ -48973,3 +48973,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva005E74CF@@QAE@XZ,,0x005E74CF,90,Code/GameEngine/Source/Common/Bfme/Rva005E74CF.cpp,matched,ctor via temp BuildQueueDetailsPanel to base 0x221635 plus vtable 0x877EF4
 ??0Rva005E9FC1@@QAE@PAX@Z,,0x005E9FC1,58,Code/GameEngine/Source/Common/Rva005E9FC1Ctor.cpp,matched,ctor base stores arg at +4 vtable 0x878114 at +0 member 0x57416B at +8 caller 0x5EA15B
 ?rva00532069@Rva005312BE@@QAE_NHH@Z,,0x00532069,88,Code/GameEngine/Source/Common/Rva00532069Check.cpp,matched,bounded cell dword-pair predicate via rowed siblings caller 0x002F7886
+?rva005E8095@Rva005E8095@@QAEXI@Z,,0x005E8095,104,Code/GameEngine/Source/Common/Bfme/Rva005E8095Reserve.cpp,matched,vector reserve via 0x5E7229 plus clear 0x5E8077 plus allocator
