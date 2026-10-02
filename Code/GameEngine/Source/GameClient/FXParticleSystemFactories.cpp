@@ -30,14 +30,16 @@ namespace FXParticleSystem
 class ModuleTemplate
 {
 public:
-    virtual ~ModuleTemplate();
+    // Keep the trivial bodies visible here: the rowed draw-template destructors
+    // inline both base vptr restores in retail instead of calling across TUs.
+    virtual ~ModuleTemplate() {}
     virtual void v1() = 0;
 };
 
 class SecondaryModuleBase
 {
 public:
-    virtual ~SecondaryModuleBase();
+    virtual ~SecondaryModuleBase() {}
     virtual void v1() = 0;
 };
 
@@ -195,6 +197,14 @@ public:
 
 template <int CATEGORY>
 class CategoryModuleTemplate;
+
+template <>
+class CategoryModuleTemplate<6> : public ModuleTemplate, public SecondaryModuleBase
+{
+public:
+    CategoryModuleTemplate();
+    CategoryModuleTemplate(const CategoryModuleTemplate<6> &that);
+};
 
 template <>
 class CategoryModuleTemplate<8> : public ModuleTemplate, public SecondaryModuleBase,
@@ -376,8 +386,24 @@ FX_MODULE_TEMPLATE(LightningDrawModuleTemplate, LightningDrawModuleInfo)
 FX_MODULE_TEMPLATE(TerrainFireEmissionModuleTemplate, TerrainFireEmissionInfo)
 FX_MODULE_TEMPLATE(LightningEmissionModuleTemplate, LightningEmissionInfo)
 FX_MODULE_TEMPLATE(RenderObjectUpdateModuleTemplate, RenderObjectUpdateModuleInfo)
-FX_MODULE_TEMPLATE(RenderObjectDrawModuleTemplate, RenderObjectDrawModuleInfo)
-FX_MODULE_TEMPLATE(GpuDrawModuleTemplate, GpuDrawModuleInfo)
+
+#define FX_DRAW_MODULE_TEMPLATE(NAME, INFO)                                                        \
+    /* Retail derives draw templates through CategoryModuleTemplate<6>; keeping \
+       that intermediate base is required for its destructor EH-state shape. */ \
+    class NAME : public CategoryModuleTemplate<6>, public INFO                                     \
+    {                                                                                              \
+    public:                                                                                        \
+        NAME();                                                                                    \
+        NAME(const NAME &that);                                                                    \
+                                                                                                   \
+        NAME &operator=(const NAME &that);                                                         \
+                                                                                                   \
+        void parse(INI *ini);                                                                      \
+    };
+
+FX_DRAW_MODULE_TEMPLATE(RenderObjectDrawModuleTemplate, RenderObjectDrawModuleInfo)
+FX_DRAW_MODULE_TEMPLATE(GpuDrawModuleTemplate, GpuDrawModuleInfo)
+
 FX_MODULE_TEMPLATE(QuadDrawModuleTemplate, QuadDrawModuleInfo)
 FX_MODULE_TEMPLATE(StreakDrawModuleTemplate, StreakDrawModuleInfo)
 FX_MODULE_TEMPLATE(ButterflyDrawModuleTemplate, ButterflyDrawModuleInfo)
