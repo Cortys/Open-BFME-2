@@ -55,3 +55,7 @@ PropagandaTowerBehaviorModuleData::PropagandaTowerBehaviorModuleData()
 	m_pulseFX = 0;
 	m_upgradedPulseFX = 0;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmePropagandaHeal@@3MA=__real@3c23d70a")

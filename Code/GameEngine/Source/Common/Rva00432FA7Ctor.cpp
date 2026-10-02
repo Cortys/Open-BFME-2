@@ -50,3 +50,7 @@ Rva00432FA7::Rva00432FA7()
 	if (g_00E032D0 == 0)
 		g_00E032D0 = this;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C3CA30@@3QBQBXB=??_7Rva00432FA7@@6B@")

@@ -36,3 +36,7 @@ void BfmeThingVJS::bfmeClearVJS()
 	if (m_bfme18)
 		m_bfme18 = 0;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftAVJS@@3PAHA=??_7AABTreeClass@@6B@")

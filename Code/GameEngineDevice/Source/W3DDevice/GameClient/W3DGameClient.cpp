@@ -468,3 +468,7 @@ void W3DGameClient::notifyTerrainObjectMoved(Object *obj)
 	}
 
 }  // end setTimeOfDay
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?m_needUpdate@W3DStatusCircle@@1_NA=?g_trackDirty@@3EA")

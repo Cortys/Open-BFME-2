@@ -38,3 +38,7 @@ Rva0057ACEB::Rva0057ACEB(const Rva0057ACEBData *d)
 	if (p)
 		++p->m_ref;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C6F090@@3QBQBXB=??_7Rva0057AA1F@@6B@")

@@ -77,3 +77,7 @@ void __stdcall Rva003BBFFBSet(int a, float b)
 		v = g_Va00BBB8D8;
 	TheAudio->s59(v, a, 0);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_Va00BCF628@@3MA=__real@3c23d70a")

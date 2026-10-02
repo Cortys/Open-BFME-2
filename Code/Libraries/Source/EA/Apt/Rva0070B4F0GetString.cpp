@@ -30,3 +30,7 @@ EAStringC *Rva0070B4F0GetString(int eSC)
 	}
 	return entry;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?saConstantAtE18388@@3PAVEAStringC@@A=_bfmeObjDAE")

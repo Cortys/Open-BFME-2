@@ -62,3 +62,7 @@ void ProfileShutdown(void)
 	ProfileId::Shutdown();
 	cmd->RunResultFunctions();
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?m_rec@Profile@@0IA=?g_Va00E0C1F4@@3HA")

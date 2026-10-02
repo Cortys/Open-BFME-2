@@ -34,3 +34,7 @@ Rva0052BDE6::Rva0052BDE6(const Rva0052BDE6 &other)
 	, m_str08(other.m_str08)
 {
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C61DB4@@3QBQBXB=??_7TracerFXNugget@@6B@")
