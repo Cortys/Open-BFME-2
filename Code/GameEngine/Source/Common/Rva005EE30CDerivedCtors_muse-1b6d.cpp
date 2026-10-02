@@ -186,3 +186,16 @@ public:
 Rva005D96FA::Rva005D96FA()
 {
 }
+
+class Rva005D9C6C : public Rva005EE30C
+{
+public:
+	Rva005D9C6C();
+	virtual ~Rva005D9C6C();
+};
+
+// ??0Rva005D9C6C@@QAE@XZ @0x005D9C5A 18B: base ctor 0x005EE2E6 then vtable
+// 0x008763FC. Evidence: vtable store at [this]; caller 0x0058A7C3.
+Rva005D9C6C::Rva005D9C6C()
+{
+}
