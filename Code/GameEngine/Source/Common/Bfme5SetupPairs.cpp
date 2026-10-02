@@ -97,3 +97,54 @@ void __stdcall bfmeSetupPair_00656550(BfmeSetupRecord *record, int second)
 	record->bfmeWrite("TXN", value);
 	record->bfmeWrite("name", second);
 }
+
+// Three more builders of the same shape, each over its own TXN global (zero-filled
+// .bss, unreferenced elsewhere); tag and second key read from retail.
+
+// TheBfmeSetupGlobal00656510: VA 0x00e09f40 (zero-filled .bss).
+int TheBfmeSetupGlobal00656510;
+
+// ?bfmeSetupPair_00656510@@YGXPAUBfmeSetupRecord@@H@Z
+void __stdcall bfmeSetupPair_00656510(BfmeSetupRecord *record, int second)
+{
+	int value = TheBfmeSetupGlobal00656510;
+
+	record->bfmeBegin();
+
+	record->m_bfmeTag = 0x61636374;					// 'acct'
+
+	record->bfmeWrite("TXN", value);
+	record->bfmeWrite("email", second);
+}
+
+// TheBfmeSetupGlobal0065F1D0: VA 0x00e0a064 (zero-filled .bss).
+int TheBfmeSetupGlobal0065F1D0;
+
+// ?bfmeSetupPair_0065F1D0@@YGXPAUBfmeSetupRecord@@H@Z
+void __stdcall bfmeSetupPair_0065F1D0(BfmeSetupRecord *record, int second)
+{
+	int value = TheBfmeSetupGlobal0065F1D0;
+
+	record->bfmeBegin();
+
+	record->m_bfmeTag = 0x72616E6B;					// 'rank'
+
+	record->bfmeWrite("TXN", value);
+	record->bfmeWrite("sessionId", second);
+}
+
+// TheBfmeSetupGlobal0065F210: VA 0x00e0a070 (zero-filled .bss).
+int TheBfmeSetupGlobal0065F210;
+
+// ?bfmeSetupPair_0065F210@@YGXPAUBfmeSetupRecord@@H@Z
+void __stdcall bfmeSetupPair_0065F210(BfmeSetupRecord *record, int second)
+{
+	int value = TheBfmeSetupGlobal0065F210;
+
+	record->bfmeBegin();
+
+	record->m_bfmeTag = 0x72616E6B;					// 'rank'
+
+	record->bfmeWrite("TXN", value);
+	record->bfmeWrite("sessionId", second);
+}
