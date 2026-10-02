@@ -6,10 +6,13 @@
 
 typedef unsigned char UnsignedByte;
 
+extern const void *const g_00C09844[];
+
 class GameMessageArgument
 {
 public:
-	virtual ~GameMessageArgument();
+	GameMessageArgument() { m_vptr = g_00C09844; }
+	const void *m_vptr;
 	GameMessageArgument *m_next;
 	char m_bfme_body[0x1C - 0x08];
 };
