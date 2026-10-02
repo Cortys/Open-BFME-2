@@ -56,18 +56,7 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/HijackerUpdateConstructor.cpp
-// ??0HijackerUpdate@@ present-unmatched
-HijackerUpdate::HijackerUpdate( Thing *thing, const ModuleData *moduleData ) : UpdateModule( thing, moduleData )
-{
-	m_targetID = INVALID_ID;
-	setUpdate( FALSE );
-	setIsInVehicle( FALSE );
-	m_wasTargetAirborne = false;
-	m_ejectPos.zero();
-//	m_ejectPilotDMI = NULL;
-}
-  
+
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // ??1HijackerUpdate@@ present-unmatched
