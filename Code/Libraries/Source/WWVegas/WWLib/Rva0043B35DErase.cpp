@@ -12,6 +12,7 @@ struct Rva0043B2E2Node {
   Rva0043B2E2Node *parent04;
   Rva0043B2E2Node *left08;
   Rva0043B2E2Node *right0C;
+  int m_key10;
 };
 struct Rva0043B2E2 {
   Rva0043B2E2Node *header00;
@@ -34,6 +35,8 @@ struct Rva0043B2E2 {
   }
   void rva0043B35D(iterator first, iterator last);
   unsigned int rva0043B4EC(const int &key);
+  void *rva0043B30F(const void *src);
+  void rva0043B3A1(Rva0043B2E2Node *&out, Rva0043B2E2Node *a, Rva0043B2E2Node *b, const int *v, Rva0043B2E2Node *c);
 };
 void Rva0043B2E2::rva0043B35D(iterator first, iterator last) {
   typedef V VV;
@@ -53,3 +56,44 @@ unsigned int Rva0043B2E2::rva0043B4EC(const int &key) {
   rva0043B35D(*(iterator*)&p.first, *(iterator*)&p.second);
   return n;
 }
+
+// ?rva0043B3A1@Rva0043B2E2@@QAEXAAPAU... @0x0043B3A1 136B: rb-tree insert worker
+// for the 0x9C-node tree (chain from 0x0043B30F): position it by header links,
+// create the node through pinned member twin of free NewNode 0x0043B30F, link
+// it left or right, repair header root/ends, zero links, set parent, rowed
+// _Rebalance 0x00025490, bump count and store out. Callers at 0x0043B48B and
+// 0x0043B59F. Retail sets ecx=this before the NewNode call so the factory is
+// a thiscall member; the free 37B body ignores the dead this in ecx, hence
+// the twin pin plus alternatename below per Rva004152E6NewNode precedent.
+// Shape follows Rva0018C262::rva0018C33F (138B via rowed factory plus Rebalance).
+// ?rva0043B3A1@Rva0043B2E2@@QAEXAAPAU... present-unmatched
+void Rva0043B2E2::rva0043B3A1(Rva0043B2E2Node *&out, Rva0043B2E2Node *a, Rva0043B2E2Node *b, const int *v, Rva0043B2E2Node *c)
+{
+	Rva0043B2E2Node *node;
+	if (b != header00 && (c != 0 || (a == 0 && *v >= b->m_key10))) {
+		node = (Rva0043B2E2Node *)rva0043B30F(v);
+		b->right0C = node;
+		Rva0043B2E2Node *root = header00;
+		if (b == root->right0C)
+			root->right0C = node;
+	} else {
+		node = (Rva0043B2E2Node *)rva0043B30F(v);
+		b->left08 = node;
+		Rva0043B2E2Node *root = header00;
+		if (b == root) {
+			root->parent04 = node;
+			header00->right0C = node;
+		} else if (b == root->left08) {
+			root->left08 = node;
+		}
+	}
+	node->left08 = 0;
+	node->right0C = 0;
+	node->parent04 = b;
+	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)node, (_STL::_Rb_tree_node_base *&)header00->parent04);
+	++count04;
+	out = node;
+}
+// Bind the member-twin call above to the rowed free body: same 0x9C node,
+// free body ignores the dead this in ecx per Rva004152E6NewNode precedent.
+#pragma comment(linker, "/alternatename:?rva0043B30F@Rva0043B2E2@@QAEPAXPBX@Z=?Rva0043B30FNewNode@@YGPAXPBX@Z")
