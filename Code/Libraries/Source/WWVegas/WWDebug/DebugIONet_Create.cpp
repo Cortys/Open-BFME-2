@@ -17,6 +17,7 @@ class DebugIONet : public DebugIOInterface
 {
 public:
     DebugIONet(void) {}
+    virtual ~DebugIONet(void);
     static DebugIOInterface *Create(void);
 
 private:
