@@ -46897,3 +46897,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?init@Rva00017B30StringInit@@QAEPAXPAX@Z,,0x00017B30,33,Code/GameEngine/Source/Common/Rva00017B00StringInit.cpp,matched,same code as the rowed 0x00017B00 initializer with its own static at VA 0x00ddef20; the DIR32 operand separates the placements
 ?init@Rva00019D90StringInit@@QAEPAXPAX@Z,,0x00019D90,33,Code/GameEngine/Source/Common/Rva00017B00StringInit.cpp,matched,same code as the rowed 0x00017B00 initializer with its own static at VA 0x00ddef2c; the DIR32 operand separates the placements
 ?rva000B5C41@Rva000B5C41@@QAEXXZ,,0x000B5C41,318,Code/GameEngine/Source/Common/Rva000B5C41.cpp,matched,chain via 0x002707FA rowed array stride 0x40 vs BfmeZeroRange g_Va00BBB8D8 helper slot 0x14
+?rva00319F5A@Rva00319F5A@@QAEXPAVRva00318B5C@@ABV2@HI_N@Z,,0x00319F5A,180,Code/GameEngine/Source/Common/Rva00319F5AInsert.cpp,matched,vector reallocate via rowed copy fill allocate and pin clear
