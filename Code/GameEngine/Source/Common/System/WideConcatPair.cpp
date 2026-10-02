@@ -17,11 +17,13 @@ class StringBase
 	friend struct BFME2WideStringRef;
 	friend class BFME2WideConcatPair;
 	StringBase(const T *text);
+	void releaseBuffer();
 
 public:
 	StringBase() : m_data(0) {}
 	StringBase(const StringBase &src);
 	~StringBase() { releaseBuffer(); }
+	int getLength() const { return m_data ? m_data->length : 0; }
 
 	struct Header
 	{
@@ -31,7 +33,6 @@ public:
 		T data[1];
 	};
 
-	void releaseBuffer();
 	T *getBufferForRead(int len);
 	void set(const StringBase &src);
 
@@ -45,7 +46,6 @@ public:
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &src) : StringBase<unsigned short>(src) {}
 	const unsigned short *str() const { return m_data != 0 ? m_data->data : L""; }
-	int getLength() const { return m_data ? m_data->length : 0; }
 };
 
 extern "C" void *memcpy(void *dst, const void *src, unsigned int n);
