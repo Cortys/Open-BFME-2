@@ -48072,3 +48072,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0047DE30@TunnelContain@@UAEXXZ,,0x0047DE30,60,Code/GameEngine/Source/GameLogic/Object/Contain/TunnelContainRva0047DE30.cpp,matched,chain TunnelContain slot03 plus 0x004F56FC add via Player 0x2E8
 ??1Rva0022D094@@QAE@XZ,,0x0022D094,53,Code/GameEngine/Source/Common/Rva0022D094Dtor.cpp,matched,unlock packet calls rowed 0x0022C917 plus rowed releaseBuffer 0x00036410
 ??1Rva0022D249@@QAE@XZ,,0x0022D249,53,Code/GameEngine/Source/Common/Rva0022D249Dtor.cpp,matched,chain packet calls just-landed 0x0022D094 plus rowed releaseBuffer 0x00036410
+??1Rva002217EA@@QAE@XZ,,0x002217B1,57,Code/GameEngine/Source/Common/Rva002217EADtor.cpp,matched,dtor releases ref at plus4 plus wide string at plus0
