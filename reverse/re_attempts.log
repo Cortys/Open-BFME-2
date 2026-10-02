@@ -5423,3 +5423,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??1Rva005F85E1@@QAE@XZ	0x005F85E1	63	blocked	EH prolog wall custom destroy-plus-free needs scopetable t=18 model=muse-04
 ?rva0035B570@Rva0035B570@@QAEXXZ	0x0035B570	82	partial	size-exact 82B shared-header and g-names fix; early je-end vs jne-inline-pop-ret and mov-eax-test vs mov-ecx-test for p; t=10 model=muse-09 score=0.97 stash=reverse/attempts/0x0035b570.cpp
 ?rva0040AAF8@Rva0040AAF8@@QAEPAUBfmePod104@@H@Z	0x0040AAF8	173	blocked	shared-header fix of 0.9 stash; same 176B wall index on stack s1 -0x14 s2 -0x10 double push vs ebx edi s2 arg-slot; all 8 relocs jb-jbe correct t=8 model=muse-09 (stash 0.9 kept)
+?rva002A3DD3@Rva002A3DD3@@QAEXXZ	0x002A3DD3	81	blocked	esi edi swapped plus ebp spill 78 vs 81B t=15 model=muse-08 (stash 0.95 kept)
+?rva0055405A@Rva0055405A@@QAEXXZ	0x0055405A	120	blocked	EH prolog plus scope table plus 2 unwind states unproven plus IAT vs direct _M_increment t=12 model=muse-08
