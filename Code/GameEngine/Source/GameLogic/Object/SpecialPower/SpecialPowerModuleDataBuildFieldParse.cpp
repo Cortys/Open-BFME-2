@@ -389,3 +389,8 @@ void CombineHordeSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse &par
 	SpecialPowerModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00C5E6E4), 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?RepairSpecialPowerParse_252768@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@RepairSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?UntamedAllegianceSpecialPowerParse_2524B2@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@UntamedAllegianceSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")

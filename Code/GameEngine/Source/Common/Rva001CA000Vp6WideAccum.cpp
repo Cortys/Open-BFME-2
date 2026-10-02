@@ -1317,3 +1317,7 @@ __asm {
 	Rva009B9700_empty:
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?d_009b9700@@YAXXZ=_Rva001CA000Vp6WideAccum")

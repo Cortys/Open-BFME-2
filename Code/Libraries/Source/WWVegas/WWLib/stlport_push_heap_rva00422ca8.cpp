@@ -231,3 +231,8 @@ template int *upper_bound<int *, int,
 	Rva00422CA8>(int *, int *, const int &, Rva00422CA8);
 
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??$__make_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@00@Z=??$__make_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z")
+#pragma comment(linker, "/alternatename:??$__pop_heap@PAHHHVRva00422CA8@@@_STL@@YAXPAH00HVRva00422CA8@@0@Z=??$__pop_heap@PAHHVRva00422CA8@@@_STL@@YAXPAH00HVRva00422CA8@@@Z")

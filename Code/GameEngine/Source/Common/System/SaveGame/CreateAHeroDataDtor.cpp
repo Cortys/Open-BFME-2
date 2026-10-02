@@ -43,3 +43,7 @@ typedef char HeroStringVectorSizeCheck[sizeof(RvaVecAscii)==12 ? 1 : -1];
 // Whole-class instantiation of this tree. It reproduces operator= (retail 0x0040806A)
 // byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<AsciiString,_STL::pair<AsciiString const ,TreeHintPayload001F8ACB>,_STL::_Select1st<_STL::pair<AsciiString const ,TreeHintPayload001F8ACB> >,_STL::less<AsciiString>,_STL::allocator<_STL::pair<AsciiString const ,TreeHintPayload001F8ACB> > >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?j_00015d7a@@YAXXZ=??1?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@QAE@XZ")

@@ -36,3 +36,8 @@ void MeshMatDescClass::Set_Single_Texture(const RefCountPtr<TextureClass>& textu
 void MeshMatDescClass::Set_Texture(int index,const RefCountPtr<TextureClass>& texture,int pass,int stage) {
     Get_Texture_Array(pass,stage,true)->Get_Array()[index]=texture;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Set_Single_Texture@MeshMatDescClass@@QAEXABVBfmeHandleCX@@HH@Z=?Set_Single_Texture@MeshMatDescClass@@QAEXABV?$RefCountPtr@VTextureClass@@@@HH@Z")
+#pragma comment(linker, "/alternatename:?Set_Texture@MeshMatDescClass@@QAEXHABVBfmeHandleCX@@HH@Z=?Set_Texture@MeshMatDescClass@@QAEXHABV?$RefCountPtr@VTextureClass@@@@HH@Z")

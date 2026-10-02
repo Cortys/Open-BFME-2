@@ -773,3 +773,7 @@ int Rva0073F640Get(void)
 {
 	return 0x00B3F646;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva007E9B70Get@@YAPAURva007E9B70Obj@@XZ=?Rva00656B60Get@@YAHXZ")

@@ -189,3 +189,7 @@ resetMessage:
 	comm->m_state = 1;
 	return 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?d_00819920@@YAXXZ=_Rva00819920")

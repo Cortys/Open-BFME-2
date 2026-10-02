@@ -209,3 +209,7 @@ void __cdecl bfmeDeblockEdgeVerticalByIndexMmx(Rva009C2170Ctx *ctx, void *row, i
 		movd dword ptr [esi + edx*2], mm5
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?d_009c1ed0@@YAXXZ=?bfmeDeblockEdgeVerticalByIndexMmx@@YAXPAURva009C2170Ctx@@PAXH@Z")

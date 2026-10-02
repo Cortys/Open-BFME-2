@@ -25,3 +25,7 @@ public:
 typedef char SaveMapPreviewSizeCheck[sizeof(SaveMapPreview)==20 ? 1 : -1];
 template _STL::vector<SaveMapPreview>::vector(const _STL::vector<SaveMapPreview>&);
 template SaveMapPreview *_STL::vector<SaveMapPreview>::_M_allocate_and_copy<SaveMapPreview const *>(unsigned int, SaveMapPreview const *, SaveMapPreview const *);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmeVector0022C55B@@QAE@ABU0@@Z=??0?$vector@VSaveMapPreview@@V?$allocator@VSaveMapPreview@@@_STL@@@_STL@@QAE@ABV01@@Z")
