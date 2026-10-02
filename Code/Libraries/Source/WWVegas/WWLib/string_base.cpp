@@ -163,7 +163,7 @@ int StringBase<wchar_t>::compare(const StringBase<wchar_t> &str) const
 }
 
 template <>
-int StringBase<char>::compareNoCase(const StringBase<char> &str) const
+inline int StringBase<char>::compareNoCase(const StringBase<char> &str) const
 {
     const int len = str.m_data ? str.m_data->length : 0;
     const char *data = str.m_data ? &str.m_data->data[0] : "";
@@ -312,3 +312,15 @@ template void StringBase<wchar_t>::set(wchar_t c);
 template void StringBase<wchar_t>::concat(wchar_t c);
 template const wchar_t *StringBase<wchar_t>::str() const;
 template bool StringBase<wchar_t>::isEmpty() const;
+
+// compareNoCase is a header inline in retail: another unit emits a select-any
+// copy of it, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitstring_base@@YAXPAV?$StringBase@D@@ABV1@@Z present-unmatched
+void bfmeEmitstring_base(StringBase<char> *p, const StringBase<char> &that)
+{
+    p->compareNoCase(that);
+}
+#pragma inline_depth()
