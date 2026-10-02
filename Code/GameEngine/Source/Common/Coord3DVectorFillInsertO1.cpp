@@ -10,5 +10,25 @@
 #include "bez_fwd_iterator.h"
 #include "d3dx8math.h"
 
+// Retail's uninitialized-copy target at 0x000766F5 is rowed as the 12-byte
+// BfmeE12 specialization, although this vector body uses Coord3D (three Real
+// values, also three floats). Forward only this copy through the rowed type.
+struct BfmeE12
+{
+	float x, y, z;
+};
+
+namespace _STL
+{
+	inline Coord3D *__uninitialized_copy(Coord3D *first, Coord3D *last,
+		Coord3D *result, const __false_type &tag)
+	{
+		return reinterpret_cast<Coord3D *>(__uninitialized_copy<const BfmeE12 *, BfmeE12 *>(
+			reinterpret_cast<const BfmeE12 *>(first),
+			reinterpret_cast<const BfmeE12 *>(last),
+			reinterpret_cast<BfmeE12 *>(result), tag));
+	}
+}
+
 extern void (_STL::vector<Coord3D>::*const g_bfmeCoord3DFillInsertAnchor)(Coord3D *, unsigned int, const Coord3D &);
 void (_STL::vector<Coord3D>::*const g_bfmeCoord3DFillInsertAnchor)(Coord3D *, unsigned int, const Coord3D &) = &_STL::vector<Coord3D>::_M_fill_insert;
