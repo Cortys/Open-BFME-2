@@ -48119,3 +48119,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??1Rva000A7BB5@@QAE@XZ,,0x000A7BB5,57,Code/GameEngine/Source/GameClient/Rva000A7BB5Dtor.cpp,matched,hash dtor via rowed clear 0x003A2A41 plus bucket free
 ??0Rva00222061@@QAE@XZ,,0x00222061,95,Code/GameEngine/Source/Common/Rva00222061Ctor.cpp,matched,EH baseConstruct Shell pattern auto vptr Rva0022181D 0x1C map setName InGameNotificationBox
 ?Rva002220DCInit@@YAXXZ,,0x002220DC,99,Code/GameEngine/Source/Common/Rva002220DCInit.cpp,matched,singleton ensure via holder g_00DFE4C4 chain from 0x00222061
+?rva003B66D8@Rva003B573E@@QAEXH@Z,,0x003B66D8,131,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptListSubrecordRemove.cpp,matched,chain from 0x003B573E record shape Rva003B675BRecord subrecord layout

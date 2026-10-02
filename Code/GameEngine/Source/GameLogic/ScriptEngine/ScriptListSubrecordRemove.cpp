@@ -1,0 +1,56 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+#include <vector>
+#include "ascii_string.h"
+
+// ?rva003B66D8@Rva003B573E@@QAEXH@Z @0x003B66D8 (131B): remove record at index
+// from the 0x14-stride ScriptList subrecord. Same object as the rowed search
+// 0x003B573E (thiscall on same this): dec references at +0xE, mark released
+// at +0xC, return while nodes at +0x10 remain; else locate sorted position via
+// search, unlink prev/next with tail at +0x1C, push to free list at +0x18,
+// release the name buffer, erase the sorted entry. Evidence: chain from
+// 0x003B573E, record shape from Rva003B675BRecord, subrecord layout of two
+// vectors plus two ints from ScriptListSubrecordCtor.
+
+struct Rva003B675BRecord
+{
+	int m_previous; // +0x00
+	int m_next; // +0x04
+	AsciiString m_name; // +0x08
+	unsigned char m_released; // +0x0C
+	unsigned char m_pad; // +0x0D
+	unsigned short m_references; // +0x0E
+	void *m_nodes; // +0x10
+};
+
+class Rva003B573E
+{
+public:
+	int rva003B573E(const StringBase<char> &key);
+	void rva003B66D8(int index);
+private:
+	_STL::vector<void *> m_sorted; // +0x00
+	_STL::vector<Rva003B675BRecord> m_records; // +0x0C
+	int m_freeHead; // +0x18
+	int m_tail; // +0x1C
+};
+
+void Rva003B573E::rva003B66D8(int index)
+{
+	Rva003B675BRecord *rec = &m_records[index];
+	--rec->m_references;
+	rec->m_released = 1;
+	if (rec->m_nodes != 0)
+		return;
+	int pos = rva003B573E(*(const StringBase<char> *)&rec->m_name);
+	if (rec->m_previous != -1)
+		m_records[rec->m_previous].m_next = rec->m_next;
+	if (rec->m_next != -1)
+		m_records[rec->m_next].m_previous = rec->m_previous;
+	else
+		m_tail = rec->m_previous;
+	rec->m_previous = m_freeHead;
+	m_freeHead = index;
+	rec->m_name.~AsciiString();
+	m_sorted.erase(m_sorted.begin() + pos);
+}
