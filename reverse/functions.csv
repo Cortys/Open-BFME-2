@@ -47688,3 +47688,5 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva0022CDDA@@UAEPAXI@Z,,0x0022CDBE,28,Code/GameEngine/Source/Common/System/SaveGame/FamilyDeletingDtors_Rva0022CDDA.cpp,matched,chain from just-landed 0x0022CDDA plus rowed delete 0x0002FD60
 ??1Rva0054F434@@UAE@XZ,,0x0054F434,123,Code/Libraries/Source/WWVegas/WWLib/Rva0054F434Dtor.cpp,matched,virtual dtor vtable 0x0086AA10 base vtable 0x0086A894 via EHs inline free holder at +0x3C
 ??_GRva0054F434@@UAEPAXI@Z,,0x0054F418,28,Code/Libraries/Source/WWVegas/WWLib/Rva0054F434Dtor.cpp,matched,deleting dtor calls rowed dtor 0x0054F434 then rowed delete
+??1Rva00576C4B@@UAE@XZ,,0x00576C4B,186,Code/GameEngine/Source/Common/Rva00576C4BDtor.cpp,matched,virtual dtor with erase 0x002B7250 plus conditional ptr-chase release plus member teardown via deleting-dtor caller 0x00576DD5
+??_GRva00576C4B@@UAEPAXI@Z,,0x00576DD5,28,Code/GameEngine/Source/Common/Rva00576C4BDtor.cpp,matched,scalar deleting dtor via base dtor plus operator delete same TU as rowed dtor
