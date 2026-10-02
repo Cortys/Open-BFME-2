@@ -168,6 +168,7 @@ public:
 	void rva0044FF6D(const Coord3D *pos, Int cmdSource);
 	void rva0036EE16(const Rva0035149F *info, Object *target, CommandSourceType cmdSource);
 	void rva0036EE89(const Rva0035149F *info, Object *target, float value, CommandSourceType cmdSource);
+	void rva0036EF09(const Rva0035149F *info, Object *target, float value, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -766,6 +767,19 @@ void AICommandInterface::rva0036EE16(const Rva0035149F *info, Object *target, Co
 void AICommandInterface::rva0036EE89(const Rva0035149F *info, Object *target, float value, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x24, cmdSource);
+	((Rva0035149F *)&parms.m_coordsStart)->rva0035149F(*info);
+	parms.m_obj = target;
+	parms.m_pos.x = value;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036EF09@AICommandInterface@@QAEXPBVRva0035149F@@PAVObject@@MW4CommandSourceType@@@Z @0x0036EF09 128B
+// Gap between rva0036EE89 0x0036EE89 and aiBfmeCommand35 0x0036EF89 in this TU.
+// Same 128B shape as rva0036EE89: AICMD 0x25 plus coord-vector plus m_obj plus m_pos.x plus slot-0.
+// Class proven by gap plus same TU flags. Callers at 0x00371A6E 0x00465685.
+void AICommandInterface::rva0036EF09(const Rva0035149F *info, Object *target, float value, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x25, cmdSource);
 	((Rva0035149F *)&parms.m_coordsStart)->rva0035149F(*info);
 	parms.m_obj = target;
 	parms.m_pos.x = value;
