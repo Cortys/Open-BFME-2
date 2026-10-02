@@ -161,7 +161,7 @@ MessageStream::MessageStream() :
 }
 
 // ??1TranslatorData@MessageStream@@QAE@XZ @0x0030F463
-MessageStream::TranslatorData::~TranslatorData()
+inline MessageStream::TranslatorData::~TranslatorData()
 {
 	GameMessageTranslator *trans = m_translator;
 	::operator delete(trans ? trans->deleteInstance(0) : 0);
@@ -188,3 +188,15 @@ GameMessageTranslator *MessageStream::findTranslator(unsigned int id)
 
 	return 0;
 }
+
+// ??1TranslatorData is a header inline elsewhere: another unit emits a
+// select-any copy, so a strong definition here was a duplicate symbol in
+// the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitMessageStreamListCtors@@YAXPAUTranslatorData@MessageStream@@@Z present-unmatched
+void bfmeEmitMessageStreamListCtors(MessageStream::TranslatorData *p)
+{
+	p->MessageStream::TranslatorData::~TranslatorData();
+}
+#pragma inline_depth()
