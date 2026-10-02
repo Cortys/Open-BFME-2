@@ -3180,3 +3180,18 @@ void Rva0057C339::rva0057C339(const AsciiString &a1, const TreeHintRef00217D4C &
     Rva0050E9FEAptCall(TheRva00222A8BTarget, m_level, team2, "LoadContent", &team1);
     m_flag = 1;
 }
+// ?rva0057C394@Rva0057C394@@QAEXABVAsciiString@@ABUTreeHintRef00217D4C@@@Z @ 0x0057C394 8B gap forwarder.
+// Tail jmp to rowed loader 0x0057C339 via member pointer at +4.
+// Evidence: mov ecx,[ecx+4] jmp, same args ret 8 passthrough, unblocks 4.
+class Rva0057C394
+{
+public:
+    void rva0057C394(const AsciiString &a1, const TreeHintRef00217D4C &a2);
+private:
+    char m_pad00[4];
+    Rva0057C339 *m_p;
+};
+void Rva0057C394::rva0057C394(const AsciiString &a1, const TreeHintRef00217D4C &a2)
+{
+    return m_p->rva0057C339(a1, a2);
+}
