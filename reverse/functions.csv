@@ -49017,3 +49017,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00075016@Rva0007517F@@UAEXPBMMHHH@Z,,0x00075016,123,Code/GameEngine/Source/Common/System/Rva0007517FCtor.cpp,matched,vslot 19 offset 0x4C vtable 0x7C6620 class Rva0007517F via ctor plus float global
 ?Rva00075695Notify@@YAXH@Z,,0x00075695,42,Code/GameEngine/Source/Common/Rva00075695Notify.cpp,matched,sibling Rva00075725Check pattern slot1 gated by g_00DE1F54
 ?Rva000756BFSelect@@YA_NHHH@Z,,0x000756BF,50,Code/GameEngine/Source/Common/Rva000756BFSelect.cpp,matched,indexed via g_00DE1F2C slot2 stores index to g_00DE1F5C
+?rva00276B95@Drawable@@QAEXXZ,,0x00276B95,20,Code/GameEngine/Source/GameClient/DrawableRva00276B95.cpp,matched,unlock flag clear plus tail jmp via rowed 0x00275545 caller 0x0029F34F
