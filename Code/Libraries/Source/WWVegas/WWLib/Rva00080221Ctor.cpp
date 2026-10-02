@@ -11,11 +11,21 @@
 // uses /O1 /MD per manual-vtable ctor precedent Rva00575540Ctor.cpp.
 void *__cdecl operator new(unsigned int size);
 
-struct Rva007C6FF4Impl
+// The impl is a class over a ref-counted base with an inline empty destructor,
+// so its vtable (VA 0x00BC6FF4 in retail) is emitted and resolved in this unit
+// rather than written as an address. The base ctor zeroes the count, then the
+// derived vtable store, then the value, as retail orders the stores.
+struct Rva00080221RefImpl
 {
-	void *m_vtable;
-	int m_refcount;
+	virtual ~Rva00080221RefImpl() {}
+	int m_ref;
+	Rva00080221RefImpl() : m_ref(0) {}
+};
+
+struct Rva007C6FF4Impl : Rva00080221RefImpl
+{
 	int m_value;
+	Rva007C6FF4Impl(const int &value) : m_value(value) {}
 };
 
 class Rva00080221
@@ -28,34 +38,18 @@ private:
 
 Rva00080221::Rva00080221(const int *arg)
 {
-	Rva007C6FF4Impl *p = (Rva007C6FF4Impl *)operator new(12);
-	if (p != 0) {
-		p->m_refcount = 0;
-		p->m_vtable = (void *)0x00BC6FF4;
-		p->m_value = *arg;
-	} else {
-		p = 0;
-	}
+	Rva007C6FF4Impl *p = new Rva007C6FF4Impl(*arg);
 	m_impl = p;
-	if (p != 0) {
-		++p->m_refcount;
-	}
+	if (p != 0)
+		++p->m_ref;
 }
 
 // Seven more constructors of this 53-byte shape, each installing its own impl
 // vtable (the only differing operand; no other unit references these vtables):
 // 0x00211E75 (VA 0xbe5128), 0x002D4594 (VA 0xc02aec), 0x002D45C9 (VA 0xc02af4),
 // 0x002D45FE (VA 0xc02afc), 0x004106FA (VA 0xc39634), 0x0044BC76 (VA 0xc3ed7c), 0x005773DB (VA 0xc6e970).
-// Each impl is a class over a shared ref-counted base whose destructor is
-// inline and empty, so the vtable it stores is emitted and resolved in this
-// unit rather than written as an address. Owners keep their addresses.
-
-struct Rva00080221RefImpl
-{
-	virtual ~Rva00080221RefImpl() {}
-	int m_ref;
-	Rva00080221RefImpl() : m_ref(0) {}
-};
+// Each impl is a class over the same ref-counted base. Owners keep their
+// addresses.
 
 // ??0Rva00211E75@@QAE@PBH@Z @0x00211E75 53B, impl vtable VA 0xbe5128
 struct Impl00211E75 : Rva00080221RefImpl
