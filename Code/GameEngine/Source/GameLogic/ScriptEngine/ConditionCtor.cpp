@@ -23,7 +23,10 @@ protected:
 private:
 	virtual MemoryPool *getObjectMemoryPool();
 public:
+	enum ConditionType { CONDITION_FALSE = 0 };
 	Condition();
+	Condition(ConditionType type);
+	void setConditionType(ConditionType type);
 
 private:
 	Int m_conditionType;
@@ -49,4 +52,18 @@ Condition::Condition() :
 	m_b4D(0)
 {
 	memset(m_parms, 0, sizeof(m_parms));
+}
+
+Condition::Condition(ConditionType type) :
+	m_conditionType(type),
+	m_numParms(0),
+	m_nextCondition(0),
+	m_x40(0),
+	m_x44(0),
+	m_x48(0),
+	m_flag4C(true),
+	m_b4D(0)
+{
+	memset(m_parms, 0, sizeof(m_parms));
+	setConditionType(type);
 }
