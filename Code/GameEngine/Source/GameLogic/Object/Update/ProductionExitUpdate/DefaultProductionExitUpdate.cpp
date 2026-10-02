@@ -48,23 +48,6 @@
 //#include "GameLogic/PartitionManager.h"
 
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/DefaultProductionExitUpdateCtorModuleFactoryBody.cpp
-// ??0DefaultProductionExitUpdate@@ present-unmatched
-DefaultProductionExitUpdate::DefaultProductionExitUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	// no rally point has been set
-	m_rallyPointExists = false;
-	// Added By Sadullah Nader
-	// Initialization missing and needed
-
-	m_rallyPoint.zero();
-
-	//
-
-	setWakeFrame(getObject(), UPDATE_SLEEP_FOREVER);
-}
-
-//-------------------------------------------------------------------------------------------------
 // ??1DefaultProductionExitUpdate@@ present-unmatched
 DefaultProductionExitUpdate::~DefaultProductionExitUpdate()
 {
