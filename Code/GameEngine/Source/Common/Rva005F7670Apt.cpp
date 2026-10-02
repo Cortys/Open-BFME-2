@@ -27,6 +27,7 @@ class Rva005F7670
 {
 public:
 	void rva005F7670(const UnicodeString &text);
+	void rva005F7161();
 private:
 	char m_pad00[4];
 	void *m_level04;
@@ -67,4 +68,13 @@ private:
 void Rva005F772E::rva005F772E(const UnicodeString &text)
 {
 	m_member04->rva005F7670(text);
+}
+
+void Rva005F7670::rva005F7161()
+{
+	if (m_shown64) {
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetUnitNameState", "_hide");
+		m_shown64 = false;
+	}
 }
