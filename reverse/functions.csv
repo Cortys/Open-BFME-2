@@ -49005,3 +49005,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?clearAndSetModelConditionState@Object@@QAEXII@Z,,0x001E49E5,105,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,Object clear and set model condition state and notify on change
 
 ?getTemplateName@Locomotor@@QBE?AVAsciiString@@XZ,,0x001E4A63,30,Code/GameEngine/Source/GameLogic/Object/LocomotorGetTemplateName.cpp,matched,Locomotor getTemplateName returns m_template->m_name
+?find@Rva0066D840Table@@QBEPAURva0066D840Record@@H@Z,,0x0066D840,38,Code/GameEngine/Source/Common/UnclaimedKeyedRecordFinds.cpp,matched,BFME1 clean C++ donor 2791daf5536e4e2147dc3a4aa25c17816828dd69 game/GameEngine/Source/Common/UnclaimedKeyedRecordFinds.cpp b1 0x00801500; target-independent padding boundary 38B ret4; array+0 count+4 key+8 stride0x30 native-proven; semantic identity unknown target-address names; base flags; no relocations or callees
