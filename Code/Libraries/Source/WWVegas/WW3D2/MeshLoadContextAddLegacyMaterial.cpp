@@ -49,12 +49,15 @@ private:
     unsigned long Compute_CRC() const;
 };
 
-class TextureClass {
+class TextureBaseClass {
 public:
     void Add_Ref() {
         ++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
     }
     void Release_Ref();
+};
+
+class TextureClass : public TextureBaseClass {
 };
 
 class BfmeHandleCX {
