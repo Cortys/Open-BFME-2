@@ -269,7 +269,10 @@ int Rva00811E20( struct Rva00812320Module *module, const char *keyA,
  * time, so it is not recoverable from the image; it sits two bytes below the
  * module's reference count, which is why the group of globals reads as one
  * small block rather than three unrelated addresses. */
-extern char g_Rva0130ACFAFilter[];
+// Target evidence: one matched DIR32 witness places the zero-filled slot at
+// VA 0x00E0A712 (.data bss). The existing layout note bounds it to the two
+// bytes before the module reference count; runtime filter contents are unknown.
+char g_Rva0130ACFAFilter[2];
 
 /* The caller's own object.  Only the two fields these wrappers touch are
  * named -- a default key at +0x04 and the module pointer at +0x64. */
