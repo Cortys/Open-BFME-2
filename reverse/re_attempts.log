@@ -5932,3 +5932,7 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva000754DEInit@@YAXXZ	0x000754DE	363	partial	mov ecx eax plus add eax 4 missing for refs addr mode dec cmp via ecx+4 not eax t=25 model=muse-04 score=0.96 stash=reverse/attempts/0x000754de.cpp
 ??0Rva001FEAB2@@QAE@XZ	0x001FEAB2	31	partial	31/31B 17/17insns exact except call rel32 to real 0x00360B59 vs retail dup 0x001FE312 identical except EH needs dup repoint t=25 model=muse-11 score=0.99 stash=reverse/attempts/0x001feab2.cpp
 ?getPositionLinear@BFMERopeDrawable@@QBEPBUCoord3D@@XZ	0x00276470	202	blocked	float lerp scheduling wall donor linear proven factor early vs retail late plus xmm2-vs-xmm0 plus 5B extra tried donor Os bool inverted t=25 model=muse-11
+?rva00311431@Rva00311431@@QAEPAV1@PBURva00311431Arg@@@Z	0x00311431	98	partial	lea eax 0x30 middle base vs 0x34 end base same addrs t=18 model=muse-03 score=0.95 stash=reverse/attempts/0x00311431.cpp
+?Rva00311974Get@@YG_NPAXEPAM@Z	0x00311974	508	blocked	terrain TacticalView fabs interp 508B wall plus 15 reg plus frame 0x18 vs 0x24 plus loop shape needs donor t=22 model=muse-03
+?rva00311431@Rva00311431@@QAEPAV1@PBURva00311431Arg@@@Z	0x00311431	98	blocked	lea eax 0x30 middle base vs 0x34 end base same addrs tried direct plus flat both swap lea order t=12 model=muse-03 (stash 0.95 kept)
+?rva00311F46@Rva00311F46@@QAE_NPBUCoord3D@@M@Z	0x00311F46	156	blocked	do-while 158B vs 156B dec-dec vs imul-lea plus push-esi plus xmm0-vs-xmm1 same as stash t=8 model=muse-03 (stash 0.91 kept)
