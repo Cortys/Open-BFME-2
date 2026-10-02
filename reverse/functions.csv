@@ -48397,3 +48397,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?Set_Texture_Mapping_Mode@StreakLineClass@@QAEXW4TextureMapMode@SegLineRendererClass@@@Z,,0x007419A0,36,Code/Libraries/Source/WWVegas/WW3D2/streak.cpp,matched,dual renderer Bits via TEXTURE_MAP_MODE_OFFSET 24 caller 0x00561D3D
 ?Rva005922FBRead@@YAPAVRva004D6208@@HPAI@Z,,0x005922FB,202,Code/GameEngine/Source/GameNetwork/Rva005922FBRead.cpp,matched,NetFileCommandMsg Rva004D6208 deserializer via sibling Rva00592496Read and twin setter 0x00590F13
 ?Rva0052519DFire@@YAHPAX0PBD1PAH@Z,,0x0052519D,102,Code/GameEngine/Source/Common/Rva0052519DFire.cpp,matched,free int via rowed Get plus AptCall plus empty fallback
+??_GRva0041988B@@UAEPAXI@Z,,0x0022E0C9,28,Code/GameEngine/Source/GameClient/Rva0041988BDtor.cpp,matched,vtable slot0 0x007E7778 via rowed dtor unit emits exact

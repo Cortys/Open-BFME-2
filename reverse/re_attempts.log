@@ -5688,3 +5688,4 @@ FUN_0088911a	0x0058911A	20	blocked	Boundary checkpoint 0x0058911A/20B; body comp
 ?rva0040FDD1@Rva0040FDD1@@QAEXI@Z	0x0040FDD1	169	blocked	EH ctor needs GUI donor plus WindowManager +0xE8 plus Apt StringBase temps plus vtable 00C395E4 t=15 model=muse-11
 ?rva001F1513@Rva001F1513@@QBE_NPAVObject@@@Z	0x001F1513	246	blocked	twin upgrade-vector veto-require needs UpgradeCenter donor plus Object-Player bit layout plus sar-vs-test empty shape t=20 model=muse-11
 ?Rva005252CDAptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPAPAX@Z	0x005252CD	107	partial	string direct plus lea ecx vs via eax plus add eax plus a1 hoist late vs early and pushes swapped t=30 model=muse-11 score=0.93 stash=reverse/attempts/0x005252cd.cpp
+??0Rva00419035@@QAE@ABU0@@Z	0x00419035	165	blocked	159B vs 165B same wall as 004186F2 missing push ecx and frame offsets header-cache split-r no change t=12 model=muse-05 (stash 0.93 kept)
