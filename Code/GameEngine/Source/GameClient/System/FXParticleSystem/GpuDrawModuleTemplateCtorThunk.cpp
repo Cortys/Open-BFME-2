@@ -55,6 +55,7 @@ class GpuDrawModuleTemplate : public CategoryModuleTemplate<6>,
 {
 public:
     GpuDrawModuleTemplate();
+    virtual ~GpuDrawModuleTemplate();
 };
 
 // ??0GpuDrawModuleTemplate@FXParticleSystem@@QAE@XZ
