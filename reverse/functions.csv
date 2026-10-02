@@ -12914,7 +12914,6 @@ _Rva009C2620Vp6FilterDiag4,,0x001D2F20,776,Code/GameEngine/Source/Common/BfmeCon
 ?bfmeGoVJI@BfmeThingVJI@@QAEXPAVBfmeMsgVJI@@@Z,,0x0066FAE0,182,Code/GameEngine/Source/Common/BfmeConv1386.cpp,matched,BFME1 donor noteVJI aliased to rowed bfmeGoBLF body
 ??0MaterialInfoClass@@QAE@XZ,,0x001708D0,132,Code/Libraries/Source/WWVegas/WW3D2/MaterialInfoClassCtor.cpp,matched,BFME1 donor reconstruction; vtable immediates repaired to BFME2 values
 ?bfmeCopyVIA@@YAPAUBfmeElemVIA@@PAU1@00@Z,,0x00689450,125,Code/GameEngine/Source/Common/BfmeConv1371.cpp,matched,BFME1 donor members copy via AsciiString op assign pin
-?read_material_pass@MeshModelClass@@IAE_NAAVChunkLoadClass@@PAVMeshLoadContextClass@@@Z,,0x0018B400,175,Code/Libraries/Source/WWVegas/WW3D2/MeshModelReadMaterialPass.cpp,matched,BFME1 meshmdlio port as bool reader with per-case ok-local al-passthrough returns and retail case order with 0x3F opaque case third
 ?bfmeClearVDB@BfmeThingVDB@@QAEXXZ,,0x00759D30,75,Code/GameEngine/Source/Common/BfmeConv1350.cpp,matched,BFME1 donor trimmed free helper is scalar delete
 ??_GNode@?$SList@VTagBlockIndex@@@@QAEPAXI@Z,,0x006204E0,30,Code/GameEngine/Source/Common/SListTagBlockIndexRemoveAllThunk.cpp,matched,scalar deleting dtor emitted by Remove_All TU; dtor is the rowed 0x6204D0 thunk
 ?bfmeGoVGP@BfmeThingVGP@@QAEHXZ,,0x00176E90,70,Code/GameEngine/Source/Common/BfmeConv1356.cpp,matched,BFME1 donor imports are direct C imports
@@ -47981,3 +47980,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0040B4F9@Rva0040B4F9@@QAEXXZ,,0x0040B4F9,53,Code/Libraries/Source/WWVegas/WWLib/Rva0040B4F9Sort.cpp,matched,sorts two int vectors via rowed sort 0x0040B4B6
 ??1Rva0022D01B@@QAE@XZ,,0x0022D01B,68,Code/GameEngine/Source/Common/Rva0022D01BDtor.cpp,matched,unlock dtor two trees plus ascii string evidence
 ?Rva003BF9FADo@@YGXABVAsciiString@@M0@Z,,0x003BF9FA,125,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF9FA.cpp,matched,chain via rva003570D1 with team centroid caller 0x003CA9CD
+?read_material_pass@MeshModelClass@@IAE_NAAVChunkLoadClass@@PAVMeshLoadContextClass@@@Z,,0x0018B400,230,Code/Libraries/Source/WWVegas/WW3D2/MeshModelReadMaterialPass.cpp,matched,
