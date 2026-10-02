@@ -15,10 +15,12 @@ class NetCommandMsg
 public:
 	NetCommandMsg();
 protected:
-	virtual ~NetCommandMsg() {}
+	virtual ~NetCommandMsg();
 private:
 	char m_pad04[0x1c - 0x04];
 };
+// ??1NetCommandMsg@@MAE@XZ present-unmatched
+inline NetCommandMsg::~NetCommandMsg() {}
 class Rva004D65DC : public NetCommandMsg
 {
 protected:
