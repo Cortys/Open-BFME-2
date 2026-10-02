@@ -47879,3 +47879,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??$sort@PAURva005D5853@@@_STL@@YAXPAURva005D5853@@0@Z,,0x005D6A61,67,Code/Libraries/Source/WWVegas/WWLib/stlport_rva005d5853_sort.cpp,matched,STLport sort<Rva005D5853*> family the unit instantiates; placed where its masked bytes equal retail at the address retail's calls from sort 0x005D6A61 fix
 ?rva0054D5D3@Rva0054D5D3@@QAEXPAX0@Z,,0x0054D5D3,93,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,list append new Rva0054D593 head 0x4 tail 0x8 callers 0x0054D699 0x0054D6B7
 ?rva004F56FC@Rva004F56FC@@QAEXPAVObject@@@Z,,0x004F56FC,31,Code/GameEngine/Source/Common/Rva004F56FCAdd.cpp,matched,list at 0x08 count at 0x1C via push_back callers prove thiscall
+??0Rva0022185A@@QAE@ABV0@@Z,,0x0022185A,33,Code/GameEngine/Source/Common/Rva0022185ACopy.cpp,matched,copy ctor AsciiString at 0 plus int 4 byte 8 via StringBase copy
