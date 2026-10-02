@@ -1,14 +1,15 @@
-// cl: /O1 /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/open-bfme-1/reference/shims/stringinline
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS
 // stlport
 // Open-BFME: vector<GeometryRecord> copy constructor, retail 0x000FDF90.
 // GeometryInfo's copy constructor calls this member through ILT 0x000149DE.
 
 #include <vector>
-#include "StringInline.h"
+#include "ascii_string.h"
 
 struct GeometryRecord
 {
 	GeometryRecord();
+	~GeometryRecord();
 	GeometryRecord(const GeometryRecord &other)
 		: m_first(other.m_first),
 		  m_second(other.m_second),
