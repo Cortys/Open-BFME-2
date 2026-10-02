@@ -28,8 +28,10 @@ defines (`*vtab = (int)0x00C5EE80;`, a hand-written vptr store) becomes
 `((unsigned int)vtbl_00C5EE80)`, an `extern "C"` array the linker aliases to
 that vftable (`/alternatename:_vtbl_00C5EE80=??_7...`): the same bytes, but
 the store follows the vftable wherever the linked image puts it. An address
-several folded vftables share is left alone: naming it after one of them
-would invent an identity. Each changed file is rebuilt with
+several folded vftables share gets the same address-named alias, linked to
+the first of them by name: the alias claims no class, and folded tables are
+identical slot for slot, so any member yields the same bytes and behaviour.
+Each changed file is rebuilt with
 ./build.sh and restored unchanged unless every row in it still matches.
 
 Usage:
@@ -190,11 +192,15 @@ def rewrite(text, index):
 
     def vtable(match):
         address = int(match.group(1), 16)
-        tables = [s for s in index.get(address, ()) if s.startswith("??_7")]
-        if len(tables) != 1 or any(not s.startswith("??_7") for s in index.get(address, ())):
+        tables = sorted(s for s in index.get(address, ()) if s.startswith("??_7"))
+        if not tables or any(not s.startswith("??_7") for s in index.get(address, ())):
             return match.group(0)
         name = f"vtbl_{address:08X}"
-        need[name] = (f'extern "C" const void *const {name}[];  // {tables[0]}' + "\n" +
+        # A folded table (several ??_7 at one address) is one retail table the
+        # linker merged because every slot is identical; the address-named
+        # alias claims no class, and any member gives the same bytes and slots.
+        note = tables[0] if len(tables) == 1 else f"folded, {len(tables)} classes; via {tables[0]}"
+        need[name] = (f'extern "C" const void *const {name}[];  // {note}' + "\n" +
                       f'#pragma comment(linker, "/alternatename:_{name}={tables[0]}")')
         return f"((unsigned int){name})"
 
