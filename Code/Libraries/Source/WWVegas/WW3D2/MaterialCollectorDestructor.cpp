@@ -36,7 +36,30 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 // The former claim at 0x00C5C6A8 was retracted: it joined an array-deallocation
 // unwind funclet and a separate C++ exception handler, neither this body.
 void __cdecl operator delete[](void *) throw();
-#include "shader.h"
+// LINK-COMDAT: ShaderClass inline copies (ctor, Reset, 4 Set_*) differ from
+// the kept copies in decalmsh.cpp (ZH shifts: Cull 19, detail 20/24) while
+// this TU used BFME2 shifts (Cull 20, detail 21/25, default 0x10441b). Declare
+// them here so calls reach the kept copies; identical methods stay inline so
+// the vector Resize rows keep their bytes.
+class ShaderClass {
+public:
+    enum AlphaTestType { ALPHATEST_DISABLE = 0, ALPHATEST_ENABLE, ALPHATEST_MAX };
+    enum DetailAlphaFuncType { DETAILALPHA_DISABLE = 0, DETAILALPHA_DETAIL, DETAILALPHA_SCALE, DETAILALPHA_INVSCALE, DETAILALPHA_MAX };
+    enum DetailColorFuncType { DETAILCOLOR_DISABLE = 0, DETAILCOLOR_DETAIL, DETAILCOLOR_SCALE, DETAILCOLOR_INVSCALE, DETAILCOLOR_ADD, DETAILCOLOR_SUB, DETAILCOLOR_SUBR, DETAILCOLOR_BLEND, DETAILCOLOR_DETAILBLEND, DETAILCOLOR_ADDSIGNED, DETAILCOLOR_ADDSIGNED2X, DETAILCOLOR_SCALE2X, DETAILCOLOR_MODALPHAADDCOLOR, DETAILCOLOR_MAX };
+    enum CullModeType { CULL_MODE_DISABLE = 0, CULL_MODE_ENABLE, CULL_MODE_MAX };
+    ShaderClass();
+    ShaderClass(const ShaderClass &s) { ShaderBits = s.ShaderBits; }
+    ShaderClass(const unsigned int d) { ShaderBits = d; }
+    bool operator==(const ShaderClass &s) { return ShaderBits == s.ShaderBits; }
+    bool operator!=(const ShaderClass &s) { return ShaderBits != s.ShaderBits; }
+    void Reset();
+    void Set_Alpha_Test(AlphaTestType x);
+    void Set_Cull_Mode(CullModeType x);
+    void Set_Post_Detail_Alpha_Func(DetailAlphaFuncType x);
+    void Set_Post_Detail_Color_Func(DetailColorFuncType x);
+private:
+    unsigned int ShaderBits;
+};
 #include "vector.h"
 // Reset accesses the target's RefCountClass prefix only.
 class VertexMaterialClass {
@@ -54,6 +77,11 @@ public:
     void Release_Ref();
 };
 
+class TextureBaseClass {
+public:
+    void Release_Ref();
+};
+
 class BfmeHandleCX {
 public:
     TextureClass *p;
@@ -62,11 +90,11 @@ public:
         if (p) p->Add_Ref();
     }
     ~BfmeHandleCX() {
-        if (p) p->Release_Ref();
+        if (p) ((TextureBaseClass *)p)->Release_Ref();
     }
     BfmeHandleCX &operator=(const BfmeHandleCX &other) {
         if (other.p) other.p->Add_Ref();
-        if (p) p->Release_Ref();
+        if (p) ((TextureBaseClass *)p)->Release_Ref();
         p = other.p;
         return *this;
     }
