@@ -96,9 +96,9 @@ void LanTheaterEmulator::notifyAddress( Rva00809500Entry *entry )
 	message.m_08 = sink->m_value08;
 	message.m_0c = sink->m_value0c;
 	reinterpret_cast< BfmeThingCIC * >( &message )->bfmeGoCIC(
-		(void *)0x00C71658,
+	(void *)"IP",
 		address );
-	Rva007F93E0( &message, (void *)0x00CE3F98, m_field10 );
+	Rva007F93E0( &message, (void *)"->L", m_field10 );
 	reinterpret_cast< Gen_007e86c0 * >( &message )->m();
 }
 
