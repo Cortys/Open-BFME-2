@@ -48921,3 +48921,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva0021570DCopy@@YAPAUBfmeVectorRecord0002154F3@@PAU1@00@Z,,0x0021570D,29,Code/Libraries/Source/WWVegas/WWLib/Rva0021570DCopy.cpp,matched,unlock 29B tag-local plus zero into 5-arg worker 0x00215696 caller 0x002157DB
 ?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z,,0x00511AD4,11,Code/GameEngine/Source/Common/Rva00511ADFRva00511AD4.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
 ?isEffectivelyDead@Object@@QBE_NXZ,,0x0006DFF1,10,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedUnit.cpp,matched,
+?Set_Z_Translation@Matrix3D@@QAEXM@Z,,0x00481FAF,14,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/JetAIUpdate.cpp,matched,
