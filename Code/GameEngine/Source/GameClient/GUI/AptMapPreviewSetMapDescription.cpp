@@ -15,6 +15,8 @@ extern "C" void __cdecl free(void *p);
 void GadgetListBoxReset(GameWindow *listbox);
 int GadgetListBoxAddEntryText(GameWindow *listbox, UnicodeString text,
     int color, int row, int column, bool overwrite);
+int __cdecl Rva00322910(GameWindow *comboBox);
+void *__cdecl GadgetComboBoxGetItemData(GameWindow *comboBox, int index);
 
 class MapMetaData
 {
@@ -28,10 +30,12 @@ public:
     void bfmeSetMapDescription(MapMetaData *map);
     void rva0057C597(bool show);
     void rva0057CC43(struct Rva0057CC43Node *head);
+    void *rva0057C649();
 private:
     char m_unmodelled[0x2C];
     GameWindow *m_descriptionList;
     GameWindow *m_windows[8];
+    GameWindow *m_combo50;
 };
 
 struct Rva0057CC43Node
@@ -70,4 +74,12 @@ void AptMapPreview::rva0057CC43(Rva0057CC43Node *head)
         free(node);
         node = next;
     }
+}
+
+void *AptMapPreview::rva0057C649()
+{
+    if (!m_combo50)
+        return (void *)-1;
+    int index = Rva00322910(m_combo50);
+    return GadgetComboBoxGetItemData(m_combo50, index);
 }
