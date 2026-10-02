@@ -7,10 +7,24 @@ class Rva00427157
 public:
 	Rva00427157(const AsciiString &name, const Rva00427157 *src);
 	float rva004270FA(int index);
+	friend void Rva00427114Parse(class INI *ini, Rva00427157 *store);
 private:
 	AsciiString m_name;
 	float m_vals[8];
 };
+
+typedef const char *ConstCharPtr;
+typedef const ConstCharPtr *ConstCharPtrArray;
+
+class INI
+{
+public:
+	const char *getNextToken(const char *seps);
+	float dup_002EE10(const char *token);
+	int scanIndexList(const char *token, ConstCharPtrArray nameList);
+};
+
+extern ConstCharPtr g_00DC85C4[];
 
 Rva00427157::Rva00427157(const AsciiString &name, const Rva00427157 *src) : m_name(name)
 {
@@ -26,4 +40,13 @@ Rva00427157::Rva00427157(const AsciiString &name, const Rva00427157 *src) : m_na
 float Rva00427157::rva004270FA(int index)
 {
 	return m_vals[index];
+}
+
+void Rva00427114Parse(INI *ini, Rva00427157 *store)
+{
+	const char *key = ini->getNextToken(0);
+	const char *val = ini->getNextToken(0);
+	float f = ini->dup_002EE10(val);
+	int idx = ini->scanIndexList(key, g_00DC85C4);
+	store->m_vals[idx] = f;
 }
