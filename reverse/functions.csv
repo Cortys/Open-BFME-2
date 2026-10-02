@@ -47815,3 +47815,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva0022CD2A@@QAEPAXI@Z,,0x0022D0E5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022CD2A.cpp,matched,chain deleting dtor calls rowed dtor 0x0022CD2A and rowed delete 0x0002FD60
 ??0Rva00084CA5@@QAE@XZ,,0x00084CA5,74,Code/GameEngine/Source/Common/Rva00084CA5Ctor.cpp,matched,ctor init 0x10441B zeroes plus GlobalData 0x110-0x118 via TheWritableGlobalData
 ?Rva0022D941Destroy@@YAXPAURva0022CD2A@@0@Z,,0x0022D941,25,Code/GameEngine/Source/Common/Rva0022D941Destroy.cpp,matched,chain range destroy over 0x18 via rowed dtor 0x0022CD2A
+?push_back@?$vector@VRva0040AEE3@@V?$allocator@VRva0040AEE3@@@_STL@@@_STL@@QAEXABVRva0040AEE3@@@Z,,0x0040BA33,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_Rva0040AEE3_pushback.cpp,matched,chain lane vector pushback via pinned Construct and rowed overflow
