@@ -48866,3 +48866,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??1Rva004053C2@@UAE@XZ,,0x004053C2,79,Code/GameEngine/Source/Common/Rva004053C2Dtor.cpp,matched,dtor stores own vtables calls rowed 0x00405350 restores BBB554 calls rowed base plus caller 0x0040559F
 ??_GRva004053C2@@UAEPAXI@Z,,0x0040559F,28,Code/GameEngine/Source/Common/Rva004053C2Dtor.cpp,matched,deleting dtor calls rowed 0x004053C2 plus operator delete
 ?Rva003EF9DCFill@@YGXPAURva003EF9DCNode@@PAV?$vector@W4ObjectID@@V?$allocator@W4ObjectID@@@_STL@@@_STL@@@Z,,0x003EF9DC,46,Code/GameEngine/Source/Common/Rva003EF9DCFill.cpp,matched,rowed insert callee callers unblock unclaimed
+?Rva003EF6A0Find@@YGPAURva003EF6A0Entry@@PAURva003EF6A0Span@@H@Z,,0x003EF6A0,54,Code/GameEngine/Source/Common/Rva003EF6A0Find.cpp,matched,span search for key at +0 returns entry or null
