@@ -59,3 +59,14 @@ Validation after the retained FX change: `./build.sh
 Code/GameEngine/Source/GameClient/FXParticleSystemFactories.cpp` passed
 66/66; `tools/check_csv.py` passed; `find_declared_unmatched.py --fail`
 reported all definitions matched; `class_gate.py` passed silently.
+
+## `Code/Libraries/Source/ATL/atlbase.cpp`
+
+- `?_AtlRaiseException@ATL@@YAXKK@Z` at `0x00003214` — **repaired**, 18B →
+  19B. The imported `RaiseException` declaration's `noreturn` attribute made
+  MSVC emit `int3` where retail has `ret`. Removing that attribute from the
+  import makes this helper exact; `_AtlRaiseException` itself remains marked
+  `noreturn`, preserving its callers' retail codegen.
+- Validation: `./build.sh Code/Libraries/Source/ATL/atlbase.cpp` passed 9/9;
+  `tools/check_csv.py` passed; `find_declared_unmatched.py --fail` reported
+  all definitions matched; `class_gate.py` passed silently.

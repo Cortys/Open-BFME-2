@@ -14,7 +14,7 @@ typedef unsigned long DWORD;
 typedef const char *LPCSTR;
 
 extern "C" __declspec(dllimport) void __cdecl free(void *memory);
-extern "C" __declspec(dllimport) __declspec(noreturn) void __stdcall RaiseException(
+extern "C" __declspec(dllimport) void __stdcall RaiseException(
     DWORD code, DWORD flags, DWORD argumentCount, const DWORD *arguments);
 extern "C" __declspec(dllimport) void __stdcall DeleteCriticalSection(void *section);
 extern "C" __declspec(dllimport) void __stdcall InitializeCriticalSection(void *section);
