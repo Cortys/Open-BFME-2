@@ -267,6 +267,7 @@ StateReturnType AIDeadState::update()
 class AIInternalMoveToState : public State
 {
 public:
+	AIInternalMoveToState(StateMachine *machine, unsigned int hash);
 	virtual ~AIInternalMoveToState();
 	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
@@ -281,6 +282,7 @@ protected:
 class AIFollowWaypointPathExactState : public AIInternalMoveToState
 {
 public:
+	AIFollowWaypointPathExactState(StateMachine *machine, Bool moveAsGroup);
 	virtual ~AIFollowWaypointPathExactState();
 	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
@@ -294,6 +296,13 @@ private:
 
 
 
+
+AIFollowWaypointPathExactState::AIFollowWaypointPathExactState(StateMachine *machine, Bool moveAsGroup)
+	: AIInternalMoveToState(machine, 0xE1CB82BFu)
+{
+	m_lastWaypoint = 0;
+	m_moveAsGroup = moveAsGroup;
+}
 
 // ?AIFollowWaypointPathExactState::~AIFollowWaypointPathExactState present-unmatched
 AIFollowWaypointPathExactState::~AIFollowWaypointPathExactState()
