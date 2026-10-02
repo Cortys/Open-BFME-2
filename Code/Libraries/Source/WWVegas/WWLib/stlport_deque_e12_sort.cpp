@@ -23,8 +23,10 @@
 // the loop calls the rowed __unguarded_partition 0x00422217 and partial_sort,
 // whose __partial_sort calls make_heap, the rowed __pop_heap 0x00423293 and
 // sort_heap 0x00423F20. The loop's __median call lands on 0x005A9215, a body
-// with two other callers outside this family (0x0054C083, 0x005A9798): it is
-// pinned as a folded alias, not rowed.
+// with two other callers outside this family (0x0054C083, in a deque<BfmeE8>
+// sort, and 0x005A9798): retail folded the medians of those sorts into one
+// body. This unit emits it byte-exact, so it is rowed here under this unit's
+// instantiation; the other sorts' names belong at the same address.
 #include <algorithm>
 #include <deque>
 struct BfmeE12 { float x, y, z; };
