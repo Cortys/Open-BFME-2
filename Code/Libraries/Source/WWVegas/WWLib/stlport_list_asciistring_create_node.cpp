@@ -26,17 +26,18 @@ template <typename T> struct BfmeStringData
 bool operator==(const AsciiString &a, const AsciiString &b);
 bool operator<(const AsciiString &a, const AsciiString &b);
 
-// Opaque helper pinned at 0x0002C485 (StringBase _Construct flavor, whose
-// true _STL mangling is spent at 0x00142CC0). Declared with copy-construct
-// shape so this body emits the retail 2-push call to 0x2C485.
-void __cdecl AsciiStringCopyConstructAtRva0002C485(AsciiString *dest, const AsciiString &src);
+// Rowed _Construct<AsciiString> helper at 0x0002C485 (defined as
+// ??$_Construct@VAsciiString@@V1@@_STL@@YAXPAVAsciiString@@ABV1@@Z).
+namespace _STL {
+template <> void _Construct<AsciiString, AsciiString>(AsciiString *, const AsciiString &);
+}
 
 template <>
 _STL::_List_node<AsciiString> *_STL::list<AsciiString, _STL::allocator<AsciiString> >::_M_create_node(const AsciiString &__x)
 {
 	_STL::_List_node<AsciiString> *__p =
 		(_STL::_List_node<AsciiString> *)_STL::allocator<char>::allocate(12, 0);
-	AsciiStringCopyConstructAtRva0002C485(&__p->_M_data, __x);
+	_STL::_Construct<AsciiString, AsciiString>(&__p->_M_data, __x);
 	return __p;
 }
 
