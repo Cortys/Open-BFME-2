@@ -47993,3 +47993,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva00221C15@@QAE@ABVAsciiString@@ABVRva00221A58@@PAVINI@@@Z,,0x00221C15,71,Code/GameEngine/Source/Common/Rva00221C15Ctor.cpp,matched,retail bytes caller 0x002222C0 explicit vtable slot
 ??1Rva0040B59F@@QAE@XZ,,0x0040B59F,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector dtor via rowed Destroy Rva0040AFF3
 ?Rva009A6130PostFilterDispatch@@YAXPAURva009A6130Context@@HHHHPAE11HH@Z,,0x001B6BA0,1155,Code/GameEngine/Source/Common/Rva009A6130PostFilterDispatch.cpp,matched,BFME1 clean C++ donor 10af19f44a89 game/Common/Rva009A6130PostFilterDispatch.cpp; native Ghidra start and ten-argument dispatch ABI; address-derived label not original symbol; shared codec table base verified by installer
+??1Rva0040BFAA@@UAE@XZ,,0x0040BFAA,74,Code/GameEngine/Source/Common/Rva0040BFAADtor.cpp,matched,dtor vtable 0x008392E0 two vectors then base
