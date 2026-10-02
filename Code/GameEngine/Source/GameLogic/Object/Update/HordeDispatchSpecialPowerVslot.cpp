@@ -26,8 +26,11 @@ public:
 	void rva00758240(Rva009A36F0Param *param);
 };
 
-#define TheThunk230 (*(Rva00758230 **)0x00DFE754)
-#define TheThunk240 (*(Rva00758240 **)0x00DFE754)
+// g_Va00DFE754: VA 0x00dfe754 (.data/bss); retail zero-filled.
+void *g_Va00DFE754;
+
+#define TheThunk230 ((Rva00758230 *)g_Va00DFE754)
+#define TheThunk240 ((Rva00758240 *)g_Va00DFE754)
 
 class HordeDispatchSpecialPower
 {
