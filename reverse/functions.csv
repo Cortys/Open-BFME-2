@@ -46864,3 +46864,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva005D1D8F@Rva005D1D8F@@QAEXH@Z,,0x005D1D8F,32,Code/GameEngine/Source/Common/Rva005D1D8F.cpp,matched,chain via rowed rva002B7250 interior-this ternary
 ?rva004989D7@Rva004989D7@@QBEPAVPlayer@@XZ,,0x004989D7,8,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004989D7Get.cpp,matched,gap forward plus0C to getControllingPlayer
 ??0Rva005C18F0@@QAE@XZ,,0x005C1896,62,Code/GameEngine/Source/Common/Rva005C18F0Ctor.cpp,matched,base carries m_04 so store lands before EH state and vtable
+?rva005F8F31@Rva005F8F31@@QAEXXZ,,0x005F8F31,13,Code/GameEngine/Source/Common/Rva005F8F31Forwarder.cpp,matched,chain callee 0x005CB260 rowed callers 0x005F96D4 loops
