@@ -16,6 +16,11 @@ template <>
 basic_string<char, char_traits<char>, allocator<char> >&
 basic_string<char, char_traits<char>, allocator<char> >::assign(
         const basic_string<char, char_traits<char>, allocator<char> >&);
+
+// The retail-proven reserve body is emitted by stlport_narrow_string_reserve.cpp.
+template <>
+void basic_string<char, char_traits<char>, allocator<char> >::reserve(
+        unsigned int);
 }
 
 template class _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> >;
