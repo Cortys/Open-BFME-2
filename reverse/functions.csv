@@ -47300,3 +47300,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0025FB9B@Rva0025FB9B@@QAEXXZ,,0x0025FB9B,33,Code/GameEngine/Source/GameClient/Rva0025FB9BClear.cpp,matched,conditional clears with copy caller 0x00260BBF
 ?rva0029A469@Rva0029A469@@QAEXM@Z,,0x0029A469,33,Code/GameEngine/Source/GameClient/Rva0029A469.cpp,matched,null-checked Shadow scaled float via g_00BC2900 caller 0x002A4769
 ?rva0029AA3F@Rva0029AA3F@@QAEXXZ,,0x0029AA3F,35,Code/GameEngine/Source/Common/Rva0029AA3F.cpp,matched,emit 0x467 then location via MessageStreamSubsystem caller 0x00431A21
+?rva0029A778@Rva0029A778@@QAEPAV1@ABV1@@Z,,0x0029A778,39,Code/GameEngine/Source/Common/Rva0029A778.cpp,matched,copy UnicodeString then 3 dwords return this caller 0x0029BAD5
