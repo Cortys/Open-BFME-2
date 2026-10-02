@@ -65,8 +65,11 @@ struct DebugIOInterface
 class DebugStackwalk
 {
 public:
-	struct Signature
+	// A class, as debug_stack.cpp defines it: the key is part of the mangled
+	// StackWalk and operator<< names this unit calls.
+	class Signature
 	{
+	public:
 		unsigned int m_numAddr;
 		unsigned int m_addr[256];
 
