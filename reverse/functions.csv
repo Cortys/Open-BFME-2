@@ -48701,3 +48701,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva006FD060Forward@@YAXPAX000@Z,,0x006FD060,149,Code/Libraries/Source/WWVegas/WWLib/Rva006FD060Forward.cpp,matched,LINK body for 0x006E5050 0x0070E900 via Aux 0x006FC670 pin asserts for aActionStream pBase aConstantFile lines 0x379 0x37A 0x37B callers 0x006E54A2 0x0070EADB
 ?Rva005277D9Fire@@YAXPAVRva00222A8BTarget@@PAXPBD2PA_N@Z,,0x005277D9,51,Code/GameEngine/Source/Common/Bfme/Rva005277D9Fire.cpp,matched,same shape as Rva004E6816Fire plus one extra prefix arg rowed callees
 ?rva00527890@Rva00527890@@QAEXH@Z,,0x00527890,77,Code/GameEngine/Source/Common/Bfme/Rva00527890Move.cpp,matched,guarded Move fire via rowed Fire empty fallback TheRva target
+?Rva0007BF77Copy@@YAPAURegion2D@@PAU1@00ABU__false_type@_STL@@H@Z,,0x0007BF77,47,Code/GameEngine/Source/Common/Rva0007BF77Copy.cpp,matched,rowed Region2D copy 0x4254E stride 0x10 caller 0x7BF5A wrapper

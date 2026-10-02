@@ -5817,3 +5817,5 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?rva005F6DB0@Rva005F6A58@@UAEXH@Z	0x005F6DB0	81	blocked	param in edi directly vs via eax plus extra mov plus push order t=15 model=muse-01 (stash 0.9 kept)
 ?rva005F618E@Rva005F618E@@QAEXE@Z	0x005F618E	86	blocked	scheduler wall 0.9 byte-param bl vs al same as 0x005F6DB0 edi wall t=2 model=muse-01
 ?Rva007410ECInvoke@@YAHPAVRva00222A8BTarget@@PAXPBD2PAI@Z	0x007410EC	102	blocked	eax-ecx swap on AsciiString data vs zero plus mov ecx target position t=20 model=muse-01 (stash 0.93 kept)
+?rva0007BBA2@Rva0007BBA2@@QAEXXZ	0x0007BBA2	523	blocked	ours 529B vs retail 523B +6 with 8 structural regions xmm0-xmm1 swap plus xorps placement plus frame 0x60 vs 0x54 plus missing add esp 0x14 and extra mov-cmp; float globals unresolved plus vertex memset layout mismatch t=5 model=muse-04
+?Rva0007B734Find@@YAPAURva0007B734Item@@PAU1@0P6A_NPBU1@1@Z@Z	0x0007B734	47	partial	cmovne vs je-plus-mov with merged mov edi-esi init-update t=18 model=muse-04 score=0.93 stash=reverse/attempts/0x0007b734.cpp
