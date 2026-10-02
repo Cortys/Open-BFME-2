@@ -47053,3 +47053,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0059BDB9@Rva0059BD58@@QAEXXZ,,0x0059BDB9,41,Code/GameEngine/Source/Common/RvaTreeEraseClearFamily.cpp,matched,tree clear: the 41-byte shape of Rva00226883::rva0022999F calling the Rva0059BD58 erase; Ghidra or int3 bound
 ?rva005AD085@Rva005ACF0B@@QAEXXZ,,0x005AD085,41,Code/GameEngine/Source/Common/RvaTreeEraseClearFamily.cpp,matched,tree clear: the 41-byte shape of Rva00226883::rva0022999F calling the Rva005ACF0B erase; Ghidra or int3 bound
 ??0Rva005CE327@@QAE@PBUPayload@0@@Z,,0x005CE327,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,vtable 0x00875130 at +0 with refcount 0 and 12B payload from caller 0x005CE3F9
+??0Rva005CEAE6@@QAE@PBUPayload@0@@Z,,0x005CEAE6,29,Code/GameEngine/Source/Common/Rva005CEAE6Ctor.cpp,matched,vtable 0x008751DC at +0 with refcount 0 and 12B payload from caller 0x005CECA8
