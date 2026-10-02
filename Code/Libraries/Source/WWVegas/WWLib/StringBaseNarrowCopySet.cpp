@@ -103,3 +103,16 @@ void StringBase<char>::set(const StringBase<char> &that)
             ++m_data->ref_count;
     }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmeSubA@@QAE@ABV0@@Z=?set@?$StringBase@D@@QAEXABV1@@Z")
+#pragma comment(linker, "/alternatename:?set@BfmeQuickMatchSlot@@QAEXABV1@@Z=?set@?$StringBase@D@@QAEXABV1@@Z")
+#pragma comment(linker, "/alternatename:??0AsciiStringWN@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:??4Rva0036CA00Str@@QAEAAV0@ABV0@@Z=?set@?$StringBase@D@@QAEXABV1@@Z")
+#pragma comment(linker, "/alternatename:??0AsciiStringWI@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:?copyFrom@BfmeTail50@@QAEXPBU1@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:??0AsciiStringWH@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:?copyFrom@BfmeTailF5@@QAEXPBU1@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:??0BfmeSubB@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+#pragma comment(linker, "/alternatename:?bfmeSetBPD@BfmeSubBPD@@QAEXPAX@Z=??0?$StringBase@D@@AAE@ABV0@@Z")

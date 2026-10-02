@@ -136,3 +136,8 @@ BFME_DISP_DWORD_SETTER(Rva00248D77DwordSlot, 0xEC)
 BFME_DISP_DWORD_SETTER(Rva002C67C2DwordSlot, 0x178)
 BFME_DISP_DWORD_SETTER(Rva004608BDDwordSlot, 0xB4)
 BFME_DISP_DWORD_SETTER(Rva0046F7D7DwordSlot, 0x160)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?setAt1C4@Rva002E2903Player@@QAEXH@Z=?set@Rva002E062EDwordSlot@@QAEXH@Z")
+#pragma comment(linker, "/alternatename:?setTimeOfDay@W3DGameClientWaterShim@@QAEXW4TimeOfDay@@@Z=?set@Rva0007E18DDwordSlot@@QAEXH@Z")

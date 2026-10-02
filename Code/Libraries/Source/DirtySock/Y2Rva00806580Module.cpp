@@ -1584,3 +1584,11 @@ extern "C" void Rva0080AD00( unsigned char *data, int length, void *state )
 // Retail's call sites in this unit's matched rows land on bodies rowed under
 // other spellings at the same addresses (same ABI). Bind the spellings used here.
 #pragma comment(linker, "/alternatename:_Rva0081BDE4=?ji_006556ac@@YAXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeFreeRecUNA@@YAXPAX@Z=?Rva00806580@@YAXPAURva00806580Record@@@Z")
+#pragma comment(linker, "/alternatename:?bfmeMakeRecUNB@@YAPAXH@Z=?Rva008064A0@@YAPAURva00806580Record@@XZ")
+#pragma comment(linker, "/alternatename:?bfmeSendVFA@@YAHPAXHHHH@Z=?Rva00807370@@YAHPAURva00806580Record@@HHPADH@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeTMB@@YAXPAX@Z=?Rva008068B0@@YAHPAURva00806580Record@@@Z")
+#pragma comment(linker, "/alternatename:?bfmeAlloc1053@@YAPAXH@Z=?Rva008064A0@@YAPAURva00806580Record@@XZ")

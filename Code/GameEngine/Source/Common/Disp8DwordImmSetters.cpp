@@ -65,3 +65,8 @@ void Rva00395583DwordImmSetter::apply()
 {
 	m_value = 4;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?state1@Rva002E2903Player@@QAEXXZ=?apply@Rva002E066DDwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?state2@Rva002E2903Player@@QAEXXZ=?apply@Rva002E0675DwordImmSetter@@QAEXXZ")

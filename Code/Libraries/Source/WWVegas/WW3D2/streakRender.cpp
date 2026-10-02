@@ -1457,3 +1457,13 @@ VertexFormatXYZUV1 *StreakRendererClass::getVertexBuffer(unsigned int number)
 
 	return m_vertexBuffer;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1MaterialPassStage@@QAE@XZ=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1TextureClassPtr@@QAE@XZ=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1BfmeElemBY@@QAE@XZ=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1BfmeElemVVE@@QAE@XZ=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?rva00906340CellDtor@@YAXPAX@Z=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1BfmeElementA@@QAE@XZ=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?bfmeElem936B@@YGXPAX@Z=??1?$RefCountPtr@VTextureClass@@@@QAE@XZ")

@@ -777,3 +777,11 @@ int Rva0073F640Get(void)
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?Rva007E9B70Get@@YAPAURva007E9B70Obj@@XZ=?Rva00656B60Get@@YAHXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva007FBC00@@YAIXZ=?Rva00668100Get@@YAHXZ")
+#pragma comment(linker, "/alternatename:?Rva007FD060@@YAIXZ=?Rva00669530Get@@YAHXZ")
+#pragma comment(linker, "/alternatename:?Rva007F8FB0@@YAIXZ=?Rva006655E0Get@@YAHXZ")
+#pragma comment(linker, "/alternatename:?opaqueCall@Rva00507552@@SAPAXXZ=?Rva00507552Get@@YAHXZ")
+#pragma comment(linker, "/alternatename:?opaqueCall@Rva005088C8@@SAPAXXZ=?Rva005088C8Get@@YAHXZ")

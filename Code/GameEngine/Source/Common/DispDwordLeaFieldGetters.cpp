@@ -149,3 +149,9 @@ BFME_DISP32_LEA_GETTER(Rva00572EBDLeaGetter, 0x934)
 BFME_DISP32_LEA_GETTER(Rva0059EB20LeaGetter, 0x298)
 BFME_DISP32_LEA_GETTER(Rva005B01F9LeaGetter, 0x1E8)
 BFME_DISP32_LEA_GETTER(Rva0066D480LeaGetter, 0x170)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?get@Rva007EA660FieldAddress@@QAEPADXZ=?get@Rva00657600LeaGetter@@QBEPAXXZ")
+#pragma comment(linker, "/alternatename:?getEnergy@Player@@QAEPAVEnergy@@XZ=?get@Rva00657650LeaGetter@@QBEPAXXZ")
+#pragma comment(linker, "/alternatename:?getAt80@Rva007EA6B0Accessor@@QAEPAXXZ=?get@Rva00657650LeaGetter@@QBEPAXXZ")
