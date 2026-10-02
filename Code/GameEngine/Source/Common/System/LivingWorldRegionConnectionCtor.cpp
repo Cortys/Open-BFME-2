@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX-
+// cl: /O1 /Ireference/shims/moduledata /DNDEBUG /MD /GX-
 // LivingWorldRegionConnection default ctor.
 //
 // ??0LivingWorldRegionConnection@@QAE@XZ (retail 0x003F24F3, 36 bytes):
@@ -14,16 +14,9 @@
 // Serves the Connection (0x003F348F) and ConnectsTo (0x003F341E) entries
 // of the Region map table at 0x00836560 (sub-table 0x00C36FD4).
 
-class Xfer;
+#include "Common/Snapshot.h"
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void LoadPostProcess();
-	virtual const char *GetSnapshotName();
-	virtual void DoXfer(Xfer &xfer);
-};
+class Xfer;
 
 struct BfmeE8
 {
