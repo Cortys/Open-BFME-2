@@ -5916,3 +5916,4 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ?Rva005E9961Create@@YAPAUHolder005E9961@@PAU1@PBUPayload@Rva005E982C@@@Z	0x005E9961	50	blocked	same wall as 0x005E98FD 0x005E992F: write-only ebp-4 zeroing and leave-vs-pop; EH-on gives prolog; no honest /O1 local; ctor 0x005E982C 0x14 t=2 model=muse-07
 ?rva0027D378@Rva0027D378@@QAEHPAXH@Z	0x0027D378	83	partial	sub-test-mov vs sub-mem-cmp-mem plus old-kept-in-ecx load order t=18 model=muse-05 score=0.9 stash=reverse/attempts/0x0027d378.cpp
 ?rva0027D483@Rva0027D483@@QAEXPAX0@Z	0x0027D483	298	partial	loop-epilogue-shared-ret plus float-preload-order 302-vs-298 t=22 model=muse-05 score=0.9 stash=reverse/attempts/0x0027d483.cpp
+?rva002122D4@Rva002122D4@@QAEHH@Z	0x002122D4	41	blocked	branch only 41/41B 15/15insns retail jne-xor-jmp early plus je-back vs ours je-forward plus jmp-over-xor tried nested else Ob2-removal t=20 model=muse-11 (stash 0.93 kept)
