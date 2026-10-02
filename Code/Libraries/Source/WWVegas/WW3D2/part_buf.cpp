@@ -1087,7 +1087,11 @@ void ParticleBufferClass::Render_Line_Group(RenderInfoClass & rinfo)
 		LineGroup->Set_Line_Size(SizeKeyFrameValues[0]);
 	}
 	if (!Frame) {
-		LineGroup->Set_Line_UCoord(FrameKeyFrameValues[0]);
+		// Target +0xA2 calls the rowed PointGroupClass::Set_Point_Alpha at
+		// 0x179010 (movss to this+0x44). The line-UCoord row at 0x41FDEE
+		// stores the same raw float at this+0x44; retain the donor operation
+		// while naming the actual target body through this TU-local view.
+		reinterpret_cast<PointGroupClass *>(LineGroup)->Set_Point_Alpha(FrameKeyFrameValues[0]);
 	}
 
 
