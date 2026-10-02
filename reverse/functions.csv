@@ -313,8 +313,6 @@ _zlibVersion,,0x006946C0,6,Code/Libraries/Source/Compression/ZLib/zutil.c,matche
 ?concat@?$StringBase@D@@QAEXPBD@Z,0x00005629,0x00005629,37,Code/Libraries/Source/WWVegas/WWLib/string_base.cpp,matched,
 ?set@?$StringBase@G@@QAEXPBG@Z,0x0000565D,0x0000565D,38,Code/Libraries/Source/WWVegas/WWLib/string_base.cpp,matched,
 ?concat@?$StringBase@G@@QAEXPBG@Z,0x00005692,0x00005692,38,Code/Libraries/Source/WWVegas/WWLib/string_base.cpp,matched,
-??0EventModuleInfo@FXParticleSystem@@QAE@XZ,0x00001236,0x00001236,10,Code/GameEngine/Source/GameClient/System/FXParticleSystem/fx_particle_system.cpp,matched,
-?GetSnapshotName@ParticleSystemInfo@FXParticleSystem@@UAEPBDXZ,0x00001272,0x00001272,6,Code/GameEngine/Source/GameClient/System/FXParticleSystem/fx_particle_system.cpp,matched,
 ?SkipBadBlock@Xfer@@UAEXAAVSnapshot@@I@Z,,0x0050B238,3,Code/GameEngine/Source/Common/System/XferSkipBadBlock.cpp,matched,BFME1 no-op hook transferred; BFME2 body is ret 8
 ?parse@PointEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVINI@@@Z,,0x0055CA78,18,Code/GameEngine/Source/GameClient/FXParticleSystemModuleParsers.cpp,matched,BFME1 parser body transferred; BFME2 parse table at 0x00C6BB6C and INI::initFromINI at 0x0042DE78
 ?parse@LineEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVINI@@@Z,,0x0055CD26,18,Code/GameEngine/Source/GameClient/FXParticleSystemModuleParsers.cpp,matched,BFME1 parser body transferred; BFME2 parse table at 0x00C6BBD8
@@ -48679,3 +48677,5 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0041F431@Rva0041F431@@QAEPAV1@XZ,,0x0041F431,24,Code/GameEngine/Source/Common/Rva0041F431Clear.cpp,matched,caller 0x001DDB66 builds 16B record returns this
 ?rva002E035B@Rva000427195@@QAE?AUInsertRet002E01F7@@PBX@Z,,0x002E035B,36,Code/GameEngine/Source/GameClient/Rva002E01F7Insert.cpp,matched,chain wrapper resize count+1 then insert_unique same shape as Rva0041FC77
 ?Rva00542425Skip@@YAPADPAD@Z,,0x00542425,36,Code/GameEngine/Source/Common/Rva00542425Skip.cpp,matched,retail bytes unlock lane isalnum IAT underscore static EAX handoff
+??0EventModuleInfo@FXParticleSystem@@QAE@XZ,0x00001236,0x00001236,10,Code/GameEngine/Source/GameClient/System/FXParticleSystem/FXParticleSystemEarlyInlines.cpp,matched,exported by name; among the image's first functions (retail link order puts its emitter first); own unit so fx_particle_system.cpp is not placed first in link order
+?GetSnapshotName@ParticleSystemInfo@FXParticleSystem@@UAEPBDXZ,0x00001272,0x00001272,6,Code/GameEngine/Source/GameClient/System/FXParticleSystem/FXParticleSystemEarlyInlines.cpp,matched,exported by name; among the image's first functions (retail link order puts its emitter first); own unit so fx_particle_system.cpp is not placed first in link order
