@@ -12,6 +12,7 @@ extern class ClientFrameSubsystem *TheGameClient;
 extern class Rva002BA8F1Logic *g_009FEF10;
 
 typedef int HMODULE;
+extern HMODULE g_00DFE158;
 
 extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, const char *name);
 
@@ -22,7 +23,7 @@ public:
 };
 extern GameLogic *TheGameLogic;
 
-#define TheAppModule (*(HMODULE *)0x00DFE158)
+#define TheAppModule g_00DFE158
 
 void rva00203C21();
 
