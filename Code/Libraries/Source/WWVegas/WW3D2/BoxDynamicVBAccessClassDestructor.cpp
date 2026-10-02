@@ -39,6 +39,10 @@ public:
 
 extern bool BfmeDynamicDX8VertexBufferInUse[BFME_MAX_DYNAMIC_BUFFERS];		// 0x01346740
 extern UnsignedShort BfmeDynamicDX8VertexBufferOffset[BFME_MAX_DYNAMIC_BUFFERS];	// 0x01346794
+// BFME2 retail zero-filled .data storage; the 21-slot bounds follow this
+// unit's declarations and slot-indexed accesses.
+bool BfmeDynamicDX8VertexBufferInUse[BFME_MAX_DYNAMIC_BUFFERS];		// VA 0x00DF29F0, RVA 0x009F29F0
+UnsignedShort BfmeDynamicDX8VertexBufferOffset[BFME_MAX_DYNAMIC_BUFFERS];	// VA 0x00DF2A44, RVA 0x009F2A44
 extern UnsignedShort BfmeDynamicSortingVertexArrayOffset;			// 0x013467E4
 // BfmeDynamicSortingVertexArrayOffset: VA 0xdf2a94 (zero-filled .bss).
 UnsignedShort BfmeDynamicSortingVertexArrayOffset;
