@@ -29,7 +29,6 @@ class SupplyTruckAIUpdateModuleData : public TransportAIUpdateModuleData
 {
 public:
 	SupplyTruckAIUpdateModuleData();
-	virtual ~SupplyTruckAIUpdateModuleData();
 
 private:
 	int m_maxBoxesData;			// +0x64
@@ -51,6 +50,7 @@ inline SupplyTruckAIUpdateModuleData::SupplyTruckAIUpdateModuleData()
 	m_warehouseScanDistance = 100.0f;
 	m_harvestPreparationTime = 1;
 	m_harvestActionTime = 1;
+	*(unsigned int *)this = 0x00C4B6C8;
 	m_harvestActivationRange = 50.0f;
 }
 
