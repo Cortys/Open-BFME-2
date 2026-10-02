@@ -46849,3 +46849,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0028E58E@Rva0028E58E@@QAEHXZ,,0x0028E58E,60,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028E58E.cpp,matched,int query holder +4 byte 0x5F0 provider +0x250 slot10 bit 0x10E; callers 0x000501FA 0x002D8006 0x002D81A1
 ?rva005F20F2@Rva005F20C5@@QAEXXZ,,0x005F20F2,41,Code/GameEngine/Source/Common/Rva005F20C5.cpp,matched,chain clear reset via rowed 0x005F20C5 plus self link
 ??0Rva005F2381@@QAE@XZ,,0x005F2381,49,Code/GameEngine/Source/Common/Rva005F2381Ctor.cpp,matched,unlock ctor via rowed RvaMember plus set row
+?rva00917920@PointGroupClass@@QAEXPAPAVVector3@@PAPAVVector4@@PAPAMPAPAE3@Z,,0x0017F1B0,488,Code/Libraries/Source/WWVegas/WW3D2/PointGroupClassRender.cpp,matched,BFME1 byte-identical donor; b1 0x00917920; donor file carried without its unplaced Render
