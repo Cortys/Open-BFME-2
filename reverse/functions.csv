@@ -47418,3 +47418,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva003BB3DCSet@@YGXABVAsciiString@@@Z,,0x003BB3DC,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB3DC.cpp,matched,sets Player 0x339 via rva00357475 getEachPlayerFromMask
 ?Rva003BB45DSet@@YGXABVAsciiString@@@Z,,0x003BB45D,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB45D.cpp,matched,sets Player 0x338 via rva00357475 getEachPlayerFromMask
 ?Rva0040ABA5Find@@YAPBURva0040ABA5Item@@PBU1@0PBVRva0040A7D5@@H@Z,,0x0040ABA5,179,Code/Libraries/Source/WWVegas/WWLib/Rva0040ABA5Find.cpp,matched,4-wide unrolled find over 0x10 items via 0x0040A937 row caller 0x0040AD6B
+?Rva0040AD5AFind@@YAPBURva0040ABA5Item@@PBU1@0PBVRva0040A7D5@@@Z,,0x0040AD5A,27,Code/Libraries/Source/WWVegas/WWLib/Rva0040ABA5Find.cpp,matched,chain calls 0x0040ABA5 caller 0x0040ADE9

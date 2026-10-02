@@ -56,3 +56,11 @@ const Rva0040ABA5Item *Rva0040ABA5Find(const Rva0040ABA5Item *first, const Rva00
 	}
 	return last;
 }
+
+// ?Rva0040AD5AFind@@YAPBURva0040ABA5Item@@PBU1@0PBVRva0040A7D5@@@Z @0x0040AD5A 27B
+// Evidence: chain lane; calls 0x0040ABA5; caller 0x0040ADE9.
+const Rva0040ABA5Item *Rva0040AD5AFind(const Rva0040ABA5Item *first, const Rva0040ABA5Item *last, const Rva0040A7D5 *val)
+{
+	char tag;
+	return Rva0040ABA5Find(first, last, val, (int)&tag);
+}
