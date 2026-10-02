@@ -19,6 +19,7 @@ public:
 	int m_nCapacity;
 	BfmeAptValue006DCD20 **m_aElements;
 	BfmeAptValue006DCD20 *rva006DE160();
+	BfmeAptValue006DCD20 *rva006DCC10(int nPos);
 };
 
 BfmeAptValue006DCD20 *AptValuePtrStack::rva006DE160()
@@ -29,4 +30,14 @@ BfmeAptValue006DCD20 *AptValuePtrStack::rva006DE160()
 			__debugbreak();
 	}
 	return m_aElements[m_nElements - 1];
+}
+
+BfmeAptValue006DCD20 *AptValuePtrStack::rva006DCC10(int nPos)
+{
+	if (!(m_nElements - nPos > 0)) {
+		g_bfmeAptAssertAtE17734("m_nElements - nPos > 0", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptValuePtrStack.h", 0x89);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	return m_aElements[m_nElements - nPos - 1];
 }

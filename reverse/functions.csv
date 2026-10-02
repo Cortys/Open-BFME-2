@@ -47557,3 +47557,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0008A173Copy@@YAXPAVRva00089822@@ABV1@@Z,,0x0008A173,18,Code/GameEngine/Source/Common/Rva0008A173Copy.cpp,matched,guarded placement copy via rowed copy ctor
 ?Rva0008A1ABFill@@YAPAVRva00089822@@PAV1@IABV1@@Z,,0x0008A1AB,37,Code/GameEngine/Source/Common/Rva0008A1ABFill.cpp,matched,fill_n via guarded copy returning end
 ?Rva0008A185Copy@@YAPAVRva00089822@@PAV1@00@Z,,0x0008A185,38,Code/GameEngine/Source/Common/Rva0008A185Copy.cpp,matched,uninitialized_copy via guarded copy returning end
+?rva006DCC10@AptValuePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z,,0x006DCC10,66,Code/Libraries/Source/Apt/AptValuePtrStackTop.cpp,matched,stack Get via shared assert triple and layout
