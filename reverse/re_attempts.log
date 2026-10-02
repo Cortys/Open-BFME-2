@@ -5569,3 +5569,5 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva00490ECF@Rva00490D3F@@QAEXXZ	0x00490ECF	102	blocked	update slot22 needs dec-chain switch plus direct-mem flag ORs t=8 model=muse-spark
 ??1Rva0059A85C@@UAE@XZ	0x0059A40D	98	partial	EH state 2 vs 1 before erase else identical 98B structural 0 t=20 model=muse-12 score=0.98 stash=reverse/attempts/0x0059a40d.cpp
 ?rva0059ADD1@Rva0059ADD1@@QAE_NXZ	0x0059ADD1	35	blocked	xorps comiss mem jb vs movss comiss zero ja plus jne vs je plus 5B size t=20 model=muse-12
+?Rva003BF5FEDo@@YGXABVAsciiString@@H_N@Z	0x003BF5FE	288	partial	xmm rotation in centroid loop yzx vs xyz init fixed size exact structural 0 t=25 model=muse-10 score=0.95 stash=reverse/attempts/0x003bf5fe.cpp
+?Rva003BFDABDo@@YGXABVAsciiString@@PAXH@Z	0x003BFDAB	421	blocked	GameText label plus Display FontLibrary GlobalLanguage EH SSE string parse atoi Bold no donor no sibling sig unclear t=10 model=muse-10
