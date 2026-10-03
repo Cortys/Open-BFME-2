@@ -1,11 +1,6 @@
 // ??0Rva0040E3EE@@QAE@XZ
 // partial score=0.99 date=2026-10-03
 // ??0Rva0040E3EE@@QAE@XZ
-// partial score=0.98 date=2026-10-03
-// ??0Rva0040E3EE@@QAE@XZ
-// partial score=0.98 date=2026-10-03
-// ??0Rva0040E3EE@@QAE@XZ
-// partial score=0.98 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
 #include <vector>
@@ -71,7 +66,6 @@ private:
 	int m_64;
 };
 
-// ??0Rva0040E3EE@@QAE@XZ present-unmatched
 Rva0040E3EE::Rva0040E3EE()
 	// Retail stores 0x00C394F0 to [esi] at +0x2E, between the rowed m_04 ctor
 	// call at +0x17 and the m_18 ctor call at +0x35, so the store has to ride
