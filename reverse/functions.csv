@@ -50350,3 +50350,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva006C38D0@Rva006C1F60@@QAE_NXZ,,0x006C38D0,99,Code/GameEngine/Source/Common/Rva006C38D0Cluster.cpp,matched,address-derived Rva006C1F60 teardown predicate; returns 0x33D50 byte and clears +0x510
 ?Rva00500CB8Destroy@@YAXPAURva004FFE81@@0@Z,,0x00500CB8,25,Code/GameEngine/Source/GameLogic/Object/LocomotorSetMapThunks.cpp,matched,range destroy stride 0x14 via copy ctor 0x0050052F and callers 0x005011DA 0x0050126C 0x00501356
 ?rva003345BE@Rva003340C1@@QAEXPBD@Z,,0x003345BE,118,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003340C1DoBuffer.cpp,matched,Script file loader via FileSystem and dobuffer helper
+?rva000EA24D@Rva000EA24D@@QAEXXZ,,0x000EA24D,115,Code/GameEngine/Source/Common/Rva000EA24DReset.cpp,matched,DX8 guard base reset plus ref array release
