@@ -49092,3 +49092,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00552D7B@Rva00552CF9@@QAEXPBVRva00552D7BSrc@@@Z,,0x00552D7B,95,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class copy from Src144 150 single sub8 copy caller 0x005594F1
 ?rva00552DDA@Rva00552CF9@@QAEXPBVRva00552DDASrc@@@Z,,0x00552DDA,98,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class copy from Src144 150 single sub1B0 copy caller 0x005595BF
 ?rva00552E3C@Rva00552CF9@@QAEXPBVRva00552E3CSrc@@@Z,,0x00552E3C,98,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class copy from Src144 150 single sub340 copy caller 0x0055968D
+?init@W3DBridge@@QAEXVVector3@@0VAsciiString@@@Z,,0x000DDB17,125,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DBridgeInit.cpp,matched,ZH donor W3DBridgeBuffer.h init Vector3 AsciiString by-value
