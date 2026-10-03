@@ -128,7 +128,6 @@ void GadgetComboBoxSetDisabledTextColors(GameWindow *comboBox, int color, int bo
 		editBox->winSetDisabledTextColors(color,borderColor);
 }
 
-// ?GadgetComboBoxSetHiliteTextColors@@YAXPAVGameWindow@@HH@Z present-unmatched
 void GadgetComboBoxSetHiliteTextColors( GameWindow *comboBox,int color, int borderColor )
 {
 	// sanity
