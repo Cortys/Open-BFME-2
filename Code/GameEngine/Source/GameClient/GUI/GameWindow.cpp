@@ -58,6 +58,7 @@ public:
 protected:
 	GameWindow *findFirstLeaf();
 	GameWindow *findLastLeaf();
+	GameWindow *findPrevLeaf();
 	GameWindow *findNextLeaf();
 
 private:
@@ -210,4 +211,75 @@ GameWindow *GameWindow::findLastLeaf( void )
 	return leaf;
 
 }  // end findLastLeaf
+
+
+// ?findPrevLeaf@GameWindow@@IAEPAV1@XZ
+// Clean BFME1 donor control flow, with its opaque fallback resolved to the
+// native last-leaf walk at 0x0031398A. Native boundary 0x003139B3-0x00313A25
+// independently proves previous sibling +0x1FC, next +0x1F8, parent +0x200,
+// child +0x204, and status bit 0x100. The prior family members stay byte-exact.
+GameWindow *GameWindow::findPrevLeaf( void )
+{
+
+	GameWindow *leaf = (GameWindow *)this;
+
+	if( leaf->m_prev )
+	{
+
+		leaf = leaf->m_prev;
+
+		while( leaf->m_child &&
+						 BitTest( leaf->m_status, WIN_STATUS_TAB_STOP ) == false )
+		{
+
+			leaf = leaf->m_child;
+
+			while( leaf->m_next )
+				leaf = leaf->m_next;
+
+		}  // end while
+
+		return (GameWindow *)leaf;
+
+	}   // end if
+	else 
+	{
+
+		while( leaf->m_parent )
+		{
+
+			leaf = leaf->m_parent;
+
+			if( leaf->m_parent && leaf->m_prev )
+			{
+
+				leaf = leaf->m_prev;
+
+				while( leaf->m_child &&
+							 BitTest( leaf->m_status, WIN_STATUS_TAB_STOP ) == false )
+				{
+
+					leaf = leaf->m_child;
+
+					while( leaf->m_next )
+						leaf = leaf->m_next;
+
+				}  // end while
+
+				return (GameWindow *)leaf;
+
+			}  // end if
+
+		}  // end while
+
+		if( leaf )
+			return leaf->findLastLeaf();
+		else
+			return NULL;
+
+	}  // end else
+
+	return NULL;
+
+}  // end findPrevLeaf
 
