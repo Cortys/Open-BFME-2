@@ -1,0 +1,9 @@
+// cl: /O1 /MD
+// ??_GRva003AB9FF@@UAEPAXI@Z @0x003AE720 28B
+// Deleting dtor calls rowed ??1Rva003AB9FF@@UAE@XZ at 0x003AB9FF then rowed operator delete at 0x0002FD60.
+// Evidence: sibling of 0x003AE73C; retail push esi call ??1 test flag delete ret 4;
+// vtable family; ??1 rowed in Rva003AB9FFDtor.cpp.
+class Rva003AB9FF { public: __declspec(noinline) virtual ~Rva003AB9FF(); private: int m_famgen;
+  friend void famgenDelete(Rva003AB9FF *p); };
+Rva003AB9FF::~Rva003AB9FF() { m_famgen = 0; }
+void famgenDelete(Rva003AB9FF *p) { delete p; }
