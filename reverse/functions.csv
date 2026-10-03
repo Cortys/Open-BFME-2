@@ -49841,3 +49841,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002ACE2B@Player@@QAEHPAX@Z,,0x002ACE2B,161,Code/GameEngine/Source/Common/RTS/PlayerRva002ACE2B.cpp,matched,Player list 0x6f4 float pick via findObjectByID isKindOf floor via literal 100p0 and inline fistp
 ?rva00595D0B@FirewallHelperClass@@QAEPAXI@Z,,0x00595D0B,34,Code/GameEngine/Source/Common/Rva00595D0BFirewall.cpp,matched,vtable 0x00870A2C plus rowed clear 0x0059515C and delete
 ?Rva00595143Get@@YAPAVFirewallHelperClass@@XZ,,0x00595143,25,Code/GameEngine/Source/Common/Rva00595143Firewall.cpp,matched,push 0x190 plus rowed new 0x0002FDA0 plus rowed ctor 0x00594CDD
+?Rva00595E46Save@@YAXXZ,,0x00595E46,314,Code/GameEngine/Source/Common/Rva00595E46Firewall.cpp,matched,Firewall prefs via OptionPreferences map write
