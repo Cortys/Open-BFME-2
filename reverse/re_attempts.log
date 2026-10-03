@@ -6013,3 +6013,6 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva0014BA40Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z	0x0014BA40	104	partial	RefCountPtr by-value tmp return 95B vs 104B; sub esp8 xor edx cmp eax1 vs push test; add eax vs inc; frame 20 vs 16 t=28 model=muse-03 score=0.91 stash=reverse/attempts/0x0014ba40.cpp
 ?Rva0014BAB0Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z	0x0014BAB0	104	partial	105B vs 104B plus1 spill mov and frame sub-vs-push and state order shift4 t=27 model=muse-03 score=0.98 stash=reverse/attempts/0x0014bab0.cpp
 ?Rva0014BA40Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z	0x0014BA40	104	partial	105B vs 104B plus1 spill mov and frame sub-vs-push and state order shift4 EHa improves 0.91 t=10 model=muse-03 score=0.98 stash=reverse/attempts/0x0014ba40.cpp
+??1Rva00337AA8@@UAE@XZ	0x00337AA8	164	blocked	extra mov byte [ebp-4],3 before bufC8 free where retail shares state 3; initial state 4 vs 3 t=15 model=muse-02 (stash 0.96 kept)
+?Rva003C538FGet@@YGHHHHH@Z	0x003C538F	118	blocked	complex loop with 39-slot virtual holder unproven t=5 model=muse-02
+?Rva003C5A00Get@@YGHHHHH@Z	0x003C5A00	184	blocked	complex team ascii float iterator without donor t=5 model=muse-02
