@@ -6054,3 +6054,8 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ??1Rva0042C833@@UAE@XZ	0x0042C833	70	blocked	missing mov byte [ebp-4],0 before second call needs second EH state; tried second barrier dtor which moves first state 1 to 2 without adding second store; single barrier version at 66B vs 70B remains best t=18 model=muse-06 (stash 0.94 kept)
 ?rva005D66E7@Rva005D66E7@@QAEXXZ	0x005D66E7	178	blocked	GameSpy STL ctor needs Info slots 0x60 0x64 plus BfmeE8 E16 layouts no donor t=5 model=muse-01
 ?rva005EA6A7@Rva005EA6A7@@QAEPAV1@PAUKeyHolder@@PAURange@@@Z	0x005EA6A7	100	partial	register allocation ebx-vs-edx esi-vs-edi from top plus ptr-vs-index t=25 model=muse-01 score=0.93 stash=reverse/attempts/0x005ea6a7.cpp
+??0Rva005D2015@@QAE@XZ	0x005D2015	58	blocked	EH ctor with two vtables needs scope table 0x7A1EE0 plus holder layout t=8 model=muse-07
+?Rva005D23BBGet@@YAPBVImage@@PAURva005D23BBIn@@@Z	0x005D23BB	67	blocked	push esi early plus shared null epilogue vs delayed save link-clean StringBase call t=15 model=muse-07 (stash 0.96 kept)
+?rva004A57DB@Rva004A54A8@@QAEXMM@Z	0x004A57DB	112	partial	SSE movss order swapped plus jbe/jae jb/ja need thresh-first high-first t=20 model=muse-07 score=0.94 stash=reverse/attempts/0x004a57db.cpp
+?rva004A5628@Rva004A54A8@@QAEXXZ	0x004A5628	435	blocked	435B EH plus x87 SSE mix plus static BoneFXUpdate init plus pin-only nextWithNumeric needs scope table 0x78DE23 t=5 model=muse-07
+?rva0059EE96@Rva0059EE96@@QAEXEE@Z	0x0059EE96	76	partial	push-imm string vs mov-reg plus edi-save vs stack t=18 model=muse-07 score=0.95 stash=reverse/attempts/0x0059ee96.cpp
