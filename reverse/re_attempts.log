@@ -6095,3 +6095,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?Rva0045A63FFind@@YAPAXPAXABVAsciiString@@@Z	0x0045A63F	148	blocked	148B EH AutoAbility find funclet 0078A38D unclaimed needs gen_uw donor ScriptActions only t=7 model=muse-09
 ?rva0045A447@Rva0045A447@@QAEPAU1@PAX0@Z	0x0045A447	180	blocked	180B mixed x87 SSE AutoAbility range virtual slot float order needs precise modeling t=5 model=muse-09
 ?Rva00534743CreateNode@@YAPAXABURva005344C0@@@Z	0x00534743	34	blocked	create_node needs no-EH shape with throwing allocate plus copy requires GX-minus TU split t=12 model=muse-10
+?Rva0055B65DWrite@@YAXPAXPAXPAX@Z	0x0055B65D	216	blocked	ostringstream wide_ios narrow_string version wall t=5 model=muse-12
