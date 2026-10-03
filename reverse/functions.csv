@@ -49406,3 +49406,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0014D3E7@Rva0014D3E7@@QAEXHHH@Z,,0x0014D3E7,30,Code/GameEngine/Source/Common/Rva0014D3E7Set.cpp,matched,caller 0x0014AB4E honest address name setter shape
 ?rva0047FFFE@ShareExperienceBehavior@@QAEMPAVCoord3D@@PAUPos0047FFFE@@@Z,,0x0047FFFE,149,Code/GameEngine/Source/GameLogic/Object/Behavior/ShareExperienceBehaviorFalloff.cpp,matched,finish ShareExperience distance falloff polarity-inverted clamp
 ?rva0050C2E6@Rva0050C2E6@@QAEXABV1@@Z,,0x0050C2E6,175,Code/GameEngine/Source/GameNetwork/Rva0050C2E6Copy.cpp,matched,memberwise copier via rowed set no commas
+?rva00086D73@Rva00086D73@@QAEXXZ,,0x00086D73,177,Code/GameEngine/Source/GameClient/Rva00086D73Update.cpp,matched,unlock caller 0x00088F38 ParabolicEase rowed GlobalData 0x9A4 RADS literal
