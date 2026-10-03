@@ -50113,3 +50113,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005D4B6E@Rva005D4B6E@@QAEXM@Z,,0x005D4B6E,64,Code/GameEngine/Source/Common/Rva005D4B6ESetPos.cpp,matched,float pos firer via rowed Fire SetPos plus EmptyString fallback
 ?Rva003BCFE7Forward@@YAXXZ,,0x003BCFE7,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCFE7Forward.cpp,matched,script forwards to TheTacticalView slot 0x24c
 ??0Rva0010F185@@QAE@ABVRva0036CA00Str@@PBXABVAsciiString@@1@Z,,0x0010F185,75,Code/GameEngine/Source/Common/Rva0010F185Ctor.cpp,matched,ctor via base Rva001164D3 plus AsciiString at 0x10 vtable g_00BCFAB8 caller 0x0010F9B4
+?rva005D4BC1@Rva005D4BC1@@QAEXM@Z,,0x005D4BC1,19,Code/GameEngine/Source/Common/Rva005D4BC1Forward.cpp,matched,float forwarder to rowed SetLineSize via member at plus0x14
