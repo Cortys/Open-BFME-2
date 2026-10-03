@@ -1,8 +1,12 @@
 // ?rva002DB4DA@Rva002DB4DA@@QAEPAURva002DB4DANode@@V?$StringBase@D@@@Z
-// partial score=0.95 date=2026-09-28
-// ?rva002DB4DA@Rva002DB4DA@@QAEPAURva002DB4DANode@@V?$StringBase@D@@@Z
-// partial score=0.95 date=2026-09-28
 // cl: /O1 /GX /MD
+//
+// Fix over the banked attempt: declare the leaf compare `throw()` so MSVC omits
+// the `and dword ptr [ebp-4],0` unwind-state init, keep releaseBuffer a plain
+// potentially-throwing declaration so the EH frame stays, and return the match
+// from inside the loop (an early return) instead of `break` + a single return --
+// the single-return form lets MSVC drop the frame entirely (45B). Same recipe
+// as its sibling Rva002DB496Finish.cpp.
 //
 // ?rva002DB4DA@Rva002DB4DA@@QAEPAURva002DB4DANode@@V?$StringBase@D@@@Z @0x002DB4DA (68B).
 // Rva002DB4DA::rva002DB4DA(): finds list node whose StringBase<char> at +4
@@ -11,12 +15,11 @@
 // releaseBuffer at 0x00036410 with EH prolog at 0x00629188, returning the
 // match in eax (ret 4). Callers include 0x0004FEDB 0x002DB55B 0x00456AA0.
 // Prev 0x002DB463 array setter / next 0x002DB93E ctor share /O1.
-// ?rva002DB4DA@Rva002DB4DA@@QAEPAURva002DB4DANode@@V?$StringBase@D@@@Z present-unmatched
 template <typename T>
 class StringBase
 {
 public:
-	int compare(const StringBase<T> &str) const;
+	int compare(const StringBase<T> &str) const throw();
 	~StringBase() { releaseBuffer(); }
 
 private:
@@ -29,7 +32,7 @@ private:
 	};
 
 	Header *m_data;
-	void releaseBuffer() throw();
+	void releaseBuffer();
 };
 
 struct Rva002DB4DANode
@@ -49,10 +52,9 @@ struct Rva002DB4DA
 
 Rva002DB4DANode *Rva002DB4DA::rva002DB4DA(StringBase<char> name)
 {
-	Rva002DB4DANode *cur = m_head;
-	for (; cur != 0; cur = cur->m_next) {
+	for (Rva002DB4DANode *cur = m_head; cur != 0; cur = cur->m_next) {
 		if (cur->m_name.compare(name) == 0)
-			break;
+			return cur;
 	}
-	return cur;
+	return 0;
 }
