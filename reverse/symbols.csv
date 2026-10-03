@@ -7288,3 +7288,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ??0Rva0015B110Target@@QAE@PAVRva0015B110Owner@@@Z,0x00152DE9,"0x34-byte refcounted target ctor with vtable 0x00BD3B1C called by rva0015b110 0x0015B110; Ghidra 100B unrowed; address-derived name"
 ?Resize@?$VectorClass@VVector3@@@@UAE_NHPBVVector3@@@Z,0x000F0BF1,"ICF twin of the VectorClass<TCBClass> Resize body at this address (12-byte stride); direct call at 0x0017F183 for VertexLoc 0x00DF708C"
 ?Resize@?$VectorClass@VVector4@@@@UAE_NHPBVVector4@@@Z,0x001793A0,"16-byte-stride VectorClass<Vector4> Resize; direct call at 0x0017F19D for VertexDiffuse 0x00DFC4E0"
+?rva000321F0@GeneralAllocator@Allocator@EA@@QAEHH@Z,0x000321F0,"PPMalloc GeneralAllocator heap validator called by rva000329E0 0x000329E0; int return read directly (no movzx); address-derived name"
