@@ -49946,3 +49946,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002728C5@Drawable@@QAEXMM@Z,,0x002728C5,71,Code/GameEngine/Source/GameClient/Rva002728C5Finish.cpp,matched,Drawable float forwarder; +0x14C head double-deref to slot 0x54 then (a+b)*0.5 to +0xAC; SSE half at 0xBC26F0
 ?rva00272BAB@Drawable@@QAEXHH@Z,,0x00272BAB,60,Code/GameEngine/Source/GameClient/Rva00272BABFinish.cpp,matched,Drawable dual walk; +0x14C head double-deref slot 0x6C then +0x154 null-terminated array slot 0x44
 ?rva001D9A00@Rva001D9A00@@QAE_NXZ,,0x001D9A00,79,Code/GameEngine/Source/Common/Thing/Rva001D9A00Finish.cpp,matched,switch 2/5 dispatch plus address-based 5-case pair; sibling of 0x1D98BD
+??0Made002CC774@@QAE@XZ,,0x00509522,38,Code/GameEngine/Source/GameLogic/Object/Rva00509522Finish.cpp,matched,base Rva00507823 inlined; non-trivial AsciiString member at +0x130 forces vptr store first then body int stores sink after
