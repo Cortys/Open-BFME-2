@@ -24,7 +24,7 @@ class Inner00489360
 public:
 	virtual void v00();
 	virtual void v04();
-	virtual void v08();
+	virtual void v08(int value);
 	virtual void v0C(); // +0x0C
 	virtual void v10(); // +0x10
 	virtual void v14(); // +0x14
@@ -42,11 +42,13 @@ public:
 	void rva001DBB24();
 	void rva001DBB33();
 	int get() const;
+	void rva001DBACA(int value);
 
 	char            m_pad00[ 0x4 ];
 	int             m_baseVal;
 	char            m_pad08[ 0x8 ];
 	Inner00489360 * m_inner;
+	int             m_14;
 };
 
 bool Rva00489360::rva001DBAF6() const
@@ -146,4 +148,20 @@ void Rva001DBDA4::rva001DBE51()
 {
 	for( Node001DBDA4 *n = m_head->m_next; n != m_head; n = n->m_next )
 		n->m_value->rva001DBB33();
+}
+
+// ?rva001DBACA@Rva00489360@@QAEXH@Z @0x001DBACA 44B: range-guarded inner
+// v08 dispatch. Caller 0x001DBD5D passes list values (Rva00489360) with the
+// accumulated offset; +0x14 base and +0x10 inner (m_val at +4 v08 at +8)
+// from retail lea/cmp/call immediates.
+void Rva00489360::rva001DBACA(int value)
+{
+	if( value < m_14 )
+		return;
+	int limit = m_inner->m_val + m_14;
+	if( value > limit )
+		return;
+	if( m_inner == 0 )
+		return;
+	m_inner->v08(value - m_14);
 }
