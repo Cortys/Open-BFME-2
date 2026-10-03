@@ -299,7 +299,7 @@ SuperweaponInfo::SuperweaponInfo(
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 // ?SuperweaponInfo::~SuperweaponInfo present-unmatched
-SuperweaponInfo::~SuperweaponInfo()
+inline SuperweaponInfo::~SuperweaponInfo()
 {
 	if (m_nameDisplayString)
 		TheDisplayStringManager->freeDisplayString( m_nameDisplayString );
