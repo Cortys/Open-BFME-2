@@ -120,6 +120,7 @@ public:
     int rva00219C00(unsigned int o, unsigned int i);
     int rva00219E9F(unsigned int o, unsigned int o2, unsigned int i);
     void *rva00219D85(unsigned int index);
+    int rva00219FE3(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -596,4 +597,17 @@ void *Rva00219B9E::rva00219D85(unsigned int index)
         return &v->m_start[index];
     }
     return 0;
+}
+// ?rva00219FE3@Rva00219B9E@@QAEHII@Z @0x00219FE3 51B
+// Two-level int forward to rowed 0x00219C93 (element+0x64 or -1).
+// Same outer 32B shape as 0x00219F00/0x00219E9F but miss returns -1 via
+// or eax,-1; retail mov eax ecx mov edx [eax+0x150] sub [eax+0x14C] sar 5
+// cmp jb plus shl 5 add ecx [eax+0x14C] call 0x219C93; caller 0x0021A709.
+int Rva00219B9E::rva00219FE3(unsigned int o, unsigned int i)
+{
+    unsigned int count = (unsigned int)(((char *)m_outer.m_finish - (char *)m_outer.m_start) >> 5);
+    if (o >= count)
+        return -1;
+    _ReadWriteBarrier();
+    return ((Rva00219B9E *)((char *)m_outer.m_start + (o << 5)))->rva00219C93(i);
 }

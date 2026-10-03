@@ -49922,3 +49922,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00219E9F@Rva00219B9E@@QAEHIII@Z,,0x00219E9F,54,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,three-level via 0x00219C00 twin of 0x00219F00 caller 0x00406E75
 ??4Rva002191FE@@QAEAAV0@ABV0@@Z,,0x002191FE,59,Code/GameEngine/Source/Common/Rva002191FEAssign.cpp,matched,copy-assign int plus three AsciiStrings caller 0x0021DEA2
 ?rva00219D85@Rva00219B9E@@QAEPAXI@Z,,0x00219D85,37,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,16B vector at +0x15C sar4 callers 0x00219DD7 0x0021BCE1
+?rva00219FE3@Rva00219B9E@@QAEHII@Z,,0x00219FE3,51,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer forward to 0x00219C93 miss -1 caller 0x0021A709
