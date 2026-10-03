@@ -50093,3 +50093,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva003908C2@@UAE@XZ,,0x003908C2,79,Code/GameEngine/Source/Common/Rva003908C2Dtor.cpp,matched,finish MI three vptrs late and via empty bases caller 0x003909DE
 ?Rva00383D2DCreate@@YGPAXPBX@Z,,0x00383D2D,34,Code/Libraries/Source/WWVegas/WWLib/stlport_create_node_383D2D.cpp,matched,free node create via rowed allocate 0x000307F0 and Construct 0x0038350D callers 0x00384240 0x00384259
 ?Rva003BCC94Do@@YAXXZ,,0x003BCC94,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCC94Do.cpp,matched,free Do calls g_00DFEF18 slot 0x28 with 1
+??_GRva003908C2@@UAEPAXI@Z,,0x003909DE,28,Code/GameEngine/Source/Common/Rva003908C2Dtor.cpp,matched,chain deleting dtor via 0x003908C2 vtable 0x00819F74
