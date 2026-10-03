@@ -49037,3 +49037,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva0023C565@@QAE@XZ,,0x0023C565,22,Code/GameEngine/Source/Common/Rva0023C565Lock.cpp,matched,Rva0023C565::Rva0023C565 scoped lock acquire
 ??1Rva0023C565@@QAE@XZ,,0x0023C57B,16,Code/GameEngine/Source/Common/Rva0023C565Lock.cpp,matched,Rva0023C565::~Rva0023C565 scoped lock release
 ?rva004CF35D@Rva004CF35D@@QAEXPAVNetWrapperCommandMsg@@@Z,,0x004CF35D,85,Code/GameEngine/Source/GameNetwork/Rva004CF35DFunc.cpp,matched,thiscall NetWrapper rowed getData getDataLength caller 0x004D3031
+?rva004CF316@Rva004CF35D@@QAE_NI@Z,,0x004CF316,43,Code/GameEngine/Source/GameNetwork/Rva004CF35DFunc.cpp,matched,sibling of 0x004CF35D same class unsigned compare caller 0x0025E735
