@@ -49539,3 +49539,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00256F84@Rva00256F84@@QAEXXZ,,0x00256F84,49,Code/GameEngine/Source/Common/Rva00256F84Finish.cpp,matched,Intrusive list clear; unconditional circular reinit; _STL::free C++-linkage pin 0x30830
 ??0Rva002DAB18@@QAE@XZ,,0x002DAB18,70,Code/GameEngine/Source/Common/Rva002DAB18Finish.cpp,matched,Dual-vptr ctor; real secondary base SubsystemInterface 0x1B4E63; out-of-line SnapBase dtor forces EH restore; IntZero member ctor orders +0x10 last
 ?rva00469012@Rva00469012@@QAE_NPAVObject@@PBUCoord3D@@@Z,,0x00469012,99,Code/GameEngine/Source/GameLogic/Object/Update/Rva00469012Finish.cpp,matched,Object behind-check: volatile delta alias flips dot-product operand kinds to retail xmm/mulss shape
+?bfmeErase1279@BfmeLookup1279@@QAEXAAUBfmeKey1279@@@Z,,0x0070B2C0,191,Code/Libraries/Source/Apt/BfmeLookupErase1279.cpp,matched,linkbody lane; lookup mirror ids 0x699 0x6bbd; LINK BONUS name
