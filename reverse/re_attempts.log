@@ -6607,3 +6607,4 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?Rva00333CD1Get@@YAHXZ	0x00333CD1	369	blocked	3 calls push 2 args to ji_006291c6 rowed YAXXZ 0 args same arity wall as 0x003332FE t=8 model=muse-05
 ??0Rva00501219@@QAE@XZ	0x00501219	25	partial	second lea uses ebp-2 not ebp-1; two empty temporaries get distinct slots t=20 model=muse-01 score=0.96 stash=reverse/attempts/0x00501219.cpp
 ??0Rva00501219@@QAE@XZ	0x00501219	25	blocked	second lea uses ebp-2 not ebp-1; two empty temporaries get distinct slots t=12 model=muse-01 (stash 0.96 kept)
+?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z	0x003FBA0E	74	blocked	missing push pop esi 72B vs 74B; tried aa local te/ta/tf locals diff-temp volatile /O2 all same or worse t=20 model=muse-07 (stash 0.9 kept)
