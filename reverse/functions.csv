@@ -49877,3 +49877,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0023D29F@Rva0023D29F@@QAEXXZ,,0x0023D29F,57,Code/GameEngine/Source/Common/Rva0023D29F.cpp,matched,leaf lane TheNetwork isPacketRouter else GameMessage 0x6a5
 ?rva0025DFA1@BFME2NativeNetwork@@QAEXXZ,,0x0025DFA1,71,Code/GameEngine/Source/Common/NetworkInterfaceConstructor.cpp,matched,QPC freq at 0x18 counter at 0x20 zero 0x28-0x38 TheGameLogic rva0023D17D minus1 at 0x3C slot2 on 0x0C same layout as construct
 ?rva006E2560@AptCIH@@QAEXH@Z,,0x006E2560,193,Code/Libraries/Source/Apt/AptCIHMCInfo006E2560.cpp,matched,AptCIH type dispatch via rowed get and sprite tail
+?Rva00358A53Play@@YAXXZ,,0x00358A53,120,Code/GameEngine/Source/Common/RTS/Rva00358A53Audio.cpp,matched,honest free name TheAudio slot138 gate plus 80 field30 0 via slot64 addAudioEvent
