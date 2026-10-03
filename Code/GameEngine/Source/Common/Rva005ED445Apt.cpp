@@ -38,6 +38,7 @@ class Rva005ED445
 {
 public:
 	void rva005ED445(const UnicodeString &text);
+	void rva005ED411();
 	void rva005ED4AC(int bonusIndex, const UnicodeString &text);
 	void rva005ED516(int suffixIndex, const char *suffix, const UnicodeString &text);
 	void rva005ED8D1(const UnicodeString &text);
@@ -96,6 +97,7 @@ class Rva005ED976
 {
 public:
 	void rva005ED976(const UnicodeString &text);
+	void rva005ED5EB();
 private:
 	int m_pad0;
 	Rva005ED445 *m_obj;
@@ -104,4 +106,9 @@ private:
 void Rva005ED976::rva005ED976(const UnicodeString &text)
 {
 	m_obj->rva005ED8D1(text);
+}
+
+void Rva005ED976::rva005ED5EB()
+{
+	m_obj->rva005ED411();
 }

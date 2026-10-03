@@ -49263,3 +49263,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0045A6D3@AutoAbilityBehavior@@QAEHPBURva0045A6D3Arg@@@Z,,0x0045A6D3,43,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorDtor.cpp,matched,AutoAbility empty or compare match via shared AsciiString
 ??_GRva0059E4D5@@UAEPAXI@Z,,0x0059E4B9,28,Code/GameEngine/Source/Common/Rva0059E3FADtor.cpp,matched,deleting dtor sibling of 0x0059E4D5 from own TU
 ??_GRva0059E3FA@@UAEPAXI@Z,,0x0059E3DE,28,Code/GameEngine/Source/Common/Rva0059E3FADtor.cpp,matched,deleting dtor sibling of 0x0059E3FA from own TU
+?rva005ED5EB@Rva005ED976@@QAEXXZ,,0x005ED5EB,8,Code/GameEngine/Source/Common/Rva005ED445Apt.cpp,matched,thunk via plus4 to rowed FadeOut 0x005ED411 caller 0x005D13C8 precedent 0x005ED976
