@@ -49101,3 +49101,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva00552C5FGet@@YAEXZ,,0x00552C5F,27,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,free stats connected check init fallback callers 0x0055819C
 ?rva001100A6@Rva001100A6@@QAEXXZ,,0x001100A6,31,Code/GameEngine/Source/Common/Rva001100A6Method.cpp,matched,virtual slot12 stdcall via mid+1C clears DC callers 0xA9F98
 ?rva001103A5@Rva001103A5@@QAIXABV?$RefCountPtr@VTextureClass@@@@@Z,,0x001103A5,49,Code/Libraries/Source/WWVegas/WW3D2/Rva001103A5Setter.cpp,matched,fastcall texture slot setter with dual dirty flags callers 0xA9F98
+??1Rva005E0B0F@@UAE@XZ,,0x005E0B0F,128,Code/GameEngine/Source/Common/Rva005E0B0FDtor.cpp,matched,dtor vtable 877960 base 86E330 forwarder int holder Release strings
