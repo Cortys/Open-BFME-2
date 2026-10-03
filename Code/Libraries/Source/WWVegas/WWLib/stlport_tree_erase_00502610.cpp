@@ -20,3 +20,4 @@ typedef _STL::pair<const int, Rva00501776> Erase00502610Value;
 typedef _STL::_Rb_tree<int, Erase00502610Value, _STL::_Select1st<Erase00502610Value>, _STL::less<int>, _STL::allocator<Erase00502610Value> > Erase00502610Tree;
 
 template void Erase00502610Tree::_M_erase(Erase00502610Tree::_Link_type);
+template void Erase00502610Tree::clear();
