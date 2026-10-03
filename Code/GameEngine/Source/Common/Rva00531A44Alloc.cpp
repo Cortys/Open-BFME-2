@@ -13,6 +13,7 @@ public:
 	Rva00531A44 &rva00531A44(unsigned short count);
 	void rva00531A93();
 	unsigned short rva00531AEE(unsigned short idx);
+	unsigned short rva00531B20(unsigned short idx);
 	void rva00531ABB(unsigned short idx);
 private:
 	unsigned short m_count;
@@ -39,6 +40,14 @@ void Rva00531A44::rva00531A93()
 	delete[] m_pC;
 	delete[] m_p8;
 	delete[] m_p4;
+}
+unsigned short Rva00531A44::rva00531B20(unsigned short idx)
+{
+	unsigned short *p = m_p4;
+	unsigned short cur = idx;
+	while (cur != p[cur])
+		cur = p[cur];
+	return cur;
 }
 unsigned short Rva00531A44::rva00531AEE(unsigned short idx)
 {
