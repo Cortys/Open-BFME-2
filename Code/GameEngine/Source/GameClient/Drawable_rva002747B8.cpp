@@ -1,7 +1,3 @@
-// ?rva002747B8@Rva002747B8@@QAEXMMM@Z
-// partial score=0.9 date=2026-09-29
-// ?rva002747B8@Rva002747B8@@QAEXMMM@Z
-// partial score=0.9 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // ?rva002747B8@Rva002747B8@@QAEXMMM@Z @0x002747B8 65B
@@ -26,12 +22,15 @@ private:
 	unsigned char m_38;
 };
 
-// ?rva002747B8@Rva002747B8@@QAEXMMM@Z present-unmatched
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 void Rva002747B8::rva002747B8(float a, float b, float c)
 {
 	m_1C = a;
 	m_20 = b;
 	m_24 = c;
+	_ReadWriteBarrier();
 	m_28 = reinterpret_cast<int &>(m_1C);
 	m_2C = reinterpret_cast<int &>(m_20);
 	m_30 = reinterpret_cast<int &>(m_24);

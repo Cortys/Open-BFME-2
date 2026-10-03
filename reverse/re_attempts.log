@@ -6018,3 +6018,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva003C5A00Get@@YGHHHHH@Z	0x003C5A00	184	blocked	complex team ascii float iterator without donor t=5 model=muse-02
 ?rva00118CC0@Render2DRawArray@@QAEPAXH@Z	0x00118CC0	121	partial	eax-ecx-edx register rotation only: Count copy in ecx vs eax and index in eax vs ecx and Data load late in ecx vs early edx and GrowthStep load in eax vs ecx; size exact 121B 53 insns t=25 model=muse-02 score=0.9 stash=reverse/attempts/0x00118cc0.cpp
 ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z	0x000DDAB7	96	partial	volatile global cuts to 97B push ebx remains plus missing mov ebp8 esp arg reload vs edi t=20 model=muse-08 score=0.97 stash=reverse/attempts/0x000ddab7.cpp
+?rva00274591@Drawable@@QAEXXZ	0x00274591	551	partial	xmm reg choice plus add order plus sub order t=25 model=muse-10 score=0.93 stash=reverse/attempts/0x00274591.cpp
