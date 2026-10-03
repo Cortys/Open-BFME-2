@@ -18,21 +18,30 @@
 extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
 
-class GameEngineDeletingBase
+class Xfer;
+
+class SubsystemInterface
 {
 public:
-	virtual ~GameEngineDeletingBase();
+	SubsystemInterface();
+	virtual ~SubsystemInterface();
+	virtual void init();
+	virtual void postProcessLoad();
+	virtual void reset();
+	virtual void update();
+	virtual void draw();
 
 private:
-	char m_pad[8]; // +0x04..+0x0B (AsciiString at +0x08 in the rowed base)
+	char m_pad[8]; // +0x04..+0x0B keeps Snapshot at +0x0C (retail array +0x18)
 };
 
 class Snapshot
 {
 public:
-	virtual ~Snapshot();
-	virtual void crc();
-	virtual void xfer();
+	Snapshot();
+	~Snapshot();
+	virtual void crc(Xfer *xfer);
+	virtual void xfer(Xfer *xfer);
 	virtual void loadPostProcess();
 };
 
@@ -47,10 +56,20 @@ public:
 	virtual void *deleteInstance(int flags);
 };
 
-class PlayerList : public GameEngineDeletingBase, public Snapshot
+class PlayerList : public SubsystemInterface, public Snapshot
 {
 public:
 	virtual ~PlayerList();
+	virtual void init();
+	virtual void reset();
+	virtual void update();
+	virtual void newGame();
+	virtual void newMap();
+
+protected:
+	virtual void crc(Xfer *xfer);
+	virtual void xfer(Xfer *xfer);
+	virtual void loadPostProcess();
 
 private:
 	Player *m_local; // +0x10
