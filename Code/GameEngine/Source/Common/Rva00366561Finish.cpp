@@ -18,17 +18,14 @@ public:
 extern "C" void _WriteBarrier(void);
 #pragma intrinsic(_WriteBarrier)
 
-// ?rva00366561@Rva00366561@@QAE_NHH@Z present-unmatched
 bool Rva00366561::rva00366561(int a, int b)
 {
 	if (m_34 != 0 || m_38 != 0)
 		return false;
 	m_2c = -1;
 	m_34 = a;
-	_WriteBarrier();
 	int tb = b;
-	_WriteBarrier();
-	m_30 = 0;
 	m_28 = tb;
+	m_30 = 0;
 	return true;
 }
