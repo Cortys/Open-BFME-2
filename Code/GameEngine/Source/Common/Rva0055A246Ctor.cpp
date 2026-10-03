@@ -15,6 +15,9 @@
 // ctor 0x47A6A9 dtor 0xB3FD0 both rowed empty folds for Coord3D; zero loop
 // push-4-pop-ecx plus xorps-movss matches retail; caller 0x5C76CD passes
 // this+8 and zeroes surrounding ints/floats.
+
+#include <math.h>
+
 class Coord3D
 {
 public:
@@ -35,6 +38,9 @@ public:
 	Rva0055A246(float coordinates[12]);
 	Rva0055A246(const Coord3D &cp0, const Coord3D &cp1,
 	             const Coord3D &cp2, const Coord3D &cp3);
+	void rva0055A0DD(float t, Coord3D *result) const;
+	float rva0055A627(float tolerance) const;
+	void rva0055A40C(float t, Rva0055A246 &left, Rva0055A246 &right) const;
 	Coord3D m_arr[4];
 };
 
@@ -109,4 +115,44 @@ Rva0055A246::Rva0055A246(const Coord3D& cp0,
 		m_arr[1] = cp1;
 		m_arr[2] = cp2;
 		m_arr[3] = cp3;
+}
+
+// Donor6d943 ConstructionAndLength supplies the adaptive length formula.
+// Target55A627+436 has four69B length calls to3571, default construction
+// of two48B holders, split55A40C and two recursive calls. Ghidra boundary
+// and exact EH operands are retained. Original method/class identity unknown.
+// The local float-triple difference type keeps temporary lifetime separate from the
+// ctor/dtor-bearing stored Coord3D elements. Its full69B length copy matches
+// the existing Coord3D::length range3571; no new range or ICF claim for it.
+struct Rva0055A627Difference
+{
+	float x, y, z;
+
+	Rva0055A627Difference( float _x, float _y, float _z ) { x = _x; y = _y; z = _z; }
+
+	// ?Rva0055A627Difference::length present-unmatched
+	float length( void ) const { return (float)sqrt( x*x + y*y + z*z ); }
+};
+
+
+float Rva0055A246::rva0055A627(float withinTolerance) const
+{
+	Rva0055A627Difference p0p1( m_arr[1].x - m_arr[0].x, m_arr[1].y - m_arr[0].y, m_arr[1].z - m_arr[0].z );
+
+	Rva0055A627Difference p1p2( m_arr[2].x - m_arr[1].x, m_arr[2].y - m_arr[1].y, m_arr[2].z - m_arr[1].z );
+
+	Rva0055A627Difference p2p3( m_arr[3].x - m_arr[2].x, m_arr[3].y - m_arr[2].y, m_arr[3].z - m_arr[2].z );
+
+	Rva0055A627Difference p0p3( m_arr[3].x - m_arr[0].x, m_arr[3].y - m_arr[0].y, m_arr[3].z - m_arr[0].z );
+
+	float chordLength = p0p3.length();
+	float controlPolygonLength = p0p1.length() + p1p2.length() + p2p3.length();
+
+	if ((controlPolygonLength - chordLength) > withinTolerance) {
+		Rva0055A246 firstHalf, secondHalf;
+		rva0055A40C(0.5f, firstHalf, secondHalf);
+		return (firstHalf.rva0055A627(withinTolerance) + secondHalf.rva0055A627(withinTolerance));
+	}
+
+	return ((chordLength + controlPolygonLength) / 2.0f);
 }

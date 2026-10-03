@@ -7260,3 +7260,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ??0?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@QAE@ABV01@@Z,0x00534581,twin of dup_00534581 row object-symbol via call site 00534676 plus row notes
 ?g_00C78174@@3QBQBXB,0x00878174,vtable for Rva005EA0C0Link stored at new+0 in 0x005EA0C0 tail slot1
 ??0Rva00221635@@QAE@ABVAsciiString@@@Z,0x00221635,base takes AsciiString per 0x005EA635 exact call site with temp
+?length@Rva0055A627Difference@@QBEMXZ,0x00003571,Address-owned float3 length copy; all69B verified against existing Coord3D::length range3571 with true sqrt call62921C; donor6d943 expression; original helper identity unknown; no new row or ICF claim
