@@ -12,6 +12,7 @@ class Rva0023D229
 {
 public:
 	void Set(int index);
+	void rva0023D24C(int index);
 	char m_00[460];
 	void *m_arr[8][7];
 };
@@ -25,6 +26,17 @@ void Rva0023D229::Set(int index)
 	int off = index * 28;
 	void *p = g->m_40;
 	*(void **)((char *)this + 460 + off) = p;
+}
+void Rva0023D229::rva0023D24C(int index)
+{
+	if (index < 0)
+		return;
+	if (index >= 8)
+		return;
+	Rva0023D229Global *g = g_Rva0023D229Global;
+	int off = index * 28;
+	void *p = g->m_40;
+	*(void **)((char *)this + 464 + off) = p;
 }
 // ?g_Rva0023D229Global@@3PAURva0023D229Global@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
 #pragma comment(linker, "/alternatename:?g_Rva0023D229Global@@3PAURva0023D229Global@@A=?TheGameLogic@@3PAVGameLogic@@A")
