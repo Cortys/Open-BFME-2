@@ -16,6 +16,7 @@ public:
 	void rva00530FC5();
 	void rva00530FAE();
 	Rva00530FC5 *rva00530F47(int arg);
+	bool rva0053104A(int *out);
 private:
 	unsigned int m_count;
 	int *m_data;
@@ -66,4 +67,44 @@ Rva00530FC5 *Rva00530FC5::rva00530F47(int arg)
 	ji_006291ae(m_data, 0, m_count << 2);
 	ji_006291ae(m_bits, 0, (m_count >> 5) * 4);
 	return this;
+}
+
+bool Rva00530FC5::rva0053104A(int *out)
+{
+	while (m_extra0C < m_count) {
+		unsigned int word = m_bits[m_extra0C >> 5];
+		if (word != 0) {
+			unsigned int shifted = word >> (m_extra0C & 31);
+			if (shifted != 0) {
+				while ((shifted & 1) == 0) {
+					shifted >>= 1;
+					++m_extra0C;
+				}
+				unsigned int d = ((unsigned int *)m_data)[m_extra0C] >> m_extra10;
+				while (true) {
+					if (d == 0) {
+						m_extra10 = 0;
+						++m_extra0C;
+						break;
+					}
+					if (d & 1) {
+						*out = (m_extra0C << 5) + m_extra10;
+						if (++m_extra10 == 32) {
+							m_extra10 = 0;
+							++m_extra0C;
+						}
+						return true;
+					}
+					d >>= 1;
+					++m_extra10;
+				}
+				continue;
+			} else {
+				m_extra0C = (m_extra0C + 31) & ~31u;
+			}
+		} else {
+			m_extra0C += 32;
+		}
+	}
+	return false;
 }
