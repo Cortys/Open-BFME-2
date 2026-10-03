@@ -1,17 +1,16 @@
 // ?rva0004E3F1@Rva0004E3F1@@QAEXXZ
-// partial score=0.98 date=2026-10-03
+// partial score=0.99 date=2026-10-03
+// ?rva0004E3F1@Rva0004E3F1@@QAEXXZ
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // ?rva0004E3F1@Rva0004E3F1@@QAEXXZ @0x0004E3F1 159B: Image setup via setStatus
 // 2 plus texture select by +0x14d5 plus 16B {0 1 1 0} copy plus field copies.
 // Evidence: setStatus 0x002D8E63; bfmeSetTexture 0x002D905E; g_Va00BBB8D8
 // 0x007BB8D8; callers 0x0004E8F1 0x0004FBE9.
-// Body shape: the four stores read m_146C/m_149C/m_14A0 directly (no img/v1/v2
-// address locals) so MSVC re-derives each load; the final pair binds Image* r
-// and pre-reads x1/x2 so both values are live before either store. Matches
-// retail byte-for-byte through +0x8A (0x4E47B); sole residual is the last
-// 8 bytes where MSVC binds img to ebx instead of edx and sinks the +0x24 store
-// past the pop esi.
+// The final two field stores go through address-of locals so both values are
+// live before either store, reproducing retail's store/pop interleaving.
+// Sole residual is the register holding the image pointer in the final pair:
+// MSVC7.1 binds ebx where retail reuses the edx from the +0x78 m_10 store.
 class BfmeMapPictureTexture
 {
 	void *m_ptr;
@@ -69,9 +68,10 @@ void Rva0004E3F1::rva0004E3F1()
 	m_146C->m_14 = tmp;
 	m_146C->m_0C = m_149C;
 	m_146C->m_10 = m_14A0;
-	Image *r = m_146C;
+	int *d24 = &m_146C->m_24;
+	int *d28 = &m_146C->m_28;
 	int x1 = m_149C;
 	int x2 = m_14A0;
-	r->m_24 = x1;
-	r->m_28 = x2;
+	*d24 = x1;
+	*d28 = x2;
 }
