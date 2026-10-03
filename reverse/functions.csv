@@ -49323,3 +49323,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva005C74B1@Rva005C76C0@@QAEXXZ,,0x005C74B1,389,Code/GameEngine/Source/Common/Rva005C76C0Ctor.cpp,matched,Clean BFME1 6d943 BezFwdIterator O1 G7 SSE MD; Ghidra389B three true62AF4A transform calls initial64B basis and four12B differences; target original names unknown
 ?rva0059E3A7@Rva0059E3A7@@QAEXPBVModuleData@@@Z,,0x0059E3A7,23,Code/GameEngine/Source/Common/Rva0059E3A7Holder.cpp,matched,guarded ModuleData vector append at +0x10 via rowed push_back
 ??0Rva0059E436Data@@QAE@XZ,,0x0059E3BE,32,Code/GameEngine/Source/Common/Rva0059E436DataCtor.cpp,matched,default ctor vector at +4 int zero at +0x10 via rowed Vector_base
+??0Rva0059E511Data@@QAE@XZ,,0x0059E499,32,Code/GameEngine/Source/Common/Rva0059E511DataCtor.cpp,matched,default ctor vector at +4 int zero at +0x10 via rowed Vector_base
