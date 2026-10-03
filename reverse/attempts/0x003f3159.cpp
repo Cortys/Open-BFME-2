@@ -1,4 +1,6 @@
 // ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z
+// partial score=0.97 date=2026-10-03
+// ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z
 // partial score=0.95 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD
 // ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z @0x003F3159 51B:
@@ -17,7 +19,7 @@ struct DynamicPortalLink
 namespace _STL
 {
 struct __false_type {};
-template <class T> void _Destroy(T *first, T *last);
+template <class T> void _Destroy(T first, T last);
 }
 void __cdecl Rva003F2460Copy(char *first, char *last, char *result);
 typedef char *(__cdecl *Rva003F2460Copy4Fn)(char *, char *, char *, void *);
