@@ -6020,3 +6020,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z	0x000DDAB7	96	partial	volatile global cuts to 97B push ebx remains plus missing mov ebp8 esp arg reload vs edi t=20 model=muse-08 score=0.97 stash=reverse/attempts/0x000ddab7.cpp
 ?rva00274591@Drawable@@QAEXXZ	0x00274591	551	partial	xmm reg choice plus add order plus sub order t=25 model=muse-10 score=0.93 stash=reverse/attempts/0x00274591.cpp
 ?rva00544B41@Rva00544B41@@QAEXXZ	0x00544B41	85	partial	mov ecx eax plus xor vs and plus lea eax vs lea ecx plus mov ecx vs mov eax t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x00544b41.cpp
+?Rva00118AC0@@YAXXZ	0x00118AC0	138	partial	add eax,-1 vs retail sub eax,1 only diff; 138B/45ins exact otherwise t=25 model=muse-02 score=0.98 stash=reverse/attempts/0x00118ac0.cpp

@@ -8,16 +8,20 @@
 void *__cdecl ji_006291ae(void *dest, int val, unsigned int count);
 #pragma comment(linker, "/alternatename:?ji_006291ae@@YAPAXPAXHI@Z=?ji_006291ae@@YAXXZ")
 void operator delete[](void *block);
+void *operator new[](unsigned int size);
 
 class Rva00530FC5
 {
 public:
 	void rva00530FC5();
 	void rva00530FAE();
+	Rva00530FC5 *rva00530F47(int arg);
 private:
 	unsigned int m_count;
 	int *m_data;
 	unsigned int *m_bits;
+	unsigned int m_extra0C;
+	unsigned int m_extra10;
 };
 
 void Rva00530FC5::rva00530FC5()
@@ -48,4 +52,18 @@ void Rva00530FC5::rva00530FAE()
 {
 	delete[] m_bits;
 	delete[] m_data;
+}
+
+Rva00530FC5 *Rva00530FC5::rva00530F47(int arg)
+{
+	unsigned int c = ((unsigned int)arg + 0x3ff) >> 5;
+	m_extra0C = 0;
+	m_extra10 = 0;
+	c &= 0x7ffffe0;
+	m_count = c;
+	m_data = new int[c];
+	m_bits = new unsigned int[m_count >> 5];
+	ji_006291ae(m_data, 0, m_count << 2);
+	ji_006291ae(m_bits, 0, (m_count >> 5) * 4);
+	return this;
 }
