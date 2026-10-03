@@ -50516,3 +50516,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004DF207@Rva004DF207@@QAEXPAX@Z,,0x004DF207,42,Code/GameEngine/Source/Common/Rva004DF207Power.cpp,matched,twin 0x004DF231 caller 0x0028D9D5 rows 0x004DF1AF 0x004DF18D mirror neg
 ?Rva00202678Get@@YGPBDH@Z,,0x00202678,40,Code/GameEngine/Source/Common/Rva00202678Get.cpp,matched,indexed string getter via caller 0x002E53FA plus Unknown plus table 0x00DB96B0
 ??1Rva004F1B56@@UAE@XZ,,0x004F1B56,54,Code/GameEngine/Source/Common/Rva004F1B56Dtor.cpp,matched,dtor vtable 0x00C62E40 then AsciiString at plus0x20 then base vtable 0x007BB554
+??_GRva004F1B56@@UAEPAXI@Z,,0x004F1D1C,28,Code/GameEngine/Source/Common/Rva004F1B56Dtor.cpp,matched,deleting dtor emits from dtor TU calls ??1Rva004F1B56 then operator delete
