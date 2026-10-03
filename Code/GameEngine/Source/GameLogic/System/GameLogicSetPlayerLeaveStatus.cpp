@@ -29,7 +29,7 @@ class GameLogic
 public:
 	void setPlayerLeaveStatus(int slotIndex, const AsciiString &playerName, int isHuman);
 	PlayerLeaveStatus *getPlayerLeaveStatus(int playerIndex);
-
+	void rva0023D17D();
 private:
 	unsigned char m_unknown00[0x1C4];
 	PlayerLeaveStatus m_playerLeaveStatus[8];
@@ -51,4 +51,15 @@ PlayerLeaveStatus *GameLogic::getPlayerLeaveStatus(int playerIndex)
 	if (playerIndex >= 0 && playerIndex < 8)
 		return &m_playerLeaveStatus[playerIndex];
 	return 0;
+}
+void GameLogic::rva0023D17D()
+{
+	for (int i = 0; i < 8; ++i) {
+		m_playerLeaveStatus[i].m_notPresent = true;
+		m_playerLeaveStatus[i].m_quitFrame = 0;
+		m_playerLeaveStatus[i].m_defeatFrame = 0;
+		m_playerLeaveStatus[i].m_victoryFrame = 0;
+		m_playerLeaveStatus[i].m_status = 0;
+		m_playerLeaveStatus[i].m_isHuman = 0xff;
+	}
 }
