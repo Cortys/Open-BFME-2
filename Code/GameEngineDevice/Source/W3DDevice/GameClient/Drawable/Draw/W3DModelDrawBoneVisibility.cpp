@@ -1,0 +1,81 @@
+// cl: /O1 /G7 /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/game/Libraries/Source/WWVegas
+/*
+**	Command & Conquer Generals Zero Hour(tm)
+**	Copyright 2025 Electronic Arts Inc.
+**
+**	This program is free software: you can redistribute it and/or modify
+**	it under the terms of the GNU General Public License as published by
+**	the Free Software Foundation, either version 3 of the License, or
+**	(at your option) any later version.
+**
+**	This program is distributed in the hope that it will be useful,
+**	but WITHOUT ANY WARRANTY; without even the implied warranty of
+**	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**	GNU General Public License for more details.
+**
+**	You should have received a copy of the GNU General Public License
+**	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+// Clean BFME1 donor 6d9434269164392c5ba62aaa7c15a86b5b020d76,
+// game/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DModelDraw.cpp.
+// Target 0x000B3094 is 159B; full /O1 /G7 body and Get_Parent_Index call
+// at 0x000B30E4 -> rowed 0x00160BD0 match. The donor establishes traversal
+// semantics; native calls separately prove slots 30/36/48/101, refcount +4
+// and virtual deletion slot 0. The referenced RenderObj header's five calls
+// were all four bytes early, so its class layout is not copied into this TU.
+// Static helper's compiler-selected ESI argument is preserved by the emission
+// anchor below; that anchor is build scaffolding and claims no retail bytes.
+// stlport
+typedef bool Bool;
+typedef int Int;
+class RenderObjClass;
+#include "htree.h"
+// Target call sites prove BFME2 slots 30/36/48/101. The shared RenderObj
+// header currently emits slots 29/35/47/100, so dispatch the four observed
+// slots through a single-inheritance member-pointer view without changing it.
+class BfmeBoneRenderDispatch {};
+typedef RenderObjClass *(BfmeBoneRenderDispatch::*BoneGetSub)(int) const;
+typedef int (BfmeBoneRenderDispatch::*BoneGetIndex)(RenderObjClass *) const;
+typedef int (BfmeBoneRenderDispatch::*BoneGetCount)() const;
+typedef void (BfmeBoneRenderDispatch::*BoneSetHidden)(int);
+// ?nativeSubObject absent-from-retail
+__forceinline RenderObjClass *nativeSubObject(RenderObjClass *o, int index) { return (((BfmeBoneRenderDispatch *)o)->*(*(BoneGetSub *)&(*(void ***)o)[30]))(index); }
+// ?nativeSubBone absent-from-retail
+__forceinline int nativeSubBone(RenderObjClass *o, RenderObjClass *child) { return (((BfmeBoneRenderDispatch *)o)->*(*(BoneGetIndex *)&(*(void ***)o)[36]))(child); }
+// ?nativeBoneCount absent-from-retail
+__forceinline int nativeBoneCount(RenderObjClass *o) { return (((BfmeBoneRenderDispatch *)o)->*(*(BoneGetCount *)&(*(void ***)o)[48]))(); }
+// ?nativeSetHidden absent-from-retail
+__forceinline void nativeSetHidden(RenderObjClass *o, int hidden) { (((BfmeBoneRenderDispatch *)o)->*(*(BoneSetHidden *)&(*(void ***)o)[101]))(hidden); }
+struct BfmeBoneRefCount { void *vtable; mutable int refs; };
+typedef void (BfmeBoneRenderDispatch::*BoneDestroy)();
+// ?nativeRelease absent-from-retail
+__forceinline void nativeRelease(RenderObjClass *o) { if (--((BfmeBoneRefCount *)o)->refs == 0) (((BfmeBoneRenderDispatch *)o)->*(*(BoneDestroy *)&(*(void ***)o)[0]))(); }
+static void doHideShowBoneSubObjs(Bool state, Int numSubObjects, Int boneIdx, RenderObjClass *fullObject, const HTreeClass *htree)
+{
+	for (Int i=0; i < numSubObjects; i++) 
+	{
+		RenderObjClass *childObject = nativeSubObject(fullObject, i);
+		if (childObject)
+		{
+			Int parentBoneIndex = nativeSubBone(fullObject, childObject);
+			nativeRelease(childObject);
+			while (parentBoneIndex > 0 && parentBoneIndex < nativeBoneCount(fullObject))
+			{
+				parentBoneIndex = htree->Get_Parent_Index(parentBoneIndex);
+				if (parentBoneIndex == boneIdx)
+				{
+					childObject = nativeSubObject(fullObject, i);
+					if (childObject)
+					{
+						nativeSetHidden(childObject, state);
+						nativeRelease(childObject);
+					}
+					break;
+				}
+			}
+		}
+	}
+}
+
+// ?invokeBoneVisibility absent-from-retail
+void invokeBoneVisibility(Bool state, Int count, Int bone, RenderObjClass *obj, const HTreeClass *tree) { doHideShowBoneSubObjs(state, count, bone, obj, tree); }
