@@ -1,4 +1,6 @@
 // ??0Rva0040E3EE@@QAE@XZ
+// partial score=0.99 date=2026-10-03
+// ??0Rva0040E3EE@@QAE@XZ
 // partial score=0.98 date=2026-10-03
 // ??0Rva0040E3EE@@QAE@XZ
 // partial score=0.98 date=2026-10-03
@@ -71,7 +73,11 @@ private:
 
 // ??0Rva0040E3EE@@QAE@XZ present-unmatched
 Rva0040E3EE::Rva0040E3EE()
-	: Rva0040E3EEBase(), m_14(0), m_18(TheEmptyString), m_1c(0), m_20(TheEmptyString), m_24(0xFF000000), m_28(0xFF000000), m_2c(1), m_30(0), m_34(0), m_38(0), m_3c(1), m_40(_STL::allocator<BfmeE16>()), m_4c(_STL::allocator<BfmeE16>()), m_58(0.0f), m_5c(0.0f), m_60(0), m_64(0)
+	// Retail stores 0x00C394F0 to [esi] at +0x2E, between the rowed m_04 ctor
+	// call at +0x17 and the m_18 ctor call at +0x35, so the store has to ride
+	// a MEMBER INITIALISER: MSVC emits body statements at the end of the
+	// sequence and a leading initialiser at its head, and m_14's initialiser is
+	// the only one positioned after m_04's ctor call.
+	: Rva0040E3EEBase(), m_14((m_vtable = reinterpret_cast<const void *>(0x00C394F0), (char)0)), m_18(TheEmptyString), m_1c(0), m_20(TheEmptyString), m_24(0xFF000000), m_28(0xFF000000), m_2c(1), m_30(0), m_34(0), m_38(0), m_3c(1), m_40(_STL::allocator<BfmeE16>()), m_4c(_STL::allocator<BfmeE16>()), m_58(0.0f), m_5c(0.0f), m_60(0), m_64(0)
 {
-	m_vtable = reinterpret_cast<const void *>(0x00C394F0);
 }
