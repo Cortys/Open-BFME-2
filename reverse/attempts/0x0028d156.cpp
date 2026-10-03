@@ -1,4 +1,6 @@
 // ?rva0028D156@Object@@QAEHPBV1@@Z
+// partial score=0.96 date=2026-10-03
+// ?rva0028D156@Object@@QAEHPBV1@@Z
 // partial score=0.95 date=2026-10-01
 // cl: /O1 /MD
 //
@@ -121,7 +123,8 @@ int Object::rva0028D156(const Object *other)
 			unsigned int flags = tThis->m_field118;
 			if ((flags & 0x1000) != 0)
 			{
-				if (((m_130 >> 13) & 1) != 0)
+				unsigned int v130 = *(volatile unsigned int *)&m_130;
+				if (((v130 >> 13) & 1) != 0)
 					goto ret0;
 			}
 			Object *cand;
