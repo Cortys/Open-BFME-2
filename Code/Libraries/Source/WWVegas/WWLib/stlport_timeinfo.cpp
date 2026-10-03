@@ -35,7 +35,7 @@
 namespace _STL {
 typedef back_insert_iterator<string> _TimeOut;
 typedef char _TimeInfoStorage[(sizeof(_Time_Info) == 540) ? 1 : -1];
-template<> __declspec(noinline) _TimeOut
+template<> inline __declspec(noinline) _TimeOut
 __copy<const char*, _TimeOut, int>(const char* first, const char* last,
                                  _TimeOut result,
                                  const random_access_iterator_tag&, int*) {
@@ -46,6 +46,19 @@ __copy<const char*, _TimeOut, int>(const char* first, const char* last,
   }
   return result;
 }
+
+// This specialization is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStlportTimeInfoCopyInlineAnchor@_STL@@YAXXZ absent-from-retail
+void _bfmeStlportTimeInfoCopyInlineAnchor()
+{
+  __copy<const char*, _TimeOut, int>(
+      static_cast<const char*>(0), static_cast<const char*>(0),
+      *static_cast<_TimeOut*>(0), *static_cast<random_access_iterator_tag*>(0),
+      static_cast<int*>(0));
+}
+#pragma inline_depth()
+
 static inline void copy_cstring(const char * s, string& v) {
   copy(s, s + strlen(s), back_insert_iterator<string >(v));
 }
