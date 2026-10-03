@@ -50277,3 +50277,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva005DAFD7@@QAE@XZ,,0x005DAFC5,18,Code/GameEngine/Source/Common/Rva0059734BDerived.cpp,matched,ctor calls base 0x00597331 stores vtable 0x00876640
 ??1Rva005ED152@@MAE@XZ,,0x005ED152,11,Code/GameEngine/Source/Common/Rva005ED152Dtor.cpp,matched,vtable 0x008785B8 tail-jmp base 0x005ECAD0 rowed
 ??_GRva005ED152@@MAEPAXI@Z,,0x005ED136,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005ED152.cpp,matched,slot0 vtable 0x008785B8 calls rowed dtor 0x005ED152
+??0Rva00151DAB@@QAE@ABIABVAssetReference@@@Z,,0x00170A14,29,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,Rva00151DAB key-plus-ref ctor via pod copy plus rowed AssetReference copy proved by caller 0x00170A4E
