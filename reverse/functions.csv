@@ -50309,3 +50309,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00333BCALog@@YAXPAXPAULuaAr@@@Z,,0x00333BCA,263,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00333BCALog.cpp,matched,lua traceback printer via lua_getinfo sprintf and bfmeLogMsg574 donor liolib errorfb
 ?rva002AD883@Player@@QAE_NW4ScienceType@@@Z,,0x002AD883,70,Code/GameEngine/Source/Common/RTS/PlayerSetScienceAvailability.cpp,matched,grant-and-charge isScienceGrantable addScience getSciencePurchaseCost TheScienceStore Money-withdraw caller-0x001EC70A
 ?rva000E65B1@Rva000E6AC0@@QAEXXZ,,0x000E65B1,138,Code/GameEngine/Source/Common/Rva000E65B1Reset.cpp,matched,DX8 lock texture refs reset via rowed callees
+?rva005CA53E@GameSpyLoginPreferences@@QAEXABVAsciiString@@@Z,,0x005CA53E,80,Code/GameEngine/Source/Common/Rva005CA53EFinish.cpp,matched,lastEmail setter: AsciiString key ctor plus base-map subscript then assign; reference binding reproduces retail push order
