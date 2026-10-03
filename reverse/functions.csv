@@ -49780,3 +49780,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Upgrades@CashHackSpecialPowerModuleData@@QAE@HABH@Z,,0x003FA38C,35,Code/GameEngine/Source/GameLogic/Object/SpecialPower/CashHackUpgradesCopyCtor.cpp,matched,Upgrades 2-arg ctor via zeroing member and OR caller 0x003FA69E
 ??0Rva003FA776@@QAE@XZ,,0x003FA745,49,Code/GameEngine/Source/Common/Rva003FA776Ctor.cpp,matched,vtable 0x00C37930 dtor 0x003FA776 base Rva001E3624 callers 0x0021116F
 ?rva003FA430@Rva003FA430@@QAE_NH@Z,,0x003FA430,52,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva003FA430Contains.cpp,matched,search Upgrades vector at +4 for science match caller 0x003FA681
+?rva003FA681@Rva003FA681@@QAEXHABH@Z,,0x003FA681,51,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva003FA681Add.cpp,matched,add Upgrades pair if science absent caller 0x004E0ACF
