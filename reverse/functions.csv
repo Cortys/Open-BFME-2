@@ -50295,3 +50295,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003972BC@Rva003972BC@@QAEHXZ,,0x003972BC,23,Code/GameEngine/Source/Common/Rva003972BCSum.cpp,matched,sums sibling counts 0x00397238 and 0x0039727A
 ?rva00170AA9@Rva00170AA9@@QAEXPAURva00170AA9Node@@@Z,,0x00170AA9,59,Code/GameEngine/Source/Common/Rva00170AA9Erase.cpp,matched,Rb erase-one via rowed rebalance plus RefCountPtr dtor plus free
 ?rva0033321B@Rva00332E60@@QAEPAXH@Z,,0x0033321B,34,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,range search +0xa0 via caller 0x00333918 same object as Rva00332E60
+?rva00333261@Rva00332E60@@QAEPAXH@Z,,0x00333261,34,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,range search +0xc8 stride 0x24 via caller 0x00333918 same object
