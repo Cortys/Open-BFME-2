@@ -12,6 +12,13 @@ struct BfmeWordValue4
 };
 
 typedef _STL::deque<BfmeWordValue4, _STL::allocator<BfmeWordValue4> > InnerDeque;
+// Retail outer destructor is owned by StlportNestedWordDequeOuterDtor.cpp.
+// Avoid emitting this TU's shorter incompatible copy.
+typedef _STL::deque<InnerDeque, _STL::allocator<InnerDeque> > OuterDeque;
+namespace _STL {
+template<> OuterDeque::~deque();
+}
+
 typedef char WordSize[sizeof(BfmeWordValue4) == 4 ? 1 : -1];
 typedef char InnerDequeSize[sizeof(InnerDeque) == 40 ? 1 : -1];
 
