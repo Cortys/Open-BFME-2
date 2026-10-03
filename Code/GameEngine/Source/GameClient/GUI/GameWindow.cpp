@@ -57,6 +57,7 @@ public:
 
 protected:
 	GameWindow *findFirstLeaf();
+	GameWindow *findLastLeaf();
 	GameWindow *findNextLeaf();
 
 private:
@@ -180,4 +181,33 @@ GameWindow *GameWindow::findNextLeaf( void )
 	return NULL;
 
 }  // end findNextLeav
+
+
+// ?findLastLeaf@GameWindow@@IAEPAV1@XZ
+// The 114-byte previous-leaf donor names an opaque walk callee. Native
+// 0x0031398A-0x003139B3 proves that callee ascends parents at +0x200,
+// then follows first children at +0x204 and their final siblings at +0x1F8.
+// This independently matches the original donor's last-leaf operation.
+GameWindow *GameWindow::findLastLeaf( void )
+{
+	GameWindow *leaf = this;
+
+	// Find the root of this branch
+	while( leaf->m_parent )
+		leaf = leaf->m_parent;
+
+	// Find the last leaf
+	while( leaf->m_child ) 
+	{
+
+		leaf = leaf->m_child;
+
+		while( leaf->m_next )
+			leaf = leaf->m_next;
+
+	}  // end while
+
+	return leaf;
+
+}  // end findLastLeaf
 
