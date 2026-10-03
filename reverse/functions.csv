@@ -49071,3 +49071,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005E0D94@Rva005E0D94@@QAEXXZ,,0x005E0D94,8,Code/GameEngine/Source/Common/Rva005E0D94Method.cpp,matched,chain forwarder to rowed 0x005E0CC7
 ?Rva001E3FADGet@@YAMPBUCoord3D@@0@Z,,0x001E3FAD,80,Code/GameEngine/Source/Common/Rva001E3FADCalc.cpp,matched,diff normalize BfmeZeroRange callers 0x001E9BEC
 ?rva000857CD@Rva000857CD@@QAEPAV1@XZ,,0x000857CD,37,Code/GameEngine/Source/Common/Rva000857CDClear.cpp,matched,thiscall clears three floats and five bytes returns this unlocks 0x0008B7CF
+?rva000854CF@Rva000854CF@@QAEPAUOut12@@PAU2@@Z,,0x000854CF,29,Code/GameEngine/Source/Common/Rva000854CFCopy.cpp,matched,thiscall copies 12B at +0x620 float int int returns out unlocks 0x0008ADEA
