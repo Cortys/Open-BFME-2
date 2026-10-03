@@ -49174,3 +49174,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0042C083@Rva0042C083@@QAEXPBURva0042C083Param@@@Z,,0x0042C083,31,Code/GameEngine/Source/Common/Rva0042C083.cpp,matched,two-dword copy plus flag via callers 0x42C134 0x42C7D5 unblocks 2
 ?rva0042C7B1@Rva0042C7B1@@QAEHPBURva0042C083Param@@H@Z,,0x0042C7B1,47,Code/GameEngine/Source/Common/Rva0042C7B1.cpp,matched,TheMouse at 0x009FDCA0 field 0x4FA4 slot 0x4C plus call 0x0042C083 via plus 0x8 caller 0x0042C8C6
 ?rva00274401@Drawable@@QAEXXZ,,0x00274401,68,Code/GameEngine/Source/GameClient/Drawable_rva00274401.cpp,matched,Drawable flag 0x44a clear then rowed release plus audio clear then null terminated notify loop
+?rva0027434D@Drawable@@QAEHH@Z,,0x0027434D,138,Code/GameEngine/Source/GameClient/Drawable_rva00274176.cpp,matched,Drawable dirty apply then array slot42 slot23 first nonzero via not equal shape

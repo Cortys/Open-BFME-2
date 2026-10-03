@@ -97,11 +97,41 @@ public:
 	virtual void slot20(float f) = 0;
 };
 
+class ElemB27434D
+{
+public:
+	virtual void _00() = 0;
+	virtual void _01() = 0;
+	virtual void _02() = 0;
+	virtual void _03() = 0;
+	virtual void _04() = 0;
+	virtual void _05() = 0;
+	virtual void _06() = 0;
+	virtual void _07() = 0;
+	virtual void _08() = 0;
+	virtual void _09() = 0;
+	virtual void _10() = 0;
+	virtual void _11() = 0;
+	virtual void _12() = 0;
+	virtual void _13() = 0;
+	virtual void _14() = 0;
+	virtual void _15() = 0;
+	virtual void _16() = 0;
+	virtual void _17() = 0;
+	virtual void _18() = 0;
+	virtual void _19() = 0;
+	virtual void _20() = 0;
+	virtual void _21() = 0;
+	virtual void _22() = 0;
+	virtual int slot23(int x) = 0;
+};
+
 class Drawable
 {
 public:
 	void rva00274176(bool immediate);
 	void rva00274445(float f);
+	int rva0027434D(int x);
 private:
 	unsigned char m_pad0[0x158];
 	BfmeDrawableClientIface **m_ifaceBegin;
@@ -139,5 +169,32 @@ void Drawable::rva00274445(float f)
 	}
 	ji_006291ae((char *)this + 0x2f0, 0, 0x4c);
 	ji_006291ae((char *)this + 0x2a4, 0, 0x4c);
+}
+#pragma optimize("", on)
+
+#pragma optimize("y", on)
+int Drawable::rva0027434D(int x)
+{
+	if (m_isModelDirty) {
+		m_conditionState.rva00271C8A(m_pendingClear.m_bits, m_pendingSet.m_bits);
+		BfmeDrawableClientIface **end = m_ifaceEnd;
+		for (BfmeDrawableClientIface **p = m_ifaceBegin; p != end; ++p) {
+			(*p)->replaceModelConditionState(&m_conditionState, false, 0);
+		}
+		m_isModelDirty = false;
+	}
+	void **arr = *(void ***)((char *)this + 0x14c);
+	for (void **p = arr; *p != 0; ++p) {
+		ElemA274445 *elem = (ElemA274445 *)*p;
+		void *obj = elem->slot42();
+		int r;
+		if (obj != 0)
+			r = ((ElemB27434D *)obj)->slot23(x);
+		else
+			r = 0;
+		if (r != 0)
+			return r;
+	}
+	return 0;
 }
 #pragma optimize("", on)
