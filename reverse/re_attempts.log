@@ -6040,3 +6040,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva0041BFA2@Rva0041BFA2@@QAEHPAVObject@@HHH@Z	0x0041BFA2	95	blocked	mov m_self store after push cb vs retail before push tried self-first barrier cval G7-only t=25 model=muse-04 (stash 0.96 kept)
 ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z	0x0034290D	101	partial	vtable early floats early but bool loads al-vs-cl plus late c load t=25 model=muse-09 score=0.94 stash=reverse/attempts/0x0034290d.cpp
 ??0Rva006FC240@@QAE@VEAStringC@@@Z	0x006FC2D0	155	blocked	edx temporaries for bits plus delayed store vs direct and before lea t=30 model=muse-09 (stash 0.93 kept)
+?rva004A438B@Rva004A438B@@QBEMXZ	0x004A438B	94	blocked	no EBP frame plus mov-test vs cmp plus object-base vs height-ptr plus missing movss path t=20 model=muse-spark (stash 0.93 kept)

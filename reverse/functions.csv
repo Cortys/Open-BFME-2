@@ -49195,3 +49195,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva0036804F@@QAE@PAVStateMachine@@@Z,,0x0036804F,24,Code/GameEngine/Source/Common/Rva0036804FCtor.cpp,matched,base row 0x00342B87 vtable 0x0086A250 callers 0x005432C5 0x00546141
 ?rva00368067@Rva0036804F@@QAEHXZ,,0x00368067,46,Code/GameEngine/Source/Common/Rva0036804FCtor.cpp,matched,vslot slot4 vtable 0x0086A250 crate chain tail 0x00340C5F
 ?get@Rva00368594CmpBoolField@@QBE_NXZ,,0x00368594,11,Code/GameEngine/Source/Common/Disp8CmpBoolGetters.cpp,matched,Disp32 byte-ternary bool getter cmp byte 0x558 0 sete no-xor
+?rva0042E804@BfmeOwnVVD@@QAEXXZ,,0x0042E804,88,Code/GameEngine/Source/Common/BfmeOwnVVDCtor.cpp,matched,same BfmeOwnVVD layout callers 0x0042EA56 0x0042ED42 slots 0xa4 0x1a4 0x4c endScrollTime row

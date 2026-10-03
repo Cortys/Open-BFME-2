@@ -47,6 +47,7 @@ public:
 	BfmeOwnVVD();
 	~BfmeOwnVVD();
 	unsigned char Rva0042E8C1();
+	void rva0042E804();
 
 private:
 	unsigned int m_04;                    // +0x04 body-set
@@ -129,6 +130,215 @@ unsigned char BfmeOwnVVD::Rva0042E8C1()
 	if (slot > g_bfmeRva42E8C1Holder->m_40)
 		slot = 0;
 	return slot + g_bfmeRva42E8C1Add >= g_bfmeRva42E8C1Holder->m_40;
+}
+
+// ?rva0042E804@BfmeOwnVVD@@QAEXXZ @0x0042E804 88B evidence: same BfmeOwnVVD layout m_1c m_38 m_39 m_148 callers 0x0042EA56 0x0042ED42 TheInGameUI slot 0xa4 TheTacticalView slot 0x1a4 TheMouse slot 0x4c StatsCollector endScrollTime row
+class InGameUI
+{
+public:
+	virtual void i0();
+	virtual void i1();
+	virtual void i2();
+	virtual void i3();
+	virtual void i4();
+	virtual void i5();
+	virtual void i6();
+	virtual void i7();
+	virtual void i8();
+	virtual void i9();
+	virtual void i10();
+	virtual void i11();
+	virtual void i12();
+	virtual void i13();
+	virtual void i14();
+	virtual void i15();
+	virtual void i16();
+	virtual void i17();
+	virtual void i18();
+	virtual void i19();
+	virtual void i20();
+	virtual void i21();
+	virtual void i22();
+	virtual void i23();
+	virtual void i24();
+	virtual void i25();
+	virtual void i26();
+	virtual void i27();
+	virtual void i28();
+	virtual void i29();
+	virtual void i30();
+	virtual void i31();
+	virtual void i32();
+	virtual void i33();
+	virtual void i34();
+	virtual void i35();
+	virtual void i36();
+	virtual void i37();
+	virtual void i38();
+	virtual void i39();
+	virtual void i40();
+	virtual void i41(int);
+};
+extern InGameUI *TheInGameUI;
+
+class TacticalView
+{
+public:
+	virtual void t0();
+	virtual void t1();
+	virtual void t2();
+	virtual void t3();
+	virtual void t4();
+	virtual void t5();
+	virtual void t6();
+	virtual void t7();
+	virtual void t8();
+	virtual void t9();
+	virtual void t10();
+	virtual void t11();
+	virtual void t12();
+	virtual void t13();
+	virtual void t14();
+	virtual void t15();
+	virtual void t16();
+	virtual void t17();
+	virtual void t18();
+	virtual void t19();
+	virtual void t20();
+	virtual void t21();
+	virtual void t22();
+	virtual void t23();
+	virtual void t24();
+	virtual void t25();
+	virtual void t26();
+	virtual void t27();
+	virtual void t28();
+	virtual void t29();
+	virtual void t30();
+	virtual void t31();
+	virtual void t32();
+	virtual void t33();
+	virtual void t34();
+	virtual void t35();
+	virtual void t36();
+	virtual void t37();
+	virtual void t38();
+	virtual void t39();
+	virtual void t40();
+	virtual void t41();
+	virtual void t42();
+	virtual void t43();
+	virtual void t44();
+	virtual void t45();
+	virtual void t46();
+	virtual void t47();
+	virtual void t48();
+	virtual void t49();
+	virtual void t50();
+	virtual void t51();
+	virtual void t52();
+	virtual void t53();
+	virtual void t54();
+	virtual void t55();
+	virtual void t56();
+	virtual void t57();
+	virtual void t58();
+	virtual void t59();
+	virtual void t60();
+	virtual void t61();
+	virtual void t62();
+	virtual void t63();
+	virtual void t64();
+	virtual void t65();
+	virtual void t66();
+	virtual void t67();
+	virtual void t68();
+	virtual void t69();
+	virtual void t70();
+	virtual void t71();
+	virtual void t72();
+	virtual void t73();
+	virtual void t74();
+	virtual void t75();
+	virtual void t76();
+	virtual void t77();
+	virtual void t78();
+	virtual void t79();
+	virtual void t80();
+	virtual void t81();
+	virtual void t82();
+	virtual void t83();
+	virtual void t84();
+	virtual void t85();
+	virtual void t86();
+	virtual void t87();
+	virtual void t88();
+	virtual void t89();
+	virtual void t90();
+	virtual void t91();
+	virtual void t92();
+	virtual void t93();
+	virtual void t94();
+	virtual void t95();
+	virtual void t96();
+	virtual void t97();
+	virtual void t98();
+	virtual void t99();
+	virtual void t100();
+	virtual void t101();
+	virtual void t102();
+	virtual void t103();
+	virtual void t104();
+	virtual void t105(int);
+};
+extern TacticalView *TheTacticalView;
+
+class Mouse
+{
+public:
+	virtual void m0();
+	virtual void m1();
+	virtual void m2();
+	virtual void m3();
+	virtual void m4();
+	virtual void m5();
+	virtual void m6();
+	virtual void m7();
+	virtual void m8();
+	virtual void m9();
+	virtual void m10();
+	virtual void m11();
+	virtual void m12();
+	virtual void m13();
+	virtual void m14();
+	virtual void m15();
+	virtual void m16();
+	virtual void m17();
+	virtual void m18();
+	virtual void m19(void *p);
+};
+extern Mouse *TheMouse;
+
+class StatsCollector
+{
+public:
+	void endScrollTime();
+};
+extern StatsCollector *g_00E032F8;
+extern void *g_00DC8874;
+
+void BfmeOwnVVD::rva0042E804()
+{
+	m_38 = 0;
+	m_1c = 0;
+	TheInGameUI->i41(0);
+	if (m_39 == 0)
+		TheTacticalView->t105(0);
+	TheMouse->m19(g_00DC8874);
+	m_148 = 0;
+	if (g_00E032F8 == 0)
+		return;
+	return g_00E032F8->endScrollTime();
 }
 
 // ?g_bfmeRva42E8C1Add@@3IA: the global at this VA is ?g_Va00DBA4E4@@3HA; this name is an alias for it.
