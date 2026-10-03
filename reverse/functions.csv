@@ -50290,3 +50290,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??_GRva001709F8@@QAEPAXI@Z,,0x001709F8,28,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,deleting dtor via twin-pinned 0x0017098D proved by gap shape plus flag test
 ?rva00333B02@Rva00333B02@@QAEXVAsciiString@@@Z,,0x00333B02,52,Code/GameEngine/Source/Common/Rva00333B02Set.cpp,matched,this+0x10 set via rowed set with EH release callers 0x00334308 0x00334468
 ?rva00397238@Rva00397238@@QAEHXZ,,0x00397238,66,Code/GameEngine/Source/Common/Rva00397238Count.cpp,matched,sibling of 0x0039727A count via TheGameLogic findObjectByID and slot3
+?rva002972DE@Rva002972DE@@QAEXPAVRva004B555F@@@Z,,0x002972DE,130,Code/GameEngine/Source/GameLogic/Object/Update/Rva002972DEAcquire.cpp,matched,Science dedup via rowed push_back plus callers plus rowed callees
