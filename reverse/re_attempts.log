@@ -6117,3 +6117,8 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva004CA6F3@AnimationSoundTree@@QAEXAAPAUAnimationSoundTreeNode@@PBX@Z	0x004CA6F3	26	partial	ecx-eax mirror on final 3 moves t=14 model=muse-02 score=0.88 stash=reverse/attempts/0x004ca6f3.cpp
 ?rva0059FB4F@Rva0059FB4F@@QAE_NPAX@Z	0x0059FB4F	246	blocked	complex EH GameSpy virtuals unknown owner t=8 model=muse-02
 ?Rva0041E912Fill@@YG_NABVAsciiString@@PAX@Z	0x0041E912	95	blocked	hashtable ArmorTemplate plus g_00E03124 layout needs donor t=10 model=muse-02
+?Rva00074B3BGet@@YGPAVRva000748F6@@PAUVec3@@0HEH@Z	0x00074B3B	141	partial	subss mem-vs-reg and and-order, base movss ok t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x00074b3b.cpp
+?Rva00074DB4Get@@YGPAVRva000748F6@@PAUMat12Src@@MHEH@Z	0x00074DB4	238	partial	only scale load movss xmm0 late +0x67 vs +0x4c, size+insns exact t=30 model=muse-04 score=0.97 stash=reverse/attempts/0x00074db4.cpp
+?Rva00074F25Get@@YGPAVRva000748F6@@PAUMat12Src@@MMHEH@Z	0x00074F25	241	partial	only scale load movss xmm0 late +0x67 vs +0x52, size+insns exact t=28 model=muse-04 score=0.97 stash=reverse/attempts/0x00074f25.cpp
+?Rva00074C3FGet@@YGPAVRva000748F6@@PAUMat12Src@@PAUVec3@@HEH@Z	0x00074C3F	250	partial	only 4 preloads order idx0 vs scales, regs exact size+insns exact t=25 model=muse-04 score=0.98 stash=reverse/attempts/0x00074c3f.cpp
+?Rva000747FCGet@@YAHXZ	0x000747FC	227	blocked	x87 fild-fdiv-fmul plus idiv loop with Cos Sin calls t=10 model=muse-04
