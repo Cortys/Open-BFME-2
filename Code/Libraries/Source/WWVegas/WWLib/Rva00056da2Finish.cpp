@@ -1,7 +1,5 @@
 // ?rva00056DA2@Rva00056DA2@@QAEXXZ
 // partial score=0.97 date=2026-09-28
-// ?rva00056DA2@Rva00056DA2@@QAEXXZ
-// partial score=0.97 date=2026-09-28
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // BFME 1 STLport deque algorithms, instantiated for the target-supported 4-byte
@@ -30,7 +28,10 @@ struct Rva00055864Node
     void *m_next;
 };
 
-void __stdcall Rva00055864Free(Rva00055864Node *p);
+// Rva00055864Free at 0x55864 is a __stdcall free function, but the caller
+// sets ecx=his before the call, indicating a __thiscall member call.
+// Alias the __thiscall mangled name to the __stdcall definition.
+#pragma comment(linker, "/alternatename:?Rva00055864Free@Rva00056DA2@@AAEXPAURva00055864Node@@@Z=?Rva00055864Free@@YGXPAURva00055864Node@@@Z")
 
 class Rva00056DA2
 {
@@ -41,9 +42,9 @@ private:
     char pad00_04[4];
     _STL::vector<Rva00055864Node *> m_vec; // +0x04 start +0x08 finish
     int m_10; // +0x10 dword-cleared at end
+    void Rva00055864Free(Rva00055864Node *p);
 };
 
-// ?rva00056DA2@Rva00056DA2@@QAEXXZ present-unmatched
 void Rva00056DA2::rva00056DA2()
 {
     for (unsigned int i = 0; i < m_vec.size(); ++i) {
