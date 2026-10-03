@@ -121,7 +121,7 @@ public:
     Status UnlockBits(BitmapData *lockedBitmapData);
 };
 
-Image::~Image()
+inline __declspec(noinline) Image::~Image()
 {
     DllExports::GdipDisposeImage(nativeImage);
 }
@@ -225,3 +225,11 @@ Status Bitmap::UnlockBits(BitmapData *lockedBitmapData)
 }
 
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitgdiplusbitmap@@YAXPAVImage@Gdiplus@@@Z present-unmatched
+void bfmeEmitgdiplusbitmap(Gdiplus::Image *p)
+{
+    p->Gdiplus::Image::~Image();
+}
+#pragma inline_depth()
