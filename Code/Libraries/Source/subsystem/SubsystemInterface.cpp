@@ -1,4 +1,4 @@
-// cl: /O1 /Ireference/shims/bfme2_ascii /Ireference/shims/ini_bfme2 /Ireference/shims/subsystem_bfme2 /Ireference/shims/moduledata /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/open-bfme-1/Code/GameEngine/Source/Common/System /Ireference/open-bfme-1/Code/GameEngine/Include /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /O1 /Ireference/shims/bfmealloc /Ireference/shims/bfme2_ascii /Ireference/shims/ini_bfme2 /Ireference/shims/subsystem_bfme2 /Ireference/shims/moduledata /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_STLP_NO_EXCEPTIONS /Ireference/open-bfme-1/Code/GameEngine/Source/Common/System /Ireference/open-bfme-1/Code/GameEngine/Include /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // stlport
 //
 // BFME's SubsystemInterface, built against the native headers. The ZH-tree port
@@ -18,6 +18,8 @@
 #include "Common/INI/INI.h"
 #include "game_engine_subsystems.h"
 #include "Common/Snapshot.h"
+
+template <> void _STL::vector<_STL::pair<SubsystemInterface *, void *> >::_M_clear();
 
 SubsystemInterfaceList *TheSubsystemList;		// BFME1 0x0134C6C8
 
