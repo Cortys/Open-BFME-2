@@ -32,3 +32,11 @@ void Rva0042700FParse(INI *ini, int dummy1, BfmeVec00426A5B *vec, int dummy2)
 		vec->push_back(rec);
 	}
 }
+
+void Rva00427068Parse(INI *ini, int dummy1, BfmeVec00426A5B *vec, int dummy2)
+{
+	unsigned int oldCount = vec->size();
+	Rva0042700FParse(ini, dummy1, vec, dummy2);
+	for (unsigned int i = oldCount; i < vec->size(); ++i)
+		(*vec)[i].flag0 = 1;
+}
