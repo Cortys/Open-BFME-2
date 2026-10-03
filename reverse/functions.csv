@@ -50275,3 +50275,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00108AD8@Rva00108AD8@@QAEXXZ,,0x00108AD8,95,Code/GameEngine/Source/Common/Rva00108AD8Finish.cpp,matched,table held as pointer in non-virtual IterBase matching sibling Rva000F1AD8Clear; fixes vptr and table store order
 ?rva0035B1C3@Rva0035B1C3@@QAEHH@Z,,0x0035B1C3,38,Code/GameEngine/Source/Common/Rva0035B1C3Finish.cpp,matched,finished banked near miss; signed sar-2 count from char diff and success fall-through recover the jae polarity and begin reload
 ??0Rva005DAFD7@@QAE@XZ,,0x005DAFC5,18,Code/GameEngine/Source/Common/Rva0059734BDerived.cpp,matched,ctor calls base 0x00597331 stores vtable 0x00876640
+??1Rva005ED152@@MAE@XZ,,0x005ED152,11,Code/GameEngine/Source/Common/Rva005ED152Dtor.cpp,matched,vtable 0x008785B8 tail-jmp base 0x005ECAD0 rowed
