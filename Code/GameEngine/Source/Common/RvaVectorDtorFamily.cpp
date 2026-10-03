@@ -709,6 +709,23 @@ Rva005011DA::~Rva005011DA()
 	Rva00500CB8Destroy(m_start, m_finish);
 }
 
+struct Rva004FABE2;
+
+void __cdecl Rva00500AF8Destroy(Rva004FABE2 *, Rva004FABE2 *);
+
+// ??1Rva00500E3D@@QAE@XZ @0x00500E3D 63B -> ?Rva00500AF8Destroy@@YAXPAURva004FABE2@@0@Z
+// Vector dtor shape (destroy [start finish) then free with EH): callers
+// 0x00503450 0x005034ED 0x00503511 in 0x00502FE9; callees rowed 0x00500AF8 and 0x00030830.
+struct Rva00500E3D : RvaVectorFamilyBase<Rva004FABE2>
+{
+	~Rva00500E3D();
+};
+
+Rva00500E3D::~Rva00500E3D()
+{
+	Rva00500AF8Destroy(m_start, m_finish);
+}
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1BfmeVector0022C55B@@QAE@XZ=??1Rva0022CAC4@@QAE@XZ")
