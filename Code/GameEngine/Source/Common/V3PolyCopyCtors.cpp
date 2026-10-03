@@ -663,3 +663,24 @@ Rva0028F68F::Rva0028F68F(const Rva0028F68F &other)
 	, m_member6C(other.m_member6C)
 {
 }
+
+// ------------------------- vptr + held pointer (retail 0x005DAA5A 18B)
+// B2 body-address name: same holder shape as 0x005DAA36 with a different
+// vtable (0x008765A0) so a different class. Caller 0x005971A9.
+struct Rva005DAA5A_Hold
+{
+	Rva005DAA5A_Hold(void *held) { m_field04 = held; }
+	void *m_field04;
+};
+
+class Rva005DAA5A : public Rva005DAA5A_Hold
+{
+public:
+	Rva005DAA5A(void *held);
+	virtual ~Rva005DAA5A();
+};
+
+Rva005DAA5A::Rva005DAA5A(void *held)
+	: Rva005DAA5A_Hold(held)
+{
+}
