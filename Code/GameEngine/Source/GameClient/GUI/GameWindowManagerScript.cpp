@@ -438,12 +438,24 @@ static Bool parseColor( Color *color, char *buffer )
 /** Parse a default color entry and store it in the value pointed to by 
 	* the 'color' parm. */
 //=============================================================================
+// BFME 2's File vtable puts scanString at slot 9, which the Zero Hour File
+// header used here does not; this view of the slots is what retail calls
+// (0x00315AF4, proven byte-exact by tools/permute.py).
+class GoalScriptFileSlots {
+public:
+ virtual void s0(); virtual void s1(); virtual void close();
+ virtual int read(void*,int); virtual int write(const void*,int);
+ virtual int seek(int,int); virtual void nextLine(char*,int);
+ virtual bool scanInt(int&); virtual bool scanReal(float&);
+ virtual bool scanString(AsciiString&);
+};
+
 static Bool parseDefaultColor( Color *color, File *inFile, char *buffer )
 {
 	// eat '=' 
 //	fscanf( inFile, "%*s" );
 	AsciiString str;
-	inFile->scanString(str);
+	((GoalScriptFileSlots*)inFile)->scanString(str);
 
   // Read the rest of the color definition
 	readUntilSemicolon( inFile, buffer, WIN_BUFFER_LENGTH );

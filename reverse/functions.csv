@@ -50387,3 +50387,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva0031FAF0@@QAE@XZ,,0x0032002C,105,Code/GameEngine/Source/Common/Rva0031FAF0Dtor.cpp,matched,dtor via clear plus List_base plus AsciiString deletor-caller
 ?rva00052696@MilesAudioManager@@QAEPAXPAX@Z,,0x00052696,47,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052696.cpp,matched,MilesAudioManager handle-state table+0xBD4 type+0x14
 ??1Rva004134AE@@QAE@XZ,,0x004134AE,53,Code/GameEngine/Source/Common/Rva004134AEDtor.cpp,matched,nonvirtual dtor member plus base rowed callees EH
+?parseDefaultColor@@YA_NPAHPAVFile@@PAD@Z,,0x00315AF4,106,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerScript.cpp,matched,banked body exact unchanged (tools/permute.py); vtable slot view ported into its home unit
