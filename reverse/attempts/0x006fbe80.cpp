@@ -1,10 +1,12 @@
 // ?find2@Rva006FBE80@@QAEPAVBfmeN1034@@H@Z
-// partial score=0.91 date=2026-10-02
+// partial score=0.93 date=2026-10-03
+// ?find2@Rva006FBE80@@QAEPAVBfmeN1034@@H@Z @0x006FBE80 66B.
+// Global linked-list find: walk the 0x00E1835C chain calling the rowed table
+// lookup on each node's +0x14 table; if the chain head is null fall back to this
+// object's +0x28 member. Names are address-derived; every callee is rowed.
+// The retail body keeps the redundant `test esi,esi` at the top of the loop,
+// which /O2 propagates away from this source -- see the attempt evidence.
 // cl: /O2 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
-// 0x006FBE80 (66B) near miss: compiled 60B, every instruction identical except
-// that retail keeps the redundant `test esi,esi` at the top of the inlined
-// global-list loop (from inlining Rva006FBBE0::find), while this cl propagates
-// the preceding non-null test and drops the check. Semantics are identical.
 class BfmeN1034;
 
 class BfmeTab1034
@@ -44,6 +46,7 @@ struct Rva006FBE80
 
 Rva006FBBE0 *g_Va00E1835C;
 
+// ?find2@Rva006FBE80@@QAEPAVBfmeN1034@@H@Z present-unmatched
 BfmeN1034 *Rva006FBE80::find2(int key)
 {
 	Rva006FBBE0 *node = g_Va00E1835C;
@@ -52,6 +55,8 @@ BfmeN1034 *Rva006FBE80::find2(int key)
 		return member != 0 ? member->find(key) : 0;
 	}
 	while (node != 0) {
+		if (node == 0)
+			return 0;
 		BfmeN1034 *found = node->m_table.bfmeFind1034F(key);
 		if (found != 0)
 			return found;
