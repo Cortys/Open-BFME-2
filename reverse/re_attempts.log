@@ -6569,3 +6569,4 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?rva002972DE@Rva002972DE@@QAEXPAVRva004B555F@@@Z	0x002972DE	130	partial	extra jmp 2B plus late pop ebx vs early pop with shared test t=25 model=muse-02 score=0.96 stash=reverse/attempts/0x002972de.cpp
 ?rva00502D48@Rva00502D48@@QAEPAV1@XZ	0x00502D48	25	partial	25B size-exact but second lea uses ebp-2 vs retail ebp-1; single tmp CSEs to 22B one lea; union and Os still CSE; shape_levers same-addr row needs empty-tag sharing t=25 model=muse-01 score=0.93 stash=reverse/attempts/0x00502d48.cpp
 ?bfmeTest932E@BfmeThing932E@@QAEHXZ	0x0034612C	232	blocked	x87 float-compare wall extra fld st1 fstp st1 vs st0 jbe vs jae plus early-return -2 je vs jne-push-2 shape and mov ebp scheduling t=10 model=muse-20
+?Rva003332FEGet@@YAHXZ	0x003332FE	29	blocked	callee dup_00332ef3 rowed YAXXZ 0 args but caller pushes 5 args t=5 model=muse-05
