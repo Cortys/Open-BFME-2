@@ -2,7 +2,5 @@ name,target_rva,target_size,source,notes
 ?_M_erase@?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@AAEXPAU?$_Rb_tree_node@U?$pair@$$CBHH@_STL@@@2@@Z,0x00219880,45,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_int_os.cpp,reloc-derived;call-sites=1;identity=real
 ?dup_00223168@@YAXXZ,0x00223168,45,Code/GameEngine/Source/GameClient/Rva00223547NewNode.cpp,reloc-derived;call-sites=1;identity=real
 ?dup_002d028f@@YAXXZ,0x002D028F,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_2cf4c6_assign.cpp,reloc-derived;call-sites=1;identity=real
-?regainFocus@AudioManager@@QAEXXZ,0x0035D326,5,Code/GameEngine/Source/Main/WinMain.cpp,reloc-derived;call-sites=1;identity=real
 ??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z,0x00396170,45,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy.cpp,reloc-derived;call-sites=2;identity=real
-??1LightPoint@@QAE@XZ,0x00425717,63,Code/Libraries/Source/WWVegas/WWLib/Rva00425B75Delete.cpp,reloc-derived;call-sites=1;identity=real
 ??1Rva006CD6C0SizedDeleting@@UAE@XZ,0x006DAFA0,52,Code/GameEngine/Source/Common/SizedDeleteDestructors.cpp,reloc-derived;call-sites=1;identity=generated

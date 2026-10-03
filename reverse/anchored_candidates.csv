@@ -1,7 +1,6 @@
 target_rva,target_size,zh_source,alternates,confidence,ghidra_name,anchor
 0x0019DB50,2501,hlod.cpp,0,high,FUN_0059db50,BOUNDINGBOX
 0x002DE641,2137,GameState.cpp,0,high,FUN_006de641,CHUNK_MineshaftPortalNetworkManager
-0x006C7600,1117,profile_result.cpp,0,high,FUN_00ac7600,"Function,File,Call count,PTT (all),GTT (all),PT/C (all),GT/C (all),Caller (all)"
 0x0007846F,712,FileSystem.h,0,high,FUN_0047846f,Art/CompiledTextures/
 0x0014FAC2,390,presetexportoptionsdialog.cpp,0,high,FUN_0054fac2,NumDirectionalLights
 0x00230215,390,GameEngine.cpp,0,high,Catch@00630215,ERROR:D3DFailureMessage
@@ -16,7 +15,6 @@ target_rva,target_size,zh_source,alternates,confidence,ghidra_name,anchor
 0x0044A9E6,158,NetworkUtil.cpp,0,high,FUN_0084a9e6,127.0.0.1
 0x0051569F,155,GameState.cpp,0,high,FUN_0091569f,00000000.sav
 0x002DD6D2,147,GameState.cpp,0,high,Catch@006dd6d2,GUI:ErrorSavingGame
-0x00282021,127,Scripts.h,0,high,FUN_00682021,Water Grid
 0x00239539,82,GameClient.cpp,0,high,FUN_00639539,EALogoMovie
 0x0022D53F,67,GameEngine.cpp,0,high,FUN_0062d53f,Uncaught Exception in GameEngine::update
 0x00230412,62,GameEngine.cpp,0,high,Catch@00630412,Uncaught Exception during initialization.
@@ -34,4 +32,3 @@ target_rva,target_size,zh_source,alternates,confidence,ghidra_name,anchor
 0x002C2533,263,GUIEdit.cpp,4,medium,FUN_006c2533,Times New Roman
 0x00418F7D,160,Eva.cpp,1,medium,FUN_00818f7d,Cannot redefine attack priority for unit type %s
 0x003B7951,160,Scripts.cpp,1,medium,FUN_007b7951,ScriptList
-0x004B488F,68,MemoryInit.cpp,2,medium,FUN_008b488f,RadarUpdate
