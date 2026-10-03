@@ -5962,3 +5962,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva00278064@Drawable@@QAEXABVUnicodeString@@@Z	0x00278064	300	blocked	300B EH caption DisplayString plus Font plus LanguageFilter needs full layout t=12 model=muse-11
 ?rva006C2510@Rva006C1F60@@QAEIPADHPAPAD@Z	0x006C2510	214	partial	register allocation size in eax+edx with cx trailer vs retail ecx+eax with dx trailer plus 2 moves and dead mov ecx edi 208vs214B t=30 model=muse-18 score=0.93 stash=reverse/attempts/0x006c2510.cpp
 ?Insert_Triangles@SortingRendererClass@@SAXABVSphereClass@@IIII@Z	0x0012FE00	1520	blocked	1520B WW3D render-sort SSE-heavy 298insns 116XMM over 1000B wall plus 2of7 callees unresolved t=5 model=muse-spark
+?Rva00085677Get@@YAMMM@Z	0x00085677	342	blocked	complex 342B 5x virtual slot 0x18 calls with unclear int args SSE x87 mix no donor t=8 model=muse-04
