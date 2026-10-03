@@ -49673,7 +49673,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004D6F86@Rva00263895Member@@QAEXPAX@Z,,0x004D6F86,62,Code/GameEngine/Source/Common/Rva004D6F86.cpp,matched,member via vtable 0x007F9200 plus arg slots 0x10 0x28 plus embedded members
 ??1Rva00437E72@@UAE@XZ,,0x00437E72,18,Code/GameEngine/Source/Common/Rva00437E72Dtor.cpp,matched,dtor stores vtable g_00C3D294 clears g_Va00E032FC tail-jmps base 0x0054D2CF
 ??_GRva00437E72@@UAEPAXI@Z,,0x00437EEE,28,Code/GameEngine/Source/Common/Rva00437E72Dtor.cpp,matched,deleting dtor via rowed dtor 0x00437E72 and delete
-?rva001DBFEE@AudioManager@@QAE_NXZ,,0x001DBFEE,46,Code/GameEngine/Source/Main/AudioManagerRva001DBFEE.cpp,matched,caller 0x001DC07E loads TheAudio into ecx for both calls
 ?rva00078C10@Rva00078C10@@QAE_NPBV1@PAH1@Z,,0x00078C10,114,Code/GameEngine/Source/Common/Rva00078C10Method.cpp,matched,LINK BONUS via 0x00078F95 guarded LOD query with TheGameLODManager
 ?rva001DBACA@Rva00489360@@QAEXH@Z,,0x001DBACA,44,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,caller 0x001DBD5D passes list values with accumulated offset
 ??0Rva0041AC6A@@QAE@XZ,,0x0041AC6A,32,Code/GameEngine/Source/Common/Rva0041AC6ACtor.cpp,matched,leaf ctor via baseConstruct vtable secondVptr
@@ -50451,7 +50450,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003854C5@GameSpyInfo@@UAEXXZ,,0x003854C5,120,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 8: same shape as leaveGroupRoom with request type 6
 ?leaveStagingRoom@GameSpyInfo@@UAEXXZ,,0x003858DF,119,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 47: ZH leaveStagingRoom with request type 12; clears local staging id and hosting state
 ?reset@GameSpyInfo@@UAEXXZ,,0x00385D25,261,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 1: ZH reset plus BFME 2 fields at +0x60/+0x64/+0x68 and +0x163C; callees are rowed map/set/stats clears
-?rva0035BE55@Shell@@QAE_NXZ,,0x0035BE55,58,Code/GameEngine/Source/GameClient/GUI/Shell/ShellRva0035BE55.cpp,matched,Shell predicate via rowed Audio 0x001DBFEE and globals TheAudio plus TheWritableGlobalData callers 0x0050D145
 ?rva0054E84C@Rva0054E84C@@QAE_NXZ,,0x0054E84C,33,Code/GameEngine/Source/Common/Rva0054E84CBody.cpp,matched,honest list scan via callers in 0x0054E8DC no callees
 ?Rva000527C7Delete@@YGXPAX@Z,,0x000527C7,27,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva000527C7.cpp,matched,retail call pair pin plus row evidence no commas
 ?rva001535FF@Rva0015354E@@QAEXPBD@Z,,0x001535FF,101,Code/Libraries/Source/WWVegas/WWLib/Rva001535FF.cpp,matched,same class Rva0015354E +0x10 COM slots 0x4C 0x6C string WW3DDynamicSet ScienceType cur
@@ -50531,3 +50529,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0037F731Copy@@YAPAVRva0037F551@@PAV1@00PAX@Z,,0x0037F731,38,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F71F copy range stride 0x48 callers 0x0037F77C 0x0037FF20
 ?rva002DAEED@Rva002DACF4@@QAEXHHVAsciiString@@@Z,,0x002DAEED,62,Code/GameEngine/Source/Common/Rva002DACF4Get.cpp,matched,setter twin of getter 0x002DACF4 via same m_arr imul-3 plus callers
 ?rva002DAF6C@Rva002DAF6C@@QAEXHHVAsciiString@@@Z,,0x002DAF6C,64,Code/GameEngine/Source/Common/Rva002DAF6CSet.cpp,matched,biased imul-3 setter twin of Rva002DAF2B plus callers plus EH data
+?rva0035BE55@Shell@@QAE_NXZ,,0x0035BE55,58,Code/GameEngine/Source/GameClient/GUI/Shell/ShellRva0035BE55.cpp,matched,target: Shell predicate DIR32 at VA0x00DFDC14 binds existing theBfmeDfdc14 singleton; TheAudio is distinct VA0x00DFE6E8; native callee1DBFEE and writable-global-data+B00; existing AudioManager compatibility label does not establish owner identity; callers50D145 and50D162
+?rva001DBFEE@AudioManager@@QAE_NXZ,,0x001DBFEE,46,Code/GameEngine/Source/Main/AudioManagerRva001DBFEE.cpp,matched,target: caller0x001DC07E loads receiver from VA0x00DFDC14 (existing theBfmeDfdc14); TheAudio lives at distinct VA0x00DFE6E8; AudioManager carries the existing ABI label only and the singleton owner remains unrecovered; native predicate body verified

@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0035BE55@Shell@@QAE_NXZ @0x0035BE55 58B: honest-address Shell predicate.
-// Evidence: neighbors Shell +0x60 in ShellTop.cpp; callees rowed AudioManager 0x001DBFEE and globals TheAudio plus TheWritableGlobalData +0xB00; callers 0x0050D145 0x0050D162; returns bool.
+// Evidence: neighbors Shell +0x60 in ShellTop.cpp; callees rowed AudioManager 0x001DBFEE and global 0x00DFDC14 (existing theBfmeDfdc14) plus TheWritableGlobalData +0xB00; callers 0x0050D145 0x0050D162; returns bool.
 
 class AudioManager
 {
@@ -9,7 +9,9 @@ public:
 	bool rva001DBFEE();
 };
 
-extern AudioManager *TheAudio;
+// Target DIR32 is 0x00DFDC14; TheAudio is the distinct pointer at 0x00DFE6E8.
+// AudioManager carries the existing predicate ABI label; this owner is unrecovered.
+extern AudioManager *theBfmeDfdc14;
 
 class GlobalData
 {
@@ -38,7 +40,7 @@ private:
 
 bool Shell::rva0035BE55()
 {
-	if (!TheAudio->rva001DBFEE())
+	if (!theBfmeDfdc14->rva001DBFEE())
 		return false;
 	if (m_60 == 0)
 		return true;
