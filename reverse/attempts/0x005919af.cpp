@@ -1,4 +1,6 @@
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
+// partial score=0.97 date=2026-10-04
+// ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.93 date=2026-10-03
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.92 date=2026-10-03
@@ -110,8 +112,8 @@ public:
 UnsignedByte NetPacket::rva005919AF(NetCommandRef *msg)
 {
 	Int len = 0;
-	Bool needNewCommandID = false;
 	NetCommandMsg *cmdMsg = msg->getCommand();
+	Bool needNewCommandID = false;
 	if (m_lastCommandType != cmdMsg->m_commandType) {
 		len += sizeof(UnsignedByte) + sizeof(UnsignedByte);
 	}
