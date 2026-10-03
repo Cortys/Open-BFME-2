@@ -49572,3 +49572,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?readFromDict@Handicap@@QAEXPBVDict@@@Z,,0x003B0EBD,227,Code/GameEngine/Source/Common/RTS/HandicapReadFromDict.cpp,matched,Handicap 2x2 via HANDICAP keys donor BFME1 readFromDict
 ?Rva00241955Insert@@YG?AURva00241955Iter@@U1@ABUBfmeStringRecord00239B46@@@Z,,0x00241955,37,Code/Libraries/Source/WWVegas/WWLib/Rva00241955Insert.cpp,matched,chain lane twin of 0x00239E80 via rowed create 0x00240C89 caller 0x00242EE7
 ?rva0043E132@Rva0043E0C5@@QAE_NHH@Z,,0x0043E132,154,Code/GameEngine/Source/Common/Rva0043E0C5.cpp,matched,same class adjacent body callers 0x0043E712 0x00442ECC
+?rva0014F438@Rva0014DC76@@QAEPAXI@Z,,0x0014F438,28,Code/GameEngine/Source/Common/Rva0014F438Delete.cpp,matched,rowed callee 0x0014DC76 plus rowed delete 0x0002FD60 same 28B delete-wrapper shape
