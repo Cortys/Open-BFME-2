@@ -1,4 +1,6 @@
 // ?rva000ADB2F@Rva000ADB2F@@QAEXHH_N@Z
+// partial score=0.98 date=2026-10-03
+// ?rva000ADB2F@Rva000ADB2F@@QAEXHH_N@Z
 // partial score=0.93 date=2026-09-30
 // ?rva000ADB2F@Rva000ADB2F@@QAEXHH_N@Z
 // partial score=0.93 date=2026-09-30
@@ -16,7 +18,7 @@ private:
 	int m_c;
 	char m_pad1[0x34 - 0x10];
 	int m_34;
-	unsigned int m_38;
+	volatile unsigned int m_38;
 	unsigned int m_3C;
 };
 
@@ -32,7 +34,8 @@ void Rva000ADB2F::rva000ADB2F(int x, int y, bool set)
 	size -= m_38;
 	if (off >= size)
 		return;
-	unsigned char *slot = (unsigned char *)(m_38 + off);
+	unsigned char *base = (unsigned char *)m_38;
+	unsigned char *slot = base + off;
 	unsigned char b = *slot;
 	unsigned char bit = (unsigned char)(1u << (x & 7));
 	if (set)
@@ -40,4 +43,5 @@ void Rva000ADB2F::rva000ADB2F(int x, int y, bool set)
 	else
 		b &= (unsigned char)~bit;
 	*slot = b;
+
 }
