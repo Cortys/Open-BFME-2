@@ -29,6 +29,7 @@ public:
 	void *rva0033321B(int key);
 	void *rva00333261(int key);
 	void *rva0033323D(int key);
+	void *rva00333918(int key);
 
 private:
 	unsigned char m_pad[20];
@@ -88,4 +89,18 @@ void *Rva00332E60::rva0033323D(int key)
 			return begin;
 	}
 	return 0;
+}
+
+void *Rva00332E60::rva00333918(int key)
+{
+	void *found = rva00332E60(key);
+	if (found != 0)
+		return found;
+	found = rva0033321B(key);
+	if (found != 0)
+		return found;
+	found = rva0033323D(key);
+	if (found != 0)
+		return found;
+	return rva00333261(key);
 }

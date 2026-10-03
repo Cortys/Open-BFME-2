@@ -50300,3 +50300,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00492DAB@Rva00492C59@@UAEXXZ,,0x00492DAB,101,Code/GameEngine/Source/GameLogic/Object/Update/Rva00492DABUpdate.cpp,matched,slot22 override via WeaponStore rows plus base 0x004508B7 plus Object 0x002900E0
 ?rva003FB9EB@Rva003FB9C8@@QAEXHH@Z,,0x003FB9EB,35,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,init 2c 4c to 1 and 38 to 0 store args then slot3
 ?rva0033323D@Rva00332E60@@QAEPAXH@Z,,0x0033323D,36,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,range search +0xbc stride 0x9c via caller 0x00333918 same object
+?rva00333918@Rva00332E60@@QAEPAXH@Z,,0x00333918,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,combined search tries 4 tables in turn callers 9 sites
