@@ -7286,3 +7286,5 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva006fc370@@YA_NPAVAptValue@@@Z,0x006FC370,"Apt predicate called with the top stack value by rva006ff5d0 0x006FF5D0; Ghidra 762B unrowed body dispatches through 0x006DC170/0x006DC210/0x006DC0D0; address-derived name"
 ?rva006ff980@@YAXPAVAptValue@@AAVEAStringC@@H@Z,0x006FF980,"Apt string filler called by rva006ffce0 0x006FFCE0 with (value, EAStringC out, 1); Ghidra 682B unrowed; address-derived name"
 ??0Rva0015B110Target@@QAE@PAVRva0015B110Owner@@@Z,0x00152DE9,"0x34-byte refcounted target ctor with vtable 0x00BD3B1C called by rva0015b110 0x0015B110; Ghidra 100B unrowed; address-derived name"
+?Resize@?$VectorClass@VVector3@@@@UAE_NHPBVVector3@@@Z,0x000F0BF1,"ICF twin of the VectorClass<TCBClass> Resize body at this address (12-byte stride); direct call at 0x0017F183 for VertexLoc 0x00DF708C"
+?Resize@?$VectorClass@VVector4@@@@UAE_NHPBVVector4@@@Z,0x001793A0,"16-byte-stride VectorClass<Vector4> Resize; direct call at 0x0017F19D for VertexDiffuse 0x00DFC4E0"
