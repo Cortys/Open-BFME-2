@@ -6432,3 +6432,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva005316E0@Rva005316E0@@QAEEGG@Z	0x005316E0	64	blocked	direct mov vs retail lea plus mov and byte xor tail needs new idea t=18 model=muse-02
 ?rva00583C88@Rva005843DA@@QAEXH@Z	0x583C88	44	landed	landed exact 44B via real _STL::vector size()/operator[] shape copied from rowed sibling 0x583CB4 (stores 3); the hand-rolled begin/end class mis-scheduled the begin load after the index imul t=25 model=deepseek-flash
 ??0Rva004DF418@@QAE@PAVThing@@PBVModuleData@@@Z	0x004df418	104	partial	member ctor with declared dtor yields the EH state 1 store 104B; only the three vtable stores vs the init call are scheduled in the opposite order (call first) t=35 model=deepseek-flash score=0.95 stash=reverse/attempts/0x004df418.cpp
+?rva006FEB50@AptActionInterpreter@@QAEXXZ	0x006FEB50	171	landed	add_match verified via _ReadWriteBarrier schedule fences t=70 model=deepseek-flash

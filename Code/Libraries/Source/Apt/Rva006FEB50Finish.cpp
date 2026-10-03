@@ -1,7 +1,5 @@
 // ?rva006FEB50@AptActionInterpreter@@QAEXXZ
 // partial score=0.95 date=2026-09-30
-// ?rva006FEB50@AptActionInterpreter@@QAEXXZ
-// partial score=0.95 date=2026-09-30
 // cl: /O2 /MD
 // May 2006 Xbox APT0.19.03 PDB supplies member names and class identity.
 // Target startup 7B67A0 constructs global VA E182E0 with 6FE980, then registers
@@ -11,6 +9,11 @@
 // Target independently establishes zero initialization of five 12-byte stacks
 // at 0/C/18/24/34, leaving +30 alone. Only the accessed prefix is modeled;
 // donor names/types describe the stack roles, not a recovered full class ABI.
+// Retail schedules the next stack's element load AFTER the previous stack's
+// zero stores; the two _ReadWriteBarrier scheduling fences below pin that
+// order without emitting any instruction.
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
@@ -54,11 +57,8 @@ struct AptActionInterpreter {
     unsigned char gap40[36];
     int mnStackFrameBase;
     void rva006FEB50();
-    AptActionInterpreter();
 };
-AptActionInterpreter::AptActionInterpreter() {}
 
-// ?rva006FEB50@AptActionInterpreter@@QAEXXZ present-unmatched
 void AptActionInterpreter::rva006FEB50()
 {
     ((AptBasePtrStack *)&stack)->rva006FDE50();
@@ -68,12 +68,14 @@ void AptActionInterpreter::rva006FEB50()
     withStack.capacity = 0;
     withStack.count = 0;
     withStack.elements = 0;
+    _ReadWriteBarrier();
     if (setTargetStack.elements) {
         g_pChainBlockAllocator->freeBlock(setTargetStack.elements, setTargetStack.capacity * 4);
     }
     setTargetStack.capacity = 0;
     setTargetStack.count = 0;
     setTargetStack.elements = 0;
+    _ReadWriteBarrier();
     if (thisStack.elements) {
         g_pChainBlockAllocator->freeBlock(thisStack.elements, thisStack.capacity * 4);
     }
