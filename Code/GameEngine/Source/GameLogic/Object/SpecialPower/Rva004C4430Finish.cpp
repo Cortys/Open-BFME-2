@@ -9,7 +9,6 @@
 // -> Rva002A9E25FloatField::set(float) (row 0x002A9E25) with early push/fstp reuse; tail
 // mov ecx,esi -> Rva00492FC2::rva00492FC2(bool) (row 0x00492FC2). Negative offsets via explicit
 // byte casts (same bytes as MI second-base); ScavengerSpecialPower neighbours give TU/flags.
-// ?rva004C4430@Rva004C4430@@QAEX_N@Z present-unmatched
 
 class Player;
 
@@ -53,7 +52,8 @@ void Rva004C4430::rva004C4430(bool flag)
 		float f = (*(FloatHolder004C4430 **)((char *)this - 12))->m_7C;
 		if (flag != 0)
 			f = 0.0f;
-		((Rva002A9E25FloatField *)(*(Object **)((char *)this - 8))->getControllingPlayer())->set(f);
+		Object *obj = *(Object **)((char *)this - 8);
+		((Rva002A9E25FloatField *)obj->getControllingPlayer())->set(f);
 	}
 	((Rva00492FC2 *)this)->rva00492FC2(flag);
 }
