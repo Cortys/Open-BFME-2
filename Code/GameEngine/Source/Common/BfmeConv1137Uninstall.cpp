@@ -42,11 +42,16 @@ class StringClass
 	void Free_String(void);
 
 public:
+#pragma optimize("t", off)
+#pragma optimize("s", on)
+
 	StringClass(int length, bool temporary) : m_Buffer(m_EmptyString)
 	{
 		Get_String(length, temporary);
 		m_Buffer[0] = m_NullChar;
 	}
+#pragma optimize("", on)
+
 	~StringClass(void);
 };
 

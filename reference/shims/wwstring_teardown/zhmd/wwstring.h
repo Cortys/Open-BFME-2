@@ -1,7 +1,8 @@
 // Opt-in StringClass teardown view. Retained declarations and all other bodies
 // from reference/open-bfme-1/inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib/wwstring.h
 // donor revision 6d9434269164392c5ba62aaa7c15a86b5b020d76; input SHA256 bae9c5df479c151c0f9d59806ca66147c812f67fd1d1997364b55351247ca058.
-// Only public teardown binding is established here from target call evidence.
+// Target evidence establishes the teardown binding and39-byte int/bool ctor.
+// Other declarations and bodies retain their recorded source basis.
 /*
 **	Command & Conquer Generals Zero Hour(tm)
 **	Copyright 2025 Electronic Arts Inc.
@@ -277,6 +278,9 @@ StringClass::StringClass (bool hint_temporary)
 ///////////////////////////////////////////////////////////////////
 //	StringClass
 ///////////////////////////////////////////////////////////////////
+// Native int/bool ctor0x00065F34 is39B; restore the TU flags after this body.
+#pragma optimize("t", off)
+#pragma optimize("s", on)
 inline
 StringClass::StringClass (int initial_len, bool hint_temporary)
 	:	m_Buffer (m_EmptyString)
@@ -286,6 +290,7 @@ StringClass::StringClass (int initial_len, bool hint_temporary)
 
 	return ;
 }
+#pragma optimize("", on)
 
 ///////////////////////////////////////////////////////////////////
 //	StringClass

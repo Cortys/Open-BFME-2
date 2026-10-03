@@ -23,12 +23,8 @@ extern "C" __declspec(dllimport) int __cdecl _snprintf(char *buffer,
 class StringClass
 {
 public:
-	StringClass(int initial_len = 0, bool hint_temporary = false)
-		: m_Buffer(m_EmptyString)
-	{
-		Get_String(initial_len, hint_temporary);
-		m_Buffer[0] = m_NullChar;
-	}
+StringClass(int initial_len = 0, bool hint_temporary = false);
+
 	StringClass(const char *string, bool hint_temporary = false)
 		: m_Buffer(m_EmptyString)
 	{
@@ -83,6 +79,17 @@ private:
 	char *m_Buffer;
 	static char m_NullChar;
 };
+// Keep the member body under its own compiler optimization context.
+#pragma optimize("t", off)
+#pragma optimize("s", on)
+inline StringClass::StringClass(int initial_len, bool hint_temporary)
+		: m_Buffer(m_EmptyString)
+	{
+		Get_String(initial_len, hint_temporary);
+		m_Buffer[0] = m_NullChar;
+	}
+#pragma optimize("", on)
+
 
 // StringClass::m_EmptyString: defined in wwstring.cpp (= &m_NullChar).
 // StringClass::m_NullChar: defined in wwstring.cpp.

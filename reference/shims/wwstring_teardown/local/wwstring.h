@@ -1,7 +1,8 @@
 // Opt-in StringClass teardown view. Retained declarations and all other bodies
 // from Code/Libraries/Source/WWVegas/WWLib/wwstring.h
 // repository header at 5ec1f39a83c557109dc96878953e65e3b991d18e; BFME1 basis revision 6d9434269164392c5ba62aaa7c15a86b5b020d76; input SHA256 6680f5a7e7efc405d988f931967eff9897267e2f69fa5694db2270065465b173.
-// Only public teardown binding is established here from target call evidence.
+// Target evidence establishes the teardown binding and39-byte int/bool ctor.
+// Other declarations and bodies retain their recorded source basis.
 // StringClass, matching the layout and inline bodies of the Generals Zero Hour
 // reference (Libraries/Source/WWVegas/WWLib/wwstring.h). StringClass has no vtable
 // and a single member (m_Buffer), so this reproduces the object layout exactly.
@@ -409,6 +410,9 @@ StringClass::StringClass (bool hint_temporary)
 ///////////////////////////////////////////////////////////////////
 //	StringClass
 ///////////////////////////////////////////////////////////////////
+// Native int/bool ctor0x00065F34 is39B; restore the TU flags after this body.
+#pragma optimize("t", off)
+#pragma optimize("s", on)
 inline
 StringClass::StringClass (int initial_len, bool hint_temporary)
 	:	m_Buffer (m_EmptyString)
@@ -418,6 +422,7 @@ StringClass::StringClass (int initial_len, bool hint_temporary)
 
 	return ;
 }
+#pragma optimize("", on)
 
 ///////////////////////////////////////////////////////////////////
 //	StringClass
