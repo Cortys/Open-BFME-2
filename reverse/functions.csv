@@ -49363,3 +49363,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?Rva003FED32DeleteButtonFlash@@YAXPAPAX@Z,,0x003FED32,52,Code/GameEngine/Source/GameClient/Rva003FED32.cpp,matched,UI firer DeleteButtonFlash via empty-or-label and invoke
 ?Rva003FEDDBShowButtonFlash@@YAXPAPAX@Z,,0x003FEDDB,52,Code/GameEngine/Source/GameClient/Rva003FEDDB.cpp,matched,UI firer ShowButtonFlash via empty-or-label and invoke
 ?rva003FE0B3@Rva003FE0B3@@QAEXUTreeHintRef00217D4C@@@Z,,0x003FE0B3,56,Code/GameEngine/Source/Common/Rva003FE0B3.cpp,matched,TreeHintRef setter to plus4C via operator assign
+??0Rva003FE792@@QAE@UTreeHintRef00217D4C@@H@Z,,0x003FE792,56,Code/GameEngine/Source/Common/Rva003FE792.cpp,matched,TreeHint ctor with vtable AddRef and ints
