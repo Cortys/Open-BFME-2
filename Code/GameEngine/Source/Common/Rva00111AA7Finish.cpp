@@ -1,5 +1,4 @@
 // ??0Rva00111AA7@@QAE@PBDH@Z
-// partial score=0.95 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /Os /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0Rva00111AA7@@QAE@PBDH@Z, retail 0x00111AA7, 40 bytes. Ctor with StringBase
@@ -11,6 +10,8 @@
 #include "ascii_string.h"
 #include <string.h>
 #pragma intrinsic(memset)
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 class Rva00111AA7
 {
@@ -25,8 +26,10 @@ private:
 
 // ??0Rva00111AA7@@QAE@PBDH@Z @0x00111AA7
 Rva00111AA7::Rva00111AA7(const char *s, int x)
-	: m_str(s), m_04(x)
+	: m_str(s)
 {
+	m_04 = x;
+	_ReadWriteBarrier();
 	m_18 = 0;
 	memset(m_08, 0, sizeof(m_08));
 }
