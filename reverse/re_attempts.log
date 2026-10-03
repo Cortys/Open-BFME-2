@@ -6435,3 +6435,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva006FEB50@AptActionInterpreter@@QAEXXZ	0x006FEB50	171	landed	add_match verified via _ReadWriteBarrier schedule fences t=70 model=deepseek-flash
 ?Rva00527925Fire@@YAHPAX0PBD1PBM@Z	0x00527925	106	partial	s in ecx vs eax zero swapped mov ecx after s-push vs before +1B mov ecx ebp-0x10 vs mov eax eax t=25 model=muse-09 score=0.92 stash=reverse/attempts/0x00527925.cpp
 ?rva00308C31@Rva00308C31@@QAEXXZ	0x00308C31	447	blocked	447B LOD mesh loader needs full virtual LOD water-string modeling first probe 89/447 t=15 model=muse-09
+?Rva006D4F70Plus@EAStringC@@QBE?AV1@PBD@Z	0x006D4F70	301	blocked	frame sub c vs 10 plus missing mov esp10 esi plus loop nop plus copy dest t=10 model=muse-01 (stash 0.9 kept)
