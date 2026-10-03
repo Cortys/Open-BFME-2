@@ -45,3 +45,22 @@ SciVec *__cdecl Rva00339A8DCopy(SciVec *first, SciVec *last, SciVec *dest, void 
 	}
 	return dest;
 }
+
+// ?Rva00339ABFCopy@@YAPAV?$vector@HV?$allocator@H@_STL@@@_STL@@PAV12@00PAXH@Z @0x00339ABF 50B copy-backward via rowed 0x0021C21B stride 0xC with dummy trailing args.
+// Retail: push ebp / mov ebp esp / mov eax [ebp+c] / sub eax [ebp+8] / push 0xc / cdq / pop ecx / idiv ecx / test eax eax / jle / push esi / mov esi eax / sub [ebp+c] 0xc / sub [ebp+0x10] 0xc / push [ebp+c] / mov ecx [ebp+0x10] / call 0x21C21B / dec esi / jne / pop esi / mov eax [ebp+0x10] / pop ebp / ret.
+// Target facts: __cdecl (first last destEnd tag extra) -> destStart; count=(last-first)/12 via idiv 0xC; loop *--dest=*--last via rowed vector assign --last --dest; tag/extra dead for 5-arg callers with add esp 0x14; caller 0x00339D57 pushes 5.
+// Callers: 0x00339D57 wrapper pushes 5; callees: 0x0021C21B vector<int> assign (int spelling of folded ScienceType assign).
+// Precedent: Rva00339A8DCopy 50B forward same stride/callex in this TU; honest Rva address-derived free-function name.
+
+SciVec *__cdecl Rva00339ABFCopy(SciVec *first, SciVec *last, SciVec *dest, void *tag, int extra)
+{
+	int n = last - first;
+	if (n <= 0)
+		return dest;
+	for (int i = n; i != 0; --i) {
+		--last;
+		--dest;
+		*dest = *last;
+	}
+	return dest;
+}
