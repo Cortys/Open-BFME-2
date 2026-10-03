@@ -50265,3 +50265,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004FF9C9@Rva004FF9C9@@QAEPAXH@Z,,0x004FF9C9,19,Code/Libraries/Source/WWVegas/WWLib/stlport_map_004FF9C9.cpp,matched,map find thunk node plus 0x34 returns inner vector
 ??0Rva00151DAB@@QAE@ABV0@@Z,,0x001709BA,29,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,Rva00151DAB copy ctor via pod key plus rowed AssetReference copy proved by _Construct 0x00170A97
 ?rva003186EE@Rva003186EE@@QAEXHHH@Z,,0x003186EE,43,Code/GameEngine/Source/Common/Rva003186EE.cpp,matched,leaf 3-arg setter via rowed 0x003184B8 plus g_00DFEC68
+??$_Construct@VRva00151DAB@@V1@@_STL@@YAXPAVRva00151DAB@@ABV1@@Z,,0x00170A97,18,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,pinned _Construct null-guarded placement copy via rowed 0x001709BA copy

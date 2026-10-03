@@ -68,3 +68,16 @@ Rva00151DAB::Rva00151DAB(const Rva00151DAB &that)
 	, _ref(that._ref)
 {
 }
+
+namespace _STL
+{
+template <class _T1, class _T2> void _Construct(_T1 *__p, const _T2 &__val);
+}
+
+template <> void _STL::_Construct<Rva00151DAB, Rva00151DAB>(Rva00151DAB *p, const Rva00151DAB &v)
+{
+	if (p == 0) {
+		return;
+	}
+	p->Rva00151DAB::Rva00151DAB(v);
+}
