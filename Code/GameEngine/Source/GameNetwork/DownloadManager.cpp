@@ -127,7 +127,6 @@ void DownloadManager::queueFileForDownload( AsciiString server, AsciiString user
 	m_queuedDownloads.push_back(q);
 }
 
-// ?downloadNextQueuedFile@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::downloadNextQueuedFile( void )
 {
 	QueuedDownload q;
