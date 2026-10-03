@@ -34,4 +34,4 @@ void __cdecl operator delete[](void *block) throw();
 #define BPT_EPSILON					0.0001f
 #define BPT_COINCIDENCE_EPSILON	0.000001f
 
-template class SimpleVecClass<Vector3>;
+template bool SimpleVecClass<Vector3>::Resize(int);
