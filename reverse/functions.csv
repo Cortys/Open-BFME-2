@@ -49082,3 +49082,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva002786D9@Drawable@@QAEXPAVXfer@@@Z,,0x002786D9,400,Code/GameEngine/Source/GameClient/DrawableRva002786D9.cpp,matched,Drawable xferDrawableModules via 0x14C plus Version1 plus DrawableModule
 ?rva006BD830@GeometryInfo@@QBEMXZ,,0x006BD830,108,Code/GameEngine/Source/Common/GeometryInfo_getMaxHeightAbovePosition.cpp,matched,GeometryInfo max via 0x14C plus BfmeZeroRange plus dual flag
 ?Rva00216517Fire@@YAHPAVRva00222A8BTarget@@PAXPBDPBIPBM@Z,,0x00216517,153,Code/GameEngine/Source/GameClient/Rva00216517Fire.cpp,matched,int-return firer via rowed gets and invoke row 0x00222A8B with empty fallback
+?rva00216670@Rva00216670@@QAEXIM@Z,,0x00216670,75,Code/GameEngine/Source/GameClient/Rva00216670.cpp,matched,chain from 0x00216517 banner offset guard via SetBannerXOffset
