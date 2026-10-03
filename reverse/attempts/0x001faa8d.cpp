@@ -1,7 +1,5 @@
 // ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z
-// partial score=0.97 date=2026-10-01
-// ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z
-// partial score=0.97 date=2026-10-01
+// partial score=0.98 date=2026-10-03
 // cl: /O1 /MD
 // ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z 0x001FAA8D 145B
 // Evidence: chain via rowed 0x001FA7AC; xfer shape with IsLightCRC early-out via slot 0x10 then Version1 via rowed 0x000053EE then base rva001F37C4 on this then m_94 chain call then uint at +0x88 via slot 0x78 then Coord3DBase at +0x48 via slot 0x60 then uints at +0x54/+0x58 via slot 0x78 then ParticleSystemID via rowed XferParticleSystemID 0x0030600A. Xfer declaration copied verbatim from PoisonedBehaviorXfer.cpp (slot-3 recipe). Honest Rva names.
@@ -25,6 +23,9 @@ class Snapshot;
 class Thing;
 class ModuleData;
 class Object;
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 class Xfer
 {
@@ -102,9 +103,14 @@ ParticleSystem *Make001FCBD7();
 
 struct BfmeParticleSystemHandle
 {
-	ParticleSystem *volatile m_system;
+	ParticleSystem *m_system;
 	void *m_prev;
 	void *m_next;
+	operator bool() const { return m_system != 0; }
+	ParticleSystem *operator->() const
+	{
+		return m_system ? m_system : Make001FCBD7();
+	}
 };
 
 class Rva001F37C4
@@ -147,12 +153,10 @@ void Rva001FAA8D::rva001FAA8D(Xfer *xfer)
 	*xfer == m_54;
 	*xfer == m_58;
 	int id = 0;
-	if (m_78.m_system)
+	if (m_78)
 	{
-		ParticleSystem *ps = m_78.m_system;
-		if (!ps)
-			ps = Make001FCBD7();
-		id = ps->m_a8;
+		_ReadWriteBarrier();
+		id = m_78->m_a8;
 	}
 	XferParticleSystemID(xfer, &id);
 }
