@@ -25,6 +25,7 @@ public:
 	}
 	AsciiString &operator=(const AsciiString &);
 	~AsciiString();
+	static const AsciiString TheEmptyString;
 protected:
 	void releaseBuffer();
 private:
@@ -144,9 +145,11 @@ template void _STL::_Construct<BfmeStringRecord001EA478,BfmeStringRecord001EA478
 // Original application type and scalar meanings are unknown.
 struct BfmeStringRecord00426A5B {
     AsciiString text; unsigned char flag0, flag1, flag2;
+    BfmeStringRecord00426A5B();
     BfmeStringRecord00426A5B(const BfmeStringRecord00426A5B &o) : text(o.text), flag0(o.flag0), flag1(o.flag1), flag2(o.flag2) {}
     BfmeStringRecord00426A5B &operator=(const BfmeStringRecord00426A5B &o);
 };
+BfmeStringRecord00426A5B::BfmeStringRecord00426A5B() : text(AsciiString::TheEmptyString), flag0(0), flag1(1), flag2(0) {}
 BfmeStringRecord00426A5B &BfmeStringRecord00426A5B::operator=(const BfmeStringRecord00426A5B &o) {
     text = o.text;
     flag0 = o.flag0;
