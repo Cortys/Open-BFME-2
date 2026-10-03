@@ -30,8 +30,11 @@ public:
 	void setPlayerLeaveStatus(int slotIndex, const AsciiString &playerName, int isHuman);
 	PlayerLeaveStatus *getPlayerLeaveStatus(int playerIndex);
 	void rva0023D17D();
+	void rva0023D201(int slotIndex, int status);
 private:
-	unsigned char m_unknown00[0x1C4];
+	unsigned char m_unknown00[0x40];
+	int m_frame40;
+	unsigned char m_unknown44[0x1C4 - 0x44];
 	PlayerLeaveStatus m_playerLeaveStatus[8];
 };
 
@@ -62,4 +65,12 @@ void GameLogic::rva0023D17D()
 		m_playerLeaveStatus[i].m_status = 0;
 		m_playerLeaveStatus[i].m_isHuman = 0xff;
 	}
+}
+// ?rva0023D201@GameLogic@@QAEXHH@Z @0x0023D201 40B: range-checks slot 0-7, stores arg2 to entry+0 and this+0x40 frame to entry+4 with stride 0x1C. Same PlayerLeaveStatus array at +0x1C4 as neighbours. Callers at 0x0025E22B and 0x0025E6D6.
+void GameLogic::rva0023D201(int slotIndex, int status)
+{
+	if (slotIndex < 0 || slotIndex >= 8)
+		return;
+	m_playerLeaveStatus[slotIndex].m_status = status;
+	m_playerLeaveStatus[slotIndex].m_quitFrame = m_frame40;
 }

@@ -49739,3 +49739,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0030D606@Rva0030D606@@QAEXXZ,,0x0030D606,43,Code/GameEngine/Source/GameClient/Rva0030D606Method.cpp,matched,Audio handle release plus holder clear twin of Drawable rva002743D7 via TheAudio slot 6c plus rowed clear
 ?rva0023D17D@GameLogic@@QAEXXZ,,0x0023D17D,40,Code/GameEngine/Source/GameLogic/System/GameLogicSetPlayerLeaveStatus.cpp,matched,GameLogic 8-slot leave-status init via PlayerLeaveStatus stride 0x1C
 ?rva0023D76E@GameLogic@@QAEXH@Z,,0x0023D76E,37,Code/GameEngine/Source/GameLogic/System/GameLogicProcessProgress.cpp,matched,GameLogic 8-slot flag init via lastHeardFrom at 0x128
+?rva0023D201@GameLogic@@QAEXHH@Z,,0x0023D201,40,Code/GameEngine/Source/GameLogic/System/GameLogicSetPlayerLeaveStatus.cpp,matched,GameLogic 8-slot status init via frame at 0x40
