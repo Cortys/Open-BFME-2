@@ -50443,3 +50443,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0BattlePlanUpdateModuleData@@QAE@XZ,,0x0049780A,153,Code/GameEngine/Source/GameLogic/Object/Update/BattlePlanUpdateModuleDataCtor.cpp,matched,StealthDetector-shaped module data ctor; m_visionObjectName address local live across the scalar block holds the +0xA4 zero in the tail store block
 ?rva0039B64D@Rva0039B64D@@QAEXH@Z,,0x0039B64D,27,Code/GameEngine/Source/Common/Rva0039B64DMethod.cpp,matched,guarded add to +0xD4 under TheGameLogic flag retail bytes
 ?rva0039B668@Rva0039B668@@QAEXH@Z,,0x0039B668,27,Code/GameEngine/Source/Common/Rva0039B668Method.cpp,matched,guarded add to +0xD8 under TheGameLogic flag retail bytes
+??_GControlBarSchemeManager@@QAEPAXI@Z,,0x0031AA18,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-14-31AA18.cpp,matched,deleting dtor via family delete helper
