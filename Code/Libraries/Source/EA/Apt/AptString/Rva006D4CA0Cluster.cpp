@@ -11,6 +11,7 @@ extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 
 int __cdecl rva006d3e40(const char *pBuffer);
+int __cdecl utf8EncodedLength(int c);
 
 int __cdecl rva006d4ca0(const char *pBuffer)
 {
@@ -74,4 +75,57 @@ int __cdecl rva006d4d80(const char *pBuffer)
 			return count;
 		++count;
 	}
+}
+
+// ?rva006d4dc0@@YAXPADH@Z @0x006D4DC0 313B: UTF-8 encode iCharacter into pBuffer 1-4 bytes with EAString.inl asserts 0x6C5-0x6C8. Same assert triple and /O2 flags as neighbours.
+void __cdecl rva006d4dc0(char *pBuffer, int iCharacter)
+{
+	if (iCharacter == 0)
+	{
+		g_bfmeAptAssertAtE17734("iCharacter != 0", ".\\string\\EAString.inl", 0x6C5);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	if (rva006d3e40(pBuffer) == 0)
+	{
+		g_bfmeAptAssertAtE17734("UTF8_GetCharacter(pBuffer) != 0", ".\\string\\EAString.inl", 0x6C6);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	int sizeBuf = rva006d4ca0(pBuffer);
+	int sizeChar = utf8EncodedLength(iCharacter);
+	if (sizeBuf != sizeChar)
+	{
+		g_bfmeAptAssertAtE17734("UTF8_GetCharacterSize(pBuffer) == UTF8_GetCharacterSize(iCharacter)", ".\\string\\EAString.inl", 0x6C7);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	if (iCharacter > 0x10FFFF)
+	{
+		g_bfmeAptAssertAtE17734("UTF8_IsValid(iCharacter)", ".\\string\\EAString.inl", 0x6C8);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	if (iCharacter < 0x80)
+	{
+		pBuffer[0] = (char)iCharacter;
+		return;
+	}
+	if (iCharacter < 0x800)
+	{
+		pBuffer[0] = (char)(0xC0 | (iCharacter >> 6));
+		pBuffer[1] = (char)(0x80 | (iCharacter & 0x3F));
+		return;
+	}
+	if (iCharacter < 0x10000)
+	{
+		pBuffer[0] = (char)(0xE0 | (iCharacter >> 12));
+		pBuffer[1] = (char)(0x80 | ((iCharacter >> 6) & 0x3F));
+		pBuffer[2] = (char)(0x80 | (iCharacter & 0x3F));
+		return;
+	}
+	pBuffer[0] = (char)(0xF0 | (iCharacter >> 18));
+	pBuffer[1] = (char)(0x80 | ((iCharacter >> 12) & 0x3F));
+	pBuffer[2] = (char)(0x80 | ((iCharacter >> 6) & 0x3F));
+	pBuffer[3] = (char)(0x80 | (iCharacter & 0x3F));
 }
