@@ -108,3 +108,13 @@ void __stdcall Rva000789A0Update(Rva000789A0Outer *obj)
 	NameKeyType key = TheNameKeyGenerator->nameToKey(name);
 	obj->m_holder->m_key = key;
 }
+
+// ?Rva0007898BClear@@YGXPAVRva000789A0Outer@@@Z, retail 0x0007898B, 21 bytes.
+// Companion to Rva000789A0Update above: same outer (+0x2E8 holder) and holder
+// (+4 m_key) layout; clears m_key to NK_UNKNOWN when holder is non-null.
+// Evidence: ret 4 single stack arg; and [eax+4],0 under /O1; called from 0x78BAF.
+void __stdcall Rva0007898BClear(Rva000789A0Outer *obj)
+{
+	if (obj->m_holder != 0)
+		obj->m_holder->m_key = NK_UNKNOWN;
+}
