@@ -46,13 +46,44 @@ extern Display *TheDisplay;
 void __cdecl setFPMode();
 extern "C" __declspec(dllimport) void __stdcall Sleep(unsigned long);
 
+struct CRITICAL_SECTION
+{
+	unsigned char m_data[0x1c];
+};
+
+extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(
+	CRITICAL_SECTION *lock);
+extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(
+	CRITICAL_SECTION *lock);
+
+#pragma optimize("t", on)
+class CriticalSectionLock
+{
+public:
+	explicit CriticalSectionLock(int lock) : m_lock(lock)
+	{
+		EnterCriticalSection((CRITICAL_SECTION *)m_lock);
+	}
+	~CriticalSectionLock()
+	{
+		LeaveCriticalSection((CRITICAL_SECTION *)m_lock);
+	}
+
+	int m_lock;
+};
+#pragma optimize("", on)
+
 class Rva001DC07E
 {
 public:
 	void rva001DC07E();
+	void rva001DC5EC();
 private:
-	char m_pad[0x64];
+	unsigned char m_pad00[0x38];
+	CRITICAL_SECTION m_cs;
+	unsigned char m_pad54[0x10];
 	unsigned long m_64;
+	unsigned char m_68;
 };
 
 void Rva001DC07E::rva001DC07E()
@@ -64,5 +95,16 @@ void Rva001DC07E::rva001DC07E()
 		TheDisplay->unk30();
 		setFPMode();
 		Sleep(m_64);
+	}
+}
+
+// ?rva001DC5EC@Rva001DC07E@@QAEXXZ @0x001DC5EC 74B: guarded wait-loop call under lock at +0x38 with reentrancy flag at +0x68. Evidence: same this as callee 0x001DC07E; lock offset matches neighbour 0x001DC57C.
+void Rva001DC07E::rva001DC5EC()
+{
+	CriticalSectionLock lock((int)&m_cs);
+	if (m_68 == 0) {
+		m_68 = 1;
+		rva001DC07E();
+		m_68 = 0;
 	}
 }
