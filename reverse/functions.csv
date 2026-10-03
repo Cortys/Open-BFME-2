@@ -50171,3 +50171,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BCC6ESet@@YGX_N@Z,,0x003BCC6E,19,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCC6ESet.cpp,matched,script sets ScriptEngine +0x1a4d6 byte from bool arg
 ?Rva003BCC81Set@@YGX_N@Z,,0x003BCC81,19,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCC81Set.cpp,matched,script sets GlobalData +0xd34 byte from bool arg
 ?rva004C4430@Rva004C4430@@QAEX_N@Z,,0x004C4430,77,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva004C4430Finish.cpp,matched,SpecialPower flag gate sets float via local Object pointer getControllingPlayer then tail bool setter
+?rva0027900B@@YA_NPAD@Z,,0x0027900B,105,Code/GameEngine/Source/GameClient/Rva0027900BFinish.cpp,matched,static internal-linkage PlayerTemplateStore name lookup helper object arg in EAX as retail caller mov eax edi call
