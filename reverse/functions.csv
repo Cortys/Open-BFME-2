@@ -50198,3 +50198,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005FBB70@Rva005FBB68@@QAEXM@Z,,0x005FBB70,19,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,chain wrapper over rowed 0x005FB961 via Rva005FBB68 class
 ?Rva00427068Parse@@YAXPAVINI@@HPAV?$vector@UBfmeStringRecord00426A5B@@V?$allocator@UBfmeStringRecord00426A5B@@@_STL@@@_STL@@H@Z,,0x00427068,74,Code/GameEngine/Source/Common/Rva0042700FParse.cpp,matched,chain via just-landed 0x42700F plus size sar3 plus flag0 mark new
 ?Rva003BC524Set@@YGXABVAsciiString@@M@Z,,0x003BC524,43,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC524Set.cpp,matched,script audio slot 0xc0 with float scaled by 0.01
+?rva0028DA28@Object@@QAEXXZ,,0x0028DA28,63,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028DA28.cpp,matched,clears 0x284 0x80 via memset thunk plus walks 0x244 array via slot 0x28 plus Rva004CE245 plus prev ObjectRva0028D9E5
