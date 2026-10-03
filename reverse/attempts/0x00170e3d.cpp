@@ -1,3 +1,5 @@
+// ?rva00170E3D@Rva00170B19@@QAEPAPAXPAPAXABVRva00151DAB@@@Z
+// partial score=0.98 date=2026-10-03
 // cl: /O1 /EHs /MD
 //
 // STLport red-black tree node erases that destroy each node's value, with the
@@ -162,25 +164,6 @@ void Rva00170AE4::rva00170BAD()
 	m_04Flag = 0;
 }
 
-class Rva00170EBC
-{
-public:
-	void rva00170EBC(bool b);
-private:
-	char _pad00[8]; // +0x00
-	Rva00170AE4 _tree; // +0x08
-	char _pad10[12]; // +0x10
-	bool _1c; // +0x1C
-	bool _1d; // +0x1D
-};
-
-void Rva00170EBC::rva00170EBC(bool b)
-{
-	_tree.rva00170BAD();
-	_1c = true;
-	_1d = b;
-}
-
 class Rva00151DAB
 {
 public:
@@ -223,6 +206,7 @@ public:
 	void rva00170BD6();
 	void *rva00170B70(const Rva00151DAB &x);
 	void rva00170C87(void **out, Rva00170B19Node *x, Rva00170B19Node *y, const Rva00151DAB &v, Rva00170B19Node *w);
+	void **rva00170E3D(void **out, const Rva00151DAB &v);
 private:
 	Rva00170B19Node *m_00Head; // +0x00
 	int m_04Flag; // +0x04
@@ -284,6 +268,30 @@ void Rva00170B19::rva00170C87(void **out, Rva00170B19Node *x, Rva00170B19Node *y
 	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)z, (_STL::_Rb_tree_node_base *&)m_00Head->_parent);
 	++m_04Flag;
 	*out = z;
+}
+
+// ?rva00170E3D@Rva00170B19@@QAEPAPAXPAPAXABVRva00151DAB@@@Z present-unmatched
+void **Rva00170B19::rva00170E3D(void **out, const Rva00151DAB &v)
+{
+	Rva00170B19Node *head = m_00Head;
+	Rva00170B19Node *cur = head->_parent;
+	Rva00170B19Node *y;
+	if (cur == 0) {
+		y = head;
+	} else {
+		unsigned int key = v._key;
+		y = head;
+		while (cur != 0) {
+			y = cur;
+			if (key < ((Rva00151DAB *)((char *)cur + 0x10))->_key) {
+				cur = cur->_left;
+			} else {
+				cur = cur->_right;
+			}
+		}
+	}
+	rva00170C87(out, cur, y, v, 0);
+	return out;
 }
 
 class Rva0027EA49 { public: ~Rva0027EA49(); };

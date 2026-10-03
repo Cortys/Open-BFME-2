@@ -6551,3 +6551,4 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?rva005AAA34@Rva005AA860@@QAEXXZ	0x005AAA34	162	blocked	set addr add ecx 0xc vs lea ecx eax+0xc with m_58 in ecx vs eax t=20 model=muse-03 (stash 0.98 kept)
 ?rva00597123@Rva005970ED@@QAEXXZ	0x00597123	36	partial	test-mov-je vs test-je-mov scheduling only zero reg diffs t=20 model=muse-03 score=0.94 stash=reverse/attempts/0x00597123.cpp
 ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z	0x0034290D	101	partial	barrier after c-store fixes m_6F/m_70 store order; sole wall remains al-vs-cl bool temp and c-load scheduling t=15 model=deepseek-flash score=0.95 stash=reverse/attempts/0x0034290d.cpp
+?rva00170E3D@Rva00170B19@@QAEPAPAXPAPAXABVRva00151DAB@@@Z	0x00170E3D	59	partial	push eax vs push 0 for x null at +0x29 t=25 model=muse-04 score=0.98 stash=reverse/attempts/0x00170e3d.cpp
