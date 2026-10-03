@@ -6182,3 +6182,10 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ??1ScriptAction@@UAE@XZ	0x003B43CC	92	partial	push1 vs push0 plus manual delete of virtual return t=25 model=muse-11 score=0.91 stash=reverse/attempts/0x003b43cc.cpp
 ??1ScriptAction@@UAE@XZ	0x003B43CC	92	blocked	push1 vs push0 plus manual delete of virtual return push-eax-call-delete-pop-ecx 7B t=20 model=muse-11 (stash 0.91 kept)
 ??0Rva003B417E@@QAE@XZ	0x003B417E	122	partial	copy-ctor setup plus edi save hoisted above vptr and early inits needs anti-hoist lever t=20 model=muse-11 score=0.96 stash=reverse/attempts/0x003b417e.cpp
+??0Rva00074136@@QAE@XZ	0x00074136	138	blocked	float second store via int reload not xmm0 reuse plus EH save early 139B vs 138B t=12 model=muse-04 (stash 0.93 kept)
+?Rva00074DB4Get@@YGPAVRva000748F6@@PAUMat12Src@@MHEH@Z	0x00074DB4	238	blocked	only scale load movss xmm0 late +0x67 vs +0x4c size+insns exact G7 Og WriteBarrier tried t=25 model=muse-04 (stash 0.97 kept)
+?Rva00074F25Get@@YGPAVRva000748F6@@PAUMat12Src@@MMHEH@Z	0x00074F25	241	blocked	only scale load movss xmm0 late +0x67 vs +0x52 size+insns exact scale-local tried t=12 model=muse-04 (stash 0.97 kept)
+?Rva00074C3FGet@@YGPAVRva000748F6@@PAUMat12Src@@PAUVec3@@HEH@Z	0x00074C3F	250	blocked	only 4 preloads order idx0 vs scales regs exact size+insns exact t0 G7 tried t=18 model=muse-04 (stash 0.98 kept)
+?rva003B3EEA@Rva003B3EEA@@QAEXXZ	0x003B3EEA	31	blocked	SIB base-index swapped edx+eax vs eax+edx at +0xe +0x16 G7-removed gives lea-shl t=8 model=muse-04 (stash 0.94 kept)
+?Rva00075091Get@@YGPAVRva000748F6@@PAUMat12Src@@MHEH@Z	0x00075091	238	partial	only scale load movss xmm0 late +0x67 vs +0x4c size+insns exact same wall as 0x74DB4 sib-exhausted t=6 model=muse-04 score=0.97 stash=reverse/attempts/0x00075091.cpp
+?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z	0x0030596C	137	partial	push ebx esi edi late saves early jne xor jmp vs shared je t=18 model=muse-04 score=0.93 stash=reverse/attempts/0x0030596c.cpp
