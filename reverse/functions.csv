@@ -50520,3 +50520,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002DAEB9@Rva002DAEB9@@QAEXVAsciiString@@@Z,,0x002DAEB9,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DAEB9Set.cpp,matched,twin of Rva002DAE51Set plus caller 0x002DB782 plus same EH data VA
 ?Rva00504830UpperBound@@YAPAURva00504830Item@@PAU1@0PBMHH@Z,,0x00504830,64,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,upper bound binary search over 16B records keyed by float
 ?Rva0037F757Fill@@YAPAVRva0037F551@@PAV1@IABV1@PAX@Z,,0x0037F757,37,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F71F fill loop stride 0x48 caller 0x0037FF20 pushes 4
+?Rva006CD2A0@@YAXPAD@Z,,0x006CD2A0,27,Code/GameEngine/Source/Common/Rva006CD2A0Cluster.cpp,matched,address-derived Apt path helper; reads node at +0x6C of 0xE176D0 and appends into caller buffer via unnamed 0x6CD230
+?Rva006CD330@@YAXXZ,,0x006CD330,29,Code/GameEngine/Source/Common/Rva006CD2A0Cluster.cpp,matched,address-derived Apt teardown; calls 0x6E47C0 on 0xE176D0 then 0x70B220(0) on 0xE180E4 when non-null

@@ -7458,3 +7458,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$_Destroy@PAURva004FFE81@@@_STL@@YAXPAURva004FFE81@@0@Z,0x00500CB8,independent full 25-byte match of STLport Destroy; same range loop and element destructor as rowed Rva00500CB8Destroy; typed vector erase callee
 ??1BfmeNarrowRecord0041A617@@QAE@XZ,0x0007FAB3,independent complete 14-byte match; native16-byte record destroy loop41A3A3 callee; class layout comes from copy41A617 assignment41A820 and pop41A3F7; original semantic name unknown
 ?_M_increment@?$_Deque_iterator_base@UBfmeNarrowRecord0041A617@@@_STL@@QAEXXZ,0x00419DF6,independent complete 38-byte match; native16-byte record destroy loop41A3A3 callee; class layout comes from copy41A617 assignment41A820 and pop41A3F7; original semantic name unknown
+?Rva006CD230Append@@YAXPAX0@Z,0x006CD230,address-derived recursive Apt path builder; called from 0x006CD2A0 with a node and a char** cursor; body unrowed
+?rva006E47C0@Rva006E34D0@@QAEXXZ,0x006E47C0,address-derived Apt teardown member of the 0x00E176D0 object; called from 0x006CD330; body unrowed
