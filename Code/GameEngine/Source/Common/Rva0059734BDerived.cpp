@@ -12,14 +12,21 @@
 class Rva0059734B
 {
 public:
+	Rva0059734B();
 	virtual ~Rva0059734B();
 };
 
 class Rva005DAFD7 : public Rva0059734B
 {
 public:
+	Rva005DAFD7();
 	virtual ~Rva005DAFD7();
 };
+
+// ??0Rva005DAFD7@@QAE@XZ @0x005DAFC5 18B ctor calls base ??0Rva0059734B then stores vtable 0x00876640
+Rva005DAFD7::Rva005DAFD7()
+{
+}
 
 Rva005DAFD7::~Rva005DAFD7()
 {
