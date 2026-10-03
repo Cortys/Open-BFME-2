@@ -160,6 +160,9 @@ private:
 ///////////////////////////////////////////////////////////////////
 //	operator=
 ///////////////////////////////////////////////////////////////////
+// Opted-in units call the existing 68-byte retail worker at 0x000F0E8D.
+// Other units still require the donor inline expansion at verified call sites.
+#if !defined(BFME_WWSTRING_NATIVE_CSTR_ASSIGN)
 inline const StringClass &
 StringClass::operator= (const TCHAR *string)
 {
@@ -174,6 +177,7 @@ StringClass::operator= (const TCHAR *string)
 
 	return (*this);
 }
+#endif // BFME_WWSTRING_NATIVE_CSTR_ASSIGN
 
 ///////////////////////////////////////////////////////////////////
 //	StringClass
