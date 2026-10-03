@@ -51,6 +51,29 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
+// LINK-COMDAT: FastCriticalSectionClass::LockClass ctor differs from the kept copy.
+// ZH mutex.h (via mempool.h) defines it with inline asm (bts loop + Switch_Thread);
+// the kept 20B copy (widestring.cpp, FastCriticalSectionLockCtor.cpp) calls spin.
+// Declare it here and block mutex.h so this TU emits no copy; calls reach the kept copy.
+#define MUTEX_H
+class FastCriticalSectionClass
+{
+	unsigned Flag;
+public:
+	FastCriticalSectionClass() : Flag(0) {}
+	class LockClass
+	{
+		FastCriticalSectionClass &cs;
+	public:
+		LockClass(FastCriticalSectionClass &critical_section);
+		~LockClass() { cs.Flag = 0; }
+	private:
+		LockClass &operator=(const LockClass&);
+		LockClass(const LockClass&);
+	};
+	friend class LockClass;
+};
+
 #include "aabtreecull.h"
 #include "chunkio.h"
 #include "iostruct.h"
