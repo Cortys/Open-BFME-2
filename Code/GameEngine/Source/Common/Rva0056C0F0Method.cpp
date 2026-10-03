@@ -1,9 +1,5 @@
-// ?rva0056C0F0@Rva0056C0F0@@QAEXIPAUVec3@@@Z
-// partial score=0.92 date=2026-10-03
 // cl: /O1 /Oy- /MD
 // ?rva0056C0F0@Rva0056C0F0@@QAEXIPAUVec3@@@Z @0x0056C0F0 125B. Div-mod cell index to world x/y via scale plus TerrainLogic slot 0x18 height for z. Evidence: caller 0x004052DA passes index plus 12B out; two div dword ptr [ecx] plus unsigned fild correction; TheTerrainLogic plus g_Va007C26F0.
-// ?rva0056C0F0@Rva0056C0F0@@QAEXIPAUVec3@@@Z present-unmatched
-extern float g_Va007C26F0;
 class TerrainLogic
 {
 public:
@@ -28,8 +24,8 @@ public:
 void Rva0056C0F0::rva0056C0F0(unsigned int idx, Vec3 *out)
 {
 	unsigned int col = idx % m_width;
-	out->x = (float)col * m_scale + m_scale * g_Va007C26F0;
+	out->x = ((float)col * m_scale) + (m_scale * 0.5f);
 	idx /= m_width;
-	out->y = (float)idx * m_scale + m_scale * g_Va007C26F0;
-	out->z = TheTerrainLogic->getHeight(out->x, out->y, 0) + g_Va007C26F0;
+	out->y = ((float)idx * m_scale) + (m_scale * 0.5f);
+	out->z = TheTerrainLogic->getHeight(out->x, out->y, 0) + 0.5f;
 }
