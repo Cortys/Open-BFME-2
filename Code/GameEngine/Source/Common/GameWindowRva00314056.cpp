@@ -1,7 +1,5 @@
 // ?rva00314056@GameWindow@@QAEHH@Z
 // partial score=0.93 date=2026-10-01
-// ?rva00314056@GameWindow@@QAEHH@Z
-// partial score=0.93 date=2026-10-01
 // cl: /O1 /MD
 // ?rva00314056@GameWindow@@QAEHH@Z, retail 0x00314056, 78 bytes.
 // Honest GameWindow method: detach from old parent/list then attach.
@@ -54,10 +52,9 @@ private:
 	GameWindow *m_parent;
 };
 
-// ?rva00314056@GameWindow@@QAEHH@Z present-unmatched
 int GameWindow::rva00314056(int arg)
 {
-	Rva002C0A89 *mgr = (Rva002C0A89 *)TheWindowManager;
+	Rva002C0A89 *mgr = *(Rva002C0A89 * volatile *)&TheWindowManager;
 	if (m_parent == 0)
 		mgr->rva002C0B92(this);
 	else
