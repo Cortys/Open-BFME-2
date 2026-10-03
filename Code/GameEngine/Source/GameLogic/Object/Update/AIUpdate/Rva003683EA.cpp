@@ -53,7 +53,6 @@ private:
 	int m_done; // +0x528
 };
 
-// ?rva003683EA@Rva003683EA@@QAEXPBUCoord3D@@H@Z present-unmatched
 void Rva003683EA::rva003683EA(const Coord3D *pos, int flag)
 {
 	if (m_guard != 0)
