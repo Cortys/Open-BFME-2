@@ -83,4 +83,24 @@ RandomAccessIter __median(RandomAccessIter a, RandomAccessIter b,
 template int *__median<int *,
 	Rva005E4300Cmp>(int *, int *, int *, Rva005E4300Cmp);
 
+// ??$__unguarded_linear_insert@PAHHVRva005E4300Cmp@@@_STL@@YAXPAHHVRva005E4300Cmp@@@Z @0x005E45E8 47B
+// Insertion shift over int keys with stateful Rva005E4300Cmp: while comp(val,*next) move *next forward.
+// Evidence: calls rowed 0x005E4300; callers 0x005E4862/0x005E48A1 insertion family; same shape as int 0x0040A77B.
+template <class RandomAccessIter, class Tp, class Compare>
+void __unguarded_linear_insert(RandomAccessIter last, Tp val, Compare comp)
+{
+	RandomAccessIter next = last;
+	--next;
+	while (comp(val, *next))
+	{
+		*last = *next;
+		last = next;
+		--next;
+	}
+	*last = val;
+}
+
+template void __unguarded_linear_insert<int *, int,
+	Rva005E4300Cmp>(int *, int, Rva005E4300Cmp);
+
 }
