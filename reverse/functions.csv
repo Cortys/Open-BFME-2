@@ -49506,3 +49506,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00581318Get@@YAHPAURva00581318Msg@@@Z,,0x00581318,33,Code/GameEngine/Source/GameNetwork/DoesCommandRequireACommandID.cpp,matched,predicate 7 0 1 2 via caller 0x004D31E5 same TU shape
 ?Rva00531F79Chain@@YAPAVRva00531F79@@PAV1@PAG@Z,,0x00531F79,34,Code/GameEngine/Source/Common/Rva00531F79Chain.cpp,matched,leaf 2 callers in 005334DB two vslot32 calls
 ?rva006E4B80@Rva006E3230@@QAEXPAXPAVAptCIH@@HH@Z,,0x006E4B80,225,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,unlock lane AptAnimationPoolData type1 enqueue stride24 via shared queue
+?rva00085858@Rva00085858@@QAEPAV1@XZ,,0x00085858,35,Code/GameEngine/Source/Common/Rva00085858Init.cpp,matched,same callee and args as neighbouring ctor 0x00085815 caller 0x0008B7CF
