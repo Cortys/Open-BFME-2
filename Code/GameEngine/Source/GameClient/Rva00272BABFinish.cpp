@@ -1,7 +1,3 @@
-// ?rva00272BAB@Drawable@@QAEXHH@Z
-// partial score=0.95 date=2026-09-29
-// ?rva00272BAB@Drawable@@QAEXHH@Z
-// partial score=0.95 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva00272BAB@Drawable@@QAEXHH@Z, retail 0x00272BAB, 60 bytes.
@@ -57,13 +53,11 @@ private:
 	ClientItemForRva272BAB **m_client;
 };
 
-// ?rva00272BAB@Drawable@@QAEXHH@Z present-unmatched
 void Drawable::rva00272BAB(int a, int b)
 {
 	DrawModuleForRva272BAB **mods = m_drawModules;
-	DrawModuleForRva272BAB *first = *mods;
-	if (first != 0)
-		first->rva00272BABTarget(a, b);
+	if (*mods != 0)
+		(*mods)->rva00272BABTarget(a, b);
 	for (ClientItemForRva272BAB **p = m_client; p != 0 && *p != 0; ++p)
 		(*p)->rva00272BABClient();
 }
