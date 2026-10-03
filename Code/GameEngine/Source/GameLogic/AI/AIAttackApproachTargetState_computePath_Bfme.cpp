@@ -60,7 +60,7 @@ public:
 class Player
 {
 public:
-	PlayerType getPlayerType() const { return m_playerType; }
+	PlayerType getPlayerType() const;
 
 	char m_pad000[0x2c];
 	PlayerType m_playerType;				// +0x2c
@@ -77,7 +77,7 @@ public:
 	void *getPhysics() const { return m_physics; }
 	const Coord3D *getPosition() const { return &m_position; }
 	ObjectID getID() const { return m_id; }
-	AIUpdateInterface *getAI() const { return m_ai; }
+	AIUpdateInterface *getAI() const;
 
 	char m_pad000[0x38];
 	Coord3D m_position;						// +0x38
