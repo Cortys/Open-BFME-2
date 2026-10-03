@@ -49338,3 +49338,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0042FD55@Rva0042FD55@@QAEPAIPBX@Z,,0x0042FD55,73,Code/GameEngine/Source/GameClient/GUI/Rva0042FD55.cpp,matched,blind hashtable insert via folded resize and new-node returns key slot
 ?Rva00485536Test@@YG_NPAX0@Z,,0x00485536,47,Code/GameEngine/Source/GameLogic/Object/Die/Rva00485536Test.cpp,matched,null-checked BitFlags testSetAndClear gate with g_defaultStorage
 ?xfer@Rva004851E3@@MAEXPAVXfer@@@Z,,0x004851E3,27,Code/GameEngine/Source/GameLogic/Object/Die/Rva004851E3Xfer.cpp,matched,slot 3 xfer Version1 plus CreateModule base
+?rva003B4982@Rva003B4982@@QAEXPAX@Z,,0x003B4982,158,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003B4982.cpp,matched,recursive script skip clear via rowed callees ret4 void-star arg self plus byte test via uchar
