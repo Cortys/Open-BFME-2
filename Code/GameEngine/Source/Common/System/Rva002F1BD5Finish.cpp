@@ -1,7 +1,3 @@
-// ?rva002F1BD5@Rva002F1BD5@@QAEHHPAURva002F1BD5Arg@@HH@Z
-// partial score=0.93 date=2026-09-30
-// ?rva002F1BD5@Rva002F1BD5@@QAEHHPAURva002F1BD5Arg@@HH@Z
-// partial score=0.93 date=2026-09-30
 // cl: /Os /MD
 //
 // ?rva002F1BD5@Rva002F1BD5@@QAEHHPAURva002F1BD5Arg@@HH@Z, retail 0x002F1BD5, 80 bytes.
@@ -75,17 +71,12 @@ public:
 	int rva002F1BD5(int a1, Rva002F1BD5Arg *a2, int a3, int a4);
 };
 
-// ?rva002F1BD5@Rva002F1BD5@@QAEHHPAURva002F1BD5Arg@@HH@Z present-unmatched
 int Rva002F1BD5::rva002F1BD5(int a1, Rva002F1BD5Arg *a2, int a3, int a4)
 {
 	if ((a2->m_0C & 15) != 4)
 		return 0;
-	int id;
 	Rva002F1BD5Data *p = a2->m_00;
-	if (p == 0)
-		id = 0;
-	else
-		id = p->m_28;
+	int id = p ? p->m_28 : 0;
 	Object *obj = g_009FE78C->findObjectByID((ObjectID)id);
 	if (obj == 0)
 		return 0;
