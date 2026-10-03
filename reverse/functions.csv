@@ -49892,3 +49892,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva001F4C67@@UAE@XZ,,0x001F4C67,159,Code/GameEngine/Source/Common/Rva001F4C67Finish.cpp,matched,banked attempt finished: ReadWriteBarrier after the m_w78 guard forces operator-arrow to reload and emit the retail redundant Make null-check
 ??0Rva00418797@@QAE@ABVAsciiString@@PBV0@@Z,,0x00418797,124,Code/GameEngine/Source/GameClient/Rva00418797Ctor.cpp,matched,ctor via sibling Rva00419669 precedent with two maps plus string
 ?rva00323E1C@Rva00323E1C@@QAEXXZ,,0x00323E1C,121,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00323E1CMethod.cpp,matched,gui audio prefix via TheAudio misc plus addAudioEvent
+?rva00323619@Rva00323619@@QAEXH@Z,,0x00323619,41,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00323619Setter.cpp,matched,setter via userData with global scale over 0x300
