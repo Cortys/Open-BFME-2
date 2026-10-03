@@ -6089,3 +6089,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?Rva000A44D2Draw@@YAXPAVGameWindow@@PAVWinInstanceData@@@Z	0x000A44D2	485	blocked	large 485B GUI leaf with x87 fld1 plus idiv plus 3 WindowManager virtuals needs donor and TU flags unclear t=8 model=muse-10
 ?rva006EBD30@Rva006EBD30@@QAEXPAVRenderingContext@@PAX@Z	0x006EBD30	146	blocked	Apt shape needs full file path for cecac0 plus g_00E177A8 signature plus BFME1 donor for zID switch t=10 model=muse-10
 ?rva006EBDD0@Rva006EBDD0@@QAEXPAVRenderingContext@@PAX@Z	0x006EBDD0	123	blocked	sibling of 006EBD30 same Apt file-string cecac0 plus assert triple needs donor t=5 model=muse-10
+??0Rva00074136@@QAE@XZ	0x00074136	138	partial	ctor with set at 0x44 via rowedd3a71 and empty base for EH. 139B vs 138B. float 10.0f loads twice with int reload vs retail once with xmm0 reuse t=15 model=muse-04 score=0.93 stash=reverse/attempts/0x00074136.cpp
