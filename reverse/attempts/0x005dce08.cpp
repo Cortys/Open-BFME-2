@@ -1,4 +1,6 @@
 // ??1Rva005DCE08@@QAE@XZ
+// partial score=0.95 date=2026-10-03
+// ??1Rva005DCE08@@QAE@XZ
 // partial score=0.95 date=2026-09-29
 // ??1Rva005DCE08@@QAE@XZ
 // partial score=0.95 date=2026-09-29
@@ -30,7 +32,7 @@ private:
 	Rva005DCE08Elem **m_end;
 };
 
-void Rva005DCE08::~Rva005DCE08()
+Rva005DCE08::~Rva005DCE08()
 {
 	for (Rva005DCE08Elem **p = (Rva005DCE08Elem **)m_buf.p; p != m_end; ++p)
 		::operator delete(*p ? (*p)->v00(0) : 0);
