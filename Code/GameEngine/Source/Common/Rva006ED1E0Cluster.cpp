@@ -1,5 +1,3 @@
-// ??0Rva006ED2A0@@QAE@XZ
-// partial score=0.93 date=2026-09-30
 // cl: /O2 /DNDEBUG /MD /EHsc
 // ??0Rva006ED2A0@@QAE@XZ, retail 0x006ED1E0, 177 bytes.
 // Default ctor for Rva006ED2A0 (vtable 0x008ECB9C, same as dtor 0x006ED2A0):
@@ -10,11 +8,16 @@
 class EAStringC
 {
 public:
+    EAStringC();
     ~EAStringC();
     EAStringC &clear();
 private:
     void *m_pData;
 };
+inline EAStringC::EAStringC()
+{
+    clear();
+}
 class Rva0070A840
 {
 public:
@@ -34,6 +37,7 @@ protected:
     unsigned char m_14;
     char m_pad15[3];
 };
+// ??0Rva006ED2A0Base@@QAE@XZ present-unmatched
 inline Rva006ED2A0Base::Rva006ED2A0Base()
 {
     m_14 = 0;
@@ -68,11 +72,9 @@ private:
     int m_70;
     int m_74;
 };
-// ??0Rva006ED2A0@@QAE@XZ present-unmatched
 Rva006ED2A0::Rva006ED2A0()
+    : Rva006ED2A0Base(), m_18(), m_1C()
 {
-    m_18.clear();
-    m_1C.clear();
     m_28 = 1;
     m_2C = 1;
     int v74 = m_74;
