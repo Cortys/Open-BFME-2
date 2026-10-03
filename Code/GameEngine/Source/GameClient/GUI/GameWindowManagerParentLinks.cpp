@@ -39,7 +39,6 @@ Bool GameWindowManager::isHidden(GameWindow *win)
  do { if(w->status&0x10) return true; w=w->parent; } while(w);
  return false;
 }
-// ?addWindowToParent@GameWindowManager@@UAEXPAVGameWindow@@0@Z present-unmatched
 void GameWindowManager::addWindowToParent(GameWindow *window,GameWindow *parent)
 {
  BfmeManagerWindowLinks *w=(BfmeManagerWindowLinks *)window;
