@@ -1,13 +1,9 @@
-// ?rva001D9A00@Rva001D9A00@@QAE_NXZ
-// partial score=0.93 date=2026-09-30
-// ?rva001D9A00@Rva001D9A00@@QAE_NXZ
-// partial score=0.93 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD
 // ?rva001D9A00@Rva001D9A00@@QAE_NXZ @0x001D9A00 79B unlock
 // Same layout as sibling 0x001D98BD (+0xB0 type, +0x80/0x84 vector, +0x50/0x54
-// +0x60/0x64 +0x70/0x74 vectors, +0x0C string). Type 2 checks three vectors,
-// type 5 checks 0x80 vector, else checks string non-empty via rowed isEmpty.
-// Caller 0x0005D7A3; callee isEmpty at 0x00001E2F rowed.
+// +0x60/0x64 +0x70/0x74 vectors, +0x0C string). Case 2 checks the three
+// pointer pairs, case 5 the +0x80 pair through its address, else the string
+// non-empty via rowed isEmpty 0x00001E2F. Caller 0x0005D7A3.
 // Neighbour FXBoneInfoAssign shares /O1 flags; no floats or EH.
 template <typename T> class StringBase
 {
@@ -45,19 +41,16 @@ private:
 
 bool Rva001D9A00::rva001D9A00()
 {
-	unsigned int u = (unsigned int)m_B0;
-	u = u - 2;
-	if (u == 0)
-		goto L2;
-	u = u - 3;
-	if (u == 0)
-		goto L5;
-	return !m_str.isEmpty();
-L5:
+	switch (m_B0)
 	{
-		VecPair *v = &m_v4;
-		return v->beg != v->end;
+	case 2:
+		return m_beg1 != m_end1 || m_beg2 != m_end2 || m_beg3 != m_end3;
+	case 5:
+		{
+			VecPair *v = &m_v4;
+			return v->beg != v->end;
+		}
+	default:
+		return !m_str.isEmpty();
 	}
-L2:
-	return m_beg1 != m_end1 || m_beg2 != m_end2 || m_beg3 != m_end3;
 }
