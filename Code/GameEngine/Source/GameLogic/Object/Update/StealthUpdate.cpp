@@ -72,69 +72,10 @@
 //#pragma MESSAGE("************************************** WARNING, optimization disabled for debugging purposes")
 #endif
 
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/StealthUpdateModuleDataCtorThunk.cpp
-// ??0StealthUpdateModuleData@@ present-unmatched
-StealthUpdateModuleData::StealthUpdateModuleData()
-{
-		//Added By Sadullah Nader
-		//Initialization(s) inserted
-		m_disguiseFX = NULL;
-    m_disguiseRevealFX = NULL;
-    //
-    m_stealthDelay		= UINT_MAX;
-    m_stealthLevel		= 0;
-    m_stealthSpeed		= 0.0f;
-    m_friendlyOpacityMin = 0.5f;
-    m_friendlyOpacityMax = 1.0f;
-    m_pulseFrames = 30;
-    m_teamDisguised		= false;
-    m_revealDistanceFromTarget = 0.0f;
-    m_orderIdleEnemiesToAttackMeUponReveal = false;
-    m_innateStealth   = true;
-    m_disguiseTransitionFrames = 0;
-    m_disguiseRevealTransitionFrames = 0;
-    m_blackMarketCheckFrames = 0;
-    m_enemyDetectionEvaEvent = EVA_Invalid;
-    m_ownDetectionEvaEvent = EVA_Invalid;
-    m_grantedBySpecialPower = FALSE;
-}
-
-
-//-------------------------------------------------------------------------------------------------
-// ?buildFieldParse@StealthUpdateModuleData@@ present-unmatched
-void StealthUpdateModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "StealthDelay",									INI::parseDurationUnsignedInt,	NULL, offsetof( StealthUpdateModuleData, m_stealthDelay ) },
-		{ "MoveThresholdSpeed",						INI::parseVelocityReal,					NULL, offsetof( StealthUpdateModuleData, m_stealthSpeed ) },
-		{ "StealthForbiddenConditions",		INI::parseBitString32,					TheStealthLevelNames, offsetof( StealthUpdateModuleData, m_stealthLevel) }, 
-		{ "HintDetectableConditions",	  	ObjectStatusMaskType::parseFromINI,	NULL, offsetof( StealthUpdateModuleData, m_hintDetectableStates) },
-		{ "RequiredStatus",								ObjectStatusMaskType::parseFromINI,	NULL, offsetof( StealthUpdateModuleData, m_requiredStatus ) },
-		{ "ForbiddenStatus",							ObjectStatusMaskType::parseFromINI,	NULL, offsetof( StealthUpdateModuleData, m_forbiddenStatus ) },
-		{ "FriendlyOpacityMin",						INI::parsePercentToReal,				NULL, offsetof( StealthUpdateModuleData, m_friendlyOpacityMin ) },
-		{ "FriendlyOpacityMax",						INI::parsePercentToReal,				NULL, offsetof( StealthUpdateModuleData, m_friendlyOpacityMax ) },
-		{ "PulseFrequency",								INI::parseDurationUnsignedInt,	NULL, offsetof( StealthUpdateModuleData, m_pulseFrames ) },
-		{ "DisguisesAsTeam",							INI::parseBool,									NULL, offsetof( StealthUpdateModuleData, m_teamDisguised ) },
-		{ "RevealDistanceFromTarget",			INI::parseReal,									NULL, offsetof( StealthUpdateModuleData, m_revealDistanceFromTarget ) },
-		{ "OrderIdleEnemiesToAttackMeUponReveal", INI::parseBool,					NULL, offsetof( StealthUpdateModuleData, m_orderIdleEnemiesToAttackMeUponReveal ) },
-		{ "DisguiseFX",										INI::parseFXList,								NULL, offsetof( StealthUpdateModuleData, m_disguiseFX ) },
-		{ "DisguiseRevealFX",							INI::parseFXList,								NULL, offsetof( StealthUpdateModuleData, m_disguiseRevealFX ) },
-		{ "DisguiseTransitionTime",				INI::parseDurationUnsignedInt,  NULL, offsetof( StealthUpdateModuleData, m_disguiseTransitionFrames ) },
-		{ "DisguiseRevealTransitionTime",	INI::parseDurationUnsignedInt,  NULL, offsetof( StealthUpdateModuleData, m_disguiseRevealTransitionFrames ) },
-		{ "InnateStealth",								INI::parseBool,									NULL, offsetof( StealthUpdateModuleData, m_innateStealth ) },
-		{ "UseRiderStealth",							INI::parseBool,									NULL, offsetof( StealthUpdateModuleData, m_useRiderStealth ) },
-    { "EnemyDetectionEvaEvent",				Eva::parseEvaMessageFromIni,  	NULL, offsetof( StealthUpdateModuleData, m_enemyDetectionEvaEvent ) },
-    { "OwnDetectionEvaEvent",		  		Eva::parseEvaMessageFromIni,  	NULL, offsetof( StealthUpdateModuleData, m_ownDetectionEvaEvent ) },
-		{ "BlackMarketCheckDelay",				INI::parseDurationUnsignedInt,  NULL, offsetof( StealthUpdateModuleData, m_blackMarketCheckFrames ) },
-    { "GrantedBySpecialPower",        INI::parseBool,                 NULL, offsetof( StealthUpdateModuleData, m_grantedBySpecialPower ) },
-
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-}
+// StealthUpdateModuleData ctor/dtor/buildFieldParse live in their rowed units
+// (StealthUpdateModuleDataCtor.cpp, StealthUpdateModuleDataDtor.cpp,
+// ModuleDataBuildFieldParse.cpp); this file merely declares them via
+// GameLogic/Module/StealthUpdate.h.
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/StealthUpdate_ctor_Thunk.cpp
