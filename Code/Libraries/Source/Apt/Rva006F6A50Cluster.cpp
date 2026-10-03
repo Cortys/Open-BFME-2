@@ -7,14 +7,30 @@
 // node class is AptCIH: the 0x006E24E0/0x006E2560/0x006E2D60 callees assert
 // through AptCIH.h.  Names stay address-derived until a caller proves more.
 
+extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
+extern int g_bfmeAptBreakOnAssertAtDDC01C;
+void __debugbreak();
+#pragma intrinsic(__debugbreak)
+
+class Rva006DBB30SarDwordField
+{
+public:
+	int get() const;
+};
+
 class AptCIH
 {
 public:
+	virtual void v0();
 	bool rva006E24E0();
 	void rva006E2560(int arg);
 	void rva006E2D60();
+	void rva006E1C40(void *a, void *b);
+	bool rva006CFCD0() const;
 
-	char m_pad00[0x54];
+	char m_pad04[0x4c - 0x4];
+	void *pData;
+	AptCIH *m_prev;
 	AptCIH *m_next;
 };
 
@@ -305,4 +321,42 @@ public:
 Rva006F8D70::Rva006F8D70()
 {
 	m_10 = new AptNativeHash(4);
+}
+
+// ---------------------------------------------------------------------------
+// AptDisplayList list-link helper at 0x006F6D60: asserts pNewItem's data then
+// splices pNewItem in after pOldItem.  The inline type-14 predicate carries the
+// AptCIH.h:0xB5 "this" assertion that the byte stream shows.
+
+static __forceinline int rva006F6D60IsType14(const AptCIH *pNewItem)
+{
+	if (pNewItem == 0) {
+		g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xB5);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	if (((const Rva006DBB30SarDwordField *)pNewItem)->get() == 0xe) {
+		if (!((const BfmeAptValue006DCD20 *)pNewItem)->isUndefined())
+			return 1;
+	}
+	return 0;
+}
+
+// ?rva006F6D60@@YGPAVAptCIH@@PAV1@0@Z @0x006F6D60 159B
+AptCIH * __stdcall rva006F6D60(AptCIH *pOldItem, AptCIH *pNewItem)
+{
+	if (pNewItem->rva006CFCD0() || rva006F6D60IsType14(pNewItem)) {
+		if (pNewItem->pData == 0) {
+			g_bfmeAptAssertAtE17734("pNewItem->pData != NULL", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0x1D8);
+			if (g_bfmeAptBreakOnAssertAtDDC01C)
+				__debugbreak();
+		}
+	}
+	pNewItem->m_next = pOldItem->m_next;
+	pNewItem->m_prev = pOldItem;
+	pNewItem->v0();
+	if (pNewItem->m_next != 0)
+		pNewItem->m_next->m_prev = pNewItem;
+	pNewItem->m_prev->m_next = pNewItem;
+	return pNewItem;
 }
