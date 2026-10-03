@@ -7283,3 +7283,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva001711a6@Rva00171024@@QAEXXZ,0x001711A6,"Rva00171024 refresh worker called with this by rva00171625 at 0x00171625; Ghidra 892B body unrowed; address-derived name"
 ?rva006ddde0@AptValue@@QAE?AVEAStringC@@XZ,0x006DDDE0,"Apt value-to-string worker called by rva006e9730 0x006E9730; by-value EAStringC return through hidden pointer and internal clear 0x006D2F90/assign 0x006D2FC0; Ghidra 373B unrowed; address-derived name"
 ??0BfmeBstrVGP@@QAE@PBD@Z,0x00176CD0,"ICF-folded with the rowed _bstr_t const char* ctor at the same address; called by rva001776a0 0x001776A0 and layout-identical per the BFME1 WebBrowserComWrappers donor"
+?rva006fc370@@YA_NPAVAptValue@@@Z,0x006FC370,"Apt predicate called with the top stack value by rva006ff5d0 0x006FF5D0; Ghidra 762B unrowed body dispatches through 0x006DC170/0x006DC210/0x006DC0D0; address-derived name"
