@@ -49715,3 +49715,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000F074E@Rva000F26DC@@QAEXHH@Z,,0x000F074E,117,Code/GameEngine/Source/Common/Rva000F074EFinish.cpp,matched,inline b+a*0xA0 subscript keeps retail lea esi form; named idx local gives add+mov and is 1B short
 ??0Rva0055F218Sub@@QAE@XZ,,0x0055EF55,25,Code/GameEngine/Source/Common/Rva0055F218Ctor.cpp,matched,placed by masked byte search of already-compiled unit
 ??$__uninitialized_fill_n@PAUNugget@ModuleInfo@@IU12@@_STL@@YAPAUNugget@ModuleInfo@@PAU12@IABU12@ABU__false_type@0@@Z,,0x00119B80,43,Code/GameEngine/Source/Common/System/Rva00119EC0Siblings.cpp,matched,placed by masked byte search of already-compiled unit
+?allocate@?$allocator@UNugget@ModuleInfo@@@_STL@@QBEPAUNugget@ModuleInfo@@IPBX@Z,,0x00118E20,42,Code/GameEngine/Source/Common/System/Rva00119EC0Siblings.cpp,matched,placed by masked byte search of already-compiled unit
