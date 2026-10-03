@@ -74,29 +74,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 const Real BEGIN_MIDPOINT_RATIO = 0.35f;
 const Real END_MIDPOINT_RATIO = 0.65f;
 
-//-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/Common/SlowDeathBehaviorModuleData_ctor_Thunk.cpp
-// ??0SlowDeathBehaviorModuleData@@QAE@XZ present-unmatched
-SlowDeathBehaviorModuleData::SlowDeathBehaviorModuleData()
-{
-	m_sinkRate = 0;
-	m_probabilityModifier = 10;
-	m_modifierBonusPerOverkillPercent = 0;
-	m_sinkDelay = 0;
-	m_sinkDelayVariance = 0;
-	m_destructionDelay = 0;
-	m_destructionDelayVariance = 0;
-	m_destructionAltitude = -10;
-	m_maskOfLoadedEffects = 0; //assume no ocl, fx, or weapons.
-	m_flingForce = 0;
-	m_flingForceVariance = 0;
-	m_flingPitch = 0;
-	m_flingPitchVariance = 0;
-	// redundant.
-	//m_fx.clear();
-	//m_ocls.clear();
-	//m_weapons.clear();
-}
+// ??0SlowDeathBehaviorModuleData@@QAE@XZ: defined in SlowDeathBehaviorModuleDataCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 static void parseFX( INI* ini, void *instance, void * /*store*/, const void* /*userData*/ )
@@ -149,54 +127,9 @@ static void parseWeapon( INI* ini, void *instance, void * /*store*/, const void*
 	}
 }
 
-//-------------------------------------------------------------------------------------------------
-/*static*/ void SlowDeathBehaviorModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
+// ?buildFieldParse@SlowDeathBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z: defined in ModuleDataBuildFieldParse.cpp (its row's unit).
 
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "SinkRate",													INI::parseVelocityReal,						NULL, offsetof( SlowDeathBehaviorModuleData, m_sinkRate ) },
-		{ "ProbabilityModifier",							INI::parseInt,										NULL, offsetof( SlowDeathBehaviorModuleData, m_probabilityModifier ) },
-		{ "ModifierBonusPerOverkillPercent",	INI::parsePercentToReal,					NULL, offsetof( SlowDeathBehaviorModuleData, m_modifierBonusPerOverkillPercent ) },
-		{ "SinkDelay",												INI::parseDurationUnsignedInt,		NULL, offsetof( SlowDeathBehaviorModuleData, m_sinkDelay ) },
-		{ "SinkDelayVariance",								INI::parseDurationUnsignedInt,		NULL, offsetof( SlowDeathBehaviorModuleData, m_sinkDelayVariance ) },
-		{ "DestructionDelay",									INI::parseDurationUnsignedInt,		NULL, offsetof( SlowDeathBehaviorModuleData, m_destructionDelay ) },
-		{ "DestructionDelayVariance",					INI::parseDurationUnsignedInt,		NULL, offsetof( SlowDeathBehaviorModuleData, m_destructionDelayVariance ) },
-		{ "DestructionAltitude",							INI::parseReal,										NULL, offsetof( SlowDeathBehaviorModuleData, m_destructionAltitude ) },
-		{ "FX",																parseFX,													NULL, 0 },
-		{ "OCL",															parseOCL,													NULL, 0 },
-		{ "Weapon",														parseWeapon,											NULL, 0 },
-		{ "FlingForce",												INI::parseReal,										NULL, offsetof( SlowDeathBehaviorModuleData, m_flingForce) },
-		{ "FlingForceVariance",								INI::parseReal,										NULL, offsetof( SlowDeathBehaviorModuleData, m_flingForceVariance) },
-		{ "FlingPitch",												INI::parseAngleReal,							NULL, offsetof( SlowDeathBehaviorModuleData, m_flingPitch) },
-		{ "FlingPitchVariance",								INI::parseAngleReal,							NULL, offsetof( SlowDeathBehaviorModuleData, m_flingPitchVariance) },
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-	p.add(DieMuxData::getFieldParse(), offsetof( SlowDeathBehaviorModuleData, m_dieMuxData ));
-}
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Behavior/SlowDeathBehavior_ctor_Thunk.cpp
-// ??0SlowDeathBehavior@@QAE@PAVThing@@PBVModuleData@@@Z present-unmatched
-SlowDeathBehavior::SlowDeathBehavior( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	m_flags = 0;
-	m_sinkFrame = 0;
-	m_midpointFrame = 0;
-	m_destructionFrame = 0;
-	m_acceleratedTimeScale = 1.0f;
-
-	if (getSlowDeathBehaviorModuleData()->m_probabilityModifier < 1)
-	{
-		DEBUG_CRASH(("ProbabilityModifer must be >= 1.\n"));
-		throw INI_INVALID_DATA;
-	}
-
-	setWakeFrame(getObject(), UPDATE_SLEEP_FOREVER);
-}
+// ??0SlowDeathBehavior@@QAE@PAVThing@@PBVModuleData@@@Z: defined in SlowDeathBehaviorCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
