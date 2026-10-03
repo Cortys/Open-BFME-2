@@ -50372,3 +50372,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?framesUntilNext@ObjectSMCHelper@@AAEHXZ,,0x004DE700,77,Code/GameEngine/Source/GameLogic/Object/Helper/Rva004DE700Finish.cpp,matched,private timer helper: empty->0x3fffffff else min wake-frame delta clamped to 1; separate empty/begin/end calls keep retail duplicate check; cmovb needs /O1 /arch:SSE
 ?rva0039F094@Team@@QAEXVAsciiString@@@Z,,0x0039F094,62,Code/GameEngine/Source/Common/RTS/TeamRva0039F094.cpp,matched,Team setter via StringBase set row with caller Team
 ??1Rva005DA4DC@@QAE@XZ,,0x005DA4DC,29,Code/GameEngine/Source/Common/Rva005DA4DCRelease.cpp,matched,slot0 virtual with 0 plus delete plus null per caller 0x0058B60B
+??0Rva000E73FC@@QAE@ABU0@@Z,,0x000E73FC,301,Code/GameEngine/Source/Common/Rva000E73FCCopy.cpp,matched,copy ctor via rowed Region2D copy at 0x48 stride 0xA0 neighbours
