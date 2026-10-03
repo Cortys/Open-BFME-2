@@ -50405,3 +50405,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003B0D7C@Rva003B0D7C@@QAEXHPAVRva0039B7AD@@_N@Z,,0x003B0D7C,188,Code/GameEngine/Source/Common/RTS/MoneyRva003B0D7C.cpp,matched,caller 0x003BC048 Player+0x90 Money audio slots 0x138 0x64
 ??$_M_allocate_and_copy@PAVRva00468520@@@?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@IAEPAUBfmeE8@@IPAVRva00468520@@0@Z,,0x00153489,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmee8_allocate_copy.cpp,matched,same 45B ebp-tag shape as 0x00319304 caller 0x15380D callees rowed
 ??_GRva004134AE@@QAEPAXI@Z,,0x00413492,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004134AE.cpp,matched,chain lane deleting dtor via rowed dtor and delete
+??0Rva0041386B@@QAE@XZ,,0x0041386B,54,Code/GameEngine/Source/Common/Thing/ModuleFactoryCtor.cpp,matched,unlock lane ctor with vector and map via rowed ctors
