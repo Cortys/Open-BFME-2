@@ -96,23 +96,9 @@ AIStateMachine* SupplyTruckAIUpdate::makeStateMachine()
 }
 
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/AI/SupplyTruckAIUpdateCtorThunk.cpp
-// ??0SupplyTruckAIUpdate@@ present-unmatched
-SupplyTruckAIUpdate::SupplyTruckAIUpdate( Thing *thing, const ModuleData* moduleData ) : AIUpdateInterface( thing, moduleData )
-{
-	m_supplyTruckStateMachine = NULL;
-	m_preferredDock = INVALID_ID;
-	m_numberBoxes = 0;
-	m_forcePending = FALSE;
-	m_forcedBusyPending = FALSE;
-	m_supplyTruckStateMachine = newInstance(SupplyTruckStateMachine)( getObject() );
-	m_supplyTruckStateMachine->initDefaultState();
-	
-	m_suppliesDepletedVoice = getSupplyTruckAIUpdateModuleData()->m_suppliesDepletedVoice;
+// ??0SupplyTruckAIUpdate@@ owned by SupplyTruckAIUpdateCtor.cpp: declared in header, not defined here.
 
-} 
-
-//-------------------------------------------------------------------------------------------------
+ //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/SupplyTruckAIUpdateDestructorThunk.cpp
 // ??1SupplyTruckAIUpdate@@ present-unmatched
 SupplyTruckAIUpdate::~SupplyTruckAIUpdate( void )
