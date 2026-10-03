@@ -49891,3 +49891,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003FCD04Compare@@YAHPAX0H@Z,,0x003FCD04,84,Code/GameEngine/Source/Common/Rva003FCD04Finish.cpp,matched,banked attempt finished: local copy of first pointer coalesces into the parameter home emitting the retail self-store
 ??1Rva001F4C67@@UAE@XZ,,0x001F4C67,159,Code/GameEngine/Source/Common/Rva001F4C67Finish.cpp,matched,banked attempt finished: ReadWriteBarrier after the m_w78 guard forces operator-arrow to reload and emit the retail redundant Make null-check
 ??0Rva00418797@@QAE@ABVAsciiString@@PBV0@@Z,,0x00418797,124,Code/GameEngine/Source/GameClient/Rva00418797Ctor.cpp,matched,ctor via sibling Rva00419669 precedent with two maps plus string
+?rva00323E1C@Rva00323E1C@@QAEXXZ,,0x00323E1C,121,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00323E1CMethod.cpp,matched,gui audio prefix via TheAudio misc plus addAudioEvent
