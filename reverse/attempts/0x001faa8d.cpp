@@ -4,6 +4,8 @@
 // partial score=0.98 date=2026-10-03
 // ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z
 // partial score=0.98 date=2026-10-03
+// ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z
+// partial score=0.98 date=2026-10-03
 // cl: /O1 /MD
 // ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z 0x001FAA8D 145B
 // Evidence: chain via rowed 0x001FA7AC; xfer shape with IsLightCRC early-out via slot 0x10 then Version1 via rowed 0x000053EE then base rva001F37C4 on this then m_94 chain call then uint at +0x88 via slot 0x78 then Coord3DBase at +0x48 via slot 0x60 then uints at +0x54/+0x58 via slot 0x78 then ParticleSystemID via rowed XferParticleSystemID 0x0030600A. Xfer declaration copied verbatim from PoisonedBehaviorXfer.cpp (slot-3 recipe). Honest Rva names.
@@ -156,11 +158,23 @@ void Rva001FAA8D::rva001FAA8D(Xfer *xfer)
 	*xfer == m_48;
 	*xfer == m_54;
 	*xfer == m_58;
+	// Retail keeps the absent-particle-system id as a live register zero until
+	// the merge, where it stores to [ebp+0x08]. Reading `zero` through a
+	// reference is what keeps it in a register: with a literal 0 the compiler
+	// pre-stores the slot and emits `and DWORD PTR [ebp+0x08],0` plus a
+	// memory compare, and it grows. The initializer is what makes MSVC
+	// materialize the zero into eax first; the extra `mov [ebp+0x08],eax`
+	// before the branch is the remaining 3-byte gap.
+	const int zero = 0;
 	int id = 0;
 	if (m_78)
 	{
 		_ReadWriteBarrier();
 		id = m_78->m_a8;
+	}
+	else
+	{
+		id = zero;
 	}
 	XferParticleSystemID(xfer, &id);
 }
