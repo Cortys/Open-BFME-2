@@ -49456,3 +49456,7 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva006D94A0@BfmeAptValue006DCD20@@QAEXXZ,,0x006D94A0,92,Code/GameEngine/Source/Common/Rva006D94A0AptCluster.cpp,matched,Apt array GC mark slot 0x34; forwarder 0x006DCC00 via thunk 0x0070DFD0; get/setGCMark/recurse triple
 ?rva006F7AC0@Rva006F7AC0List@@QAE_NXZ,,0x006F7AC0,33,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,AptCIH child-list predicate: walk m_head chain via next+0x54 calling rva006E24E0 and return true on first hit; BFME1 AptCIH recursion shape
 ?rva006F7AF0@Rva006F7AC0List@@QAEXH@Z,,0x006F7AF0,36,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,AptCIH child-list apply: walk m_head chain and call rva006E2560(arg) on each node; ret 4 thiscall
+??1BfmeQuery1279@@QAE@XZ,,0x006F7BC0,65,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeQuery1279 dtor: assert root isUndefined then clear +0x4C and tail-call v2
+??0BfmeWrapper1279@@QAE@XZ,,0x006F7FF0,103,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeWrapper1279 ctor: pool-allocate the 4-byte BfmeQuery1279 via new and store at +0
+??1BfmeWrapper1279@@QAE@XZ,,0x006F84F0,93,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeWrapper1279 dtor: clear the chain then delete the BfmeQuery1279 through the pool
+?rva006F8190@BfmeWrapper1279@@QAEXXZ,,0x006F8190,142,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeWrapper1279 method: assert m_query non-null clear the chain delete it and null the field
