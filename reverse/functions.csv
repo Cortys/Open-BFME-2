@@ -50459,3 +50459,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0007898BClear@@YGXPAVRva000789A0Outer@@@Z,,0x0007898B,21,Code/GameEngine/Source/Common/Rva000789A0Update.cpp,matched,companion to Rva000789A0Update same outer holder layout ret4 and-zero under O1
 ?rva002DAD4D@Rva002DAD4D@@QAEXVAsciiString@@@Z,,0x002DAD4D,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DAD4DSet.cpp,matched,by-value AsciiString set at plus 0x38 via twin Rva0032A438 plus callers
 ??$__uninitialized_copy@PAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@PAV12@@_STL@@YAPAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@0@PAV10@00ABU__false_type@0@@Z,,0x0032B5C5,38,Code/Libraries/Source/WWVegas/WWLib/Rva0032B5C5UninitCopy.cpp,matched,38B uninit-copy stride 0xC via rowed _Construct 0x0032B598
+?rva0052E0A1@Rva0052E0A1@@QAE_NH@Z,,0x0052E0A1,45,Code/GameEngine/Source/Common/Rva0052E0A1.cpp,matched,2-bit field compare-and-set 4 callers unlock lane
