@@ -30,3 +30,13 @@ struct Rva005344C0
 Rva005344C0::Rva005344C0(const Rva005344C0 &o) : m_first(o.m_first), m_second(o.m_second)
 {
 }
+
+// ?Rva005346D9Construct@@YAXPAURva005344C0@@ABU1@@Z @0x005346D9 (45B).
+// Conditional copy-construct via placement new for caller 0x00534757.
+// Evidence: chain from 0x00534676 which this session landed; same TU/flags.
+#include <new>
+
+void __cdecl Rva005346D9Construct(Rva005344C0 *p, const Rva005344C0 &v)
+{
+	new (p) Rva005344C0(v);
+}
