@@ -49815,3 +49815,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva001ED338@Rva001ED338@@QAEXPAX@Z,,0x001ED338,18,Code/Libraries/Source/WWVegas/WWLib/Rva001ED338Init.cpp,matched,INI initFromINI forward with class table g_00BDF1D8
 ?rva00219C5D@Rva00219B9E@@QAEPAXI@Z,,0x00219C5D,54,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,guarded memset via rowed thunk plus element plus 0x68 forward
 ?rva00219F8E@Rva00219B9E@@QAEPAXII@Z,,0x00219F8E,85,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,guarded memset plus outer forward via rowed 0x00219C5D fallback global
+?rva00219B62@Rva00219B62@@QAEHI@Z,,0x00219B62,30,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,inner int-vector accessor sar2 barrier reload shape lever caller 0x00219C3E

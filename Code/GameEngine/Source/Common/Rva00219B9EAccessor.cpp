@@ -13,6 +13,8 @@
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
 #include "ascii_string.h"
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 void *__cdecl ji_006291ae(void *dest, int val, unsigned int count);
 #pragma comment(linker, "/alternatename:?ji_006291ae@@YAPAXPAXHI@Z=?ji_006291ae@@YAXXZ")
 extern int g_00DFE368;
@@ -54,6 +56,12 @@ struct IdxPair {
     char m_00[0x0C];
     unsigned m_o;
     unsigned m_i;
+};
+class Rva00219B62 {
+    char m_pad[0x30];
+    IntVec m_vec;
+public:
+    int rva00219B62(unsigned int index);
 };
 class Rva00219B9E {
     char m_pad[0x14];
@@ -466,4 +474,19 @@ void *Rva00219B9E::rva00219F8E(unsigned int o, unsigned int i)
         return fallback;
     OuterElem32 *base = m_outer.m_start;
     return ((Rva00219B9E *)&base[o])->rva00219C5D(i);
+}
+// ?rva00219B62@Rva00219B62@@QAEHI@Z @0x00219B62 30B
+// Inner int-vector element at +0x30/+0x34 (Elem216::m_30): bounds-checked load
+// returning start[index] or 0. Same sar-2 count idiom as 0x00219BE1/0x00219C1F.
+// Evidence: retail mov edx,[ecx+0x34] sub [ecx+0x30] sar 2 cmp jae xor,
+// else mov ecx,[ecx+0x30] mov eax,[ecx+eax*4]; caller 0x00219C51 in 0x00219C3E
+// which forwards element from rowed 0x00219B9E; unblocks 0x00219C3E.
+int Rva00219B62::rva00219B62(unsigned int index)
+{
+    unsigned int count = (unsigned int)(((char *)m_vec.m_finish - (char *)m_vec.m_start) >> 2);
+    if (index < count) {
+        _ReadWriteBarrier();
+        return m_vec.m_start[index];
+    }
+    return 0;
 }
