@@ -1,3 +1,5 @@
+// ?rva00219D85@Rva00219D85@@QAEPAXI@Z
+// partial score=0.92 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ?rva00219B9E@Rva00219B9E@@QAEPAXI@Z @0x00219B9E 44B
@@ -75,7 +77,6 @@ public:
     int rva0021A016(unsigned int o, unsigned int i);
     int rva00219E74(unsigned int o, unsigned int i);
     int rva00219ED5(unsigned int o, unsigned int i);
-    int rva00219D52(unsigned int o);
     int rva0021A041(unsigned int o, unsigned int i);
     int rva0021A06C(unsigned int o, unsigned int i);
     int rva0021A097(unsigned int o, unsigned int i);
@@ -406,19 +407,35 @@ int Rva00219B9E::rva00219ED5(unsigned int o, unsigned int i)
     return 0;
 }
 
-// ?rva00219D52@Rva00219B9E@@QAEHI@Z @0x00219D52 51B
-// Outer 32B vector at +0x14C selects element o, then returns the count of its
-// inner 216B vector at +0x14 via signed idiv. Same reinterpret-cast pattern as
-// 0x00219E74/0x0021A016: outer elements share the +0x14 Vec216 prefix.
-// Evidence: retail lea eax,[ecx+0x14C] plus sar 5 for outer, then
-// lea ecx,[ecx+eax+0x14] plus mov ecx,0xD8/cdq/idiv for inner.
-int Rva00219B9E::rva00219D52(unsigned int o)
+// ?rva00219D85@Rva00219D85@@QAEPAXI@Z @0x00219D85 37B
+// Bounds-checked 16-byte element accessor at +0x15C/+0x160.
+// Returns null when index >= (finish-start)/16 via sar 4, else start+index*16.
+// Evidence: retail sub/sar/cmp-jae/shl-add shape; caller 0x00219DAA tests null
+// then falls back to AsciiString::TheEmptyString. Same TU and flags as neighbours.
+struct Elem16_00219D85
 {
-    unsigned int count = Vec32Size(&m_outer);
-    if (o < count) {
-        OuterElem32 *base = m_outer.m_start;
-        Rva00219B9E *inner = (Rva00219B9E *)&base[o];
-        return (int)VecSize(&inner->m_vec);
-    }
-    return 0;
+	char m_data[16];
+};
+struct Vec16_00219D85
+{
+	Elem16_00219D85 *m_start;
+	Elem16_00219D85 *m_finish;
+	Elem16_00219D85 *m_end;
+};
+static __forceinline unsigned Vec16Size00219D85(const Vec16_00219D85 *v) { return (unsigned)(v->m_finish - v->m_start); }
+static __forceinline Elem16_00219D85 &Vec16At00219D85(Vec16_00219D85 *v, unsigned i) { return v->m_start[i]; }
+class Rva00219D85
+{
+	char m_pad[0x15C];
+	Vec16_00219D85 m_vec;
+public:
+	void *rva00219D85(unsigned int index);
+};
+
+// ?rva00219D85@Rva00219D85@@QAEPAXI@Z present-unmatched
+void *Rva00219D85::rva00219D85(unsigned int index)
+{
+	if (index >= Vec16Size00219D85(&m_vec))
+		return 0;
+	return &Vec16At00219D85(&m_vec, index);
 }
