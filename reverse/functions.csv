@@ -49049,3 +49049,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva002768AC@Rva002768AC@@QAEXXZ,,0x002768AC,166,Code/GameEngine/Source/GameClient/Rva002768AC.cpp,matched,Tornado bone via rowed bone positions and pinned transform caller 0x00276952
 ?rva00549252@Rva00549252@@QAEXXZ,,0x00549252,243,Code/GameEngine/Source/Common/Rva00549252Method.cpp,matched,zero slots plus nested 0x120 loops via rowed bfmePush plus caller 0x00549434
 ?rva005EF283@Rva005EF283@@QAEXXZ,,0x005EF283,59,Code/GameEngine/Source/Common/Rva005EF283.cpp,matched,hide via AptCall SetArmyNameState _hide with empty-string fallback precedent Rva005EF557ArmyName
+?rva005EF3DE@Rva005EF3DE@@QAEXXZ,,0x005EF3DE,8,Code/GameEngine/Source/Common/Rva005EF3DE.cpp,matched,forwarder to hide via AptCall SetArmyNameState
