@@ -49215,3 +49215,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?xfer@Rva005445D4@@UAEXPAVXfer@@@Z,,0x00544AD2,65,Code/GameEngine/Source/Common/Rva005445D4Xfer.cpp,matched,slot3 xfer Version12 ObjectID plus uint via 0x78
 ?rva005C3ACD@Rva005C3ACD@@QAEXXZ,,0x005C3ACD,113,Code/GameEngine/Source/Common/Rva005C3ACDHide.cpp,matched,Hide AptCall empty fallback and 12B array clear with slot2 tailcall
 ?rva005C3E79@Rva005C3E79@@QAEXXZ,,0x005C3E79,8,Code/GameEngine/Source/Common/Rva005C3ACDHide.cpp,matched,ptr-chase tail-jmp to rowed Hide callee callers 0x005D2692 0x0056825C
+?rva005C394D@Rva005C394D@@QAEXXZ,,0x005C394D,40,Code/GameEngine/Source/Common/Rva005C394DGo.cpp,matched,AptCall Go with empty fallback via rowed 0x00524EF4
