@@ -1,4 +1,6 @@
 // ?rva0004E3F1@Rva0004E3F1@@QAEXXZ
+// partial score=0.96 date=2026-10-03
+// ?rva0004E3F1@Rva0004E3F1@@QAEXXZ
 // partial score=0.95 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
@@ -61,10 +63,11 @@ void Rva0004E3F1::rva0004E3F1()
 	m_146C->setStatus(2);
 	m_146C->bfmeSetTexture(*tex);
 	m_146C->m_14 = tmp;
-	int *pSrc1 = &m_149C;
-	m_146C->m_0C = *pSrc1;
-	int *pSrc2 = &m_14A0;
-	m_146C->m_10 = *pSrc2;
-	m_146C->m_24 = *pSrc1;
-	m_146C->m_28 = *pSrc2;
+	const int *v1 = &m_149C;
+	const int *v2 = &m_14A0;
+	Image *img0 = m_146C;
+	img0->m_0C = *v1;
+	img0->m_10 = *v2;
+	img0->m_24 = *v1;
+	img0->m_28 = *v2;
 }
