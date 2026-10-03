@@ -523,34 +523,7 @@ void ParticleEmitterClass::Set_Velocity_Inheritance_Factor(float inh_factor)
 
 // Emit particles (put in particle buffer). This is called by the particle
 // buffer On_Frame_Update() function to avoid order dependence.
-// ?ParticleEmitterClass::Emit present-unmatched
-void ParticleEmitterClass::Emit(void)
-{
-	WWPROFILE("PartlicleEmitter::Emit");
-#ifdef WWDEBUG
-	if (DebugDisable == true) {
-		return;
-	}
-#endif
-
-	if (Active && !IsComplete) {
-		Quaternion curr_quat;   // Quaternion form of orientation.
-		Vector3 curr_orig;      // Origin.
-	   
-	   // Convert current matrix into quaternion + origin form.
-	   curr_quat = Build_Quaternion(Get_Transform());
-	   curr_orig = Get_Transform().Get_Translation();
-
-	   Create_New_Particles(curr_quat, curr_orig);
-
-	   PrevQ = curr_quat;
-	   PrevOrig = curr_orig;
-	} else {
-		// These need to be updated each frame no matter what
-	   PrevQ = Build_Quaternion(Get_Transform());
-	   PrevOrig = Get_Transform().Get_Translation();
-	}
-}
+// Owned by particle_emitter_emit.cpp.
 
 
 // Collision sphere is a point - emitter emits also when not visible, so this
