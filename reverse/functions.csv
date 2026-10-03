@@ -50002,3 +50002,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00406E8F@Rva00406E8F@@QAEHI@Z,,0x00406E8F,24,Code/GameEngine/Source/Common/Rva00406E8F.cpp,matched,forward to rowed 0x00219F00 via g_00DFE344
 ?Rva003BCD1BDo@@YGXPAVParameter@@@Z,,0x003BCD1B,42,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCD1BDo.cpp,matched,leaf getUnitNamed special 0x2d slot 0x44
 ?Rva003BC22EDo@@YGXMMM@Z,,0x003BC22E,43,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC22EDo.cpp,matched,leaf TacticalView slot 0xe4 with 3 floats
+?Rva003BCC08Do@@YGXMM@Z,,0x003BCC08,47,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCC08Do.cpp,matched,leaf TacticalView slot 0x1bc with 2 floats
