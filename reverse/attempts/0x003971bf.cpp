@@ -1,4 +1,6 @@
 // ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z
+// partial score=0.99 date=2026-10-03
+// ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z
 // partial score=0.98 date=2026-10-01
 // ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z
 // partial score=0.98 date=2026-10-01
@@ -73,8 +75,11 @@ bool Rva003971BF::rva003971BF(Arg3971BF *arg)
 	if (m_34 != 4)
 		return false;
 	ObjectID **range = reinterpret_cast<ObjectID **>(&m_begin50);
-	if (arg != 0 && (arg->m_flag110 & 1) != 0 && (m_end78 - m_begin74) != 0)
-		range = reinterpret_cast<ObjectID **>(&m_begin74);
+	if (arg != 0 && (arg->m_flag110 & 1) != 0) {
+		ObjectID **r = reinterpret_cast<ObjectID **>(&m_begin74);
+		if ((r[1] - r[0]) != 0)
+			range = r;
+	}
 	for (ObjectID *p = range[0]; p != range[1]; ++p)
 	{
 		Object *obj = TheGameLogic->findObjectByID(*p);

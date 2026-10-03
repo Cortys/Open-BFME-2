@@ -7,7 +7,14 @@
 // 0x00255D17 on node+8 plus rowed _free 0x00030830, then circular reinit
 // through fresh head loads with the loop-exit node. Evidence: unlock lane;
 // caller 0x002572DA in 0x002572D7; callee rows.
-extern "C" void _free(void *p);
+// Finishing levers vs the banked attempt: the list is NOT early-returned for
+// the empty case (retail still runs the circular reinit), and free is spelled
+// through namespace _STL so the call resolves to the C++-linkage pin at
+// 0x00030830 rather than the unresolved extern "C" import.
+namespace _STL
+{
+extern "C" void __cdecl free(void *memory) throw(...);
+}
 class Rva00255D17
 {
 public: ~Rva00255D17();
@@ -35,14 +42,12 @@ void Rva00256F84::rva00256F84()
 {
 	Rva00256F84Head *head = m_head00;
 	Rva00256F84Node *node = head->m_next;
-	if (node == (Rva00256F84Node *)head)
-		return;
 	while (node != (Rva00256F84Node *)m_head00)
 	{
 		Rva00256F84Node *cur = node;
 		node = node->m_next;
 		cur->m_str08.~Rva00255D17();
-		_free(cur);
+		_STL::free(cur);
 	}
 	Rva00256F84Head *a = m_head00;
 	a->m_next = (Rva00256F84Node *)a;
