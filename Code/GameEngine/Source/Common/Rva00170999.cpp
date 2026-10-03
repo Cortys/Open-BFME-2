@@ -7,6 +7,7 @@
 // Retail 0x00170A58 27B: ?Rva00170A58Get@@YA?AVRva00170999@@ABVAssetReference@@ABURva00170999Data@@@Z
 // return-by-value wrapper constructing in hidden buffer via 0x00170999.
 // Evidence: caller 0x001710A6 pushes hidden buffer plus refs then copy-constructs via 0x001709D7.
+// Retail 0x001709D7 33B: ??0Rva00170999@@QAE@ABV0@@Z copy ctor via rowed AssetReference copy plus 16B pod copy.
 
 class CountedAsset;
 class AssetReference
@@ -30,6 +31,7 @@ class Rva00170999
 {
 public:
 	Rva00170999(const AssetReference &a, const Rva00170999Data &d);
+	Rva00170999(const Rva00170999 &that);
 private:
 	AssetReference m_asset;
 	Rva00170999Data m_data;
@@ -38,6 +40,12 @@ private:
 Rva00170999::Rva00170999(const AssetReference &a, const Rva00170999Data &d)
 	: m_asset(a)
 	, m_data(d)
+{
+}
+
+Rva00170999::Rva00170999(const Rva00170999 &that)
+	: m_asset(that.m_asset)
+	, m_data(that.m_data)
 {
 }
 

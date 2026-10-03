@@ -50244,3 +50244,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?getDefault@LivingWorldAutoResolveArmorStore@@QAEPBVRva00427157@@XZ,,0x0042724D,71,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
 ?find@LivingWorldAutoResolveArmorStore@@QAEPBVRva00427157@@ABVAsciiString@@@Z,,0x00427217,54,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
 ?Rva00170A58Get@@YA?AVRva00170999@@ABVAssetReference@@ABURva00170999Data@@@Z,,0x00170A58,27,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,return-by-value wrapper for rowed 0x00170999 ctor via caller 0x001710A6 hidden buffer
+??0Rva00170999@@QAE@ABV0@@Z,,0x001709D7,33,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,copy ctor via rowed AssetReference copy plus 16B pod copy proved by callers 0x00170A91 and 0x001710B6
