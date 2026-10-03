@@ -114,3 +114,8 @@ typedef _STL::queue<BfmeOpaqueOwnedRecord492> BfmeQueue492;
 typedef _STL::queue<BfmeOpaqueOwnedRecord840> BfmeQueue840;
 template class _STL::queue<BfmeOpaqueOwnedRecord492>;
 template class _STL::queue<BfmeOpaqueOwnedRecord840>;
+
+template _STL::_Deque_iterator<BfmeOpaqueOwnedRecord1432, _STL::_Nonconst_traits<BfmeOpaqueOwnedRecord1432> > &
+_STL::_Deque_iterator<BfmeOpaqueOwnedRecord1432, _STL::_Nonconst_traits<BfmeOpaqueOwnedRecord1432> >::operator++();
+template _STL::_Deque_iterator<BfmeOpaqueOwnedRecord1408, _STL::_Nonconst_traits<BfmeOpaqueOwnedRecord1408> > &
+_STL::_Deque_iterator<BfmeOpaqueOwnedRecord1408, _STL::_Nonconst_traits<BfmeOpaqueOwnedRecord1408> >::operator++();

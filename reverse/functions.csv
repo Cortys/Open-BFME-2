@@ -49140,3 +49140,5 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?setStatus@Rva00552C40Status@@QAEXD@Z,,0x00552C40,14,Code/GameEngine/Source/Common/Rva00552C40StatusSetter.cpp,matched,Rva00552C40 disp8 status and flag setter
 ??0Rva00552C0FBase@@QAE@XZ,,0x00552C56,9,Code/GameEngine/Source/Common/Rva00552C0FBase.cpp,matched,Rva00552C0FBase constructor installs vtable 0x00C6B090
 ??_GRva00552C0FBase@@UAEPAXI@Z,,0x00552C0F,29,Code/GameEngine/Source/Common/Rva00552C0FBase.cpp,matched,Rva00552C0FBase scalar deleting destructor
+??E?$_Deque_iterator@UBfmeOpaqueOwnedRecord1432@@U?$_Nonconst_traits@UBfmeOpaqueOwnedRecord1432@@@_STL@@@_STL@@QAEAAU01@XZ,,0x0055320A,12,Code/Libraries/Source/WWVegas/WWLib/StlportOwnedRecordDeque.cpp,matched,placed STLport deque iterator pre-increment; target 0x598 node stride
+??E?$_Deque_iterator@UBfmeOpaqueOwnedRecord1408@@U?$_Nonconst_traits@UBfmeOpaqueOwnedRecord1408@@@_STL@@@_STL@@QAEAAU01@XZ,,0x00553216,12,Code/Libraries/Source/WWVegas/WWLib/StlportOwnedRecordDeque.cpp,matched,placed STLport deque iterator pre-increment; target 0x580 node stride
