@@ -49128,3 +49128,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva00342EAC@@QAE@PAVStateMachine@@@Z,,0x00342EAC,37,Code/GameEngine/Source/Common/Rva00342EACCtor.cpp,matched,AIInternalMoveToState-derived ctor hash 0x822AD648 vtable 0x00812E90
 ??_GRva003371B1@@QAEPAXI@Z,,0x003373BD,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003371B1.cpp,matched,chain you-just-landed dtor plus delete shape
 ?Rva00118C20@@YAXXZ,,0x00118C20,116,Code/Libraries/Source/WWVegas/WW3D2/Rva00118C20State.cpp,matched,unlock prev pattern G7 SSE HasStencil
+?Rva00118BA0@@YAXXZ,,0x00118BA0,118,Code/Libraries/Source/WWVegas/WW3D2/Rva00118BA0State.cpp,matched,unlock sibling G7 SSE HasStencil
