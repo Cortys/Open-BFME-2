@@ -1,4 +1,6 @@
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
+// partial score=0.93 date=2026-10-04
+// ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
 // partial score=0.93 date=2026-10-01
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
 // partial score=0.91 date=2026-10-01

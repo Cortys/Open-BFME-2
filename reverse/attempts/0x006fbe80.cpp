@@ -1,4 +1,6 @@
 // ?find2@Rva006FBE80@@QAEPAVBfmeN1034@@H@Z
+// partial score=0.93 date=2026-10-04
+// ?find2@Rva006FBE80@@QAEPAVBfmeN1034@@H@Z
 // partial score=0.93 date=2026-10-03
 // ?find2@Rva006FBE80@@QAEPAVBfmeN1034@@H@Z @0x006FBE80 66B.
 // Global linked-list find: walk the 0x00E1835C chain calling the rowed table

@@ -1,4 +1,6 @@
 // ?rva0045FE4A@SpawnBehavior@@UAEHP6AHPAVObject@@PAX@Z1@Z
+// partial score=0.9 date=2026-10-04
+// ?rva0045FE4A@SpawnBehavior@@UAEHP6AHPAVObject@@PAX@Z1@Z
 // partial score=0.9 date=2026-09-30
 // ?rva0045FE4A@SpawnBehavior@@UAEHP6AHPAVObject@@PAX@Z1@Z
 // partial score=0.9 date=2026-09-29

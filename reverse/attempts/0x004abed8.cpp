@@ -1,4 +1,6 @@
 // ??0LargeGroupAudioUpdateModuleData@@QAE@XZ
+// partial score=0.94 date=2026-10-04
+// ??0LargeGroupAudioUpdateModuleData@@QAE@XZ
 // partial score=0.94 date=2026-09-30
 // cl: /O1 /EHsc /DNDEBUG /MD
 // LargeGroupAudioUpdateModuleData default constructor @0x4ABED8 (111B). INI
