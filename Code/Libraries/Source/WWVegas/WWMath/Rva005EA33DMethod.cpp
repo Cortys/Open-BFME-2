@@ -1,0 +1,65 @@
+// cl: /O1 /G7 /DNDEBUG /MD /EHs-c- /arch:SSE
+// ?rva005EA33D@Rva005EA33D@@QAEXXZ @ 0x005EA33D 89B
+// Honest address name: __thiscall scan of two 0x24-element ranges for first a>b, then scaled callback.
+// Target evidence: 89B retail, frameless SSE (movss/comiss/divss/mulss), divisor at edx+0x18,
+// two 0xC vectors at edx+0x1C/+0x28 with 0x24 elems (floats +8/+0xC, ptr +0x20),
+// callee row ?rva005FBB70@Rva005FBB68@@QAEXM@Z, data kF7C at VA 0xBC292C, callers at 0x005EA7B7/0x005EA79D.
+extern "C" float kF7C;
+
+class Rva005FBB68
+{
+public:
+	void rva005FBB70(float v);
+};
+
+struct Rva005EA33DElem
+{
+	char m_pad00[8];
+	float m_a;
+	float m_b;
+	char m_pad10[0x20 - 0x10];
+	void *m_ptr;
+};
+
+struct Rva005EA33DVec
+{
+	Rva005EA33DElem *m_begin;
+	Rva005EA33DElem *m_end;
+	Rva005EA33DElem *m_allocEnd;
+};
+
+struct Rva005EA33DData
+{
+	char m_pad00[0x18];
+	float m_divisor;
+	Rva005EA33DVec m_ranges[2];
+};
+
+class Rva005EA33D
+{
+public:
+	void rva005EA33D();
+private:
+	char m_pad00[4];
+	Rva005EA33DData *m_data;
+};
+
+void Rva005EA33D::rva005EA33D()
+{
+	Rva005EA33DData *d = m_data;
+	int left = 2;
+	Rva005EA33DVec *range = d->m_ranges + 2;
+	do {
+		--left;
+		--range;
+		Rva005EA33DElem *cur = range->m_begin;
+		Rva005EA33DElem *end = range->m_end;
+		for (; cur != end; cur = (Rva005EA33DElem *)((char *)cur + 0x24)) {
+			if (cur->m_a > cur->m_b) {
+				float v = (cur->m_a - cur->m_b) / d->m_divisor * kF7C;
+				((Rva005FBB68 *)((char *)cur->m_ptr + 8))->rva005FBB70(v);
+				return;
+			}
+		}
+	} while (left > 0);
+}

@@ -50205,3 +50205,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?markAsDead@AIUpdateInterface@@QAEXXZ,,0x0026296D,28,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_wakeUpNow.cpp,matched,named via BFME1 donor plus pinned setDead plus rowed wakeUp tail
 ?rva00262989@AIUpdateInterface@@QAEXI@Z,,0x00262989,97,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_wakeUpNow.cpp,matched,4-entry frame cache oldest-reuse via TheGameLogic frame plus callers
 ??0Rva0034B952@@QAE@PAVObject@@VAsciiString@@@Z,,0x0034B952,206,Code/GameEngine/Source/GameLogic/AI/Rva0034B952Ctor.cpp,matched,base 0x004D79E1 plus vtable g_00C122A0 plus defineState 0x004D7B0F plus caller 0x0034BA20
+?rva005EA33D@Rva005EA33D@@QAEXXZ,,0x005EA33D,89,Code/Libraries/Source/WWVegas/WWMath/Rva005EA33DMethod.cpp,matched,chain via callee 0x005FBB70 divisor plus kF7C two-range scan
