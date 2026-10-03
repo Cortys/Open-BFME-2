@@ -20,13 +20,23 @@ class OptionPreferences : public Rva002E4272
 public:
 	OptionPreferences();
 	int Rva002E432EForward();
+	bool getAllHealthBars();
 };
+class GameWindow
+{
+public:
+	int winEnable(bool v);
+};
+void GadgetCheckBoxSetChecked(GameWindow *g, bool v);
 class Rva005183A0
 {
-	char m_pad[0x310];
+	char m_pad0[0x2BC];
+	GameWindow *m_2BC;
+	char m_pad1[0x310 - 0x2BC - 4];
 	int m_val310;
 public:
 	bool rva005183A0();
+	void rva005183FA();
 };
 bool Rva005183A0::rva005183A0()
 {
@@ -38,4 +48,25 @@ bool Rva005183A0::rva005183A0()
 		return f != 0;
 	}
 	return true;
+}
+
+// ?rva005183FA@Rva005183A0@@QAEXXZ, retail 0x005183FA, 129B.
+// Same-this twin of rva005183A0 above: GameWindow at +0x2BC via rowed
+// GadgetCheckBoxSetChecked plus rowed winEnable, OptionPreferences temp via
+// rowed ctor plus getAllHealthBars plus base dtor. Callers 0x00518FAE etc.
+void Rva005183A0::rva005183FA()
+{
+	if (m_2BC == 0)
+		return;
+	if (!rva005183A0())
+	{
+		GadgetCheckBoxSetChecked(m_2BC, true);
+		m_2BC->winEnable(false);
+	}
+	else
+	{
+		bool b = OptionPreferences().getAllHealthBars();
+		GadgetCheckBoxSetChecked(m_2BC, b);
+		m_2BC->winEnable(true);
+	}
 }
