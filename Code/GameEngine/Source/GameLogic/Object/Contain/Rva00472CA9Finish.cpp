@@ -1,15 +1,5 @@
-// ?rva00472CA9@HordeContain@@QAEXPAVObject@@@Z
-// partial score=0.99 date=2026-10-01
-// cl: /O1 /MD
+// cl: /O1 /MD /Oa
 // stlport
-//
-// ?rva00472CA9@HordeContain@@QAEXPAVObject@@@Z, retail 0x00472CA9, 154 bytes.
-// Vtable slot 32 of HorseHordeContain/AODHordeContain; neighbours are landed
-// chain 0x00472B54 and HordeContainRva00473125.
-// Evidence: rowed map<int,int>::operator[] 0x0028932C, Rva00469294 0x00469294,
-// BfmeObject872Header copy 0x002CF108, Object set/clearWeaponSetFlag;
-// Object +0x74 ID, map at +0x17C, array at +0x188 stride 0x1C,
-// entry+0x14/+0x24 headers, +0x34 flag, 0x68 weapon loop.
 #include <map>
 
 enum WeaponSetType
@@ -57,12 +47,11 @@ private:
 	HordeContainSlot *m_slots;
 };
 
-// ?rva00472CA9@HordeContain@@QAEXPAVObject@@@Z present-unmatched
 void HordeContain::rva00472CA9(Object *obj)
 {
 	int id = obj->m_id;
 	int v = m_map[id];
-	int key = *(int *)(v * 0x1C + (unsigned int)m_slots);
+	int key = *(int *)((char *)m_slots + v * 0x1C);
 	void *e = m_4->rva00469294(key);
 	if (!e)
 		return;
