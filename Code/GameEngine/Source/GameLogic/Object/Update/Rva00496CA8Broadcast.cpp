@@ -52,7 +52,6 @@ private:
 	Thing *m_thing08;
 };
 
-// ?rva00496CA8@Rva00496CA8@@QAEXH@Z present-unmatched
 void Rva00496CA8::rva00496CA8(int key)
 {
 	Thing *thing = m_thing08;

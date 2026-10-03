@@ -49106,3 +49106,7 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??1Rva005CB31D@@QAE@XZ,,0x005CB31D,26,Code/GameEngine/Source/Common/Rva005CB31DClear.cpp,matched,holder dtor releases Rva005E0B0F ptr via rowed dtor and delete
 ??1Rva005CB4E6Elem@@QAE@XZ,,0x005CB4E6,69,Code/GameEngine/Source/Common/Rva005CB4E6ElemDtor.cpp,matched,chain holder dtor 0x005CB31D via ctor 0x005CB4C7
 ?rva002B3753@Rva002B3753@@QAEHXZ,,0x002B3753,22,Code/GameEngine/Source/Common/Rva002B3753.cpp,matched,
+??$__copy_backward_ptrs@PAVRva0054103E@@PAV1@@_STL@@YAPAVRva0054103E@@PAV1@00ABU__false_type@0@@Z,,0x005412C5,29,Code/Libraries/Source/WWVegas/WWLib/Rva005412C5CopyBwdPtrs.cpp,matched,
+?Rva00524EF4AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2@Z,,0x00524EF4,30,Code/GameEngine/Source/Common/Rva00524EF4AptCall.cpp,matched,
+?bfmeRunZC@BfmeOwnZC@@QAEPAXVBfmeRoomZC@@PAX@Z,,0x00204F3B,128,Code/GameEngine/Source/GameLogic/ScriptEngine/BfmeOwnZC_rva00204F3B.cpp,matched,
+?rva00496CA8@Rva00496CA8@@QAEXH@Z,,0x00496CA8,155,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496CA8Broadcast.cpp,matched,
