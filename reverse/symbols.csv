@@ -7285,3 +7285,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ??0BfmeBstrVGP@@QAE@PBD@Z,0x00176CD0,"ICF-folded with the rowed _bstr_t const char* ctor at the same address; called by rva001776a0 0x001776A0 and layout-identical per the BFME1 WebBrowserComWrappers donor"
 ?rva006fc370@@YA_NPAVAptValue@@@Z,0x006FC370,"Apt predicate called with the top stack value by rva006ff5d0 0x006FF5D0; Ghidra 762B unrowed body dispatches through 0x006DC170/0x006DC210/0x006DC0D0; address-derived name"
 ?rva006ff980@@YAXPAVAptValue@@AAVEAStringC@@H@Z,0x006FF980,"Apt string filler called by rva006ffce0 0x006FFCE0 with (value, EAStringC out, 1); Ghidra 682B unrowed; address-derived name"
+??0Rva0015B110Target@@QAE@PAVRva0015B110Owner@@@Z,0x00152DE9,"0x34-byte refcounted target ctor with vtable 0x00BD3B1C called by rva0015b110 0x0015B110; Ghidra 100B unrowed; address-derived name"
