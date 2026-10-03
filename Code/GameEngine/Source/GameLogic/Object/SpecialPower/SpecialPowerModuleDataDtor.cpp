@@ -28,6 +28,15 @@ private:
 	void *m_unused14; // +0x14
 };
 
-SpecialPowerModuleData::~SpecialPowerModuleData()
+inline SpecialPowerModuleData::~SpecialPowerModuleData()
 {
 }
+
+// This destructor is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSpecialPowerModuleDataDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeSpecialPowerModuleDataDtorInlineAnchor()
+{
+	static_cast<SpecialPowerModuleData *>(0)->SpecialPowerModuleData::~SpecialPowerModuleData();
+}
+#pragma inline_depth()
