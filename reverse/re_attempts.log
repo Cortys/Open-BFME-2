@@ -6191,3 +6191,4 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z	0x0030596C	137	partial	push ebx esi edi late saves early jne xor jmp vs shared je t=18 model=muse-04 score=0.93 stash=reverse/attempts/0x0030596c.cpp
 ?rva0037AE4E@RecorderClass@@QAEXXZ	0x0037AE4E	148	blocked	exact size-insns with 2 stack offsets plus IAT-global relocs t=15 model=muse-06 (stash 0.95 kept)
 ?rva0037B7F6@Rva0037B7F6@@QAEXXZ	0x0037B7F6	478	blocked	layout offsets and extra locals differ t=25 model=muse-spark
+?rva00203F0E@ScriptEngine@@QAE_NPAX@Z	0x00203F0E	154	partial	final frame compare sbb/inc vs jae/xor/mov al,1; globals relocs t=25 model=muse-07 score=0.94 stash=reverse/attempts/0x00203f0e.cpp
