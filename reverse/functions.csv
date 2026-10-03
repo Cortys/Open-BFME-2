@@ -50504,3 +50504,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004F19D3@Rva004F19D3@@QAE_NXZ,,0x004F19D3,32,Code/GameEngine/Source/Common/Rva004F10C2.cpp,matched,chain from 0x004F10C2 calls pred then winGetStatus next at plus8 head at plus4
 ?rva0005516F@Rva0005516F@@QAEXPAUHolder@@H@Z,,0x0005516F,83,Code/GameEngine/Source/Common/Rva0005516FMethod.cpp,matched,outer array plus0x12C stride0x1C4 row 0x550F7 fanout key2
 ?rva0048E6D2@DeployStyleAIUpdate@@QAEXXZ,,0x0048E6D2,38,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DeployStyleAIUpdateHelper.cpp,matched,DeployStyle file-unit leaf over 0x4B4 0x4D5 0x4D6 caller 0x004AE611
+?rva002DAD81@Rva002DAD81@@QAEXVAsciiString@@@Z,,0x002DAD81,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DAD81Set.cpp,matched,twin of Rva002DAD4DSet plus caller 0x002DB704 plus prev O1 EHsc flags
