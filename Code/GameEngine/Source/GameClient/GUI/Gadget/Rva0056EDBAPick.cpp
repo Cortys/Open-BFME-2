@@ -814,3 +814,50 @@ Rva0022C856 *Rva0022C856::rva0022C856(void *a1, void *a2)
 	m_1c ^= e;
 	return this;
 }
+struct Rva0056EED8
+{
+	int m_00;
+	int m_04;
+	int m_08;
+	int m_0c;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	Rva0056EED8 *rva0056EED8(void *a1, void *a2);
+};
+Rva0056EED8 *Rva0056EED8::rva0056EED8(void *a1, void *a2)
+{
+	int p;
+	int q;
+	Rva0056ECAEPick(&p, &q);
+	m_00 = p;
+	m_04 = 0xc841840;
+	m_08 = 0x14ac1a82;
+	m_0c = 0x4044ad0;
+	m_10 = *(int *)a1;
+	m_14 = *(int *)a2;
+	int b = q;
+	int e = b;
+	e *= b;
+	e ^= 0xc841840;
+	m_04 = e;
+	e *= b;
+	e ^= 0x14ac1a82;
+	m_08 = e;
+	e *= b;
+	e ^= 0x4044ad0;
+	m_0c = e;
+	e *= b;
+	m_10 ^= e;
+	e = m_10;
+	e *= b;
+	m_14 ^= e;
+	e = m_14;
+	e *= b;
+	m_18 ^= e;
+	e = m_18;
+	e *= b;
+	m_1c ^= e;
+	return this;
+}

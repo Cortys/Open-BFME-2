@@ -6075,3 +6075,5 @@ FUN_008c9125	0x004C9125	278	blocked	278B x87 SSE 3 GetGameClientRandomValueReal 
 FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart EH temp no donor t=12 model=muse-02
 ?rva004C4E93@Rva004C4E93@@QAEXPBUCoord3D@@@Z	0x004C4E93	137	partial	push esi+0x80 6B early before y z stores vs late after stores only scheduling left t=20 model=muse-03 score=0.95 stash=reverse/attempts/0x004c4e93.cpp
 ?rva004C4430@Rva004C4430@@QAEX_N@Z	0x004C4430	77	partial	mov ecx esi-8 3B late after push vs early before fld only scheduling left t=15 model=muse-03 score=0.97 stash=reverse/attempts/0x004c4430.cpp
+?rva005F45AF@Rva005F45AF@@QAEXXZ	0x005F45AF	353	blocked	353B EH upgrade list no donor EH funclet 007A51F2 unclaimed needs UnicodeString GameText UpgradeCenter t=8 model=muse-09
+?rva005E9E41@Rva005E9E41@@QAE_H@Z	0x005E9E41	171	blocked	171B EH ctor 6 args arg reuse AsciiString Delegate TreeHint no donor EH funclet 007A4240 unclaimed t=6 model=muse-09

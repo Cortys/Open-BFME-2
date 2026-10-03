@@ -49246,3 +49246,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva005EA1B1Fill@@YAPAMPAMHABH@Z,,0x005EA1B1,36,Code/Libraries/Source/WWVegas/WWMath/Rva005EA1B1Fill.cpp,matched,fill float array from int ref caller 0x005EAA2A
 ?rva00102026@Rva00102026@@QAEXXZ,,0x00102026,97,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00102026Method.cpp,matched,unlock holder conditional delete via virtuals same global as factory
 ?rva005F4D62@Rva005F4D62@@QAEPAHIPAU_Rb_tree_node_base@_STL@@0@Z,,0x005F4D62,45,Code/GameEngine/Source/Common/Rva005F4B8FCopy.cpp,matched,vector allocate and copy int keys via Rva005E59FCCopy
+?rva0056EED8@Rva0056EED8@@QAEPAU1@PAX0@Z,,0x0056EED8,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,registry pick obfuscate via Rva0056ECAEPick same as Rva0056EF65
