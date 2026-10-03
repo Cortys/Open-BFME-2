@@ -265,13 +265,7 @@ void ScriptList::reset(void)
 /**
   Ctor.
 */
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptList_updateDefaults_Thunk.cpp
-// ??0ScriptList@@QAE@XZ present-unmatched
-ScriptList::ScriptList(void) :
-m_firstGroup(NULL),
-m_firstScript(NULL)
-{
-}
+// ScriptList::ScriptList: defined in ScriptListCtor.cpp (its row's unit).
 
 /**
   Dtor.  Deletes any script lists or group lists.  Note that dtors for groups and script lists
