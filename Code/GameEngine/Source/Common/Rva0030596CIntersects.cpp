@@ -1,5 +1,3 @@
-// ?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z
-// partial score=0.93 date=2026-10-03
 // cl: /Os /MD /EHs-c-
 // ?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z @0x0030596C 137B via GhostObjectManager GhostProvider bfmeIntersects
 // Retail walks GhostObject list from TheGhostObjectManager slot 0x20 and tests GeometryInfo::bfmeIntersects.
@@ -46,20 +44,20 @@ public:
 	virtual GhostObject *getFirst();
 };
 extern GhostObjectManager *TheGhostObjectManager;
-// ?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z present-unmatched
 bool __cdecl Rva0030596CIntersects(void *self, Coord3D coord, float radius)
 {
 	GhostObject *ghost = TheGhostObjectManager->getFirst();
-	if (ghost == 0)
-		return false;
-	GeometryInfo *myGeom = (GeometryInfo *)((char *)self + 0xa0);
-	for (; ghost != 0; ghost = ghost->getNext())
+	if (ghost != 0)
 	{
-		const GeometryInfo *gi = ((GhostProvider *)((char *)ghost + 8 + ghost->m_08[1]))->geometry();
-		const Coord3D *pos = ((GhostProvider *)((char *)ghost + 8 + ghost->m_08[1]))->position();
-		float ang = ((GhostProvider *)((char *)ghost + 8 + ghost->m_08[1]))->angle();
-		if (gi->bfmeIntersects(*pos, ang, *myGeom, coord, radius))
-			return true;
+		GeometryInfo *myGeom = (GeometryInfo *)((char *)self + 0xa0);
+		for (; ghost != 0; ghost = ghost->getNext())
+		{
+			const GeometryInfo *gi = ((GhostProvider *)((char *)ghost + 8 + ghost->m_08[1]))->geometry();
+			const Coord3D *pos = ((GhostProvider *)((char *)ghost + 8 + ghost->m_08[1]))->position();
+			float ang = ((GhostProvider *)((char *)ghost + 8 + ghost->m_08[1]))->angle();
+			if (gi->bfmeIntersects(*pos, ang, *myGeom, coord, radius))
+				return true;
+		}
 	}
 	return false;
 }

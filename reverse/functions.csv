@@ -49435,3 +49435,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva004F7B42@Rva004F7B42@@QAEHHH@Z,,0x004F7B42,41,Code/GameEngine/Source/Common/Rva004F7B42.cpp,matched,upper_bound then end compare ret first or -1 callers 0x004F81CC 0x005EAB20
 ?rva004F70D1@Rva004F70D1@@QAEPAUTreeHintRef00217D4C@@PAU2@@Z,,0x004F70D1,57,Code/GameEngine/Source/Common/Rva004F70D1.cpp,matched,vector erase via rowed copy_ptrs and deleting callers 0x005E1C6F 0x002B5BBA
 ?rva005E1C6F@Rva005E1C6F@@QAEXPAX@Z,,0x005E1C6F,46,Code/GameEngine/Source/Common/Rva005E1C6F.cpp,matched,scan TreeHint vector erase matches set flag chain from 0x004F70D1
+?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z,,0x0030596C,137,Code/GameEngine/Source/Common/Rva0030596CIntersects.cpp,matched,GhostObjectManager GhostProvider bfmeIntersects via shared false tail
