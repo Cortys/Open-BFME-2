@@ -49345,3 +49345,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??_GRva0041E875@@QAEPAXI@Z,,0x0041E8F6,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0041E875.cpp,matched,deleting dtor calls 0x0041E875 plus delete 0x0002FD60
 ?rva003B48E4@Rva003B48E4@@QAEXPAX@Z,,0x003B48E4,158,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003B48E4.cpp,matched,recursive script check clear via rowed callees ret4 void-star arg self plus bool checks
 ?rva00074A52@Rva0007517F@@UAEXHHPBD@Z,,0x00074A52,173,Code/GameEngine/Source/Common/System/Rva0007517FVslot24.cpp,matched,vslot 24 offset 0x60 vtable 0x007C6620 class Rva0007517F via translate and iface calls
+?rva0007490F@Rva0007517F@@UAEXPADHHHHH@Z,,0x0007490F,178,Code/GameEngine/Source/Common/System/Rva0007490FVslot20.cpp,matched,vslot 20 offset 0x50 vtable 0x007C6620 class Rva0007517F via triple _D11 loop
