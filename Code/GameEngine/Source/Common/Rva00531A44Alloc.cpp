@@ -12,6 +12,7 @@ class Rva00531A44
 public:
 	Rva00531A44 &rva00531A44(unsigned short count);
 	void rva00531A93();
+	unsigned short rva00531AEE(unsigned short idx);
 private:
 	unsigned short m_count;
 	unsigned short m_zero;
@@ -37,4 +38,10 @@ void Rva00531A44::rva00531A93()
 	delete[] m_pC;
 	delete[] m_p8;
 	delete[] m_p4;
+}
+unsigned short Rva00531A44::rva00531AEE(unsigned short idx)
+{
+	if (idx != m_p4[idx])
+		m_p4[idx] = rva00531AEE(m_p4[idx]);
+	return m_p4[idx];
 }

@@ -49851,3 +49851,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00531D08@Rva00531E14@@QAEAAV1@G@Z,,0x00531D08,46,Code/GameEngine/Source/Common/Rva00531E14Lookup.cpp,matched,init of Rva00531E14 via layout plus caller 0x0053237A
 ?rva00531DE1@Rva00531E14@@QAEGXZ,,0x00531DE1,46,Code/GameEngine/Source/Common/Rva00531E14Lookup.cpp,matched,same TU layout offsets caller 0x005342B9 honest address name
 ?rva00531E74@Rva00531E74@@QAEXXZ,,0x00531E74,49,Code/GameEngine/Source/Common/Rva00531E74.cpp,matched,unlock bucket-chain collect callers 0x005320C4 0x00533C38
+?rva00531AEE@Rva00531A44@@QAEGG@Z,,0x00531AEE,50,Code/GameEngine/Source/Common/Rva00531A44Alloc.cpp,matched,union-find find over m_p4 like Rva00531ED3 callers 0x00531B43 0x00532438
