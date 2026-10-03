@@ -50184,3 +50184,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??_GRva003A97E0@@UAEPAXI@Z,,0x003AE73C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003A97E0.cpp,matched,deleting dtor via rowed dtor 0x003A97E0 plus delete
 ??_GRva003AB9FF@@UAEPAXI@Z,,0x003AE720,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003AB9FF.cpp,matched,deleting dtor via rowed dtor 0x003AB9FF plus delete
 ?rva0028D86F@Rva0028D86F@@QAEXABU?$_Base_bitset@$03@_STL@@@Z,,0x0028D86F,34,Code/GameEngine/Source/GameLogic/Object/Rva0028D86F.cpp,matched,bitset OR at 0x370 via rowed 0x0028C53E plus WeaponSet update via pin 0x002C8C97 plus caller 0x004B577C
+?Rva003BC4D1Do@@YGXH@Z,,0x003BC4D1,23,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4D1Do.cpp,matched,script forwards int arg to TheAudio vslot 0xb4 with 0
