@@ -49782,3 +49782,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FA430@Rva003FA430@@QAE_NH@Z,,0x003FA430,52,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva003FA430Contains.cpp,matched,search Upgrades vector at +4 for science match caller 0x003FA681
 ?rva003FA681@Rva003FA681@@QAEXHABH@Z,,0x003FA681,51,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva003FA681Add.cpp,matched,add Upgrades pair if science absent caller 0x004E0ACF
 ?rva004E0A96@Rva004E0A96@@QAEXXZ,,0x004E0A96,69,Code/GameEngine/Source/Common/Rva004E0A96Flush.cpp,matched,flush pending pointer via clearer then add pair amount 1 holder +0x264
+??0Rva002E73D4@@QAE@HHH@Z,,0x002E73D4,39,Code/GameEngine/Source/GameLogic/Object/Rva002E73D4Ctor.cpp,matched,ctor three ints plus zeroed tail caller 0x002F3297
