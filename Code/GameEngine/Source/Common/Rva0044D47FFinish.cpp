@@ -123,6 +123,5 @@ public:
 };
 void LanLobbyUserNamePrefs::setUserName(UnicodeString user)
 {
-	AsciiString key("UserName");
-	(*this)[key].set(UnicodeStringToQuotedPrintable(user));
+	(*this)["UserName"] = UnicodeStringToQuotedPrintable(user);
 }
