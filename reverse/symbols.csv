@@ -7275,3 +7275,5 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva0070AF90@Rva0070B380@@QAEPAXABVEAStringC@@@Z,0x0070AF90,"address-derived private-member callee of Rva0070B380::lookup at 0x0070B3A2; the hash-map lookup returning its +4 payload"
 ?rva00153f08@Rva00154058Holder@@QAEXPAX@Z,0x00153F08,"set-surface worker for the holder ctor at 0x00154058; Ghidra boundary 336B; address-derived name"
 ?get_deformed_vertices@MeshModelClass@@QAEXPAVVector3@@0PBVHTreeClass@@@Z,0x0016BF40,"MeshModelClass skin deformation worker called from Get_Deformed_Vertices 0x001499D0; Ghidra boundary 0x0016BF40; donor name from meshgeometry.h"
+?erase@Rva0014921EVector@@QAEXPAH0@Z,0x00532803,"ICF-folded STLport 4-byte vector erase called from rva0014921e 0x0014921E; existing row vector<ParticleSystemID>::erase shares this body"
+?rva00149002@@YAXHHPAVRva0014921EVector@@H@Z,0x00149002,"EH-protected range worker called from rva0014921e; 255B unpinned Ghidra body; address-derived name"
