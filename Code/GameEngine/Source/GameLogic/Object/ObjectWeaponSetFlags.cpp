@@ -202,7 +202,7 @@ void Object::rva00290AC1(const WeaponSetFlags &flags)
 		}
 	}
 }
-bool Object::setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType)
+inline bool Object::setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType)
 {
 	Rva00290B24Iface *iface = m_250;
 	if (iface)
@@ -213,6 +213,15 @@ bool Object::setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType)
 		setStatus((ObjectStatusTypes)0x51, false);
 	return m_weaponSet.setWeaponLock(weaponSlot, lockType);
 }
+
+// This method is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeObjectSetWeaponLockInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeObjectSetWeaponLockInlineAnchor()
+{
+	static_cast<Object *>(0)->setWeaponLock(PRIMARY_WEAPON, NOT_LOCKED);
+}
+#pragma inline_depth()
 // Object::setSpecialModelConditionState, retail 0x0028AEB2 (12 bytes): Zero Hour
 // has it on the Object; BFME2 forwards it to the ObjectSMCHelper (tail jump).
 void Object::setSpecialModelConditionState(ModelConditionFlagType mc, unsigned int frames)
