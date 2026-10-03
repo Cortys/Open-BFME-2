@@ -49473,3 +49473,4 @@ _rva0062AFC8D3DXVec3CatmullRom@24,,0x0062AFC8,6,Code/GameEngine/Source/Common/Rv
 ?rva0041E9D2@Rva0041E9D2@@QAE_NW4NameKeyType@@PBVModuleData@@@Z,,0x0041E9D2,53,Code/GameEngine/Source/GameClient/GUI/Rva0041E9D2.cpp,matched,Armor find plus ObjectLookup slot plus E8E6 push caller 0x0041EEB3 unlocks 0x0041ED84
 ?rva004F81CC@Rva004F81CC@@QAEHH@Z,,0x004F81CC,15,Code/GameEngine/Source/Common/Rva004F81CC.cpp,matched,forward to rowed 0x004F7B42 with member 0x7c chain
 ??0Rva005DAAB6@@QAE@XZ,,0x005DAA71,45,Code/GameEngine/Source/Common/Rva005DAAB6Ctor.cpp,matched,vtable 0x008765A8 plus base 0x0055B048 plus sibling slot15 layout
+?reserve@?$vector@URva004DA181Element@@V?$allocator@URva004DA181Element@@@_STL@@@_STL@@QAEXI@Z,,0x004DA039,126,Code/Libraries/Source/WWVegas/WWLib/StlportReserveRva004DA039.cpp,matched,STLport vector reserve 340B stride via POD helpers and Rva clear
