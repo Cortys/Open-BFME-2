@@ -50364,3 +50364,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva005CB35A@@QAE@XZ,,0x005CB35A,100,Code/GameEngine/Source/Common/Rva005CB35AFinish.cpp,matched,ctor via Rva005E74CF shape no explicit vtable store so derived vptr emits first
 ?Rva00547297Init@@YAPAVRva00547223@@PAV1@PAH1@Z,,0x00547297,22,Code/GameEngine/Source/Common/Rva00547297Finish.cpp,matched,free wrapper over rowed 0x00547223 via caller 0x005476C8
 ??0Rva005DA64B@@QAE@PAX@Z,,0x005DA64B,24,Code/GameEngine/Source/Common/Rva005DA64BCtor.cpp,matched,vtable store plus base ctor call per retail caller 0x0059726E
+?rva0039F72C@Rva0039FE6COwner@@QAEPAVTeamPrototype@@I@Z,,0x0039F72C,53,Code/GameEngine/Source/Common/RTS/TeamFactoryFindById.cpp,matched,TeamFactory map find by id via increment row
