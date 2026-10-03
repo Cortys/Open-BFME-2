@@ -1,10 +1,8 @@
-// ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z
-// partial score=0.97 date=2026-10-01
-// ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z
-// partial score=0.97 date=2026-10-01
 // cl: /O1 /MD /Oy-
-// ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z @0x00238FF3 72B finish lane banked 0.96 frameless vs ebp plus edi esi swap.
-// Evidence: leaf loop over m_head+0x14 calling w14 then v31 v06; caller 0x00245E59; string "drawables" at 0x007ED678.
+// ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z @0x00238FF3 72B
+// Leaf walk: set the "drawables" phase on the host, then call w14 for every
+// node on the m_head list, then clear the arg slot through v31 and finish v06.
+// Evidence: caller 0x00245E59; string "drawables" at 0x007ED678.
 
 class Rva00238FF3Arg
 {
@@ -76,15 +74,14 @@ private:
 	Rva00238FF3Node *m_head;
 };
 
-// ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z present-unmatched
 void Rva00238E1B::rva00238FF3(Rva00238FF3Arg *arg)
 {
-	Rva00238FF3Arg *host = arg;
-	host->v05("drawables");
+	arg->v05("drawables");
 	Rva00238FF3Node *p = m_head;
 	for (; p != 0; p = p->m_next)
-		p->w14(host);
-	arg = 0;
-	host->v31((void **)&arg);
+		p->w14(arg);
+	Rva00238FF3Arg *host = arg;
+	void *zero = 0;
+	host->v31(&zero);
 	host->v06();
 }
