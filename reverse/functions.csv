@@ -49217,3 +49217,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005C3E79@Rva005C3E79@@QAEXXZ,,0x005C3E79,8,Code/GameEngine/Source/Common/Rva005C3ACDHide.cpp,matched,ptr-chase tail-jmp to rowed Hide callee callers 0x005D2692 0x0056825C
 ?rva005C394D@Rva005C394D@@QAEXXZ,,0x005C394D,40,Code/GameEngine/Source/Common/Rva005C394DGo.cpp,matched,AptCall Go with empty fallback via rowed 0x00524EF4
 ?rva005C3209@Rva005C31FB@@QAEXXZ,,0x005C3209,55,Code/GameEngine/Source/Common/AsciiStringFoldDeleters.cpp,matched,guarded DeleteContent AptCall via rowed 0x00524EF4
+?rva005D2664@Rva005D2664@@QAEXH@Z,,0x005D2664,55,Code/GameEngine/Source/Common/Rva005D2664Method.cpp,matched,indexed clear with guarded Hide tail via 0x005C3E79
