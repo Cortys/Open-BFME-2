@@ -1,4 +1,6 @@
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
+// partial score=0.96 date=2026-10-04
+// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
 // partial score=0.94 date=2026-10-03
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
 // partial score=0.94 date=2026-10-03
@@ -51,6 +53,9 @@ namespace _STL {
 template<> bitset<128> &bitset<128>::reset();
 }
 
+
+void Rva006291AEMemset(void *dst, int value, unsigned int count);
+
 class AsciiString
 {
 public:
@@ -68,16 +73,12 @@ public:
 	{
 		((_STL::bitset<128> *)m_words)->reset();
 	}
-	~ForbiddenStatusMask();
 
 private:
 	unsigned long m_words[4];
 };
 
-ForbiddenStatusMask::~ForbiddenStatusMask()
-{
-	m_words[0] = 0;
-}
+
 
 class QueryFilter
 {
@@ -121,16 +122,16 @@ private:
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ @0x0045A2E7
 AutoAbilityBehaviorModuleData::AutoAbilityBehaviorModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00C41568))
+	, m_maxScanRange(0.0f)
+	, m_minScanRange(0.0f)
+	, m_workingRadius(0.0f)
+	, m_idleTimeSeconds(0.0f)
 	, m_specialAbility()
 	, m_forbiddenStatus()
 {
-	m_maxScanRange = 0.0f;
-	m_minScanRange = 0.0f;
-	m_workingRadius = 0.0f;
-	m_idleTimeSeconds = 0.0f;
 	m_startsActive = false;
 	m_baseMaxRangeFromStartPos = false;
 	m_adjustAttackMeleePosition = false;
 	m_allowSelf = true;
-	memset(&m_forbiddenStatus, 0, sizeof(m_forbiddenStatus));
+	Rva006291AEMemset(&m_forbiddenStatus, 0, 0x10);
 }
