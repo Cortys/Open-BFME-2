@@ -149,11 +149,11 @@ struct TempIndexStruct
 	float z;
 };
 
-bool operator <(const TempIndexStruct &l, const TempIndexStruct &r) { return l.z < r.z; }
-bool operator <=(const TempIndexStruct &l, const TempIndexStruct &r) { return l.z <= r.z; }
-bool operator >(const TempIndexStruct &l, const TempIndexStruct &r) { return l.z > r.z; }
-bool operator >=(const TempIndexStruct &l, const TempIndexStruct &r) { return l.z >= r.z; }
-bool operator ==(const TempIndexStruct &l, const TempIndexStruct &r) { return l.z == r.z; }
+bool operator <(const TempIndexStruct &l, const TempIndexStruct &r);
+bool operator <=(const TempIndexStruct &l, const TempIndexStruct &r);
+bool operator >(const TempIndexStruct &l, const TempIndexStruct &r);
+bool operator >=(const TempIndexStruct &l, const TempIndexStruct &r);
+bool operator ==(const TempIndexStruct &l, const TempIndexStruct &r);
 // ----------------------------------------------------------------------------
 static
 void InsertionSort(TempIndexStruct *begin, TempIndexStruct *end)
