@@ -49163,3 +49163,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00530F47@Rva00530FC5@@QAEPAV1@H@Z,,0x00530F47,103,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,unlock lane thiscall sized alloc and zero via rowed new and memset
 ?rva005AB45B@Rva005AB45B@@QAE_NXZ,,0x005AB45B,94,Code/GameEngine/Source/Common/Rva005AB45B.cpp,matched,rowed callees TheGameLogic g_00DFEEF8 caller 0x005AB6A5
 ?rva005CB337@Rva005CB31D@@QAEXPAVRva005E0B0F@@@Z,,0x005CB337,35,Code/GameEngine/Source/Common/Rva005CB31DClear.cpp,matched,setter stores new ptr then releases old via rowed dtor and delete
+?rva0053117F@Rva00531132@@QAEHH@Z,,0x0053117F,23,Code/GameEngine/Source/Common/Rva00531132.cpp,matched,BFME1 6d9434269 htreemgr Get_Tree bounds-check lead O1 G7 MD; target Ghidra23 and direct caller531660; same count0 and inline words4 as verified12-entry mutator531132; original names and word identities unknown; no HTree identity claim

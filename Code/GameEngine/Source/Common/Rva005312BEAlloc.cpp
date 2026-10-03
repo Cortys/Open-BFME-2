@@ -5,6 +5,7 @@ class Rva00531132
 {
 public:
 	void rva00531132(bool add, int value);
+	int rva0053117F(int index);
 	int m_count;
 	int m_items[12];
 };
