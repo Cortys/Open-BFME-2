@@ -22,9 +22,8 @@ class Object;
 typedef int Int;
 typedef bool Bool;
 typedef unsigned int UnsignedInt;
-typedef int ObjectID;
+enum ObjectID { INVALID_ID = 0 };
 typedef float Real;
-enum { INVALID_ID = 0 };
 
 struct Coord3D
 {
@@ -89,16 +88,16 @@ class SupplyTruckAIUpdate : public Rva0026E9BDBase, public SupplyTruckAIInterfac
 public:
 	SupplyTruckAIUpdate( Thing *thing, const ModuleData* moduleData );
 	virtual ~SupplyTruckAIUpdate();
-	virtual Int getNumberBoxes() const { return m_numberBoxes; }
+ 	virtual Int getNumberBoxes() const;
 	virtual Bool loseOneBox();
 	virtual Bool gainOneBox( Int remainingStock );
 	virtual Bool isAvailableForSupplying() const;
 	virtual Bool isCurrentlyFerryingSupplies() const;
 	virtual Real getWarehouseScanDistance() const;
-	virtual void setForceWantingState(Bool v) { m_forcePending = v; }
-	virtual Bool isForcedIntoWantingState() const { return m_forcePending; }
-	virtual void setForceBusyState(Bool v) { m_forcedBusyPending = v; }
-	virtual Bool isForcedIntoBusyState() const { return m_forcedBusyPending; }
+ 	virtual void setForceWantingState(Bool v);
+ 	virtual Bool isForcedIntoWantingState() const;
+ 	virtual void setForceBusyState(Bool v);
+ 	virtual Bool isForcedIntoBusyState() const;
 	virtual ObjectID getPreferredDockID() const { return m_preferredDock; }
 	virtual UnsignedInt getActionDelayForDock( Object *dock );
 	virtual Int getUpgradedSupplyBoost() const { return 0; }
