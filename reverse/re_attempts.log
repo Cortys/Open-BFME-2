@@ -6016,3 +6016,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ??1Rva00337AA8@@UAE@XZ	0x00337AA8	164	blocked	extra mov byte [ebp-4],3 before bufC8 free where retail shares state 3; initial state 4 vs 3 t=15 model=muse-02 (stash 0.96 kept)
 ?Rva003C538FGet@@YGHHHHH@Z	0x003C538F	118	blocked	complex loop with 39-slot virtual holder unproven t=5 model=muse-02
 ?Rva003C5A00Get@@YGHHHHH@Z	0x003C5A00	184	blocked	complex team ascii float iterator without donor t=5 model=muse-02
+?rva00118CC0@Render2DRawArray@@QAEPAXH@Z	0x00118CC0	121	partial	eax-ecx-edx register rotation only: Count copy in ecx vs eax and index in eax vs ecx and Data load late in ecx vs early edx and GrowthStep load in eax vs ecx; size exact 121B 53 insns t=25 model=muse-02 score=0.9 stash=reverse/attempts/0x00118cc0.cpp
