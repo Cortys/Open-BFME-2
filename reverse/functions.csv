@@ -49207,3 +49207,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0039D533@Rva0039D533@@QAEXPAURva0039D533Src@@@Z,,0x0039D533,102,Code/GameEngine/Source/Common/Rva0039D533Method.cpp,matched,virtual copy via slots 0x7c 0x6c 0x04 same vtable shape as caller
 ?rva0039D889@Team@@QAEX_N@Z,,0x0039D889,49,Code/GameEngine/Source/Common/RTS/TeamRva0039D889.cpp,matched,Team flag setter via rowed list cleanup same shape as neighbours
 ?rva0039DAF4@Team@@QBE_NXZ,,0x0039DAF4,61,Code/GameEngine/Source/Common/RTS/TeamRva0039D9E3.cpp,matched,Team victim check via rowed iterate advance and victim
+??0Rva0007B890MatrixBasisCtor@@QAE@ABVVector3@@000@Z,,0x0007B890,147,Code/Libraries/Source/WWVegas/WWMath/Matrix3DVectorRowsCtor.cpp,matched,
