@@ -63,7 +63,6 @@ template <> void sort<BfmeE8 *, BfmeE8Less>(BfmeE8 *, BfmeE8 *, BfmeE8Less);
 
 bool Rva0007B701Cmp(const BfmeE8 &, const BfmeE8 &);
 
-// ?Rva004C7621Collect@@YGXPAURva004C7621Range@@PBURva004C7621Pos@@PAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z present-unmatched
 void __stdcall Rva004C7621Collect(Rva004C7621Range *range, const Rva004C7621Pos *ref, _STL::vector<BfmeE8, _STL::allocator<BfmeE8> > *out)
 {
 	float refs[3];
@@ -71,12 +70,11 @@ void __stdcall Rva004C7621Collect(Rva004C7621Range *range, const Rva004C7621Pos 
 	refs[1] = ref->m_y;
 	Rva004C7621Rec *rec = range->m_first;
 	for (; rec != range->m_last; ++rec) {
-		char *body = (char *)rec->m_vals;
-		float dy = *(float *)(body + 0x3c);
-		dy -= refs[1];
-		body += 0x38;
-		float dx = *(float *)body;
+		float *p = (float *)((char *)rec->m_vals + 0x38);
+		float dx = p[0];
+		float dy = p[1];
 		dx -= refs[0];
+		dy -= refs[1];
 		BfmeE8 e;
 		e.m_item = &rec->m_item;
 		e.m_distSq = dy * dy + dx * dx;
