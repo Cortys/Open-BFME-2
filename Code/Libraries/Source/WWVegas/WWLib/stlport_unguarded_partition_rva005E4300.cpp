@@ -103,4 +103,18 @@ void __unguarded_linear_insert(RandomAccessIter last, Tp val, Compare comp)
 template void __unguarded_linear_insert<int *, int,
 	Rva005E4300Cmp>(int *, int, Rva005E4300Cmp);
 
+// ??$__unguarded_insertion_sort_aux@PAHHVRva005E4300Cmp@@@_STL@@YAXPAH00VRva005E4300Cmp@@@Z @0x005E48A1 33B
+// Unguarded insertion pass calling rowed __unguarded_linear_insert.
+// Evidence: chain (calls just-landed 0x005E45E8); caller 0x005E4A56.
+template <class RandomAccessIter, class Tp, class Compare>
+void __unguarded_insertion_sort_aux(RandomAccessIter first,
+	RandomAccessIter last, Tp *, Compare comp)
+{
+	for (RandomAccessIter i = first; i != last; ++i)
+		__unguarded_linear_insert(i, Tp(*i), comp);
+}
+
+template void __unguarded_insertion_sort_aux<int *, int,
+	Rva005E4300Cmp>(int *, int *, int *, Rva005E4300Cmp);
+
 }
