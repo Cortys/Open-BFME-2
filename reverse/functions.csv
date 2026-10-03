@@ -50005,3 +50005,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BCC08Do@@YGXMM@Z,,0x003BCC08,47,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCC08Do.cpp,matched,leaf TacticalView slot 0x1bc with 2 floats
 ?Rva003BC47ADo@@YGXH@Z,,0x003BC47A,49,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC47ADo.cpp,matched,leaf TacticalView getPos then slot 0x1ac
 ?Rva003BCEFBDo@@YGXPAVParameter@@@Z,,0x003BCEFB,52,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCEFBDo.cpp,matched,leaf getUnitNamed iface slot 0x18 global slot 0x68
+?Rva00567F91Copy@@YAXPAVRva00567BD7@@PBV1@@Z,,0x00567F91,18,Code/Libraries/Source/WWVegas/WWLib/Rva00567F91Copy.cpp,matched,conditional copy-construct via rowed copy ctor chain
