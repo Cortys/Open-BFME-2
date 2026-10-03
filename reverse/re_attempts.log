@@ -6426,3 +6426,6 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva001ED580Parse@@YAXPAVINI@@@Z	0x001ED580	174	blocked	EH LinearCampaign parse needs holder layout plus TI decl plus Rva001ED0A9-Rva001ED03C relation t=20 model=muse-03
 ??0Rva001ED70C@@QAE@XZ	0x001ED70C	308	blocked	ctor zeroes 42 plus 13 scalars then vecnew with UnicodeString ctor but TailRecord156 dtor t=25 model=muse-03
 ??0Rva001ED3C0@@QAE@XZ	0x001ED3C0	83	blocked	MI ctor model wrong: retail stores g_00BBB554 then baseConstruct 0x001B4E63 plus vector_base allocator ctor 0x00211E58 with lea eax ebp-0xd; ours uses novtable manual vtables plus placement-new default vector t=5 model=muse-03
+?rva002ED0CC@Rva002ED0CC@@QAEPAV1@HPAVObject@@H@Z	0x002ED0CC	142	partial	stack tails swapped v634 vs ok1 plus xor ecx vs eax and m00 store late and copy split t=15 model=muse-spark score=0.9 stash=reverse/attempts/0x002ed0cc.cpp
+?rva002ED7B6@Rva002ED7B6@@QAEPAV1@HPAXHHHH@Z	0x002ED7B6	65	partial	load order eax vs ecx for arg1 early vs late plus store same t=12 model=muse-spark score=0.9 stash=reverse/attempts/0x002ed7b6.cpp
+?rva002602DA@Rva002602DA@@QAE_NXZ	0x002602DA	247	blocked	loop temp with esp save plus push ecx frame unclear t=12 model=muse-spark
