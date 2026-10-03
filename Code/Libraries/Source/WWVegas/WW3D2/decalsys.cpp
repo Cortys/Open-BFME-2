@@ -12,6 +12,11 @@ struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
 #pragma optimize("gsy", on)
 static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #pragma optimize("", on)
+// Shared multilist inline members (Is_Done/Is_Empty) are emitted as COMDATs from
+// multilist.h; retail keeps the /O1 small form (multilist.cpp / static_sort_list.cpp).
+// Compile just the headers favouring size with frame omission so this unit's copies
+// match the kept ones. Row code below still follows the unit's own flags.
+#pragma optimize("sy", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 /*
 **	Command & Conquer Generals Zero Hour(tm)
@@ -68,6 +73,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include "decalmsh.h"
 #include "matrixmapper.h"
 #include "texture.h"
+#pragma optimize("", on)
 
 
 uint32 DecalSystemClass::DecalIDGenerator = 0;
