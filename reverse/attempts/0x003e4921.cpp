@@ -1,4 +1,6 @@
 // ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z
+// partial score=0.97 date=2026-10-03
+// ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z
 // partial score=0.93 date=2026-09-29
 // cl: /O1 /EHsc
 // ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z @0x003E4921 151B gate condition via rowed getUnitNamed 0x003588E7 plus rowed nameToKey 0x00148E1A plus rowed findModule 0x0028B6D6.
@@ -69,18 +71,15 @@ public:
 bool ScriptConditions::rva003E4921(Parameter *param)
 {
 	Object *object = TheScriptEngine->getUnitNamed(param);
-	if (object == 0)
-		return false;
-	static NameKeyType gateKey = TheNameKeyGenerator->nameToKey("GateOpenAndCloseBehavior");
-	Module *module = object->findModule(gateKey);
-	GateOpenAndCloseBehaviorView *gate = module ? (GateOpenAndCloseBehaviorView *)((char *)module - 4) : 0;
-	if (gate == 0)
-		return false;
-	if (!gate->isReady())
-		return false;
-	if (gate->m_state40 <= 0)
-		return true;
-	if (gate->stateIsOne())
-		return true;
-	return false;
+	bool result;
+	if (object)
+	{
+		static NameKeyType gateKey = TheNameKeyGenerator->nameToKey("GateOpenAndCloseBehavior");
+		Module *module = object->findModule(gateKey);
+		GateOpenAndCloseBehaviorView *gate = module ? (GateOpenAndCloseBehaviorView *)((char *)module - 4) : 0;
+		result = gate != 0 && gate->isReady() && (gate->m_state40 <= 0 || gate->stateIsOne());
+	}
+	else
+		result = false;
+	return result;
 }
