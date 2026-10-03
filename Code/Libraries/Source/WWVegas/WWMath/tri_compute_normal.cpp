@@ -14,6 +14,14 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 // TriClass::Compute_Normal is inline in the reference WWMath header.  Keep
 // this small TU at the retail size-optimized settings and take its address so
 // MSVC emits the COMDAT body for the ledger's unexported collision helper.
+// The TU needs /Oy- for its own rows, but that forces an EBP frame into every
+// out-of-line Vector3 helper it also emits, while the kept copies elsewhere
+// are frameless. Parse vector3.h first with FPO on so those helpers emit the
+// kept frameless form; TriClass::Compute_Normal below is still parsed with the
+// TU flags and keeps its frame.
+#pragma optimize("y", on)
+#include "vector3.h"
+#pragma optimize("", on)
 #include "rendobj.h"
 #include "tri.h"
 
