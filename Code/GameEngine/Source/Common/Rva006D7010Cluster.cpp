@@ -30,12 +30,14 @@ public:
 	EAStringC m_bfmeString;
 };
 
-extern char g_bfmeFormatBuffer[]; // 0x00E17820
+// Native DIR32 operands at +0x21 and +0x2E both identify VA 0x00E17820.
+// INIException owns a separate buffer at VA 0x00DDF9D0; capacity here is unproven.
+extern char Va00E17820FormatBuffer[];
 
 // ?rva006D7010@@YAXPAVRva006D7010Owner@@PBDZZ
 void rva006D7010(Rva006D7010Owner *owner, const char *fmt, ...)
 {
-	vsprintf(g_bfmeFormatBuffer, fmt, (char *)(&fmt + 1));
-	EAStringC temp(g_bfmeFormatBuffer);
+	vsprintf(Va00E17820FormatBuffer, fmt, (char *)(&fmt + 1));
+	EAStringC temp(Va00E17820FormatBuffer);
 	owner->m_bfmeString = temp;
 }

@@ -12,7 +12,9 @@ public:
 };
 
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
-extern void *TheRva00222A8BOwner;
+// Native DIR32 at body+0x2A reads VA 0x00DC1A0C, the owner defined
+// by UiCallbackFirers.cpp; tooltip callbacks use VA 0x00DC06A0.
+extern void *TheRva009C1A0COwner;
 
 void __cdecl Rva003FEDDBShowButtonFlash(void **pp)
 {
@@ -22,5 +24,5 @@ void __cdecl Rva003FEDDBShowButtonFlash(void **pp)
 		s = (const char *)p + 8;
 	else
 		s = "";
-	TheRva00222A8BTarget->invoke(TheRva00222A8BOwner, "ShowButtonFlash", 1, s, 0, 0, 0, 0);
+	TheRva00222A8BTarget->invoke(TheRva009C1A0COwner, "ShowButtonFlash", 1, s, 0, 0, 0, 0);
 }
