@@ -49882,3 +49882,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0030CAF8Save@@YAXPAVRva0030CAF8Collection@@PAVDataChunkOutput@@@Z,,0x0030CAF8,323,Code/GameEngine/Source/Common/Rva0030CAF8Chain.cpp,matched,chain from 0x00537EAD sibling cursor pattern StandingWaveAreas
 ?rva0030C1C8@Rva0030C1C8@@QAEXHABV?$StringBase@D@@@Z,,0x0030C1C8,52,Code/GameEngine/Source/Common/Rva0030C1C8Set.cpp,matched,unlock setter array plus virtual notify
 ?rva005278DD@Rva00527890@@QAEXXZ,,0x005278DD,72,Code/GameEngine/Source/Common/Bfme/Rva00527890Move.cpp,matched,unlock Hide plus tail clear sibling Move
+?rva00527AEB@Rva00527AEB@@QAEXABUTreeHintRef00217D4C@@@Z,,0x00527AEB,24,Code/GameEngine/Source/Common/Bfme/Rva00527AEBWrapper.cpp,matched,chain from 0x005278DD Hide plus TreeHint assign
