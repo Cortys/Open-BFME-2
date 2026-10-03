@@ -1,11 +1,11 @@
-// ?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z
-// partial score=0.97 date=2026-09-30
-// ?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z
-// partial score=0.97 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /EHsc
 // ?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z @ 0x00418EEB 146B: map lower_bound plus bit search
 // calls rowed 0x00418BFB lower_bound and rowed 0x000242C0 decrement.
 // Evidence: chain packet calls 0x00418BFB, head+8 begin check, 8-entry loop.
+// The final check is spelled `if (!atBegin) { found; return true; } return false;`
+// rather than `if (atBegin) return false; found;`: that orientation is what
+// places the shared found block directly after the loop, matching retail's
+// `jne`-to-false / fall-through-to-found tail layout.
 struct Rva00418BFBKey {
 	int lo;
 	int hi;
@@ -75,9 +75,10 @@ bool Rva00418EEB::rva00418EEB(void *outKey, const void *inKey)
 		}
 	}
 check:
-	if (atBegin)
-		return false;
-	((Rva00418BFBKey *)outKey)->lo = lb->_key.lo;
-	((Rva00418BFBKey *)outKey)->hi = lb->_key.hi;
-	return true;
+	if (!atBegin) {
+		((Rva00418BFBKey *)outKey)->lo = lb->_key.lo;
+		((Rva00418BFBKey *)outKey)->hi = lb->_key.hi;
+		return true;
+	}
+	return false;
 }
