@@ -75,13 +75,14 @@ public:
 	void clearAllBridges(void);
 
 private:
-	unsigned char m_unmodelled_000[0x14];
+	void *m_vertexBridge;
+	void *m_indexBridge;
+	int m_08;
 	Int m_curNumBridgeIndices;
 	W3DBridge m_bridges[200];
 	Int m_numBridges;
 };
 
-// ?clearAllBridges@W3DBridgeBuffer@@QAEXXZ present-unmatched
 void W3DBridgeBuffer::clearAllBridges(void)
 {
 	for (Int i = 0; i < m_numBridges; ++i)
