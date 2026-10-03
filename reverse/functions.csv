@@ -50086,3 +50086,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00532431@Rva00532165@@QAEXGG@Z,,0x00532431,36,Code/GameEngine/Source/Common/Rva00532165Union.cpp,matched,unite via Find both args then Union same this callers in 0x5324D8 0x532708 0x533BEC
 ?rva00532455@Rva005321D1@@QAEXGG@Z,,0x00532455,36,Code/GameEngine/Source/Common/Rva005321D1Union.cpp,matched,unite via Find both args then Union same this callers in 0x5324D8 0x533BEC
 ?Rva003BCAF6Do@@YGXPAVParameter@@MMM@Z,,0x003BCAF6,65,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCAF6Do.cpp,matched,leaf TerrainLogic slot 0x88 then TacticalView slot 0xa8
+?Rva00426F17Xfer@@YAPAVXfer@@PAV1@PAV?$vector@UBfmeStringRecord00426A5B@@V?$allocator@UBfmeStringRecord00426A5B@@@_STL@@@_STL@@@Z,,0x00426F17,248,Code/GameEngine/Source/Common/Rva00426F17Xfer.cpp,matched,xfer vector via version 1 1 plus helper 0x4266BC plus reserve push_back plus empty-check
