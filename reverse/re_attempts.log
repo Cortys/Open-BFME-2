@@ -6130,3 +6130,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?Rva00485444Roll@@YGHPAX@Z	0x00485444	60	partial	fcomp-fnstsw-vs-fld-fcomi plus inc placement t=18 model=muse-10 score=0.96 stash=reverse/attempts/0x00485444.cpp
 ?rva005445FF@Rva005445FF@@QAEXXZ	0x005445FF	71	blocked	vtable load after call in edx not ebp plus missing push ebp pop ebp; tried /O2 /G7 explicit-vtable-fnptr __restrict t=25 model=muse-11 (stash 0.93 kept)
 ??0Rva0018D2A0@@QAE@XZ	0x0018D2A0	149	partial	142B vs 149B missing 7B dead store [esi+8] first plus xorps placement and esp spills t=30 model=muse-11 score=0.9 stash=reverse/attempts/0x0018d2a0.cpp
+?rva0055B489@Rva0055B489@@QAEXXZ	0x0055B489	165	blocked	add-vs-folded 0x3C plus xmm1 zero hoist plus merged clamp stores need donor t=15 model=muse-12
