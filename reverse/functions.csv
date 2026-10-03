@@ -49985,3 +49985,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00202633@Rva00202633@@QAEXH@Z,,0x00202633,69,Code/GameEngine/Source/Common/Rva00202633Finish.cpp,matched,GameLODManager apply helper; second zero spelled after first table load fixes scheduler placement
 ?getSciencePurchaseCost@ScienceStore@@QBEHW4ScienceType@@@Z,,0x001FF3DC,86,Code/GameEngine/Source/Common/RTS/Rva001FF3DCFinish.cpp,matched,BFME1 Science.cpp shape; BFME2 isInMultiplayerGame-first gate; conditional mode load reproduces esi coalescing
 ?rva00272945@Drawable@@QAEXH@Z,,0x00272945,22,Code/GameEngine/Source/GameClient/Rva00272945Finish.cpp,matched,Drawable +0x14C module ptr array virtual slot 0x60 tail call; named array pointer reproduces retail eax registration
+?xfer@Rva004C1866@@MAEXPAVXfer@@@Z,,0x004C1974,104,Code/GameEngine/Source/Common/Rva004C1866Xfer.cpp,matched,slot 3 of 0x0085BE38 Version1 plus bool float bool uint uint plus ImmortalBody base
