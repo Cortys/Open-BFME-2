@@ -247,10 +247,7 @@ enum Detail
 
 // OptionPreferences::OptionPreferences: defined in OptionPreferences_ctor.cpp (its row's unit).
 
-// ?OptionPreferences::~OptionPreferences present-unmatched
-OptionPreferences::~OptionPreferences()
-{
-}
+// ??1OptionPreferences@@UAE@XZ: defined in its owner's unit (LINK-DUP: declare only here).
 
 
 // OptionPreferences::getCampaignDifficulty: defined in OptionPreferences_getCampaignDifficulty.cpp (its row's unit).
@@ -264,12 +261,7 @@ void OptionPreferences::setLANIPAddress( AsciiString IP )
 	(*this)["IPAddress"] = IP;
 }
 
-void OptionPreferences::setLANIPAddress( UnsignedInt IP )
-{
-	AsciiString tmp;
-	tmp.format("%d.%d.%d.%d", ((IP & 0xff000000) >> 24), ((IP & 0xff0000) >> 16), ((IP & 0xff00) >> 8), (IP & 0xff));
-	(*this)["IPAddress"] = tmp;
-}
+// ?setLANIPAddress@OptionPreferences@@QAEXI@Z: defined in OptionPreferences_setLANIPAddress.cpp (its row's unit).
 
 // ?OptionPreferences::getOnlineIPAddress present-unmatched
 UnsignedInt OptionPreferences::getOnlineIPAddress(void)
@@ -293,12 +285,7 @@ void OptionPreferences::setOnlineIPAddress( AsciiString IP )
 	(*this)["GameSpyIPAddress"] = IP;
 }
 
-void OptionPreferences::setOnlineIPAddress( UnsignedInt IP )
-{
-	AsciiString tmp;
-	tmp.format("%d.%d.%d.%d", ((IP & 0xff000000) >> 24), ((IP & 0xff0000) >> 16), ((IP & 0xff00) >> 8), (IP & 0xff));
-	(*this)["GameSpyIPAddress"] = tmp;
-}
+// ?setOnlineIPAddress@OptionPreferences@@QAEXI@Z: defined in OptionPreferences_setLANIPAddress.cpp (its row's unit).
 
 // ?OptionPreferences::getAlternateMouseModeEnabled present-unmatched
 Bool OptionPreferences::getAlternateMouseModeEnabled(void)
