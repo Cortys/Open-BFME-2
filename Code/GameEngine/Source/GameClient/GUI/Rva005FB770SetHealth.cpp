@@ -3,6 +3,7 @@
 class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
 extern const char g_Rva0107301CEmptyString[];
+extern "C" float kF7C;
 
 int __cdecl Rva00527925Fire(void *target, void *level, const char *prefix, const char *function, const float *val);
 
@@ -17,6 +18,7 @@ class Rva005FB770
 public:
 	void rva005FB8B4(float v);
 	void rva005FB961(float v);
+	void rva005FB9C6(float v);
 private:
 	char m_pad00[4];
 	void *m_level04;
@@ -25,6 +27,7 @@ private:
 	float m_float34;
 	char m_pad38[0x4C - 0x38];
 	bool m_flag4C;
+	bool m_flag4D;
 };
 
 void Rva005FB770::rva005FB8B4(float v)
@@ -47,4 +50,17 @@ void Rva005FB770::rva005FB961(float v)
 	Rva00527925Fire(TheRva00222A8BTarget, m_level04, team, "PlayHitAnim", &v);
 	*pHealth -= v;
 	m_flag4C = true;
+}
+
+void Rva005FB770::rva005FB9C6(float v)
+{
+	float cap = kF7C - m_float34;
+	float *p = &cap;
+	if (!(v > cap))
+		p = &v;
+	v = *p;
+	const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+	Rva00527925Fire(TheRva00222A8BTarget, m_level04, team, "PlayReinforceAnim", &v);
+	m_flag4D = true;
+	m_float34 += v;
 }
