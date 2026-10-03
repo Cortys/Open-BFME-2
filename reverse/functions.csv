@@ -49846,3 +49846,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?flagNeedToRefresh@FirewallHelperClass@@QAEX_N@Z,,0x00595F80,215,Code/GameEngine/Source/Common/Rva00595F80Firewall.cpp,matched,ZH FirewallHelper donor TRUE FALSE FirewallNeedToRefresh via OptionPreferences write
 ??$__pop_heap@PAHHURva005E4300Cmp@@@_STL@@YAXPAH00HURva005E4300Cmp@@@Z,,0x005E4A5F,41,Code/Libraries/Source/WWVegas/WWLib/stlport_pop_heap_rva005E4300.cpp,matched,same 41B shape as 0x00423EF7 and 0x002074D4 precedents
 ?rva00531978@Rva00531978@@QAEXPAVXfer@@@Z,,0x00531978,204,Code/GameEngine/Source/Common/Rva00531978.cpp,matched,20-bit unpack via Xfer ushort slot 0x80 IsCRC gate caller 0x005343BC
+?rva00531ED3@Rva00531ED3@@QAEGG@Z,,0x00531ED3,35,Code/GameEngine/Source/Common/Rva00531ED3.cpp,matched,union-find Find path compression inline table callers 0x00532480 0x00532AE4
