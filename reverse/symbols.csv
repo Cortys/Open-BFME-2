@@ -7406,3 +7406,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva004634BA@Rva00463782@@QAEPAURva004634BANode@@ABVRva0046267A@@@Z,0x004634BA,"thiscall member spelling of the 0x4634BA tree create_node (unused receiver; same bytes as the rowed YG free spelling); called by _M_insert 0x004637B7"
 ?Reset@Render2DClass@@QAEXXZ,0x00119F00,"non-virtual Reset body called directly by 0x00154EC0 Reset_Polys; WW3D2 reference header wrongly declares it virtual"
 ?rva007092F0@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@PAV2@H00H0@Z,0x007092F0,"address-derived Apt interpreter helper called by 0x006EC670 with six stack args; ecx is the 0x00E182E0 interpreter stack; identity unproven"
+?rva006C33D0@Rva006C1F60@@QAEXHH@Z,0x006C33D0,"address-derived Rva006C1F60 method called by 0x006C3840 with two zero args; shares the +0x4E4 lock layout; identity unproven"
