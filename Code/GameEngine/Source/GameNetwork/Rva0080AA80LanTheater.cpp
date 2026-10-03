@@ -46,6 +46,7 @@ public:
 class BfmeC994 : public Rva007E86B0Base
 {
 public:
+	virtual ~BfmeC994();
 	BfmeC994( char *buffer, int capacity );
 	void addString( const char *key, const char *value );
 
@@ -118,3 +119,7 @@ void Rva00803620Sink::rva0080AA80( Rva00809500Entry *entry )
 // Retail's call sites in this unit's matched rows land on bodies rowed under
 // other spellings at the same addresses (same ABI). Bind the spellings used here.
 #pragma comment(linker, "/alternatename:?bfmeCopyBZD@@YAXPADPBDI@Z=?ji_0062983e@@YAXXZ")
+
+// Existing thiscall teardown pin at RVA 0x655780 names the matched
+// seven-byte base-vptr reinstall worker; no receiver adjustment is needed.
+#pragma comment(linker, "/alternatename:??1BfmeC994@@UAE@XZ=??1BfmeMsg@@UAE@XZ")

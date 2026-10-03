@@ -20,6 +20,7 @@ public:
 class BfmeC994 : public Rva007E86B0Base
 {
 public:
+	virtual ~BfmeC994();
 	BfmeC994( char *buffer, int capacity );
 
 	int m_field08;
@@ -125,3 +126,7 @@ void Rva0080A280Owner::rva0080A280( Rva0080A280Input *input )
 send:
 	Rva007F93E0( &message, (void *)0xCE3F98, m_routeOwner );
 }
+
+// Existing thiscall teardown pin at RVA 0x655780 names the matched
+// seven-byte base-vptr reinstall worker; no receiver adjustment is needed.
+#pragma comment(linker, "/alternatename:??1BfmeC994@@UAE@XZ=??1BfmeMsg@@UAE@XZ")

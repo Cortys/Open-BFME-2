@@ -17,6 +17,7 @@ public:
 class BfmeC994 : public Rva007E86B0Base
 {
 public:
+	virtual ~BfmeC994();
 	BfmeC994( char *buffer, int capacity );
 
 	int m_field08;
@@ -256,3 +257,7 @@ void BfmeThingUNC::rva0080A680(Rva0080A680Input *input)
 // Existing retail thiscall teardown spelling targets the matched seven-byte
 // vptr reinstall worker at RVA 0x655780, also used by Gen_007e86c0::m.
 #pragma comment(linker, "/alternatename:??1Rva007E8810Message@@QAE@XZ=??1BfmeMsg@@UAE@XZ")
+
+// Existing thiscall teardown pin at RVA 0x655780 names the matched
+// seven-byte base-vptr reinstall worker; no receiver adjustment is needed.
+#pragma comment(linker, "/alternatename:??1BfmeC994@@UAE@XZ=??1BfmeMsg@@UAE@XZ")
