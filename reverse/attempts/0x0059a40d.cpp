@@ -1,12 +1,8 @@
 // ??1Rva0059A85C@@UAE@XZ
 // partial score=0.99 date=2026-10-03
 // ??1Rva0059A85C@@UAE@XZ
-// partial score=0.99 date=2026-10-03
-// ??1Rva0059A85C@@UAE@XZ
-// partial score=0.98 date=2026-10-02
 // cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfme2_ascii /Ireference/shims/bfmealloc
 // stlport
-// ??1Rva0059A85C@@UAE@XZ @0x0059A40D 98B
 // dtor of Rva0059A85C (vtable 0x00870DE4); callees rowed erase set-dtor free setter
 // Target evidence: vtable store 0x00870DE4; callers 0x004EC640 0x0059A480; unblocks 0x0059A47D; neighbours 0x0059A281 0x0059A71C
 #include <vector>
@@ -50,7 +46,6 @@ class Rva0059A85C : public Rva00506B1B
 {
 public:
 	Rva0059A85C(void *outer);
-// ??1Rva0059A85C@@UAE@XZ present-unmatched
 	virtual ~Rva0059A85C();
 private:
 	_STL::vector<void *> m_vec;
