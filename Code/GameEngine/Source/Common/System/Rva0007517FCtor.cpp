@@ -59,8 +59,8 @@ public:
 	virtual void rva00074BC8(float const *p, int f, int a, int b, int c);
 	virtual void _D14(float const *m, float f, int a, int b, int c);
 	virtual void rva00074D39(float const *p, float f, int a, int b, int c);
-	virtual void _D16();
-	virtual void _D17();
+	virtual void _D16(float const *m, float f1, float f2, int a, int b, int c);
+	virtual void rva00074EA2(float const *p, float f1, float f2, int a, int b, int c);
 	virtual void _S18(float const *m, float f, int a, int b, int c);
 	virtual void rva00075016(float const *p, float f, int a, int b, int c);
 
@@ -138,4 +138,22 @@ void Rva0007517F::rva00074D39(float const *p, float f, int a, int b, int c)
 	m[10] = g_Va00BBB8D8;
 	m[11] = p[2];
 	_D14(m, f, a, b, c);
+}
+
+void Rva0007517F::rva00074EA2(float const *p, float f1, float f2, int a, int b, int c)
+{
+	float m[12];
+	m[0] = g_Va00BBB8D8;
+	m[1] = 0.0f;
+	m[2] = 0.0f;
+	m[3] = p[0];
+	m[4] = 0.0f;
+	m[5] = g_Va00BBB8D8;
+	m[6] = 0.0f;
+	m[7] = p[1];
+	m[8] = 0.0f;
+	m[9] = 0.0f;
+	m[10] = g_Va00BBB8D8;
+	m[11] = p[2];
+	_D16(m, f1, f2, a, b, c);
 }
