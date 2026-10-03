@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /ICode/GameEngine/Source/Common
+// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /ICode/GameEngine/Source/Common
 // stlport
 // Native0x0041A3A3 /33: destroy a range of nontrivial16-byte records.
 // Record dtor independently matches14B string teardown at7FAB3 and
@@ -13,3 +13,7 @@
 typedef _STL::deque<BfmeNarrowRecord0041A617>::iterator BfmeNarrowRecord16Iterator;
 template void _STL::__destroy_aux<BfmeNarrowRecord16Iterator>(BfmeNarrowRecord16Iterator, BfmeNarrowRecord16Iterator, const _STL::__false_type&);
 
+
+// Native45-byte dispatch at0x0041A459 forwards the two iterator values
+// and a false-type tag to the independently rowed33-byte loop.
+template void _STL::__destroy<BfmeNarrowRecord16Iterator, BfmeNarrowRecord0041A617>(BfmeNarrowRecord16Iterator, BfmeNarrowRecord16Iterator, BfmeNarrowRecord0041A617*);
