@@ -66,59 +66,7 @@
 #include "GameClient/Gadget.h"
 #include "GameClient/GadgetTabControl.h"
 
-// Retail's 0x34-byte record; names for the fields this body fills are
-// inferred from the donor arguments and the target stores.
-class GadgetCreateView
-{
-public:
-    GadgetCreateView();
-    GameWindow *parent;
-    UnsignedInt status;
-    Int x, y;
-    Int width, height;
-    WinInstanceData *instance;
-    GameWinSystemFunc system;
-    unsigned char remainder[0x34 - 0x20];
-};
-class TabWindowManagerView
-{
-public:
-    virtual void unusedSlot0();
-    virtual void unusedSlot1();
-    virtual void unusedSlot2();
-    virtual void unusedSlot3();
-    virtual void unusedSlot4();
-    virtual void unusedSlot5();
-    virtual void unusedSlot6();
-    virtual void unusedSlot7();
-    virtual void unusedSlot8();
-    virtual void unusedSlot9();
-    virtual void unusedSlot10();
-    virtual void unusedSlot11();
-    virtual void unusedSlot12();
-    virtual void unusedSlot13();
-    virtual void unusedSlot14();
-    virtual void unusedSlot15();
-    virtual void unusedSlot16();
-    virtual void unusedSlot17();
-    virtual void unusedSlot18();
-    virtual void unusedSlot19();
-    virtual void unusedSlot20();
-    virtual void unusedSlot21();
-    virtual void unusedSlot22();
-    virtual void unusedSlot23();
-    virtual void unusedSlot24();
-    virtual void unusedSlot25();
-    virtual void unusedSlot26();
-    virtual void unusedSlot27();
-    virtual void unusedSlot28();
-    virtual void unusedSlot29();
-    virtual void unusedSlot30();
-    virtual void unusedSlot31();
-    virtual void unusedSlot32();
-    virtual void unusedSlot33();
-    virtual GameWindow *createFromView(GadgetCreateView *view);
-};
+#include "../GameWindowManagerRecordView.h"
 
 // DEFINES ////////////////////////////////////////////////////////////////////
 
@@ -413,7 +361,7 @@ void GadgetTabControlCreateSubPanes( GameWindow *tabControl )///< Create User Wi
 			view.status = WIN_STATUS_NONE;
 			view.x = x;
 			view.y = y;
-			view.system = PassSelectedButtonsToParentSystem;
+			view.system = (void *)PassSelectedButtonsToParentSystem;
 			tabData->subPanes[paneIndex] =
 				((TabWindowManagerView *)TheWindowManager)->createFromView(&view);
 			WinInstanceData *instData = tabData->subPanes[paneIndex]->winGetInstanceData();

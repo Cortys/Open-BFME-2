@@ -1,4 +1,6 @@
 class,header,notes
+GadgetCreateView,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerRecordView.h,native0x34-byte GUI factory record view; field labels follow donor semantics with verified target accesses
+TabWindowManagerView,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerRecordView.h,shared native GUI manager call view; observed virtual slots only; original target type name remains unasserted
 AsciiString,reference/shims/bfme2_ascii/ascii_string.h,BFME2 string model; include path /Ireference/shims/bfme2_ascii first
 StringBase,reference/shims/bfme2_ascii/string_base.h,frozen Open-BFME-1 WWLib string_base.h (77db49c3d)
 UnicodeString,reference/shims/bfme2_ascii/unicode_string.h,shared since d930928ea
