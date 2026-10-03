@@ -50401,3 +50401,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0039B24F@Rva0039B24F@@QAEXPAURva0039B24FInput@@H_N@Z,,0x0039B24F,64,Code/GameEngine/Source/Common/Rva0039B24FMethod.cpp,matched,virtual slot4 plus float10 plus conditional rva227
 ?rva0039F824@Team@@QAE_NXZ,,0x0039F824,17,Code/GameEngine/Source/Common/RTS/TeamRva0039F0D2.cpp,matched,Team bool getter via 0x11c map field 0x14
 ?Rva001FFC38Copy@@YAPAXPAX000@Z,,0x001FFC38,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva001FFC38.cpp,matched,forward to rowed 0x00339A8D copy with dummy tag
+??1FrameDataManager@@UAE@XZ,,0x0058B623,67,Code/GameEngine/Source/Common/FrameDataManagerDtor.cpp,matched,vtable store init loop FRAME_DATA_LENGTH delete array
