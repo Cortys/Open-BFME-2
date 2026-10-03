@@ -6537,3 +6537,8 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?rva005AAA34@Rva005AA860@@QAEXXZ	0x005AAA34	162	partial	set addr uses add ecx 0xc vs lea ecx eax+0xc with m_58 in ecx vs eax t=25 model=muse-03 score=0.98 stash=reverse/attempts/0x005aaa34.cpp
 ?rva005AA4C1@Rva005AA4C1@@QAEXPAVArg005AA4C1@@@Z	0x005AA4C1	156	partial	ebx edi mirror for this and vector with unsigned count t=30 model=muse-03 score=0.91 stash=reverse/attempts/0x005aa4c1.cpp
 ??0Rva00427507@@QAE@XZ	0x00427507	31	blocked	hashtable wrapper calls dup alias YAXXZ with ret10 4-arg mismatch plus member type unknown t=10 model=muse-04
+?rva001DC01C@Rva001DC01C@@QAEPAXV?$StringBase@D@@@Z	0x001DC01C	98	blocked	ebx edi swapped throughout size exact 98B definition-order and head-addr levers kept swap t=12 model=muse-05 (stash 0.95 kept)
+?Rva002E79A8CellToWorld@@YAPAUCoord3D@@PAU1@_NHHH@Z	0x002E79A8	186	blocked	xmm plus param-home vs frame split-decl kept swap t=10 model=muse-05
+?rva00177825@Rva00177825@@QAEXXZ	0x00177825	59	blocked	eax ecx swap plus missing mov eax ecx cached-float single-load t=18 model=muse-05
+?rva0020F91D@Rva0020F91D@@QAE_NPAVRva0020F91DArg@@ABVVector3@@1@Z	0x0020F91D	217	blocked	virtual slot 32 Q unknown plus hidden-conv reuses arg slot plus this unused for stdcall cast t=22 model=muse-05
+?Rva001DEA96Parse@@YAXPAVINI@@@Z	0x001DEA96	243	partial	index in ecx not eax with base reload 12B short t=30 model=muse-05 score=0.93 stash=reverse/attempts/0x001dea96.cpp
