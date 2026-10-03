@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // ??0TransportAIUpdateModuleData@@QAE@XZ, retail 0x0026E5D7, 166 bytes.
@@ -41,33 +41,7 @@ public:
 	};
 };
 
-template <typename T>
-class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-
-private:
-	void *m_data;
-private:
-	StringBase(const T *str);
-	friend class AsciiString;
-	friend class BfmeE16;
-	friend class ModuleFactory;
-	friend class ModuleTemplate;
-	friend class TransportAIUpdateModuleData;
-	friend class UpdateModuleData;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(int zero) : StringBase<char>() { (void)zero; }
-	AsciiString(const char *str) : StringBase<char>(str) {}
-	~AsciiString();
-};
+#include "ascii_string.h"
 
 struct BfmeE16
 {
@@ -135,7 +109,7 @@ TransportAIUpdateModuleData::TransportAIUpdateModuleData()
 	, m_standGround(false)
 	, m_canAttackWhileContained(false)
 	, m_holdGroundRange(0.0f)
-	, m_name(0)
+	, m_name()
 	, m_unk30(0)
 	, m_unk34(0)
 	, m_unk38(0)
