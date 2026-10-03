@@ -1,3 +1,5 @@
+// ??0Rva000A7E7A@@QAE@XZ
+// partial score=0.87 date=2026-10-03
 // stlport
 // cl: /Ireference/shims/bfme2_ascii /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS
 // ??0Rva000A7E7A@@QAE@XZ Retail RVA 0x000A7E7A 31 bytes.
