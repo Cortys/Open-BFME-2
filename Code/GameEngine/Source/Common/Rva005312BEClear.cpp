@@ -26,6 +26,7 @@ class Rva005312BE
 public:
 	void rva005312BE();
 	void rva00531300();
+	void rva00531481();
 	void rva00531431(int a, int b);
 	unsigned char rva00531512(int a, int b);
 	void rva00531342(struct Rva005312BERect *r);
@@ -51,6 +52,15 @@ void Rva005312BE::rva005312BE()
 	{
 		for (int j = 0; j < m_inner; ++j)
 			m_ppItems[i][j].m_cleared = 0;
+	}
+}
+void Rva005312BE::rva00531481()
+{
+	m_flag1BA30 = 1;
+	for (int i = 0; i < m_outer; ++i)
+	{
+		for (int j = 0; j < m_inner; ++j)
+			m_ppItems[i][j].m_35 = 1;
 	}
 }
 void Rva005312BE::rva00531300()
