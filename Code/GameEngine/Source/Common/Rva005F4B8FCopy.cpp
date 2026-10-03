@@ -38,3 +38,8 @@ int *__cdecl Rva005F4DA7Copy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_nod
 	_STL::input_iterator_tag tag1;
 	return Rva005F4B8FCopy(first, last, result, tag1, (int *)0);
 }
+int *__cdecl Rva005F4F59Copy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_node_base *last, int *result)
+{
+	_STL::__false_type tag;
+	return Rva005F4DA7Copy(first, last, result, tag);
+}
