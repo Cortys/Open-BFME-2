@@ -49590,3 +49590,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva006CFF40@AptCIH@@QBEPAXXZ,,0x006CFF40,48,Code/Libraries/Source/Apt/Rva006CFF40Apt.cpp,matched,AptCIH sprite-base accessor via predicate pin and assert strings
 ?isSpriteInstBase@Rva006CFCD0@@QBE_NXZ,,0x006CFCD0,91,Code/Libraries/Source/Apt/Rva006CFCD0Apt.cpp,matched,isSpriteInstBase predicate via callers AptCIH asserts and rowed callees
 ??0Rva00573B23@@QAE@XZ,,0x00573A9B,45,Code/GameEngine/Source/Common/Rva00573B23Ctor.cpp,matched,ctor via rowed base plus AsciiString plus SSE zero Coord float
+?rva00111B5A@Rva00111B5A@@QAEPAURva00111B25Record@@PBD@Z,,0x00111B5A,42,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,stride 0x1c matches Rva00111B25Record layout plus rowed StringBase compare

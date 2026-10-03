@@ -101,3 +101,29 @@ void _bfmeBfmeStringRecord000B94D2InlineAnchor(BfmeStringRecord000B94D2 *p)
     p->BfmeStringRecord000B94D2::~BfmeStringRecord000B94D2();
 }
 #pragma inline_depth()
+
+// -------------------------------------------------------------------------
+// 0x00111B5A 42B find record by first string; walks 0x1c-byte
+// Rva00111B25Record array from m_begin to m_end comparing m_00.
+// Evidence: stride 0x1c matches Rva00111B25Record layout, callee is the rowed
+// StringBase<char>::compare, callers are the unclaimed 0x000AFD85 body.
+class Rva00111B5A
+{
+public:
+	Rva00111B25Record *rva00111B5A( const char *name );
+private:
+	Rva00111B25Record *m_begin;
+	Rva00111B25Record *m_end;
+};
+
+Rva00111B25Record *Rva00111B5A::rva00111B5A( const char *name )
+{
+	Rva00111B25Record *p = m_begin;
+	while( p != m_end )
+	{
+		if( p->m_00.compare( name ) == 0 )
+			return p;
+		++p;
+	}
+	return 0;
+}
