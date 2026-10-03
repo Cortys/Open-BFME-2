@@ -50455,3 +50455,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0054E84C@Rva0054E84C@@QAE_NXZ,,0x0054E84C,33,Code/GameEngine/Source/Common/Rva0054E84CBody.cpp,matched,honest list scan via callers in 0x0054E8DC no callees
 ?Rva000527C7Delete@@YGXPAX@Z,,0x000527C7,27,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva000527C7.cpp,matched,retail call pair pin plus row evidence no commas
 ?rva001535FF@Rva0015354E@@QAEXPBD@Z,,0x001535FF,101,Code/Libraries/Source/WWVegas/WWLib/Rva001535FF.cpp,matched,same class Rva0015354E +0x10 COM slots 0x4C 0x6C string WW3DDynamicSet ScienceType cur
+?rva00339E80@Rva00339E80@@QAEPAUDynamicPortalLink@@PAU2@0@Z,,0x00339E80,51,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00339E80Finish.cpp,matched,copy-destroy tail via rowed copy and Destroy with thiscall callers
