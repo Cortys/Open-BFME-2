@@ -17,6 +17,7 @@ class Rva004FC275
 public:
 	void rva004FC275(unsigned char v);
 	void rva004FC299();
+	void rva004FC2A6();
 
 private:
 	char m_pad00[0x24];
@@ -45,4 +46,12 @@ void Rva004FC275::rva004FC299()
 	if (h == 0)
 		return;
 	return h->f1();
+}
+
+void Rva004FC275::rva004FC2A6()
+{
+	Rva004FC275Helper *h = m_24;
+	if (h == 0)
+		return;
+	return h->f2();
 }
