@@ -1753,26 +1753,8 @@ void WeaponStore::postProcessLoad()
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
-Weapon::Weapon(const WeaponTemplate* tmpl, WeaponSlotType wslot)
-{
-	// Weapons start empty; you must reload before use.
-	// (however, there is no delay for reloading the first time.)
-	m_template = tmpl;
-	m_wslot = wslot;
-	m_status = OUT_OF_AMMO;
-	m_ammoInClip = 0;
-	m_whenWeCanFireAgain = 0;
-	m_whenPreAttackFinished = 0;
-	m_whenLastReloadStarted = 0;
-	m_projectileStreamID = INVALID_ID;
-	m_leechWeaponRangeActive = false;
-	m_pitchLimited = (m_template->getMinTargetPitch() > -PI || m_template->getMaxTargetPitch() < PI);
-	m_maxShotCount = NO_MAX_SHOTS_LIMIT;
-	m_curBarrel = 0;
-	m_numShotsForCurBarrel = 	m_template->getShotsPerBarrel();
-	m_lastFireFrame = 0;
-	m_suspendFXFrame = TheGameLogic->getFrame() + m_template->getSuspendFXDelay();
-}
+// Weapon::Weapon(const WeaponTemplate*, WeaponSlotType) lives in WeaponCtor.cpp
+// (its row's unit); this file merely declares it via the Weapon header.
 
 //-------------------------------------------------------------------------------------------------
 Weapon::Weapon(const Weapon& that)
@@ -3403,7 +3385,7 @@ void Weapon::loadPostProcess( void )
 }
 
 //-------------------------------------------------------------------------------------------------
-void WeaponBonusSet::parseWeaponBonusSet(INI* ini)
+inline void WeaponBonusSet::parseWeaponBonusSet(INI* ini)
 {
 	WeaponBonusConditionType wb = (WeaponBonusConditionType)INI::scanIndexList(ini->getNextToken(), TheWeaponBonusNames);
 	WeaponBonus::Field wf = (WeaponBonus::Field)INI::scanIndexList(ini->getNextToken(), TheWeaponBonusFieldNames);
