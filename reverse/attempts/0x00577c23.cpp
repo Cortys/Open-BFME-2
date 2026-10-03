@@ -1,6 +1,8 @@
 // ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
 // partial score=0.94 date=2026-10-03
 // ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
+// partial score=0.94 date=2026-10-03
+// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
 // cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD /EHsc
 // ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z @0x00577C23 125B: Apt forward with 1 int plus 1 bool.
 // Builds int AsciiString via rowed 0x00222834 and bool text via rowed 0x004E678B,
