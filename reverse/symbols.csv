@@ -7279,3 +7279,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva00149002@@YAXHHPAVRva0014921EVector@@H@Z,0x00149002,"EH-protected range worker called from rva0014921e; 255B unpinned Ghidra body; address-derived name"
 ?rva006cfcd0@BfmeAptValue006DCD20@@QAE_NXZ,0x006CFCD0,"AptCIH sprite predicate: asserts non-null then returns type 0xD or 0x12; called by rva006ee1b0/rva006ee210; address-derived name"
 ?rva006dbd80@Rva006E0460@@QAEXXZ,0x006DBD80,"5-byte flag setter or dword ptr [ecx+4],8; ret tail-called by rva006e0460 0x006E0460; address-derived name"
+?rva006d4d40@@YAPAXPAXH@Z,0x006D4D40,"UTF-8 cursor worker called by rva006d5e70 0x006D5E70 (and seat 6 recovery target); Ghidra 51B; address-derived name"
