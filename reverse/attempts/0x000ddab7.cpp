@@ -3,6 +3,8 @@
 // ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z
 // partial score=0.99 date=2026-10-03
 // ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z
+// partial score=0.99 date=2026-10-03
+// ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z
 // partial score=0.97 date=2026-10-03
 // cl: /Os /Oy- /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // ?rva000DDAB7@W3DBridge@@QAEXPAUVirtualArg@@@Z 0x000DDAB7 96B W3DBridge method after dtor; flag +0x104 gates Draw_Triangles with texture hold via AssetReference copy and two virtual calls; evidence: contiguous with ??1W3DBridge, Draw_Triangles row 0x00120620, AssetReference copy row 0x000424BB, callers at 0x000DF982/0x000DFA6B in 0x000DF776
