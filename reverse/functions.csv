@@ -50190,3 +50190,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005FB961@Rva005FB770@@QAEXM@Z,,0x005FB961,101,Code/GameEngine/Source/GameClient/GUI/Rva005FB770SetHealth.cpp,matched,damage min setter via rowed Fire 0x00527925 with PlayHitAnim
 ?rva005FB9C6@Rva005FB770@@QAEXM@Z,,0x005FB9C6,118,Code/GameEngine/Source/GameClient/GUI/Rva005FB770SetHealth.cpp,matched,heal cap setter via rowed Fire 0x00527925 with PlayReinforceAnim
 ?rva005FBB83@Rva005FBB68@@QAEXM@Z,,0x005FBB83,19,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,float forward to rowed rva005FB9C6
+?rva005F6439@Rva005F6439@@QAEXM@Z,,0x005F6439,135,Code/GameEngine/Source/Common/Rva005F6439Apt.cpp,matched,gap Rva005F6220Apt float at +0x30 Fire SetLeaderRankProgress AptCall _show flag +0x37
