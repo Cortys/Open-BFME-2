@@ -7308,3 +7308,5 @@ _qsort,0x00629B4A,"msvcr71 qsort reached through the gen-import thunk ?ji_00629b
 ?allocBlock@Rva006D2A60@@QAEPAXH@Z,0x006D29E0,"pool allocBlock for the 0x00E176F4 chain-block allocator; wraps 0x006DB160 then records the block; called by the Rva006DE480-family ctors and BfmeQuery1279 ctor 0x006F7B20; body unrowed"
 ??0Rva006F69D0@@QAE@PAXHH@Z,0x006F69D0,"descriptor interpretation ctor built by Rva006F6A50 0x006F6A50 when the descriptor kind is 3; 0x1C bytes; body unrowed"
 ?rva006E2D60@AptCIH@@QAEXXZ,0x006E2D60,"address-derived AptCIH per-node animation/state tick called by the child-list walk 0x006F7A30; asserts isSpriteInstBase from AptCIH.h line 125 then updates [this+0x4C] state; body unrowed"
+?rva006E1540@AptCIH@@QAEXXZ,0x006E1540,"address-derived AptCIH child-list teardown called by BfmeWrapper1279 walk 0x006F76B0; asserts isSpriteInstBase then recurses into [this+0x4C]+0x24; body unrowed"
+??1Rva006F7540@@QAE@XZ,0x006F7540,"Rva006F7540 destructor spelling of the rowed 0x006F7540 empty-array assert; needed as the SEH unwind action of 0x006F76B0; body rowed under the address-derived method name"

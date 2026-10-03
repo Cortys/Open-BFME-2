@@ -26,6 +26,7 @@ public:
 	void rva006E2560(int arg);
 	void rva006E2D60();
 	void rva006E1C40(void *a, void *b);
+	void rva006E1540();
 	bool rva006CFCD0() const;
 
 	char m_pad04[0x4c - 0x4];
@@ -197,6 +198,7 @@ public:
 	~BfmeWrapper1279();
 	void rva006F80C0(bool flag);
 	void rva006F8190();
+	void rva006F76B0();
 	void rva006F79B0(void *arg1, void *arg2);
 
 	BfmeQuery1279 *m_query;
@@ -415,6 +417,34 @@ void BfmeWrapper1279::rva006F79B0(void *arg1, void *arg2)
 					node->rva006E1C40(arg1, arg2);
 			}
 		}
+		node = node->m_next;
+	}
+}
+
+class Rva006F7540
+{
+public:
+	Rva006F7540() { m_nElements = 0; }
+	~Rva006F7540()
+	{
+		if (m_nElements != 0) {
+			g_bfmeAptAssertAtE17734("nElements == 0", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0x537);
+			if (g_bfmeAptBreakOnAssertAtDDC01C)
+				__debugbreak();
+		}
+	}
+
+	void *m_items[32];
+	int m_nElements;
+};
+
+// ?rva006F76B0@BfmeWrapper1279@@QAEXXZ @0x006F76B0 100B
+void BfmeWrapper1279::rva006F76B0()
+{
+	AptCIH *node = (AptCIH *)m_query->m_root->m_54;
+	Rva006F7540 array;
+	while (node != 0) {
+		node->rva006E1540();
 		node = node->m_next;
 	}
 }
