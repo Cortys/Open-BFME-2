@@ -4,7 +4,47 @@
 // sibling Rva00342826Ctor.cpp (29B, same base + vtable shape) chaining the
 // just-landed base 0x00342B87. Donor AIStatesSmallUpdates.cpp ctor pattern.
 // Evidence: base row 0x00342B87 Rva00342B87 ctor; callers 0x005432C5 0x00546141.
-class StateMachine;
+class Object;
+class AIUpdateInterface;
+class StateMachine
+{
+public:
+	virtual ~StateMachine();
+	virtual void slot01();
+	virtual void slot02();
+	virtual void slot03();
+	virtual int slot04();
+	virtual void slot05();
+	virtual void slot06();
+	virtual void slot07();
+	virtual int slot08();
+	virtual void slot09();
+	virtual void slot10();
+	virtual void slot11();
+	virtual void slot12();
+	virtual void slot13();
+	virtual void setGoalObject(Object *obj);
+public:
+	void *m_currentState;
+	unsigned char m_pad08[0x14 - 8];
+	Object *m_owner;
+};
+class AIUpdateInterface
+{
+public:
+	Object *checkForCrateToPickup();
+};
+class Object
+{
+public:
+	unsigned char m_pad00[0x258];
+	AIUpdateInterface *m_ai;
+};
+class Rva00340C5F
+{
+public:
+	int rva00340C5F();
+};
 struct Coord3D
 {
 	float x, y, z;
@@ -49,8 +89,18 @@ class Rva0036804F : public Rva00342B87
 {
 public:
 	Rva0036804F(StateMachine *machine);
+	int rva00368067();
 };
 Rva0036804F::Rva0036804F(StateMachine *machine)
 	: Rva00342B87(machine)
 {
+}
+int Rva0036804F::rva00368067()
+{
+	Object *crate = m_machine->m_owner->m_ai->checkForCrateToPickup();
+	if (crate != 0) {
+		m_machine->setGoalObject(crate);
+		return ((Rva00340C5F *)this)->rva00340C5F();
+	}
+	return -1;
 }
