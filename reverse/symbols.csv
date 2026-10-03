@@ -7319,3 +7319,4 @@ _qsort,0x00629B4A,"msvcr71 qsort reached through the gen-import thunk ?ji_00629b
 ?rva006E2690@AptCIH@@QAEXH@Z,0x006E2690,address-derived name for the large AptCIH teardown helper called by the 0x006E2A70 dtor with one int arg (retail pushes 0); body unrowed; pin unblocks Rva006CBF40 dtor
 ?rva006DD6C0@Rva006DD6C0@@QAEXPAVEAStringC@@@Z,0x006DD6C0,address-derived fill helper called by the 0x006D7D00 string conversion callback with the source object in ecx and an EAStringC out pointer; body unrowed
 ?rva006D6170@EAStringC@@QAEXXZ,0x006D6170,address-derived EAStringC post-process helper called by the 0x006D7D00 callback on its temporary; body unrowed
+?insert@?$vector@UElem36@@V?$allocator@UElem36@@@_STL@@@_STL@@QAEPAUElem36@@PAU3@ABU3@@Z,0x001665B0,STLport vector<Elem36> insert helper called from HTreeClass::Capture_Bone 0x166980; element identity is the Elem36 stand-in
