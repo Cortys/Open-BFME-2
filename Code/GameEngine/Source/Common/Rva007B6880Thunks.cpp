@@ -142,6 +142,13 @@ class char_traits {};
 template <class T>
 class allocator {};
 
+template <class CharT, class Alloc>
+class _String_base
+{
+public:
+	~_String_base();
+};
+
 template <class CharT, class Traits, class Alloc>
 class basic_string
 {
@@ -151,6 +158,7 @@ public:
 }
 
 typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > StlNarrowString;
+typedef _STL::_String_base<char, _STL::allocator<char> > StlNarrowStringBase;
 
 extern unsigned g_Va00DDEB2C;
 extern unsigned g_Va00DDEF08;
@@ -158,12 +166,36 @@ extern unsigned g_Va00DDEEFC;
 extern unsigned g_Va00DDEF14;
 extern unsigned g_Va00DDEEE4;
 extern unsigned g_Va00DDEF38;
+extern unsigned g_Va00DDEEF0;
+extern unsigned g_Va00DDEF20;
+extern unsigned g_Va00DDEF2C;
 
 // ?rva007B68C0@@YAXXZ @ 0x007B68C0 (10B). Global string dtor thunk: ecx=&g_Va00DDEB2C then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
 void __cdecl rva007B68C0()
 {
 	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEB2C;
 	return p->~basic_string();
+}
+
+// ?rva007B6A00@@YAXXZ @ 0x007B6A00 (10B). Global string base dtor thunk: ecx=&g_Va00DDEEF0 then tail-jmp to rowed ??1?$_String_base@DV?$allocator@D@_STL@@@_STL@@QAE@XZ (0x0000B3C0).
+void __cdecl rva007B6A00()
+{
+	StlNarrowStringBase *p = (StlNarrowStringBase *)&g_Va00DDEEF0;
+	return p->~_String_base();
+}
+
+// ?rva007B6A10@@YAXXZ @ 0x007B6A10 (10B). Global string base dtor thunk: ecx=&g_Va00DDEF20 then tail-jmp to rowed ??1?$_String_base@DV?$allocator@D@_STL@@@_STL@@QAE@XZ (0x0000B3C0).
+void __cdecl rva007B6A10()
+{
+	StlNarrowStringBase *p = (StlNarrowStringBase *)&g_Va00DDEF20;
+	return p->~_String_base();
+}
+
+// ?rva007B6A40@@YAXXZ @ 0x007B6A40 (10B). Global string base dtor thunk: ecx=&g_Va00DDEF2C then tail-jmp to rowed ??1?$_String_base@DV?$allocator@D@_STL@@@_STL@@QAE@XZ (0x0000B3C0).
+void __cdecl rva007B6A40()
+{
+	StlNarrowStringBase *p = (StlNarrowStringBase *)&g_Va00DDEF2C;
+	return p->~_String_base();
 }
 
 // ?rva007B69D0@@YAXXZ @ 0x007B69D0 (10B). Global string dtor thunk: ecx=&g_Va00DDEF08 then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).

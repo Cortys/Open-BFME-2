@@ -50563,3 +50563,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B69F0@@YAXXZ,,0x007B69F0,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
 ?rva007B6A20@@YAXXZ,,0x007B6A20,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
 ?rva007B6A30@@YAXXZ,,0x007B6A30,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B6A00@@YAXXZ,,0x007B6A00,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,STLport narrow string base dtor thunk at 0x007B6A00
+?rva007B6A10@@YAXXZ,,0x007B6A10,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,STLport narrow string base dtor thunk at 0x007B6A10
+?rva007B6A40@@YAXXZ,,0x007B6A40,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,STLport narrow string base dtor thunk at 0x007B6A40
