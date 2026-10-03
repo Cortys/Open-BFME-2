@@ -1,7 +1,7 @@
 // ?rva004C4430@Rva004C4430@@QAEX_N@Z
-// partial score=0.96 date=2026-09-30
+// partial score=0.97 date=2026-10-03
 // ?rva004C4430@Rva004C4430@@QAEX_N@Z
-// partial score=0.96 date=2026-09-30
+// partial score=0.97 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva004C4430@Rva004C4430@@QAEX_N@Z @0x004C4430 77B: chain from 0x00492FC2
 // Evidence: thiscall bool (cmp byte [ebp+8] ret 4); +0x24 gate then float from [this-0xC]+0x7C
@@ -53,8 +53,7 @@ void Rva004C4430::rva004C4430(bool flag)
 		float f = (*(FloatHolder004C4430 **)((char *)this - 12))->m_7C;
 		if (flag != 0)
 			f = 0.0f;
-		Player *player = (*(Object **)((char *)this - 8))->getControllingPlayer();
-		((Rva002A9E25FloatField *)player)->set(f);
+		((Rva002A9E25FloatField *)(*(Object **)((char *)this - 8))->getControllingPlayer())->set(f);
 	}
 	((Rva00492FC2 *)this)->rva00492FC2(flag);
 }

@@ -6073,3 +6073,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ??0Rva004C9E5D@@QAE@PBHM@Z	0x004C9E5D	55	partial	mov [esi] after and+lea retail before t=15 model=muse-02 score=0.96 stash=reverse/attempts/0x004c9e5d.cpp
 FUN_008c9125	0x004C9125	278	blocked	278B x87 SSE 3 GetGameClientRandomValueReal calls needs ScriptEngine layout t=10 model=muse-02
 FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart EH temp no donor t=12 model=muse-02
+?rva004C4E93@Rva004C4E93@@QAEXPBUCoord3D@@@Z	0x004C4E93	137	partial	push esi+0x80 6B early before y z stores vs late after stores only scheduling left t=20 model=muse-03 score=0.95 stash=reverse/attempts/0x004c4e93.cpp
+?rva004C4430@Rva004C4430@@QAEX_N@Z	0x004C4430	77	partial	mov ecx esi-8 3B late after push vs early before fld only scheduling left t=15 model=muse-03 score=0.97 stash=reverse/attempts/0x004c4430.cpp
