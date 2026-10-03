@@ -129,3 +129,116 @@ Rva003141BCWindowView *Rva003141BCWindowView::winPointInChild(int x,int y,bool i
     }
     return this;
 }
+
+// Native2C1629-2C176C; capture/grab/modal precedence and three status passes
+// follow ZH GameWindowManager donor; manager accessed prefix only.
+struct CursorModalView { void*unknown0; Rva003141BCWindowView*window; };
+class CursorManagerView {
+public:
+ unsigned char opaque0[12]; Rva003141BCWindowView*m_windowList;
+ unsigned char opaque10[12]; Rva003141BCWindowView*m_mouseCaptor;
+ void*unknown20; CursorModalView*m_modalHead; Rva003141BCWindowView*m_grabWindow;
+ Rva003141BCWindowView*getWindowUnderCursor(int,int,bool);
+};
+Rva003141BCWindowView *CursorManagerView::getWindowUnderCursor( Int x, Int y, Bool ignoreEnabled )
+{
+	if( m_mouseCaptor )
+	{
+		// in what what window within the captured window are we?
+		return m_mouseCaptor->winPointInChild( x, y, ignoreEnabled );
+	}
+
+	if( m_grabWindow )
+	{
+		// in what what window within the grabbed window are we?
+		return m_grabWindow->winPointInChild( x, y, ignoreEnabled );
+	}
+
+	Rva003141BCWindowView *window = NULL;
+	if( m_modalHead && m_modalHead->window )
+	{
+		return m_modalHead->window->winPointInChild( x, y, ignoreEnabled );
+	}
+	else
+	{
+		// search for top-level window which contains pointer
+		for( window = m_windowList; window; window = window->m_next )
+		{
+
+			if( BitTest( window->m_status, WIN_STATUS_ABOVE ) &&
+					!BitTest( window->m_status, WIN_STATUS_HIDDEN ) &&
+					x >= window->m_region.lo.x &&
+					x <= window->m_region.hi.x &&
+					y >= window->m_region.lo.y &&
+					y <= window->m_region.hi.y)
+			{
+				if( BitTest( window->m_status, WIN_STATUS_ENABLED ) || ignoreEnabled )
+				{
+					// determine which child window the mouse is in
+					window = window->winPointInChild( x, y, ignoreEnabled );
+					break;  // exit for
+				}
+			}  // end if
+		}  // end for window
+
+		// check !above, below and hidden
+		if( window == NULL )
+		{
+			for( window = m_windowList; window; window = window->m_next )
+			{
+				if( !BitTest( window->m_status, WIN_STATUS_ABOVE | 
+																				WIN_STATUS_BELOW | 
+																				WIN_STATUS_HIDDEN ) &&
+						x >= window->m_region.lo.x &&
+						x <= window->m_region.hi.x &&
+						y >= window->m_region.lo.y &&
+						y <= window->m_region.hi.y)
+				{
+					if( BitTest( window->m_status, WIN_STATUS_ENABLED )|| ignoreEnabled)
+					{								
+						// determine which child window the mouse is in
+						window = window->winPointInChild( x, y, ignoreEnabled );
+						break;  // exit for
+					}
+				}
+			}
+		}  // end if, window == NULL
+
+		// check below and !hidden
+		if( window == NULL )
+		{
+			for( window = m_windowList; window; window = window->m_next )
+			{
+				if( BitTest( window->m_status, WIN_STATUS_BELOW ) &&
+						!BitTest( window->m_status, WIN_STATUS_HIDDEN ) &&
+						x >= window->m_region.lo.x &&
+						x <= window->m_region.hi.x &&
+						y >= window->m_region.lo.y &&
+						y <= window->m_region.hi.y)
+				{
+					if( BitTest( window->m_status, WIN_STATUS_ENABLED )|| ignoreEnabled)
+					{
+						// determine which child window the mouse is in
+						window = window->winPointInChild( x, y, ignoreEnabled );
+						break;  // exit for
+					}
+				}
+			}
+		}  // end if
+	}  // end else, no modal head
+
+	if( window )
+	{
+		if( BitTest( window->m_status, WIN_STATUS_NO_INPUT ))
+		{
+			// this window does not accept input, discard
+			window = NULL;
+		}
+		else if( ignoreEnabled && !( BitTest( window->m_status, WIN_STATUS_ENABLED ) ))
+		{
+			window = NULL;
+		}
+	}
+
+	return window;
+}
