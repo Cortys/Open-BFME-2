@@ -50,7 +50,7 @@ class CategoryModuleTemplate : public CategoryModuleTemplateBase<Category>
 {
 public:
 	CategoryModuleTemplate(const CategoryModuleTemplate &that);
-	virtual ~CategoryModuleTemplate() {}
+	virtual ~CategoryModuleTemplate();
 };
 
 class GpuDrawModuleInfo
