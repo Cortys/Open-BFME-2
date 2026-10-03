@@ -49789,3 +49789,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0023C748@Rva0023C748@@QAEDXZ,,0x0023C748,97,Code/GameEngine/Source/Common/Rva0023C748Finish.cpp,matched,predicate mode+0x110 5/1/2 selection-locked gate and 939 helper; nested helper shape gives retail true-epilogue-first layout
 ?Rva00452496Check@@YA_NPAVObject@@@Z,,0x00452496,79,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00452496Finish.cpp,matched,static AutoHeal helper; && chain return; arg-in-ESI private convention via scaffold caller; layout from Object_isAbleToAttack
 ?rva003F0F13@Rva003F0F13@@QAEXPAURva003F0F13Elem@@@Z,,0x003F0F13,53,Code/GameEngine/Source/Common/Rva003F0F13Finish.cpp,matched,copy vec[0] or zero; size()>0 keeps retail sar-3 count compare; vector at 0xF0
+??0Rva00604A5F@@QAE@XZ,,0x00604A5F,9,Code/GameEngine/Source/Common/Rva00604A5FCtor.cpp,matched,vtable-store ctor for C7A9A8 new-pattern caller 0x006006F9
