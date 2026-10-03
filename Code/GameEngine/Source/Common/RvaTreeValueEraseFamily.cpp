@@ -164,6 +164,16 @@ void Rva00170AE4::rva00170BAD()
 
 class Rva00151DAB { public: ~Rva00151DAB(); };
 
+namespace _STL
+{
+template <> class allocator<char>
+{
+public:
+	static char *allocate(unsigned int n, const void *hint);
+};
+template <class _T1, class _T2> void _Construct(_T1 *__p, const _T2 &__val);
+}
+
 // owner Rva00170B19: erase 0x00170B19 (value ??1Rva00151DAB@@QAE@XZ), clear 0x00170BD6
 typedef Rva00151DAB Rva00170B19Value;
 class Rva00170B19
@@ -171,6 +181,7 @@ class Rva00170B19
 public:
 	void rva00170B19(void *node);
 	void rva00170BD6();
+	void *rva00170B70(const Rva00151DAB &x);
 private:
 	void *m_00Head; // +0x00
 	int m_04Flag; // +0x04
@@ -198,6 +209,13 @@ void Rva00170B19::rva00170BD6()
 	((RvaTreeValueHead *)m_00Head)->m_first = 0;
 	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
 	m_04Flag = 0;
+}
+
+void *Rva00170B19::rva00170B70(const Rva00151DAB &x)
+{
+	char *block = _STL::allocator<char>::allocate(0x18, 0);
+	_STL::_Construct((Rva00151DAB *)(block + 0x10), x);
+	return block;
 }
 
 class Rva0027EA49 { public: ~Rva0027EA49(); };
