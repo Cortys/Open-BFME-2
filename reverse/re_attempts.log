@@ -6460,3 +6460,4 @@ FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs do
 ?rva003593E8@Rva003593E8@@QAE_NABVAsciiString@@_N@Z	0x003593E8	366	partial	362 vs 366B first find fixed via != polarity plus 3 finds still omit xor plus esi-eax wall plus early pushes t=20 model=muse-04 score=0.92 stash=reverse/attempts/0x003593e8.cpp
 ?rva0042682B@Rva004266A1@@QAEXHE@Z	0x0042682B	203	partial	207 vs 203B ecx-eax scratch wall for PlayerList chain plus B mem compare needs new idea t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x0042682b.cpp
 ?rva00426914@Rva004266A1@@QAEXHE@Z	0x00426914	227	partial	234 vs 227B ecx-eax scratch wall for PlayerList plus GameLogic chain plus B mem compare needs new idea t=25 model=muse-04 score=0.9 stash=reverse/attempts/0x00426914.cpp
+?rva00426C6F@Rva00426C6F@@QAEXPAVINI@@@Z	0x00426C6F	165	blocked	165B chain needs INI 37 virtuals plus X size 0x10 vs 4 plus 8 regions needs donor t=20 model=muse-04
