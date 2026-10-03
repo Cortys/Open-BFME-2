@@ -6005,3 +6005,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ??0Rva006FC240@@QAE@VEAStringC@@@Z	0x006FC2D0	155	partial	edx temporaries for bits and delayed store vs direct and before lea t=18 model=muse-09 score=0.93 stash=reverse/attempts/0x006fc2d0.cpp
 ?rva00336BE4@Rva00336BE4@@QAEXH@Z	0x00336BE4	121	blocked	EBP loop with dual-class Net Xml receiver plus wrong ji strcmp row types plus EH present vs absent plus stack slot reuse plus Science vector layout t=14 model=muse-09
 ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z	0x0034290D	101	partial	vtable late vs retail early plus al-vs-cl byte loads t=22 model=muse-09 score=0.93 stash=reverse/attempts/0x0034290d.cpp
+??0Rva005F8671@@QAE@HH@Z	0x005F8671	82	partial	single float load reused via integer mov eax,[esi+0xc] not retail movss xmm0 reuse t=14 model=muse-06 score=0.94 stash=reverse/attempts/0x005f8671.cpp

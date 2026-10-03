@@ -49119,3 +49119,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?EraseRange@Rva005EDA8AVector@@QAEPAUBfmeStringRecord005ED5F3@@PAU2@0@Z,,0x005EDA8A,51,Code/Libraries/Source/WWVegas/WWLib/Rva005EDA8AEraseRange.cpp,matched,range erase via rowed copy destroy same 51B shape as siblings
 ?_M_fill_insert@?$vector@UBfmeStringRecord005ED5F3@@V?$allocator@UBfmeStringRecord005ED5F3@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005ED5F3@@IABU3@@Z,,0x005EDEF3,258,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ed5f3_fill_insert.cpp,matched,STLport vector fill-insert for 20B wide-string record via rowed helpers
 ??0Rva002FE620@@QAE@XZ,,0x002FE620,123,Code/GameEngine/Source/Common/Rva002FE620Ctor.cpp,matched,ctor vtable 00807240 two AsciiStrings callers 002FE9A7 002FFE38
+?rva00079911@Rva00079911@@QAEXXZ,,0x00079911,116,Code/GameEngine/Source/Common/Rva00079911Clear.cpp,matched,unlock lane two vector erases plus list tail
