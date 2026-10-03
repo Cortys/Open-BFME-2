@@ -38,10 +38,15 @@ private:
     char m_pad04[8];
 };
 
-class PrimaryP : public Rva0049B47C
+// PrimaryP here is NOT the kept PrimaryP (Rva0049B47CThreeVptrDerived.cpp,
+// Rva0049B47C plus MiBase1, two bases): this one is Rva0049B47C alone
+// (single base, padded to 0x0C with empty dtor) plus iface at +0x0C.
+// Same invented name, different layouts, so renamed to avoid the COMDAT
+// clash; the row inlines this dtor and keeps its bytes.
+class Rva004C9DC9Primary : public Rva0049B47C
 {
 public:
-    ~PrimaryP() {}
+    ~Rva004C9DC9Primary() {}
 };
 
 class ASCB_Iface
@@ -50,7 +55,7 @@ public:
     virtual void ifaceSlot();
 };
 
-class AnimationSoundClientBehavior : public PrimaryP, public ASCB_Iface
+class AnimationSoundClientBehavior : public Rva004C9DC9Primary, public ASCB_Iface
 {
 public:
     virtual ~AnimationSoundClientBehavior();
