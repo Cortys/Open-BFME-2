@@ -29,8 +29,8 @@ class PB_Iface2 { public: virtual void slot(); };
 class UpdateModule : public PB_DeepBase, public PB_Iface1, public PB_Iface2
 {
 public:
-    UpdateModule(Thing *thing, const ModuleData *moduleData)
-        : PB_DeepBase(thing, moduleData), m_f14(0), m_f18(-1), m_f1c(-1) {}
+	UpdateModule(Thing *thing, const ModuleData *moduleData);
+	virtual ~UpdateModule();
 
 protected:
     void setWakeFrame(Object *, UpdateSleepTime);
