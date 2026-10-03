@@ -49988,3 +49988,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?xfer@Rva004C1866@@MAEXPAVXfer@@@Z,,0x004C1974,104,Code/GameEngine/Source/Common/Rva004C1866Xfer.cpp,matched,slot 3 of 0x0085BE38 Version1 plus bool float bool uint uint plus ImmortalBody base
 ?xfer@DelayedDeathBody@@MAEXPAVXfer@@@Z,,0x004C17CC,62,Code/GameEngine/Source/GameLogic/Object/Body/DelayedDeathBodyXfer.cpp,matched,slot 3 of 0x0085BBE8 Version1 plus 2 bools base-last
 ?portableMapPathToRealMapPath@GameState@@QBE?AVAsciiString@@ABV2@@Z,,0x002DC9F7,421,Code/GameEngine/Source/Common/System/SaveGame/GameStatePortableMapPathToReal.cpp,matched,inverse of 0x002DC833 plus retail LivingWorldScripts branch
+??_GRva005ECA91@@MAEPAXI@Z,,0x005ECB0C,28,Code/GameEngine/Source/Common/Rva005ECA91Dtor.cpp,matched,deleting dtor slot0 vtable 0x008785B0 emitted by ??1 unit
