@@ -41,10 +41,12 @@ private:
 	Rva00496D43Elem **m_end1C;
 };
 
-// ?rva00496D43@Rva00496D43@@QAEPAXPAXABVAsciiString@@@Z present-unmatched
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 void *Rva00496D43::rva00496D43(void *out, const AsciiString &key)
 {
 	for (unsigned i = 0; i < (unsigned)(m_end1C - m_begin18); ++i) {
+		_ReadWriteBarrier();
 		if (m_begin18[i]->compareNoCase(key) == 0) {
 			__assume(out != 0);
 			new (out) WeaponTemplateSetHead(m_begin18[i]->m_set08);

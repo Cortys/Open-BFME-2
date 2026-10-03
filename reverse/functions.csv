@@ -50259,3 +50259,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004B463C@ObjectCreationUpgrade@@QAEXXZ,,0x004B463C,189,Code/GameEngine/Source/GameLogic/Object/Upgrade/ObjectCreationUpgradeVslot8.cpp,matched,vslot8 rowed callees static SlaveWatcher key
 ??1Rva004FFE81@@QAE@XZ,,0x004FFE81,8,Code/GameEngine/Source/GameLogic/Object/LocomotorSetMapThunks.cpp,matched,pair-value dtor thunk add ecx 4 jmp rowed Rb_tree dtor
 ??1Rva004FFE89@@QAE@XZ,,0x004FFE89,8,Code/GameEngine/Source/GameLogic/Object/LocomotorSetMapThunks.cpp,matched,pair-value dtor thunk add ecx 8 jmp rowed Rb_tree dtor
+?rva00496D43@Rva00496D43@@QAEPAXPAXABVAsciiString@@@Z,,0x00496D43,96,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496D43Finish.cpp,matched,linear vector lookup; compiler barrier pins loop count in eax; exact 96B
