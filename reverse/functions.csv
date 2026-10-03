@@ -50656,3 +50656,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Gen_004902A0@@QAE@XZ,,0x00355C60,23,Code/GameEngine/Source/Common/Bfme5TinyTen.cpp,matched,ctor stores vtable links head g_00E01E1C
 ?rva0037F77C@Rva0037F77C@@QAEPAVRva0037F551@@IPAV2@0@Z,,0x0037F77C,45,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F731 allocate via allocator at this+8 then copy range caller 0x0037FEDD
 ?rva0028B35B@Object@@QBE_NPBV1@@Z,,0x0028B35B,50,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B35B.cpp,matched,Object geometry intersect via bfmeIntersects rowed pin
+?Rva003AD4AEInit@@YAXXZ,,0x003AD4AE,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4AEInit.cpp,matched,guarded init calls rowed DefaultModuleTag2 getInstance and rowed atexit
