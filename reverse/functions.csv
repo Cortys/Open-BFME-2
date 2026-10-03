@@ -49234,3 +49234,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?onEnter@Rva005447ED@@UAE?AW4StateReturnType@@XZ,,0x00544133,124,Code/GameEngine/Source/Common/Rva005447EDOnEnter.cpp,matched,vslot slot4 onEnter TurretStateMachine goal BEC tri-call plus ignoreObstacle then base onEnter
 ??1Rva0059E3FA@@UAE@XZ,,0x0059E3FA,60,Code/GameEngine/Source/Common/Rva0059E3FADtor.cpp,matched,virtual dtor vector plus string via releaseBuffer
 ??1Rva0059E4D5@@UAE@XZ,,0x0059E4D5,60,Code/GameEngine/Source/Common/Rva0059E3FADtor.cpp,matched,virtual dtor vector plus string sibling of 0x0059E3FA
+?rva0059ECAD@Rva0059ECAD@@QAEXH@Z,,0x0059ECAD,20,Code/GameEngine/Source/Common/Rva0059ECADSetter.cpp,matched,2-to-9 dword setter at plus 0x488
