@@ -49765,3 +49765,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva000685E2Reset@@YAXXZ,,0x000685E2,272,Code/GameEngine/Source/Common/Rva000685E2Reset.cpp,matched,unlock lane rowed callees extern D3DDevice counters neighbours O1
 ??0Rva00419669@@QAE@ABVAsciiString@@PBV0@@Z,,0x00419669,143,Code/GameEngine/Source/GameClient/Rva00419669Ctor.cpp,matched,unlock ctor AsciiString map float8 via rowed callees
 ?rva000C32D9@Rva000C32D9@@QAEXIVAsciiString@@@Z,,0x000C32D9,98,Code/GameEngine/Source/Common/Rva000C32D9Resize.cpp,matched,resize via erase vs fill_insert proven by caller 0x000C3AB3
+?rva0059517F@Rva0059517F@@QAE_NKGGG_N@Z,,0x0059517F,148,Code/GameEngine/Source/Common/Rva0059517FSend.cpp,matched,Convert 0x594DC0 plus CRC plus Search 0x594D77 plus Write 0x594C12 ret 0x14 via 32B packet

@@ -6351,3 +6351,6 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva00308688@Rva00308688@@QAEXI@Z	0x00308688	109	blocked	callback via [ebx] plus vector save-restore plus g_00BFB1CC needs donor t=8 model=muse-09
 ?Rva00300E42Check@@YA_NPAVGameInfo@@@Z	0x00300E42	114	blocked	esi-edi swap only structural exact 40-40 insns t=15 model=muse-04 (stash 0.93 kept)
 ?rva0006846A@BaseHeightMapRenderObjClass@@QAEXH@Z	0x0006846A	13	partial	align_diff clean 0 regions 0 diffs size+0 exact-mod-reloc t=6 model=muse-04 score=0.99 stash=reverse/attempts/0x0006846a.cpp
+?Rva000C3AB3Parse@INI@@SAXPAV1@PAX1PBX@Z	0x000C3AB3	187	partial	esi-edi swapped throughout plus shl-add vs shl-lea for element t=15 model=muse-06 score=0.93 stash=reverse/attempts/0x000c3ab3.cpp
+?rva0036AE51@Rva0036AE51@@QAEXXZ	0x0036AE51	40	blocked	callee dup row YAXXZ is free no-args but body passes this plus one stack arg and returns this per 0x36ADF9 show t=10 model=muse-06
+?Rva000C3AB3Parse@INI@@SAXPAV1@PAX1PBX@Z	0x000C3AB3	187	blocked	esi-edi swapped throughout plus shl-add vs shl-lea for element t=20 model=muse-06 (stash 0.93 kept)
