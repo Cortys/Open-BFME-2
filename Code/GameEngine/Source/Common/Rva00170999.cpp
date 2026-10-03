@@ -53,3 +53,18 @@ Rva00170999 __cdecl Rva00170A58Get(const AssetReference &a, const Rva00170999Dat
 {
 	return Rva00170999(a, d);
 }
+
+class Rva00151DAB
+{
+public:
+	Rva00151DAB(const Rva00151DAB &that);
+private:
+	unsigned int _key;
+	AssetReference _ref;
+};
+
+Rva00151DAB::Rva00151DAB(const Rva00151DAB &that)
+	: _key(that._key)
+	, _ref(that._ref)
+{
+}
