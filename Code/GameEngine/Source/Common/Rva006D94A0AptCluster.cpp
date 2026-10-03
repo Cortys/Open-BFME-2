@@ -10,6 +10,7 @@ extern int g_bfmeAptBreakOnAssertAtDDC01C;
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 class BfmeAptValue006DCD20;
+class EAStringC;
 
 class AptBasePtrStack
 {
@@ -43,6 +44,7 @@ public:
 	void rva006D9500(int nCapacity);
 	void rva006D8AD0(int nIndex, BfmeAptValue006DCD20 *pNewValue);
 	void rva006D95E0(int nIndex, BfmeAptValue006DCD20 *pValue);
+	void rva006DD6C0(EAStringC *pBuffer);
 
 	unsigned int m_flags;
 	char m_pad[0x18];
@@ -55,10 +57,19 @@ extern BfmeAptValue006DCD20 *g_aptUndefinedAtE18078;
 
 class EAStringC;
 
-// The qsort comparators at VA 0x00AD9D70 / 0x00AD9E40; only their addresses
-// reach this body, and both pushes are DIR32 sites masked at verify.
+// EAStringC global used as the scratch key buffer at VA 0x00E18060.
+class EAStringC
+{
+public:
+	void rva006D3470();
+};
+extern EAStringC g_eaStringAtE18060;
+
+// The qsort comparators at VA 0x00AD9D70 / 0x00AD9E40 / 0x00AD9F70; only their
+// addresses reach these bodies, and every push is a DIR32 site masked at verify.
 extern "C" int __cdecl rva006D9D70Comparator(const void *, const void *);
 extern "C" int __cdecl rva006D9E40Comparator(const void *, const void *);
+extern "C" int __cdecl rva006DA0C0Comparator(const void *, const void *);
 
 // msvcr71 qsort reached through the import thunk at 0x00629B4A.
 extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
@@ -125,6 +136,32 @@ BfmeAptValue006DCD20 *rva006D9F00(BfmeAptValue006DCD20 *pValue, int mode)
 			g_rva006D9F00Handle = value;
 			g_rva006D9F00Data = value->rva006DCEE0()->m_data;
 			qsort(array->m_data, array->mnLength, 4, rva006D9E40Comparator);
+		}
+	}
+
+	return g_aptUndefinedAtE18078;
+}
+
+// ?rva006DA0C0@@YAPAVBfmeAptValue006DCD20@@PAV1@H@Z @0x006DA0C0 (97 bytes).
+// Array sort native with a positive-count guard: builds a scratch EAStringC
+// key from stack slot 0 through the pinned 0x006DD6C0, sorts the element
+// pointer vector in place with qsort and the comparator at 0x00AD9F70, then
+// releases the scratch key through EAStringC::rva006D3470. Non-arrays and
+// non-positive counts return the shared undefined value.
+// Evidence: own immediates; callees isArray 0x006DC3A0, cast 0x006DCFA0,
+// At 0x006FE580, 0x006DD6C0 (unknown callee, 1430B), qsort 0x00629B4A and
+// EAStringC::rva006D3470 0x006D3470.
+BfmeAptValue006DCD20 *rva006DA0C0(BfmeAptValue006DCD20 *pValue, int mode)
+{
+	if (static_cast<unsigned char>(pValue->isArray()))
+	{
+		BfmeAptValue006DCD20 *array = pValue->rva006DCFA0();
+
+		if (mode > 0)
+		{
+			g_aptValueStackAtE182E0.At(0)->rva006DD6C0(&g_eaStringAtE18060);
+			qsort(array->m_data, array->mnLength, 4, rva006DA0C0Comparator);
+			g_eaStringAtE18060.rva006D3470();
 		}
 	}
 
