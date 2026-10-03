@@ -8021,7 +8021,6 @@ _Rva008118C0,,0x0067D7C0,5,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matc
 ??_GRva00985E4@@UAEPAXI@Z,,0x0009864B,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x985E4; flag plus pinned operator delete
 ??_GRva002C0C0@@UAEPAXI@Z,,0x0002C536,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x2C0C0; flag plus pinned operator delete
 ??_GRva0040EDB@@UAEPAXI@Z,,0x00041184,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x40EDB; flag plus pinned operator delete
-??_GRva0040FE5@@UAEPAXI@Z,,0x000411F2,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x40FE5; flag plus pinned operator delete
 ??_GRva0041E9F@@UAEPAXI@Z,,0x00042105,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x41E9F; flag plus pinned operator delete
 ??_GRva00119D00@@UAEPAXI@Z,,0x00043057,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x119D00; flag plus pinned operator delete
 ??_GRva00260A3C@@UAEPAXI@Z,,0x000453F5,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x260A3C; flag plus pinned operator delete
@@ -37765,7 +37764,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?getName@DataChunkTableOfContents@@QAE?AVAsciiString@@I@Z,,0x003070F1,53,Code/GameEngine/Source/Common/System/DataChunkTableOfContentsGetName.cpp,matched,ZH DataChunk getName; callers 0x3074C9 0x3074FE; AsciiString copy pin 0x365F0
 ?getChunkLabel@DataChunkInput@@QAE?AVAsciiString@@XZ,,0x003074D7,51,Code/GameEngine/Source/Common/System/DataChunkInputGetChunkLabel.cpp,matched,ZH DataChunk getChunkLabel; chunkStack 0x1C id 0x08; getName row 0x3070F1
 ??0Rva004E35A3@@QAE@XZ,,0x004E35A3,12,Code/GameEngine/Source/Common/Rva004E35A3Ctor.cpp,matched,opaque map-holder ctor via rowed map ctor 0x33C432
-?lock@Rva00041004@@QAE_NH@Z,,0x00041004,32,Code/GameEngine/Source/Common/Rva00041004Lock.cpp,matched,honest address name via caller at 0x411E7 and IAT lock
 ??1UserParser@@UAE@XZ,,0x0030739E,60,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,UserParser dtor; vtable 0x807EB0; labels at 0x10 0x14
 ?Rva004BA324CopyRange@@YAPAVRva004BA1C8@@PAV1@00H@Z,,0x004BA324,29,Code/GameEngine/Source/Common/Rva004BA324CopyRange.cpp,matched,Rva range-copy forwarder with tag temp plus null distance calling pinned __copy 0x004BA2E9; called by erase-shape 0x004BA399
 ?EraseRange@Rva004BA399Vector@@QAEPAVRva004BA1C8@@PAV2@0@Z,,0x004BA399,51,Code/GameEngine/Source/Common/Rva004BA399EraseRange.cpp,matched,Range-erase over Rva004BA1C8 vector via rowed CopyRange 0x004BA324 plus rowed DestroyRange 0x004BA341
