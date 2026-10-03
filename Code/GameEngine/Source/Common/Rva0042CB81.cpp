@@ -5,6 +5,7 @@ class Rva0042CBB6
 {
 public:
 	void rva0042CB81(int x);
+	void rva0042CAEB(int y);
 private:
 	const void *m_vtable;
 	int m_04;
@@ -29,6 +30,12 @@ private:
 	unsigned char m_41;
 	unsigned char m_42;
 };
+
+void Rva0042CBB6::rva0042CAEB(int y)
+{
+	if (m_04 == y)
+		m_04 = 0;
+}
 
 void Rva0042CBB6::rva0042CB81(int x)
 {
