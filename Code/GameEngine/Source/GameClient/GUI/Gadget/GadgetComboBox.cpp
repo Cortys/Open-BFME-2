@@ -144,7 +144,6 @@ void GadgetComboBoxSetHiliteTextColors( GameWindow *comboBox,int color, int bord
 		editBox->winSetHiliteTextColors(color,borderColor);
 }
 
-// ?GadgetComboBoxSetIMECompositeTextColors@@YAXPAVGameWindow@@HH@Z present-unmatched
 void GadgetComboBoxSetIMECompositeTextColors(GameWindow *comboBox, int color, int borderColor )
 {
 	// sanity
