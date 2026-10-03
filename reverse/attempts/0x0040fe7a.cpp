@@ -1,4 +1,6 @@
 // ?Rva0040FE7AGet@@YAHPAVGameMessage@@@Z
+// partial score=0.96 date=2026-10-03
+// ?Rva0040FE7AGet@@YAHPAVGameMessage@@@Z
 // partial score=0.93 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
@@ -38,44 +40,61 @@ public:
 // ?Rva0040FE7AGet@@YAHPAVGameMessage@@@Z present-unmatched
 int __cdecl Rva0040FE7AGet(GameMessage *msg)
 {
+	int result = 0;
 	switch (msg->m_type) {
 	case 3:
-		return 0x18;
+		result = 0x18;
+		break;
 	case 4:
-		return 5;
+		result = 5;
+		break;
 	case 5:
-		return 6;
+		result = 6;
+		break;
 	case 6:
-		return 8;
+		result = 8;
+		break;
 	case 7:
-		return 9;
+		result = 9;
+		break;
 	case 8:
-		return 0x0A;
+		result = 0x0A;
+		break;
 	case 9:
-		return 0x0C;
+		result = 0x0C;
+		break;
 	case 10:
-		return 0x0D;
+		result = 0x0D;
+		break;
 	case 11:
-		return 0x0E;
+		result = 0x0E;
+		break;
 	case 12:
-		return 0x10;
+		result = 0x10;
+		break;
 	case 13: {
 		const GameMessageArgumentType *a = msg->getArgument(1);
-		return 0x13 + (a->integer <= 0);
+		result = 0x13 + (a->integer <= 0);
+		break;
 	}
 	case 14:
-		return 0;
+		result = 0;
+		break;
 	case 15:
-		return 0;
+		result = 0;
+		break;
 	case 16:
-		return 0;
+		result = 0;
+		break;
 	case 17:
-		return 0;
+		result = 0;
+		break;
 	case 18:
-		return 0;
+		result = 0;
+		break;
 	case 19:
-		return 0;
-	default:
-		return 0;
+		result = 0;
+		break;
 	}
+	return result;
 }
