@@ -18,8 +18,18 @@ public:
 	static void doFXObj(const FXList *fx, const Object *primary, const Object *secondary);
 };
 
-void FXList::doFXObj(const FXList *fx, const Object *primary, const Object *secondary)
+inline void FXList::doFXObj(const FXList *fx, const Object *primary, const Object *secondary)
 {
 	if (fx && !fx->rva001E2EF1())
 		fx->doFXObj(primary, secondary);
 }
+
+// This static method is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFXListStaticDoFXObjInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeFXListStaticDoFXObjInlineAnchor()
+{
+	FXList::doFXObj(static_cast<const FXList *>(0),
+		static_cast<const Object *>(0), static_cast<const Object *>(0));
+}
+#pragma inline_depth()
