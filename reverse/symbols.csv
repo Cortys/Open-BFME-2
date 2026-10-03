@@ -7294,3 +7294,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva006E02B0@BfmeAptValue006DCD20@@QBE_NXZ,0x006E02B0,"bool-returning declaration of the type-15 predicate; 15 callers test al, so the type-15 predicate is bool while the existing QBEH row has the same body bytes; called by rva006E1540 0x006E1540"
 ?rva006F76B0@Rva006F76B0@@QAEXXZ,0x006F76B0,"+0x24 sub-object worker of the AptCIH display object; tail target of rva006E1540 0x006E1540; seat 1 recovery target; address-derived name"
 ?rva00028200@@YAXXZ,0x00028200,"Reversed find-first-not-in-set core called by rva00029ee0 0x0029EE0; address-derived name"
+?_M_setup@strstreambuf@_STL@@AAEXPAD0H@Z,0x00602740,"strstreambuf::_M_setup(char*,char*,streamsize) called by the 3-arg ctor 0x00602A30; real STLport 4.5.3 spelling"
