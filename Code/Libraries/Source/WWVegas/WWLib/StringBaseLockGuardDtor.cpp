@@ -1,4 +1,5 @@
 // cl: /O2 /EHs
+#include "../../../../GameEngine/Include/Common/Rva00041004Lock.h"
 // ??1Rva000358B0@@QAE@XZ @0x000358B0 35B
 // String lock guard destructor: if the +4 locked flag is set, leaves the
 // Rva00041004 critical section at +8 unless its +0x20 bypass flag is set,
@@ -7,20 +8,8 @@
 // IAT LeaveCriticalSection at 0x00BBA204, lock layout with vtable at +0 and
 // bypass byte at +0x20 from rowed ctor 0x000411C1. Honest address-derived
 // name: identity unproven beyond the guard shape and unwind role.
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
-extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section);
 
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    int m_unk04;
-    CRITICAL_SECTION m_cs;
-    unsigned char m_flag;
-};
+extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section);
 
 class Rva000358B0
 {

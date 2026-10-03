@@ -1,4 +1,5 @@
 // cl: /O1 /MD
+#include "../../Include/Common/Rva00041004Lock.h"
 // ?rva0010F24F@Rva0010F24F@@QAEXXZ @0x0010F24F 31B.
 // ?rva0010F26E@Rva0010F26E@@QAEXXZ @0x0010F26E 31B.
 // Conditional critical-section guard lock/unlock pair: if the +0x00 target
@@ -11,21 +12,9 @@
 // bypass byte at +0x20 from rowed Rva00041004 ctor 0x000411C1; shape follows
 // StringBaseLockGuardDtor. Honest address-derived names: identity unproven
 // beyond the guard shape.
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
+
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section);
-
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    int m_unk04; // +4
-    CRITICAL_SECTION m_cs; // +8
-    unsigned char m_flag; // +0x20
-};
 
 class Rva0010F24F
 {

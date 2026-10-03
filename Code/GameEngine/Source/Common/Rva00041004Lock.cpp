@@ -1,49 +1,69 @@
 // cl: /O1 /MD
-// ?lock@Rva00041004@@QAE_NH@Z @0x00041004 32B
-// Conditional critical-section enter: returns false unless time == -1,
-// returns true without locking when the +0x20 bypass flag is set, else
-// enters the +0x08 section and returns true. Evidence: single caller at
-// 0x000411E7, IAT EnterCriticalSection at 0x00BBA200, layout with vtable
-// at +0 and bypass byte at +0x20 read off retail offsets. Honest
-// address-derived name: identity unproven from 32 bytes.
-
-struct CRITICAL_SECTION
+// Target-owned handle/critical-section ABI views; original class names,
+// abstractness and full sizes remain unknown. Three-slot tables independently
+// prove virtual lock / unlock / scalar-destructor ordering. Base BC16B8 is
+// {40EF8;3B810;41184}; derived BC16DC is {41004;41024;411F2}.
+// Ghidra proves cleanup40EDB29 and cleanup40FE531. Vtable-selected complete
+// CFG/RET4 and adjacent40F1E prove wait40EF838; CFG/RET and adjacent41037
+// prove unlock4102419. PE independently names all six kernel32 imports below.
+// Existing constructor411C149; enter4100432; scalars41184/411F228 retain their
+// exact bytes. No historical donor identities are inferred from these names.
+#include "../../Include/Common/Rva00041004Lock.h"
+extern "C" {
+__declspec(dllimport) int __stdcall CloseHandle(void *handle) throw();
+__declspec(dllimport) unsigned long __stdcall WaitForSingleObject(void *handle, unsigned long time) throw();
+__declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section) throw();
+__declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section) throw();
+__declspec(dllimport) void __stdcall InitializeCriticalSection(CRITICAL_SECTION *section) throw();
+__declspec(dllimport) void __stdcall DeleteCriticalSection(CRITICAL_SECTION *section) throw();
+}
+// ??1Rva0040EDB@@UAE@XZ @0x00040EDB 29B
+Rva0040EDB::~Rva0040EDB()
 {
-    unsigned char data[24];
-};
-
-extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section);
-extern "C" __declspec(dllimport) void __stdcall InitializeCriticalSection(CRITICAL_SECTION *section);
-
-class Rva00041004
+    if (m_handle04) {
+        CloseHandle(m_handle04);
+        m_handle04 = 0;
+    }
+}
+// ?lock@Rva0040EDB@@UAE_NH@Z @0x00040EF8 38B
+bool Rva0040EDB::lock(int time) throw()
 {
-public:
-    virtual ~Rva00041004();
-    bool lock(int time);
-    Rva00041004(int x);
-
-private:
-    int m_unk04; // +4
-    CRITICAL_SECTION m_cs; // +8
-    unsigned char m_flag; // +0x20
-};
-
-bool Rva00041004::lock(int time)
+    if (!m_handle04)
+        return false;
+    switch (WaitForSingleObject(m_handle04, time)) {
+    case 0:
+    case 0x80:
+        return true;
+    default:
+        return false;
+    }
+}
+// ??1Rva00041004@@UAE@XZ @0x00040FE5 31B
+Rva00041004::~Rva00041004()
+{
+    DeleteCriticalSection(&m_cs);
+    m_flag = 1;
+}
+// ?unlock@Rva00041004@@UAE_NXZ @0x00041024 19B
+bool Rva00041004::unlock()
+{
+    if (!m_flag)
+        LeaveCriticalSection(&m_cs);
+    return true;
+}
+// ?lock@Rva00041004@@UAE_NH@Z @0x00041004 32B
+bool Rva00041004::lock(int time) throw()
 {
     if (time != -1)
         return false;
-    if (m_flag != 0)
+    if (m_flag)
         return true;
     EnterCriticalSection(&m_cs);
     return true;
 }
-
 // ??0Rva00041004@@QAE@H@Z @0x000411C1 49B
-// Initializer: zeroes +0x04, inits the +0x08 section, clears the +0x20
-// bypass flag, then takes the lock when the arg is 0. Evidence: callers
-// at 0x00035CC8 0x00035E28 0x000A8935 0x0010F037 0x001491E7 0x006CB838
-// 0x007ACDB3, vtable 0x007C16DC, IAT InitializeCriticalSection.
-Rva00041004::Rva00041004(int x) : m_unk04(0), m_flag(0)
+// Target singleton storage spans36B; the inline base initializer zeroes +4.
+Rva00041004::Rva00041004(int x) : m_flag(0)
 {
     InitializeCriticalSection(&m_cs);
     if (x == 0)

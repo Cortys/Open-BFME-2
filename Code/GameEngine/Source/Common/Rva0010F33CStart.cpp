@@ -1,4 +1,5 @@
 // cl: /O1 /MD
+#include "../../Include/Common/Rva00041004Lock.h"
 // ?rva0010F33C@Rva0010F33C@@QAEXXZ @0x0010F33C 78B.
 // Guarded AIL_start_stream on the +0x08 inner stream: derives the guard
 // target as +0x38 of the +0x0C outer (null-checked pair), locks via rowed
@@ -6,22 +7,10 @@
 // when the guard flag is set. Evidence: rowed lock/unlock callees, IAT
 // AIL_start_stream at 0x00BBABC4, target layout Rva00041004 with cs at +8
 // and bypass at +0x20 from rowed ctor 0x000411C1. Honest address name.
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
+
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section);
 extern "C" __declspec(dllimport) void __stdcall AIL_start_stream(void *stream);
-
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    int m_unk04; // +4
-    CRITICAL_SECTION m_cs; // +8
-    unsigned char m_flag; // +0x20
-};
 
 class Rva0010F24F
 {

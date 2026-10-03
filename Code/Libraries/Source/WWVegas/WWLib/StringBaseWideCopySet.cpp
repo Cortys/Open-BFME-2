@@ -1,4 +1,5 @@
 // cl: /O2 /EHs
+#include "../../../../GameEngine/Include/Common/Rva00041004Lock.h"
 // ?set@?$StringBase@G@@QAEXABV1@@Z @0x00037150 132B
 // Wide StringBase copy set: skips self-assignment, releases its own buffer and
 // shares the source buffer by reference count under the wide string lock.
@@ -8,28 +9,10 @@
 // wide lock. Model/flags: Code/Libraries/Source/WWVegas/WWLib/StringBaseNarrowCopySet.cpp.
 typedef unsigned short wchar_t;
 
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
-
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section) throw();
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section) throw();
 
 class WideLock;
-
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    Rva00041004(int x);
-
-    int m_unk04;
-    CRITICAL_SECTION m_cs;
-    unsigned char m_flag;
-
-    friend class WideLock;
-};
 
 Rva00041004 *Rva00035DF0Get();
 

@@ -1,4 +1,5 @@
 // cl: /O1 /MD
+#include "../../Include/Common/Rva00041004Lock.h"
 // ?rva0010F38A@Rva0010F38A@@QAEXXZ @0x0010F38A 80B.
 // ?rva0010F3DA@Rva0010F3DA@@QAEXXZ @0x0010F3DA 80B.
 // Guarded AIL_pause_stream pair (resume/pause): same guard derivation as
@@ -7,22 +8,10 @@
 // unlock via rowed 0x0010F26E. Evidence: rowed lock pair, IAT
 // AIL_pause_stream at 0x00BBABC8, Rva00041004 layout from rowed ctor
 // 0x000411C1. Honest address names.
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
+
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section);
 extern "C" __declspec(dllimport) void __stdcall AIL_pause_stream(void *stream, int flag);
-
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    int m_unk04; // +4
-    CRITICAL_SECTION m_cs; // +8
-    unsigned char m_flag; // +0x20
-};
 
 class Rva0010F24F
 {

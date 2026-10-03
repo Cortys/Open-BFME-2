@@ -7,3 +7,6 @@ UnicodeString,reference/shims/bfme2_ascii/unicode_string.h,shared since d930928e
 Snapshot,reference/shims/moduledata/Common/Snapshot.h,BFME2 Snapshot base at vtable 0x00BBB554; virtual destructor then crc xfer loadPostProcess; slots 1-3 are purecall
 Video,Code/GameEngine/Include/GameClient/BfmeVideoRecord.h,native 28B video records; donor labels with verified copy and table offsets
 BfmeVideoTableStorage,Code/GameEngine/Include/GameClient/BfmeVideoTable.h,shared three-pointer native video-table ABI view
+Rva0040EDB,Code/GameEngine/Include/Common/Rva00041004Lock.h,target-owned virtual slot ordering and accessed prefixes; original identities and complete sizes unknown
+Rva00041004,Code/GameEngine/Include/Common/Rva00041004Lock.h,target-owned virtual slot ordering and accessed prefixes; original identities and complete sizes unknown
+Rva00514E6B,Code/GameEngine/Include/Common/Rva00041004Lock.h,target-owned virtual slot ordering and accessed prefixes; original identities and complete sizes unknown

@@ -1,4 +1,5 @@
 // cl: /O2 /EHs
+#include "../../../../GameEngine/Include/Common/Rva00041004Lock.h"
 // ?releaseBuffer@?$StringBase@D@@AAEXXZ @0x00036410 133B
 // ?releaseBuffer@?$StringBase@G@@AAEXXZ @0x00036E70 133B
 // Narrow/wide StringBase releaseBuffer twins: scoped lock guard, refcount dec, free via rowed _free, null.
@@ -21,28 +22,10 @@
 #pragma comment(linker, "/alternatename:?releaseBuffer@?$StringBase@D@@IAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
 typedef unsigned short wchar_t;
 
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
-
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section) throw();
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section) throw();
 
 class WideLock;
-
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    Rva00041004(int x);
-
-    int m_unk04;
-    CRITICAL_SECTION m_cs;
-    unsigned char m_flag;
-
-    friend class WideLock;
-};
 
 Rva00041004 *Rva00035DF0Get();
 Rva00041004 *Rva00035C90Get();

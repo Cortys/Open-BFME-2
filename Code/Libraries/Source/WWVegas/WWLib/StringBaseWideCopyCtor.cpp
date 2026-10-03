@@ -1,4 +1,5 @@
 // cl: /O2
+#include "../../../../GameEngine/Include/Common/Rva00041004Lock.h"
 // The shared headers declare these members with the access/virtual spelling
 // the referring objects use; this TU emits the paired definition spelling.
 // Same function, same address: bind the header spelling here.
@@ -31,16 +32,6 @@ private:
 		T data[1];
 	};
 	Header *m_data;
-};
-
-class Rva00041004
-{
-public:
-	virtual ~Rva00041004();
-	Rva00041004(int x);
-	int m_unk04;
-	unsigned char m_cs[24];
-	unsigned char m_flag;
 };
 
 Rva00041004 *Rva00035DF0Get();

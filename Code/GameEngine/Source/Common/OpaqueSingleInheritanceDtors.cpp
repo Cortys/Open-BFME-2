@@ -1,4 +1,5 @@
 // cl: /O1 /MD
+#include "../../Include/Common/Rva00041004Lock.h"
 //
 // Opaque single-inheritance destructors tail-calling SEH bases pinned
 // elsewhere. Each class below stores its own vtable and tail-calls its base
@@ -38,18 +39,6 @@ Rva00984EF::Rva00984EF()
 Rva00984EF::~Rva00984EF()
 {
 }
-
-class Rva0040EDB
-{
-public:
-	virtual ~Rva0040EDB();
-};
-
-class Rva00514E6B : public Rva0040EDB
-{
-public:
-	virtual ~Rva00514E6B();
-};
 
 inline Rva00514E6B::~Rva00514E6B()
 {

@@ -1,4 +1,5 @@
 // cl: /O1 /GX /DNDEBUG /MD
+#include "../../Include/Common/Rva00041004Lock.h"
 //
 // ??1Rva0010F0C4@@UAE@XZ, retail 0x0010F0C4, 76 bytes.
 // Virtual dtor closing the volatile +0x08 stream via mss32 AIL_close_stream
@@ -14,15 +15,6 @@
 
 typedef void *HSTREAM;
 extern "C" __declspec(dllimport) void __stdcall AIL_close_stream(HSTREAM stream) throw();
-
-class Rva0040EDB
-{
-public:
-	virtual ~Rva0040EDB();
-
-private:
-	int m_handle04; // +0x04 closed via CloseHandle in its own dtor
-};
 
 class Rva0010F0C4Base
 {

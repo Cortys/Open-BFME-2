@@ -1,4 +1,5 @@
 // cl: /O2 /EHs
+#include "../../../../GameEngine/Include/Common/Rva00041004Lock.h"
 // The shared headers declare these members with the access/virtual spelling
 // the referring objects use; this TU emits the paired definition spelling.
 // Same function, same address: bind the header spelling here.
@@ -16,28 +17,11 @@
 // Model/flags donor TU Code/Libraries/Source/WWVegas/WWLib/StringBaseWideReleaseBuffer.cpp
 // (same guard; /O2 /EHs gives set's manual EH frame around the releaseBuffer call,
 // and the constructor, with no throwing call inside the guard, has none).
-struct CRITICAL_SECTION
-{
-    unsigned char data[24];
-};
 
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(CRITICAL_SECTION *section) throw();
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(CRITICAL_SECTION *section) throw();
 
 class NarrowLock;
-
-class Rva00041004
-{
-public:
-    virtual ~Rva00041004();
-    Rva00041004(int x);
-
-    int m_unk04;
-    CRITICAL_SECTION m_cs;
-    unsigned char m_flag;
-
-    friend class NarrowLock;
-};
 
 Rva00041004 *Rva00035C90Get();
 
