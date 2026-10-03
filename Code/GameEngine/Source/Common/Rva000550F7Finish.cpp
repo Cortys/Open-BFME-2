@@ -1,9 +1,6 @@
-// ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z
-// partial score=0.96 date=2026-10-02
-// ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z
-// partial score=0.95 date=2026-09-30
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /arch:SSE2 /Oi /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
+//
 // ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z @0x000550F7 120B.
 // Chain from 0x52098: removes a volume entry matching outer float+key then
 // refreshes the channel. Outer vector lives at +0xB8 via holder indirection.
@@ -52,7 +49,6 @@ struct Entry
 	int key;
 };
 
-// ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z present-unmatched
 void Rva00699180Owner::rva000550F7(Holder *o, int key)
 {
 	_STL::vector<BfmePod8> &outer = o->m_inner->m_vec;
@@ -67,13 +63,16 @@ void Rva00699180Owner::rva000550F7(Holder *o, int key)
 		_STL::vector<BfmePod8> &inner = m_vecs[idx];
 		BfmePod8 *q = m_vecs[idx].begin();
 		BfmePod8 *iend = m_vecs[idx].end();
-		for (; q != iend; ++q)
+		bool found = false;
+		while (!found && q != iend)
 		{
 			if (*(float *)&q->a[0] == outerVal && q->a[1] == key)
 			{
 				inner.erase(q);
-				break;
+				found = true;
 			}
+			else
+				++q;
 		}
 		rva00052098(idx);
 	}
