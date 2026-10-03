@@ -49960,3 +49960,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva005ECA91@@QAE@XZ,,0x005ECA91,63,Code/GameEngine/Source/Common/Rva005ECA91Ctor.cpp,matched,ctor vtable vector BfmeE16 ObjectCreationList same class as dtor
 ??1Rva005ECA91@@MAE@XZ,,0x005ECAD0,60,Code/GameEngine/Source/Common/Rva005ECA91Dtor.cpp,matched,vtable 0x008785B0 at this member +0x10 dtor 0x005242D7 member +0x4 dtor 0x005EC9BA EH prolog
 ??1Rva005ECFE4@@MAE@XZ,,0x005ECFE4,11,Code/GameEngine/Source/Common/Rva005ECFE4Dtor.cpp,matched,vtable 0x008785B4 at this jmp base 0x005ECAD0 chain
+?rva005B5485@Rva005B5485@@QAEXHPAD_N@Z,,0x005B5485,104,Code/GameEngine/Source/Common/Rva005B5485.cpp,matched,snprintf count via D52 or manual sar5 chain via D52
