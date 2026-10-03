@@ -49480,3 +49480,4 @@ _rva0062AFC8D3DXVec3CatmullRom@24,,0x0062AFC8,6,Code/GameEngine/Source/Common/Rv
 ?rva0059992A@Rva00599825@@QAEXPAVXfer@@@Z,,0x0059992A,177,Code/GameEngine/Source/Common/Rva00599825ListAdd.cpp,matched,Xfer Version bool uint list via XferObjectID IsStoring IsLoading same TU as 0x00599825 caller 0x004EC1D9
 ??0Rva006ED2A0@@QAE@XZ,,0x006ED1E0,177,Code/GameEngine/Source/Common/Rva006ED1E0Cluster.cpp,matched,vtable 0x8ECB9C same as dtor 0x6ED2A0; init-list member ctors reproduce retail EH states 0/1; callee clear 0x6D2F90
 ?rva0041E764@Rva0041E764@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z,,0x0041E764,27,Code/GameEngine/Source/GameLogic/Object/Rva0041E764Find.cpp,matched,Hashtable find over +0xC ArmorTemplate table via ICF twin plus node second load
+?Rva005F5B0FNotify@@YAXPAURva005F5B0FA@@PAURva005F5B0FB@@@Z,,0x005F5B0F,104,Code/GameEngine/Source/Common/Rva005F5B0FNotify.cpp,matched,RB-tree loop via _M_increment IndexedField get GameMessage 0x6C0 caller 0x005F5BAE
