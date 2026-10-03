@@ -380,6 +380,29 @@ def home_dir(symbol):
     return "Code/GameEngine/Source/Common", found.group(1) if found else ""
 
 
+def add_row(symbol, rva, size, source, notes):
+    """Land one row through tools/add_match.py, which byte-verifies it."""
+    import subprocess
+    result = subprocess.run(
+        ["python3", "tools/add_match.py", symbol, f"0x{int(rva, 16):08X}", str(size), source,
+         "--notes", notes], cwd=ROOT, capture_output=True, text=True)
+    return "verified OK" in result.stdout + result.stderr
+
+
+def existing_home(symbol):
+    """The one Code/ unit that already defines the function `symbol` names."""
+    import subprocess
+    found = re.match(r"\?(\w+)@(?:(\w+)@@)?", symbol)
+    if not found:
+        return None
+    name = f"{found.group(2)}::{found.group(1)}" if found.group(2) else found.group(1)
+    pattern = rf"^[^;/#]*\b{re.escape(name)}\s*\([^;]*$"
+    hits = subprocess.run(["git", "grep", "-lP", pattern, "--", "Code/*.cpp"],
+                          cwd=ROOT, capture_output=True, text=True).stdout.split()
+    hits = [h for h in hits if not h.startswith("Code/gen_")]
+    return hits[0] if len(hits) == 1 else None
+
+
 def land(rva):
     """Write build/permute/<rva>/win.cpp as a Code/ unit and land it with
     tools/add_match.py (which verifies and clears the banked attempt).
@@ -395,6 +418,19 @@ def land(rva):
     cl = next((l for l in body if l.startswith("// cl:")), None)
     if cl:
         body.remove(cl)
+    definitions = sum(1 for l in body if BODY_START.match(l) and "class " not in l and "struct " not in l)
+    if definitions > 3:
+        # The banked attempt is a copy of a whole unit: a new file would
+        # define its other functions a second time. Only the unit that
+        # already holds the function may take it, so try repointing the row
+        # there (add_match verifies); otherwise leave the win for a hand port.
+        home = existing_home(symbol)
+        if home and add_row(symbol, rva, size, home, "banked attempt exact; the home unit's copy verified"):
+            win.rename(win.with_suffix(".landed"))
+            return home
+        print(f"HAND-PORT {rva} {symbol}: win.cpp is a whole unit ({definitions} definitions); "
+              f"port the function into {home or 'its home unit'}", file=sys.stderr)
+        return None
     directory, cls = home_dir(symbol)
     name = f"{cls}Rva{int(rva, 16):08X}.cpp" if cls else f"Rva{int(rva, 16):08X}Permuted.cpp"
     source = Path(directory) / name
@@ -407,13 +443,8 @@ def land(rva):
         "// the body is the banked one up to statement/operand order and local types.",
     ]
     (ROOT / source).write_text("\n".join(header + body), encoding="latin-1")
-    subprocess.run(["python3", "tools/claims.py", "claim", f"0x{int(rva, 16):08X}"],
-                   cwd=ROOT, capture_output=True, text=True)
-    result = subprocess.run(
-        ["python3", "tools/add_match.py", symbol, f"0x{int(rva, 16):08X}", str(size), source.as_posix(),
-         "--notes", "banked partial closed by tools/permute.py; identity carried from the banked attempt"],
-        cwd=ROOT, capture_output=True, text=True)
-    if "verified OK" not in result.stdout + result.stderr:
+    if not add_row(symbol, rva, size, source.as_posix(),
+                   "banked partial closed by tools/permute.py; identity carried from the banked attempt"):
         (ROOT / source).unlink(missing_ok=True)
         return None
     win.rename(win.with_suffix(".landed"))
