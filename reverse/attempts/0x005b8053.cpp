@@ -1,7 +1,6 @@
 // ?rva005B8053@Rva005B8053@@QAEPAXPBE@Z
-// partial score=0.93 date=2026-09-27
+// partial score=0.94 date=2026-10-03
 // ?rva005B8053@Rva005B8053@@QAEPAXPBE@Z
-// partial score=0.93 date=2026-09-27
 // cl: /O1
 // ?rva005B8053@Rva005B8053@@QAEPAXPBE@Z @ 0x005B8053 (58B). Unlock lane tree
 // lookup shared by 0x005B808D/0x005B80AF/0x005B80D0/0x005B80F2 plus 0x00559DA0
@@ -37,18 +36,22 @@ void *Rva005B8053::rva005B8053(unsigned char const *key)
 {
 	Rva005B8053Header *h = m_header;
 	Rva005B8053Node *cur = h->_root;
-	Rva005B8053Node *best = (Rva005B8053Node *)h;
+	Rva005B8053Node *sentinel = (Rva005B8053Node *)(void *)h;
+	Rva005B8053Node *best = sentinel;
 	unsigned char const volatile *vkey = key;
-	while (cur != 0) {
-		if (cur->_key >= *vkey) {
-			best = cur;
-			cur = cur->_left;
-		} else
-			cur = cur->_right;
+	if (cur != 0) {
+		unsigned char k = *vkey;
+		do {
+			if (cur->_key >= k) {
+				best = cur;
+				cur = cur->_left;
+			} else
+				cur = cur->_right;
+		} while (cur != 0);
 	}
-	if (best != (Rva005B8053Node *)h) {
+	if (best != sentinel) {
 		if (*vkey < best->_key)
-			best = (Rva005B8053Node *)h;
+			best = sentinel;
 	}
 	return best;
 }
