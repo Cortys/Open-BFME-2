@@ -7,7 +7,6 @@
 #include <map>
 extern "C" char *__cdecl strcpy(char *dest, const char *src);
 char *__cdecl Rva00605365(char *);
-extern char g_bfmeEmptyF9[];
 struct Rva00603A00Mapped { unsigned int m_bits; };
 struct Rva006038D4Less { bool operator()(const char *a, const char *b) const; };
 typedef _STL::pair<const char* const, Rva00603A00Mapped> InnerPair;
@@ -21,20 +20,11 @@ struct Rva00603C0F {
   const void *rva00603C0F(const char *a, const char *b);
   bool rva00603CA3(const char *a, Out603CA3 *out);
 };
-const void *Rva00603C0F::rva00603C0F(const char *a, const char *b) {
-  if (a == b) a = g_bfmeEmptyF9;
-  OuterMap::iterator it1 = m_map.find(a);
-  if (it1 == m_map.end()) return 0;
-  InnerMap &inner = (*it1).second;
-  InnerMap::iterator it2 = inner.find(b);
-  if (it2 != inner.end()) return &(*it2).second;
-  return 0;
-}
 bool Rva00603C0F::rva00603CA3(const char *a, Out603CA3 *out) {
   char buf[260];
   strcpy(buf, a);
   const char *n = Rva00605365(buf);
-  const void *found = rva00603C0F(n, buf);
+  const void *found = rva00603C0F(buf, n);
   if (!found) return false;
   if (!out) return true;
   out->m_a = 0;
