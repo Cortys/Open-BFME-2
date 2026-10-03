@@ -9,19 +9,6 @@
 // Original class/method/argument names and complete parent size unknown.
 #include "../../../../GameEngine/Include/GameClient/Rva0008990CArrayOwner.h"
 
-class Rva00086761CameraMove
-{
-public:
- void rva00086761(Rva00089894Point *pLoc);
- void rva0008690A(int value);
-private:
- char m_padding0000[0x1DC];
- bool m_doingRotateCamera;
- char m_padding1dd[0x280-0x1DD];
- Rva0089971 m_cameraPath;
- char m_padding22f4[0x2354-0x22F4];
- int m_cameraMovementMode;
-};
 
 void Rva00086761CameraMove::rva00086761(Rva00089894Point *pLoc)
 {
@@ -58,4 +45,28 @@ void Rva00086761CameraMove::rva0008690A(int value)
 {
  if (value<=1) value=1;
  m_cameraPath.m_28=value;
+}
+
+// Clean BFME1 W3DViewZoomCameraBfme6d943 O1/G7/SSE/MD guides duration,
+// frame and interpolation setup. Target132B/RET16, primary slot59/BC7654,
+// unchanged-this call to86CDA and matching fields prove the association.
+// Runtime period VA DE204C has genuine zero PE storage; writer4C6C6 and
+// startup7AC08C configure it. Their code is not recovered by this unit.
+// Original method/global names and complete receiver size remain unknown.
+int g_Va00DE204C;
+
+void Rva00086761CameraMove::rva00088EB4(float finalValue, int milliseconds, float easeIn, float easeOut)
+{
+ int &duration = milliseconds;
+ register Rva00086761CameraMove *view = this;
+ view->m_228 = true;
+ if (duration < 1) duration = 1;
+ int frames = duration / g_Va00DE204C;
+ if (frames < 1) frames = 1;
+ view->m_208 = frames;
+ view->m_210 = view->m_3C;
+ view->m_214 = finalValue;
+ view->m_20C = 0;
+ view->m_220.rva0030E51F(easeIn, easeOut, (float)duration);
+ if (duration == 1) view->rva00086CDA();
 }

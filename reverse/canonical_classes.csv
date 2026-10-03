@@ -14,3 +14,4 @@ Rva000851F3,Code/GameEngine/Include/GameClient/Rva0008990CArrayOwner.h,target-ow
 Rva00089894ArrayElement,Code/GameEngine/Include/GameClient/Rva0008990CArrayOwner.h,target-owned dispatch and accessed owning prefixes; original identities and complete sizes unknown
 Rva0089971,Code/GameEngine/Include/GameClient/Rva0008990CArrayOwner.h,target-owned dispatch and accessed owning prefixes; original identities and complete sizes unknown
 Rva00089894Point,Code/GameEngine/Include/GameClient/Rva0008990CArrayOwner.h,shared trivial three-float value for target-proven element prefix; original point identity unknown
+Rva00086761CameraMove,Code/GameEngine/Include/GameClient/Rva0008990CArrayOwner.h,target-owned outer prefix and unchanged-this updater; original receiver names/full size unknown

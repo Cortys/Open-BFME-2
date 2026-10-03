@@ -84,3 +84,30 @@ private:
 };
 
 #undef BFME_ARRAY_OWNER_ATTRIBUTES
+
+// Target primary-table slots32/39/59 and unchanged-this call88F2E->86CDA
+// associate these methods. Constructor8B7CF embeds the owning prefix at280.
+// The target-proven parent prefix ends2358; full size/original names unknown.
+class Rva00086761CameraMove
+{
+public:
+ void rva00086761(Rva00089894Point *pLoc);
+ void rva0008690A(int value);
+ void rva00088EB4(float finalValue, int milliseconds, float easeIn, float easeOut);
+ void rva00086CDA();
+private:
+ char m_padding0000[0x3C];
+ float m_3C;
+ char m_padding0040[0x1DC-0x40];
+ bool m_doingRotateCamera;
+ char m_padding1dd[0x208-0x1DD];
+ int m_208, m_20C;
+ float m_210, m_214;
+ char m_padding218[8];
+ ParabolicEase m_220;
+ unsigned char m_228;
+ char m_padding229[0x280-0x229];
+ Rva0089971 m_cameraPath;
+ char m_padding22f4[0x2354-0x22F4];
+ int m_cameraMovementMode;
+};
