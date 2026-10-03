@@ -49630,3 +49630,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004D5F1D@NetAckStage2CommandMsg@@QAE?AVAsciiString@@XZ,,0x004D5F1D,151,Code/GameEngine/Source/GameNetwork/NetAckStage2CommandMsgContents.cpp,matched,vtable slot 3 NetAckStage2CommandMsg base NetCommandMsg format string
 ?rva004D5925@Rva004D58DE@@QAEXPAEI@Z,,0x004D5925,39,Code/GameEngine/Source/GameNetwork/Rva004D58DESetData.cpp,matched,dtor layout twin of setFileData new memcpy thunk
 ?erase@?$vector@URva00B6CF1@@V?$allocator@URva00B6CF1@@@_STL@@@_STL@@QAEPAURva00B6CF1@@PAU3@0@Z,,0x000C0628,51,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_erase.cpp,matched,vector Rva00B6CF1 range erase via rowed copy_ptrs 0x000B67BC plus rowed Destroy 0x000BDCD6 plus finish store
+?rva003B0433@Rva003B0433@@QAEXAAPBVModuleData@@@Z,,0x003B0433,33,Code/GameEngine/Source/Common/Rva003B0433Push.cpp,matched,unlock push ModuleData ref then push_heap greater via rowed callees
