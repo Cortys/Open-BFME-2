@@ -26,6 +26,10 @@
 // (the map occupies +4..+0xF); load(AsciiString) widens its leaf name and
 // forwards to the wide overload.
 
+#include <utility>
+#undef _STLP_DEFAULT_CONSTRUCTED
+#define _STLP_DEFAULT_CONSTRUCTED(T) T()
+#define _BFME_RETAIL_TREE_INSERT_LAYOUT
 #include <map>
 #include <stdlib.h>
 
@@ -340,11 +344,15 @@ public:
 
 extern GameSpyInfoInterface *TheGameSpyInfo;
 
+typedef _STL::map<Int, AsciiString> IgnorePrefMap;
+
 class IgnorePreferences : public UserPreferences
 {
 public:
 	IgnorePreferences();
 	virtual ~IgnorePreferences();
+
+	IgnorePrefMap getIgnores(void);
 };
 
 // ??0IgnorePreferences@@QAE@XZ @0x3B21C0
@@ -406,4 +414,22 @@ void UserPreferences::rva003B2322(const AsciiString &val, Int num, Bool flag)
 		slot = val;
 	} else
 		erase(key);
+}
+
+// ?getIgnores@IgnorePreferences@@QAE?AV?$map@HVAsciiString@@U?$less@H@_STL@@V?$allocator@U?$pair@$$CBHVAsciiString@@@_STL@@@3@@_STL@@XZ @0x3B224D
+IgnorePrefMap IgnorePreferences::getIgnores(void)
+{
+	IgnorePrefMap ignores;
+
+	IgnorePreferences::iterator it;
+	for (it = begin(); it != end(); ++it)
+	{
+		AsciiString profileStr = it->first;
+		AsciiString lastLoginStr = it->second;
+		Int profileID = atoi(profileStr.str());
+
+		ignores[profileID] = lastLoginStr;
+	}
+
+	return ignores;
 }
