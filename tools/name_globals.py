@@ -153,6 +153,7 @@ DIRECT = re.compile(r"\(\s*\*\s*\(\s*([\w ]+?)\s*(\*?)\s*\*\s*\)\s*(0x[0-9A-Fa-f
 CAST = re.compile(r"\(\s*([\w ]+?)\s*(\*+)\s*\)\s*(0x[0-9A-Fa-f]{6,8})\b")
 VTABLE = re.compile(r"(?<![\w.])0x([0-9A-Fa-f]{6,8})[uU]?(?![\w.])")
 LEAD = re.compile(r"(?:[ \t]*//[^\n]*\n|[ \t]*\r?\n)*")
+NON_CODE = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*.*?\*/', re.S)
 
 
 def rewrite(text, index):
@@ -219,8 +220,11 @@ def rewrite(text, index):
     if new == text:
         return text, {}
     newline = "\r\n" if "\r\n" in text else "\n"
+    # A comment such as "extern spellings above" can otherwise span the
+    # rewritten initializer and masquerade as an existing declaration.
+    declarations = NON_CODE.sub(" ", new)
     missing = [d.replace("\n", newline) for n, d in sorted(need.items())
-               if not re.search(rf"\bextern\b[^;]*\b{n}\s*(\[\])?;", new)]
+               if not re.search(rf"\bextern\b[^;]*\b{n}\s*(\[\])?;", declarations)]
     if missing:
         at = LEAD.match(new).end()
         new = new[:at] + newline.join(missing) + newline + newline + new[at:]
