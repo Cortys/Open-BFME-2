@@ -54,6 +54,7 @@ public:
           m_indexInUpdate(-1)
     {
     }
+    virtual ~UpdateModule();
 
 protected:
     unsigned int m_nextCallFrameAndPhase;
