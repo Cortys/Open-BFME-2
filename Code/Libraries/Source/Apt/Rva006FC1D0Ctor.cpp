@@ -54,3 +54,31 @@ Rva006FC1D0::Rva006FC1D0() : Rva006D6360(0x23, 8)
     m_bits &= 0xFFFFFCFF;
     m_20 = 0;
 }
+class EAStringC
+{
+public:
+    struct StringDataC;
+    StringDataC *m_pData;
+public:
+    EAStringC(const char *text);
+    ~EAStringC();
+};
+struct Rva006FC240BitsHack
+{
+    unsigned int v;
+    Rva006FC240BitsHack()
+    {
+        *(unsigned char *)&v = 0;
+        v &= 0xFFFFFCFF;
+    }
+};
+class Rva006FC240 : public Rva006D6360, public Rva006FC240BitsHack
+{
+    EAStringC m_s20;
+    EAStringC m_s24;
+public:
+    Rva006FC240();
+};
+Rva006FC240::Rva006FC240() : Rva006D6360(0x29, 8), Rva006FC240BitsHack(), m_s20("Error"), m_s24("Error")
+{
+}
