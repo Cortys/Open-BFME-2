@@ -6063,3 +6063,10 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva0029004B@Object@@QAEXXZ	0x0029004B	74	partial	or [esi+0x9a] after mov [esi+0x84] retail before t=18 model=muse-10 score=0.95 stash=reverse/attempts/0x0029004b.cpp
 ?HasBeenDisplayed@SubTitleManager@@QAE_NH@Z	0x00688680	98	blocked	int at +0x18 via edx vs byte at +0x20 via eax plus vector-size prologue and debug-call shape mismatch t=10 model=muse-10
 ?rva002FED53@Rva002FED53@@QAEXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z	0x002FED53	28	blocked	honest wrapper calling 0x002FEC97 gives eax push-mem 23B vs retail edx placeholder 28B after 6 variants t=25 model=muse-05
+?rva0059F37C@Rva0059F37C@@QAEX_N@Z	0x0059F37C	253	blocked	EH UnicodeString inline plus vslot 0x28 and 0x4BC layout needs donor class t=18 model=muse-02
+?rva001080B4@Rva001080B4@@QAE_NXZ	0x001080B4	106	blocked	recursive vector walk needs 31-virt donor class slots 0xC 0x14 0x70 0x78 t=12 model=muse-02
+?Rva001086ECGet@@YAXXZ	0x001086EC	164	blocked	register args eax ebx esi unclear caller 4737B too big for sig t=8 model=muse-02
+??0Rva00108BB4@@QAE@XZ	0x00108BB4	244	blocked	ctor needs donor layout minus68 EH for Region3D dtor plus dead store t=20 model=muse-02
+?rva00108E7A@Rva00108E7A@@QAE_NXZ	0x00108E7A	323	blocked	register args esi edx caller 4000B too big for sig t=6 model=muse-02
+?rva00108FBD@Rva00108FBD@@QAEXMMMMPAUVec2@@00@Z	0x00108FBD	364	blocked	SSE bounds scheduling diverged 378B vs 364B 18 structural regions memory and register allocation throughout not near miss t=5 model=muse-02
+?rva00108895@Rva00108895@@QAEXXZ	0x00108895	97	blocked	101B vs 98B stash stosd-pair vs movs lea-eax float stores vs direct push-10 timing no progress t=3 model=muse-02
