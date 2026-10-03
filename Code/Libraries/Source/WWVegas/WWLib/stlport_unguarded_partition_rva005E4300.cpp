@@ -51,4 +51,36 @@ RandomAccessIter __unguarded_partition(RandomAccessIter first,
 template int *__unguarded_partition<int *, int,
 	Rva005E4300Cmp>(int *, int *, int, Rva005E4300Cmp);
 
+// ??$__median@PAHVRva005E4300Cmp@@@_STL@@YAPAHPAH00VRva005E4300Cmp@@@Z
+// retail 0x005E4534, 107 bytes. Median-of-three over int sort keys with the
+// pinned thiscall comparator Rva005E4300Cmp: compare *a/*b/*c values, return
+// the median pointer. Evidence: all five calls rowed to 0x005E4300; same
+// spelling as stlport_unguarded_partition_rva00422ca8.cpp median 0x00423134.
+template <class RandomAccessIter, class Compare>
+RandomAccessIter __median(RandomAccessIter a, RandomAccessIter b,
+	RandomAccessIter c, Compare comp)
+{
+	if (comp(*a, *b))
+	{
+		if (comp(*b, *c))
+			return b;
+		else if (comp(*a, *c))
+			return c;
+		else
+			return a;
+	}
+	else
+	{
+		if (comp(*a, *c))
+			return a;
+		else if (comp(*b, *c))
+			return c;
+		else
+			return b;
+	}
+}
+
+template int *__median<int *,
+	Rva005E4300Cmp>(int *, int *, int *, Rva005E4300Cmp);
+
 }
