@@ -102,3 +102,19 @@ GameWindow *TabWindowManagerView::gogoGadgetCheckBox(GadgetCreateView *view,
     if (text.getLength()) GadgetCheckBoxSetText(window, text);
     return window;
 }
+
+GameWindow *TabWindowManagerView::gogoGadgetRadioButton(GadgetCreateView *view,
+    RadioButtonDataView *data, GameFont *font, bool visual)
+{
+    if (!(((FactoryInstanceView *)view->instance)->style & 2)) return 0;
+    GameWindow *window = ((TabWindowManagerView *)TheWindowManager)->createFromView(view);
+    if (!window) return 0;
+    RadioButtonDataView *copy = new RadioButtonDataView;
+    memcpy(copy, data, sizeof(RadioButtonDataView));
+    window->winSetUserData(copy);
+    ((Rva003140CF *)window)->rva003140CF((int)view->parent);
+    assignDefaultGadgetLook(window, font, visual);
+    UnicodeString text = winTextLabelToText(*(AsciiString *)((char *)view->instance + 0x188));
+    if (text.getLength()) GadgetRadioSetText(window, text);
+    return window;
+}
