@@ -49520,3 +49520,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0040A092Parse@@YAXPAVINI@@PAXPAPBVCommandButton@@H@Z,,0x0040A092,173,Code/GameEngine/Source/Common/System/SaveGame/Rva0040a092Finish.cpp,matched,CommandSet parse helper; ZH donor shape; inline getFilename().str and getLineNum in the INIException throw keeps the return pointer in eax
 ?rva0041EA2C@Rva0041EA2C@@QAEXPAX@Z,,0x0041EA2C,28,Code/Libraries/Source/WWVegas/WWLib/Rva0041EA2CFree.cpp,matched,node free via rowed pair dtor twin plus caller 0x0041EA88 unlocks 0x0041EA88
 ?Rva0037BD2BGet@@YG_NPAX@Z,,0x0037BD2B,29,Code/GameEngine/Source/GameClient/Rva0037BD2BGet.cpp,matched,wide +8-or-default to rowed ArchiveFileSystem check via TheNullChr
+??1Rva00150558@@UAE@XZ,,0x00150558,54,Code/GameEngine/Source/Common/Rva00150558Dtor.cpp,matched,dtor vector Rva001501CA vtable BC6F24 member plus base
