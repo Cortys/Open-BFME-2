@@ -1,7 +1,4 @@
 // ?rva0045F2F8@Rva0045F2F8@@QAEEM@Z
-// partial score=0.95 date=2026-10-01
-// ?rva0045F2F8@Rva0045F2F8@@QAEEM@Z
-// partial score=0.95 date=2026-10-01
 // cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
 //
 // ?rva0045F2F8@Rva0045F2F8@@QAEEXM@Z @0x0045F2F8 107B: vslot 23 of SpawnBehavior
@@ -29,12 +26,11 @@ private:
     unsigned int m_38;
 };
 
-// ?rva0045F2F8@Rva0045F2F8@@QAEEM@Z present-unmatched
 unsigned char Rva0045F2F8::rva0045F2F8(float v)
 {
     if (m_34 == 0)
         return 0;
-    if (v <= BfmeZeroRange)
+    if (v == BfmeZeroRange)
         return 0;
     char *base = (char *)this - 0x18;
     void *obj = *(void **)base;
