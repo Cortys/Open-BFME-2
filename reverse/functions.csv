@@ -35152,7 +35152,6 @@ _Rva001CA000Vp6WideAccum,,0x001CA000,4240,Code/GameEngine/Source/Common/Rva001CA
 ?ji_0062af20@@YAXXZ,,0x0062AF20,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBA078;dll=dinput8.dll;import=DirectInput8Create;target=DirectInput8Create
 ?ji_0062af26@@YAXXZ,,0x0062AF26,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBA9B4;dll=d3dx9_27.dll;import=D3DXMatrixMultiply;target=D3DXMatrixMultiply
 ?ji_0062af44@@YAXXZ,,0x0062AF44,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBA9C4;dll=d3dx9_27.dll;import=D3DXMatrixTranspose;target=D3DXMatrixTranspose
-?ji_0062af4a@@YAXXZ,,0x0062AF4A,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBA9C8;dll=d3dx9_27.dll;import=D3DXVec4Transform;target=D3DXVec4Transform
 ?ji_0062af5c@@YAXXZ,,0x0062AF5C,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBAA1C;dll=d3dx9_27.dll;import=D3DXMatrixRotationZ;target=D3DXMatrixRotationZ
 ?ji_0062af62@@YAXXZ,,0x0062AF62,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBAA18;dll=d3dx9_27.dll;import=D3DXFilterTexture;target=D3DXFilterTexture
 ?ji_0062af68@@YAXXZ,,0x0062AF68,6,Code/gen_small/imports_000.cpp,matched,gen-import;slot=0x00BBAA14;dll=d3dx9_27.dll;import=D3DXLoadSurfaceFromMemory;target=D3DXLoadSurfaceFromMemory
@@ -49289,3 +49288,5 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva0055A246@@QAE@MMMMMMMMMMMM@Z,,0x0055A27E,152,Code/GameEngine/Source/Common/Rva0055A246Ctor.cpp,matched,BFME1 6d943 constructor lead; target four 12B entries and full adjacent bounds; original class identity unknown
 ??0Rva0055A246@@QAE@QAM@Z,,0x0055A316,103,Code/GameEngine/Source/Common/Rva0055A246Ctor.cpp,matched,BFME1 6d943 constructor lead; target four 12B entries and full adjacent bounds; original class identity unknown
 ??0Rva0055A246@@QAE@ABVCoord3D@@000@Z,,0x0055A37D,72,Code/GameEngine/Source/Common/Rva0055A246Ctor.cpp,matched,BFME1 6d943 constructor lead; target four 12B entries and full adjacent bounds; original class identity unknown
+_rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva0062AF4AImport.cpp,matched,PE-proven D3DXVec4Transform import; ordinary C++ adapter; original thunk name unknown
+?rva0055A0DD@Rva0055A246@@QBEXMPAVCoord3D@@@Z,,0x0055A0DD,361,Code/GameEngine/Source/Common/Rva0055A0DDEvaluate.cpp,matched,Reference-guided cubic evaluation; donor6d943 purpose; Ghidra361B boundary and control-point prefix; inline scalar dot; PE-proven D3DX import; target original identity unknown
