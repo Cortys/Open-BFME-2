@@ -5996,3 +5996,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva005DBC2E@Rva005DBC2E@@QAE_NGG@Z	0x005DBC2E	120	blocked	unlock two-slot human plus 2D int-word checks; ours 124B vs 120B with early pushes late plus sbb tail vs mov branches; tried uchar int O2 early-y both-loads t=18 model=muse-12
 ?rva001103D6@Rva001103D6@@QAEXXZ	0x001103D6	118	blocked	WW3D DX8Wrapper stencil clear float SSE Vector3 unknown class no donor t=12 model=muse-04
 ?rva001103A5@Rva001103A5@@QAIXABV?$RefCountPtr@VTextureClass@@@@@Z	0x001103A5	49	partial	loads swapped eax-ebx vs eax-ecx and cmp order t=20 model=muse-04 score=0.92 stash=reverse/attempts/0x001103a5.cpp
+?rva0011044C@Rva0011044C@@QAE@XZ	0x0011044C	453	blocked	453B EH ctor with 3x identity stores and VB new has no donor match in render2d and no vtable or link name t=8 model=muse-04
+?Rva001101D7Add@@YGXXZ	0x001101D7	462	blocked	462B free mostly SSE plus x87 Inv_Sqrt with ret-16 and edx object has no matching donor Add_Line ABI and no vtable or link name t=10 model=muse-04
