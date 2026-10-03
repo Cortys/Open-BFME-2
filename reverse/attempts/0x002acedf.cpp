@@ -1,5 +1,5 @@
 // ?rva002ACEDF@Player@@QAEXPAX@Z
-// partial score=0.95 date=2026-10-03
+// partial score=0.97 date=2026-10-03
 // cl: /O1 /MD /GX- /Oy-
 // stlport
 // ?rva002ACEDF@Player@@QAEXH@Z @0x002ACEDF 35B
@@ -16,6 +16,6 @@ private:
 // ?rva002ACEDF@Player@@QAEXPAX@Z present-unmatched
 void Player::rva002ACEDF(void *src)
 {
-	unsigned short v = *(unsigned short *)((char *)src + 0x5D8);
-	m_list700.push_back((short)v);
+	*(short *)&src = *(short *)((char *)src + 0x5D8);
+	m_list700.push_back(*(short *)&src);
 }
