@@ -1,5 +1,8 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
-// ?rva001DC07E@Rva001DC07E@@QAEXXZ @0x001DC07E 73B: wait loop on TheAudio ready with WindowManager Display setFPMode Sleep. Evidence: caller at 0x001DC618; callees rowed rva001DBFEE setFPMode plus pins.
+// Native globalDFDC14 is the existing theBfmeDfdc14 singleton defined in WinMain.
+// Canonical TheAudio usesDFE6E8; the ready provider retains its legacy AudioManager
+// class spelling to refer to its matched body, without asserting the original type.
+// ?rva001DC07E@Rva001DC07E@@QAEXXZ @0x001DC07E 73B: wait loop on theBfmeDfdc14 ready with WindowManager Display setFPMode Sleep. Evidence: caller at 0x001DC618; callees rowed rva001DBFEE setFPMode plus pins.
 class AudioManager
 {
 public:
@@ -41,7 +44,7 @@ public:
 };
 
 extern GameWindowManager *TheWindowManager;
-extern AudioManager *TheAudio;
+extern AudioManager *theBfmeDfdc14;
 extern Display *TheDisplay;
 void __cdecl setFPMode();
 extern "C" __declspec(dllimport) void __stdcall Sleep(unsigned long);
@@ -88,9 +91,9 @@ private:
 
 void Rva001DC07E::rva001DC07E()
 {
-	while (!TheAudio->rva001DBFEE()) {
+	while (!theBfmeDfdc14->rva001DBFEE()) {
 		TheWindowManager->unk28();
-		if (TheAudio->rva001DBFEE())
+		if (theBfmeDfdc14->rva001DBFEE())
 			continue;
 		TheDisplay->unk30();
 		setFPMode();
