@@ -69,19 +69,56 @@ public:
 	void *rva002A9BF2();
 };
 
+typedef unsigned int UnsignedInt;
+
+template<class OBJCLASS>
+class DLINK_ITERATOR
+{
+private:
+	OBJCLASS *m_cur;
+	unsigned char m_targetAbiState[20];
+
+public:
+	void advance();
+	bool done() const { return m_cur == 0; }
+	OBJCLASS *cur() const { return m_cur; }
+};
+
+struct ThingTemplate
+{
+	unsigned char m_pad[0x108];
+	UnsignedInt m_kind0;
+	unsigned char m_pad2[0x11A - 0x10C];
+	unsigned char m_kindByte11a;
+};
+
+class BfmeTab1026
+{
+public:
+	char bfmeHas1026(int a, int b);
+};
+
 class Object
 {
 public:
 	Player *getControllingPlayer() const;
-	unsigned char m_pad00[ 0x74 ];
+	unsigned char m_pad00[4];
+	ThingTemplate *m_template;
+	unsigned char m_pad08[0x74 - 0x08];
 	unsigned int m_id;
+	unsigned char m_pad78[0x94 - 0x78];
+	unsigned char m_status94;
+	unsigned char m_pad95[0x438 - 0x95];
+	unsigned char m_dead;
 };
 
 class Team
 {
 public:
 	Player *getControllingPlayer() const;
+	DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
 	void rva0039D84A(Object *obj);
+	bool rva0039DF87(BfmeTab1026 *tab);
 	int getTeamKey() const { return m_key34; }
 	Relationship getRelationship(const Team *that) const;
 
@@ -150,4 +187,26 @@ Relationship Team::getRelationship(const Team *that) const
 	}
 
 	return getControllingPlayer()->getRelationship(that);
+}
+
+bool Team::rva0039DF87(BfmeTab1026 *tab)
+{
+	Player *player = getControllingPlayer();
+	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+		Object *cur = iter.cur();
+		if ((cur->m_dead & 1) != 0)
+			continue;
+		if ((cur->m_status94 & 1) != 0)
+			continue;
+		ThingTemplate *tmpl = cur->m_template;
+		if ((int)(tmpl->m_kind0 & 0x80) != 0)
+			continue;
+		if ((tmpl->m_kind0 & 0x2000000) != 0)
+			continue;
+		if ((tmpl->m_kindByte11a & 0x10) != 0)
+			continue;
+		if (tab->bfmeHas1026((int)cur, (int)player) != 0)
+			return true;
+	}
+	return false;
 }
