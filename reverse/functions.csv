@@ -49830,3 +49830,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00591062Get@@YAHPAURva00591062Host@@@Z,,0x00591062,82,Code/GameEngine/Source/GameNetwork/Rva00591062Finish.cpp,matched,AsciiString pair length sum via rowed RVO getters 0x2D9BA6 CDDrive::getPath and 0x2D9BC1 field get plus 0x11; local field pointer places retail's second temp in the dead argument home ebp+8
 ?Rva002E7BB8Get@@YAMXZ,,0x002E7BB8,56,Code/GameEngine/Source/GameLogic/Object/Rva002E7BB8.cpp,matched,wrap float global callers 0x002EFD62 0x002EFD6A 0x002EFD72
 ?rva002E71BF@BFMEPathfinderMapShim@@QAEHH@Z,,0x002E71BF,70,Code/GameEngine/Source/GameLogic/Object/PathfindShimAddObject.cpp,matched,unlock lane rowed callees 0x0036666B 0x00366561 callers 0x002802E3 0x002812A4
+?Rva002E7FEDGet@@YAPAVRva002E7FED@@PAV1@PAH@Z,,0x002E7FED,88,Code/Libraries/Source/WWVegas/WWLib/Rva002E7FEDGet.cpp,matched,guard 0x40 via 0x78 throw formatted else loop 64x via 0x70
