@@ -23,7 +23,26 @@ struct input_iterator_tag
 struct __false_type
 {
 };
+struct __true_type
+{
+};
 }
+struct BfmeE12 { float x, y, z; };
+namespace _STL
+{
+template <class T>
+struct allocator
+{
+	T *allocate(unsigned int n, void const *hint) const;
+};
+}
+int *__cdecl Rva005E59FCCopy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_node_base *last, int *result, const _STL::__true_type &tag);
+struct Rva005F4D62
+{
+	char _pad[8];
+	_STL::allocator<BfmeE12 *> _alloc;
+	int *rva005F4D62(unsigned int n, _STL::_Rb_tree_node_base *first, _STL::_Rb_tree_node_base *last);
+};
 int *__cdecl Rva005F4B8FCopy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_node_base *last, int *result, const _STL::input_iterator_tag &tag1, int *dist)
 {
 	for (; first != last; first = _STL::_Rb_global<bool>::_M_increment(first))
@@ -42,4 +61,11 @@ int *__cdecl Rva005F4F59Copy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_nod
 {
 	_STL::__false_type tag;
 	return Rva005F4DA7Copy(first, last, result, tag);
+}
+int *Rva005F4D62::rva005F4D62(unsigned int n, _STL::_Rb_tree_node_base *first, _STL::_Rb_tree_node_base *last)
+{
+	int *new_start = (int *)this->_alloc.allocate(n, 0);
+	_STL::__true_type tag2;
+	Rva005E59FCCopy(first, last, new_start, tag2);
+	return new_start;
 }
