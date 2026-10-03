@@ -67,11 +67,20 @@ private:
 	int m_bfmeReserved;
 };
 
+class DamageInfo;
+enum BodyDamageType;
+
 class DamageModuleInterface
 {
 public:
+	// Real layout per GameLogic/Module/DamageModule.h (kept copy in
+	// BridgeTowerBehavior.cpp): 3 pure virtuals. Previous 1-virtual view
+	// emitted a differing ??_7DamageModuleInterface@@6B@ COMDAT.
 	DamageModuleInterface() {}
-	virtual void onDamage(DamageInfo *damageInfo);
+	virtual void onDamage(DamageInfo *damageInfo) = 0;
+	virtual void onHealing(DamageInfo *damageInfo) = 0;
+	virtual void onBodyDamageStateChange(
+		const DamageInfo *damageInfo, BodyDamageType oldState, BodyDamageType newState) = 0;
 };
 
 class PoisonedBehavior : public UpdateModule, public DamageModuleInterface
@@ -79,6 +88,10 @@ class PoisonedBehavior : public UpdateModule, public DamageModuleInterface
 public:
 	PoisonedBehavior(Thing *thing, const ModuleData *moduleData);
 	virtual ~PoisonedBehavior();
+	virtual void onDamage(DamageInfo *damageInfo);
+	virtual void onHealing(DamageInfo *damageInfo);
+	virtual void onBodyDamageStateChange(
+		const DamageInfo *damageInfo, BodyDamageType oldState, BodyDamageType newState);
 private:
 	const Object *getObject() const { return m_object; }
 	unsigned int m_poisonDamageFrame;
