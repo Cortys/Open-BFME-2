@@ -47,7 +47,6 @@ public:
 	char rva0023C748();
 };
 
-// ?rva0023C748@Rva0023C748@@QAEDXZ present-unmatched
 char Rva0023C748::rva0023C748()
 {
 	if (g_009FEF10 != 0 && ((BfmeSelectionState *)g_009FEF10)->isSelectionLocked())
@@ -58,14 +57,14 @@ char Rva0023C748::rva0023C748()
 		return 1;
 	if (m_mode == 2)
 		return 1;
-	if (g_bfme939Helper == 0)
-		return 0;
-	if (((NetWrapperCommandMsg *)g_bfme939Helper)->getData() != (unsigned char *)1)
-		return 0;
-	int state = g_bfme939Helper->m_state;
-	if (state == 2)
+	if (g_bfme939Helper != 0 && ((NetWrapperCommandMsg *)g_bfme939Helper)->getData() == (unsigned char *)1)
+	{
+		int state = g_bfme939Helper->m_state;
+		if (state == 2)
+			return 1;
+		if (state != 1 && state != 5)
+			return 0;
 		return 1;
-	if (state == 1 || state == 5)
-		return 1;
+	}
 	return 0;
 }
