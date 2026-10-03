@@ -70,6 +70,7 @@ public:
 	void SetDisplayedStats(int index);
 	unsigned int GetColor(int index);
 	UnicodeString GetText(int index);
+	void rva00046A27();
 private:
 	char m_pad[0x14];
 	_STL::vector<SubTitleEntry *> m_list;
@@ -134,4 +135,10 @@ UnicodeString SubTitleManager::GetText(int index)
 	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::GetText().");
 	b->h19(1);
 	return UnicodeString();
+}
+
+void SubTitleManager::rva00046A27()
+{
+	for (int i = 0; i < (int)m_list.size(); ++i)
+		m_list[i]->m_displayed = false;
 }
