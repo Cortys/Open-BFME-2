@@ -49349,3 +49349,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?Rva0047FDFEGet@@YAHPAX@Z,,0x0047FDFE,39,Code/GameEngine/Source/Common/Rva0047FDFEGet.cpp,matched,leaf iterate ptr array at +0x244 virtual slot 0xA4 first nonzero
 ??1Rva0056616B@@UAE@XZ,,0x0056616B,243,Code/GameEngine/Source/Common/System/Rva0056616BDtor.cpp,matched,vtable 0x008689D0 callers 0x0052D6A2 0x00566D83 rowed member dtors
 ??_GRva0056616B@@UAEPAXI@Z,,0x0052D6A2,28,Code/GameEngine/Source/Common/System/Rva0056616BDtor.cpp,matched,deleting dtor calls rowed 0x0056616B and delete 0x0002FD60
+?Rva003FEF80SetPalantirMultiplier@@YA_NM@Z,,0x003FEF80,174,Code/GameEngine/Source/Common/Rva003FEF80.cpp,matched,Apt Palantir multiplier via static key float-gated format set and bfmeSetText
