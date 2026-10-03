@@ -13,7 +13,10 @@
 // identical offsets, votes 2/2). Sole raw caller is the ModuleData factory
 // 0x24D29E which news 0x6C.
 
-class TransportAIUpdateModuleData
+extern "C" const void *const vtbl_00C4B6C8[];  // folded, 3 classes; via ??_7AnimalAIUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4B6C8=??_7AnimalAIUpdateModuleData@@6B@")
+
+class __declspec(novtable) TransportAIUpdateModuleData
 {
 public:
 	TransportAIUpdateModuleData();
@@ -23,30 +26,19 @@ private:
 	unsigned char m_pad[0x64 - 4];
 };
 
-class AssaultTransportAIUpdateModuleData : public TransportAIUpdateModuleData
+class __declspec(novtable) AssaultTransportAIUpdateModuleData : public TransportAIUpdateModuleData
 {
 public:
 	AssaultTransportAIUpdateModuleData();
-	virtual ~AssaultTransportAIUpdateModuleData();
 
 private:
 	float m_membersGetHealedAtLifeRatio;		// +0x64
 	float m_clearRangeRequiredToContinueAttackMove;	// +0x68
 };
 
-inline AssaultTransportAIUpdateModuleData::AssaultTransportAIUpdateModuleData()
+AssaultTransportAIUpdateModuleData::AssaultTransportAIUpdateModuleData()
 {
 	m_membersGetHealedAtLifeRatio = 0.0f;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C4B6C8);
 	m_clearRangeRequiredToContinueAttackMove = 50.0f;
 }
-
-// Header inlines that the units including the header emit as select-any
-// copies, which plain definitions here collided with. The anchor keeps this
-// unit's copies for the rows; it is not retail code.
-#pragma inline_depth(0)
-// ?_bfmeAssaultTransportAIUpdateModuleDataInlineAnchor@@YAXPAVAssaultTransportAIUpdateModuleData@@@Z absent-from-retail
-void _bfmeAssaultTransportAIUpdateModuleDataInlineAnchor(AssaultTransportAIUpdateModuleData *p)
-{
-    p->AssaultTransportAIUpdateModuleData::AssaultTransportAIUpdateModuleData();
-}
-#pragma inline_depth()
