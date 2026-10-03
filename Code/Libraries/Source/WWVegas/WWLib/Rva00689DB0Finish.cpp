@@ -1,6 +1,5 @@
 // ??1?$vector@URva001D28F0Element@@V?$allocator@URva001D28F0Element@@@_STL@@@_STL@@QAE@XZ
-// partial score=0.92 date=2026-10-03
-// cl: /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
+// cl: /EHs /DNDEBUG /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
 #include <vector>
 

@@ -50322,3 +50322,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0031FAF0@Rva0031FAF0@@QAEXXZ,,0x0031FAF0,280,Code/GameEngine/Source/Common/Rva0031FAF0.cpp,matched,chain from 0x2004FD landing with callers at 0x320044 and 0x32056F and prev next flags O1 EHsc MD
 ?Rva0033940F_Parse@INI@@SAXPAV1@PAX1PBX@Z,,0x0033940F,236,Code/GameEngine/Source/Common/System/INI_Rva0033940FParse.cpp,matched,INI parse via ThingFactory g_009FF000 with None and theDebug Format
 ??0Rva005DA353@@QAE@XZ,,0x005DA341,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,vtable store plus base ctor caller 0x0058A6E1
+??1?$vector@URva001D28F0Element@@V?$allocator@URva001D28F0Element@@@_STL@@@_STL@@QAE@XZ,,0x00689DB0,103,Code/Libraries/Source/WWVegas/WWLib/Rva00689DB0Finish.cpp,matched,Vector Rva001D28F0Element dtor 103B exact with /EHs (prior bank used /EHsc and lost the EH trylevel store)
