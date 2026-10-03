@@ -161,10 +161,12 @@ void WinInstanceData::init( void )
 	m_style = 0;
 	m_status = WIN_STATUS_NONE;
 	m_owner = NULL;
-	m_textLabelString.clear();
-	m_tooltipString.clear();
+	// Retail calls the shared release worker. Name the base operation directly
+	// to avoid the kept AsciiString::clear definition that the census rejects.
+	((StringBase<char> *)&m_textLabelString)->clear();
+	((StringBase<char> *)&m_tooltipString)->clear();
   m_tooltipDelay = -1; ///< default value
-	m_decoratedNameString.clear();
+	((StringBase<char> *)&m_decoratedNameString)->clear();
 
 	m_imageOffset.x = 0;
 	m_imageOffset.y = 0;
@@ -212,3 +214,14 @@ void WinInstanceData::setVideoBuffer( VideoBuffer * videoBuffer )
 {
 	m_videoBuffer = videoBuffer;
 }
+// ??4WinInstanceData@@QAEAAV0@ABV0@@Z
+// Clean BFME1 GameWindow.cpp donor revision
+// 6d9434269164392c5ba62aaa7c15a86b5b020d76 emits a unique 393-byte implicit
+// assignment at RVA 0x00313EBD under BFME2 /O1 /G7. Native boundary
+// 0x00313EBD-0x00314046 preserves the vptr, copies three nine-element draw
+// arrays, assigns four 4-byte strings via 0x000366F0, and returns this.
+// Native offsets agree with this class's already matched init/ctor/dtor;
+// field labels follow the donor. Retain the compiler-generated operator in
+// the existing home unit rather than introduce a competing class view.
+typedef WinInstanceData &(WinInstanceData::*WindowInstanceAssignment)(const WinInstanceData &);
+static WindowInstanceAssignment instanceAssignment = &WinInstanceData::operator=;
