@@ -6127,3 +6127,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ??1Rva00425CE2@@UAE@XZ	0x00425CE2	196	partial	extra push 0 via ??_GRva00360D26Member instead of direct ??1 for map values t=25 model=muse-10 score=0.97 stash=reverse/attempts/0x00425ce2.cpp
 ??0Rva004257AD@@QAE@HII@Z	0x004257AD	84	blocked	ctor with Rva00424CB6 tmp plus vector CameraMarker plus LightSubPoint dtor needs init-list vs body layout t=12 model=muse-10
 ?rva00485C86@CreateObjectDieIfEldestKindof@@QAEXPBVDamageInfo@@@Z	0x00485C86	139	partial	this-in-esi-vs-edi cur-in-edi-vs-ebx t-in-ebx-vs-pushed final-obj-from-ebp-4-vs-edi-8 t=15 model=muse-10 score=0.93 stash=reverse/attempts/0x00485c86.cpp
+?Rva00485444Roll@@YGHPAX@Z	0x00485444	60	partial	fcomp-fnstsw-vs-fld-fcomi plus inc placement t=18 model=muse-10 score=0.96 stash=reverse/attempts/0x00485444.cpp
