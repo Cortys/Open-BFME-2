@@ -3367,27 +3367,7 @@ struct BfmePlayerRadarEdgeFlag
 // Player::disableRadar: byte-exact definition in Player_Radar.cpp.
 
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/Player_radar.cpp
-// ?enableRadar@Player@@QAEXXZ present-unmatched
-// Cannot come home: retail's AudioEventRTS is 0x70 bytes where this tree's is
-// 0x64 (sub esp,0x70 against 0x64), TheAudio->getMiscAudio() is a virtual at
-// vtable +0x124 rather than a direct call, addAudioEvent is vtable +0x44 not
-// +0x30, and the misc-audio sound sits at +0x1c0/+0x150 rather than +0x258.
-// That is a class-shape difference, not a field view. The m_radarDisabled read
-// below is still corrected to BFME's +0x60 through the view hasRadar proves.
-void Player::enableRadar()
-{
-	Bool hadRadar = hasRadar();
-	((BfmePlayerRadarFields *)this)->m_radarDisabled = FALSE;
-
-	if( !hadRadar && hasRadar() && okToPlayRadarEdgeSound() )  
-	{
-		// This player just got radar, so play the "You have Radar!" sound
-		AudioEventRTS soundToPlay = TheAudio->getMiscAudio()->m_radarOnlineSound;
-		soundToPlay.setPlayerIndex(getPlayerIndex());
-		TheAudio->addAudioEvent(&soundToPlay);
-	}
-}
+// Player::enableRadar: byte-exact definition in Player_Radar.cpp.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
