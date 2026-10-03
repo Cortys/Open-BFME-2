@@ -67,3 +67,25 @@ void Rva000747E5::rva000748DF(int val)
 	if (m_28 != 0)
 		m_28->s18(val);
 }
+
+// ??0Rva000748F6@@QAE@XZ, retail 0x000748F6, 25 bytes.
+// Ctor: 3x 0x10 elements at +4 via vector ctor iterator with rowed ??0Region3D.
+// Evidence: unlock lane, static init caller 0x00074AFF with ecx=0xDE1ED8, size 0x10 count 3 per retail.
+struct Region3D
+{
+	Region3D() throw();
+	char m_data[0x10];
+};
+
+class Rva000748F6
+{
+public:
+	Rva000748F6();
+private:
+	char m_00[4];
+	Region3D m_arr[3];
+};
+
+Rva000748F6::Rva000748F6()
+{
+}

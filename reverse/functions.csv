@@ -49274,3 +49274,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005EA58B@Rva005EA58B@@QAEXXZ,,0x005EA58B,50,Code/Libraries/Source/WWVegas/WWMath/Rva005EA58BMethod.cpp,matched,validates unicode strings in 2 ranges via rowed validate
 ?rva005EA8C4@Rva005EA58B@@QAEXXZ,,0x005EA8C4,31,Code/Libraries/Source/WWVegas/WWMath/Rva005EA58BMethod.cpp,matched,slot2 plus validate plus tail 0x005EA58B
 ?Rva004CA048Construct@@YAXPAXABVRva004C9E94@@@Z,,0x004CA048,18,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,copy helper via rowed copy ctor caller 0x004CA1B3
+??0Rva000748F6@@QAE@XZ,,0x000748F6,25,Code/GameEngine/Source/Common/System/Rva000747E5Method.cpp,matched,unlock lane vector ctor iterator 3x Region3D at plus4
