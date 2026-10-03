@@ -49248,3 +49248,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005F4D62@Rva005F4D62@@QAEPAHIPAU_Rb_tree_node_base@_STL@@0@Z,,0x005F4D62,45,Code/GameEngine/Source/Common/Rva005F4B8FCopy.cpp,matched,vector allocate and copy int keys via Rva005E59FCCopy
 ?rva0056EED8@Rva0056EED8@@QAEPAU1@PAX0@Z,,0x0056EED8,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,registry pick obfuscate via Rva0056ECAEPick same as Rva0056EF65
 ??0Rva001021F7@@QAE@XZ,,0x001021F7,30,Code/GameEngine/Source/Common/Rva001021F7Ctor.cpp,matched,unlock ctor two ObjectCreationLists with nulls matches new 0x20
+?Rva00102215Get@@YAPAVRva001021F7@@XZ,,0x00102215,38,Code/GameEngine/Source/Common/Rva00102215Singleton.cpp,matched,chain singleton for Rva001021F7 via new 0x20
