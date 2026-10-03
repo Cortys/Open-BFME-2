@@ -6107,3 +6107,6 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ??0Rva002DE4E6@@QAE@XZ	0x002DE4E6	153	blocked	array ctors UNCLAIMED 295983 4F87AA plus EH order mismatch t=15 model=muse-05
 ?rva0014DA92@Rva0014F699@@QAEXPBXV?$RefCountPtr@VTextureClass@@@@@Z	0x0014DA92	154	partial	and EBP-4 scheduling shifts copies by 4B t=20 model=muse-05 score=0.93 stash=reverse/attempts/0x0014da92.cpp
 ??0Rva0014DB9F@@QAE@XZ	0x0014DB9F	160	blocked	ICF trivial ctor size SSE EH vtable wall t=12 model=muse-05
+?rva004C4E93@Rva004C4E93@@QAEXPBUCoord3D@@@Z	0x004C4E93	137	blocked	push esi+0x80 6B early before y z stores vs late after stores only scheduling left t=15 model=muse-03 (stash 0.95 kept)
+?rva004B0A24@Rva004B0A24@@QAEXPAMMM@Z	0x004B0A24	134	blocked	x87 tail vs SSE retail; prologue exact with O1 archSSE2; sincos forces x87 for this shape; Rotate_Y shows SSE possible t=35 model=muse-03
+??0Rva004B0EE5@@QAE@PAVThing@@@Z	0x004B0EE5	187	blocked	ctor needs EH_prolog plus FS; O1 GX Oy- gives frame but no EH; masks-points match via m_player reloads t=30 model=muse-03
