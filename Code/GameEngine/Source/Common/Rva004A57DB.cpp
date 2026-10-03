@@ -1,5 +1,3 @@
-// ?rva004A57DB@Rva004A54A8@@QAEXMM@Z
-// partial score=0.94 date=2026-10-03
 // cl: /O1 /MD /arch:SSE
 //
 // ?rva004A57DB@Rva004A54A8@@QAEXMM@Z @0x004A57DB 112B: ranged FX loop with bit gate.
@@ -10,7 +8,6 @@
 // Evidence: retail ebp frame plus movss/comiss plus call-indirect plus
 // dec/inc/shl bit plus add-8/cmp loop, neighbours Rva004A54A8 xfer/dtor,
 // caller 0x004A613B, callee doFXObj row.
-// ?rva004A57DB@Rva004A54A8@@QAEXMM@Z present-unmatched
 class Object;
 class FXList
 {
@@ -82,9 +79,9 @@ void Rva004A54A8::rva004A57DB(float low, float high)
 	BitHolder004A57DB *bh = m_obj08->m_virt254->f15();
 	for (Elem004A57DB *it = mod->m_beginAC; it != mod->m_endB0; ++it)
 	{
-		if (it->m_thresh00 <= low)
+		if (!(it->m_thresh00 > low))
 			continue;
-		if (it->m_thresh00 > high)
+		if (!(it->m_thresh00 <= high))
 			continue;
 		if (bh)
 		{
