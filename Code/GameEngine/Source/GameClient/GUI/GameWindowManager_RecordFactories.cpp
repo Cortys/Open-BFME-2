@@ -89,3 +89,16 @@ GameWindow *TabWindowManagerView::gogoGadgetPushButton(GadgetCreateView *view,
     if (text.getLength()) GadgetButtonSetText(window, text);
     return window;
 }
+
+GameWindow *TabWindowManagerView::gogoGadgetCheckBox(GadgetCreateView *view,
+    GameFont *font, bool visual)
+{
+    if (!(((FactoryInstanceView *)view->instance)->style & 4)) return 0;
+    GameWindow *window = ((TabWindowManagerView *)TheWindowManager)->createFromView(view);
+    if (!window) return 0;
+    ((Rva003140CF *)window)->rva003140CF((int)view->parent);
+    assignDefaultGadgetLook(window, font, visual);
+    UnicodeString text = winTextLabelToText(*(AsciiString *)((char *)view->instance + 0x188));
+    if (text.getLength()) GadgetCheckBoxSetText(window, text);
+    return window;
+}
