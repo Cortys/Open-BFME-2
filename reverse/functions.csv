@@ -49280,3 +49280,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0037ADB6@Rva0037ADB6@@QAEXXZ,,0x0037ADB6,152,Code/GameEngine/Source/Common/System/Rva0037ADB6Write.cpp,matched,recorder file patch via ftell fseek fwrite plus globals g_00DBC800 and TheGameLogic
 ?rva0059ECD2@Rva0059ECD2@@QAEXH@Z,,0x0059ECD2,70,Code/GameEngine/Source/Common/Rva0059ECD2.cpp,matched,state 0xA apt ClosePassword via rowed AptCall plus virtual prefix plus neighbours
 ??0Rva0059E6D3Data@@QAE@XZ,,0x0059E574,58,Code/GameEngine/Source/Common/Rva0059E6D3DataCtor.cpp,matched,OwnershipSet ctor via rowed Vector_base thrice plus vtable plus zero
+?rva0037AF88@Rva0037AF88@@QAEXHPAVGameMessage@@@Z,,0x0037AF88,446,Code/GameEngine/Source/Common/System/Rva0037AF88Read.cpp,matched,recorder message arg reader via fread plus rowed appends
