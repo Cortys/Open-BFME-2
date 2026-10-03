@@ -79,7 +79,14 @@ private:
 	Matrix3D m_mats[16];
 };
 
-// ?$?0Rva002768AC@@QAE@XZ present-unmatched
+Rva002768AC::Rva002768AC(Drawable *d)
+{
+	m_drawC = d;
+	m_time4 = TheGameClient->GetTime();
+	m_count8 = 0;
+	rva002768AC();
+}
+
 void Rva002768AC::rva002768AC()
 {
 	if (m_drawC == 0)
