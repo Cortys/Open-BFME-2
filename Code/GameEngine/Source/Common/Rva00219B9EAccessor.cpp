@@ -110,6 +110,7 @@ public:
     int rva00219C3E(unsigned int o, unsigned int i);
     int rva00219F00(unsigned int o, unsigned int o2, unsigned int i);
     int rva00219C00(unsigned int o, unsigned int i);
+    int rva00219E9F(unsigned int o, unsigned int o2, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -552,5 +553,20 @@ int Rva00219B9E::rva00219C00(unsigned int o, unsigned int i)
     void *p = rva00219B9E(o);
     if (p)
         return ((Rva00219B80 *)p)->rva00219B80(i);
+    return 0;
+}
+// ?rva00219E9F@Rva00219B9E@@QAEHIII@Z @0x00219E9F 54B
+// Three-level int lookup: outer 32B vector at +0x14C selects element o,
+// then rowed 0x00219C00 resolves (o2 i) on the same this prefix.
+// Evidence: retail mov eax ecx mov edx [eax+0x150] sub [eax+0x14C] sar 5
+// cmp jae xor else shl 5 add ecx [eax+0x14C] call 0x219C00; twin of 0x00219F00
+// via 0x00219C3E; caller 0x00406E75 in 0x00406E65.
+int Rva00219B9E::rva00219E9F(unsigned int o, unsigned int o2, unsigned int i)
+{
+    unsigned int count = (unsigned int)(((char *)m_outer.m_finish - (char *)m_outer.m_start) >> 5);
+    if (o < count) {
+        _ReadWriteBarrier();
+        return ((Rva00219B9E *)((char *)m_outer.m_start + (o << 5)))->rva00219C00(o2, i);
+    }
     return 0;
 }
