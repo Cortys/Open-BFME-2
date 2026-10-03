@@ -9,7 +9,6 @@ public:
 	virtual int getLength() const = 0;
 	virtual void _gap() const = 0;
 	virtual int getChars(T *dest) const = 0;
-	virtual ~CharSource() {}
 };
 template <typename T> class StringBase
 {
@@ -26,6 +25,7 @@ public:
 		*(const void **)this = g_00BFDC6C;
 		m_arg = s;
 	}
+	virtual ~CharSourceSuffix() {}
 	int getLength() const;
 	void _gap() const;
 	int getChars(char *dest) const;
