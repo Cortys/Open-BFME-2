@@ -50110,3 +50110,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005D4AD0@Rva005D4AD0@@QAEXM@Z,,0x005D4AD0,79,Code/GameEngine/Source/Common/Rva005D4AD0SetPageSize.cpp,matched,float page-size setter via rowed Fire SetPageSize plus EmptyString fallback
 ?rva004CA19C@AnimationSoundTree@@QAEPAXPBX@Z,,0x004CA19C,37,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,node factory via byte allocator plus Construct callers 0x004CA2C6 0x004CA2E1
 ?rva004E9600@Rva004E9600@@QAE_NPAX@Z,,0x004E9600,42,Code/GameEngine/Source/Common/Rva004E9600Finish.cpp,matched,map-int contains keyed by arg+0x54 via rowed _M_find 0x00388F63 null or miss false class layout from matched ctor Rva004E962ACtor
+?rva005D4B6E@Rva005D4B6E@@QAEXM@Z,,0x005D4B6E,64,Code/GameEngine/Source/Common/Rva005D4B6ESetPos.cpp,matched,float pos firer via rowed Fire SetPos plus EmptyString fallback
