@@ -6070,3 +6070,6 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva00108E7A@Rva00108E7A@@QAE_NXZ	0x00108E7A	323	blocked	register args esi edx caller 4000B too big for sig t=6 model=muse-02
 ?rva00108FBD@Rva00108FBD@@QAEXMMMMPAUVec2@@00@Z	0x00108FBD	364	blocked	SSE bounds scheduling diverged 378B vs 364B 18 structural regions memory and register allocation throughout not near miss t=5 model=muse-02
 ?rva00108895@Rva00108895@@QAEXXZ	0x00108895	97	blocked	101B vs 98B stash stosd-pair vs movs lea-eax float stores vs direct push-10 timing no progress t=3 model=muse-02
+??0Rva004C9E5D@@QAE@PBHM@Z	0x004C9E5D	55	partial	mov [esi] after and+lea retail before t=15 model=muse-02 score=0.96 stash=reverse/attempts/0x004c9e5d.cpp
+FUN_008c9125	0x004C9125	278	blocked	278B x87 SSE 3 GetGameClientRandomValueReal calls needs ScriptEngine layout t=10 model=muse-02
+FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart EH temp no donor t=12 model=muse-02
