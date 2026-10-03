@@ -6122,3 +6122,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?Rva00074F25Get@@YGPAVRva000748F6@@PAUMat12Src@@MMHEH@Z	0x00074F25	241	partial	only scale load movss xmm0 late +0x67 vs +0x52, size+insns exact t=28 model=muse-04 score=0.97 stash=reverse/attempts/0x00074f25.cpp
 ?Rva00074C3FGet@@YGPAVRva000748F6@@PAUMat12Src@@PAUVec3@@HEH@Z	0x00074C3F	250	partial	only 4 preloads order idx0 vs scales, regs exact size+insns exact t=25 model=muse-04 score=0.98 stash=reverse/attempts/0x00074c3f.cpp
 ?Rva000747FCGet@@YAHXZ	0x000747FC	227	blocked	x87 fild-fdiv-fmul plus idiv loop with Cos Sin calls t=10 model=muse-04
+?rva005EA8E3@Rva005EA8E3@@QAEXHH@Z	0x005EA8E3	55	partial	mov ecx vs eax for begin load plus lea with ecx vs eax only register allocation left t=18 model=muse-01 score=0.96 stash=reverse/attempts/0x005ea8e3.cpp
