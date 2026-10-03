@@ -20,8 +20,6 @@
 #include "GameClient/Shadow.h"
 #include "GameClient/FXList.h"
 #include "GameLogic/TerrainLogic.h"
-#include "WW3D2/HAnim.h"
-#include "WW3D2/HLod.h"
 #include "WW3D2/RendObj.h"
 #include "W3DDevice/GameClient/Module/W3DDebrisDraw.h"
 #include "W3DDevice/GameClient/W3DAssetManager.h"
