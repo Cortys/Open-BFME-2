@@ -6124,3 +6124,6 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?Rva000747FCGet@@YAHXZ	0x000747FC	227	blocked	x87 fild-fdiv-fmul plus idiv loop with Cos Sin calls t=10 model=muse-04
 ?rva005EA8E3@Rva005EA8E3@@QAEXHH@Z	0x005EA8E3	55	partial	mov ecx vs eax for begin load plus lea with ecx vs eax only register allocation left t=18 model=muse-01 score=0.96 stash=reverse/attempts/0x005ea8e3.cpp
 ?rva00065B09@Rva00065B09@@QAEXHH@Z	0x00065B09	411	blocked	411B SSE x87 with 3 Random calls and 4 globals no donor layout unproven t=8 model=muse-01
+??1Rva00425CE2@@UAE@XZ	0x00425CE2	196	partial	extra push 0 via ??_GRva00360D26Member instead of direct ??1 for map values t=25 model=muse-10 score=0.97 stash=reverse/attempts/0x00425ce2.cpp
+??0Rva004257AD@@QAE@HII@Z	0x004257AD	84	blocked	ctor with Rva00424CB6 tmp plus vector CameraMarker plus LightSubPoint dtor needs init-list vs body layout t=12 model=muse-10
+?rva00485C86@CreateObjectDieIfEldestKindof@@QAEXPBVDamageInfo@@@Z	0x00485C86	139	partial	this-in-esi-vs-edi cur-in-edi-vs-ebx t-in-ebx-vs-pushed final-obj-from-ebp-4-vs-edi-8 t=15 model=muse-10 score=0.93 stash=reverse/attempts/0x00485c86.cpp
