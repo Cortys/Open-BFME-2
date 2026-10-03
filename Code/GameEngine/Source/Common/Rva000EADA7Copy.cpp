@@ -1,5 +1,3 @@
-// ??0Rva000EADA7@@QAE@ABV0@@Z
-// partial score=0.93 date=2026-10-03
 // cl: /O1 /MD
 // ??0Rva000EADA7@@QAE@ABV0@@Z retail 0x000EADA7 473B unlock lane.
 // Evidence: memberwise copy with Region2D copy ctor at +0x48 (row
@@ -71,14 +69,6 @@ public:
 	int m_9c;
 	struct FourDwords
 	{
-		FourDwords &operator=(const FourDwords &that)
-		{
-			a = that.a;
-			b = that.b;
-			c = that.c;
-			d = that.d;
-			return *this;
-		}
 		unsigned int a;
 		unsigned int b;
 		unsigned int c;
@@ -99,7 +89,6 @@ public:
 	int m_e4;
 };
 
-// ??0Rva000EADA7@@QAE@ABV0@@Z present-unmatched
 Rva000EADA7::Rva000EADA7(const Rva000EADA7 &that)
 	: m_00(that.m_00)
 	, m_04(that.m_04)
@@ -137,8 +126,22 @@ Rva000EADA7::Rva000EADA7(const Rva000EADA7 &that)
 	m_94 = that.m_94;
 	m_98 = that.m_98;
 	m_9c = that.m_9c;
-	m_a0 = that.m_a0;
-	m_b0 = that.m_b0;
+	{
+		const FourDwords *src = &that.m_a0;
+		FourDwords *dst = &m_a0;
+		dst->a = src->a;
+		dst->b = src->b;
+		dst->c = src->c;
+		dst->d = src->d;
+	}
+	{
+		const FourDwords *src = &that.m_b0;
+		FourDwords *dst = &m_b0;
+		dst->a = src->a;
+		dst->b = src->b;
+		dst->c = src->c;
+		dst->d = src->d;
+	}
 	m_c0 = that.m_c0;
 	m_c4 = that.m_c4;
 	m_c8 = that.m_c8;

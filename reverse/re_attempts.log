@@ -6349,3 +6349,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva00308B38Write@@YAXXZ	0x00308B38	219	blocked	hash iteration via dup_0007e394 plus multi-field writes needs donor t=5 model=muse-09
 ?rva001DEE92@Rva001DEE92@@QAEXI@Z	0x001DEE92	33	blocked	by-value Pod52 temp needs direct arg-slot construction without rep-movsd copy t=10 model=muse-09
 ?rva00308688@Rva00308688@@QAEXI@Z	0x00308688	109	blocked	callback via [ebx] plus vector save-restore plus g_00BFB1CC needs donor t=8 model=muse-09
+?Rva00300E42Check@@YA_NPAVGameInfo@@@Z	0x00300E42	114	blocked	esi-edi swap only structural exact 40-40 insns t=15 model=muse-04 (stash 0.93 kept)
