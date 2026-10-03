@@ -21,10 +21,26 @@ struct BfmeParticleSystemHandle
 	void *m_previous;
 	void *m_next;
 };
+class RvaSmartPtr12
+{
+public:
+	RvaSmartPtr12 &operator=(const RvaSmartPtr12 &that);
+};
+
+class ParticleSystem
+{
+public:
+	char m_pad00[0xA8];
+	int m_idA8;
+};
+
+ParticleSystem *Make001FCBD7(void);
+
 class Rva003FC7FC
 {
 public:
 	void rva003FC7FC(void);
+	void rva003FC7C7(const RvaSmartPtr12 &src);
 private:
 	unsigned char m_pad[0x1C];
 	BfmeParticleSystemHandle m_handle;
@@ -42,5 +58,20 @@ void Rva003FC7FC::rva003FC7FC(void)
 			m_handle.m_system = 0;
 		}
 		m_id = INVALID_PARTICLE_SYSTEM_ID;
+	}
+}
+
+void Rva003FC7FC::rva003FC7C7(const RvaSmartPtr12 &src)
+{
+	if (*(void * const *)&src != 0)
+	{
+		((RvaSmartPtr12 *)&m_handle)->operator=(src);
+		ParticleSystem *p = *(ParticleSystem * const *)&m_handle;
+		ParticleSystem *q;
+		if (p == 0)
+			q = Make001FCBD7();
+		else
+			q = p;
+		m_id = (ParticleSystemID)q->m_idA8;
 	}
 }
