@@ -49907,3 +49907,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002AA756@Player@@QAEXH@Z,,0x002AA756,144,Code/GameEngine/Source/Common/RTS/PlayerRva002AA756.cpp,matched,Player via caller getEachPlayerFromMask template plus34 ref plus1a4 index plus54 counter plus318 TheAudio vtab 0x64 radar precedent
 ??0Rva006DE1A0@@QAE@XZ,,0x006DE1A0,107,Code/GameEngine/Source/Common/Rva006DE1A0Finish.cpp,matched,3-level ctor with hash member; forceinline middle ctor to keep both vptr stores
 ?rva00583C88@Rva005843DA@@QAEXH@Z,,0x00583C88,44,Code/Libraries/Source/WWVegas/WWLib/Rva00583C88Finish.cpp,matched,slot 10 vector elem store 2; same _STL::vector shape as rowed sibling 0x583CB4
+??0Locomotor@@QAE@PBVLocomotorTemplate@@@Z,,0x005C96EB,104,Code/GameEngine/Source/GameLogic/Object/Rva005C96EBFinish.cpp,matched,BFME1 Locomotor ctor; local int pointer clears +0x258 block; caller newLocomotor 0x5C9886
