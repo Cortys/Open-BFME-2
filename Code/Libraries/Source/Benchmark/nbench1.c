@@ -2653,7 +2653,7 @@ lochuffstruct=&global_huffstruct;
 /*
 ** Set error context.
 */
-errorcontext="CPU:Huffman";
+errorcontext=(char *)"";
 
 /*
 ** Allocate memory for the plaintext and the compressed text.
@@ -2872,8 +2872,8 @@ static ulong DoHuffIteration(farchar *plaintext,
 	ulong nloops,
 	huff_node *hufftree)
 {
-int i;                          /* Index */
-long j;                         /* Bigger index */
+ulong i;                          /* Index */
+ulong j;                        /* Bigger index */
 int root;                       /* Pointer to huffman tree root */
 float lowfreq1, lowfreq2;       /* Low frequency counters */
 int lowidx1, lowidx2;           /* Indexes of low freq. elements */

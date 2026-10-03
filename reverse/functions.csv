@@ -50164,3 +50164,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0010F1D0@Rva0010F185@@QAEXXZ,,0x0010F1D0,127,Code/GameEngine/Source/Common/Rva0010F1D0Vslot.cpp,matched,vslot1 of 0x007CFAB8 via guard plus AIL open with EmptyString fallback caller none
 ?Rva003BCA8ESet@@YGX_N@Z,,0x003BCA8E,19,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCA8ESet.cpp,matched,script sets GameLogic +0x9b byte from bool arg
 ?rva00408109@CreateAHeroData@@QAEIPBW4NameKeyType@@@Z,,0x00408109,71,Code/GameEngine/Source/Common/System/SaveGame/CreateAHeroDataRva004080DD.cpp,matched,CreateAHeroData NameKey lookup via TheNameKeyGenerator and map find
+?DoHuffman@@YAXXZ,,0x006B7B60,612,Code/Libraries/Source/Benchmark/nbench1.cpp,matched,BYTEmark nbench1 DoHuffman; BSim-paired with BFME1 DoHuffman
+?DoHuffIteration@@YAKPAD00KKPAUhuff_node@@@Z,,0x006B6C20,1504,Code/Libraries/Source/Benchmark/nbench1.cpp,matched,BYTEmark nbench1 DoHuffIteration; static helper in nbench1.c called by DoHuffman
