@@ -75,3 +75,17 @@ GameWindow *TabWindowManagerView::gogoGadgetProgressBar(GadgetCreateView *view,
     assignDefaultGadgetLook(window, font, visual);
     return window;
 }
+
+GameWindow *TabWindowManagerView::gogoGadgetPushButton(GadgetCreateView *view,
+    GameFont *font, bool visual)
+{
+    if (!(((FactoryInstanceView *)view->instance)->style & 1)) return 0;
+    GameWindow *window = ((TabWindowManagerView *)TheWindowManager)->createFromView(view);
+    if (!window) return 0;
+    ((Rva003140CF *)window)->rva003140CF((int)view->parent);
+    window->winSetUserData(0);
+    assignDefaultGadgetLook(window, font, visual);
+    UnicodeString text = winTextLabelToText(*(AsciiString *)((char *)view->instance + 0x188));
+    if (text.getLength()) GadgetButtonSetText(window, text);
+    return window;
+}
