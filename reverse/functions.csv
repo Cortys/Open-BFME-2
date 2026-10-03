@@ -50013,3 +50013,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva0056773E@@QAE@HH@Z,,0x0056773E,29,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,ctor vtable plus4 zero plus8 plusC caller 0x00567E10
 ?rva00567764@Rva00567764@@QAEHXZ,,0x00567764,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,predicate via slot4 and byte getter caller 0x0056816A
 ??0Rva00567860@@QAE@ABV0@@Z,,0x00567860,11,Code/GameEngine/Source/Common/Rva00567860Copy.cpp,matched,copy ctor vtable only caller 0x00567CAF
+?rva005B5E2D@Rva005B5E2D@@QAEXPBD@Z,,0x005B5E2D,257,Code/GameEngine/Source/Common/Rva005B5E2D.cpp,matched,chain 0x00406E8F holder+0x27c vector lookup TheGameText slot 0x38 bfmeSetText fallback g_00BC26DC
