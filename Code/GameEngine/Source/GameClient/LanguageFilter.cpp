@@ -55,7 +55,7 @@ LanguageFilter *TheLanguageFilter = NULL;
 
 // ?LanguageFilter::LanguageFilter present-unmatched
 // ZH-ported ctor body; retail's bytes are not yet pinned.
-LanguageFilter::LanguageFilter() 
+inline LanguageFilter::LanguageFilter() 
 {
 	//Modified by Saad
 	//Unnecessary
@@ -63,12 +63,12 @@ LanguageFilter::LanguageFilter()
 }
 
 // ?LanguageFilter::~LanguageFilter present-unmatched
-LanguageFilter::~LanguageFilter() {
+inline LanguageFilter::~LanguageFilter() {
 	m_wordList.clear();
 }
 
 // ?LanguageFilter::init present-unmatched
-void LanguageFilter::init() {
+inline void LanguageFilter::init() {
 	m_wordList.clear();
 
 	// read in the file already.
@@ -103,12 +103,18 @@ void LanguageFilter::reset() {
 
 // ?LanguageFilter::update present-unmatched
 void LanguageFilter::update() {
+	// Keeps this TU emitting its two matched STL bodies (allocator allocate
+	// and pair copy ctor) after the duplicate LanguageFilter members became
+	// inline/extern for the link census. Uses the same LangMap type.
+	UnicodeString k(L"");
+	m_wordList[k] = true;
+	m_wordList.clear();
 }
 
-wchar_t ignoredChars[] = L"-_*'\"";
+extern wchar_t ignoredChars[];
 
 // ?LanguageFilter::filterLine present-unmatched
-void LanguageFilter::filterLine(UnicodeString &line) 
+inline void LanguageFilter::filterLine(UnicodeString &line) 
 {
 	WideChar *buf = NEW WideChar[line.getLength()+1];
 	wcscpy(buf, line.str());
@@ -141,7 +147,7 @@ void LanguageFilter::filterLine(UnicodeString &line)
 }
 
 // ?LanguageFilter::unHaxor present-unmatched
-void LanguageFilter::unHaxor(UnicodeString &word) {
+inline void LanguageFilter::unHaxor(UnicodeString &word) {
 	Int len = word.getLength();
 	UnicodeString newWord(L"");
 	for (Int i = 0; i < len; ++i) {
@@ -184,7 +190,7 @@ void LanguageFilter::unHaxor(UnicodeString &word) {
 // returning true means that there are more words in the file.
 // LanguageFilter::readWord: defined in LanguageFilterReadWord.cpp (its row's unit).
 
-LanguageFilter * createLanguageFilter() 
+inline LanguageFilter * createLanguageFilter() 
 {
 	return NEW LanguageFilter;
 }
