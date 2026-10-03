@@ -1,11 +1,26 @@
 // cl: /O1 /EHsc /MD
 // ?rva0042CB81@Rva0042CBB6@@QAEXH@Z @0x0042CB81 53B via conditional counter decrement plus zero-guard clear
 // Evidence: layout matches Rva0042CBB6Ctor (+8 +0x30 +0x34 +0x39); callers 5 incl 0x0042CE09 0x0042D0CD; unblocks 0x0042D068
+class Mouse
+{
+public:
+	virtual void m00(); virtual void m01(); virtual void m02(); virtual void m03();
+	virtual void m04(); virtual void m05(); virtual void m06(); virtual void m07();
+	virtual void m08(); virtual void m09(); virtual void m10(); virtual void m11();
+	virtual void m12(); virtual void m13(); virtual void m14(); virtual void m15();
+	virtual void m16(); virtual void m17(); virtual void m18();
+	virtual void m19(int x);
+	char m_pad[0x4FA0];
+	int m_4FA4;
+};
+extern Mouse *TheMouse;
+
 class Rva0042CBB6
 {
 public:
 	void rva0042CB81(int x);
 	void rva0042CAEB(int y);
+	void rva0042CB57(int x);
 private:
 	const void *m_vtable;
 	int m_04;
@@ -53,4 +68,16 @@ void Rva0042CBB6::rva0042CB81(int x)
 		m_30 = 0;
 		m_34 = 0;
 	}
+}
+
+// ?rva0042CB57@Rva0042CBB6@@QAEXH@Z @0x0042CB57 42B via TheMouse+0x4FA4 fill plus bit-gated add
+// Evidence: same class layout as neighbours (+8 +0x0C +0x39); TheMouse at 0x009FDCA0 field +0x4FA4 per Rva0042C7B1; callers 0x0042CD88 0x0042CEC4
+void Rva0042CBB6::rva0042CB57(int x)
+{
+	int cur = m_08;
+	if (cur == 0)
+		m_0C = TheMouse->m_4FA4;
+	if ((x & cur) == 0)
+		m_08 = cur + x;
+	m_39 = 1;
 }
