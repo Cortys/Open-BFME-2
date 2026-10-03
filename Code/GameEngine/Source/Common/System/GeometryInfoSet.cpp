@@ -81,12 +81,10 @@ public:
 	BfmeElem60 *m_capacity;
 };
 
-template <typename T>
-class StringBase
+struct AsciiString
 {
-public:
-	~StringBase();
-	void *m_data;
+	~AsciiString();
+	char *m_data;
 };
 
 struct Coord3D
@@ -103,7 +101,7 @@ struct GeometryShape
 	float m_majorRadius;
 	float m_minorRadius;
 	Coord3D m_offset;
-	StringBase<char> m_name;
+	AsciiString m_name;
 	unsigned char m_enabled;
 	unsigned char m_byte21;
 	unsigned char m_pad[2];
