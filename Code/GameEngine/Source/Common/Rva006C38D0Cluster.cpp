@@ -1,37 +1,32 @@
-// ?rva006C38D0@Rva006C1F60@@QAE_NXZ @ 0x006C38D0 (99B) and
-// ?rva006C3940@Rva006C1F60@@QAEPAXI@Z @ 0x006C3940 (146B).
+// ?rva006C38D0@Rva006C1F60@@QAE_NXZ @ 0x006C38D0 (99B).
 //
-// Both bodies sit immediately above the rowed 0x006C3840 lock-guarded setter
-// (Rva006C3840Cluster.cpp) and share its Rva006C1F60 layout, so the class, the
-// 0x006C33D0 callee and the +0x4E4 lock are already established. Two callees are
-// named nowhere in the ledger and are called here as address-derived members:
+// The body sits immediately above the rowed 0x006C3840 lock-guarded setter
+// (Rva006C3840Cluster.cpp) and shares its Rva006C1F60 layout, so the class, the
+// 0x006C33D0 callee and the +0x4E4 lock are already established.
 //
-//   0x00033D50 -- proven a member of THIS object from target bytes: it AddRefs
-//     this+0x4E4 on entry, walks the +0x49C map and the +0x448 sentinel list,
-//     then stores 0 to +0x4E4 and Release/Deletes the lock. memory_pool.cpp
-//     proves +0x448 as a list sentinel and +0x4E4 as a Lock*, and
-//     Rva006C1F60.cpp proves +0x4E4 on this class. Reached via thunk 0x34D00.
-//   0x00033ED0 -- a thiscall member taking (unsigned int, int) and returning
-//     void*: it rounds `first+11` up to a multiple of 0x10, tests flag bit 8
-//     and hands off to 0x00032DF0, otherwise walks free lists at this+0x00..
-//     +0x30. Both arguments are read off the stack, so the return is in eax.
+// Its callee 0x00033D50 was named nowhere in the ledger and is now pinned as an
+// address-derived member of this class. That it is a MEMBER rather than a free
+// function is target evidence, not a guess: 0x33D50 AddRefs this+0x4E4 on
+// entry, walks the +0x49C map and the +0x448 sentinel list, then stores 0 to
+// +0x4E4 and Release/Deletes the lock -- memory_pool.cpp already proves +0x448
+// as a list sentinel and +0x4E4 as a Lock*, and Rva006C1F60.cpp proves +0x4E4
+// on this class. It is also reached through the jump thunk 0x00034D00.
 //
 // Structural inference, NOT proven identity: 0x6C38D0 propagates the byte
 // 0x33D50 returns and invokes it on the same object, so it reads as a
-// teardown/flush predicate that always clears the +0x510 byte. 0x6C3940
-// allocates: it calls 0x33ED0 with (len+2, 0x80000000) in a retry loop and, on
-// success, clears the PPMalloc fencepost word at block+fencepost-0xA and sets
-// header bit 4 -- byte-for-byte the shape of the unrowed 0x006C1CC0 wrapper at
-// 0x006C1CDC -- while the four call sites at 0x6C3A55/0x6C3BC9/0x6C3C8C/
-// 0x6C3D29 write a 2-byte length then a 2-byte tag into the returned buffer.
+// teardown/flush predicate that always clears the +0x510 byte.
 //
-// +0x678 is read as a self-pointer: both bodies compare it against `this`, and
-// on the mismatch path 0x6C3940 loads it into ecx for the 0x35080 call, i.e.
-// the allocation is forwarded to THAT object, not to this one. Field labels
-// below are descriptive; only the offsets are target facts. The loop
-// back-edge at 0x6C3966 is taken from the fencepost write itself, so the
-// retry re-enters 0x33ED0 with the already-adjusted length.
-
+// +0x678 is read as a self-pointer: this body compares it against `this` and
+// calls 0x006C17B0 on the +0x684 sub-object only when they are equal. Field
+// labels below are descriptive; only the offsets are target facts.
+//
+// The sibling body at 0x006C3940 was recovered from the same neighbourhood and
+// is banked as a partial attempt (reverse/attempts/0x006c3940.cpp, score 0.72):
+// its fencepost sequence and retry semantics are byte-exact, but MSVC 7.1
+// rotates every loop form into a two-call shape instead of retail's single
+// allocation with the back-edge at 0x006C3966. Its layout findings are
+// retained below because they come from its retail bytes.
+//
 struct Rva00030DD0Lock;
 int Rva00030DD0AddRef(Rva00030DD0Lock *lock);
 int Rva00030DF0Release(Rva00030DD0Lock *lock);
@@ -57,9 +52,9 @@ public:
 
 // Rva006C1F60 is itself a GeneralAllocator: memory_pool.cpp proves +0x448 as
 // that class's list sentinel and +0x4E4 as its Lock*, and 0x00033D50 reads both
-// through `this`. Only the malloc-shaped member is needed here, so this view
-// carries no fields and the base stays empty; 0x00035080 is already pinned
-// under the GeneralAllocator name and the call below must mangle to it.
+// through `this`. The base carries no fields, so it does not change any offset
+// below; the banked 0x006C3940 body needed 0x00035080 through it and that pin
+// already exists under the GeneralAllocator name.
 namespace EA
 {
 namespace Allocator
@@ -76,11 +71,9 @@ class Rva006C1F60 : public EA::Allocator::GeneralAllocator
 {
 public:
 	bool rva006C38D0();
-	void *rva006C3940(unsigned int len);
 
-	// Address-derived members, pinned at 0x00033D50 and 0x00033ED0.
+	// Address-derived member, pinned at 0x00033D50.
 	bool rva00033D50();
-	void *rva00033ED0(unsigned int size, int flags);
 
 	void rva006C33D0(int a, int b);
 
@@ -119,39 +112,4 @@ bool Rva006C1F60::rva006C38D0()
 		m_684.rva006C17B0(true, true);
 	}
 	return result;
-}
-
-// ?rva006C3940@Rva006C1F60@@QAEPAXI@Z present-unmatched
-void *Rva006C1F60::rva006C3940(unsigned int len)
-{
-	if (m_678 != this)
-		return m_678->rva00035080(len, 0);
-
-	int saved = m_478;
-	m_478 = 0;
-	void *block = 0;
-	do
-	{
-		block = rva00033ED0(len + 2, 0x80000000);
-		if (block != 0)
-			break;
-		if (m_554 == m_548)
-			break;
-		rva006C33D0(0, 0);
-	} while (true);
-	if (block != 0)
-	{
-		char *const chunk = reinterpret_cast<char *>(block);
-		unsigned int header = *reinterpret_cast<unsigned int *>(chunk - 4);
-		unsigned int fencepost;
-		if (header & 2)
-			fencepost = header & 0x7FFFFFF8u;
-		else
-			fencepost = (header & 0x7FFFFFF8u) + 4;
-		*reinterpret_cast<unsigned short *>(chunk + fencepost - 0xA) = 0;
-		header |= 4;
-		*reinterpret_cast<unsigned int *>(chunk - 4) = header;
-	}
-	m_478 = saved;
-	return block;
 }
