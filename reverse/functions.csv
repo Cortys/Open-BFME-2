@@ -49090,3 +49090,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva006FC240@@QAE@XZ,,0x006FC240,134,Code/Libraries/Source/Apt/Rva006FC1D0Ctor.cpp,matched,Apt error ctor with two Error strings via MI bits base
 ?rva00552CB8@Rva00552CF9@@QAEXXZ,,0x00552CB8,38,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class clears two ints then three slot0 virtuals caller 0x00556262
 ?rva00552D7B@Rva00552CF9@@QAEXPBVRva00552D7BSrc@@@Z,,0x00552D7B,95,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class copy from Src144 150 single sub8 copy caller 0x005594F1
+?rva00552DDA@Rva00552CF9@@QAEXPBVRva00552DDASrc@@@Z,,0x00552DDA,98,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class copy from Src144 150 single sub1B0 copy caller 0x005595BF
