@@ -50177,3 +50177,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FD43B@Rva003FD3EF@@UAE_NXZ,,0x003FD43B,93,Code/GameEngine/Source/GameLogic/Object/Rva003FD3EFSlot4.cpp,matched,vslot 4 of 0x007FE024 via rowed ctor 0x002D97D6 and dtor 0x002D9A43 plus g_009FE1C8 plus rowed 0x0021291F plus donor Rva003FD3EFDtor
 ?Rva003BCFD4Set@@YGX_N@Z,,0x003BCFD4,19,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCFD4Set.cpp,matched,script sets ClientFrameSubsystem +0xc0 byte from bool arg
 ?Rva003BC510Do@@YGXH@Z,,0x003BC510,20,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC510Do.cpp,matched,script forwards int arg to TheAudio vslot 0x68 with 0
+?rva005FB8B4@Rva005FB770@@QAEXM@Z,,0x005FB8B4,79,Code/GameEngine/Source/GameClient/GUI/Rva005FB770SetHealth.cpp,matched,float health setter via rowed Fire 0x00527925 with SetPlayerHealth

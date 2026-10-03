@@ -1,0 +1,34 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// ?rva005FB8B4@Rva005FB770@@QAEXM@Z @ 0x005FB8B4 79B: float health setter via rowed Fire 0x00527925 with SetPlayerHealth plus EmptyString fallback. Evidence: ucomiss float at +0x34 plus rowed Fire plus TheRva00222A8BTarget 0x009FE4CC plus g_Rva0107301CEmptyString 0x007BAC1C plus SetPlayerHealth literal plus gap between AptPlayerNameSet rows.
+class Rva00222A8BTarget;
+extern Rva00222A8BTarget *TheRva00222A8BTarget;
+extern const char g_Rva0107301CEmptyString[];
+
+int __cdecl Rva00527925Fire(void *target, void *level, const char *prefix, const char *function, const float *val);
+
+struct Rva005FB770Team
+{
+	char m_pad[8];
+	char m_name[1];
+};
+
+class Rva005FB770
+{
+public:
+	void rva005FB8B4(float v);
+private:
+	char m_pad00[4];
+	void *m_level04;
+	Rva005FB770Team *m_team08;
+	char m_pad0C[0x34 - 0x0C];
+	float m_float34;
+};
+
+void Rva005FB770::rva005FB8B4(float v)
+{
+	if (v != m_float34) {
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		Rva00527925Fire(TheRva00222A8BTarget, m_level04, team, "SetPlayerHealth", &v);
+		m_float34 = v;
+	}
+}
