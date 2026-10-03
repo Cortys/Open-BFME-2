@@ -71,3 +71,21 @@ Rva0035149F &Rva0035149F::rva0035149F(const Rva0035149F &other)
 	m_finish = m_start + n;
 	return *this;
 }
+
+// ?rva00351759@Rva00351759@@QAEAAVRva0035149F@@ABV2@@Z @0x00351759 8B member-assign forwarder to rowed 0x0035149F.
+// Retail: add ecx 0x3c / jmp 0x35149F.
+// Target facts: __thiscall (this + const Rva0035149F&) -> Rva0035149F&; this+0x3c is the Rva0035149F member; tail return gives add+jmp at /O1.
+// Callers: 0x00262F36 0x00264949 0x002649FB 0x0026BB19 0x0026BBE6 0x0026BCA2 0x0036986E 0x0036BC30 all pass this+1 arg; callees: rowed 0x0035149F vector assign.
+// Precedent: tail return m_member.method gives add ecx N + jmp at /O1; honest Rva address-derived class.
+
+class Rva00351759
+{
+public:
+	char m_pad[0x3c];
+	Rva0035149F m_vec;
+	Rva0035149F &rva00351759(const Rva0035149F &other);
+};
+Rva0035149F &Rva00351759::rva00351759(const Rva0035149F &other)
+{
+	return m_vec.rva0035149F(other);
+}
