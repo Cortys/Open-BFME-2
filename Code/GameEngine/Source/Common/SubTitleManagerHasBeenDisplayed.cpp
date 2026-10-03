@@ -8,8 +8,15 @@
 // virtuals and returns false. Evidence: string literal plus caller 0x0004807C
 // plus neighbour record TUs.
 #include <vector>
+#include "unicode_string.h"
 
 void __cdecl _bfme_debugRecordCallsite(int x);
+
+class Rva0022C4DF
+{
+public:
+	UnicodeString rva0022C4DF() const;
+};
 
 class Debug
 {
@@ -62,6 +69,7 @@ public:
 	bool HasBeenDisplayed(int index);
 	void SetDisplayedStats(int index);
 	unsigned int GetColor(int index);
+	UnicodeString GetText(int index);
 private:
 	char m_pad[0x14];
 	_STL::vector<SubTitleEntry *> m_list;
@@ -114,4 +122,16 @@ unsigned int SubTitleManager::GetColor(int index)
 	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::GetColor().");
 	b->h19(1);
 	return 0xffff00ff;
+}
+
+UnicodeString SubTitleManager::GetText(int index)
+{
+	if (index < (int)m_list.size())
+		return ((Rva0022C4DF *)m_list[index])->rva0022C4DF();
+	_bfme_debugRecordCallsite(1);
+	theDebug->f24();
+	LogA *a = (LogA *)theDebug->f27(0, 0, 0);
+	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::GetText().");
+	b->h19(1);
+	return UnicodeString();
 }
