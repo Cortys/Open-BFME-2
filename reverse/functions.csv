@@ -49305,3 +49305,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva004B0333@Rva004B0333@@QAEPAXXZ,,0x004B0333,21,Code/GameEngine/Source/GameLogic/Object/Update/Rva004B0333Get.cpp,matched,honest lookup via g_009FF000 plus 0xD4 sibling 0x004B031E
 ?rva0055B266@Rva0055B266@@UAEXPAVXfer@@@Z,,0x0055B266,54,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B266Xfer.cpp,matched,FX DoXfer 8x Version1 plus xferRandomVariable plus uint slot 0x78
 ?rva005EA0C0@Rva005EA183@@QAEXXZ,,0x005EA0C0,47,Code/Libraries/Source/WWVegas/WWMath/Rva005EA0C0Method.cpp,matched,new-8 link Set tail-slot1 vtable g_00C78174
+??0Rva00544C03@@QAE@PAVStateMachine@@@Z,,0x00544C03,33,Code/GameEngine/Source/Common/Rva00544C03Ctor.cpp,matched,State hash 0xA2C0BF2B plus vtable 0x00C69C98 plus m_20 zero
