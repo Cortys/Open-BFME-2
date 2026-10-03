@@ -50321,3 +50321,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005C65F1@Rva005C65F1@@QAEXXZ,,0x005C65F1,75,Code/GameEngine/Source/GameLogic/Object/Rva005C65F1Finish.cpp,matched,Manhattan-distance commit; GetPos slot4 fills two ints then abs+abs>2 stores back m_x m_y and flag+4; inline test makes MSVC accumulate into edi as retail does
 ?rva0031FAF0@Rva0031FAF0@@QAEXXZ,,0x0031FAF0,280,Code/GameEngine/Source/Common/Rva0031FAF0.cpp,matched,chain from 0x2004FD landing with callers at 0x320044 and 0x32056F and prev next flags O1 EHsc MD
 ?Rva0033940F_Parse@INI@@SAXPAV1@PAX1PBX@Z,,0x0033940F,236,Code/GameEngine/Source/Common/System/INI_Rva0033940FParse.cpp,matched,INI parse via ThingFactory g_009FF000 with None and theDebug Format
+??0Rva005DA353@@QAE@XZ,,0x005DA341,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,vtable store plus base ctor caller 0x0058A6E1

@@ -120,8 +120,14 @@ Rva005D9BA5::~Rva005D9BA5()
 class Rva005DA353 : public Rva005EE2A0
 {
 public:
+	Rva005DA353();
 	virtual ~Rva005DA353();
 };
+
+// ??0Rva005DA353@@QAE@XZ @0x005DA341 18B: base ctor 0x005EE28C then vtable 0x008764EC. Evidence: vtable store at [this]; caller 0x0058A6E1.
+Rva005DA353::Rva005DA353()
+{
+}
 
 Rva005DA353::~Rva005DA353()
 {
