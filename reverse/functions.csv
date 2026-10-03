@@ -49958,3 +49958,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00211075@Rva00211075@@QAEXXZ,,0x00211075,106,Code/GameEngine/Source/Common/Rva00211075AudioNotify.cpp,matched,flag 0x2c0 TheAudio gate Opaque 0x164 audio event 1 slot 0x64
 ?Rva005EC135Delete@@YAXPAPAX@Z,,0x005EC135,33,Code/GameEngine/Source/Common/Rva005EC135Delete.cpp,matched,safe delete vector deleting dtor slot0 operator delete nulls
 ??0Rva005ECA91@@QAE@XZ,,0x005ECA91,63,Code/GameEngine/Source/Common/Rva005ECA91Ctor.cpp,matched,ctor vtable vector BfmeE16 ObjectCreationList same class as dtor
+??1Rva005ECA91@@MAE@XZ,,0x005ECAD0,60,Code/GameEngine/Source/Common/Rva005ECA91Dtor.cpp,matched,vtable 0x008785B0 at this member +0x10 dtor 0x005242D7 member +0x4 dtor 0x005EC9BA EH prolog
