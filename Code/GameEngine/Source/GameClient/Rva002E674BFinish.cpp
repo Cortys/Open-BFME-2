@@ -1,15 +1,16 @@
-// ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z
-// partial score=0.95 date=2026-09-30
-// ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z
-// partial score=0.95 date=2026-09-30
-// cl: /O1 /DNDEBUG /DWIN32 /MD /D_STLP_USE_STATIC_LIB /D_CRTIMP= /EHsc
+// cl: /O1 /DNDEBUG /DWIN32 /MD /D_STLP_USE_STATIC_LIB /EHsc
+// class-gate: allow AsciiString one-pointer codegen view whose inline str() is the retail LUT-label chase
 // stlport
 //
-// ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z, retail 0x002E674B, 104 bytes.
-// Filter LUT by label prefix using strstr, pushing matches into out vector.
-// Evidence: retail count at +0 plus LUT at +8 with stride 8, strstr via IAT,
-// empty string g_Rva0107301CEmptyString, pin push_back 0x0002DBE6,
-// caller at 0x002E6809/0x002E681A, donor GameTextManager::getStringsWithLabelPrefix.
+// Mangled symbol: ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z
+// retail 0x002E674B, 104 bytes. Filter LUT by label prefix using the
+// imported strstr, pushing matches into out vector. Evidence: retail count at
+// +0 plus LUT at +8 with stride 8, strstr via IAT 0x00BBA614 (so <string.h>'s
+// _CRTIMP import declaration, not a static CRT call), empty string
+// g_Rva0107301CEmptyString, pin push_back 0x0002DBE6, callers at
+// 0x002E6809/0x002E681A, donor GameTextManager::getStringsWithLabelPrefix.
+// The loop condition alone supplies the count==0 guard; a separate
+// `if (m_count == 0) return;` makes /O1 materialize the count in eax.
 #include <vector>
 #include <string.h>
 
@@ -51,8 +52,6 @@ public:
 void Rva002E674B::rva002E674B(AsciiStringVec &out, const AsciiString &filter)
 {
 	if (!m_lut)
-		return;
-	if (m_count == 0)
 		return;
 	for (unsigned int i = 0; i < m_count; ++i) {
 		if (strstr(m_lut[i].label->str(), filter.str()) == m_lut[i].label->str())
