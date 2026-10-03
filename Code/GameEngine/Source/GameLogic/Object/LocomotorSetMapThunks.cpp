@@ -34,12 +34,23 @@ typedef _STL::vector<const LocomotorTemplate *> BfmeLocomotorTemplateVector;
 
 typedef _STL::map<LocomotorSetType, BfmeLocomotorTemplateVector, _STL::less<LocomotorSetType>, _STL::allocator<_STL::pair<const LocomotorSetType, BfmeLocomotorTemplateVector> > > BfmeLocomotorSetMap;
 
+// Use the existing rowed tree bodies instead of emitting competing copies.
+typedef _STL::pair<const LocomotorSetType, BfmeLocomotorTemplateVector> BfmeLocomotorSetValue;
+typedef _STL::_Rb_tree<LocomotorSetType, BfmeLocomotorSetValue,
+    _STL::_Select1st<BfmeLocomotorSetValue>, _STL::less<LocomotorSetType>,
+    _STL::allocator<BfmeLocomotorSetValue> > BfmeLocomotorSetTree;
+namespace _STL {
+template<> BfmeLocomotorSetTree::~_Rb_tree();
+template<> BfmeLocomotorSetTree& BfmeLocomotorSetTree::operator=(const BfmeLocomotorSetTree&);
+}
+
 struct Rva004FFE81
 {
 	int m_first;
 	BfmeLocomotorSetMap m_second;
-	int m_third;	// +0x10: copy ctor 0x0050052F copies [edi+0x10] to [esi+0x10]; stride 0x14 in 0x00500CB8/0x0050094B
+	int m_third;	// +0x10: assignment 0x0050052F copies [edi+0x10] to [esi+0x10]; stride 0x14 in 0x00500CB8/0x0050094B
 	~Rva004FFE81();
+	Rva004FFE81& operator=(const Rva004FFE81&);
 };
 
 Rva004FFE81::~Rva004FFE81()
@@ -85,4 +96,15 @@ void Rva00501356::rva00501356()
 	Rva00500CB8Destroy(m_first, m_last);
 	if (m_first)
 		free(m_first);
+}
+
+// Retail 0x0050052F / 37: assign the two scalar fields around the map.
+// The call at 0x00500543 reaches the rowed tree assignment at 0x004FFDA5;
+// the element's semantic name remains unknown.
+Rva004FFE81& Rva004FFE81::operator=(const Rva004FFE81& other)
+{
+    m_first = other.m_first;
+    m_second = other.m_second;
+    m_third = other.m_third;
+    return *this;
 }
