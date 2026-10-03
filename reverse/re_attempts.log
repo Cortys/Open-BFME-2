@@ -6133,3 +6133,6 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva0055B489@Rva0055B489@@QAEXXZ	0x0055B489	165	blocked	add-vs-folded 0x3C plus xmm1 zero hoist plus merged clamp stores need donor t=15 model=muse-12
 ?rva0047FFFE@ShareExperienceBehavior@@QAEMPAVCoord3D@@PAUPos0047FFFE@@@Z	0x0047FFFE	149	partial	inner clamp inverted to comiss xmm1-xmm0 plus jbe with extra movss vs retail comiss mem plus jb t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0047fffe.cpp
 ??0Rva0042FD9E@@QAE@XZ	0x0042FD9E	129	blocked	mov ecx edi plus EH state 1 hoisted above zero stores and xorps before or t=15 model=muse-09 (stash 0.93 kept)
+?rva004FCB61@Rva004FCB61@@QAEPAXPAX@Z	0x004FCB61	36	blocked	frameless-29B-vs-framed-36B dead-and-ebp-4-zero t=12 model=muse-10
+?rva004FCB85@Rva004FCB85@@QAEPAXPAX@Z	0x004FCB85	36	blocked	same-wall-as-0x004FCB61 frameless-vs-framed dead-and-ebp-4-zero t=2 model=muse-10
+?rva004FCBA9@Rva004FCBA9@@QAEPAXPAX@Z	0x004FCBA9	36	blocked	same-wall-as-0x004FCB61 frameless-vs-framed dead-and-ebp-4-zero t=1 model=muse-10
