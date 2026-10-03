@@ -53,6 +53,25 @@ struct Rva006E3740Slot {
     AptValue *pValue1;
     AptValue *pValue2;
 };
+struct Rva006E4B80Inner {
+    char _pad[0x28];
+    int m_val28;
+};
+class AptCIH {
+public:
+    virtual void AddRef();
+    bool rva006CFCD0() const;
+    char _pad4[0x48];
+    Rva006E4B80Inner *m_pAt4C;
+};
+struct Rva006E4B80Slot {
+    int eActionType;
+    int field4;
+    int field8;
+    int fieldC;
+    void *field10;
+    AptCIH *field14;
+};
 class Rva006E3230 {
     Rva006E3230Action *m_aActionPool;
     Rva006E3230Action *m_pCurrent;
@@ -65,6 +84,7 @@ public:
     Rva006E3230Action *rva006E3920(int arg);
     void rva006E39A0();
     void rva006E3740(AptValue *pContext, AptValue *pA, AptValue *pB, int iD, int iE);
+    void rva006E4B80(void *pArg1, AptCIH *pCIH, int iArg3, int iArg4);
 };
 void Rva006E3230::rva006E3230(Rva006E3230Action *pCur)
 {
@@ -178,6 +198,42 @@ void Rva006E3230::rva006E3740(AptValue *pContext, AptValue *pA, AptValue *pB, in
         ((Rva006E3740Slot *)m_pEnd)->pValue1->unused0();
         ((Rva006E3740Slot *)m_pEnd)->pValue2 = pB;
         ((Rva006E3740Slot *)m_pEnd)->field4 = iD;
+        m_pEnd = pNext;
+        return;
+    }
+    Rva006CC110Log(4, "!!!!!!!!!!!!! AptAnimationPoolData:  Dequeue is full !!!!!!!!");
+}
+
+// ?rva006E4B80@Rva006E3230@@QAEXPAXPAVAptCIH@@HH@Z @0x006E4B80 225B.
+// Type-1 enqueue sibling of rva006E3740: asserts pCIH->getIsDefined() at
+// AptAnimation.cpp:1615, wraps m_pEnd+1, validates, logs Dequeue-full when it
+// meets m_pCurrent, else stores type 1 plus chain int from [pCIH+0x4C]+0x28,
+// arg1, pCIH (with AddRef slot0), arg4, arg3, advances m_pEnd. Evidence:
+// unlock lane packet; same queue object; stride 24 and assert/log immediates.
+void Rva006E3230::rva006E4B80(void *pArg1, AptCIH *pCIH, int iArg3, int iArg4)
+{
+    if (!((const Rva006DBB60ShrNAndField *)pCIH)->get()) {
+        g_bfmeAptAssertAtE17734("pCIH->getIsDefined()", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptAnimation.cpp", 0x64f);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    Rva006E3230Action *pNext = m_pEnd + 1;
+    if (pNext == &m_aActionPool[m_iActionPoolSize])
+        pNext = m_aActionPool;
+    rva006E3230(pNext);
+    if (pNext != m_pCurrent) {
+        ((Rva006E4B80Slot *)m_pEnd)->eActionType = 1;
+        if (!pCIH->rva006CFCD0()) {
+            g_bfmeAptAssertAtE17734("isSpriteInstBase()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x7d);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+        ((Rva006E4B80Slot *)m_pEnd)->fieldC = pCIH->m_pAt4C->m_val28;
+        ((Rva006E4B80Slot *)m_pEnd)->field10 = pArg1;
+        ((Rva006E4B80Slot *)m_pEnd)->field14 = pCIH;
+        pCIH->AddRef();
+        ((Rva006E4B80Slot *)m_pEnd)->field8 = iArg4;
+        ((Rva006E4B80Slot *)m_pEnd)->field4 = iArg3;
         m_pEnd = pNext;
         return;
     }
