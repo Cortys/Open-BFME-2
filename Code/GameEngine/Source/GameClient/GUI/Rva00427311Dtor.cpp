@@ -21,12 +21,14 @@ public:
 class GameEngineDeletingBase
 {
 public:
+	GameEngineDeletingBase();
 	virtual ~GameEngineDeletingBase();
 };
 
 class Rva004271D9
 {
 public:
+	Rva004271D9();
 	~Rva004271D9();
 private:
 	char m_pad[4];
@@ -42,11 +44,16 @@ typedef std::hash_map<const GameWindow *, WindowVideo *,
 class Rva00427311 : public GameEngineDeletingBase
 {
 public:
+	Rva00427311();
 	virtual ~Rva00427311();
 private:
 	char m_pad[8];
 	Rva004271D9 m_playingVideos;
 };
+
+Rva00427311::Rva00427311()
+{
+}
 
 Rva00427311::~Rva00427311()
 {

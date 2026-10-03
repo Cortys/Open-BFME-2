@@ -50238,3 +50238,8 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004FF8DA@Rva004FF8DA@@QAE_NHH@Z,,0x004FF8DA,54,Code/Libraries/Source/WWVegas/WWLib/stlport_map_004FF8DA.cpp,matched,unlock map int-int find plus stride12 vec88 presence idx8
 ?rva004B5765@WeaponSetUpgradeSecondary@@QAEXXZ,,0x004B5765,30,Code/GameEngine/Source/GameLogic/Object/Upgrade/WeaponSetUpgradeRva004B5765.cpp,matched,chain via rowed 0x004CE4A0 plus rowed 0x0028D86F via ModuleData bitset at 0x118 plus vtable 0x00857F68 slot 22 plus prev 0x004B5749
 ??1Rva005DCE08@@QAE@XZ,,0x005DCE08,90,Code/GameEngine/Source/Common/Rva005DCE08Finish.cpp,matched,stlport vector dtor; element release via virtual slot0 and rowed operator delete 0x2FD60; buffer free 0x30830; identity address-derived
+?denormalize@@YAXPAUInternalFPF@@H@Z,,0x006B9060,51,Code/Libraries/Source/Benchmark/emfloat.cpp,matched,BYTEmark nbench emfloat.c static denormalize out-of-line copy without zero-significand printf
+??0Rva00427311@@QAE@XZ,,0x00427526,55,Code/GameEngine/Source/GameClient/GUI/Rva00427311Dtor.cpp,matched,WindowVideoManager constructor: base SubsystemInterface via 0x001B4E63 and WindowVideoMap at plus 0xc via 0x00427507
+?xfer@Rva00426EB0@@UAEXPAVXfer@@@Z,,0x004270B2,72,Code/GameEngine/Source/Common/Rva0042700FParse.cpp,matched,
+?getDefault@LivingWorldAutoResolveArmorStore@@QAEPBVRva00427157@@XZ,,0x0042724D,71,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
+?find@LivingWorldAutoResolveArmorStore@@QAEPBVRva00427157@@ABVAsciiString@@@Z,,0x00427217,54,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
