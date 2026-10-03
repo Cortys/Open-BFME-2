@@ -154,6 +154,15 @@ SlowDeathBehaviorModuleData::SlowDeathBehaviorModuleData()
 	m_fadeDelay = 0xfacade00;
 }
 
-SlowDeathBehaviorModuleData::~SlowDeathBehaviorModuleData()
+inline SlowDeathBehaviorModuleData::~SlowDeathBehaviorModuleData()
 {
 }
+
+// This destructor is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSlowDeathBehaviorModuleDataDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeSlowDeathBehaviorModuleDataDtorInlineAnchor()
+{
+	static_cast<SlowDeathBehaviorModuleData *>(0)->SlowDeathBehaviorModuleData::~SlowDeathBehaviorModuleData();
+}
+#pragma inline_depth()
