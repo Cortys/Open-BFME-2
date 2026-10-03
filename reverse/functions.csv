@@ -50502,3 +50502,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FD9FA@Rva003FD9FA@@QAEXPBVRvaSmartPtr12@@HHH@Z,,0x003FD9FA,31,Code/GameEngine/Source/Common/Rva003FD9FA.cpp,matched,chain from 0x003FC7C7 rowed callee plus 12B copy to +0xAC
 ?rva004F10C2@Rva004F10C2@@QAE_NXZ,,0x004F10C2,33,Code/GameEngine/Source/Common/Rva004F10C2.cpp,matched,caller 0x004F19D3 offsets plus0x14 plus0x04 plus0x0C plus0x19 plus0x109bit0x40 true via next getter
 ?rva004F19D3@Rva004F19D3@@QAE_NXZ,,0x004F19D3,32,Code/GameEngine/Source/Common/Rva004F10C2.cpp,matched,chain from 0x004F10C2 calls pred then winGetStatus next at plus8 head at plus4
+?rva0005516F@Rva0005516F@@QAEXPAUHolder@@H@Z,,0x0005516F,83,Code/GameEngine/Source/Common/Rva0005516FMethod.cpp,matched,outer array plus0x12C stride0x1C4 row 0x550F7 fanout key2
