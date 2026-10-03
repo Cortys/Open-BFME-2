@@ -49722,3 +49722,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva005646BCSub@@QAE@XZ,,0x00564509,25,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005646BC.cpp,matched,placed by masked byte search of already-compiled unit
 ?end@Rva00282021Store@@QAE?AURva00282021Cursor@@XZ,,0x0007EBCC,21,Code/GameEngine/Source/GameLogic/Map/Rva00282021WaterLookup.cpp,matched,placed by masked byte search of already-compiled unit
 ?setWeaponBonusCondition@Object@@QAEXW4WeaponBonusConditionType@@@Z,,0x0028A670,20,Code/GameEngine/Source/GameLogic/Object/Upgrade/WeaponBonusUpgradeUpgradeImplementation.cpp,matched,placed by masked byte search of already-compiled unit
+?downloadNextQueuedFile@DownloadManager@@QAEJXZ,,0x005E07C0,235,Code/GameEngine/Source/GameNetwork/DownloadManager.cpp,matched,placed by masked byte search of already-compiled unit
