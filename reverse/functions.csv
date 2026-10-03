@@ -50510,3 +50510,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003F751A@Rva003F751A@@QAEPAURva003F751ANode@@PBH@Z,,0x003F751A,37,Code/GameEngine/Source/Common/Rva003F751AFind.cpp,matched,unlock lane tree traversal header root key at +0x10 vs key children +8 +C returns end or last le
 ?Rva0037F71FCopy@@YAXPAVRva0037F551@@ABV1@@Z,,0x0037F71F,18,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F551 null-checked forward callers 0x0037F731
 ?rva002DADB5@Rva002DADB5@@QAEXVAsciiString@@@Z,,0x002DADB5,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DADB5Set.cpp,matched,twin of Rva002DAD81Set plus caller 0x002DB719 plus prev O1 EHsc flags
+?rva002DAE1D@Rva002DAE1D@@QAEXVAsciiString@@@Z,,0x002DAE1D,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DAE1DSet.cpp,matched,twin of Rva002DADB5Set plus caller 0x002DB743 plus same EH data VA
