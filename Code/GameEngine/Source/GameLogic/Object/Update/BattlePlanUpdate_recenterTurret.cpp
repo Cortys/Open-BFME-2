@@ -5,6 +5,8 @@
 // (GameLogic/Object/Update/BattlePlanUpdate.cpp): fetch the object's AI,
 // ask it which turret the current weapon uses, and recenter that turret.
 // A missing AI or an invalid turret recenters nothing.
+// Host type is Rva00497769Host, not Object: this body reads its AI cell at
+// +0x258 while the rowed Object::getAI (0x00313EB6) reads m_ai at +0x19C.
 
 enum WhichTurretType
 {
@@ -23,7 +25,7 @@ public:
 	void recenterTurret(WhichTurretType tur);
 };
 
-class Object
+class Rva00497769Host
 {
 public:
 	AIUpdateInterface *getAI() { return m_ai; }
@@ -39,11 +41,11 @@ protected:
 	void recenterTurret();
 
 private:
-	Object *getObject() { return m_object; }
+	Rva00497769Host *getObject() { return m_object; }
 
 	void *m_vtable;	// +0x00
 	int m_pad04;	// +0x04 (unmapped Module base member)
-	Object *m_object;	// +0x08
+	Rva00497769Host *m_object;	// +0x08
 };
 
 // ?recenterTurret@BattlePlanUpdate@@IAEXXZ
