@@ -1,13 +1,13 @@
 // ??1Rva001F4C67@@UAE@XZ
 // partial score=0.94 date=2026-09-30
-// ??1Rva001F4C67@@UAE@XZ
-// partial score=0.94 date=2026-09-30
 // cl: /O1 /MD /EHsc
 // ??1Rva001F4C67@@UAE@XZ @0x001F4C67 (159B)
 // Virtual dtor unlinks node via rowed unlink then destroys handles.
 // Sets own vtable then base vtable. Calls slot6 destroy manager.
 // Ret 0. Evidence chain lane calls just-landed unlink plus destroy rows.
 #include <stddef.h>
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 class ParticleSystem;
 ParticleSystem *Make001FCBD7();
 struct Rva001F45DFInner { char m_pad[0x7c]; int m_value; };
@@ -59,14 +59,15 @@ private:
 	char m_76[2];
 	Wrap78 m_w78;
 };
-// ??1Rva001F4C67@@UAE@XZ present-unmatched
 Rva001F4C67::~Rva001F4C67()
 {
 	m_w3c.m_h.m_system->m_slot2->slot6(this);
 	if (m_w78.m_h.m_system) {
+		_ReadWriteBarrier();
 		m_w78.m_h.m_system->m_19c = 0;
 		m_w78.m_h.m_system->destroy();
 	}
 	((Rva001F4882 *)TheParticleSystemManager)->rva001F4882((Node001F4882 *)this);
 }
+// ?Base001F4C67::~Base001F4C67 present-unmatched
 Base001F4C67::~Base001F4C67() {}
