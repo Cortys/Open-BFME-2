@@ -58,47 +58,11 @@ static const Real ANGULAR_LIMIT = PI/2 - PI/64;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-ToppleUpdateModuleData::ToppleUpdateModuleData()
-{
-	const Real START_VELOCITY_PERCENT = 0.2f;
-	const Real START_ACCEL_PERCENT = 0.01f;
-	const Real VELOCITY_BOUNCE_PERCENT = 0.3f;			// multiply the velocity by this when you bounce
-	m_toppleFX = NULL;
-	m_bounceFX = NULL;
-	m_stumpName.clear();
-	m_killWhenToppled = true;
-	m_killWhenStartToppled = false;
-	m_killStumpWhenToppled = false;
-	m_toppleLeftOrRightOnly = false;
-	m_reorientToppledRubble = false;
-	m_initialVelocityPercent = START_VELOCITY_PERCENT;
-	m_initialAccelPercent = START_ACCEL_PERCENT;
-	m_bounceVelocityPercent = VELOCITY_BOUNCE_PERCENT;
-}
+// ??0ToppleUpdateModuleData@@QAE@XZ owned by ToppleUpdateModuleDataCtor.cpp; declared here only.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-void ToppleUpdateModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "ToppleFX",	INI::parseFXList, NULL, offsetof( ToppleUpdateModuleData, m_toppleFX ) },
-		{ "BounceFX",	INI::parseFXList, NULL, offsetof( ToppleUpdateModuleData, m_bounceFX ) },
-		{ "StumpName",	INI::parseAsciiString, NULL, offsetof( ToppleUpdateModuleData, m_stumpName ) },
-		{ "KillWhenStartToppling",	INI::parseBool, NULL, offsetof( ToppleUpdateModuleData, m_killWhenStartToppled ) },
-		{ "KillWhenFinishedToppling",	INI::parseBool, NULL, offsetof( ToppleUpdateModuleData, m_killWhenToppled ) },
-		{ "KillStumpWhenToppled",	INI::parseBool, NULL, offsetof( ToppleUpdateModuleData, m_killStumpWhenToppled ) },
-		{ "ToppleLeftOrRightOnly",	INI::parseBool, NULL, offsetof( ToppleUpdateModuleData, m_toppleLeftOrRightOnly ) },
-		{ "ReorientToppledRubble",	INI::parseBool, NULL, offsetof( ToppleUpdateModuleData, m_reorientToppledRubble ) },
-		{ "InitialVelocityPercent",	INI::parsePercentToReal, NULL, offsetof( ToppleUpdateModuleData, m_initialVelocityPercent ) },
-		{ "InitialAccelPercent",	INI::parsePercentToReal, NULL, offsetof( ToppleUpdateModuleData, m_initialAccelPercent ) },
-		{ "BounceVelocityPercent",	INI::parsePercentToReal, NULL, offsetof( ToppleUpdateModuleData, m_bounceVelocityPercent ) },
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-}
+// ?buildFieldParse@ToppleUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z owned by ModuleDataBuildFieldParse.cpp; declared here only.
 
 
 //-------------------------------------------------------------------------------------------------
@@ -106,25 +70,7 @@ void ToppleUpdateModuleData::buildFieldParse(MultiIniFieldParse& p)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-ToppleUpdate::ToppleUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	//Added By Sadullah Nader
-	//Initialization(s) inserted
-	m_angleDeltaX = 0.0f;
-	m_doBounceFX = FALSE;
-	m_numAngleDeltaX = 0;
-	//
-	m_angularVelocity = 0;
-	m_angularAccumulation = 0;
-	m_angularAcceleration = 0;	
-	m_toppleDirection.x = 0;
-	m_toppleDirection.y = 0;
-	m_toppleDirection.z = 0;
-	m_toppleState = TOPPLE_UPRIGHT;
-	m_options = TOPPLE_OPTIONS_NONE;
-	m_stumpID = INVALID_ID;
-	setWakeFrame(getObject(), UPDATE_SLEEP_FOREVER);
-}
+// ??0ToppleUpdate@@QAE@PAVThing@@PBVModuleData@@@Z owned by ToppleUpdateCtor.cpp; declared here only.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
