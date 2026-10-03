@@ -1,7 +1,7 @@
 // ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z
-// partial score=0.93 date=2026-09-29
+// partial score=0.94 date=2026-10-03
 // ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z
-// partial score=0.93 date=2026-09-29
+// partial score=0.93 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /EHsc
 // ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z, retail 0x004D9367, 78 bytes.
 // Strict-less on 0x14-byte key: m0 then flag m4 selects m8/mC vs m10 path.
@@ -30,9 +30,8 @@ unsigned char __cdecl Rva004D9367Less(Rva004D9367Key const *a, Rva004D9367Key co
 		if (a->m8 > b->m8)
 			return 0;
 		return (unsigned char)(a->mC > b->mC);
-	} else {
-		if (b->m4 == 0)
-			return (unsigned char)(a->m10 < b->m10);
-		return 1;
 	}
+	if (b->m4 == 0)
+		return (unsigned char)(a->m10 < b->m10);
+	return 1;
 }
