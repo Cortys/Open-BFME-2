@@ -14,7 +14,7 @@ class NetCommandMsg
 public:
 	NetCommandMsg();
 protected:
-	virtual ~NetCommandMsg() {}
+	inline virtual ~NetCommandMsg() {}
 protected:
 	UnsignedInt m_timestamp;
 	UnsignedInt m_executionFrame;
