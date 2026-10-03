@@ -49410,3 +49410,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva00086CDA@Rva00086CDA@@QAEXXZ,,0x00086CDA,153,Code/GameEngine/Source/GameClient/Rva00086CDAUpdate.cpp,matched,leaf sibling of 0x00086D73 ParabolicEase rowed GlobalData 0x9A4
 ?rva00086E24@Rva00086E24@@QAEXXZ,,0x00086E24,153,Code/GameEngine/Source/GameClient/Rva00086E24Update.cpp,matched,leaf sibling of 0x00086CDA ParabolicEase rowed GlobalData 0x9A4
 ?Rva004F7308Merge@@YAPAUTreeHintRef00217D4C@@PAU1@0000@Z,,0x004F7308,166,Code/Libraries/Source/WWVegas/WWLib/Rva004F7308Merge.cpp,matched,free merge TreeHintRef descending key via Release operator Copy prev Rva004F72EDDestroy next sort
+?Rva00485444Roll@@YGHPAX@Z,,0x00485444,60,Code/GameEngine/Source/GameLogic/Object/Die/Rva00485444Roll.cpp,matched,free stdcall ret4 chance roll vs random via rowed GetGameLogicRandomValueReal plus float at +0x14 caller 0x0048583A
