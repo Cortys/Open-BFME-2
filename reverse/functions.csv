@@ -50432,3 +50432,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0043F20C@Rva0043F20C@@QAEXUTreeHintRef00217D4C@@@Z,,0x0043F20C,56,Code/Libraries/Source/WWVegas/WWLib/Rva0043F20CFinish.cpp,matched,holder named as a pointer so cl emits add ecx 0x6c before the push eax that the rowed operator= takes
 ?alloc@Rva000353B0@@QAEPAXPAXHHHH@Z,,0x000353B0,57,Code/GameEngine/Source/Common/System/Rva000353B0Finish.cpp,matched,single merged exit: assign result block then null it unless the PANS signature matches so all three paths funnel through one return 0x14
 ?Rva0009A2CDRun@@YAXXZ,,0x0009A2CD,61,Code/GameEngine/Source/Common/Rva0009A2CDDispatch.cpp,matched,chain from 0x0007BA35 four guarded dispatches plus tail jmp
+??_GFrameDataManager@@UAEPAXI@Z,,0x0058B86E,28,Code/GameEngine/Source/Common/FrameDataManagerDtor.cpp,matched,vtable slot0 0x00870A0C deleting dtor calls rowed dtor plus scalar delete
