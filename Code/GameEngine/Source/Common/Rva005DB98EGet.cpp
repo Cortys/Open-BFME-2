@@ -16,6 +16,7 @@ class Rva005DB98E
 public:
 	void* rva005DB98E(unsigned short x, unsigned short y);
 	int rva005DB9BC(unsigned short x, unsigned short y);
+	bool rva005DBA60(unsigned short x);
 };
 
 void* Rva005DB98E::rva005DB98E(unsigned short x, unsigned short y)
@@ -34,4 +35,22 @@ int Rva005DB98E::rva005DB9BC(unsigned short x, unsigned short y)
 	if (y > 8)
 		return 0;
 	return m_arr2[y + x * 8];
+}
+
+// ?rva005DBA60@Rva005DB98E@@QAE_NG@Z 0x005DBA60 60B
+// Unlock row/col scan for value 2 in m_arr2; same class/offsets as neighbours.
+// Evidence: neighbours 0x005DB9BC/0x005DBBA5 same cl; offset +0x18 int[81]; callers 0x005DC655/0x005DC661.
+bool Rva005DB98E::rva005DBA60(unsigned short x)
+{
+	if (x < 8)
+	{
+		for (int i = 0; i < 8; ++i)
+		{
+			if (i != x && m_arr2[i + x * 8] == 2)
+				return true;
+			if (m_arr2[x + i * 8] == 2)
+				return true;
+		}
+	}
+	return false;
 }

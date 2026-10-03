@@ -49183,3 +49183,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva002FEC97Insert@@YGPAXPAXPAUListNode@@PBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x002FEC97,37,Code/Libraries/Source/WWVegas/WWLib/stlport_list_nocase4_insert_002FEC97.cpp,matched,list insert via rowed create 0x002FE8AA linking before position
 ??0Rva0045D887@@QAE@HHHHHH@Z,,0x0045D887,129,Code/GameEngine/Source/Common/Rva0045D887BitSet.cpp,matched,16-byte bitset ctor via memset plus five set bits caller 0x0045E293
 ?rva004B7A9D@Rva004B7A9D@@QAEXXZ,,0x004B7A9D,62,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004B7A9D.cpp,matched,chain via getDrawable plus AsciiString offsets plus g_bfmeWorldRV
+?rva005DBA60@Rva005DB98E@@QAE_NG@Z,,0x005DBA60,60,Code/GameEngine/Source/Common/Rva005DB98EGet.cpp,matched,unlock row-col scan value 2 via neighbours 0x005DB9BC plus0x18 int81 callers 0x005DC655
