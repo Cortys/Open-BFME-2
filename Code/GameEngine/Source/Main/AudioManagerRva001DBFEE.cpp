@@ -14,6 +14,7 @@ class Rva001DBDA4
 public:
 	bool rva001DBD83() const;
 	void rva001DBE17();
+	void rva001DBE51();
 };
 
 struct AudioLock
@@ -31,6 +32,7 @@ class AudioManager
 public:
 	bool rva001DBFEE();
 	void rva001DBE6E();
+	void rva001DBFD1();
 private:
 	char m_pad00[0x24];
 	Rva001DBDA4 *m_24;
@@ -80,4 +82,14 @@ void AudioManager::rva001DBE6E()
 		m_2C = 0;
 	}
 	m_69 = false;
+}
+
+// Retail 0x001DBFD1 29B: AudioManager slot 12 apply rva001DBE51 to lists at +0x30 then +0x2C.
+// Evidence: vtable 0x007DBC30 slot 12 of AudioManager ctor; rowed rva001DBE51 callee; offsets +0x30 +0x2C.
+void AudioManager::rva001DBFD1()
+{
+	if (m_30)
+		m_30->rva001DBE51();
+	if (m_2C)
+		m_2C->rva001DBE51();
 }
