@@ -49775,3 +49775,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00219D52@Rva00219B9E@@QAEHI@Z,,0x00219D52,51,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer 32B selects inner 216B count via idiv like neighbours
 ?Rva0014F995CopyBackward@@YAXPAURva0014F718@@00@Z,,0x0014F995,29,Code/GameEngine/Source/Common/Rva0014F995CopyBackward.cpp,matched,forwarder to rowed 0x0014F718 callers 222B insert paths
 ?Rva0014FA62Copy@@YAPAURva0014F718@@PAU1@00PAXH@Z,,0x0014FA62,46,Code/GameEngine/Source/Common/Rva0014FA62Copy.cpp,matched,stride 8 sar3 single-dword +4 copy sibling backward 0x0014F718 caller 0x00150248 pushes 5
+?Rva00150248Copy@@YAXPAURva0014F718@@00@Z,,0x00150248,29,Code/GameEngine/Source/Common/Rva00150248Copy.cpp,matched,wrapper to rowed 0x0014FA62 sibling of 0x00150265
