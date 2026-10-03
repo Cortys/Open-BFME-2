@@ -28,6 +28,15 @@ public:
 	virtual void d3();
 	virtual void copy(const Sub340 *src);
 };
+class Rva00552D7BSrc
+{
+public:
+	Sub8 m_8_0;
+	char m_pad4[0x144 - 4];
+	unsigned short m_144;
+	char m_pad146[0x150 - 0x146];
+	int m_150;
+};
 class Rva00552CF9
 {
 public:
@@ -53,6 +62,7 @@ public:
 	void rva00552CF9(const Rva00552CF9 *src);
 	void rva00552E9E(int v);
 	void rva00552CB8();
+	void rva00552D7B(const Rva00552D7BSrc *src);
 };
 
 void Rva00552CF9::rva00552CF9(const Rva00552CF9 *src)
@@ -90,4 +100,23 @@ void Rva00552CF9::rva00552CB8()
 	m_8.d0();
 	m_1B0.d0();
 	m_340.d0();
+}
+void Rva00552CF9::rva00552D7B(const Rva00552D7BSrc *src)
+{
+	if (m_0 && m_0 != src->m_150)
+		return;
+	int v = src->m_150;
+	m_490 = v;
+	m_300 = v;
+	m_158 = v;
+	m_0 = v;
+	if (src->m_144 > 0)
+	{
+		unsigned short s = src->m_144;
+		m_484 = s;
+		m_2F4 = s;
+		m_14C = s;
+		m_4 = s;
+	}
+	m_8.copy(&src->m_8_0);
 }
