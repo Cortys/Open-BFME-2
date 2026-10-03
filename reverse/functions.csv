@@ -49656,3 +49656,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000EA21A@Rva000EA21A@@QAEX_N@Z,,0x000EA21A,51,Code/GameEngine/Source/Common/Rva000EA21A.cpp,matched,same shape as Rva000E6FE3 twin with count at +0x44540
 ?rva004D650E@Rva004D64F5@@QAE?AVAsciiString@@XZ,,0x004D650E,152,Code/GameEngine/Source/GameNetwork/Rva004D64F5Contents.cpp,matched,vtable slot 3 of 0x0086050C format challenge base 0x004D5B4C
 ?rva004D6040@Rva004D57AE@@QAE?AVAsciiString@@XZ,,0x004D6040,138,Code/GameEngine/Source/GameNetwork/Rva004D57AEContents.cpp,matched,vtable slot 3 of 0x00860234 format destroyPlayer base 0x004D5B4C
+?rva004D634E@Rva004D59D1@@QAE?AVAsciiString@@XZ,,0x004D634E,141,Code/GameEngine/Source/GameNetwork/Rva004D59D1Contents.cpp,matched,vtable slot 3 of 0x00860274 format leavePlayer base 0x004D5B4C
