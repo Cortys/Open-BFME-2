@@ -68,24 +68,7 @@ enum { MUZZLE_FLASH_LIFETIME = LOGICFRAMES_PER_SECOND / 7 };
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ?GarrisonContainModuleData::GarrisonContainModuleData present-unmatched
-GarrisonContainModuleData::GarrisonContainModuleData( void )
-{
-
-	//
-	// by default we say that transports can have infantry inside them, this will be totally
-	// overwritten by any data provided from the INI entry tho
-	//
-	m_allowInsideKindOf = MAKE_KINDOF_MASK( KINDOF_INFANTRY );
-
-	m_mobileGarrison = FALSE;
-	m_doIHealObjects = false;			///< if T, then I heal objects that are inside of me
-	m_framesForFullHeal = 1.0f;		///< the number of frames something inside of me takes to heal
-	m_immuneToClearBuildingAttacks = false;
-  m_isEnclosingContainer = TRUE; ///< a sensible default for a garrison container... few exceptions, firebase is one
-
-	m_initialRoster.count = 0;
-}  // end if
+// ??0GarrisonContainModuleData@@QAE@XZ defined in GarrisonContainModuleDataCtor.cpp (its row's unit).
 
 //-----------------------------------------------------------------------------
 inline Real calcDistSqr(const Coord3D& a, const Coord3D& b)
