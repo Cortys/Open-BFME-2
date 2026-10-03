@@ -49894,3 +49894,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00323E1C@Rva00323E1C@@QAEXXZ,,0x00323E1C,121,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00323E1CMethod.cpp,matched,gui audio prefix via TheAudio misc plus addAudioEvent
 ?rva00323619@Rva00323619@@QAEXH@Z,,0x00323619,41,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00323619Setter.cpp,matched,setter via userData with global scale over 0x300
 ?Rva001DCFC9Parse@@YGXPAVINI@@PAX@Z,,0x001DCFC9,28,Code/GameEngine/Source/Common/Rva001DCFC9.cpp,matched,callers 0x001DEB43 0x001DF688 table VA 0x00BDC078 callee initFromINI rowed
+??0Rva001DCBA4@@QAE@XZ,,0x001DCBA4,31,Code/GameEngine/Source/GameLogic/Object/ArmorHashMapCtor001DCBA4.cpp,matched,caller 0x001DCBEA hashtable 100 buckets like 0x002896AA
