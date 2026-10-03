@@ -49418,3 +49418,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0037B3D1@Rva0037B3D1@@QAEXXZ,,0x0037B3D1,38,Code/GameEngine/Source/Common/System/Rva0037B3D1.cpp,matched,fclose plus rowed releaseBuffer then slot1 tail via clear
 ?rva0037B5A0@Rva0037B5A0@@QAE?AVUnicodeString@@XZ,,0x0037B5A0,40,Code/GameEngine/Source/Common/System/Rva0037B5A0.cpp,matched,conditional string copy via rowed wide copyctor and TheEmptyString
 ?rva0037B3F7@Rva0037B3F7@@QAEXXZ,,0x0037B3F7,54,Code/GameEngine/Source/Common/System/Rva0037B3F7.cpp,matched,fclose clear then MessageStream v18 0x1D unless E70 set
+?rva0037B7C7@Rva0037B7C7@@QAEXXZ,,0x0037B7C7,47,Code/GameEngine/Source/Common/System/Rva0037B7C7.cpp,matched,fread IAT plus rowed 0x0037B3F7 tail-jmp
