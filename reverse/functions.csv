@@ -49438,3 +49438,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z,,0x0030596C,137,Code/GameEngine/Source/Common/Rva0030596CIntersects.cpp,matched,GhostObjectManager GhostProvider bfmeIntersects via shared false tail
 ?rva0041E8E6@Rva0041E875@@QAEXPBVModuleData@@@Z,,0x0041E8E6,16,Code/GameEngine/Source/GameClient/GUI/Rva0041E875Dtor.cpp,matched,push_back wrapper via rowed ModuleData vector plus 0x1C offset caller 0x0041E9F8 unlocks 0x0041E9D2
 ?Rva0040E19DXfer@@YAPAVXfer@@PAV1@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x0040E19D,204,Code/GameEngine/Source/Common/System/Rva0040E19DXfer.cpp,matched,same 204B ScienceType vector Xfer shape as 0x00398280 via XferArmySummaryEntryID reserve push_back
+??0Rva00572C6E@@QAE@XZ,,0x00572C5A,20,Code/GameEngine/Source/Common/Rva00572C6ECtor.cpp,matched,vtable 0x0086E088 plus base 0x005CB22A null held caller 0x0041E682
