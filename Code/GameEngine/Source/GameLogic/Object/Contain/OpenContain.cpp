@@ -73,53 +73,11 @@
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-OpenContainModuleData::OpenContainModuleData( void )
-{
-
-	m_containMax = CONTAIN_MAX_UNKNOWN;  // means we don't care, infinite, unassigned, whatever
-	m_passengersAllowedToFire = FALSE;
-	m_passengersInTurret = FALSE;
-	m_numberOfExitPaths = 1;
-	m_damagePercentageToUnits = 0;
-	m_isBurnedDeathToUnits = TRUE;
-	m_doorOpenTime = 1;
-	m_allowInsideKindOf.clear(); m_allowInsideKindOf.flip();		// everything is allowed
-	m_forbidInsideKindOf.clear();	// nothing is forbidden
-	m_weaponBonusPassedToPassengers = FALSE;
- 	m_allowAlliesInside = TRUE;
- 	m_allowEnemiesInside = TRUE;
- 	m_allowNeutralInside = TRUE;
-}  // end OpenContainModuleData
+// ??0OpenContainModuleData@@QAE@XZ owned by OpenContainModuleDataCtor.cpp; declared here only.
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-/*static*/ void OpenContainModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "ContainMax",								INI::parseInt, NULL, offsetof( OpenContainModuleData, m_containMax ) },
-		{ "EnterSound",								INI::parseAudioEventRTS,		NULL, offsetof( OpenContainModuleData, m_enterSound ) },
-		{ "ExitSound",								INI::parseAudioEventRTS,		NULL, offsetof( OpenContainModuleData, m_exitSound ) },
-		{ "DamagePercentToUnits",			INI::parsePercentToReal,		NULL, offsetof( OpenContainModuleData, m_damagePercentageToUnits ) },
-		{ "BurnedDeathToUnits",				INI::parseBool,							NULL, offsetof( OpenContainModuleData, m_isBurnedDeathToUnits ) },
-		{ "AllowInsideKindOf",				KindOfMaskType::parseFromINI, NULL, offsetof( OpenContainModuleData, m_allowInsideKindOf ) },
-		{ "ForbidInsideKindOf",				KindOfMaskType::parseFromINI, NULL, offsetof( OpenContainModuleData, m_forbidInsideKindOf ) },
-		{ "PassengersAllowedToFire",	INI::parseBool, NULL, offsetof( OpenContainModuleData, m_passengersAllowedToFire ) },
-		{ "PassengersInTurret",				INI::parseBool, NULL, offsetof( OpenContainModuleData, m_passengersInTurret ) },
-		{ "NumberOfExitPaths",				INI::parseInt, NULL, offsetof( OpenContainModuleData, m_numberOfExitPaths ) },
-		{ "DoorOpenTime",							INI::parseDurationUnsignedInt, NULL, offsetof( OpenContainModuleData, m_doorOpenTime ) },
- 		{ "WeaponBonusPassedToPassengers", INI::parseBool,	NULL, offsetof( OpenContainModuleData, m_weaponBonusPassedToPassengers ) },
- 		{ "AllowAlliesInside",				INI::parseBool,	NULL, offsetof( OpenContainModuleData, m_allowAlliesInside ) },
- 		{ "AllowEnemiesInside",				INI::parseBool,	NULL, offsetof( OpenContainModuleData, m_allowEnemiesInside ) },
- 		{ "AllowNeutralInside",				INI::parseBool,	NULL, offsetof( OpenContainModuleData, m_allowNeutralInside ) },
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-	p.add(DieMuxData::getFieldParse(), offsetof( OpenContainModuleData, m_dieMuxData ));
-
-}
+// ?buildFieldParse@OpenContainModuleData@@SAXAAVMultiIniFieldParse@@@Z owned by ModuleDataBuildFieldParseChained.cpp; declared here only.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,41 +85,7 @@ OpenContainModuleData::OpenContainModuleData( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-OpenContain::OpenContain( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-
-	// initialize our lists
-	m_containList.clear();
-	m_objectEnterExitInfo.clear();
-	m_playerEnteredMask = 0;
-	m_lastUnloadSoundFrame = 0;
-	m_lastLoadSoundFrame = 0;
-	m_containListSize = 0;
-	m_stealthUnitsContained = 0;
-	m_doorCloseCountdown = 0;
-
-	//Added By Sadullah Nader
-	//Initializations inserted
-	m_rallyPoint.zero();
-	m_rallyPointExists = FALSE;
-	//
-	m_conditionState.clear();
-	m_firePointStart = -1;
-	m_firePointNext = 0;
-	m_firePointSize = 0;
-	m_noFirePointsInArt = false;
-	m_whichExitPath = 1;
-	m_loadSoundsEnabled = TRUE;
-  
-  m_passengerAllowedToFire = getOpenContainModuleData()->m_passengersAllowedToFire; 
-  // overridable by setPass...()  in the parent interface (for use by upgrade module)
-
-	for( Int i = 0; i < MAX_FIRE_POINTS; i++ )
-	{		
-		m_firePoints[ i ].Make_Identity();
-	}  // end for i
-
-}
+// ??0OpenContain@@QAE@PAVThing@@PBVModuleData@@@Z owned by OpenContainCtor.cpp; declared here only.
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
