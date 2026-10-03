@@ -49342,3 +49342,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0014D431@Rva0014D431@@QAEXXZ,,0x0014D431,15,Code/GameEngine/Source/Common/Rva0014D431Clear.cpp,matched,honest address name caller 0x0017438B O1 and-zero shape
 ??0Rva0055BCD2@@QAE@I@Z,,0x0055BCD2,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055BCD2Ctor.cpp,matched,ctor via rowed base plus vtable 0x00C1D164 plus s_slot3E4first
 ??1Rva0041E875@@QAE@XZ,,0x0041E875,113,Code/GameEngine/Source/GameClient/GUI/Rva0041E875Dtor.cpp,matched,dtor via E7F2 drain plus vector frees plus ascii releases caller 0x0041E8F6 unlocks 0x0041EC73
+??_GRva0041E875@@QAEPAXI@Z,,0x0041E8F6,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0041E875.cpp,matched,deleting dtor calls 0x0041E875 plus delete 0x0002FD60
