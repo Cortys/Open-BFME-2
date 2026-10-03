@@ -11,6 +11,8 @@ public:
 	Rva00531E14 &rva00531D08(unsigned short count);
 	unsigned char rva00531E14(unsigned short val);
 	unsigned short rva00531D52();
+	unsigned short rva00531DE1();
+// ?rva00531DE1@Rva00531E14@@QAEGXZ @ 0x00531DE1 (46B): __thiscall move head of +4 chain onto +2 chain; returns popped word else count.
 	unsigned short m_pad0;
 	unsigned short m_start1;
 	unsigned short m_start2;
@@ -62,4 +64,15 @@ Rva00531E14 &Rva00531E14::rva00531D08(unsigned short count)
 	m_start2 = count;
 	m_table = new unsigned short[count];
 	return *this;
+}
+unsigned short Rva00531E14::rva00531DE1()
+{
+	unsigned short cur = m_start2;
+	if (cur == m_pad0)
+		return m_pad0;
+	unsigned short nxt = m_table[cur];
+	m_start2 = nxt;
+	m_table[cur] = m_start1;
+	m_start1 = cur;
+	return cur;
 }
