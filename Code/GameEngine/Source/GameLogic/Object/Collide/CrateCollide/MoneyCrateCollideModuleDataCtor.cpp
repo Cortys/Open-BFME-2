@@ -2,44 +2,15 @@
 //
 // ??0MoneyCrateCollideModuleData@@QAE@XZ, retail 0x002562FA (22 bytes).
 // Frameless ctor over the rowed CrateCollide base (0x4BC657): clears
-// m_moneyProvided at +0x5C through an AND-zero (the natural /O1 emission for
-// the single-store shape, probe-proven against init-list which is identical)
-// then installs the folded vtable 0x00BF3AC0 through the ??_7 pin (Devastate
-// precedent: virtual classes with declared-only virtual dtors and no source
-// store). Field identity is the chained buildFieldParse table 0x00BEFABC
-// (MoneyProvided only) joined to the ZH MoneyCrateCollide.h donor (BFME2
-// drops the ZH upgrade-boost list). Sole raw caller is the ModuleData
-// factory 0x256310 which news 0x60.
+// m_moneyProvided at +0x5C through an AND-zero then installs the folded
+// vtable 0x00BF3AC0 via g_00BF3AC0 (SalvageCrate precedent: novtable plus
+// explicit store emits no vtable COMDAT, fixing LINK-COMDAT vs
+// ModuleFactory's ZH copy). Field identity is the chained buildFieldParse
+// table 0x00BEFABC (MoneyProvided only) joined to the ZH
+// MoneyCrateCollide.h donor (BFME2 drops the ZH upgrade-boost list). Sole
+// raw caller is the ModuleData factory 0x256310 which news 0x60.
 
-class Xfer;
-class W3DModelDrawModuleData;
-class W3DTreeDrawModuleData;
-enum StaticGameLODLevel { STATIC_GAME_LOD_LOW = 0 };
-typedef bool Bool;
-
-class Snapshot
-{
-protected:
-	virtual void crc(Xfer *xfer) = 0;
-	virtual void xfer(Xfer *xfer) = 0;
-	virtual void loadPostProcess(void) = 0;
-};
-
-class ModuleData : public Snapshot
-{
-public:
-	virtual ~ModuleData() {}
-	virtual Bool isAiModuleData(void) const { return false; }
-	virtual const W3DModelDrawModuleData *getAsW3DModelDrawModuleData(void) const { return 0; }
-	virtual const W3DTreeDrawModuleData *getAsW3DTreeDrawModuleData(void) const { return 0; }
-	virtual StaticGameLODLevel getMinimumRequiredGameLOD(void) const { return (StaticGameLODLevel)0; }
-public:
-	virtual void crc(Xfer *xfer) {}
-	virtual void xfer(Xfer *xfer) {}
-	virtual void loadPostProcess(void) {}
-};
-
-class CrateCollideModuleData : public ModuleData
+class __declspec(novtable) CrateCollideModuleData
 {
 public:
 	CrateCollideModuleData();
@@ -49,19 +20,21 @@ private:
 	unsigned char m_pad[0x5C - 4];
 };
 
-class MoneyCrateCollideModuleData : public CrateCollideModuleData
+class __declspec(novtable) MoneyCrateCollideModuleData : public CrateCollideModuleData
 {
 public:
 	MoneyCrateCollideModuleData();
-	virtual ~MoneyCrateCollideModuleData();
 
 private:
 	unsigned int m_moneyProvided;	// +0x5C
 };
 
+extern const void *const g_00BF3AC0[];
+
 inline MoneyCrateCollideModuleData::MoneyCrateCollideModuleData()
 {
 	m_moneyProvided = 0;
+	*(const void **)this = g_00BF3AC0;
 }
 
 // Header inlines that the units including the header emit as select-any
