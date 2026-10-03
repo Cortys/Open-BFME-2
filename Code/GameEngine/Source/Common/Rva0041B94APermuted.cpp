@@ -1,9 +1,7 @@
-// ?Rva0041B94AGet@@YG_NPAVObject@@0H@Z
-// partial score=0.96 date=2026-09-30
-// ?Rva0041B94AGet@@YG_NPAVObject@@0H@Z
-// partial score=0.96 date=2026-09-30
 // cl: /O1 /MD
-// ?Rva0041B94AGet@@YG_NPAVObject@@0H@Z @0x0041B94A 102B
+//
+// ?Rva0041B94AGet@@YG_NPAVObject@@0H@Z, retail 0x0041b94a, 102 bytes. Banked partial (score 0.96) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Object pair helper via rowed rva002931F5 rva0028C197 and provider slot28.
 // Evidence: callees rva002931F5 0x002931F5 row ObjectRva002931F5.cpp rva0028C197 0x0028C197 row ObjectRva0028C197.cpp virtual slot28 at 0x70; callers 0x00264746 0x0029CA25 0x00346177 0x0041D464; prev next GameEngineDeletingBaseDerived.cpp same flags; ret 0xC stdcall 3 args.
 class Object
@@ -26,37 +24,36 @@ struct Provider28
 extern "C" void _WriteBarrier(void);
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_WriteBarrier, _ReadWriteBarrier)
-// ?Rva0041B94AGet@@YG_NPAVObject@@0H@Z present-unmatched
 bool __stdcall Rva0041B94AGet(Object *a, Object *b, int)
 {
 	if (a == 0 || b == 0)
 		return false;
-	Object *aObj = a->rva002931F5(false);
+	const Object *aObj = a->rva002931F5(false);
 	Object *bObj = b->rva002931F5(false);
 	if (aObj == bObj)
 		return false;
-	if (aObj != 0 && bObj == 0)
+	if (!(aObj != 0 && bObj == 0))
 	{
-		void *p = aObj->rva0028C197();
+		const void *p = bObj->rva0028C197();
 		if (p == 0)
 			return false;
-		if (((Provider28 *)p)->slot28(b))
+		if (((Provider28 *)p)->slot28(a))
 		{
-			_WriteBarrier();
 			return true;
+			_WriteBarrier();
 		}
 		_ReadWriteBarrier();
 		return false;
 	}
 	else
 	{
-		void *p = bObj->rva0028C197();
+		void *p = aObj->rva0028C197();
 		if (p == 0)
 			return false;
-		if (((Provider28 *)p)->slot28(a))
+		if (((Provider28 *)p)->slot28(b))
 		{
-			_WriteBarrier();
 			return true;
+			_WriteBarrier();
 		}
 		_ReadWriteBarrier();
 		return false;
