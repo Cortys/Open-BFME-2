@@ -27,6 +27,7 @@ class TexBufferClass : public ShareBufferClassBase
 {
 public:
 	TexBufferClass(int count, const char *name);
+	virtual ~TexBufferClass();
 };
 
 // ??0TexBufferClass@@QAE@HPBD@Z
