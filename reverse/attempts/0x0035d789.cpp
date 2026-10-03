@@ -1,4 +1,6 @@
 // ??0Rva0035D74A@@QAE@XZ
+// partial score=0.95 date=2026-10-03
+// ??0Rva0035D74A@@QAE@XZ
 // partial score=0.93 date=2026-09-30
 // ??0Rva0035D74A@@QAE@XZ
 // partial score=0.93 date=2026-09-30
@@ -26,6 +28,10 @@ class Rva0035D74A : public Rva001DBAA4
 public:
 	Rva0035D74A();
 	virtual ~Rva0035D74A();
+	virtual void slot3();
+	virtual void slot4();
+	virtual void slot5();
+	virtual void slot6();
 private:
 	int m_10;
 	int m_14;
@@ -41,13 +47,14 @@ private:
 // ??0Rva0035D74A@@QAE@XZ present-unmatched
 Rva0035D74A::Rva0035D74A()
 {
+	int *p30 = &m_30;
 	m_10 = 0;
 	m_14 = 0;
 	m_18 = 0;
 	m_1c = 0;
 	m_20 = 0;
 	m_24 = 0;
-	m_30 = -1;
+	*p30 = -1;
 	m_34 = 0;
 	m_C = 0;
 	m_28 = 0.0f;
@@ -55,3 +62,4 @@ Rva0035D74A::Rva0035D74A()
 	m_9 = true;
 	m_4 = 0x16;
 }
+
