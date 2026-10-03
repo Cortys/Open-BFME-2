@@ -1,13 +1,14 @@
 // ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z
-// partial score=0.95 date=2026-10-01
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z @0x0048F64E 66B
 // __thiscall predicate on AssaultTransportAIUpdate: arg+0x254 slave provides
 // two float virtuals at +0x10 and +0x18 (ratio a/b); this+4 master provides
 // float at +0x64 threshold; returns threshold > ratio, false on null slave.
 // Neighbours AssaultTransportAIUpdateCheck/ PassengerHelper share // cl and
-// class; callers at 0x0048F9A7 0x0048FAA6 in 0x0048F828.
+// class; callers at 0x0048F9A7 0x0048FAA6 in 0x0048F828. /arch:SSE is what
+// selects retail's fcomip float guard: plain /O1 emits the fnstsw/parity form
+// three bytes shorter (63B). The Helper sibling TU carries the same flag.
 class Rva0048F64ESlave
 {
 public:
@@ -32,7 +33,6 @@ private:
 	int m00;
 	Rva0048F64EMaster *m04;
 };
-// ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z present-unmatched
 bool AssaultTransportAIUpdate::rva0048F64E(void *arg)
 {
 	Rva0048F64ESlave *slave = *(Rva0048F64ESlave **)((char *)arg + 0x254);
