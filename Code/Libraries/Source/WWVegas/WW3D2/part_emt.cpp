@@ -480,7 +480,7 @@ void ParticleEmitterClass::Set_Velocity_Randomizer(Vector3Randomizer *rand)
 
 
 // ?ParticleEmitterClass::Get_Creation_Volume present-unmatched
-Vector3Randomizer *ParticleEmitterClass::Get_Creation_Volume (void) const
+inline Vector3Randomizer *ParticleEmitterClass::Get_Creation_Volume (void) const
 {
 	Vector3Randomizer *randomizer = NULL;
 	if (PosRand != NULL) {
@@ -491,7 +491,7 @@ Vector3Randomizer *ParticleEmitterClass::Get_Creation_Volume (void) const
 }
 
 
-Vector3Randomizer *ParticleEmitterClass::Get_Velocity_Random (void) const	
+inline Vector3Randomizer *ParticleEmitterClass::Get_Velocity_Random (void) const
 {
 	Vector3Randomizer *randomizer = NULL;
 	if (VelRand != NULL) {
