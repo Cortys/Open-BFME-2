@@ -5959,3 +5959,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva000754DEInit@@YAXXZ	0x000754DE	363	blocked	mov ecx eax plus add eax 4 missing for refs addr mode dec cmp via ecx+4 not eax tried inline decrement variants t=12 model=muse-04 (stash 0.96 kept)
 ?rva00085A03@Rva00085A03@@QAEXXZ	0x00085A03	180	blocked	complex 180B x87 SSE float mix with TerrainLogic Display virtuals no donor t=8 model=muse-04
 ?rva00276952@Rva00276952@@QAE_NPBUCoord3D@@PAU2@@Z	0x00276952	480	blocked	480B SSE rope length median plus normalize needs full float reconstruction t=10 model=muse-11
+?rva00278064@Drawable@@QAEXABVUnicodeString@@@Z	0x00278064	300	blocked	300B EH caption DisplayString plus Font plus LanguageFilter needs full layout t=12 model=muse-11
