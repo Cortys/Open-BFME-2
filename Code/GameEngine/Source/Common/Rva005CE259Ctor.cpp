@@ -92,3 +92,22 @@ Rva005FAAA1::Rva005FAAA1(const Payload *src)
 	, m_data(*src)
 {
 }
+
+class Rva0056773E
+{
+public:
+	Rva0056773E(int a, int b);
+	virtual ~Rva0056773E() {}
+private:
+	int m_ref; // +4
+	int m_8; // +8
+	int m_C; // +0xC
+};
+
+Rva0056773E::Rva0056773E(int a, int b)
+	: m_ref(0)
+	, m_8(a)
+	, m_C(b)
+{
+}
+
