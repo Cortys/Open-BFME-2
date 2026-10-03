@@ -1,20 +1,14 @@
-// ??1Rva00161220@@UAE@XZ
-// partial score=0.97 date=2026-09-30
-// ??1Rva00161220@@UAE@XZ
-// partial score=0.97 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /GX
 // ??1Rva00161220@@UAE@XZ at 0x004F05F0 102B: ModuleData-style dtor with list teardown.
 // Evidence: vptr 0x862B78 at +0 then Snapshot restore 0xBBB554; list at +0x14 via virtual slot0(0) plus operator delete 0x2FD60; flag bytes at +0x5D/+0x5E via +0x1C; layout matches Rva00161220Ctor TU; precedent PillageModuleDataDtor.
 
-extern "C" int Rva00161220VTableAnchor;
 extern const void *const g_00BBB554[];
-extern "C" void _ReadWriteBarrier(void);
-#pragma intrinsic(_ReadWriteBarrier)
 
 void __cdecl operator delete(void *p);
 
 class Xfer;
 
+// class-gate: allow Snapshot canonical header dtor is empty; retail restores base vptr 0xBBB554 here
 class Snapshot
 {
 public:
@@ -43,7 +37,7 @@ struct Rva004F05F0Flags
 	unsigned char m_5E;
 };
 
-class __declspec(novtable) Rva00161220 : public Snapshot
+class Rva00161220 : public Snapshot
 {
 public:
 	virtual ~Rva00161220();
@@ -55,11 +49,8 @@ private:
 	Rva004F05F0Flags *m_flags; // +1C
 };
 
-// ??1Rva00161220@@UAE@XZ present-unmatched
 Rva00161220::~Rva00161220()
 {
-	*reinterpret_cast<void **>(this) = reinterpret_cast<void *>(&Rva00161220VTableAnchor);
-	_ReadWriteBarrier();
 	Rva004F05F0Node *cur = m_listHead;
 	while (cur != 0)
 	{
