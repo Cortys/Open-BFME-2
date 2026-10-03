@@ -39,12 +39,33 @@ public:
 };
 }
 
+class Money
+{
+public:
+	virtual ~Money();
+	virtual void v1();
+	virtual void withdraw(int amount);
+};
+
+class ScienceStore
+{
+public:
+	bool isScienceGrantable(ScienceType science) const;
+	int getSciencePurchaseCost(ScienceType science) const;
+};
+
+extern ScienceStore *TheScienceStore;
+
 class Player
 {
 public:
 	void setScienceAvailability(ScienceType science, ScienceAvailabilityType type);
+	bool rva002AD883(ScienceType science);
 private:
-	char m_pad[0x2F0];
+	bool addScience(ScienceType science);
+	char m_pad00[8];
+	Money m_money08;
+	char m_pad0C[0x2E4];
 	_STL::vector<ScienceType> m_sciences;
 	_STL::vector<ScienceType> m_sciencesDisabled;
 	_STL::vector<ScienceType> m_sciencesHidden;
@@ -84,4 +105,22 @@ void Player::setScienceAvailability(ScienceType science, ScienceAvailabilityType
 	{
 		m_sciencesHidden.push_back(science);
 	}
+}
+
+// Retail 0x002AD883 70B: Player grant-and-charge between grantScience 0x2AD85E and setScienceAvailability 0x2AD8C9.
+// Evidence: isScienceGrantable row 0x001FF432, addScience pin 0x002AD661, getSciencePurchaseCost row 0x001FF3DC,
+// TheScienceStore ?TheScienceStore, Money withdraw slot 2 at +8 with neg cost, caller 0x001EC70A.
+bool Player::rva002AD883(ScienceType science)
+{
+	if (TheScienceStore->isScienceGrantable(science))
+	{
+		if (addScience(science))
+		{
+			int cost = TheScienceStore->getSciencePurchaseCost(science);
+			Money &money = m_money08;
+			money.withdraw(-cost);
+			return true;
+		}
+	}
+	return false;
 }

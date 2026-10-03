@@ -6570,3 +6570,9 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?rva00502D48@Rva00502D48@@QAEPAV1@XZ	0x00502D48	25	partial	25B size-exact but second lea uses ebp-2 vs retail ebp-1; single tmp CSEs to 22B one lea; union and Os still CSE; shape_levers same-addr row needs empty-tag sharing t=25 model=muse-01 score=0.93 stash=reverse/attempts/0x00502d48.cpp
 ?bfmeTest932E@BfmeThing932E@@QAEHXZ	0x0034612C	232	blocked	x87 float-compare wall extra fld st1 fstp st1 vs st0 jbe vs jae plus early-return -2 je vs jne-push-2 shape and mov ebp scheduling t=10 model=muse-20
 ?Rva003332FEGet@@YAHXZ	0x003332FE	29	blocked	callee dup_00332ef3 rowed YAXXZ 0 args but caller pushes 5 args t=5 model=muse-05
+?rva005EA2B2@Rva005EA33D@@QAEXHH@Z	0x005EA2B2	139	partial	push ebx order plus SIB ecx+esi vs esi+ecx only; 139B/49insns exact size; SIB lever i-plus-pointer to try t=25 model=muse-09 score=0.98 stash=reverse/attempts/0x005ea2b2.cpp
+?rva005EA6A7@Rva005EA6A7@@QAEPAV1@PAUKeyHolder@@PAURange@@@Z	0x005EA6A7	100	partial	pop edi before int stores vs after only rest exact t=20 model=muse-09 score=0.98 stash=reverse/attempts/0x005ea6a7.cpp
+?rva005EA2B2@Rva005EA33D@@QAEXHH@Z	0x005EA2B2	139	partial	push ebx direct vs via eax only SIB fixed rest exact t=22 model=muse-09 score=0.99 stash=reverse/attempts/0x005ea2b2.cpp
+?Rva00306232Get@@YAXPAX0@Z	0x00306232	204	blocked	virtual class 38 slots unknown plus AsciiString by-value EH plus callers 204B over 200B cannot verify signature t=8 model=muse-09
+?Rva003064CBXfer@@YAXPAVXfer@@PAI@Z	0x003064CB	350	partial	edi-ebx swap for Xfer-bits plus ecx-eax for bit plus cmp si vs imm0; 349B vs 350B same 126 insns t=24 model=muse-09 score=0.96 stash=reverse/attempts/0x003064cb.cpp
+?Rva0030662AXfer@@YAXPAVXfer@@ABVRva0036CA00Str@@@Z	0x0030662A	217	partial	edi-vs-eax with push edi pop edi plus lea edi+8 vs add plus audioStr dead-arg-slot +8 vs frame t=25 model=muse-09 score=0.96 stash=reverse/attempts/0x0030662a.cpp
