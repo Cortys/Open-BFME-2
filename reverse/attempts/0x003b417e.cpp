@@ -1,16 +1,8 @@
 // ??0Rva003B417E@@QAE@XZ
-// partial score=0.95 date=2026-09-29
-// ??0Rva003B417E@@QAE@XZ
-// partial score=0.95 date=2026-09-29
+// partial score=0.96 date=2026-10-03
 // cl: /O1 /MD /arch:SSE /Oi
-//
-// ??0Rva003B417E@@QAE@XZ, retail 0x003B417E, 122 bytes.
-// Ctor storing vtable 0x0081F424 plus int and flag inits plus float zeros
-// plus 8-byte stosd pair plus BfmeFixedStorage002CF0F0 copy from 0x00A02D64.
-
+// ??0Rva003B417E@@QAE@XZ @0x003B417E (122B): Ctor storing vtable 0x0081F424 plus int and flag inits plus float zeros plus 8-byte stosd pair plus BfmeFixedStorage002CF0F0 copy from 0x00E02D64. Evidence: vtable 0x0081F424; rowed copy ctor 0x002CF0F0; callers 0x003B44E5 0x003B47A1 0x003B818C unblock 0x003B44DC 0x003B4716 0x003B8141.
 typedef unsigned int UnsignedInt;
-
-extern "C" void *memset(void *dst, int val, unsigned int n);
 
 class BfmeFixedStorage002CF0F0
 {
@@ -19,8 +11,7 @@ public:
 	BfmeFixedStorage002CF0F0() {}
 	BfmeFixedStorage002CF0F0(const BfmeFixedStorage002CF0F0 &other);
 };
-
-#define FixedStorageSource (*(const BfmeFixedStorage002CF0F0 *)0x00A02D64)
+extern const BfmeFixedStorage002CF0F0 g_00E02D64;
 
 class Rva003B417E
 {
@@ -66,7 +57,7 @@ Rva003B417E::Rva003B417E()
 	m_18 = true;
 	m_1c = 0;
 	m_20 = 0;
-	m_24.BfmeFixedStorage002CF0F0::BfmeFixedStorage002CF0F0(FixedStorageSource);
+	m_24.BfmeFixedStorage002CF0F0::BfmeFixedStorage002CF0F0(g_00E02D64);
 	m_2a = false;
 	m_30 = 0;
 	m_3c = 0;
@@ -81,5 +72,6 @@ Rva003B417E::Rva003B417E()
 	m_50 = 0;
 	m_48 = 0.0f;
 	m_4c = 0.0f;
-	memset(m_34, 0, 8);
+	for (int k = 0; k < 8; k++)
+		m_34[k] = 0;
 }

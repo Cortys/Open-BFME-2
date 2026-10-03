@@ -6179,3 +6179,6 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ?rva002911B7@Object@@QAEPAXXZ	0x002911B7	225	partial	1B short shared xor and push esi early vs late t=35 model=muse-03 score=0.96 stash=reverse/attempts/0x002911b7.cpp
 ?rva00526421@Rva00526421@@QAEXPAV?$list@PAXV?$allocator@PAX@_STL@@@_STL@@H@Z	0x00526421	142	partial	missing mov ecx eax and mov ecx edi; cur via eax vs ecx t=20 model=muse-03 score=0.94 stash=reverse/attempts/0x00526421.cpp
 ?rva002911B7@Object@@QAEPAXXZ	0x002911B7	225	blocked	1B short shared xor push edi late vs early O2 hoist barrier tried t=20 model=muse-03 (stash 0.96 kept)
+??1ScriptAction@@UAE@XZ	0x003B43CC	92	partial	push1 vs push0 plus manual delete of virtual return t=25 model=muse-11 score=0.91 stash=reverse/attempts/0x003b43cc.cpp
+??1ScriptAction@@UAE@XZ	0x003B43CC	92	blocked	push1 vs push0 plus manual delete of virtual return push-eax-call-delete-pop-ecx 7B t=20 model=muse-11 (stash 0.91 kept)
+??0Rva003B417E@@QAE@XZ	0x003B417E	122	partial	copy-ctor setup plus edi save hoisted above vptr and early inits needs anti-hoist lever t=20 model=muse-11 score=0.96 stash=reverse/attempts/0x003b417e.cpp
