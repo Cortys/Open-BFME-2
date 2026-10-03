@@ -9,6 +9,11 @@
 // WWDebug TUs keep their matched bodies.
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug/debug_cmd.h
+// Retail's kept ??_GDebugCmdInterface is frameless; this TU builds /Oy-
+// (framed) for its 70B ctor row, so emit the COMDAT frameless here. The
+// row below keeps TU flags; only the inline copy follows the pragma.
+#pragma optimize("y", on)
+class Debug;
 class DebugCmdInterface
 {
 protected:
@@ -16,6 +21,12 @@ protected:
 
 public:
 	DebugCmdInterface() {}
+
+	enum CommandMode { Normal, Structured, MAX };
+
+	virtual bool Execute(Debug &dbg, const char *cmd, CommandMode cmdmode,
+		unsigned argn, const char *const *argv) = 0;
+	virtual void Delete(void) = 0;
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug/internal.h
@@ -23,7 +34,11 @@ class DebugCmdInterfaceDebug : public DebugCmdInterface
 {
 public:
 	explicit DebugCmdInterfaceDebug(void);
+	virtual bool Execute(Debug &dbg, const char *cmd, CommandMode cmdmode,
+		unsigned argn, const char *const *argv);
+	virtual void Delete(void);
 };
+#pragma optimize("", on)
 
 // ??0DebugCmdInterfaceDebug@@QAE@XZ
 inline DebugCmdInterfaceDebug::DebugCmdInterfaceDebug(void)
