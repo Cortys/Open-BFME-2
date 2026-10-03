@@ -49192,3 +49192,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005CC342@Rva005CC342@@QAEXXZ,,0x005CC342,58,Code/GameEngine/Source/Common/Rva005CC342Method.cpp,matched,dispatch via iface at plus14 slots 0 5 6 7 8
 ?rva005CCD61@Rva005CCD61@@QAEXABVUnicodeString@@@Z,,0x005CCD61,51,Code/GameEngine/Source/GameClient/GUI/AnimateWindowRva005CCD61.cpp,matched,inner via thunk 0x005CCE13 outer+8 caller 0x005D1BA1 passes UnicodeString
 ?rva005CCE13@Rva005CCE13@@QAEXABVUnicodeString@@@Z,,0x005CCE13,8,Code/GameEngine/Source/GameClient/GUI/AnimateWindowRva005CCD61.cpp,matched,chain from 0x005CCD61 outer+8 forwards to inner
+??0Rva0036804F@@QAE@PAVStateMachine@@@Z,,0x0036804F,24,Code/GameEngine/Source/Common/Rva0036804FCtor.cpp,matched,base row 0x00342B87 vtable 0x0086A250 callers 0x005432C5 0x00546141

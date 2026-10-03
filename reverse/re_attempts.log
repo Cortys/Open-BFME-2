@@ -6038,3 +6038,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva005DBDA0Copy@@YAPAVRva005DBCD1@@PAV1@00@Z	0x005DBDA0	58	blocked	prologue edx-vs-eax and early result load vs late loads loop matches t=20 model=muse-12
 ?Rva0041B85DCheck@@YA_NPAVObject@@0H@Z	0x0041B85D	88	blocked	EDI ESI register passing unclear plus O2 vs O1 idioms cmp-mem vs mov-test and setge vs jl-mov t=8 model=muse-04
 ?rva0041BFA2@Rva0041BFA2@@QAEHPAVObject@@HHH@Z	0x0041BFA2	95	blocked	mov m_self store after push cb vs retail before push tried self-first barrier cval G7-only t=25 model=muse-04 (stash 0.96 kept)
+??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z	0x0034290D	101	partial	vtable early floats early but bool loads al-vs-cl plus late c load t=25 model=muse-09 score=0.94 stash=reverse/attempts/0x0034290d.cpp
+??0Rva006FC240@@QAE@VEAStringC@@@Z	0x006FC2D0	155	blocked	edx temporaries for bits plus delayed store vs direct and before lea t=30 model=muse-09 (stash 0.93 kept)
