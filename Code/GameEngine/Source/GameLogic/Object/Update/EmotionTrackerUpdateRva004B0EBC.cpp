@@ -4,13 +4,29 @@
 // +0x90/+0x94 are m_emotions begin/end (EmotionTrackerUpdateDtor.cpp has
 // EmotionTrackerVecHolder at +0x90). Iterates 4-byte pointer array,
 // double-derefs +4 then tests byte at +0x18C, returns bool.
+extern class GameLogic *TheGameLogic;
+
+class GameLogic
+{
+public:
+    int getFrame() const { return m_frame; }
+
+private:
+    char m_pad[0x40];
+    int m_frame;
+};
+
 class EmotionTrackerUpdate
 {
 public:
     bool rva004B0EBC();
+    void rva004B0D70(int index, void *p, int delay);
 
 private:
-    char m_pad[0x90];
+    char m_pad0[0x24];
+    bool m_active[12];
+    int m_array30[12];
+    int m_array60[12];
     void *m_begin;
     void *m_end;
 };
@@ -46,4 +62,12 @@ cond:
         goto loop;
     }
     return false;
+}
+
+void EmotionTrackerUpdate::rva004B0D70(int index, void *p, int delay)
+{
+    m_active[index] = true;
+    m_array30[index] = TheGameLogic->getFrame() + delay;
+    int v = (p != 0) ? *(int *)((char *)p + 0x74) : 0;
+    m_array60[index] = v;
 }

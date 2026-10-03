@@ -49297,3 +49297,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0059EC72@Rva0059ECD2@@QAEXH@Z,,0x0059EC72,59,Code/GameEngine/Source/Common/Rva0059ECD2.cpp,matched,state 2or3 winEnable false twice to 4 via rowed winEnable
 ?rva0059E390@Rva0059E390@@QAEXPBVModuleData@@@Z,,0x0059E390,23,Code/GameEngine/Source/Common/Rva0059E390Holder.cpp,matched,guarded ModuleData append via rowed push_back plus caller Parse
 ?rva004B0EBC@EmotionTrackerUpdate@@QAE_NXZ,,0x004B0EBC,41,Code/GameEngine/Source/GameLogic/Object/Update/EmotionTrackerUpdateRva004B0EBC.cpp,matched,EmotionTrackerUpdate vector 0x90 honest bool loop
+?rva004B0D70@EmotionTrackerUpdate@@QAEXHPAXH@Z,,0x004B0D70,48,Code/GameEngine/Source/GameLogic/Object/Update/EmotionTrackerUpdateRva004B0EBC.cpp,matched,EmotionTrackerUpdate honest method via TheGameLogic frame plus 0x74
