@@ -5951,3 +5951,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva003373D9Swap@@YAXPAVRva002E9E70@@0@Z	0x003373D9	75	blocked	swap tmp Rva003371B1 plus two Rva002E9E70 placements gives 3 EH states and esi-edi spills vs retail 1 state no spills t=25 model=muse-spark
 ?rva0033790F@Rva0033790F@@QAEPAVRva003371B1@@PAV2@0@Z	0x0033790F	51	blocked	vector erase via copy 0x337533 plus Destroy 0x3376D1 needs 4 pushes with lea ebp+B tag plus ebp frame vs honest 3-arg copy gives frameless 46B t=20 model=muse-spark
 ?rva0027DA6A@Rva0062AF7@@QAE_NPAM0@Z	0x0027DA6A	507	blocked	class model incomplete, TU does not compile missing members m_data24/m_1c/m_20 t=5 model=muse-05
+?rva004CFB8B@Rva004CFB8B@@QAEXVAsciiString@@@Z	0x004CFB8B	55	partial	push eax before add ecx vs retail add before push same 55B 14insns zero mem-reg t=10 model=muse-03 score=0.97 stash=reverse/attempts/0x004cfb8b.cpp

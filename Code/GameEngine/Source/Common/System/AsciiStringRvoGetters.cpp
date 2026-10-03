@@ -342,3 +342,25 @@ void Rva0029173EAsciiField::rva0029173E(AsciiString value)
 	AsciiString &slot = m_value;
 	slot = value;
 }
+
+class Rva004CFBC2AsciiField
+{
+public:
+	void rva004CFBC2(AsciiString value);
+
+private:
+	char m_pad[0x1DC];
+	AsciiString m_value; // +0x1DC
+};
+
+// ?rva004CFBC2@Rva004CFBC2AsciiField@@QAEXVAsciiString@@@Z, retail 0x004CFBC2, 55 bytes.
+// Setter for +0x1DC member: abuts prev setter 0x004CFB8B+55=0x004CFBC2 and next
+// getter chain. Same 55B shape as rva004FDCFF (lea eax,[ebp+8]; add ecx,0x1DC;
+// push eax) via inlined operator= (rowed StringBase::set 0x366F0) then rowed
+// releaseBuffer 0x36410 with EH unwind. New address-derived class since no
+// same-file getter shares +0x1DC (prev getter Rva004CFB6D is +0x1D8).
+void Rva004CFBC2AsciiField::rva004CFBC2(AsciiString value)
+{
+	AsciiString &slot = m_value;
+	slot = value;
+}

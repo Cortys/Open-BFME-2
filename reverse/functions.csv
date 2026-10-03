@@ -49056,3 +49056,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva001686BA@Rva00168690@@QAEXH@Z,,0x001686BA,49,Code/Libraries/Source/WWVegas/WWLib/Rva00168690Add.cpp,matched,gap Delete pair via rowed Deletes caller 0x000D0213
 ??4Rva001E3E43@@QAEAAV0@ABV0@@Z,,0x001E3CF4,335,Code/GameEngine/Source/Common/Rva001E3E43Dtor.cpp,matched,copy assignment self-check vtable 0x00BDE888 caller 0x001E4641 unblocks it
 ?rva005EF3CE@Rva005EF3CE@@QAEHH@Z,,0x005EF3CE,16,Code/GameEngine/Source/Common/Rva005EF3CE.cpp,matched,array-index getter caller 0x005E1B4E neighbours same flags
+?rva004CFBC2@Rva004CFBC2AsciiField@@QAEXVAsciiString@@@Z,,0x004CFBC2,55,Code/GameEngine/Source/Common/System/AsciiStringRvoGetters.cpp,matched,setter +0x1DC same 55B shape as siblings via rowed set and releaseBuffer
