@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /arch:SSE /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1BfmeStringTailRecord144@@UAE@XZ: 128B EH destructor of the 144-byte
@@ -46,6 +46,13 @@ public:
     void rva000519BD();
     void rva00053D26(BfmePoolHolder88 *p);
 };
+struct OpaqueRefElement4 { OpaqueRefCounted *referent; OpaqueRefElement4 &operator=(const OpaqueRefElement4 &); };
+class Rva000A8C9B { public: void clear(); };
+struct BfmeEventPositionView {
+    float x,y,z;
+    // ?BfmeEventPositionView::zero present-unmatched
+    __forceinline void zero() { x=0.0f; y=0.0f; z=0.0f; }
+};
 struct BfmeStringTailRecord144
 {
     virtual ~BfmeStringTailRecord144();
@@ -57,10 +64,43 @@ struct BfmeStringTailRecord144
     int m_int18;
     AsciiString m_string1C;
     AsciiString m_string20;
-    int m_data[24];
+    float m_f24;
+    float m_f28;
+    float m_f2C;
+    int m_int30;
+    int m_int34;
+    int m_int38;
+    BfmeEventPositionView m_position;
+    unsigned char m_b48;
+    unsigned char m_b49;
+    unsigned char m_b4A;
+    unsigned char m_b4B;
+    unsigned char m_b4C;
+    unsigned char m_b4D;
+    unsigned char m_b4E;
+    unsigned char m_b4F;
+    unsigned char m_b50;
+    unsigned char m_b51;
+    unsigned char m_b52;
+    unsigned char m_b53;
+    float m_f54;
+    float m_f58;
+    float m_f5C;
+    float m_f60;
+    float m_f64;
+    int m_int68;
+    int m_int6C;
+    int m_int70;
+    int m_int74;
+    int m_int78;
+    int m_int7C;
+    int m_int80;
     AsciiString m_string84;
     int m_tail[2];
+    void rva002D96D3(const OpaqueRefElement4 &);
 };
+typedef char VerifyRecordSize[(sizeof(BfmeStringTailRecord144) == 0x90) ? 1 : -1];
+
 // ??1BfmeStringTailRecord144@@UAE@XZ
 BfmeStringTailRecord144::~BfmeStringTailRecord144()
 {
@@ -107,3 +147,61 @@ void BfmePoolRef10::rva00053D26(BfmePoolHolder88 *p)
             InterlockedIncrement((Long *)((char *)p + 0x8c));
     }
 }
+
+// Common-prefix initializer at 0x002D96D3; native boundary ends at 0x002D97D6.
+// Reference lead: GeneralsMD Common/Audio/AudioEventRTS.cpp and its header,
+// supplied by open-bfme-1 revision 6d9434269164392c5ba62aaa7c15a86b5b020d76.
+// The reference supplies the three-float position and initialization purpose;
+// target stores establish each offset and literal. Original field names remain
+// unasserted. Canonical AsciiString and existing pool workers supply cleanup.
+// Calls at 0x002D97D6 and the radar notification at 0x002AA9C2 use a 0x88-byte
+// prefix. The separate vector copy at 0x00051B40 appends a word at +0x88 and
+// a byte at +0x8C; allocator 0x00051A79 proves its 0x90-byte wrapper stride.
+// This method neither allocates a record nor accesses the wrapper tail.
+void BfmeStringTailRecord144::rva002D96D3(const OpaqueRefElement4 &arg)
+{
+    m_f24 = -1.0f;
+    m_f28 = -1.0f;
+    m_f2C = 1.0f;
+    m_position.zero();
+
+    m_b48 = 0;
+    m_int38 = 6;
+    m_int30 = 0;
+    m_b49 = 0;
+    m_string04 = AsciiString::TheEmptyString;
+    Rva000A8C9B &holder = *reinterpret_cast<Rva000A8C9B *>(&m_pool08);
+    holder.clear();
+    m_int68 = -1;
+    m_int6C = -1;
+    m_f54 = 1.0f;
+    m_f58 = 1.0f;
+    m_f5C = 1.0f;
+    m_f60 = 1.0f;
+    m_int0C = 0;
+    m_int18 = 0;
+    m_f64 = 0.0f;
+    m_b4A = 0;
+    m_b4B = 0;
+    m_b4C = 0;
+    m_b4D = 1;
+    m_b4E = 0;
+    m_b4F = 0;
+    m_b50 = 0;
+    m_b51 = 0;
+    m_b52 = 0;
+    m_b53 = 0;
+    m_int74 = 0;
+    reinterpret_cast<StringBase<char> *>(&m_string1C)->clear();
+    reinterpret_cast<StringBase<char> *>(&m_string20)->clear();
+    m_int78 = 1;
+    reinterpret_cast<StringBase<char> *>(&m_string84)->clear();
+    m_int7C = -12345;
+    reinterpret_cast<OpaqueRefElement4&>(holder) = arg;
+    m_int70 = -1;
+    m_int80 = 1;
+    m_pool10.rva000519BD();
+    m_int14 = 0;
+}
+
+
