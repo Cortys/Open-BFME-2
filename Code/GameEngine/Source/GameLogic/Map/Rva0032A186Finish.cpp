@@ -1,8 +1,17 @@
-// ??1BuildListInfo@@MAE@XZ
-// partial score=0.93 date=2026-09-28
-// ??1BuildListInfo@@MAE@XZ
-// partial score=0.93 date=2026-09-28
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+//
+// ??1BuildListInfo@@MAE@XZ @0x0032A186 120B. BuildListInfo list destructor.
+// Each +0x2C link is unlinked then released through the virtual deleteInstance(0)
+// slot 0 whose pointer result feeds ::operator delete (??3 @0x2FD60). The
+// _ReadWriteBarrier after setNextBuildList keeps retail's and-then-vtable-load
+// order inside the loop. Layout: vptr +0, AsciiStrings +4/+8/+0x30,
+// m_nextBuildList +0x2C, padding +0xC..+0x2B.
+// class-gate: allow AsciiString TU-local 4-byte view matches the proven +4/+8/+0x30 StringBase dtor sites.
+// class-gate: allow Snapshot private view puts deleteInstance(0) at slot 0 and restores vptr 0xBBB554.
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+extern "C" const void *const vtbl_00BBB554[];
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
 template <typename T> class StringBase
 {
 	friend class AsciiString;
@@ -28,6 +37,7 @@ public:
 class Snapshot
 {
 public:
+	virtual void *deleteInstance(int flags);
 	virtual ~Snapshot();
 	virtual void crc();
 	virtual void loadPostProcess();
@@ -35,15 +45,11 @@ public:
 };
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 class BuildListInfo : public Snapshot
 {
 public:
-    void deleteInstance()
-    {
-        delete this;
-    }
     BuildListInfo *getNext() const
     {
         return m_nextBuildList;
@@ -68,7 +74,8 @@ BuildListInfo::~BuildListInfo()
         while (cur) {
             next = cur->getNext();
             cur->setNextBuildList(0);
-            cur->deleteInstance();
+            _ReadWriteBarrier();
+            ::operator delete(cur->deleteInstance(0));
             cur = next;
         }
     }
