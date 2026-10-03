@@ -49250,3 +49250,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva001021F7@@QAE@XZ,,0x001021F7,30,Code/GameEngine/Source/Common/Rva001021F7Ctor.cpp,matched,unlock ctor two ObjectCreationLists with nulls matches new 0x20
 ?Rva00102215Get@@YAPAVRva001021F7@@XZ,,0x00102215,38,Code/GameEngine/Source/Common/Rva00102215Singleton.cpp,matched,chain singleton for Rva001021F7 via new 0x20
 ?rva005EAA06@Rva005EAA06@@QAEXHHH@Z,,0x005EAA06,53,Code/Libraries/Source/WWVegas/WWMath/Rva005EAA06Vector.cpp,matched,allocate fill vector chain via 0x005EA1B1
+?rva00074BC8@Rva0007517F@@UAEXPBMHHHH@Z,,0x00074BC8,119,Code/GameEngine/Source/Common/System/Rva0007517FCtor.cpp,matched,vtable slot13 wrapper like rva00075016 but calls slot12 with int second param
