@@ -25,9 +25,19 @@ struct Rva005344C0
 	int m_first;
 	IntTree00534581 m_second;
 	Rva005344C0(const Rva005344C0 &o);
+	Rva005344C0(const int *pFirst, const IntTree00534581 &second);
 };
 
 Rva005344C0::Rva005344C0(const Rva005344C0 &o) : m_first(o.m_first), m_second(o.m_second)
+{
+}
+
+// ??0Rva005344C0@@QAE@PBHABVIntTree00534581@@@Z @0x005346BC (29B).
+// Two-arg pair build: copy int from *pFirst then copy-construct second via
+// rowed Rb_tree copy 0x00534581. Evidence: unlock between clear 0x00534693
+// and construct 0x005346D9 same TU/flags; callee rowed/pinned; caller
+// 0x00534A63; ret 8; returns this.
+Rva005344C0::Rva005344C0(const int *pFirst, const IntTree00534581 &second) : m_first(*pFirst), m_second(second)
 {
 }
 
