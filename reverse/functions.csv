@@ -49696,3 +49696,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva002F0EE4Wrap@@YAXPAPAU_Rva002EBB53Wrap@@00H@Z,,0x002F0EE4,30,Code/Libraries/Source/WWVegas/WWLib/Rva002F0EE4Finish.cpp,matched,STLport __pop_heap_aux over _Rva002EBB53Wrap pointers; forwards to pinned 6-arg __pop_heap 0x2ef27d
 ??0Rva005948F5@@QAE@XZ,,0x005948F5,35,Code/GameEngine/Source/GameNetwork/Rva005948F5Ctor.cpp,matched,caller 0x00595089 news 0x20 then calls; no vptr; neighbours ConstZeroGetters and UDPDrainDestructor
 ?rva00594D77@FirewallHelperClass@@QAEPAXG@Z,,0x00594D77,37,Code/GameEngine/Source/GameNetwork/Rva00594D77Search.cpp,matched,search spareSockets at +0x14 by port stride 8 from ctor layout and neighbours
+?Rva002D46ADSet@@YAXH@Z,,0x002D46AD,155,Code/GameEngine/Source/GameClient/Rva002D46AD.cpp,matched,static Apt PalantirResources plus format percent-d via rva00225375
