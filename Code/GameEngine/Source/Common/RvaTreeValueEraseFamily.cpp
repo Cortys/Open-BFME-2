@@ -886,3 +886,30 @@ void Rva0060126D::rva006012C4()
 	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
 	m_04Flag = 0;
 }
+
+// owner Rva00500804: erase 0x00500804 (value ??1Rva004FFE89@@QAE@XZ), clear 0x00500ACF
+struct Rva004FFE89
+{
+	~Rva004FFE89();
+};
+class Rva00500804
+{
+public:
+	void rva00500804(void *node);
+	void rva00500ACF();
+private:
+	void *m_00Head; // +0x00
+	int m_04Flag; // +0x04
+};
+
+void Rva00500804::rva00500804(void *p)
+{
+	RvaTreeValueNode *node = (RvaTreeValueNode *)p;
+	while (node) {
+		rva00500804(node->right);
+		RvaTreeValueNode *left = node->left;
+		reinterpret_cast<Rva004FFE89 *>(node + 1)->~Rva004FFE89();
+		free(node);
+		node = left;
+	}
+}
