@@ -6280,3 +6280,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva0043E3E2@Rva0043E3E2@@QAEXHH@Z	0x0043E3E2	186	blocked	frame and temp-slot mismatch with register and push-pop divergence suggests layout-model wrong t=5 model=muse-14
 ?rva00086A94@Rva000869CF@@QAEXHHM@Z	0x00086A94	152	blocked	first two loads swapped eax-vs-edx t=12 model=muse-08 (stash 0.95 kept)
 ?rva004D839A@Rva004D839A@@QAEXXZ	0x004D839A	55	partial	global TheGameLogic load retail [0xdfe78c] vs obj [0] size exact 21 insns t=6 model=muse-08 score=0.93 stash=reverse/attempts/0x004d839a.cpp
+??1Rva004D86C1@@UAE@XZ	0x004D86C1	86	blocked	dtor with 2 new vtables 0xc60d78 0xc60d64 plus EH scopetable 0x791236 plus 0x14 virtual slot0 with 0 returning ptr to delete plus base 0xbbb554 needs donor t=12 model=muse-08
