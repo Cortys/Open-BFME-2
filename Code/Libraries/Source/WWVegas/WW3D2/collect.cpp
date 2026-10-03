@@ -217,15 +217,6 @@ CollectionClass::CollectionClass(const CollectionDefClass & def) :
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-CollectionClass::CollectionClass(const CollectionClass & src) :
-	CompositeRenderObjClass(src),
-	SubObjects(src.SubObjects.Count()),
-	SnapPoints(NULL)
-{
-	*this = src;
-}
-
-
 /***********************************************************************************************
  * CollectionClass::CollectionClass -- assignment operator                                     *
  *                                                                                             *
