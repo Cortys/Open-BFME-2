@@ -162,7 +162,13 @@ void Rva00170AE4::rva00170BAD()
 	m_04Flag = 0;
 }
 
-class Rva00151DAB { public: ~Rva00151DAB(); };
+class Rva00151DAB
+{
+public:
+	~Rva00151DAB();
+	unsigned int _key;
+	unsigned int _pad;
+};
 
 namespace _STL
 {
@@ -172,7 +178,22 @@ public:
 	static char *allocate(unsigned int n, const void *hint);
 };
 template <class _T1, class _T2> void _Construct(_T1 *__p, const _T2 &__val);
+struct _Rb_tree_node_base {};
+template <class _D> class _Rb_global
+{
+public:
+	static void _Rebalance(_Rb_tree_node_base *__x, _Rb_tree_node_base *&__root);
+};
 }
+
+struct Rva00170B19Node
+{
+	unsigned int _color;
+	Rva00170B19Node *_parent;
+	Rva00170B19Node *_left;
+	Rva00170B19Node *_right;
+	Rva00151DAB _val;
+};
 
 // owner Rva00170B19: erase 0x00170B19 (value ??1Rva00151DAB@@QAE@XZ), clear 0x00170BD6
 typedef Rva00151DAB Rva00170B19Value;
@@ -182,8 +203,9 @@ public:
 	void rva00170B19(void *node);
 	void rva00170BD6();
 	void *rva00170B70(const Rva00151DAB &x);
+	void rva00170C87(void **out, Rva00170B19Node *x, Rva00170B19Node *y, const Rva00151DAB &v, Rva00170B19Node *w);
 private:
-	void *m_00Head; // +0x00
+	Rva00170B19Node *m_00Head; // +0x00
 	int m_04Flag; // +0x04
 };
 
@@ -216,6 +238,33 @@ void *Rva00170B19::rva00170B70(const Rva00151DAB &x)
 	char *block = _STL::allocator<char>::allocate(0x18, 0);
 	_STL::_Construct((Rva00151DAB *)(block + 0x10), x);
 	return block;
+}
+
+void Rva00170B19::rva00170C87(void **out, Rva00170B19Node *x, Rva00170B19Node *y, const Rva00151DAB &v, Rva00170B19Node *w)
+{
+	Rva00170B19Node *z;
+	if (y == m_00Head || (w == 0 && (x != 0 || v._key < ((Rva00151DAB *)((char *)y + 0x10))->_key))) {
+		z = (Rva00170B19Node *)rva00170B70(v);
+		y->_left = z;
+		if (y == m_00Head) {
+			m_00Head->_parent = z;
+			m_00Head->_right = z;
+		} else if (y == m_00Head->_left) {
+			m_00Head->_left = z;
+		}
+	} else {
+		z = (Rva00170B19Node *)rva00170B70(v);
+		y->_right = z;
+		if (y == m_00Head->_right) {
+			m_00Head->_right = z;
+		}
+	}
+	z->_parent = y;
+	z->_left = 0;
+	z->_right = 0;
+	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)z, (_STL::_Rb_tree_node_base *&)m_00Head->_parent);
+	++m_04Flag;
+	*out = z;
 }
 
 class Rva0027EA49 { public: ~Rva0027EA49(); };
