@@ -6036,3 +6036,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva0042C0DB@Rva0042C0DB@@QAEHHH@Z	0x0042C0DB	106	blocked	needs 2-arg forwarder pin at 0x5CB265 plus Mouse slot19 plus huge 0x4FA4 offset t=12 model=muse-spark
 ?Rva000DE5D2Copy@@YGHPAGHGPAX@Z	0x000DE5D2	118	partial	ecx-edx register mirror on dest and src pointers plus add reg 4 swapped t=5 model=muse-08 score=0.93 stash=reverse/attempts/0x000de5d2.cpp
 ?Rva005DBDA0Copy@@YAPAVRva005DBCD1@@PAV1@00@Z	0x005DBDA0	58	blocked	prologue edx-vs-eax and early result load vs late loads loop matches t=20 model=muse-12
+?Rva0041B85DCheck@@YA_NPAVObject@@0H@Z	0x0041B85D	88	blocked	EDI ESI register passing unclear plus O2 vs O1 idioms cmp-mem vs mov-test and setge vs jl-mov t=8 model=muse-04
+?rva0041BFA2@Rva0041BFA2@@QAEHPAVObject@@HHH@Z	0x0041BFA2	95	blocked	mov m_self store after push cb vs retail before push tried self-first barrier cval G7-only t=25 model=muse-04 (stash 0.96 kept)
