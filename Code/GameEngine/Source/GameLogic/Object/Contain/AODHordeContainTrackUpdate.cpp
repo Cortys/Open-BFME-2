@@ -1,21 +1,18 @@
-// ?rva0047B628@Rva0047B628@@QAEXHPAX@Z
-// partial score=0.93 date=2026-10-03
-// ?rva0047B628@Rva0047B628@@QAEXHPAX@Z
-// partial score=0.93 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /EHs /arch:SSE /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
-// ??1AODHordeContain@@UAE@XZ, retail 0x0047B563, 197 bytes.
-// Slot evidence: ??_G at 0x0047B674 (ContainModuleDeletingDtors) calls here.
-// Restores 11 vptrs (+0x00 +0x0C +0x10 +0x20 +0x24 +0x28 +0x2C +0x30 +0x34
-// +0xFC +0x11C) then destroys vector at +0x30C (free via 0x00030830, state 0)
-// plus 60 x 0x10 array at +0x338 and 20 x 0x18 array at +0x6FC through ehvec
-// 0x00629110 (states 1-2, empty element dtors DIR32-masked to retail 0x4B3FD0)
-// then calls pinned ??1HordeContain@@UAE@XZ at 0x0046F901. Layout from the
-// rowed ctor 0x0047B3DB in AODHordeContainCtor.cpp (vector plus two-array
-// concept from BFME1 AODHordeContainDestructors.cpp; BFME2 offsets +0x30C /
-// +0x338 / +0x6FC, factory news 0x8E0). Identity is the ModuleFactory
-// AODHordeContain registration plus the audited deleting-dtor caller.
+// ?rva0047B628@Rva0047B628@@QAEXHPAX@Z @0x0047B628 76B: large-unit tracker
+// update. Gap between ??1 (0x0047B563) and ??_G (0x0047B674) in the AODHordeContain
+// TU; same flags. Validates the second arg (null, +0x438 flag, +0x4 -> +0x5F5 ==
+// 2), stores +0x74 to +0x1FC (full +0x318) unless equal, refreshes via full-0x11C,
+// then +0x200 (full +0x31C) from TheGameLogic+0x40. Callees rowed:
+// refreshTrackedLargeUnit 0x0047B2AA, TheGameLogic ?TheGameLogic@@3PAVGameLogic@@A.
+//
+// Register-allocation note (established from the byte match): retail never
+// materialises arg1 and loads the arg pointer straight into ecx. Reproducing
+// that needs the m_1FC member to be reached through an address local that stays
+// live across the compare and the store, which keeps this-derived pointers in
+// esi and drops the unused arg1 preload.
 #include <vector>
 
 class Thing;
@@ -122,19 +119,17 @@ private:
 	int m_8DC;
 };
 
-// ??1AODHordeContain@@UAE@XZ
+// ??1AODHordeContain@@UAE@XZ present-unmatched
 AODHordeContain::~AODHordeContain()
 {
 }
 
-// ?rva0047B628@Rva0047B628@@QAEXHPAX@Z, retail 0x0047B628, 76 bytes.
 // Gap between ??1 (0x0047B563) and ??_G (0x0047B674) in this TU; same flags.
 // Large-unit tracker update: validates the second arg (null, +0x438 flag,
 // +0x4 -> +0x5F5 == 2), stores +0x74 to +0x1FC (full +0x318) unless equal,
 // refreshes via full-0x11C, then +0x200 (full +0x31C) from TheGameLogic+0x40.
 // Callers: none rowed. Callees rowed: refreshTrackedLargeUnit 0x0047B2AA,
 // TheGameLogic ?TheGameLogic@@3PAVGameLogic@@A.
-// ?rva0047B628@Rva0047B628@@QAEXHPAX@Z present-unmatched
 void Rva0047B628::rva0047B628(int a, void *b)
 {
 	if (b == 0)
@@ -144,10 +139,11 @@ void Rva0047B628::rva0047B628(int a, void *b)
 	void *p = *(void **)((char *)b + 4);
 	if (*((unsigned char *)p + 0x5F5) != 2)
 		return;
+	int *ap = &m_1FC;
 	int v = *(int *)((char *)b + 0x74);
-	if (v == m_1FC)
+	if (v == *ap)
 		return;
-	m_1FC = v;
+	*ap = v;
 	((AODHordeContain *)((char *)this - 0x11C))->refreshTrackedLargeUnit();
 	m_200 = TheGameLogic->m_40;
 }
