@@ -50267,3 +50267,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003186EE@Rva003186EE@@QAEXHHH@Z,,0x003186EE,43,Code/GameEngine/Source/Common/Rva003186EE.cpp,matched,leaf 3-arg setter via rowed 0x003184B8 plus g_00DFEC68
 ??$_Construct@VRva00151DAB@@V1@@_STL@@YAXPAVRva00151DAB@@ABV1@@Z,,0x00170A97,18,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,pinned _Construct null-guarded placement copy via rowed 0x001709BA copy
 ?rva00455076@CastleBehavior@@QAEXABUOpaqueRefElement4@@H@Z,,0x00455076,104,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleBehaviorSlot13.cpp,matched,slot13 audio prefix via TheAudio and rowed CondSetter
+?Rva00427294Parse@@YAXPAVINI@@PAX11@Z,,0x00427294,125,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
+?parseArmorDefinition@LivingWorldAutoResolveArmorStore@@SAXPAVINI@@@Z,,0x00427392,281,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
