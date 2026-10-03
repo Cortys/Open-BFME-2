@@ -6622,3 +6622,7 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?Rva003064CBXfer@@YAXPAVXfer@@PAI@Z	0x003064CB	350	blocked	edi-ebx swap ecx-eax cmp-si t=20 model=muse-09 (stash 0.96 kept)
 ?Rva005B9024Get@@YIHPBD@Z	0x005B9024	49	partial	ecx-vs-eax param plus c0-cl-vs-al t=35 model=muse-09 score=0.93 stash=reverse/attempts/0x005b9024.cpp
 ?Rva005B909FCompute@@YAMPAHH@Z	0x005B909F	400	blocked	400B SSE-x87 7-pair float scoring needs full globals layout t=10 model=muse-09
+?Rva003336ADGet@@YA_N_NPBD@Z	0x003336AD	117	blocked	global add-vs-indexed plus push-esi ordering t=18 model=muse-05
+??0Rva001FFE39@@QAE@XZ	0x001FFE39	62	blocked	vptr and m14 late after lea setup t=20 model=muse-05 (stash 0.93 kept)
+??0Rva001DED2B@@QAE@XZ	0x001DED2B	31	blocked	align exact but gate picks 0x3A37FA not 0x1DE80F twin pin divergent t=12 model=muse-05 (stash 0.96 kept)
+?rva0033436F@Rva0033436F@@QAE_NXZ	0x0033436F	407	blocked	complex Lua ScriptAction parser with float and EH needs donor t=10 model=muse-05
