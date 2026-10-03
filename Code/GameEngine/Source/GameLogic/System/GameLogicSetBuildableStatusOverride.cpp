@@ -41,15 +41,7 @@ typedef _STL::pair<const AsciiString, BuildableStatus> BuildableStatusPair;
 typedef _STL::hash_map<AsciiString, BuildableStatus, rts::hash<AsciiString>,
 	rts::equal_to<AsciiString>, _STL::allocator<BuildableStatusPair> > BuildableMap;
 
-class ThingTemplate
-{
-public:
-	const AsciiString &getName() const
-	{
-		return *reinterpret_cast<const AsciiString *>(
-			reinterpret_cast<const char *>(this) + 0x64);
-	}
-};
+class ThingTemplate; // +0x64 AsciiString key; NOT ThingTemplate::getName (kept +0x10 in ThingFactory.cpp), retail inlines +0x64
 
 class GameLogic
 {
@@ -63,5 +55,6 @@ public:
 void GameLogic::setBuildableStatusOverride(const ThingTemplate *tt, BuildableStatus bs)
 {
 	if (tt)
-		m_thingTemplateBuildableOverrides[tt->getName()] = bs;
+		m_thingTemplateBuildableOverrides[*reinterpret_cast<const AsciiString *>(
+			reinterpret_cast<const char *>(tt) + 0x64)] = bs;
 }
