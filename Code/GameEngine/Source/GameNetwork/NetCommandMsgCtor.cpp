@@ -26,6 +26,9 @@ enum NetCommandType
 	NETCOMMANDTYPE_DISCONNECTKEEPALIVE = 0x19
 };
 
+class MemoryPool;
+class AsciiString;
+
 class NetCommandMsg
 {
 public:
@@ -36,6 +39,11 @@ public:
 	UnsignedShort getID() { return m_id; }
 protected:
 	virtual ~NetCommandMsg() {}
+private:
+	virtual MemoryPool *getObjectMemoryPool();
+public:
+	virtual Int getSortNumber();
+	virtual AsciiString getContentsAsAsciiString();
 protected:
 	UnsignedInt m_timestamp;
 	UnsignedInt m_executionFrame;
@@ -194,6 +202,10 @@ class NetWrapperCommandMsg : public NetCommandMsg
 {
 public:
 	NetWrapperCommandMsg();
+protected:
+	virtual ~NetWrapperCommandMsg();
+private:
+	virtual MemoryPool *getObjectMemoryPool();
 private:
 	unsigned int m_1c;
 	unsigned int m_20;
