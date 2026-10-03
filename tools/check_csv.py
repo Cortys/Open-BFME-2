@@ -70,6 +70,26 @@ def read_ledger(path, spec):
     return out.stdout
 
 
+def read_blobs(rels, spec):
+    """{rel: bytes} for many paths in one `git cat-file --batch` (read_ledger's
+    one `git show` per path cost ~4.5s over the attempt bank, every commit)."""
+    if spec is None:
+        return {rel: (ROOT / rel).read_bytes() for rel in rels}
+    names = "".join(f"{spec}:{rel}\n" for rel in rels).encode()
+    out = subprocess.run(["git", "-C", str(ROOT), "cat-file", "--batch"],
+                         input=names, capture_output=True, check=True).stdout
+    blobs, pos = {}, 0
+    for rel in rels:
+        end = out.index(b"\n", pos)
+        header = out[pos:end].split()
+        if header[-1] == b"missing":
+            raise SystemExit(f"check_csv: cannot read {spec}:{rel}")
+        size = int(header[2])
+        blobs[rel] = out[end + 1:end + 1 + size]
+        pos = end + 1 + size + 1
+    return blobs
+
+
 def known_sources(spec):
     """Sources a ledger row may legally reference for the given state.
 
@@ -313,6 +333,7 @@ def check_attempts(spec, problems):
         if len(row) == 7 and row[5] == "matched":
             matched.setdefault(row[2].lower(), []).append((row[0], row[4]))
 
+    blobs = read_blobs(paths, spec)
     for rel in paths:
         name = rel[len(ATTEMPTS_DIR):]
         if not ATTEMPT_NAME.match(name):
@@ -320,7 +341,7 @@ def check_attempts(spec, problems):
                 f"{rel}: name must be the lowercase rva it banks, e.g. "
                 f"0x000c8220.cpp — serving looks the stash up by address.")
             continue
-        blob = read_ledger(ROOT / rel, spec)
+        blob = blobs[rel]
         if len(blob) > ATTEMPT_LIMIT:
             problems.append(f"{rel}: {len(blob)} bytes, over {ATTEMPT_LIMIT}. "
                             f"That is not one function body; delete it.")
