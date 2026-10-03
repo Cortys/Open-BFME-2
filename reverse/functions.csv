@@ -50333,3 +50333,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003340C1@Rva003340C1@@QAEXPADHABVAsciiString@@@Z,,0x003340C1,57,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003340C1DoBuffer.cpp,matched,Lua dobuffer helper via GetStr and lua_State
 ?rva001DBD24@Rva00489360@@QAE_NXZ,,0x001DBD24,57,Code/GameEngine/Source/Common/Bfme/Rva001DBD24.cpp,matched,caller 0x001DC164 passes Rva00489360 values and NameKeyGenerator row 0x0009FA65
 ?rva003FC74A@Rva003FC74A@@QAEPAVRenderObjClass@@PBVAsciiString@@@Z,,0x003FC74A,54,Code/GameEngine/Source/Common/Rva003FC74A.cpp,matched,sibling Rva003FC780 pattern with isEmpty guard and Create_Render_Obj
+?rva00109DCF@Rva00109DCF@@QAEXXZ,,0x00109DCF,66,Code/GameEngine/Source/Common/Rva00109DCFCleanup.cpp,matched,rowed callee 0x00108AD8 plus callers at 0x0009A406 and 0x0010C7B3

@@ -6627,3 +6627,5 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ??0Rva001DED2B@@QAE@XZ	0x001DED2B	31	blocked	align exact but gate picks 0x3A37FA not 0x1DE80F twin pin divergent t=12 model=muse-05 (stash 0.96 kept)
 ?rva0033436F@Rva0033436F@@QAE_NXZ	0x0033436F	407	blocked	complex Lua ScriptAction parser with float and EH needs donor t=10 model=muse-05
 ?rva00334212@Rva00334212@@QAE_NXZ	0x00334212	349	blocked	complex Lua Condition parser with float and EH needs donor t=8 model=muse-05
+??0Rva00213E11@@QAE@XZ	0x00213E11	31	partial	ICF twin callee resolves to 0x003A37FA not retail 0x002138E5 t=18 model=muse-03 score=0.93 stash=reverse/attempts/0x00213e11.cpp
+?rva002140DB@Rva002140DB@@QAEPAVRva00402BE3@@ABVAsciiString@@@Z	0x002140DB	123	partial	frame 0x18 not 0x14 Pair at -0x18 not -0x14 temp at -0x21 not -0x20 t=22 model=muse-03 score=0.92 stash=reverse/attempts/0x002140db.cpp
