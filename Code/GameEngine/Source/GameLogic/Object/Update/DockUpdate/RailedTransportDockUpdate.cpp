@@ -88,18 +88,7 @@ RailedTransportDockUpdateModuleData::RailedTransportDockUpdateModuleData( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ??0RailedTransportDockUpdate@@QAE@PAVThing@@PBVModuleData@@@Z present-unmatched
-RailedTransportDockUpdate::RailedTransportDockUpdate( Thing *thing, const ModuleData *moduleData )
-												 : DockUpdate( thing, moduleData )
-{
-
-	m_dockingObjectID = INVALID_ID;
-	m_pullInsideDistancePerFrame = 0.0f;
-	m_unloadingObjectID = INVALID_ID;
-	m_pushOutsideDistancePerFrame = 0.0f;
-	m_unloadCount = UNLOAD_ALL;
-
-}  // end RailedTransportDockUpdate
+// ??0RailedTransportDockUpdate@@QAE@PAVThing@@PBVModuleData@@@Z owned by RailedTransportDockUpdateCtor.cpp; declared here only.
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
