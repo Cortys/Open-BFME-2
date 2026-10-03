@@ -7,12 +7,13 @@
 // already gives their addresses: VP6_DecodeFrameMbs at 0x001BC9C0 and the
 // d_009a8c50 stand-in at 0x001B96A0.
 // The callee stays static in this TU so VC7.1 passes its data argument in EAX.
+// Timestamp calls use the recovered BFME2 0x001B8E70 output-pointer helper.
 #include <stdio.h>
 
 class BfmeCursorXF;
 struct BfmeBits1186;
 struct Rva009A6130Context;
-void d_009a8410(void);
+void __cdecl Rva001B8E70(unsigned int *result);
 void d_009acb60(void);
 void bfmeReadWordXF(BfmeCursorXF *out, const unsigned char *data);
 void bfmeInit1186(BfmeBits1186 *s, unsigned char *p);
@@ -33,7 +34,7 @@ extern "C" void *__cdecl memcpy(void *, const void *, unsigned int);
 static int Rva009A5620DecodeFrame(unsigned char *s, unsigned char *data, unsigned int size)
 {
 	unsigned int start;
-	((void (__cdecl *)(unsigned int *))d_009a8410)(&start);
+	Rva001B8E70(&start);
 	U(0x1e8) = size;
 	bfmeReadWordXF((BfmeCursorXF *)(s + 0x450c), data);
 	if (!((int (__cdecl *)(unsigned char *))d_009acb60)(s))
@@ -62,7 +63,7 @@ static int Rva009A5620DecodeFrame(unsigned char *s, unsigned char *data, unsigne
 	else
 		U(0x6a0) = (*(unsigned int *)P(0x13c) + 2 + U(0x6a0) * 3) >> 2;
 	unsigned int end;
-	((void (__cdecl *)(unsigned int *))d_009a8410)(&end);
+	Rva001B8E70(&end);
 	unsigned int elapsed = (end - start) / U(0x1a4);
 	U(0x910) = elapsed;
 	if (!U(0x914))
