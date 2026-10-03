@@ -6111,3 +6111,5 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva004B0A24@Rva004B0A24@@QAEXPAMMM@Z	0x004B0A24	134	blocked	x87 tail vs SSE retail; prologue exact with O1 archSSE2; sincos forces x87 for this shape; Rotate_Y shows SSE possible t=35 model=muse-03
 ??0Rva004B0EE5@@QAE@PAVThing@@@Z	0x004B0EE5	187	blocked	ctor needs EH_prolog plus FS; O1 GX Oy- gives frame but no EH; masks-points match via m_player reloads t=30 model=muse-03
 ?rva005EA8E3@Rva005EA8E3@@QAEXHH@Z	0x005EA8E3	55	partial	Range ptr in eax vs ecx plus begin kept vs reloaded only register allocation left t=20 model=muse-01 score=0.92 stash=reverse/attempts/0x005ea8e3.cpp
+?update@Rva0054484A@@UAE?AW4StateReturnType@@XZ	0x0054452A	72	partial	shared return sunk below body both guards point far second test je vs jne tried separate gives late push and worse t=25 model=muse-11 score=0.93 stash=reverse/attempts/0x0054452a.cpp
+?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z	0x005440F6	61	partial	esi edi swapped plus neg sbb neg vs test setne t=25 model=muse-11 score=0.93 stash=reverse/attempts/0x005440f6.cpp
