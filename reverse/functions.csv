@@ -49978,3 +49978,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BCCA2Do@@YAXXZ,,0x003BCCA2,36,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCCA2Do.cpp,matched,leaf GlobalData flag 0x11CB Display slot 0x150 with 10000 1
 ?Rva003BC4ABSet@@YGXABVAsciiString@@H@Z,,0x003BC4AB,38,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4ABSet.cpp,matched,leaf template lookup then GameLogic setBuildableStatusOverride
 ?Rva003BC96FDo@@YGXPAVParameter@@H@Z,,0x003BC96F,39,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC96FDo.cpp,matched,leaf getUnitNamed then inner 0x264 set 0x28
+?rva003236E8@Rva003236E8@@QAEHXZ,,0x003236E8,24,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva003236E8.cpp,matched,winGetUserData plus GadgetListBoxGetNumEntries via userData+8
