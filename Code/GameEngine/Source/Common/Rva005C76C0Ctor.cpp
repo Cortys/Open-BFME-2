@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /MD
+// cl: /O1 /G7 /arch:SSE /MD
 // ??0Rva005C76C0@@QAE@XZ @ 0x005C76C0, 85 bytes.
 // Ctor: zero ints at +0x00 +0x04 init Rva0055A246 at +0x08 zero 12 floats at +0x38.
 // Evidence: retail and [esi] 0 and [esi+4] 0 lea ecx [esi+8] call 0x55A246 xorps movss x12; chain from 0x55A246.
@@ -9,6 +9,10 @@ public:
 	float y;
 	float z;
 };
+
+// TU-local donor zero operation preserves inline call scheduling.
+// ?rva005C7448Zero present-unmatched
+static __forceinline void rva005C7448Zero(Coord3D &p) { p.x = 0.0f; p.y = 0.0f; p.z = 0.0f; }
 
 class Rva0055A246
 {
@@ -21,6 +25,8 @@ class Rva005C76C0
 {
 public:
 	Rva005C76C0();
+	Rva005C76C0(int count, const Rva0055A246 *source);
+	void rva005C7636();
 	int m_00;
 	int m_04;
 	Rva0055A246 m_08;
@@ -41,4 +47,22 @@ Rva005C76C0::Rva005C76C0() : m_00(0), m_04(0)
 	m_38[1].x = 0.0f;
 	m_38[1].y = 0.0f;
 	m_38[1].z = 0.0f;
+}
+
+// Clean BFME1 6d9434269164392c5ba62aaa7c15a86b5b020d76 BezFwdIterator.cpp,
+// /O1 /G7 /arch:SSE /MD, original TU header directory first.
+// Target Ghidra105B/RET8 at5C7448 ends exactly at5C74B1. Default holder
+// atthis+8 calls55A246; twelve state floats at38/5C/50/44 are zeroed,
+// count goes to+4, then twelveDWORDs are copied from the second argument.
+// Donor supplies forward-difference purpose; original target names, full
+// object identity and reachability remain unknown. No reference ABI guessed.
+// Copyright 2025 Electronic Arts Inc.; GPL-3.0-or-later, as in the donor.
+Rva005C76C0::Rva005C76C0(int count, const Rva0055A246 *source) : m_00(0)
+{
+	rva005C7448Zero(m_38[0]);
+	rva005C7448Zero(m_38[3]);
+	rva005C7448Zero(m_38[2]);
+	rva005C7448Zero(m_38[1]);
+	m_04 = count;
+	m_08 = *source;
 }

@@ -26,6 +26,8 @@ extern "C" void _ReadWriteBarrier(void);
 class Rva005C76C0
 {
 public:
+	Rva005C76C0();
+	Rva005C76C0(int count, const Rva0055A246 *source);
 	void rva005C7636();
 	int m_00;
 	int m_04;
