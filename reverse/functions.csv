@@ -49941,3 +49941,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005315C8@Rva005312BE@@QAE_NHH@Z,,0x005315C8,82,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,bounded cell count positive check shares grid offsets
 ?rva00323642@Rva00323619@@QAEXXZ,,0x00323642,21,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00323619Setter.cpp,matched,adjacent method same class via winGetUserData plus GadgetListBoxReset userData+8
 ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z,,0x000550F7,120,Code/GameEngine/Source/Common/Rva000550F7Finish.cpp,matched,BFME1 volume tree chain: outer float+key vector scan erase then refresh; found-flag loop reproduces retail top-test
+?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z,,0x003A0D62,166,Code/GameEngine/Source/Common/Rva003A0D62Finish.cpp,matched,0x18 member array index; /G7 selects imul+lea

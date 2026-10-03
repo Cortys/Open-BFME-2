@@ -1,8 +1,4 @@
-// ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z
-// partial score=0.98 date=2026-10-03
-// ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z
-// partial score=0.97 date=2026-10-03
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /G7
 //
 // ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z @0x003A0D62 166B.
 // Evidence: unlock lane; the 0x18-stride array is Rva0039D5A9::m_items[7]
@@ -42,7 +38,6 @@ public:
 	int m_total;
 };
 
-// ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z present-unmatched
 void Rva003A0D62::rva003A0D62(const Rva0039D769 &src)
 {
 	int i = 0;
