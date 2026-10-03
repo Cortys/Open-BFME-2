@@ -17,3 +17,6 @@ template void _STL::__destroy_aux<BfmeNarrowRecord16Iterator>(BfmeNarrowRecord16
 // Native45-byte dispatch at0x0041A459 forwards the two iterator values
 // and a false-type tag to the independently rowed33-byte loop.
 template void _STL::__destroy<BfmeNarrowRecord16Iterator, BfmeNarrowRecord0041A617>(BfmeNarrowRecord16Iterator, BfmeNarrowRecord16Iterator, BfmeNarrowRecord0041A617*);
+
+// Native41-byte public range-destroy wrapper at0x0041A4F1 calls41A459.
+template void _STL::_Destroy<BfmeNarrowRecord16Iterator>(BfmeNarrowRecord16Iterator, BfmeNarrowRecord16Iterator);
