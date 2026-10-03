@@ -52,12 +52,31 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include "Common/DamageFX.h"
 #include "Common/GameAudio.h"
 
-#include "GameClient/FXList.h"
 #include "GameLogic/Damage.h"
 #include "GameLogic/GameLogic.h"
 #include "GameLogic/Object.h"
 #include "GameClient/GameClient.h"
 #include "GameClient/InGameUI.h"
+
+// LINK-COMDAT: static FXList::doFXObj is kept as the /O1 copy from ToppleUpdate.cpp;
+// this TU is default-flag, so the ZH header inline copy differs. Declare only (no
+// body) so calls reach the kept copy and this object emits no differing copy.
+class Object;
+class FXList
+{
+public:
+	static void doFXObj(const FXList *fx, const Object *primary, const Object *secondary);
+};
+
+// LINK-COMDAT: rts::equal_to<NameKeyType> is kept as the /O1 copy from FXList.cpp;
+// this TU is default-flag for its hashtable clear row, so its own copy differs.
+// Specialize only the member under "s" so our emitted copy matches the kept /O1 body,
+// while inlined key compares and the clear row keep default flags (as in FXListMapNodeEmit.cpp).
+#pragma optimize("s", on)
+namespace rts {
+template<> Bool equal_to<NameKeyType>::operator()(const NameKeyType &a, const NameKeyType &b) const { return a == b; }
+}
+#pragma optimize("", on)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // PUBLIC DATA ////////////////////////////////////////////////////////////////////////////////////
