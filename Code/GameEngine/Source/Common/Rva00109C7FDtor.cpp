@@ -7,7 +7,7 @@ class StringClass
 {
 	void Free_String();
 public:
-	~StringClass() { Free_String(); }
+	~StringClass(void);
 private:
 	char *m_Buffer;
 };
@@ -27,3 +27,6 @@ private:
 Rva00109C7F::~Rva00109C7F()
 {
 }
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")

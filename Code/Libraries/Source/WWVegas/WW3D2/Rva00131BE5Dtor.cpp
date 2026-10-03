@@ -15,7 +15,7 @@ class Rva00131BE5;
 class StringClass
 {
 public:
-    ~StringClass() { Free_String(); }
+    ~StringClass(void);
     char *m_Buffer;
 private:
     void Free_String();
@@ -49,3 +49,6 @@ Rva00131BE5::~Rva00131BE5()
         p = 0;
     ::operator delete(p);
 }
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")

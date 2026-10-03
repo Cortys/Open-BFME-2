@@ -22,7 +22,7 @@ class StringClass
 public:
 	StringClass(const char *name, bool flag);
 	StringClass(const StringClass &that, bool hint_temporary = false);
-	~StringClass(void) { Free_String(); }
+	~StringClass(void);
 	const StringClass &operator=(const char *string);
 
 
@@ -78,3 +78,6 @@ StringClass BFME2ParticleTextureHandle::Get_Texture_Name(void) const
 	StringClass result(name, false);
 	return result;
 }
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")

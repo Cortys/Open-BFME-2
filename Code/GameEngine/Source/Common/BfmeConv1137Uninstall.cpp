@@ -47,10 +47,7 @@ public:
 		Get_String(length, temporary);
 		m_Buffer[0] = m_NullChar;
 	}
-	~StringClass(void)
-	{
-		Free_String();
-	}
+	~StringClass(void);
 };
 
 struct Device;
@@ -144,3 +141,6 @@ void BfmeB1137::UnInstall_Materials(void) const
 #pragma comment(linker, "/alternatename:?ScreenDevice@@3PAUDevice@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
 // ?ScreenTextureStageStates@@3PAY0CA@IA: the global at VA 0xdeca38 is ?TextureStageStates@DX8Wrapper@@1PAY0CA@IA.
 #pragma comment(linker, "/alternatename:?ScreenTextureStageStates@@3PAY0CA@IA=?TextureStageStates@DX8Wrapper@@1PAY0CA@IA")
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")

@@ -37,10 +37,7 @@ public:
 			Get_String(len + 1, hint_temporary);
 		(*this) = string;
 	}
-	~StringClass()
-	{
-		Free_String();
-	}
+	~StringClass(void);
 	const StringClass &operator=(const char *string)
 	{
 		if (string != 0)
@@ -285,3 +282,6 @@ void Record_Texture_End()
 		textureStatisticsString += "\n";
 	}
 }
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")

@@ -5,7 +5,7 @@ class StringClass {
     void Free_String();
 public:
     StringClass(const char *name, bool flag);
-    ~StringClass() { Free_String(); }
+    ~StringClass(void);
 };
 struct Rva000F1B8FBase {
     int m_04;
@@ -20,3 +20,6 @@ struct Rva000F1B8F : Rva000F1B8FBase {
 Rva000F1B8F::Rva000F1B8F(const char *s) : m_08(s, false)
 {
 }
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")

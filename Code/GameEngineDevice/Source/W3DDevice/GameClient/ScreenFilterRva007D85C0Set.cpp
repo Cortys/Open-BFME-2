@@ -7,7 +7,7 @@ class StringClass {
  void Get_String(int,bool); void Free_String();
 public:
  StringClass(int n=0,bool temp=false):m_Buffer(m_EmptyString) { Get_String(n,temp); m_Buffer[0]=m_NullChar; }
- ~StringClass(){Free_String();}
+ ~StringClass(void);
 };
 class VertexMaterialClass {
 public:
@@ -82,3 +82,6 @@ int Rva007D85C0::set(FilterModes mode) {
 #pragma comment(linker, "/alternatename:?ScreenRenderStates@@3PAIA=?RenderStates@DX8Wrapper@@1PAIA")
 // ?ScreenCurrentShader@@3IA: the global at VA 0xdee5d8 is ?render_state@DX8Wrapper@@1URenderStateStruct@@A.
 #pragma comment(linker, "/alternatename:?ScreenCurrentShader@@3IA=?render_state@DX8Wrapper@@1URenderStateStruct@@A")
+
+// Native public teardown and Free_String share0x00610A40 (DX8Wrapper call proof).
+#pragma comment(linker, "/alternatename:??1StringClass@@QAE@XZ=?Free_String@StringClass@@AAEXXZ")
