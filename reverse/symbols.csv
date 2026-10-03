@@ -7407,3 +7407,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?Reset@Render2DClass@@QAEXXZ,0x00119F00,"non-virtual Reset body called directly by 0x00154EC0 Reset_Polys; WW3D2 reference header wrongly declares it virtual"
 ?rva007092F0@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@PAV2@H00H0@Z,0x007092F0,"address-derived Apt interpreter helper called by 0x006EC670 with six stack args; ecx is the 0x00E182E0 interpreter stack; identity unproven"
 ?rva006C33D0@Rva006C1F60@@QAEXHH@Z,0x006C33D0,"address-derived Rva006C1F60 method called by 0x006C3840 with two zero args; shares the +0x4E4 lock layout; identity unproven"
+?rva006C40C0@Rva006C40C0@@QAEPAXPAX0@Z,0x006C40C0,"address-derived thiscall worker the 0x006C4240 wrapper calls with two args; body unrecovered so the name is a candidate not an identity (Ghidra boundary 0x6C40C0/369)"
+?rva006C4530@Rva006C4530@@QAEPAXPAX00@Z,0x006C4530,"address-derived thiscall worker the 0x006C4670 wrapper calls with three args; body unrecovered so the name is a candidate not an identity (Ghidra boundary 0x6C4530/319)"
