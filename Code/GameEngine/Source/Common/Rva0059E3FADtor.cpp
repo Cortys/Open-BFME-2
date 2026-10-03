@@ -21,3 +21,20 @@ private:
 Rva0059E3FA::~Rva0059E3FA()
 {
 }
+
+// ??1Rva0059E4D5@@UAE@XZ @0x0059E4D5 60B: same vector-plus-string dtor shape as
+// 0x0059E3FA with vtable 0x0087102C. Evidence: identical retail vtable store
+// plus releaseBuffer plus vector-dtor EH sequence, neighbours Rva0059E436Parse
+// plus Rva0059E511Parse same page, caller 0x0059E4BC.
+class Rva0059E4D5
+{
+public:
+	virtual ~Rva0059E4D5();
+private:
+	_STL::vector<AsciiString> m_vec04;
+	AsciiString m_str10;
+};
+
+Rva0059E4D5::~Rva0059E4D5()
+{
+}
