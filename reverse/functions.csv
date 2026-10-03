@@ -49190,3 +49190,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva0054484A@@QAE@PAVStateMachine@@@Z,,0x0054484A,29,Code/GameEngine/Source/Common/Rva0054484ACtor.cpp,matched,vtable store base AIInternalMoveToState pin caller 0x005449AC
 ??_GRva005E0B0F@@UAEPAXI@Z,,0x005CB301,28,Code/GameEngine/Source/Common/Rva005E0B0FDtor.cpp,matched,deleting dtor emits from own dtor TU via rowed base dtor
 ?rva005CC342@Rva005CC342@@QAEXXZ,,0x005CC342,58,Code/GameEngine/Source/Common/Rva005CC342Method.cpp,matched,dispatch via iface at plus14 slots 0 5 6 7 8
+?rva005CCD61@Rva005CCD61@@QAEXABVUnicodeString@@@Z,,0x005CCD61,51,Code/GameEngine/Source/GameClient/GUI/AnimateWindowRva005CCD61.cpp,matched,inner via thunk 0x005CCE13 outer+8 caller 0x005D1BA1 passes UnicodeString
