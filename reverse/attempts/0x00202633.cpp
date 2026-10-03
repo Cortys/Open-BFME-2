@@ -1,4 +1,6 @@
 // ?rva00202633@Rva00202633@@QAEXH@Z
+// partial score=0.95 date=2026-10-03
+// ?rva00202633@Rva00202633@@QAEXH@Z
 // partial score=0.92 date=2026-09-29
 // ?rva00202633@Rva00202633@@QAEXH@Z
 // partial score=0.92 date=2026-09-29
@@ -14,15 +16,10 @@ public:
 // ?rva00202633@Rva00202633@@QAEXH@Z present-unmatched
 void Rva00202633::rva00202633(int level)
 {
-	unsigned int a;
-	unsigned int lvl = (unsigned int)level;
 	*(int *)((char *)this + 0x178c) = 0;
-	a = *(unsigned int *)((char *)this + lvl * 16 + 0x1cc);
 	*(int *)((char *)this + 0x1794) = 0;
-	lvl += 29u;
-	*(unsigned int *)((char *)this + 0x1790) = a;
-	lvl *= 16u;
-	const unsigned int b = *(unsigned int *)((char *)this + lvl);
-	*(unsigned int *)((char *)this + 0x1798) = b;
+	int a = *(int *)((char *)this + level * 16 + 0x1cc);
+	*(int *)((char *)this + 0x1790) = a;
+	*(int *)((char *)this + 0x1798) = *(int *)((char *)this + (level + 29) * 16);
 	*(int *)((char *)this + 0x179c) = *(int *)((char *)this + level * 16 + 0x1d4);
 }
