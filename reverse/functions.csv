@@ -49243,3 +49243,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva005F4B8FCopy@@YAPAHPAU_Rb_tree_node_base@_STL@@0PAHABUinput_iterator_tag@2@1@Z,,0x005F4B8F,37,Code/GameEngine/Source/Common/Rva005F4B8FCopy.cpp,matched,copies int keys from map RB nodes via _M_increment Distance NULL
 ?Rva005F4DA7Copy@@YAPAHPAU_Rb_tree_node_base@_STL@@0PAHABU__false_type@2@@Z,,0x005F4DA7,29,Code/GameEngine/Source/Common/Rva005F4B8FCopy.cpp,matched,STLc copy_aux false_type to copy input_iterator_tag Distance NULL
 ?Rva005F4F59Copy@@YAPAHPAU_Rb_tree_node_base@_STL@@0PAH@Z,,0x005F4F59,27,Code/GameEngine/Source/Common/Rva005F4B8FCopy.cpp,matched,STL copy RB nodes to int array via copy_aux false_type
+?Rva005EA1B1Fill@@YAPAMPAMHABH@Z,,0x005EA1B1,36,Code/Libraries/Source/WWVegas/WWMath/Rva005EA1B1Fill.cpp,matched,fill float array from int ref caller 0x005EAA2A
