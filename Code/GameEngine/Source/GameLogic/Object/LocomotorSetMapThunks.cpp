@@ -38,6 +38,7 @@ struct Rva004FFE81
 {
 	int m_first;
 	BfmeLocomotorSetMap m_second;
+	int m_third;	// +0x10: copy ctor 0x0050052F copies [edi+0x10] to [esi+0x10]; stride 0x14 in 0x00500CB8/0x0050094B
 	~Rva004FFE81();
 };
 
@@ -55,4 +56,13 @@ struct Rva004FFE89
 
 Rva004FFE89::~Rva004FFE89()
 {
+}
+
+// ?Rva00500CB8Destroy@@YAXPAURva004FFE81@@0@Z @0x00500CB8 25B: range destroy.
+// Destroys [first, last) with stride 0x14 calling ??1Rva004FFE81@@QAE@XZ.
+// Callers 0x005011DA 0x0050126C 0x00501356 pass vector start/finish.
+void __cdecl Rva00500CB8Destroy(Rva004FFE81 *first, Rva004FFE81 *last)
+{
+	for (; first != last; ++first)
+		first->~Rva004FFE81();
 }
