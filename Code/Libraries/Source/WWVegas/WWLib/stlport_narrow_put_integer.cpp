@@ -33,7 +33,7 @@
 #include <locale>
 namespace _STL {
 typedef ostreambuf_iterator<char,char_traits<char> > narrow_output_iterator;
-template <> __declspec(noinline) char* __copy_aux<char*,char*>(char* first,char* last,char* result,const __true_type&) {
+template <> inline __declspec(noinline) char* __copy_aux<char*,char*>(char* first,char* last,char* result,const __true_type&) {
  return (char*)__copy_trivial(first,last,result);
 }
 template <> narrow_output_iterator __copy_integer_and_fill<char,narrow_output_iterator>(const char*,ptrdiff_t,narrow_output_iterator,ios_base::fmtflags,streamsize,char,char,char);
