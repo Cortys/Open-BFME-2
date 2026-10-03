@@ -44,6 +44,7 @@ public:
 	StringBase() : m_data(0) {}
 	~StringBase();
 	T *getBufferForRead(int len);
+	void set(const StringBase &src);
 
 	struct Header
 	{
@@ -439,9 +440,11 @@ AsciiString buildGameRegistryPath(const char *subPath)
 {
 	AsciiString path;
 	if (subPath && *subPath && *subPath != '\\')
-		path = makeAsciiString(GetRegistryGameRegPath()) + '\\' + subPath;
+		((StringBase<char> *)&path)->set((const StringBase<char> &)(const AsciiString &)
+			(makeAsciiString(GetRegistryGameRegPath()) + '\\' + subPath));
 	else
-		path = makeAsciiString(GetRegistryGameRegPath()) + subPath;
+		((StringBase<char> *)&path)->set((const StringBase<char> &)(const AsciiString &)
+			(makeAsciiString(GetRegistryGameRegPath()) + subPath));
 	return path;
 }
 
