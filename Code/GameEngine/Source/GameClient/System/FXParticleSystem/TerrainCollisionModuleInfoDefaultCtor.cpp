@@ -37,9 +37,6 @@ public:
 	Snapshot(const Snapshot &that);
 
 	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer) = 0;
-	virtual void loadPostProcess() = 0;
-	virtual void xfer(Xfer *xfer) = 0;
 };
 
 class TerrainCollisionModuleInfo : public Snapshot
@@ -47,6 +44,8 @@ class TerrainCollisionModuleInfo : public Snapshot
 public:
 	TerrainCollisionModuleInfo();
 	virtual ~TerrainCollisionModuleInfo();
+	virtual void v1() = 0;
+	virtual const char *GetSnapshotName();
 
 private:
 	AsciiString m_name;
