@@ -51,14 +51,28 @@ public:
 
 #include "ascii_string.h"
 
+struct Rva0045A6D3Arg
+{
+	char _pad[0x10];
+	AsciiString m_10;
+};
+
 class AutoAbilityBehavior : public Rva0024A797
 {
 public:
 	virtual ~AutoAbilityBehavior();
+	int rva0045A6D3(const Rva0045A6D3Arg *arg);
 
 private:
 	AsciiString m_str20; // +0x20
 };
+
+int AutoAbilityBehavior::rva0045A6D3(const Rva0045A6D3Arg *arg)
+{
+	if (m_str20.isEmpty() || m_str20.compare(arg->m_10) != 0)
+		return 0;
+	return 1;
+}
 
 AutoAbilityBehavior::~AutoAbilityBehavior()
 {

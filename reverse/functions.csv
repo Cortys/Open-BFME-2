@@ -49260,3 +49260,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva005346D9Construct@@YAXPAURva005344C0@@ABU1@@Z,,0x005346D9,45,Code/GameEngine/Source/Common/Rva005344C0Copy.cpp,matched,chain from 00534676 via placement new plus caller 00534757 same TU
 ?rva000747E5@Rva000747E5@@QAEXXZ,,0x000747E5,23,Code/GameEngine/Source/Common/System/Rva000747E5Method.cpp,matched,guarded newDisplayString slot 0x38 via TheDisplayStringManager plus caller 0x00046A50 plus ctor zeroes 0x28
 ?rva0055B156@Rva0055B156@@QAEXH@Z,,0x0055B156,16,Code/GameEngine/Source/Common/Rva0055B0CCDestructor.cpp,matched,gap list push via rowed pushback caller 0x004F20CE
+?rva0045A6D3@AutoAbilityBehavior@@QAEHPBURva0045A6D3Arg@@@Z,,0x0045A6D3,43,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorDtor.cpp,matched,AutoAbility empty or compare match via shared AsciiString

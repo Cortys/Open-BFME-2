@@ -6091,3 +6091,6 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva006EBDD0@Rva006EBDD0@@QAEXPAVRenderingContext@@PAX@Z	0x006EBDD0	123	blocked	sibling of 006EBD30 same Apt file-string cecac0 plus assert triple needs donor t=5 model=muse-10
 ??0Rva00074136@@QAE@XZ	0x00074136	138	partial	ctor with set at 0x44 via rowedd3a71 and empty base for EH. 139B vs 138B. float 10.0f loads twice with int reload vs retail once with xmm0 reuse t=15 model=muse-04 score=0.93 stash=reverse/attempts/0x00074136.cpp
 ?rva005DB145@Rva005DB145@@QAEXABURva0039B2E6Input@@H@Z	0x005DB145	163	blocked	169B outer cmp order plus inner test-mask vs sar plus begin staged in ecx vs mem sub shared-header upgrade t=15 model=muse-12 (stash 0.92 kept)
+?rva0056EC54@Rva0056EC54@@QAE_NABVUnicodeString@@_N@Z	0x0056EC54	90	blocked	xor-eax cmp-reg vs cmp-imm test-vs-cmp pop order shared-header same t=10 model=muse-09 (stash 0.92 kept)
+?Rva0045A63FFind@@YAPAXPAXABVAsciiString@@@Z	0x0045A63F	148	blocked	148B EH AutoAbility find funclet 0078A38D unclaimed needs gen_uw donor ScriptActions only t=7 model=muse-09
+?rva0045A447@Rva0045A447@@QAEPAU1@PAX0@Z	0x0045A447	180	blocked	180B mixed x87 SSE AutoAbility range virtual slot float order needs precise modeling t=5 model=muse-09
