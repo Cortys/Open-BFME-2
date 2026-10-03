@@ -1,0 +1,70 @@
+// cl: /O2 /DNDEBUG /MD
+//
+// Two 95-byte AptCIH flag workers, address-derived as their identity is not
+// recovered. Both assert "isSpriteInstBase()" at AptCIH.h:125, then set or
+// clear bit 25 (0x02000000) in a flag dword at +0x1C of the object reached
+// through the checked cast's +0x4C pointer. The checked cast
+// ?rva006DCF60@BfmeAptValue006DCD20@@QAEPAV1@_N@Z is rowed at 0x006DCF60 and
+// the predicate ?rva006cfcd0@BfmeAptValue006DCD20@@QAEHXZ is pinned at
+// 0x006CFCD0 (isUndefined false and type 0xD or 0x12). The shared return value
+// is the global at 0x00E18078 (DIR32, named address-derived).
+
+class AptValue;
+
+extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
+extern int g_bfmeAptBreakOnAssertAtDDC01C;
+void __debugbreak();
+#pragma intrinsic(__debugbreak)
+
+class Rva006EE1B0Inner
+{
+public:
+	char m_pad1C[0x1C];
+	unsigned int m_flags; // +0x1C
+};
+
+class BfmeAptValue006DCD20
+{
+public:
+	BfmeAptValue006DCD20 *rva006DCF60(bool undefOK);
+	bool rva006cfcd0();
+
+	char m_pad4C[0x4C];
+	Rva006EE1B0Inner *m_inner; // +0x4C
+};
+
+extern AptValue *g_rva00e18078;
+
+AptValue *rva006ee1b0(BfmeAptValue006DCD20 *entry)
+{
+	if (entry->rva006DCF60(false)->rva006cfcd0())
+	{
+		BfmeAptValue006DCD20 *value = entry->rva006DCF60(false);
+		if (!value->rva006cfcd0())
+		{
+			g_bfmeAptAssertAtE17734("isSpriteInstBase()",
+				"c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x7D);
+			if (g_bfmeAptBreakOnAssertAtDDC01C)
+				__debugbreak();
+		}
+		value->m_inner->m_flags &= 0xFDFFFFFF;
+	}
+	return g_rva00e18078;
+}
+
+AptValue *rva006ee210(BfmeAptValue006DCD20 *entry)
+{
+	if (entry->rva006DCF60(false)->rva006cfcd0())
+	{
+		BfmeAptValue006DCD20 *value = entry->rva006DCF60(false);
+		if (!value->rva006cfcd0())
+		{
+			g_bfmeAptAssertAtE17734("isSpriteInstBase()",
+				"c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x7D);
+			if (g_bfmeAptBreakOnAssertAtDDC01C)
+				__debugbreak();
+		}
+		value->m_inner->m_flags |= 0x02000000;
+	}
+	return g_rva00e18078;
+}

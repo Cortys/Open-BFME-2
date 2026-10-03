@@ -7277,3 +7277,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?get_deformed_vertices@MeshModelClass@@QAEXPAVVector3@@0PBVHTreeClass@@@Z,0x0016BF40,"MeshModelClass skin deformation worker called from Get_Deformed_Vertices 0x001499D0; Ghidra boundary 0x0016BF40; donor name from meshgeometry.h"
 ?erase@Rva0014921EVector@@QAEXPAH0@Z,0x00532803,"ICF-folded STLport 4-byte vector erase called from rva0014921e 0x0014921E; existing row vector<ParticleSystemID>::erase shares this body"
 ?rva00149002@@YAXHHPAVRva0014921EVector@@H@Z,0x00149002,"EH-protected range worker called from rva0014921e; 255B unpinned Ghidra body; address-derived name"
+?rva006cfcd0@BfmeAptValue006DCD20@@QAE_NXZ,0x006CFCD0,"AptCIH sprite predicate: asserts non-null then returns type 0xD or 0x12; called by rva006ee1b0/rva006ee210; address-derived name"
