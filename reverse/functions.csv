@@ -50357,3 +50357,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000E73CE@Rva000E73CE@@QAEXXZ,,0x000E73CE,46,Code/GameEngine/Source/Common/Rva000E73CE.cpp,matched,shroud null fill over stride A0 via rowed global
 ??0Rva000E771B@@QAE@XZ,,0x000E771B,25,Code/GameEngine/Source/Common/Rva000E771BCtor.cpp,matched,Region2D array ctor via vector iterator
 ?rva000520C6@Rva00699180Owner@@QAEXXZ,,0x000520C6,46,Code/GameEngine/Source/Common/Rva00699180Volume_Refresh.cpp,matched,dirty decrement via member array plus callers plus rowed callees
+?Rva00413D58Parse@@YAXPAVINI@@@Z,,0x00413D58,115,Code/GameEngine/Source/Common/Rva00413D58Parse.cpp,matched,chain lane INI dispatch Attacker Defender via 0x00413D46
