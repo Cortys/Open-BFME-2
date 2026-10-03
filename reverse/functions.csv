@@ -49856,3 +49856,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00531ABB@Rva00531A44@@QAEXG@Z,,0x00531ABB,51,Code/GameEngine/Source/Common/Rva00531A44Alloc.cpp,matched,singletonize single over m_p4 m_p8 m_pC m_p10 with high-water
 ?rva00531DAE@Rva00531E14@@QAEEG@Z,,0x00531DAE,51,Code/GameEngine/Source/Common/Rva00531E14Lookup.cpp,matched,same-class table dec refcount caller at 0x00533167
 ?rva00531008@Rva00530FC5@@QAEXH@Z,,0x00531008,57,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,same-class two-level bit set callers in 0x005329C8 0x00532FEA
+?rva005DDE69@Rva005DDE69@@QAEMIII@Z,,0x005DDE69,54,Code/GameEngine/Source/Common/Rva005DDE69Finish.cpp,matched,unlock lane bounds-checked range-max wrapper; _ReadWriteBarrier keeps m_begin out of a register across idiv; /O1 /G7 /MD
