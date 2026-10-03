@@ -50243,3 +50243,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?xfer@Rva00426EB0@@UAEXPAVXfer@@@Z,,0x004270B2,72,Code/GameEngine/Source/Common/Rva0042700FParse.cpp,matched,
 ?getDefault@LivingWorldAutoResolveArmorStore@@QAEPBVRva00427157@@XZ,,0x0042724D,71,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
 ?find@LivingWorldAutoResolveArmorStore@@QAEPBVRva00427157@@ABVAsciiString@@@Z,,0x00427217,54,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
+?Rva00170A58Get@@YA?AVRva00170999@@ABVAssetReference@@ABURva00170999Data@@@Z,,0x00170A58,27,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,return-by-value wrapper for rowed 0x00170999 ctor via caller 0x001710A6 hidden buffer
