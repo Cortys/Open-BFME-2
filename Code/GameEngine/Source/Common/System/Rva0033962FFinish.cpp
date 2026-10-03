@@ -1,6 +1,5 @@
 // ?parseDamageFX@INI@@SAXPAV1@PAX1PBX@Z
-// partial score=0.95 date=2026-09-22
-// cl: /O1 /Oy- /DNDEBUG /MD /GX /Oi-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /GX /Oi-
 //
 // ?parseDamageFX@INI@@SAXPAV1@PAX1PBX@Z, retail 0x0033962F, 74 bytes.
 // Dedicated TU (same INI parser family as INI_parseFXList.cpp).
@@ -9,25 +8,16 @@
 // anything else is looked up by AsciiString in TheDamageFXStore (0x00E01E5C,
 // the global initSubsystem<DamageFXStore> registers). The lookup is
 // ICF-folded with ArmorStore::findArmorTemplate at 0x00360966.
+//
+// The by-value AsciiString argument must come from the shared
+// reference/shims/bfme2_ascii/ascii_string.h view: its inline forwarding
+// constructor emits retail's `mov [ebp-4],esp` saved-esp BEFORE `mov ecx,esp`
+// for the temporary. A TU-local out-of-line `~AsciiString()` transposes the
+// two on every flag tried.
+
+#include "ascii_string.h"
 
 class DamageFX;
-
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-
-private:
-	StringBase(const T *s);
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *s) : StringBase<char>(s) {}
-	~AsciiString();
-};
 
 class DamageFXStore
 {
@@ -46,7 +36,6 @@ public:
 
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
-// ?parseDamageFX@INI@@SAXPAV1@PAX1PBX@Z
 void INI::parseDamageFX(INI *ini, void *, void *store, const void *)
 {
 	const char *token = ini->getNextToken();
