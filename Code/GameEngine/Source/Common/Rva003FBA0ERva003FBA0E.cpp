@@ -1,9 +1,7 @@
-// ?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z
-// partial score=0.9 date=2026-09-29
-// ?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z
-// partial score=0.90 date=2026-09-29
-// cl: /O1 /DNDEBUG /MD /arch:SSE
-// ?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z @0x003FBA0E 74B
+// cl: /O1 /DNDEBUG /MD /arch:SSE /Op
+//
+// ?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z, retail 0x003fba0e, 74 bytes. Banked partial (score 0.9) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Unlock init with 5 ints plus float. Evidence: clears +0x4c +0x38 stores e b c
 // b-a d sets +0x2c=3 float to +0x54 then slot3 virtual.
 class Rva003FBA0E {
@@ -27,18 +25,17 @@ private:
     int m_50;
     float m_54;
 };
-// ?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z present-unmatched
 void Rva003FBA0E::rva003FBA0E(int a, int b, int c, int d, int e, float f)
 {
     m_4c = 0;
-    m_38 = 0;
     m_50 = e;
-    m_40 = b;
-    m_44 = c;
-    m_34 = b - a;
     m_2c = 3;
+    m_38 = 0;
+    m_40 = b;
     m_3c = a;
+    m_44 = c;
     m_48 = d;
     m_54 = f;
+    m_34 = b - a;
     slot03();
 }
