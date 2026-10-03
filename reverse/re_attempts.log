@@ -5982,3 +5982,6 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva00216332Call@@YAHPAX0PBDPBIPBQAX@Z	0x00216332	104	partial	header via ebp slot vs eax deref plus a1 late plus 2 push regs t=15 model=muse-07 score=0.97 stash=reverse/attempts/0x00216332.cpp
 ?Rva0027D3D9Forward@@YGXHHPAVMatrix3D@@M@Z	0x0027D3D9	50	blocked	vtable-temp esi-vs-eax plus early fld-mov order t=15 model=muse-05 (stash 0.93 kept)
 ?rva0027D483@Rva0027D483@@QAEXPAX0@Z	0x0027D483	298	blocked	loop-epilogue-shared-ret plus float-preload-order t=10 model=muse-05 (stash 0.9 kept)
+??0?$hash_map@W4NameKeyType@@VArmorTemplate@@U?$hash@W4NameKeyType@@@rts@@U?$equal_to@W4NameKeyType@@@_STL@@V?$allocator@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@6@@_STL@@QAE@XZ	0x001E3386	31	blocked	hash_map _STL ctor twin of 0x00360B99 calls hashtable twin 0x001E2F8E not 0x00360B59 needs pin not new TU t=18 model=muse-10
+?rva001E3F4D@Rva001E3F4D@@QAEMPAURva001E3F4DArg@@H@Z	0x001E3F4D	96	blocked	factor movss+mulss vs direct mulss xmm2 vs xmm1 +4B base-late worse t=25 model=muse-10 (stash 0.93 kept)
+??0Rva002419E2@@QAE@ABV0@@Z	0x002419E2	188	blocked	copy ctor AsciiString Region3D3 list-int movsd-loop vs 12-movs needs donor t=25 model=muse-10
