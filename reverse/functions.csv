@@ -50508,3 +50508,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0048E6AB@DeployStyleAIUpdate@@QAEXXZ,,0x0048E6AB,39,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DeployStyleAIUpdateHelper.cpp,matched,DeployStyle mirror leaf over 0x4B4 0x4D6 0x4D5 caller 0x004AE76A
 ??1Rva003ADFB2@@UAE@XZ,,0x003ADFB2,41,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADFB2Dtor.cpp,matched,V3 dtor three vptrs 0xC 0x8 0x0 caller 0x003AE270 sibling 0x003AE358
 ?rva003F751A@Rva003F751A@@QAEPAURva003F751ANode@@PBH@Z,,0x003F751A,37,Code/GameEngine/Source/Common/Rva003F751AFind.cpp,matched,unlock lane tree traversal header root key at +0x10 vs key children +8 +C returns end or last le
+?Rva0037F71FCopy@@YAXPAVRva0037F551@@ABV1@@Z,,0x0037F71F,18,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F551 null-checked forward callers 0x0037F731

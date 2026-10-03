@@ -35,3 +35,10 @@ Rva0037F551 &Rva0037F551::rva0037F551(const Rva0037F551 &src)
 	m_44 = src.m_44;
 	return *this;
 }
+// ?Rva0037F71FCopy@@YAXPAVRva0037F551@@ABV1@@Z retail 0x0037F71F 18B
+// Evidence: chain from 0x0037F551; null-checked forward to rva0037F551; callers 0x0037F731 0x0037F757 0x0037FF20 0x0037FFDD
+void Rva0037F71FCopy(Rva0037F551 *dst, const Rva0037F551 &src)
+{
+	if (dst)
+		dst->rva0037F551(src);
+}
