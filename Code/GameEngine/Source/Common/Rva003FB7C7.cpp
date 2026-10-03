@@ -116,3 +116,32 @@ void Rva003FB65C::rva003FB65C(int x)
 	if (m_ptr08 && m_aux18)
 		m_ptr08->slot45(m_aux18, 0.0f, x);
 }
+
+class Rva003FB9C8
+{
+public:
+	virtual void slot00();
+	virtual void slot01();
+	virtual void slot02();
+	virtual void slot03();
+	void rva003FB9C8(int a, int b);
+private:
+	char m_pad04[0x28];
+	int m_2c; // +0x2c
+	char m_pad30[4];
+	int m_34; // +0x34
+	int m_38; // +0x38
+	char m_pad3C[0x10];
+	int m_4c; // +0x4c
+	int m_50; // +0x50
+};
+
+void Rva003FB9C8::rva003FB9C8(int a, int b)
+{
+	m_38 = 0;
+	m_2c = 2;
+	m_4c = 2;
+	m_50 = b;
+	m_34 = a;
+	slot03();
+}

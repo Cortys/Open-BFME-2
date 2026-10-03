@@ -50285,3 +50285,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?insert_equal@?$_Rb_tree@URva001DD1B3@@U1@U?$_Identity@URva001DD1B3@@@_STL@@U?$less@URva001DD1B3@@@3@V?$allocator@URva001DD1B3@@@3@@_STL@@QAE?AU?$_Rb_tree_iterator@URva001DD1B3@@U?$_Nonconst_traits@URva001DD1B3@@@_STL@@@2@ABURva001DD1B3@@@Z,,0x001DDA1C,59,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_insert_equal_rva001dd1b3.cpp,matched,chain lane single _M_insert caller via rowed _M_insert 0x001DD8EE
 ??0Rva00596B05@@QAE@PAX0HH@Z,,0x00596BF3,120,Code/GameEngine/Source/Common/Rva00596B05Ctor.cpp,matched,ctor base 0x0055B048 vtable 0x00870A98 args plus AIMoneyLender
 ?rva003FB65C@Rva003FB65C@@QAEXH@Z,,0x003FB65C,38,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,if ptr08 and aux18 call slot45 with 0.0
+?rva003FB9C8@Rva003FB9C8@@QAEXHH@Z,,0x003FB9C8,35,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,init 2c 4c to 2 and 38 to 0 store args then slot3
