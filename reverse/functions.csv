@@ -49716,3 +49716,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva0055F218Sub@@QAE@XZ,,0x0055EF55,25,Code/GameEngine/Source/Common/Rva0055F218Ctor.cpp,matched,placed by masked byte search of already-compiled unit
 ??$__uninitialized_fill_n@PAUNugget@ModuleInfo@@IU12@@_STL@@YAPAUNugget@ModuleInfo@@PAU12@IABU12@ABU__false_type@0@@Z,,0x00119B80,43,Code/GameEngine/Source/Common/System/Rva00119EC0Siblings.cpp,matched,placed by masked byte search of already-compiled unit
 ?allocate@?$allocator@UNugget@ModuleInfo@@@_STL@@QBEPAUNugget@ModuleInfo@@IPBX@Z,,0x00118E20,42,Code/GameEngine/Source/Common/System/Rva00119EC0Siblings.cpp,matched,placed by masked byte search of already-compiled unit
+?pop_back@?$vector@VRva00142DF0String@@V?$allocator@VRva00142DF0String@@@_STL@@@_STL@@QAEXXZ,,0x00142DD0,24,Code/GameEngine/Source/Common/System/Rva001431B0Pop.cpp,matched,placed by masked byte search of already-compiled unit
