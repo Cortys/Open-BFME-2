@@ -49365,3 +49365,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva003FE0B3@Rva003FE0B3@@QAEXUTreeHintRef00217D4C@@@Z,,0x003FE0B3,56,Code/GameEngine/Source/Common/Rva003FE0B3.cpp,matched,TreeHintRef setter to plus4C via operator assign
 ??0Rva003FE792@@QAE@UTreeHintRef00217D4C@@H@Z,,0x003FE792,56,Code/GameEngine/Source/Common/Rva003FE792.cpp,matched,TreeHint ctor with vtable AddRef and ints
 ?rva0053104A@Rva00530FC5@@QAE_NPAH@Z,,0x0053104A,153,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,hierarchical bitset iterator via Rva00530FC5 layout callers in 0x00533BEC
+?xfer@Rva0047F94C@@QAEXPAVXfer@@@Z,,0x0047F94C,50,Code/GameEngine/Source/Common/Rva0047F94CXfer.cpp,matched,slot-3 xfer version-gated UpdateModule base xfer via slot 0x28
