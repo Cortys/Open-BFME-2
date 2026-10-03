@@ -1,7 +1,3 @@
-// ?rva001DCD3C@Rva001DCD3C@@QAEXXZ
-// partial score=0.97 date=2026-09-29
-// ?rva001DCD3C@Rva001DCD3C@@QAEXXZ
-// partial score=0.97 date=2026-09-29
 // cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /arch:SSE
 // ?rva001DCD3C@Rva001DCD3C@@QAEXXZ @ 0x001DCD3C 80B
 // Honest address name: __thiscall clearer beside GameLogicModeGateChecks.
@@ -9,6 +5,8 @@
 // (0x1DD238 0x1DEEA0 0x1DF1E8 0x1DF520 0x1DF78F); first two floats from
 // global VA 0x7BB9AC, rest zeroed through +0x30. Prev/next pin TU and flags.
 extern float g_007BB9AC;
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 class Rva001DCD3C
 {
 public:
@@ -31,13 +29,13 @@ private:
     volatile float m_2C;
     volatile int m_30;
 };
-// ?rva001DCD3C@Rva001DCD3C@@QAEXXZ present-unmatched
 void Rva001DCD3C::rva001DCD3C()
 {
     float v = g_007BB9AC;
     float zero = 0.0f;
     m_00 = v;
     m_04 = v;
+    _ReadWriteBarrier();
     m_20 = 0;
     m_08 = zero;
     m_0C = zero;
