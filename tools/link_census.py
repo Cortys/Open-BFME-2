@@ -395,7 +395,7 @@ def _arg(path):
 
 def link(objs, aliases=None, tag="census", extra=(), options=()):
     OUT.mkdir(parents=True, exist_ok=True)
-    rsp = OUT / "objects.rsp"
+    rsp = OUT / f"{tag}.rsp"  # per tag: the census and selection links may run at once
     rsp.write_text("\n".join(f'"{_arg(o)}"' for o in objs) + "\n", encoding="utf-8")
     extra = [_arg(path) for path in extra] + list(options)
     if aliases:
@@ -1462,6 +1462,13 @@ def main(argv=None):
     if missing:
         print(f"link_census: {len(missing):,} objects missing (run the full ./build.sh first); "
               f"linking the {len(present):,} present", file=sys.stderr)
+    # The selection (/MAP) link needs the plain link's unresolved names. Those
+    # barely move between censuses, so start it now on the last census's
+    # names, in parallel; selection_link() uses this result only when the
+    # names turn out identical, and relinks otherwise. Same map either way.
+    predicted = _unresolved_names(OUT / "census.log")
+    if predicted:
+        _start_preselection(present, predicted)
     fresh_outputs(OUT / "census.exe")
     log, seconds, code = link(present)
     unexplained_exit(code, log, OUT / "census.exe")
@@ -1549,12 +1556,49 @@ def selected_main():
     return 0
 
 
+def _unresolved_names(log):
+    """Names a link log reports unresolved; a path reads the log file."""
+    if isinstance(log, Path):
+        try:
+            log = log.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            return set()
+    return {found.group(1) or found.group(2) for found in map(UNRESOLVED.search, log.splitlines()) if found}
+
+
+_PRESELECTION = {}
+
+
+def _start_preselection(present, names):
+    import threading
+
+    def work():
+        try:
+            _PRESELECTION["map"] = _selection_map(present, names)
+        except SystemExit as error:
+            _PRESELECTION["error"] = error
+    _PRESELECTION.clear()
+    _PRESELECTION.update(names=set(names), objects=list(present), thread=threading.Thread(target=work, daemon=True))
+    _PRESELECTION["thread"].start()
+
+
 def selection_link(present, log):
     """The /MAP text of a relink of `present` in which every name the plain
     link (`log`) left unresolved is defined in one stub section, so the link
     finishes and the map says which definition it kept for every name.
     /OPT:NOREF keeps every selected COMDAT in the map."""
-    missing_names = {found.group(1) or found.group(2) for found in map(UNRESOLVED.search, log.splitlines()) if found}
+    missing_names = _unresolved_names(log)
+    if _PRESELECTION:
+        _PRESELECTION["thread"].join()
+        if (_PRESELECTION["names"] == missing_names and _PRESELECTION["objects"] == list(present)
+                and "map" in _PRESELECTION):
+            print("link_census: selection link ran in parallel on the same unresolved names", flush=True)
+            return _PRESELECTION["map"]
+        print("link_census: unresolved names moved since the last census; relinking for the map", flush=True)
+    return _selection_map(present, missing_names)
+
+
+def _selection_map(present, missing_names):
     stubs = stub_object(missing_names, OUT / "selected_stubs.obj")
     link_map = OUT / "selected.map"
     fresh_outputs(link_map, OUT / "selected.exe")  # a failed link leaves an empty map, never last run's
