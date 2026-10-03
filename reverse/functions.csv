@@ -49059,3 +49059,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva004CFBC2@Rva004CFBC2AsciiField@@QAEXVAsciiString@@@Z,,0x004CFBC2,55,Code/GameEngine/Source/Common/System/AsciiStringRvoGetters.cpp,matched,setter +0x1DC same 55B shape as siblings via rowed set and releaseBuffer
 ?rva004CFB8B@Rva004CFB6DAsciiField@@QAEXVAsciiString@@@Z,,0x004CFB8B,55,Code/GameEngine/Source/Common/System/AsciiStringRvoGetters.cpp,matched,setter +0x1D8 same 55B shape as siblings via rowed set and releaseBuffer abuts getter 0x004CFB6D
 ?rva005E0FBE@Rva005E0FBE@@QAEXXZ,,0x005E0FBE,74,Code/GameEngine/Source/Common/Rva005E0FBEMethod.cpp,matched,chain via rowed Fire with level prefix and flags plus false temp
+?rva005E0EE1@Rva005E0EE1@@QAEXH@Z,,0x005E0EE1,221,Code/GameEngine/Source/Common/Rva005E0EE1Method.cpp,matched,chain via rowed Fire and Apt ProductionCount update
