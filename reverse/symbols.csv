@@ -7268,3 +7268,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ??1Rva006FBDB0@@QAE@XZ,0x006FBDB0,address-derived element destructor called by 0x00706330; zeroes +4 then tail-jumps the EAStringC destructor at 0x006D3010
 ?rva006E1C40@AptCIH@@QAEXPAX0@Z,0x006E1C40,address-derived member target called from AptCIH rva006E1DD0 (AptCIH.cpp pRect init); body unrowed
 ?rva006CFCD0@AptCIH@@QBE_NXZ,0x006CFCD0,address-derived AptCIH predicate called by rva006E1F90 (isSpriteInstBase assertion); body unrowed
+??0Rva00624DB0@@QAE@XZ,0x00624DB0,address-derived 0x200-byte object constructor called from ShdDefFactoryClass ctor 0x61EEE0; body unrowed
