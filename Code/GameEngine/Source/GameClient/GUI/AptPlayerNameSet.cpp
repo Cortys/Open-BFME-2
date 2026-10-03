@@ -32,6 +32,7 @@ public:
     void rva005FBBC0(const UnicodeString &playerName);
     void rva005FB7D7(const UnicodeString &value);
     void rva005FB903(int count);
+    void rva005FB961(float v);
     void rva005FB9C6(float v);
 private:
     char m_pad[4];
@@ -86,6 +87,7 @@ class Rva005FBB68
 {
 public:
     void rva005FBB68(int count);
+    void rva005FBB70(float v);
     void rva005FBB83(float v);
 private:
     char m_pad[4];
@@ -94,6 +96,10 @@ private:
 void Rva005FBB68::rva005FBB68(int count)
 {
     return m_member->rva005FB903(count);
+}
+void Rva005FBB68::rva005FBB70(float v)
+{
+    m_member->rva005FB961(v);
 }
 void Rva005FBB68::rva005FBB83(float v)
 {
