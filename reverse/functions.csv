@@ -50117,3 +50117,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005D4BAE@Rva005D4BAE@@QAEXM@Z,,0x005D4BAE,19,Code/GameEngine/Source/Common/Rva005D4BAEForward.cpp,matched,float forwarder to rowed SetPageSize via member at plus0x14
 ?shouldTryToSpawn@SpawnBehavior@@QAE_NXZ,,0x0045F3F8,103,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0045F3F8Finish.cpp,matched,banked partial finished: unsigned char intermediates for +0x124 bit26 and dead-bit tail
 ?rva004E9B70@Rva004E9B70@@QAEXXZ,,0x004E9B70,86,Code/GameEngine/Source/Common/Rva004E9B70Finish.cpp,matched,banked partial finished: final global erase is inside the non-empty branch so the entry guard skips it
+??0Rva00426402@@QAE@XZ,,0x00426402,59,Code/GameEngine/Source/Common/Rva00426402Ctor.cpp,matched,baseConstruct plus vtable 0x0083C350 plus 3x Vector_base
