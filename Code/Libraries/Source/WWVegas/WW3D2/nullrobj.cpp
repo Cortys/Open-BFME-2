@@ -66,20 +66,21 @@ NullLoaderClass _NullLoader;
 
 
 
-// Byte-exact /G7 copies live in Null3DObjClassCopyCtor.cpp; these stay so
-// this TU still emits Clone and the Set_ObjectScale gen-alias.
+// Byte-exact /G7 copies live in Null3DObjClassCopyCtor.cpp; these stay inline
+// (select-any) so this TU still emits Clone and the Set_ObjectScale gen-alias
+// without a duplicate plain definition.
 
-Null3DObjClass::Null3DObjClass(const char * name)																	
+inline Null3DObjClass::Null3DObjClass(const char * name)																	
 {
 	strcpy(Name, name);
 }
 
-Null3DObjClass::Null3DObjClass(const Null3DObjClass & src)									
+inline Null3DObjClass::Null3DObjClass(const Null3DObjClass & src)									
 {
 	strcpy(Name, src.Name);
 }
 
-Null3DObjClass & Null3DObjClass::operator = (const Null3DObjClass & that)				
+inline Null3DObjClass & Null3DObjClass::operator = (const Null3DObjClass & that)				
 {
 	strcpy(Name, that.Name);
 
