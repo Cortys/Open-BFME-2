@@ -49199,3 +49199,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0042E75F@BfmeOwnVVD@@QAEXI@Z,,0x0042E75F,165,Code/GameEngine/Source/Common/BfmeOwnVVDCtor.cpp,matched,BfmeOwnVVD layout m_38 m_39 m_148 startScrollTime row timeGetTime IAT
 ?GetText@SubTitleManager@@QAE?AVUnicodeString@@H@Z,,0x00046906,109,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,string literal plus caller 0x00048098 plus siblings HasBeenDisplayed
 ?rva00046A27@SubTitleManager@@QAEXXZ,,0x00046A27,41,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,same vector plus 0x20 layout as siblings caller 0x00048015
+??0BfmeCellGrid@@QAE@HHMM@Z,,0x0056C266,383,Code/GameEngine/Source/Common/BfmeCellGridCtor.cpp,matched,BFME1 BfmeCellGrid donor plus VictorySystem string plus Rva00404781 layout
