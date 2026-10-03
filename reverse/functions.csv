@@ -50468,3 +50468,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z,,0x003E4921,151,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003E4921Finish.cpp,matched,gate condition; early return per failing condition gives the false arm the fallthrough
 ??1Rva00355CD8@@UAE@XZ,,0x00355CD8,62,Code/GameEngine/Source/Common/Rva00355CD8Dtor.cpp,matched,dtor via deleting dtor plus shared EH scope plus base row
 ??_GRva00355CD8@@UAEPAXI@Z,,0x00355FC1,28,Code/GameEngine/Source/Common/Rva00355CD8Dtor.cpp,matched,deleting dtor emits from own dtor TU
+?rva0052E0CE@Rva0052E0CE@@QAE_N_N@Z,,0x0052E0CE,46,Code/GameEngine/Source/Common/Rva0052E0CE.cpp,matched,bit-23 setter 2 callers unlock lane sibling pattern
