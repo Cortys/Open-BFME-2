@@ -50479,3 +50479,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0037F51A@Rva0037F51A@@QAEAAV1@ABV1@@Z,,0x0037F51A,55,Code/GameEngine/Source/Common/Rva0037F51A.cpp,matched,same 0x20 layout as 0x0037F4EA; callers 0x0037F551 0x0037F950
 ?rva00153664@Rva00153664@@QAEXHPBDPAVRva0015354E@@@Z,,0x00153664,134,Code/Libraries/Source/WWVegas/WWLib/Rva00153664.cpp,matched,chain from 0x001535FF slots 0x10 0x20 0x04 reuses Rva0015354E and Rva001531E6
 ?Rva001117B4IsPow2@@YGEH@Z,,0x001117B4,47,Code/GameEngine/Source/Common/Rva001117B4Finish.cpp,matched,power-of-two test 1..64 with shared true block
+?rva004ED471@Rva004ED471@@QAEXPAVModelNodeClass@HLodClass@@PBV23@PBXI_N@Z,,0x004ED471,189,Code/Libraries/Source/WWVegas/WW3D2/Rva004ED471Finish.cpp,matched,HLod ModelNode vector overflow via empty allocator temp
