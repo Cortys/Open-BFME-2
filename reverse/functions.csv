@@ -49884,3 +49884,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005278DD@Rva00527890@@QAEXXZ,,0x005278DD,72,Code/GameEngine/Source/Common/Bfme/Rva00527890Move.cpp,matched,unlock Hide plus tail clear sibling Move
 ?rva00527AEB@Rva00527AEB@@QAEXABUTreeHintRef00217D4C@@@Z,,0x00527AEB,24,Code/GameEngine/Source/Common/Bfme/Rva00527AEBWrapper.cpp,matched,chain from 0x005278DD Hide plus TreeHint assign
 ?rva00531481@Rva005312BE@@QAEXXZ,,0x00531481,69,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,sets flag 1BA30 and all m_35 like sibling rva00531300
+?rva0030D631@Rva0030D631@@QAEPAVBfmeRetBWF@@XZ,,0x0030D631,42,Code/GameEngine/Source/GameClient/Rva0030D631Method.cpp,matched,unlock gap plus rowed bfmeCalcBWF
