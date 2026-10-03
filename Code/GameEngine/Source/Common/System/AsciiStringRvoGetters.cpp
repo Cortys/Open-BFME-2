@@ -118,6 +118,7 @@ class Rva004CFB6DAsciiField
 {
 public:
 	AsciiString get() const;
+	void rva004CFB8B(AsciiString value);
 
 private:
 	char m_pad[0x1D8];
@@ -128,6 +129,18 @@ private:
 AsciiString Rva004CFB6DAsciiField::get() const
 {
 	return m_value;
+}
+
+// ?rva004CFB8B@Rva004CFB6DAsciiField@@QAEXVAsciiString@@@Z, retail 0x004CFB8B, 55 bytes.
+// Setter for the same +0x1D8 member the getter above returns: abuts it
+// (0x004CFB6D+30=0x004CFB8B) and next setter 0x004CFB8B+55=0x004CFBC2.
+// Same 55B shape as rva004FDCFF (lea eax,[ebp+8]; add ecx,0x1D8; push eax)
+// via inlined operator= (rowed StringBase::set 0x366F0) then rowed
+// releaseBuffer 0x36410 with EH unwind. Reuses getter class since offset matches.
+void Rva004CFB6DAsciiField::rva004CFB8B(AsciiString value)
+{
+	AsciiString &slot = m_value;
+	slot = value;
 }
 
 class Rva004DC902AsciiField
