@@ -429,6 +429,12 @@ WWINLINE float Vector3::Cross_Product_Z(const Vector3 &a,const Vector3 &b)
  *                                                                        *
  * HISTORY:                                                               *
  *========================================================================*/
+// Retail Normalize is 100 bytes at RVA 0x0006924F; the body retains its
+// frame and size-optimized shape even in /G7 SSE callers. Equations and
+// declarations are donor facts; the profile is verified against that body.
+#pragma optimize("t", off)
+#pragma optimize("s", on)
+#pragma optimize("y", off)
 WWINLINE void Vector3::Normalize()
 {
 	float len2 = Length2();
@@ -440,6 +446,7 @@ WWINLINE void Vector3::Normalize()
 		Z *= oolen;
 	}
 }
+#pragma optimize("", on)
 
 #ifdef ALLOW_TEMPORARIES
 WWINLINE Vector3 Normalize(const Vector3 & vec)
@@ -465,10 +472,16 @@ WWINLINE Vector3 Normalize(const Vector3 & vec)
  *                                                                        *
  * HISTORY:                                                               *
  *========================================================================*/
+// Retail Length is 66 bytes at RVA 0x000692B3 with the same framed
+// size profile. Keep its donor equation and restore TU flags afterwards.
+#pragma optimize("t", off)
+#pragma optimize("s", on)
+#pragma optimize("y", off)
 WWINLINE float Vector3::Length() const
 {
 	return WWMath::Sqrt(Length2());
 }
+#pragma optimize("", on)
 
 /**************************************************************************
  * Vector3::Length2 -- Returns the square of the length of the vector     *
