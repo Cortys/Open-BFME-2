@@ -37,6 +37,12 @@ template <> struct less<AsciiString>
 };
 }
 
+class Rva0038404A { public: void rva00384E8E(void); };
+class Rva00383AFF { public: void rva00383AFF(void); };
+class Rva00383A28 { public: void rva00383A28(void); };
+class Rva00072FE6 { public: void rva00072FE6(void); };
+class Rva00552CF9 { public: void rva00552CB8(void); };
+
 class GameWindow;
 class GameSpyGroupRoom;
 class BuddyInfo {};
@@ -55,6 +61,16 @@ class GameSpyStagingRoom
 {
 public:
 	virtual ~GameSpyStagingRoom();
+	virtual void s01(void);
+	virtual void s02(void);
+	virtual void s03(void);
+	virtual void s04(void);
+	virtual void s05(void);
+	virtual void s06(void);
+	virtual void s07(void);
+	virtual void s08(void);
+	virtual void s09(void);
+	virtual void reset(void);
 	static void operator delete(void *p) { ::operator delete(p); }
 };
 
@@ -222,65 +238,107 @@ extern GameSpyInfoInterface *TheGameSpyInfo;
 class GameSpyInfo
 {
 public:
+	// Virtual slots follow the retail vtable at 0x00C1DD90 so that virtual
+	// self-calls encode the right slot offsets; unnamed slots are placeholders.
+	virtual ~GameSpyInfo();
+	virtual void reset(void);
+	virtual void clearGroupRoomList(void);
+	virtual void slot03(void);
+	virtual void slot04(void);
+	virtual void slot05(void);
+	virtual void joinGroupRoom(Int groupID);
+	virtual void leaveGroupRoom(void);
+	virtual void rva003854C5(void);
+	virtual void slot09(void);
+	virtual void slot10(void);
+	virtual void setCurrentGroupRoom(Int groupID);
+	virtual Int getCurrentGroupRoom(void);
+	virtual void rva00386139(AsciiString value);
+	virtual AsciiString rva0038616D(void);
+	virtual void slot15(void);
+	virtual void slot16(void);
+	virtual void rva003674FE(Int value);
+	virtual void slot18(void);
+	virtual void slot19(void);
+	virtual void playerLeftGroupRoom(AsciiString nick);
+	virtual void slot21(void);
+	virtual PlayerInfo *rva00382CCE(const char *key);
+	virtual PlayerInfo *rva00382D0A(Int profileID);
+	virtual void slot24(void);
+	virtual void slot25(void);
+	virtual void slot26(void);
+	virtual Bool isBuddy(Int id);
 	virtual void setLocalName(AsciiString name);
 	virtual AsciiString getLocalName(void);
+	virtual void slot30(void);
+	virtual void slot31(void);
 	virtual AsciiString getLocalEmail(void);
 	virtual void setLocalEmail(AsciiString email);
 	virtual AsciiString getLocalPassword(void);
 	virtual void setLocalPassword(AsciiString passwd);
 	virtual void setLocalBaseName(AsciiString name);
 	virtual AsciiString getLocalBaseName(void);
-
-	virtual void slot08(void);
-	virtual void slot09(void);
-	virtual void slot10(void);
-	virtual void setCurrentGroupRoom(Int groupID);
-	virtual Int getCurrentGroupRoom(void);
-	virtual void playerLeftGroupRoom(AsciiString nick);
-
-	virtual GameSpyStagingRoom *findStagingRoomByID(Int id);
-	virtual Bool rva00383207(GameSpyStagingRoom *room);
+	virtual void slot38(void);
+	virtual void slot39(void);
 	virtual void clearStagingRoomList(void);
-	virtual GameSpyStagingRoom *getCurrentStagingRoom(void);
+	virtual void slot41(void);
+	virtual GameSpyStagingRoom *findStagingRoomByID(Int id);
+	virtual void slot43(void);
+	virtual void slot44(void);
+	virtual void slot45(void);
 	virtual Bool hasStagingRoomListChanged(void);
+	virtual void leaveStagingRoom(void);
+	virtual void slot48(void);
+	virtual void slot49(void);
+	virtual void slot50(void);
+	virtual void slot51(void);
 	virtual Bool rva00381DC4(void);
-
-	virtual Bool isBuddy(Int id);
-
+	virtual GameSpyStagingRoom *getCurrentStagingRoom(void);
+	virtual Bool rva00383207(GameSpyStagingRoom *room);
+	virtual void slot55(void);
+	virtual void slot56(void);
+	virtual void slot57(void);
+	virtual void slot58(void);
+	virtual void slot59(void);
+	virtual void slot60(void);
+	virtual void slot61(void);
+	virtual void slot62(void);
+	virtual void slot63(void);
+	virtual void slot64(void);
+	virtual void slot65(void);
 	virtual void setMOTD(const AsciiString &motd);
-
+	virtual void slot67(void);
+	virtual void slot68(void);
+	virtual void slot69(void);
+	virtual void setPingString(const AsciiString &ping);
+	virtual void slot71(void);
+	virtual void slot72(void);
+	virtual void slot73(void);
+	virtual void slot74(void);
 	virtual void addToSavedIgnoreList(Int profileID, AsciiString nick);
 	virtual void removeFromSavedIgnoreList(Int profileID);
 	virtual Bool isSavedIgnored(Int profileID);
-	virtual SavedIgnoreMap returnSavedIgnoreList(void);
+	virtual void slot78(void);
 	virtual void loadSavedIgnoreList(void);
-
 	virtual IgnoreList returnIgnoreList(void);
 	virtual void addToIgnoreList(AsciiString nick);
 	virtual void removeFromIgnoreList(AsciiString nick);
 	virtual Bool isIgnored(AsciiString nick);
-
 	virtual void setLocalIPs(UnsignedInt internalIP, UnsignedInt externalIP);
-
+	virtual void slot85(void);
+	virtual unsigned short rva003860FF(void);
+	virtual void slot87(void);
 	virtual Bool isDisconnectedAfterGameStart(Int *reason) const;
 	virtual void markAsDisconnectedAfterGameStart(Int reason);
-
 	virtual Bool didPlayerPreorder(Int profileID) const;
 	virtual void markPlayerAsPreorder(Int profileID);
-
+	virtual void slot92(void);
+	virtual void slot93(void);
+	virtual void slot94(void);
+	virtual void slot95(void);
 	virtual void readAdditionalDisconnects(void);
-
-	virtual void joinGroupRoom(Int groupID);
-	virtual void leaveGroupRoom(void);
-	virtual void rva003854C5(void);
-	virtual void leaveStagingRoom(void);
-	virtual void setPingString(const AsciiString &ping);
-	virtual unsigned short rva003860FF(void);
-	virtual void rva003674FE(Int value);
-	virtual void rva00386139(AsciiString value);
-	virtual AsciiString rva0038616D(void);
-	virtual PlayerInfo *rva00382CCE(const char *key);
-	virtual PlayerInfo *rva00382D0A(Int profileID);
+	virtual void slot97(void);
+	virtual void slot98(void);
 
 private:
 	Bool m_sawFullGameList;				// +0x04
@@ -326,6 +384,7 @@ private:
 	_STL::set<GameWindow *> m_textWindows; // +0x1620..+0x162B
 	_STL::set<Int> m_preorderPlayers;	// +0x162C..+0x1637
 	Int m_additionalDisconnects;		// +0x1638
+	Bool m_unk163C;						// +0x163C
 };
 
 // ?didPlayerPreorder@GameSpyInfo@@UBE_NH@Z @0x00383580 32B
@@ -673,4 +732,44 @@ void GameSpyInfo::leaveStagingRoom(void)
 	m_playerInfoMap.clear();
 	m_joinedStagingRoom = 0;
 	m_isHosting = false;
+}
+
+// ?reset@GameSpyInfo@@UAEXXZ @0x00385D25 261B
+void GameSpyInfo::reset(void)
+{
+	m_sawFullGameList = false;
+	m_isDisconAfterGameStart = false;
+	m_currentGroupRoomID = 0;
+	m_unk0060.clear();
+	m_unk0064 = 0;
+	m_unk0068 = 0;
+	clearGroupRoomList();
+	clearStagingRoomList();
+	m_localStagingRoomID = 0;
+	((Rva0038404A *)&m_buddyRequestMap)->rva00384E8E();
+	((Rva0038404A *)&m_buddyMap)->rva00384E8E();
+	((Rva00383AFF *)&m_buddyMessages)->rva00383AFF();
+	m_joinedStagingRoom = 0;
+	m_isHosting = false;
+	m_localStagingRoomID = 0;
+	((GameSpyStagingRoom *)m_localStagingRoom)->reset();
+	m_gotGroupRoomList = false;
+	m_localName = "";
+	m_localProfileID = 0;
+	m_maxMessagesPerUpdate = 100;
+	m_disallowAsainText = false;
+	m_disallowNonAsianText = false;
+	m_disconReason = 0;
+	m_localBaseName.clear();
+	m_localEmail.clear();
+	m_localPasswd.clear();
+	m_pingString.clear();
+	m_rawConfig.clear();
+	m_rawMotd.clear();
+	m_internalIP = m_externalIP = 0;
+	((Rva00383A28 *)&m_savedIgnoreMap)->rva00383A28();
+	((Rva00072FE6 *)&m_preorderPlayers)->rva00072FE6();
+	((Rva00552CF9 *)m_cachedLocalPlayerStats)->rva00552CB8();
+	m_additionalDisconnects = -1;
+	m_unk163C = false;
 }
