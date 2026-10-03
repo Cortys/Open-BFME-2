@@ -62,35 +62,6 @@
 
 
 
-// ??4StreakRendererClass@@QAEAAV0@ABV0@@Z present-unmatched
-StreakRendererClass & StreakRendererClass::operator = (const StreakRendererClass & that)
-{
-	if (this != &that) {
-		REF_PTR_SET(Texture,that.Texture);
-		Shader = that.Shader;
-		Width = that.Width;
-		Color = that.Color;
-		Opacity = that.Opacity;
-		SubdivisionLevel = that.SubdivisionLevel;
-		NoiseAmplitude = that.NoiseAmplitude;
-		MergeAbortFactor = that.MergeAbortFactor;
-		// TextureTileFactor = that.TextureTileFactor;
-		// LastUsedSyncTime = that.LastUsedSyncTime;
-		// CurrentUVOffset = that.CurrentUVOffset;
-		// UVOffsetDeltaPerMS = that.UVOffsetDeltaPerMS;
-		Bits = that.Bits;
-		// Don't modify m_vertexBufferSize and m_vertexBuffer.
-	}
-	return *this;
-}
-
-// ??1StreakRendererClass@@QAE@XZ present-unmatched
-StreakRendererClass::~StreakRendererClass(void)
-{
-	REF_PTR_RELEASE(Texture);
-	delete [] m_vertexBuffer;
-}
-
 // ?Init@StreakRendererClass@@QAEXABUW3dEmitterLinePropertiesStruct@@@Z present-unmatched
 void StreakRendererClass::Init(const W3dEmitterLinePropertiesStruct & props)
 {
@@ -1398,32 +1369,6 @@ void StreakRendererClass::RenderStreak
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-// BFME keeps the pair 0x18 higher than this tree does: m_vertexBufferSize at
-// StreakRendererClass+0x44 and m_vertexBuffer at +0x48, against +0x2c and
-// +0x30 here. Five sites in this body, all of them these two members.
-#define BFME_STREAK_VBSIZE(s) (*(unsigned int *)((char *)(s) + 0x44))
-#define BFME_STREAK_VB(s)     (*(VertexFormatXYZUV1 **)((char *)(s) + 0x48))
-VertexFormatXYZUV1 *StreakRendererClass::getVertexBuffer(unsigned int number)
-{
-	// TODO: use a stl vector instead of our own array.
-	if (number > BFME_STREAK_VBSIZE(this))
-	{
-		unsigned int numberToAlloc = number + (number >> 1);
-	  delete [] BFME_STREAK_VB(this);
-		BFME_STREAK_VB(this) = W3DNEWARRAY VertexFormatXYZUV1[numberToAlloc];		
-		BFME_STREAK_VBSIZE(this) = numberToAlloc;
-	}
-
-#ifdef _INTERNAL
-	for (unsigned i = 0; i < number; ++i)
-	{
-	  m_vertexBuffer[i].x = m_vertexBuffer[i].y = m_vertexBuffer[i].z = m_vertexBuffer[i].u1 = m_vertexBuffer[i].v1 = (float)0xdeadbeef;
-	}
-#endif
-
-	return BFME_STREAK_VB(this);
-}
-
 // Retail's data references in this unit's matched rows land on globals defined
 // under other spellings at the same addresses (addend-corrected DIR32). Bind them.
 #pragma comment(linker, "/alternatename:?DeviceProjectionMatrix@DX8Wrapper@@1VMatrix4@@A=?g_mapperProjectionUpload_009EDBF0@@3VMatrix4@@A")
