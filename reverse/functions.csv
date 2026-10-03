@@ -50352,3 +50352,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003345BE@Rva003340C1@@QAEXPBD@Z,,0x003345BE,118,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003340C1DoBuffer.cpp,matched,Script file loader via FileSystem and dobuffer helper
 ?rva000EA24D@Rva000EA24D@@QAEXXZ,,0x000EA24D,115,Code/GameEngine/Source/Common/Rva000EA24DReset.cpp,matched,DX8 guard base reset plus ref array release
 ?rva00214F14@Rva009519B@@QAEXXZ,,0x00214F14,426,Code/GameEngine/Source/Common/Rva00214F14Init.cpp,matched,vslot 14 of 0x007C81A8 five strings via set Cos Sin rowed
+??1Rva005011DA@@QAE@XZ,,0x005011DA,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector dtor via rowed 0x00500CB8 and free 0x00030830 caller 0x00501776
