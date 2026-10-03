@@ -7314,3 +7314,4 @@ _qsort,0x00629B4A,"msvcr71 qsort reached through the gen-import thunk ?ji_00629b
 ?rva006DD6C0@BfmeAptValue006DCD20@@QAEXAAVEAStringC@@@Z,0x006DD6C0,"address-derived AptValue-to-EAStringC converter (Ghidra FUN_00add6c0 1430B) called by 0x006D74E0 and 0x006D7C80; body unrowed; naming pin only"
 ?rva006D6100@EAStringC@@QAEXXZ,0x006D6100,"address-derived EAStringC normalizer (Ghidra FUN_00ad6100 99B) called by 0x006D7C80; body unrowed; naming pin only"
 ?rva0070DFE0@BfmeAptValue006DCD20@@QAEXXZ,0x0070DFE0,"address-derived AptArray clear-prep helper 0x0070DFE0 called with this in ecx and no stack args by the array clear 0x006D93D0; body unrowed; Ghidra 70DFE0 112B"
+?rva006C0500@BfmeBoxF0@@QBE_NPBV1@@Z,0x006C0500,"address-derived BfmeBoxF0 rotated-box SAT overlap test called by 0x006C0630 (this box on ecx arg other box on stack); 296B banked partial score 0.93 in reverse/attempts/0x006c0500.cpp; not rowed"
