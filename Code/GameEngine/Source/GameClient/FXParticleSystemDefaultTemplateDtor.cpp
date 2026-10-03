@@ -27,7 +27,7 @@ public:
     virtual ~DefaultModuleTemplate();
 };
 
-DefaultModuleTemplate<1>::~DefaultModuleTemplate()
+inline DefaultModuleTemplate<1>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -44,7 +44,7 @@ public:
     virtual ~DefaultModuleTemplate();
 };
 
-DefaultModuleTemplate<2>::~DefaultModuleTemplate()
+inline DefaultModuleTemplate<2>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -61,7 +61,7 @@ public:
     virtual ~DefaultModuleTemplate();
 };
 
-DefaultModuleTemplate<3>::~DefaultModuleTemplate()
+inline DefaultModuleTemplate<3>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -78,7 +78,7 @@ public:
     virtual ~DefaultModuleTemplate();
 };
 
-DefaultModuleTemplate<0>::~DefaultModuleTemplate()
+inline DefaultModuleTemplate<0>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -95,7 +95,7 @@ public:
     virtual ~DefaultModuleTemplate();
 };
 
-DefaultModuleTemplate<6>::~DefaultModuleTemplate()
+inline DefaultModuleTemplate<6>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -144,7 +144,7 @@ public:
     virtual ~CylindricalEmissionVelocityModuleTemplate();
 };
 
-CylindricalEmissionVelocityModuleTemplate::~CylindricalEmissionVelocityModuleTemplate()
+inline CylindricalEmissionVelocityModuleTemplate::~CylindricalEmissionVelocityModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -160,7 +160,7 @@ public:
     virtual ~OrthoEmissionVelocityModuleTemplate();
 };
 
-OrthoEmissionVelocityModuleTemplate::~OrthoEmissionVelocityModuleTemplate()
+inline OrthoEmissionVelocityModuleTemplate::~OrthoEmissionVelocityModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -176,7 +176,7 @@ public:
     virtual ~LightningDrawModuleTemplate();
 };
 
-LightningDrawModuleTemplate::~LightningDrawModuleTemplate()
+inline LightningDrawModuleTemplate::~LightningDrawModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -192,7 +192,7 @@ public:
     virtual ~LightningEmissionModuleTemplate();
 };
 
-LightningEmissionModuleTemplate::~LightningEmissionModuleTemplate()
+inline LightningEmissionModuleTemplate::~LightningEmissionModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -208,7 +208,7 @@ public:
     virtual ~RenderObjectUpdateModuleTemplate();
 };
 
-RenderObjectUpdateModuleTemplate::~RenderObjectUpdateModuleTemplate()
+inline RenderObjectUpdateModuleTemplate::~RenderObjectUpdateModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -224,7 +224,7 @@ public:
     virtual ~TerrainFireEmissionModuleTemplate();
 };
 
-TerrainFireEmissionModuleTemplate::~TerrainFireEmissionModuleTemplate()
+inline TerrainFireEmissionModuleTemplate::~TerrainFireEmissionModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -240,7 +240,7 @@ public:
     virtual ~OutwardEmissionVelocityModuleTemplate();
 };
 
-OutwardEmissionVelocityModuleTemplate::~OutwardEmissionVelocityModuleTemplate()
+inline OutwardEmissionVelocityModuleTemplate::~OutwardEmissionVelocityModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
@@ -251,3 +251,24 @@ OutwardEmissionVelocityModuleTemplate::~OutwardEmissionVelocityModuleTemplate()
 }
 
 }
+
+// These twelve destructors are header inlines in copier units. The anchor retains
+// this unit's row copies; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFXParticleSystemDefaultTemplateDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeFXParticleSystemDefaultTemplateDtorInlineAnchor()
+{
+    static_cast<FXParticleSystem::DefaultModuleTemplate<0> *>(0)->FXParticleSystem::DefaultModuleTemplate<0>::~DefaultModuleTemplate();
+    static_cast<FXParticleSystem::DefaultModuleTemplate<1> *>(0)->FXParticleSystem::DefaultModuleTemplate<1>::~DefaultModuleTemplate();
+    static_cast<FXParticleSystem::DefaultModuleTemplate<2> *>(0)->FXParticleSystem::DefaultModuleTemplate<2>::~DefaultModuleTemplate();
+    static_cast<FXParticleSystem::DefaultModuleTemplate<3> *>(0)->FXParticleSystem::DefaultModuleTemplate<3>::~DefaultModuleTemplate();
+    static_cast<FXParticleSystem::DefaultModuleTemplate<6> *>(0)->FXParticleSystem::DefaultModuleTemplate<6>::~DefaultModuleTemplate();
+    static_cast<FXParticleSystem::CylindricalEmissionVelocityModuleTemplate *>(0)->FXParticleSystem::CylindricalEmissionVelocityModuleTemplate::~CylindricalEmissionVelocityModuleTemplate();
+    static_cast<FXParticleSystem::OrthoEmissionVelocityModuleTemplate *>(0)->FXParticleSystem::OrthoEmissionVelocityModuleTemplate::~OrthoEmissionVelocityModuleTemplate();
+    static_cast<FXParticleSystem::LightningDrawModuleTemplate *>(0)->FXParticleSystem::LightningDrawModuleTemplate::~LightningDrawModuleTemplate();
+    static_cast<FXParticleSystem::LightningEmissionModuleTemplate *>(0)->FXParticleSystem::LightningEmissionModuleTemplate::~LightningEmissionModuleTemplate();
+    static_cast<FXParticleSystem::RenderObjectUpdateModuleTemplate *>(0)->FXParticleSystem::RenderObjectUpdateModuleTemplate::~RenderObjectUpdateModuleTemplate();
+    static_cast<FXParticleSystem::TerrainFireEmissionModuleTemplate *>(0)->FXParticleSystem::TerrainFireEmissionModuleTemplate::~TerrainFireEmissionModuleTemplate();
+    static_cast<FXParticleSystem::OutwardEmissionVelocityModuleTemplate *>(0)->FXParticleSystem::OutwardEmissionVelocityModuleTemplate::~OutwardEmissionVelocityModuleTemplate();
+}
+#pragma inline_depth()
