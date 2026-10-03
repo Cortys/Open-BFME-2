@@ -1,3 +1,5 @@
+// ?rva006F7A30@BfmeWrapper1279@@QAEXXZ
+// partial score=0.99 date=2026-10-03
 // cl: /O2 /DNDEBUG /MD
 //
 // Apt display-list / AptCIH neighbourhood cluster at 0x006F6A50.  Class
@@ -197,7 +199,9 @@ public:
 	~BfmeWrapper1279();
 	void rva006F80C0(bool flag);
 	void rva006F8190();
+	void rva006F76B0();
 	void rva006F79B0(void *arg1, void *arg2);
+	void rva006F7A30();
 
 	BfmeQuery1279 *m_query;
 };
@@ -385,10 +389,10 @@ void BfmeQuery1279::rva006F6FB0(int key, AptCIH *pNewItem)
 }
 
 // ---------------------------------------------------------------------------
-// BfmeWrapper1279 child-list walk at 0x006F79B0: starts at m_query->m_root->next
-// and for each defined node that is not kind 19 with a negative pData->+4 calls
-// AptCIH::rva006E1C40 with the walk's two arguments.  The kind-19 inline
-// predicate carries the AptCIH.h:0xD8 "this" assertion.
+// BfmeWrapper1279 child-list walks at 0x006F79B0 and 0x006F7A30.  Both start at
+// m_query->m_root->next and dispatch on the node's kind.  The kind-19 inline
+// predicate carries the AptCIH.h:0xD8 "this" assertion; kind-14 reuses the
+// 0x006F6D60 helper above.
 
 static __forceinline int rva006F79B0IsType19(const AptCIH *pNode)
 {
@@ -414,6 +418,24 @@ void BfmeWrapper1279::rva006F79B0(void *arg1, void *arg2)
 				if (*(int *)((char *)node->pData + 4) < 0)
 					node->rva006E1C40(arg1, arg2);
 			}
+		}
+		node = node->m_next;
+	}
+}
+
+// ?rva006F7A30@BfmeWrapper1279@@QAEXXZ @0x006F7A30 127B
+void BfmeWrapper1279::rva006F7A30()
+{
+	AptCIH *node = (AptCIH *)m_query->m_root->m_54;
+	for (;;) {
+		if (node == 0)
+			break;
+		if (!((const BfmeAptValue006DCD20 *)node)->isUndefined() &&
+			(((const Rva006DBB30SarDwordField *)node)->get() == 0xd ||
+			 ((const Rva006DBB30SarDwordField *)node)->get() == 0x12)) {
+			node->rva006E2D60();
+		} else if (rva006F6D60IsType14(node)) {
+			node->rva006E2D60();
 		}
 		node = node->m_next;
 	}
