@@ -49904,3 +49904,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$__linear_insert@PAHHVRva005E4300Cmp@@@_STL@@YAXPAH0HVRva005E4300Cmp@@@Z,,0x005E4862,63,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva005E4300.cpp,matched,chain insertion family rowed callees caller 0x005E4A1B same 63B shape as 0x004238AE
 ?rva00531B20@Rva00531A44@@QAEGG@Z,,0x00531B20,26,Code/GameEngine/Source/Common/Rva00531A44Alloc.cpp,matched,iterative find like sibling rva00531AEE without compression
 ?rva006d4dc0@@YAXPADH@Z,,0x006D4DC0,313,Code/Libraries/Source/EA/Apt/AptString/Rva006D4CA0Cluster.cpp,matched,EAString.inl asserts 0x6C5-0x6C8 with BFME1 encode donor shape
+?rva002AA756@Player@@QAEXH@Z,,0x002AA756,144,Code/GameEngine/Source/Common/RTS/PlayerRva002AA756.cpp,matched,Player via caller getEachPlayerFromMask template plus34 ref plus1a4 index plus54 counter plus318 TheAudio vtab 0x64 radar precedent
