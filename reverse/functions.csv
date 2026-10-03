@@ -49969,3 +49969,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??_GRva002004FD@@QAEPAXI@Z,,0x0031F83A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-14-2004FD.cpp,matched,chain deleting dtor via rowed dtor 0x002004FD plus delete
 ??0Rva0010EE9E@@QAE@ABVRva0036CA00Str@@@Z,,0x0010EE9E,24,Code/GameEngine/Source/Common/Rva0010EE9ECtor.cpp,matched,LINK ctor via rowed base 0x001164D3 plus vtable
 ??0Rva0010EF8B@@QAE@ABVRva0036CA00Str@@HH@Z,,0x0010EF8B,38,Code/GameEngine/Source/Common/Rva0010EF8BCtor.cpp,matched,LINK ctor via rowed base 0x001164D3 plus two ints plus vtable
+??$__insertion_sort@PAUVersionBlockEntry@@VVersionBlockKeyCompare@@@_STL@@YAXPAUVersionBlockEntry@@0VVersionBlockKeyCompare@@@Z,,0x004287E8,57,Code/GameEngine/Source/Common/Rva004287E8InsertionSort.cpp,matched,_STL insertion_sort over 0x18-byte version records via narrow copy and linear_insert
