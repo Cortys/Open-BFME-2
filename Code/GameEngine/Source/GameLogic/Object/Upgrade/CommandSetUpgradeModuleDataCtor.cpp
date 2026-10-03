@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /DNDEBUG /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /DNDEBUG
 //
 // ??0CommandSetUpgradeModuleData@@QAE@XZ, retail 0x00255652, 70 bytes.
 // EH ctor over the rowed OpenContainModuleData base (0x253487): the
