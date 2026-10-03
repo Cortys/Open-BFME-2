@@ -83,12 +83,16 @@ class Scorer:
         self.symbol_map = build.load_symbol_map()
         self.seen = {}
         self.trials = 0
+        self.hits = 0  # consecutive candidates already compiled: the search is spinning
+        self.unresolved = False
 
     def score(self, text):
         """(fitness 0..1, exact) for a candidate source; (-1, False) if it does not compile."""
         key = hashlib.sha1(text.encode("latin-1", "replace")).hexdigest()
         if key in self.seen:
+            self.hits += 1
             return self.seen[key]
+        self.hits = 0
         self.trials += 1
         source = self.dir / f"t{self.trials % 4}.cpp"
         output = source.with_suffix(".obj")
@@ -101,6 +105,7 @@ class Scorer:
                        "source": source.relative_to(ROOT).as_posix(), "notes": ""}
                 got = build.compile_function(row, self.symbol_map, output)
                 compiled, target = got["bytes"], got["target"]
+                self.unresolved = bool(got["unresolved"])
                 if compiled == target and not got["unresolved"]:
                     result = (1.0, True)
                 else:
@@ -290,10 +295,30 @@ def permute(rva, minutes=10.0, seed=None):
     start_score = best
     if best < 0:
         return {"rva": rva, "symbol": symbol, "error": "banked body does not compile here"}
+    if scorer.unresolved and best >= 0.999:
+        # Bytes already right; a call the symbol map cannot resolve keeps it
+        # from counting as exact, and reordering source cannot fix that.
+        result = {"rva": rva, "symbol": symbol, "size": size, "start": round(best, 4),
+                  "best": round(best, 4), "exact": False, "trials": scorer.trials,
+                  "stop": "unresolved calls: pin the callees"}
+        with (OUT / "results.jsonl").open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(result) + "\n")
+        return result
     deadline = time.time() + minutes * 60
     current_text, current = best_text, best
     stale = 0
+    since_gain = 0  # trials since the best improved
+    stop = "deadline"
     while not exact and time.time() < deadline:
+        # Measured over 520 runs: every win came within 567 trials, and a run
+        # whose mutations are exhausted only replays cached candidates.
+        if scorer.hits > 200:
+            stop = "mutations exhausted"
+            break
+        if since_gain > 600:
+            stop = "no gain in 600 trials"
+            break
+        trials_before = scorer.trials
         candidate = current_text
         for _ in range(rng.choice((1, 1, 2, 3))):
             candidate, _kind = mutate(candidate, rng)
@@ -303,16 +328,18 @@ def permute(rva, minutes=10.0, seed=None):
         if fitness > current or (fitness == current and rng.random() < 0.5):
             current_text, current = candidate, fitness
         if fitness > best or exact:
-            best_text, best, stale = candidate, fitness, 0
+            best_text, best, stale, since_gain = candidate, fitness, 0, 0
         else:
             stale += 1
+            since_gain += scorer.trials - trials_before
         if stale > 150:  # restart from the best so far
             current_text, current, stale = best_text, best, 0
     (workdir / "best.cpp").write_text(best_text, encoding="latin-1", errors="replace")
     if exact:
         (workdir / "win.cpp").write_text(best_text, encoding="latin-1", errors="replace")
     result = {"rva": rva, "symbol": symbol, "size": size, "start": round(start_score, 4),
-              "best": round(best, 4), "exact": exact, "trials": scorer.trials}
+              "best": round(best, 4), "exact": exact, "trials": scorer.trials,
+              "stop": "exact" if exact else stop}
     with (OUT / "results.jsonl").open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(result) + "\n")
     return result
