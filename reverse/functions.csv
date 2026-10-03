@@ -50377,3 +50377,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva005017AC@@QAE@XZ,,0x005017AC,8,Code/GameEngine/Source/Common/Rva00501776Dtor.cpp,matched,chain from 0x00501776 tail jmp plus deleting dtor caller 0x00501D96
 ?Rva005BF28EIsAlly@@YA_NPBVGameInfo@@PBVGameSlot@@@Z,,0x005BF28E,57,Code/GameEngine/Source/GameNetwork/GameInfoAllyCheck.cpp,matched,GameInfo local-ally team check via getLocalSlotNum and getConstSlot
 ??_ERva005DA4DC@@QAEPAXI@Z,,0x0058B5D8,75,Code/GameEngine/Source/Common/Rva005DA4DCVectorDeletingDtor.cpp,matched,vector deleting dtor flag bits 2+1 size 0x14 via rowed callees
+?rva00052F1E@MilesAudioManager@@QAEHPAX@Z,,0x00052F1E,46,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052F1E.cpp,matched,MilesAudioManager table+0x10 callers 0x5C54D 0x5D444
