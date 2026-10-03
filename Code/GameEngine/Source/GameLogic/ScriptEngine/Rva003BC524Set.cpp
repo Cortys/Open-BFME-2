@@ -1,5 +1,3 @@
-// ?Rva003BC524Set@@YGXABVAsciiString@@M@Z
-// partial score=0.95 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE
 // ?Rva003BC524Set@@YGXABVAsciiString@@M@Z @0x003BC524 43B: script audio slot 0xc0 with scaled float.
 // Evidence: mov ecx,[0xFE6E8]=TheAudio movss xmm0,[esp+8] mulss xmm0,[0xBCF628]=g_Va00BCF628 mov eax,[ecx] push 0 push ecx movss [esp],xmm0 push [esp+0xc] call [eax+0xc0] ret 8; caller 0x003CD206; neighbours Rva003BC4ABSet Rva003BC5CESet same (AsciiString,*) stdcall shape.
@@ -59,10 +57,8 @@ public:
     virtual void slot48(const AsciiString &a, float b, int c);
 };
 extern AudioManager *TheAudio;
-extern float g_Va00BCF628;
 
-// ?Rva003BC524Set@@YGXABVAsciiString@@M@Z present-unmatched
 void __stdcall Rva003BC524Set(const AsciiString &name, float val)
 {
-	TheAudio->slot48(name, val * g_Va00BCF628, 0);
+	TheAudio->slot48(name, val * 0.01f, 0);
 }

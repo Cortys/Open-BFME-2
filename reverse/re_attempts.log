@@ -6519,3 +6519,4 @@ $L71860	0x0075B948	4	no-boundary	Native EH handlerstarts75B942: mov eax,CFD468; 
 ?rva0042682B@Rva004266A1@@QAEXHE@Z	0x0042682B	203	blocked	ecx-eax chain wall plus in-place cmp; tried Afield-Bfield locals to 184B and hoisted m54 tmp to 200B with edi zero t=15 model=muse-04 (stash 0.92 kept)
 ?rva00426914@Rva004266A1@@QAEXHE@Z	0x00426914	227	blocked	same ecx-eax chain wall as sibling 0x42682B plus GameLogic chain in eax; baseline 234 vs 227B confirmed t=5 model=muse-04 (stash 0.9 kept)
 ??0Rva004261B8@@QAE@XZ	0x004261B8	55	blocked	vptr store 6B early persists; tried non-volatile store and /EHs flags still call-store-and-lea-map vs call-and-lea-store-map t=12 model=muse-04 (stash 0.9 kept)
+?Rva003BC1B2Do@@YGXPAVParameter@@_NM@Z	0x003BC1B2	124	blocked	vtable cached in edi plus hoisted load vs edx reload t=20 model=muse-01 (stash 0.9 kept)
