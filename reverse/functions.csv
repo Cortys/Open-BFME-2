@@ -49725,3 +49725,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?downloadNextQueuedFile@DownloadManager@@QAEJXZ,,0x005E07C0,235,Code/GameEngine/Source/GameNetwork/DownloadManager.cpp,matched,placed by masked byte search of already-compiled unit
 ?AllocateBytes@_DOGMA_MemPool@@QAEPAXI@Z,,0x006DAE00,28,Code/Libraries/Source/Apt/DogmaPoolAllocBlock.cpp,matched,placed by masked byte search of already-compiled unit
 ?Init@_DOGMA_MemPool@@QAEXPAU1@I@Z,,0x006DADD0,22,Code/Libraries/Source/Apt/DogmaPoolAllocBlock.cpp,matched,placed by masked byte search of already-compiled unit
+?ClampedPowerOfTwo009056F0@@YAIII@Z,,0x0011E650,29,Code/Libraries/Source/WWVegas/WW3D2/TextureLoaderValidateTextureSize.cpp,matched,placed by masked byte search of already-compiled unit
