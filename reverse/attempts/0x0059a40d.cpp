@@ -1,4 +1,6 @@
 // ??1Rva0059A85C@@UAE@XZ
+// partial score=0.99 date=2026-10-03
+// ??1Rva0059A85C@@UAE@XZ
 // partial score=0.98 date=2026-10-02
 // cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfme2_ascii /Ireference/shims/bfmealloc
 // stlport
@@ -16,6 +18,24 @@ public:
 	virtual void v1();
 	bool m_04;
 };
+
+// Retail's derived destructor tail-calls the base destructor at +0x4F:
+//   mov ecx,edi ; call 0x00506B28
+// and 0x00506B28 is the 7-byte body `mov DWORD PTR [ecx],0x00C63F9C; ret`
+// -- the base vtable store, byte-identical to the body the ledger already
+// verifies for ?apply@Rva00506B28DwordImmSetter@@QAEXXZ. The store is reached
+// through a volatile function pointer so MSVC cannot inline it into the
+// derived destructor -- retail calls the base destructor, it does not store
+// the base vtable inline. The call target is pinned to 0x00506B28 in
+// reverse/symbols.csv.
+typedef void (*BaseDtorFn)(Rva00506B1B *);
+
+extern BaseDtorFn volatile g_00506B28BaseDtor;
+
+Rva00506B1B::~Rva00506B1B()
+{
+	((BaseDtorFn)g_00506B28BaseDtor)(this);
+}
 struct BfmeE16 { float x, y, z, w; };
 #include "ascii_string.h"
 class Rva002EE9B7
