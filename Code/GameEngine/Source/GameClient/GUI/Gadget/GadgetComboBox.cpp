@@ -113,7 +113,6 @@ void GadgetComboBoxSetEnabledTextColors(GameWindow *comboBox, int color, int bor
 		editBox->winSetEnabledTextColors(color,borderColor);
 }
 
-// ?GadgetComboBoxSetDisabledTextColors@@YAXPAVGameWindow@@HH@Z present-unmatched
 void GadgetComboBoxSetDisabledTextColors(GameWindow *comboBox, int color, int borderColor )
 {
 	ComboBoxData *comboBoxData = (ComboBoxData *)comboBox->winGetUserData();
