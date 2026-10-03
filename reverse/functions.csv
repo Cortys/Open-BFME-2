@@ -50189,3 +50189,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??_GBuildListInfo@@MAEPAXI@Z,,0x0032A4BB,28,Code/GameEngine/Source/GameLogic/Map/Rva0032A186Finish.cpp,matched,deleting dtor via own ??1 unit BuildListInfo caller none
 ?rva005FB961@Rva005FB770@@QAEXM@Z,,0x005FB961,101,Code/GameEngine/Source/GameClient/GUI/Rva005FB770SetHealth.cpp,matched,damage min setter via rowed Fire 0x00527925 with PlayHitAnim
 ?rva005FB9C6@Rva005FB770@@QAEXM@Z,,0x005FB9C6,118,Code/GameEngine/Source/GameClient/GUI/Rva005FB770SetHealth.cpp,matched,heal cap setter via rowed Fire 0x00527925 with PlayReinforceAnim
+?rva005FBB83@Rva005FBB68@@QAEXM@Z,,0x005FBB83,19,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,float forward to rowed rva005FB9C6
