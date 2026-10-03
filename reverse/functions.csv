@@ -50530,3 +50530,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva005048F9Forward@@YAPAURva00504830Item@@PAU1@0PBMH@Z,,0x005048F9,27,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,forwarder to UpperBound with trailing 0
 ?Rva0037F731Copy@@YAPAVRva0037F551@@PAV1@00PAX@Z,,0x0037F731,38,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F71F copy range stride 0x48 callers 0x0037F77C 0x0037FF20
 ?rva002DAEED@Rva002DACF4@@QAEXHHVAsciiString@@@Z,,0x002DAEED,62,Code/GameEngine/Source/Common/Rva002DACF4Get.cpp,matched,setter twin of getter 0x002DACF4 via same m_arr imul-3 plus callers
+?rva002DAF6C@Rva002DAF6C@@QAEXHHVAsciiString@@@Z,,0x002DAF6C,64,Code/GameEngine/Source/Common/Rva002DAF6CSet.cpp,matched,biased imul-3 setter twin of Rva002DAF2B plus callers plus EH data
