@@ -1,4 +1,6 @@
 // ?rva0036667B@Rva0036667B@@QAEXH@Z
+// partial score=0.95 date=2026-10-03
+// ?rva0036667B@Rva0036667B@@QAEXH@Z
 // partial score=0.93 date=2026-10-01
 // cl: /O1 /MD /Oy-
 // ?rva0036667B@Rva0036667B@@QAEXH@Z @ 0x0036667B 75B evidence: caller 0x00533BEC offsets +4 +8 +0xc +0x2c word store +8 stride 0x10
@@ -29,9 +31,9 @@ void Rva0036667B::rva0036667B(int value)
 	m_saved = v;
 	if (m_countOuter <= 0)
 		return;
-	for (; value < m_countOuter; ++value)
+	do
 	{
 		for (int j = 0; j < m_countInner; ++j)
 			m_ppEntries[value][j].m_value = (unsigned short)v;
-	}
+	} while (++value < m_countOuter);
 }
