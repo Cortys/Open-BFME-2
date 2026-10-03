@@ -6193,3 +6193,4 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ?rva0037B7F6@Rva0037B7F6@@QAEXXZ	0x0037B7F6	478	blocked	layout offsets and extra locals differ t=25 model=muse-spark
 ?rva00203F0E@ScriptEngine@@QAE_NPAX@Z	0x00203F0E	154	partial	final frame compare sbb/inc vs jae/xor/mov al,1; globals relocs t=25 model=muse-07 score=0.94 stash=reverse/attempts/0x00203f0e.cpp
 ??0Rva00305A8F@@QAE@XZ	0x00305A8F	161	blocked	virtual-base ctor Snapshot plus Rva003058F9 plus GeometryInfo at 0x20 floats split string 6p full unknown s_first20 secondary ambiguous vbtable unclear t=25 model=muse-04
+?Rva0041EC73Load@@YAXPAX@Z	0x0041EC73	273	blocked	STL loader with Armor M_find plus hash_map subscript plus EH vector tmp needs donor layout t=12 model=muse-02

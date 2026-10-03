@@ -16,6 +16,8 @@ public:
 	void rva0041E7F2();
 };
 
+class ModuleData;
+
 struct BfmeE16
 {
 	float x;
@@ -28,6 +30,7 @@ class Rva0041E875
 {
 public:
 	~Rva0041E875();
+	void rva0041E8E6(const ModuleData *arg);
 private:
 	AsciiString m_s0;
 	AsciiString m_s1;
@@ -35,10 +38,15 @@ private:
 	_STL::vector<BfmeE16> m_vec1;
 	bool m_flag;
 	char m_padFlag[3];
-	_STL::vector<void *> m_vec2;
+	_STL::vector<const ModuleData *> m_vec2;
 };
 
 Rva0041E875::~Rva0041E875()
 {
 	((Rva0041E7F2 *)this)->rva0041E7F2();
+}
+
+void Rva0041E875::rva0041E8E6(const ModuleData *arg)
+{
+	m_vec2.push_back(arg);
 }
