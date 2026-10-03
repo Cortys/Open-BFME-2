@@ -6782,3 +6782,5 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ??0Rva0023FC98@@QAE@ABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z	0x0023FC98	59	blocked	ctor needs out-of-line pair copy 0x00466EA7 with EH t=15 model=muse-01
 ?rva0023F8DA@Rva0023F8DA@@QAEXXZ	0x0023F8DA	484	blocked	too large 484B multi-string player logic for this session t=5 model=muse-01
 ?rva00382D39@GameSpyInfo@@UAEXXZ	0x00382D39	246	blocked	gap 246B GameSpyInfo virtual needs Open2Rec layouts plus 3-state EH t=10 model=muse-01
+??4?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z	0x001537D8	180	partial	180B exact 76insns 0struct 0reg 0mem - gate fails unresolved 4-arg Rva001534B6Copy with Tag vs rowed 3-arg wrapper needs row retype t=25 model=muse-09 score=0.98 stash=reverse/attempts/0x001537d8.cpp
+?rva001538C9@?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEXPAURva00468520@@ABU4@ABUTag@@I_N@Z	0x001538C9	178	partial	prologue sub esp 0xc vs push ecx push ecx plus 4B frame shift ebp-4 vs ebp-8 from Tag temps vs retail tag param at ebp+0x1b t=6 model=muse-09 score=0.92 stash=reverse/attempts/0x001538c9.cpp

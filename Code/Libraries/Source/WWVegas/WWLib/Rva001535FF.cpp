@@ -1,7 +1,5 @@
 // ?rva001535FF@Rva0015354E@@QAEXPBD@Z
 // partial score=0.9 date=2026-09-29
-// ?rva001535FF@Rva0015354E@@QAEXPBD@Z
-// partial score=0.9 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc
 // stlport
 // ?rva001535FF@Rva0015354E@@QAEXPBD@Z @0x001535FF 101B evidence: same class Rva0015354E +0x10; COM slots 0x4C 0x6C; string WW3DDynamicSet; ScienceType cur
@@ -46,14 +44,6 @@ private:
 	Rva0015354EStore *m_store10; // +0x10
 };
 
-void Rva0015354E::rva0015354E(ScienceType value)
-{
-	Rva0015354EStore *store = m_store10;
-	if (store == 0)
-		return;
-	store->m_sciences04.push_back(value);
-}
-
 struct Com19
 {
 	virtual void * __stdcall slot00(); virtual void * __stdcall slot04(); virtual void * __stdcall slot08(); virtual void * __stdcall slot0C();
@@ -61,7 +51,7 @@ struct Com19
 	virtual void * __stdcall slot20(); virtual void * __stdcall slot24(); virtual void * __stdcall slot28(); virtual void * __stdcall slot2C();
 	virtual void * __stdcall slot30(); virtual void * __stdcall slot34(); virtual void * __stdcall slot38(); virtual void * __stdcall slot3C();
 	virtual void * __stdcall slot40(); virtual void * __stdcall slot44(); virtual void * __stdcall slot48();
-	virtual void * __stdcall slot4C(void *obj, const char *name, const char *type);
+	virtual void * __stdcall slot4C(const char *name, const char *type);
 };
 
 struct Com6C
@@ -73,7 +63,7 @@ struct Com6C
 	virtual void * __stdcall slot40(); virtual void * __stdcall slot44(); virtual void * __stdcall slot48(); virtual void * __stdcall slot4C();
 	virtual void * __stdcall slot50(); virtual void * __stdcall slot54(); virtual void * __stdcall slot58(); virtual void * __stdcall slot5C();
 	virtual void * __stdcall slot60(); virtual void * __stdcall slot64(); virtual void * __stdcall slot68();
-	virtual int __stdcall slot6C(void *obj, void *a, ScienceType *out);
+	virtual int __stdcall slot6C(void *a, ScienceType *out);
 };
 
 void Rva0015354E::rva001535FF(const char *name)
@@ -81,16 +71,16 @@ void Rva0015354E::rva001535FF(const char *name)
 	Rva0015354EStore *store = m_store10;
 	ScienceType cur;
 	ScienceType *out = &cur;
-	if (store != 0) {
-		ScienceType *finish = *(ScienceType **)((char *)store + 8);
-		cur = *(finish - 1);
-	}
+	if (store == 0)
+		return;
+	ScienceType *finish = *(ScienceType **)((char *)store + 8);
+	cur = *(finish - 1);
 	Com19 *c19 = *(Com19 **)this;
-	void *found = c19->slot4C(*(void **)this, name, "WW3DDynamicSet");
+	void *found = c19->slot4C(name, "WW3DDynamicSet");
 	if (found == 0)
 		goto add;
 	Com6C *c6c = *(Com6C **)this;
-	int r = c6c->slot6C(*(void **)this, found, out);
+	int r = c6c->slot6C(found, out);
 	if (r < 0)
 		goto reload;
 	if (cur < 0)
