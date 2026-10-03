@@ -1,10 +1,10 @@
-// ?rva0006AB98@Rva0006AB98@@QAEEHH@Z
-// partial score=0.93 date=2026-09-30
-// ?rva0006AB98@Rva0006AB98@@QAEEHH@Z
-// partial score=0.93 date=2026-09-30
 // cl: /O1 /MD
 // ?rva0006AB98@Rva0006AB98@@QAEEHH@Z @0x0006AB98 79B evidence: bounds at +0x8 +0xc; stride at +0x34; buffer at +0x74 size via +0x78; bit test via and-7 shl setne; caller 0x0006B1F1.
-// Honest-address bit test (naming rule).
+// Honest-address bit test (naming rule). The read/write barrier before the
+// final load keeps `this` in esi (retail's shape); it emits no code.
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 class Rva0006AB98
 {
 public:
@@ -20,7 +20,6 @@ private:
 	unsigned char *m_78;
 };
 
-// ?rva0006AB98@Rva0006AB98@@QAEEHH@Z present-unmatched
 unsigned char Rva0006AB98::rva0006AB98(int a, int b)
 {
 	if (a < 0 || b < 0)
@@ -30,5 +29,6 @@ unsigned char Rva0006AB98::rva0006AB98(int a, int b)
 	unsigned idx = (unsigned)(m_34 * b + (a >> 3));
 	if (idx >= (unsigned)(m_78 - m_74))
 		return 0;
+	_ReadWriteBarrier();
 	return (m_74[idx] & (1 << (a & 7))) != 0;
 }
