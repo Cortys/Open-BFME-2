@@ -49790,3 +49790,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00452496Check@@YA_NPAVObject@@@Z,,0x00452496,79,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00452496Finish.cpp,matched,static AutoHeal helper; && chain return; arg-in-ESI private convention via scaffold caller; layout from Object_isAbleToAttack
 ?rva003F0F13@Rva003F0F13@@QAEXPAURva003F0F13Elem@@@Z,,0x003F0F13,53,Code/GameEngine/Source/Common/Rva003F0F13Finish.cpp,matched,copy vec[0] or zero; size()>0 keeps retail sar-3 count compare; vector at 0xF0
 ??0Rva00604A5F@@QAE@XZ,,0x00604A5F,9,Code/GameEngine/Source/Common/Rva00604A5FCtor.cpp,matched,vtable-store ctor for C7A9A8 new-pattern caller 0x006006F9
+??1Rva002004FD@@QAE@XZ,,0x002004FD,9,Code/GameEngine/Source/Common/Rva002004FDDtor.cpp,matched,dtor zeroes +0x14 then releases StringBase via tail jmp
