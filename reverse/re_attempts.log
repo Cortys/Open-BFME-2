@@ -5948,3 +5948,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva00549F67Median@@YAABQAUFoo00549DCB@@ABQAU1@00URva00549DCB@@@Z	0x00549F67	101	blocked	median3 via free Cmp but lea ecx comp like thiscall prev needs convention check t=12 model=muse-09
 ?rva00549033@Rva00549033@@QAEHXZ	0x00549033	123	blocked	SSE custom regs eax ecx esi no stack args cross plus normalize t=10 model=muse-09
 ?rva005490F1@Rva005490F1@@QAEXPAMH@Z	0x005490F1	243	blocked	frame 0x14 vs 0x0c plus missing float spill plus double Mid Leaf reload plus late v store t=22 model=muse-09
+?Rva003373D9Swap@@YAXPAVRva002E9E70@@0@Z	0x003373D9	75	blocked	swap tmp Rva003371B1 plus two Rva002E9E70 placements gives 3 EH states and esi-edi spills vs retail 1 state no spills t=25 model=muse-spark
+?rva0033790F@Rva0033790F@@QAEPAVRva003371B1@@PAV2@0@Z	0x0033790F	51	blocked	vector erase via copy 0x337533 plus Destroy 0x3376D1 needs 4 pushes with lea ebp+B tag plus ebp frame vs honest 3-arg copy gives frameless 46B t=20 model=muse-spark
