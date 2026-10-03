@@ -1,12 +1,13 @@
 // ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z
-// partial score=0.97 date=2026-10-03
-// ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z
-// partial score=0.97 date=2026-10-03
-// ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /EHsc
-// ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z @0x003E4921 151B gate condition via rowed getUnitNamed 0x003588E7 plus rowed nameToKey 0x00148E1A plus rowed findModule 0x0028B6D6.
-// Evidence: vslot slot 17 of 0x00835B38; caller none; static GateOpenAndCloseBehavior key; donor BFME1 ScriptActionsGates.
+// ?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z
+// @0x003E4921 151B gate condition via rowed getUnitNamed 0x003588E7 plus
+// rowed nameToKey 0x00148E1A plus rowed findModule 0x0028B6D6.
+// Evidence: vslot slot 17 of 0x00835B38; caller none; static
+// GateOpenAndCloseBehavior key; donor BFME1 ScriptActionsGates.
+// Each failing condition returns immediately so the false arm owns the
+// fallthrough and the true arm becomes the forward jmp target, which is the
+// polarity retail emits (jne over xor al,al to mov al,1).
 class AsciiString;
 enum NameKeyType
 {
@@ -22,14 +23,14 @@ class ScriptEngine
 public:
 	Object *getUnitNamed(Parameter *parameter);
 };
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
+extern ScriptEngine *TheScriptEngine;
 
 class NameKeyGenerator
 {
 public:
 	NameKeyType nameToKey(const char *name);
 };
-#define TheNameKeyGenerator (*(NameKeyGenerator **)0x00DF36A4)
+extern NameKeyGenerator *TheNameKeyGenerator;
 
 class Module
 {
@@ -73,15 +74,15 @@ public:
 bool ScriptConditions::rva003E4921(Parameter *param)
 {
 	Object *object = TheScriptEngine->getUnitNamed(param);
-	bool result;
-	if (object)
-	{
-		static NameKeyType gateKey = TheNameKeyGenerator->nameToKey("GateOpenAndCloseBehavior");
-		Module *module = object->findModule(gateKey);
-		GateOpenAndCloseBehaviorView *gate = module ? (GateOpenAndCloseBehaviorView *)((char *)module - 4) : 0;
-		result = gate != 0 && gate->isReady() && (gate->m_state40 <= 0 || gate->stateIsOne());
-	}
-	else
-		result = false;
+	if (!object)
+		return false;
+	static NameKeyType gateKey = TheNameKeyGenerator->nameToKey("GateOpenAndCloseBehavior");
+	Module *module = object->findModule(gateKey);
+	GateOpenAndCloseBehaviorView *gate = module ? (GateOpenAndCloseBehaviorView *)((char *)module - 4) : 0;
+	if (gate == 0)
+		return false;
+	if (!gate->isReady())
+		return false;
+	bool result = gate->m_state40 <= 0 || gate->stateIsOne();
 	return result;
 }

@@ -50465,3 +50465,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002DACF4@Rva002DACF4@@QAE?AVAsciiString@@HH@Z,,0x002DACF4,37,Code/GameEngine/Source/Common/Rva002DACF4Get.cpp,matched,copy ctor row 0x000365F0 ret 0xC imul-3 lea 0x74 callers 0x002DB64E
 ?rva0052E02F@Rva0052E02F@@QAE_N_N@Z,,0x0052E02F,46,Code/GameEngine/Source/Common/Rva0052E02F.cpp,matched,bit-22 setter 7 callers unlock lane sibling pattern
 ?rva0052E05D@Rva0052E05D@@QAE_N_N@Z,,0x0052E05D,46,Code/GameEngine/Source/Common/Rva0052E05D.cpp,matched,bit-18 setter 2 callers unlock lane sibling pattern
+?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z,,0x003E4921,151,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003E4921Finish.cpp,matched,gate condition; early return per failing condition gives the false arm the fallthrough
