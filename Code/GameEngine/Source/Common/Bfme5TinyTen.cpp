@@ -14,10 +14,19 @@ class Gen_004902A0;
 class Gen_004902A0
 {
 public:
+	Gen_004902A0(void);
 	virtual ~Gen_004902A0(void);				// slot +0x00
 
 	Gen_004902A0 *m_bfmeNext;				// +0x04
 };
+
+extern Gen_004902A0 *g_00E01E1C;
+
+Gen_004902A0::Gen_004902A0(void)
+{
+	m_bfmeNext = g_00E01E1C;
+	g_00E01E1C = this;
+}
 
 // ??1Gen_004902A0@@UAE@XZ
 Gen_004902A0::~Gen_004902A0(void)

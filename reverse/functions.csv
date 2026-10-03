@@ -50653,3 +50653,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva0035E00F@@QAE@XZ,,0x0035E206,86,Code/GameEngine/Source/Common/Rva0035E00FFinish.cpp,matched,derived ctor; novtable plus a split eax run plus an early m_14 reload reproduce retail store order
 ?rva00504182@Rva00504182@@QAE_NI@Z,,0x00504182,32,Code/GameEngine/Source/Common/Rva00504182Check.cpp,matched,empty or max m_18 less-than via decrement
 ??1Rva001F4D22@@UAE@XZ,,0x001F4D22,11,Code/GameEngine/Source/Common/Rva001F4D22Dtor.cpp,matched,virtual dtor tail-jmps to base Rva001F4C67
+??0Gen_004902A0@@QAE@XZ,,0x00355C60,23,Code/GameEngine/Source/Common/Bfme5TinyTen.cpp,matched,ctor stores vtable links head g_00E01E1C
