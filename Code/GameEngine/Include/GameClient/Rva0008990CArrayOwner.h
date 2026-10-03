@@ -28,6 +28,7 @@ public:
 	virtual void rva00047A69C(int) = 0;
 	virtual void rva00086B2C(int, int, Real, Real, int, int) = 0;
 protected:
+	friend class Rva00086761CameraMove;
 	int m_04;
 	int m_08;
 	int m_0C;
@@ -41,13 +42,21 @@ protected:
 
 
 #include "../../../../reference/shims/bfme2_ascii/ascii_string.h"
+// The three-float prefix is read/stored by177B86761; original point name
+// remains unknown. This trivial value preserves complete12B copies.
+struct Rva00089894Point
+{
+ float x, y, z;
+};
+
 class Rva00089894ArrayElement
 {
 public:
  Rva00089894ArrayElement();
  ~Rva00089894ArrayElement();
 private:
- float m_00, m_04, m_08;
+ friend class Rva00086761CameraMove;
+ Rva00089894Point m_position;
  AsciiString m_0C;
  int m_10;
 };
@@ -64,6 +73,7 @@ public:
  virtual void rva00047A69C(int) {}
  virtual void rva00086B2C(int, int, Real, Real, int, int);
 private:
+ friend class Rva00086761CameraMove;
  Rva00089894ArrayElement m_arr255[255];
  Rva00089894ArrayElement m_arr4[4];
  char m_padding1468[0x1864-0x1468];

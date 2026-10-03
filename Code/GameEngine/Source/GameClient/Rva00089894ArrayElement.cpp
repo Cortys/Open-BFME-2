@@ -8,9 +8,9 @@
 
 Rva00089894ArrayElement::Rva00089894ArrayElement() : m_10(0)
 {
-	m_00 = 0.0f;
-	m_04 = 0.0f;
-	m_08 = 0.0f;
+	m_position.x = 0.0f;
+	m_position.y = 0.0f;
+	m_position.z = 0.0f;
 }
 
 // ?Rva00089894ArrayElement::~Rva00089894ArrayElement present-unmatched
