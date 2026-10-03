@@ -1,5 +1,3 @@
-// ?Rva0002C025IsNewer@@YA_NABVAsciiString@@PBUSYSTEMTIME@@@Z
-// partial score=0.95 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 //
 // ?Rva0002C025IsNewer@@YA_NABVAsciiString@@PBUSYSTEMTIME@@@Z @ 0x0002C025 (155B)
@@ -46,10 +44,11 @@ struct _statbuf
 	int st_ctime;
 };
 
-// ?Rva0002C025IsNewer@@YA_NABVAsciiString@@PBUSYSTEMTIME@@@Z present-unmatched
 bool Rva0002C025IsNewer(const AsciiString &filename, const SYSTEMTIME *st)
 {
-	if (!filename.isEmpty())
+	if (filename.isEmpty())
+		return false;
+	else
 	{
 		const char *path = filename.str();
 		struct _statbuf buf;
@@ -80,5 +79,4 @@ bool Rva0002C025IsNewer(const AsciiString &filename, const SYSTEMTIME *st)
 		unsigned char r = (st->wSecond <= t->tm_sec);
 		return r;
 	}
-	return false;
 }

@@ -50512,3 +50512,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002DADB5@Rva002DADB5@@QAEXVAsciiString@@@Z,,0x002DADB5,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DADB5Set.cpp,matched,twin of Rva002DAD81Set plus caller 0x002DB719 plus prev O1 EHsc flags
 ?rva002DAE1D@Rva002DAE1D@@QAEXVAsciiString@@@Z,,0x002DAE1D,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DAE1DSet.cpp,matched,twin of Rva002DADB5Set plus caller 0x002DB743 plus same EH data VA
 ?rva002DAE51@Rva002DAE51@@QAEXVAsciiString@@@Z,,0x002DAE51,52,Code/Libraries/Source/WWVegas/WWLib/Rva002DAE51Set.cpp,matched,twin of Rva002DAE1DSet plus caller 0x002DB758 plus same EH data VA
+?Rva0002C025IsNewer@@YA_NABVAsciiString@@PBUSYSTEMTIME@@@Z,,0x0002C025,155,Code/GameEngine/Source/GameClient/Rva0002C025.cpp,matched,isEmpty row 0x1E2F _stat localtime IAT emptyString year 1900 caller 0x2D327 else-chain places returns inline
