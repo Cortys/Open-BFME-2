@@ -49028,3 +49028,11 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??1?$vector@ULightSubPoint@@V?$allocator@ULightSubPoint@@@_STL@@@_STL@@QAE@XZ,,0x00425717,63,Code/Libraries/Source/WWVegas/WWLib/LightPointDtor.cpp,matched,STLport vector<LightSubPoint> dtor calling _Destroy 0x004256D5
 ??1LightPoint@@QAE@XZ,,0x00425801,5,Code/Libraries/Source/WWVegas/WWLib/LightPointDtor.cpp,matched,LightPoint dtor thunk jumping to vector<LightSubPoint> dtor 0x00425717
 ??_GLightPoint@@QAEPAXI@Z,,0x00425826,28,Code/Libraries/Source/WWVegas/WWLib/LightPointDtor.cpp,matched,LightPoint scalar deleting dtor calling LightPoint dtor 0x00425801 and operator delete
+?regainFocusThunk@AudioManager@@QAEXXZ,,0x0035D326,5,Code/GameEngine/Source/Main/AudioManagerRegainFocusThunk.cpp,matched,WinMain thunk to AudioManager::regainFocus
+?init@Rva001DBAA4@@UAEXXZ,,0x001DBB5C,38,Code/GameEngine/Source/Common/Rva001DBBAD.cpp,matched,Rva001DBAA4::init critical section setup
+?lock@Rva001DBAA4@@QAEXXZ,,0x001DBBAD,27,Code/GameEngine/Source/Common/Rva001DBBAD.cpp,matched,Rva001DBAA4::lock critical section enter and increment
+?unlock@Rva001DBAA4@@QAEXXZ,,0x001DBBC8,67,Code/GameEngine/Source/Common/Rva001DBBAD.cpp,matched,Rva001DBAA4::unlock critical section exit and focus check
+?regainFocus@Rva001DBAA4@@QAEXXZ,,0x001DBC0B,5,Code/GameEngine/Source/Common/Rva001DBBAD.cpp,matched,Rva001DBAA4::regainFocus forwarder thunk
+?setCoords@Rva001DBAA4@@QAEXPBUICoord2D@@0@Z,,0x001DBB8C,33,Code/GameEngine/Source/Common/Rva001DBBAD.cpp,matched,Rva001DBAA4::setCoords copy coordinate pair
+??0Rva0023C565@@QAE@XZ,,0x0023C565,22,Code/GameEngine/Source/Common/Rva0023C565Lock.cpp,matched,Rva0023C565::Rva0023C565 scoped lock acquire
+??1Rva0023C565@@QAE@XZ,,0x0023C57B,16,Code/GameEngine/Source/Common/Rva0023C565Lock.cpp,matched,Rva0023C565::~Rva0023C565 scoped lock release
