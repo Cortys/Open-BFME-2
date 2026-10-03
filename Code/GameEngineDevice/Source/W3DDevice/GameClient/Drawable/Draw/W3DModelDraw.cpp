@@ -2416,22 +2416,6 @@ void W3DModelDraw::doHideShowSubObjs(const std::vector<ModelConditionInfo::HideS
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?stopClientParticleSystems@W3DModelDraw@@ present-unmatched
-void W3DModelDraw::stopClientParticleSystems() 
-{
-	for (std::vector<ParticleSysTrackerType>::const_iterator it = m_particleSystemIDs.begin(); it != m_particleSystemIDs.end(); ++it)
-	//for (std::vector<ParticleSystemID>::const_iterator it = m_particleSystemIDs.begin(); it != m_particleSystemIDs.end(); ++it)
-	{
-		ParticleSystem *sys = TheParticleSystemManager->findParticleSystem((*it).id);
-		if (sys != NULL) 
-		{
-			// this can be NULL
-			sys->destroy();
-		}
-	}
-	m_particleSystemIDs.clear();
-}
-
 //-------------------------------------------------------------------------------------------------
 /*
 	DANGER WARNING READ ME
