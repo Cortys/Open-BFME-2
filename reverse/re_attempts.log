@@ -6344,3 +6344,8 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva004D3D2B@DisconnectManager@@QAEXPAVConnectionManager@@@Z	0x004D3D2B	49	blocked	48B vs 49B pop-pop vs add-esp8 cleanup only plus O2 and default give 58B and G7 same pops t=12 model=muse-10 (stash 0.96 kept)
 ?rva004D3B7E@DisconnectManager@@QAEEHPAVBFMEConnectionManager@@@Z	0x004D3B7E	55	blocked	final rva004CEF58 check is neg-sbb-inc branchless vs retail test-je branches plus uchar local and bool and barrier all keep branchless t=15 model=muse-10 (stash 0.93 kept)
 ?rva004D3B63@DisconnectManager@@QAEIXZ	0x004D3B63	27	blocked	cmova vs jbe-mov for unsigned max t=12 model=muse-10 (stash 0.96 kept)
+?rva005376D2@UserPreferences@@QAE?AVAsciiString@@XZ	0x005376D2	228	blocked	ebx holds faction end vs retail immediates plus v spilled to stack vs ebx t=15 model=muse-09 (stash 0.93 kept)
+?rva005377B6@UserPreferences@@QAE?AVAsciiString@@XZ	0x005377B6	228	blocked	twin of 0x005376D2 wall ebx-for-end vs immediates plus v spill no new idea t=2 model=muse-09
+?Rva00308B38Write@@YAXXZ	0x00308B38	219	blocked	hash iteration via dup_0007e394 plus multi-field writes needs donor t=5 model=muse-09
+?rva001DEE92@Rva001DEE92@@QAEXI@Z	0x001DEE92	33	blocked	by-value Pod52 temp needs direct arg-slot construction without rep-movsd copy t=10 model=muse-09
+?rva00308688@Rva00308688@@QAEXI@Z	0x00308688	109	blocked	callback via [ebx] plus vector save-restore plus g_00BFB1CC needs donor t=8 model=muse-09
