@@ -50402,7 +50402,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva001FFC38Copy@@YAPAXPAX000@Z,,0x001FFC38,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva001FFC38.cpp,matched,forward to rowed 0x00339A8D copy with dummy tag
 ??1FrameDataManager@@UAE@XZ,,0x0058B623,67,Code/GameEngine/Source/Common/FrameDataManagerDtor.cpp,matched,vtable store init loop FRAME_DATA_LENGTH delete array
 ?Rva003FCE11Compare@@YAHPAX0@Z,,0x003FCE11,31,Code/GameEngine/Source/Common/Rva003FCE11Compare.cpp,matched,forwards two pointers plus zeroed int via memset to rowed Rva003FCD04Compare caller 0x003FCFB5
-?rva003B0D7C@Rva003B0D7C@@QAEXHPAVRva0039B7AD@@_N@Z,,0x003B0D7C,188,Code/GameEngine/Source/Common/RTS/MoneyRva003B0D7C.cpp,matched,caller 0x003BC048 Player+0x90 Money audio slots 0x138 0x64
 ??$_M_allocate_and_copy@PAVRva00468520@@@?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@IAEPAUBfmeE8@@IPAVRva00468520@@0@Z,,0x00153489,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmee8_allocate_copy.cpp,matched,same 45B ebp-tag shape as 0x00319304 caller 0x15380D callees rowed
 ??_GRva004134AE@@QAEPAXI@Z,,0x00413492,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004134AE.cpp,matched,chain lane deleting dtor via rowed dtor and delete
 ??0Rva0041386B@@QAE@XZ,,0x0041386B,54,Code/GameEngine/Source/Common/Thing/ModuleFactoryCtor.cpp,matched,unlock lane ctor with vector and map via rowed ctors
@@ -50412,3 +50411,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00501356@Rva00501356@@QAEXXZ,,0x00501356,30,Code/GameEngine/Source/GameLogic/Object/LocomotorSetMapThunks.cpp,matched,vector storage helper via rowed 0x00500CB8 and free caller 0x00501A7C
 ?Rva00500AF8Destroy@@YAXPAURva004FABE2@@0@Z,,0x00500AF8,25,Code/GameEngine/Source/Common/Rva00500AF8Destroy.cpp,matched,range destroy stride 0xC via rowed 0x004FABE2 callers 0x00500E57 0x00500EE4
 ??1Rva00500E3D@@QAE@XZ,,0x00500E3D,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector dtor via rowed 0x00500AF8 and free caller 0x00502FE9
+?rva00239A40@Rva00239A40@@QAEXVAsciiString@@@Z,,0x00239A40,93,Code/GameEngine/Source/Common/Rva00239A40.cpp,matched,leaf caller 0x003CC38C set isEmpty TacticalView slots 0x224 0x228
