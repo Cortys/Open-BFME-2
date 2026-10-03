@@ -121,9 +121,7 @@ private:
 // GameModePreferences::makeKey: defined in GameModePreferences.cpp (its row's unit).
 
 // ??0GameModePreferences@@QAE@H@Z @0x44D54B
-GameModePreferences::GameModePreferences(Int mode) : m_mode(mode)
-{
-}
+// GameModePreferences::GameModePreferences: defined in GameModePreferences.cpp (its row's unit).
 
 // ??1GameModePreferences@@UAE@XZ @0x44D56A
 // GameModePreferences::~GameModePreferences: defined in GameModePreferences.cpp (its row's unit).
@@ -342,7 +340,4 @@ public:
 // LANPreferences::loadFromIniFile: defined in GameModePreferences.cpp (its row's unit).
 
 // ??0LANPreferences@@QAE@H@Z @0x44D2F5
-LANPreferences::LANPreferences(Int mode) : GameModePreferences(mode)
-{
-	loadFromIniFile();
-}
+// LANPreferences::LANPreferences: defined in GameModePreferences.cpp (its row's unit).
