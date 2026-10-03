@@ -49637,3 +49637,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003B0E75@Rva003B0E75@@QAEXXZ,,0x003B0E75,14,Code/GameEngine/Source/Common/Rva003B0E83Init.cpp,matched,leaf four 1.0f void sibling of 0x003B0E83
 ?rva00171780@MeshModelClass@@QAEXXZ,,0x00171780,11,Code/Libraries/Source/WWVegas/WW3D2/MeshModelForward.cpp,matched,tail jmp to rowed MeshMatDesc rva0015B8C0 via ecx+0x94
 ?rva00171583@Rva00171583@@QAE_NABIPAUVec2@@1@Z,,0x00171583,162,Code/Libraries/Source/WWVegas/WWLib/Rva00171583.cpp,matched,unlock map rect scaler via rowed _M_find ICF twin and pin 0x001711A6
+?checkConditionsForTeamNames@ScriptEngine@@QAEXPAVScript@@ABVAsciiString@@@Z,,0x002062A8,547,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineCheckConditionsForTeamNames.cpp,matched,BFME1 donor ScriptEngineCheckConditions plus BFME2 GameLogic gate and 0x218 max
