@@ -35,10 +35,21 @@ public:
 	virtual void xfer(Xfer *);
 };
 
+enum NameKeyType;
+
+class NameKeyGenerator
+{
+public:
+	const AsciiString &keyToName(NameKeyType key);
+};
+
+extern NameKeyGenerator *TheNameKeyGenerator;
+
 class CreateAHeroData : public Snapshot
 {
 public:
 	bool rva004080DD(const AsciiString &key, unsigned int *out);
+	unsigned int rva00408109(const NameKeyType *p);
 private:
 	unsigned char m_pad04[0x4C];
 	StringPayloadMap m_map50;
@@ -55,4 +66,14 @@ bool CreateAHeroData::rva004080DD(const AsciiString &key, unsigned int *out)
 		return true;
 	}
 	return false;
+}
+
+unsigned int CreateAHeroData::rva00408109(const NameKeyType *p)
+{
+	if (p == 0)
+		return 0;
+	AsciiString tmp = TheNameKeyGenerator->keyToName(*p);
+	unsigned int out = 0;
+	rva004080DD(tmp, &out);
+	return out;
 }
