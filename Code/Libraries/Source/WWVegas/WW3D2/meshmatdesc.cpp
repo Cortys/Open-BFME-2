@@ -130,7 +130,7 @@ VertexMaterialClass * MatBufferClass::Get_Element(int index)
 // TexBufferClass::TexBufferClass: defined in TexBufferClassCopyCtor.cpp (its row's unit).
 
 // ??1TexBufferClass@@UAE@XZ present-unmatched
-TexBufferClass::~TexBufferClass(void)
+inline TexBufferClass::~TexBufferClass(void)
 {
 	for (int i=0;i<Count;i++) {
 		REF_PTR_RELEASE(Array[i]);
