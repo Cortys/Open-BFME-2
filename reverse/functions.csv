@@ -49967,3 +49967,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0044DEC1@GameModePreferences@@QAEXABVAsciiString@@@Z,,0x0044DEC1,103,Code/GameEngine/Source/Common/Rva0044DEC1Finish.cpp,matched,Password setter QP temporary held in edi via slot.set(temporary)
 ??1Rva003B262E@@MAE@XZ,,0x003B262E,68,Code/GameEngine/Source/Common/Rva003B262EFinish.cpp,matched,Or-list dtor with barrier pinning next-clear before vtable load
 ??_GRva002004FD@@QAEPAXI@Z,,0x0031F83A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-14-2004FD.cpp,matched,chain deleting dtor via rowed dtor 0x002004FD plus delete
+??0Rva0010EE9E@@QAE@ABVRva0036CA00Str@@@Z,,0x0010EE9E,24,Code/GameEngine/Source/Common/Rva0010EE9ECtor.cpp,matched,LINK ctor via rowed base 0x001164D3 plus vtable
