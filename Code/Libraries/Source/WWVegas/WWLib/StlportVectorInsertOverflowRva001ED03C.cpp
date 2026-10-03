@@ -21,3 +21,7 @@ template <> void _Construct<Rva001ED03C, Rva001ED03C>(Rva001ED03C *, const Rva00
 
 template void _STL::vector<Rva001ED03C>::_M_insert_overflow(
     Rva001ED03C *, const Rva001ED03C &, const _STL::__false_type &, unsigned int, bool);
+// ?push_back@?$vector@VRva001ED03C@@V?$allocator@VRva001ED03C@@@_STL@@@_STL@@QAEXABVRva001ED03C@@@Z @0x001ED549 55B.
+// STLport vector<Rva001ED03C>::push_back over growth path 0x001ED476.
+// Evidence: callees rowed 0x001ED1F1 0x001ED476; caller 0x001ED5F3; add 0x24 stride.
+template void _STL::vector<Rva001ED03C>::push_back(const Rva001ED03C &);
