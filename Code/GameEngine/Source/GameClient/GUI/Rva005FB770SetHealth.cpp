@@ -16,12 +16,15 @@ class Rva005FB770
 {
 public:
 	void rva005FB8B4(float v);
+	void rva005FB961(float v);
 private:
 	char m_pad00[4];
 	void *m_level04;
 	Rva005FB770Team *m_team08;
 	char m_pad0C[0x34 - 0x0C];
 	float m_float34;
+	char m_pad38[0x4C - 0x38];
+	bool m_flag4C;
 };
 
 void Rva005FB770::rva005FB8B4(float v)
@@ -31,4 +34,17 @@ void Rva005FB770::rva005FB8B4(float v)
 		Rva00527925Fire(TheRva00222A8BTarget, m_level04, team, "SetPlayerHealth", &v);
 		m_float34 = v;
 	}
+}
+
+void Rva005FB770::rva005FB961(float v)
+{
+	float *pHealth = &m_float34;
+	float *p = pHealth;
+	if (!(v > *pHealth))
+		p = &v;
+	v = *p;
+	const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+	Rva00527925Fire(TheRva00222A8BTarget, m_level04, team, "PlayHitAnim", &v);
+	*pHealth -= v;
+	m_flag4C = true;
 }

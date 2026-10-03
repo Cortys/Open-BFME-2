@@ -50187,3 +50187,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BC4D1Do@@YGXH@Z,,0x003BC4D1,23,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4D1Do.cpp,matched,script forwards int arg to TheAudio vslot 0xb4 with 0
 ?Rva003BC4E8Do@@YGXH@Z,,0x003BC4E8,23,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4E8Do.cpp,matched,script forwards int arg to TheAudio vslot 0xb8 with 0
 ??_GBuildListInfo@@MAEPAXI@Z,,0x0032A4BB,28,Code/GameEngine/Source/GameLogic/Map/Rva0032A186Finish.cpp,matched,deleting dtor via own ??1 unit BuildListInfo caller none
+?rva005FB961@Rva005FB770@@QAEXM@Z,,0x005FB961,101,Code/GameEngine/Source/GameClient/GUI/Rva005FB770SetHealth.cpp,matched,damage min setter via rowed Fire 0x00527925 with PlayHitAnim
