@@ -7272,3 +7272,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva006D0D70@Rva006D1090@@QAEXPAX@Z,0x006D0D70,address-derived list helper called from Rva006D1090 complete dtor 0x6D1090; body unrowed
 ??1Rva006CE380@@QAE@XZ,0x006CE380,scalar destructor spelling of the rowed list clear 0x6CE380 reached as the base sub-object dtor of Rva006D1090
 ?rva006E1E30@Rva006E1E30@@QAEXPAURva006F9FC0Rect@@@Z,0x006E1E30,address-derived rect-filling method called by BfmePicker neighbour 0x6F9FC0; body unrowed
+?rva0070AF90@Rva0070B380@@QAEPAXABVEAStringC@@@Z,0x0070AF90,"address-derived private-member callee of Rva0070B380::lookup at 0x0070B3A2; the hash-map lookup returning its +4 payload"
