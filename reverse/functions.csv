@@ -49543,3 +49543,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0041EA88@Rva0041EA88@@QAEXXZ,,0x0041EA88,73,Code/Libraries/Source/WWVegas/WWLib/Rva0041EA88Clear.cpp,matched,chain hashtable clear via rowed node delete 0x0041EA2C
 ?rva00709E00@Rva00709B80@@QAEXXZ,,0x00709E00,68,Code/GameEngine/Source/Common/Rva00709B80Slot11.cpp,matched,vslot 11 of 008EE8C8 tail-jmp to 0070DFE0 via BfmeAptValue006DCD20
 ?rva00601941@Rva00601941@@QAEXXZ,,0x00601941,11,Code/GameEngine/Source/Common/System/INIHelperRva00601941.cpp,matched,vector erase-all wrapper via begin end with rowed erase
+??0Rva00240000@@QAE@XZ,,0x00240000,46,Code/Libraries/Source/WWVegas/WWLib/Rva00240000Ctor.cpp,matched,unlock lane vtable Vector_base BfmeE12 7 callers
