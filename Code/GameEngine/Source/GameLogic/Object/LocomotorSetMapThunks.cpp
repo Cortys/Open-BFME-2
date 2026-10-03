@@ -108,3 +108,9 @@ Rva004FFE81& Rva004FFE81::operator=(const Rva004FFE81& other)
     m_third = other.m_third;
     return *this;
 }
+
+// Explicit STLport random-access copy. Retail 0x0050094B divides the
+// pointer difference by 20 and calls the element assignment at 0x0050052F.
+template Rva004FFE81* _STL::__copy<Rva004FFE81*, Rva004FFE81*, int>(
+    Rva004FFE81*, Rva004FFE81*, Rva004FFE81*,
+    const _STL::random_access_iterator_tag&, int*);
