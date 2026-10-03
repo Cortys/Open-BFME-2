@@ -33,7 +33,6 @@ int *__cdecl Rva005F4B8FCopy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_nod
 	}
 	return result;
 }
-// ?Rva005F4DA7Copy@@YAPAHPAU_Rb_tree_node_base@_STL@@0PAHABU__false_type@2@@Z present-unmatched
 int *__cdecl Rva005F4DA7Copy(_STL::_Rb_tree_node_base *first, _STL::_Rb_tree_node_base *last, int *result, const _STL::__false_type &tag)
 {
 	_STL::input_iterator_tag tag1;
