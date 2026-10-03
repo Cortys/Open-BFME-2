@@ -1,5 +1,5 @@
 // ?rva002FE8CC@Rva002FE8CC@@QAEXPAX@Z
-// partial score=0.97 date=2026-10-03
+// partial score=0.98 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD
 template <typename T> struct StringInlineData { int m_refCount; int m_length; T m_text[1]; };
 template <typename T> class StringBase { public: int compare(const StringBase<T> &other) const; private: StringInlineData<T> *m_data; };
@@ -10,8 +10,8 @@ void Rva002FE8CC::rva002FE8CC(void *arg)
 {
 	Subsystem *incoming = (Subsystem *)arg;
 	Subsystem *cur = m_headF8;
+	StringBase<char> &want = *(StringBase<char> *)((char *)incoming + 4);
 	while (cur != 0) {
-		StringBase<char> &want = *(StringBase<char> *)((char *)incoming + 4);
 		StringBase<char> &have = *(StringBase<char> *)((char *)cur + 4);
 		if (want.compare(have) == 0) {
 			DataVirt *d = cur->m_08;
