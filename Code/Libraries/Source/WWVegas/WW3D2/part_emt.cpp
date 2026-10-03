@@ -334,7 +334,10 @@ void ParticleEmitterClass::Restart(void)
 	Start();
 }
 
-// ?ParticleEmitterClass::Notify_Added present-unmatched
+// Target: emitter table 0x00BD69FC slot 25 points at this 64-byte body;
+// its destructor/Clone/Get_Name and slot 26 Notify_Removed are already matched.
+// The donor supplies this callback name and the Active/FirstTime/IsInScene labels.
+// Native byte accesses at +0x110/+0x111/+0x129 and both ret4 paths reproduce it.
 void ParticleEmitterClass::Notify_Added(SceneClass * scene)
 {
 	RenderObjClass::Notify_Added(scene);
