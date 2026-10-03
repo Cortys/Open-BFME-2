@@ -49295,3 +49295,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??_GRva0014F699@@UAEPAXI@Z,,0x0014DC3F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0014F699.cpp,matched,deleting dtor calls 0014D1E3 vtable BC6F24 chain
 ?rva0037AF05@Rva0037AF05@@QAEXHHHHH@Z,,0x0037AF05,131,Code/GameEngine/Source/Common/System/Rva0037AF05Write.cpp,matched,recorder message arg writer via fwrite plus rowed reader sizes
 ?rva0059EC72@Rva0059ECD2@@QAEXH@Z,,0x0059EC72,59,Code/GameEngine/Source/Common/Rva0059ECD2.cpp,matched,state 2or3 winEnable false twice to 4 via rowed winEnable
+?rva0059E390@Rva0059E390@@QAEXPBVModuleData@@@Z,,0x0059E390,23,Code/GameEngine/Source/Common/Rva0059E390Holder.cpp,matched,guarded ModuleData append via rowed push_back plus caller Parse
