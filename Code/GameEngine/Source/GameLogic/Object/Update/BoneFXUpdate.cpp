@@ -57,28 +57,7 @@ const Int MAX_IDX = 32;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/BoneFXUpdateCtorThunk.cpp
-// ??0BoneFXUpdate@@QAE@PAVThing@@PBVModuleData@@@Z present-unmatched
-BoneFXUpdate::BoneFXUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	Int i, j;
-	for (i = 0; i < BODYDAMAGETYPE_COUNT; ++i) {
-		for (j = 0; j < BONE_FX_MAX_BONES; ++j) {
-			m_nextFXFrame[i][j] = -1;
-			m_nextOCLFrame[i][j] = -1;
-			m_nextParticleSystemFrame[i][j] = -1;
-			m_FXBonePositions[i][j].zero();
-			m_OCLBonePositions[i][j].zero();
-			m_PSBonePositions[i][j].zero();
-		}
-		m_bonesResolved[i] = FALSE;
-	}
-	m_particleSystemIDs.clear();
-	m_active = FALSE;
-
-	//Added By Sadullah Nader
-	m_curBodyState = BODY_PRISTINE;
-}
+// BoneFXUpdate::BoneFXUpdate: defined in BoneFXUpdateCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?onObjectCreated@BoneFXUpdate@@ present-unmatched
