@@ -49555,3 +49555,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004D5E86@NetAckStage1CommandMsg@@QAE?AVAsciiString@@XZ,,0x004D5E86,151,Code/GameEngine/Source/GameNetwork/NetAckStage1CommandMsgContents.cpp,matched,vtable slot 3 of 0x00860204 ctor 0x004D56E6 base 0x004D5B4C format 0x008603A0
 ?rva00203B08@Rva00203B08@@QAE_NXZ,,0x00203B08,35,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine_rva00203B08.cpp,matched,unlock lane ecx+0x1A4D9 flag plus DFE158 DFE15C pair callers test bool
 ?d_00794790@@YAXPAVGameWindow@@PAVWinInstanceData@@@Z,,0x000A501C,646,Code/GameEngineDevice/Source/W3DDevice/GameClient/GUI/Gadget/W3DPushButtonImageDrawVertical.cpp,matched,LINK BONUS donor BFME1 vertical draw
+?Rva0009DE01Get@@YAMMM@Z,,0x0009DE01,37,Code/GameEngine/Source/Common/Rva0009DE01Finish.cpp,matched,log-ratio: two log10 into named locals then divide; t=12 model=deepseek-flash
