@@ -6417,3 +6417,7 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva00308509@Rva00308509@@QAEXPAUVec4@@MH@Z	0x00308509	242	blocked	twin-of-00308417 same xmm-spill-frame wall no NEW idea t=5 model=muse-09
 ?rva0030822F@Rva0030822F@@QAEXPAUInterpElem@@M@Z	0x0030822F	246	blocked	twin-of-00308417 same xmm-spill-frame wall no NEW idea t=5 model=muse-09
 ?Rva0030C2CESave@@YAXPAVRva0030C2CECollection@@PAVDataChunkOutput@@@Z	0x0030C2CE	316	partial	esi-edi swap plus lea-vs-shl plus inc placement plus g_table extern t=12 model=muse-09 score=0.93 stash=reverse/attempts/0x0030c2ce.cpp
+?rva0030C9E6@Rva0030C9E6@@QAEXPAUApplyArg0030C9E6@@@Z	0x0030C9E6	109	blocked	unsigned try keeps shr-vs-sar plus guard-loop layout wall t=10 model=muse-09 (stash 0.91 kept)
+?Rva0030C2CESave@@YAXPAVRva0030C2CECollection@@PAVDataChunkOutput@@@Z	0x0030C2CE	316	blocked	direct cur index keeps lea-vs-shl plus esi-edi plus inc placement t=8 model=muse-09 (stash 0.93 kept)
+??1AIGroup@@UAE@XZ	0x0036E564	141	blocked	AIGroup dtor wall vtable-zero plus list-size-plus8 plus missing rva-call plus second-vtable-base t=15 model=muse-09
+?rva00224D80@Rva00224D80@@QAEHXZ	0x00224D80	127	blocked	singleton static-guard plus atexit plus holder-plus-virtual plus size-0x20-mismatch wall t=12 model=muse-09
