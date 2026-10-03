@@ -1,5 +1,7 @@
 // ?rva00544B41@Rva00544B41@@QAEXXZ
 // partial score=0.93 date=2026-10-03
+// ?rva00544B41@Rva00544B41@@QAEXXZ
+// partial score=0.93 date=2026-10-03
 // cl: /O1 /MD
 // ?rva00544B41@Rva00544B41@@QAEXXZ, retail 0x00544B41, 85 bytes.
 // ObjectID refresh via TheGameLogic findObjectByID then controlling-player
@@ -10,7 +12,7 @@
 class Object;
 class Player;
 class GameLogic;
-typedef int ObjectID;
+enum ObjectID {};
 
 extern GameLogic *TheGameLogic;
 
@@ -47,7 +49,7 @@ struct Rva00544B41Holder
 	Object *m_obj14;
 };
 
-int __cdecl Rva00544B13Callback(Object *obj, void *userData);
+int __cdecl Rva00544B13Callback(void *obj, void *userData);
 
 class Rva00544B41
 {
@@ -68,10 +70,7 @@ void Rva00544B41::rva00544B41()
 		return;
 	Object *orig = m_holder18->m_obj14;
 	Player *player = orig->getControllingPlayer();
-	Object *nullFound = 0;
-	Rva00544B41Info info;
-	info.m_orig = orig;
-	info.m_found = nullFound;
+	Rva00544B41Info info = { orig, 0 };
 	if (!player)
 		return;
 	player->iterateObjects((Player::ObjectIterateFunc)Rva00544B13Callback, &info);
@@ -81,10 +80,3 @@ void Rva00544B41::rva00544B41()
 	m_id24 = f->m_id74;
 }
 
-// ?Rva00544B13Callback@@YAHPAUObject@@PAX@Z present-unmatched
-int __cdecl Rva00544B13Callback(Object *obj, void *userData)
-{
-	(void)obj;
-	(void)userData;
-	return 1;
-}
