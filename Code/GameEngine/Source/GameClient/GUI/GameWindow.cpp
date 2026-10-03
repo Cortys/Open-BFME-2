@@ -383,7 +383,6 @@ void GameWindow::winSetHiliteTextColors(int color, int borderColor)
 		GadgetComboBoxSetHiliteTextColors(this, color, borderColor);
 }
 
-// ?winSetIMECompositeTextColors@GameWindow@@QAEXHH@Z present-unmatched
 void GameWindow::winSetIMECompositeTextColors(int color, int borderColor)
 {
 	m_imecompositeColor = color;
