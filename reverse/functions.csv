@@ -49909,3 +49909,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00583C88@Rva005843DA@@QAEXH@Z,,0x00583C88,44,Code/Libraries/Source/WWVegas/WWLib/Rva00583C88Finish.cpp,matched,slot 10 vector elem store 2; same _STL::vector shape as rowed sibling 0x583CB4
 ??0Locomotor@@QAE@PBVLocomotorTemplate@@@Z,,0x005C96EB,104,Code/GameEngine/Source/GameLogic/Object/Rva005C96EBFinish.cpp,matched,BFME1 Locomotor ctor; local int pointer clears +0x258 block; caller newLocomotor 0x5C9886
 ?rva00498980@GateOpenAndCloseBehavior@@QAE_NXZ,,0x00498980,87,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498980Finish.cpp,matched,Gate open/close state test; source case order 2 1 0 matches retail true-block first
+?Get_Texture_Memory_Usage@?$RefCountPtr@VTextureClass@@@@QBEIXZ,,0x00132B83,79,Code/Libraries/Source/WWVegas/WW3D2/Rva00132B83Finish.cpp,matched,RefCountPtr dual-reg surface split: member m_surface for base chain plus named local for mip check

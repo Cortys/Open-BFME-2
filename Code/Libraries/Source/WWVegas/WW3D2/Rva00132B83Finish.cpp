@@ -30,9 +30,9 @@ public:
 		if (!Is_Initialized())
 			return 0;
 		TextureSurfaceInfo *surface = m_surface;
-		unsigned mem = Get_Bits_Per_Pixel((WW3DFormat)surface->m_format4C)
-			* surface->m_dim30 * surface->m_dim2C * surface->m_dim28 >> 3;
-		if (surface->m_type0C == 2)
+		unsigned mem = Get_Bits_Per_Pixel((WW3DFormat)m_surface->m_format4C)
+			* m_surface->m_dim30 * m_surface->m_dim2C * m_surface->m_dim28 >> 3;
+		if (m_surface->m_type0C == 2)
 			mem *= 6;
 		if (surface->m_mip44 != 1)
 			mem = mem * 4 / 3;
