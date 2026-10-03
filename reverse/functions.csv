@@ -49356,3 +49356,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??0Rva004FD7FBData@@QAE@XZ,,0x004FCE41,50,Code/GameEngine/Source/Common/Rva004FD7FBDataCtor.cpp,matched,default ctor two vectors plus two zeros via caller Parse
 ?rva004FC275@Rva004FC275@@QAEXE@Z,,0x004FC275,36,Code/GameEngine/Source/Common/Rva004FC275Set.cpp,matched,flag at 35 with two vtable notifies via 24
 ??0Rva004FD719Data@@QAE@XZ,,0x004FCCF0,36,Code/GameEngine/Source/Common/Rva004FD719DataCtor.cpp,matched,default ctor one vector plus int and byte zeros
+?rva004FC299@Rva004FC275@@QAEXXZ,,0x004FC299,13,Code/GameEngine/Source/Common/Rva004FC275Set.cpp,matched,sibling forward to helper slot 1 via 24
