@@ -1,6 +1,8 @@
 // ?read_vertices@MeshGeometryClass@@IAE_NAAVChunkLoadClass@@_N@Z
+// partial score=0.8402061856 date=2026-10-03
+// ?read_vertices@MeshGeometryClass@@IAE_NAAVChunkLoadClass@@_N@Z
 // partial score=0.8402061856 date=2026-09-23
-// cl: /G7 /arch:SSE /DNDEBUG /MD /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep
+// cl: /G7 /arch:SSE /DNDEBUG /MD /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/game/Libraries/Source/Compression /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep
 /*
 ** Copyright 2025 Electronic Arts Inc.
 ** This program is free software: you can redistribute it and/or modify
@@ -52,6 +54,6 @@ bool MeshGeometryClass::read_vertices(ChunkLoadClass &cload, bool use_secondary)
         loc = VertexSlot30->Get_Array();
     }
 
-    unsigned int byte_count = VertexCount * sizeof(W3dVectorStruct);
-    return cload.Read(loc, byte_count) == byte_count;
+    int count = VertexCount;
+    return cload.Read(loc, count * sizeof(W3dVectorStruct)) == count * 12;
 }
