@@ -49134,3 +49134,6 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00552C7ACallback@@YAXHHHHPAX@Z,,0x00552C7A,24,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,GameSpy stats callback flag setter
 ?rva00552C92Callback@@YAXHHHHHHPAX@Z,,0x00552C92,12,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,GameSpy stats callback counter decrement
 ?rva00552C9ECallback@@YAXHHHHPAX@Z,,0x00552C9E,26,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,GameSpy stats callback record writer
+??0Rva00552F2E@@QAE@XZ,,0x00552F2E,20,Code/GameEngine/Source/Common/Rva00552F2EHelpers.cpp,matched,
+?set@Rva00552F55@@QAEAAU1@PBDPBF@Z,,0x00552F55,24,Code/GameEngine/Source/Common/Rva00552F2EHelpers.cpp,matched,
+?set@Rva00552F6D@@QAEAAU1@PBDPBH@Z,,0x00552F6D,22,Code/GameEngine/Source/Common/Rva00552F2EHelpers.cpp,matched,
