@@ -50554,3 +50554,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B5510@@YAXXZ,,0x007B5510,20,Code/GameEngine/Source/Common/System/TimePeriodInit.cpp,matched,startup init calling timeBeginPeriod(1) and atexit(0x007B9AC0)
 ?rva007B5542@@YAXXZ,,0x007B5542,22,Code/GameEngine/Source/Common/System/AtlModuleInit.cpp,matched,
 ?rva007B9AEA@@YAXXZ,,0x007B9AEA,22,Code/GameEngine/Source/Common/System/AtlModuleInit.cpp,matched,
+?rva007B6A5A@@YAXXZ,,0x007B6A5A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B6C66@@YAXXZ,,0x007B6C66,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B6C70@@YAXXZ,,0x007B6C70,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,

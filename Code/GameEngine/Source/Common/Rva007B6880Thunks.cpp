@@ -34,6 +34,36 @@ void __cdecl rva007B6C9B()
 	return p->clear();
 }
 
+class CriticalSectionClass
+{
+public:
+	~CriticalSectionClass();
+};
+
+extern unsigned g_Va00DE4B34;
+
+// ?rva007B6C66@@YAXXZ @ 0x007B6C66 (10B). Global CriticalSectionClass dtor thunk: ecx=&g_Va00DE4B34 then tail-jmp to rowed ??1CriticalSectionClass@@QAE@XZ (0x00613B10).
+void __cdecl rva007B6C66()
+{
+	CriticalSectionClass *p = (CriticalSectionClass *)&g_Va00DE4B34;
+	return p->~CriticalSectionClass();
+}
+
+class MutexClass
+{
+public:
+	~MutexClass();
+};
+
+extern unsigned g_Va00DE5DA0;
+
+// ?rva007B6C70@@YAXXZ @ 0x007B6C70 (10B). Global MutexClass dtor thunk: ecx=&g_Va00DE5DA0 then tail-jmp to rowed ??1MutexClass@@QAE@XZ (0x00613A20).
+void __cdecl rva007B6C70()
+{
+	MutexClass *p = (MutexClass *)&g_Va00DE5DA0;
+	return p->~MutexClass();
+}
+
 // ?Free_String@StringClass@@AAEXXZ rowed target for next thunks (0x00610A40).
 class StringClass
 {
@@ -88,6 +118,14 @@ void __cdecl rva007B7060()
 #include "ascii_string.h"
 
 extern unsigned g_Va00DE0878;
+extern unsigned g_Va00DDF5B4;
+
+// ?rva007B6A5A@@YAXXZ @ 0x007B6A5A (10B). Global AsciiString dtor thunk: ecx=&g_Va00DDF5B4 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39). No callers. Honest address name.
+void __cdecl rva007B6A5A()
+{
+	AsciiString *p = (AsciiString *)&g_Va00DDF5B4;
+	return p->~AsciiString();
+}
 
 // ?rva007B6AA0@@YAXXZ @ 0x007B6AA0 (10B). Global AsciiString dtor thunk: ecx=&g_Va00DE0878 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39). No callers. Prev is our 0x007B7070 row in this TU (same page). Honest address name.
 void __cdecl rva007B6AA0()
