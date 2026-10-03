@@ -22,6 +22,7 @@
 **	You should have received a copy of the GNU General Public License
 **	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#pragma optimize("ty", on)
 class WWMath { public: __forceinline static float Sqrt(float val) {
     float retval;
     __asm { fld val
@@ -42,6 +43,7 @@ public:
 __forceinline Vector3 operator-(const Vector3& a, const Vector3& b) {
     return Vector3(a.X-b.X, a.Y-b.Y, a.Z-b.Z);
 }
+#pragma optimize("", on)
 class SphereClass {
 public:
     Vector3 Center;
