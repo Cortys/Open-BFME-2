@@ -12,3 +12,7 @@ template void _STL::__destroy_aux<BfmeNarrowRecord28Iterator>(BfmeNarrowRecord28
 // Native45-byte dispatch41A42C forwards two iterator values and false tag
 // to the independently rowed33-byte loop41A382.
 template void _STL::__destroy<BfmeNarrowRecord28Iterator, BfmeNarrowRecord0041A5D2>(BfmeNarrowRecord28Iterator, BfmeNarrowRecord28Iterator, BfmeNarrowRecord0041A5D2*);
+
+// Native direct entry41A4C8 is called by the Ghidra-bounded deque dtor
+//41A51F at41A554; full41 bytes end inret and dispatch to41A42C.
+template void _STL::_Destroy<BfmeNarrowRecord28Iterator>(BfmeNarrowRecord28Iterator, BfmeNarrowRecord28Iterator);
