@@ -49924,3 +49924,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00219D85@Rva00219B9E@@QAEPAXI@Z,,0x00219D85,37,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,16B vector at +0x15C sar4 callers 0x00219DD7 0x0021BCE1
 ?rva00219FE3@Rva00219B9E@@QAEHII@Z,,0x00219FE3,51,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer forward to 0x00219C93 miss -1 caller 0x0021A709
 ?rva0027295B@Drawable@@QAEXPAX@Z,,0x0027295B,22,Code/GameEngine/Source/GameClient/Rva0027295BFinish.cpp,matched,drawable first-element tail call via pointer-to-pointer local slot 0x68
+?Rva002B2E77Append@@YGXH@Z,,0x002B2E77,23,Code/GameEngine/Source/Common/Rva002B2E77Finish.cpp,matched,stdcall int wrapper tail-appends via rowed 0x0030F936 callers push value
