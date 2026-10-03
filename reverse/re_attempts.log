@@ -6452,3 +6452,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva004A6702@Rva004A6702@@QAEXPAUThing@@I@Z	0x004A6702	561	blocked	complex 561B matrix transform with negative this offsets plus STL vector plus AI chain needs donor layout t=8 model=muse-09
 ?rva004A6642@Rva004A6642@@QAE_NPAX@Z	0x004A6642	192	partial	xmm reg rotation y-z-x in xmm1-2-0 vs retail xmm0-1-2 and row2 row3 mul order swapped size exact 192B t=22 model=muse-09 score=0.93 stash=reverse/attempts/0x004a6642.cpp
 ?Rva003BC524Set@@YGXABVAsciiString@@M@Z	0x003BC524	43	partial	movss mulss order swapped ours movss global mulss stack vs retail movss stack mulss global t=12 model=muse-01 score=0.95 stash=reverse/attempts/0x003bc524.cpp
+FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs donor layout t=5 model=muse-03
