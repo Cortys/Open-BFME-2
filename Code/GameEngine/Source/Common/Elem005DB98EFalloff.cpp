@@ -31,6 +31,7 @@ struct Elem005DB98E
 public:
 	float rva005DB928();
 	float rva005DB95B();
+	float rva005A66BF();
 };
 
 float Elem005DB98E::rva005DB928()
@@ -49,4 +50,13 @@ float Elem005DB98E::rva005DB95B()
 		return -1.0f;
 	float f = rva005DB928();
 	return ((m_04 + 4000.0f) * f + (m_04 + 2000.0f)) * f + m_04;
+}
+float Elem005DB98E::rva005A66BF()
+{
+	int v;
+	if (m_08 > 0.0f && m_04 > 0.0f)
+		v = 1;
+	else
+		v = 0;
+	return (float)v;
 }

@@ -50304,3 +50304,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FBF38@Rva003FBF38@@QAEEXZ,,0x003FBF38,24,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,null 0 else slot100 ternary 0 1
 ?rva00199FCC@Rva00199FCC@@QAEPAXABVAsciiString@@@Z,,0x00199FCC,47,Code/Libraries/Source/WWVegas/WW3D2/Rva00199FCCFind.cpp,matched,linear search via StringBase compareNoCase row plus WW3D2 neighbours
 ?rva00213925@Rva000427195@@QAE?AUInsertRet00212A5A@@PBX@Z,,0x00213925,36,Code/GameEngine/Source/GameClient/Rva00213925Insert.cpp,matched,hashtable insert with grow via pinned resize plus rowed insert
+?rva005A66BF@Elem005DB98E@@QAEMXZ,,0x005A66BF,45,Code/GameEngine/Source/Common/Elem005DB98EFalloff.cpp,matched,Elem005DB98E same-this-as falloff m_04 m_08 GT0 via fild
