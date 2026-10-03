@@ -1,7 +1,8 @@
-// ?rva0043F20C@Rva0043F20C@@QAEXUTreeHintRef00217D4C@@@Z
-// partial score=0.93 date=2026-09-27
-// ?rva0043F20C@Rva0043F20C@@QAEXUTreeHintRef00217D4C@@@Z
-// partial score=0.93 date=2026-09-27
+// ?rva0043F20C@Rva0043F20C@@QAEXUTreeHintRef00217D4C@@@Z @0x0043F20C 56B.
+// Assigns a TreeHintRef into this+0x6c: the operator= loads the source pointer,
+// releases the incumbent when non-null, and stores the new one. The target's
+// reference-counted base is the stlport rb_tree hint layout; the class here is
+// an honest address-named view (offset 0x6c proven by the add ecx).
 // cl: /O1 /DNDEBUG /MD /EHsc
 struct TargetRef00217D4C
 {
@@ -23,7 +24,9 @@ private:
 	char m_pad00[0x6C];
 	TreeHintRef00217D4C m_holder;
 };
+
 void Rva0043F20C::rva0043F20C(TreeHintRef00217D4C arg)
 {
-	m_holder = arg;
+	TreeHintRef00217D4C *const holder = &m_holder;
+	*holder = arg;
 }

@@ -50429,3 +50429,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0052E001@Rva0052E001@@QAE_N_N@Z,,0x0052E001,46,Code/GameEngine/Source/Common/Rva0052E001.cpp,matched,bit17 setter at plus0xC returning changed with callers
 ?rva0039B632@Rva0039B632@@QAEXH@Z,,0x0039B632,27,Code/GameEngine/Source/Common/Rva0039B632Method.cpp,matched,TheGameLogic flag 98 gates add into this D0
 ?rva0007BA35@Rva0007BA35@@QAEXXZ,,0x0007BA35,161,Code/GameEngine/Source/Common/Rva0007BA35Method.cpp,matched,tail jmp from 0x0009A2CD via g_00DE1FF8 LOD clamp plus DX8 guard
+?rva0043F20C@Rva0043F20C@@QAEXUTreeHintRef00217D4C@@@Z,,0x0043F20C,56,Code/Libraries/Source/WWVegas/WWLib/Rva0043F20CFinish.cpp,matched,holder named as a pointer so cl emits add ecx 0x6c before the push eax that the rowed operator= takes
