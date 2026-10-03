@@ -104,44 +104,8 @@ struct BfmeAutoHealDamageData
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Behavior/AutoHealBehaviorCtorThunk.cpp
-// ??0AutoHealBehavior@@ present-unmatched
-AutoHealBehavior::AutoHealBehavior( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	const AutoHealBehaviorModuleData *d = getAutoHealBehaviorModuleData();
-
-	m_radiusParticleSystemID = INVALID_PARTICLE_SYSTEM_ID;
-	m_soonestHealFrame = 0;
-	m_stopped = false;
-	Object *obj = getObject();
-
-	{
-		if( d->m_radiusParticleSystemTmpl )
-		{
-			ParticleSystem *particleSystem;
-
-			particleSystem = TheParticleSystemManager->createParticleSystem( d->m_radiusParticleSystemTmpl );
-			if( particleSystem )
-			{
-				particleSystem->setPosition( obj->getPosition() );
-				m_radiusParticleSystemID = particleSystem->getSystemID();
-			}
-		}
-	}
-
-	if (d->m_initiallyActive)
-	{
-		giveSelfUpgrade();
-		// start these guys with random phasings so that we don't
-		// have all of 'em check on the same frame.
-		UnsignedInt delay = getAutoHealBehaviorModuleData()->m_healingDelay;
-		setWakeFrame(getObject(), UPDATE_SLEEP(GameLogicRandomValue(1, delay)));
-	}
-	else
-	{
-		setWakeFrame(getObject(), UPDATE_SLEEP_FOREVER);
-	}
-}
+// ??0AutoHealBehavior@@QAE@PAVThing@@PBVModuleData@@@Z is owned by
+// Code/GameEngine/Source/GameLogic/Object/Update/AutoHealBehaviorCtor.cpp; declared only here.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
