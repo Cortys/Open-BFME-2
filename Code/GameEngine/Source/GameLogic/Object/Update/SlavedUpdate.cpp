@@ -65,16 +65,6 @@ const Real CLOSE_ENOUGH = 15;				// Our moveTo commands and pathfinding can't ha
 const Real CLOSE_ENOUGH_SQR = (CLOSE_ENOUGH * CLOSE_ENOUGH);
 
 //-------------------------------------------------------------------------------------------------
-SlavedUpdate::SlavedUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-//	const SlavedUpdateModuleData* data = getSlavedUpdateModuleData();
-
-	m_slaver = INVALID_ID;
-	m_guardPointOffset.zero();
-	m_framesToWait = 0;
-	m_repairState = REPAIRSTATE_NONE;
-	m_repairing = false;
-} 
 
 //-------------------------------------------------------------------------------------------------
 // ?SlavedUpdate::~SlavedUpdate present-unmatched
