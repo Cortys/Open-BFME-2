@@ -49569,3 +49569,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00413D46@Rva00413D46@@QAEXPAVINI@@@Z,,0x00413D46,18,Code/GameEngine/Source/Common/Rva00413D46Parse.cpp,matched,retail INI forward via table 0x839D54 sibling Rva00413DCC
 ?Rva00203DA2Chain@@YAXPAVRva00203DA2A@@PAX@Z,,0x00203DA2,28,Code/GameEngine/Source/Common/Rva00203DA2Chain.cpp,matched,sibling chain slots 27 then 24 via virtual calls
 ?rva004D837D@TurretAI@@QAEIXZ,,0x004D837D,29,Code/GameEngine/Source/GameLogic/Object/Update/TurretAI_rva004D837D.cpp,matched,unlock TurretAI owner 0x10-0x258-0x21c else TheGameLogic+0x40
+?readFromDict@Handicap@@QAEXPBVDict@@@Z,,0x003B0EBD,227,Code/GameEngine/Source/Common/RTS/HandicapReadFromDict.cpp,matched,Handicap 2x2 via HANDICAP keys donor BFME1 readFromDict
