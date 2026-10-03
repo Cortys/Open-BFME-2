@@ -1,8 +1,9 @@
-// ??1Rva001DA2D5@@UAE@XZ
-// partial score=0.97 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /G7 /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
-// ??1Rva001DA2D5@@UAE@XZ @0x001DA2D5 164B: dtor with TheAudio slot 0x130, free at +0xB8, 4 vectors, 2 StringBase, vtable switch 0x007DA270 to 0x007C5128; evidence callees rowed, callers 0x001DA757 0x004333EC, neighbours StlportVectorGrowthFootprints.
+// ??1Rva001DA2D5@@UAE@XZ @0x001DA2D5 164B: dtor with TheAudio slot 0x130, a
+// destructible owned buffer at +0xB8, 4 vectors, 2 StringBase, vtable switch
+// 0x007DA270 to 0x007C5128; evidence callees rowed, callers 0x001DA757
+// 0x004333EC, neighbours StlportVectorGrowthFootprints.
 #include <vector>
 #include "ascii_string.h"
 
@@ -37,6 +38,19 @@ public:
 extern AudioManager *TheAudio;
 extern "C" void __cdecl free(void *) throw(...);
 
+// The +0xB8 slot is a destructible member, not a raw pointer freed from the
+// class body. Retail's first cleanup state (byte [ebp-4]=6) sits on the free,
+// below the body state 7 -- that is a subobject dtor, and it is the highest
+// member so it runs first. Written as a body-level free the compiler has no
+// state to lower to and the dtor comes out 160B vs 164B.
+class Rva001DA2D5OwnedFree
+{
+public:
+	~Rva001DA2D5OwnedFree() { if (m_ptr != 0) free(m_ptr); }
+private:
+	void *m_ptr;
+};
+
 class Rva001DA2D5Base
 {
 public:
@@ -60,14 +74,11 @@ private:
 	int m_unk7C;
 	_STL::vector<BfmeStringTailRecord156> m_vec80;
 	char m_pad8C[0xB8 - 0x8C];
-	void *m_ptrB8;
+	Rva001DA2D5OwnedFree m_ownedB8;
 };
 
-// ??1Rva001DA2D5@@UAE@XZ present-unmatched
 Rva001DA2D5::~Rva001DA2D5()
 {
 	if (TheAudio != 0)
 		TheAudio->s76(this);
-	if (m_ptrB8 != 0)
-		free(m_ptrB8);
 }
