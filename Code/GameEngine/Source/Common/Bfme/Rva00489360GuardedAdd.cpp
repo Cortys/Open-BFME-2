@@ -101,6 +101,7 @@ class Rva001DBDA4
 public:
 	bool rva001DBD83() const;
 	int rva001DBDA4() const;
+	void rva001DBD5D();
 	void rva001DBE17();
 	void rva001DBE34();
 	void rva001DBE51();
@@ -164,4 +165,14 @@ void Rva00489360::rva001DBACA(int value)
 	if( m_inner == 0 )
 		return;
 	m_inner->v08(value - m_14);
+}
+
+// ?rva001DBD5D@Rva001DBDA4@@QAEXXZ @0x001DBD5D 38B: accumulate m_04 into m_08
+// then apply rva001DBACA(m_08) to every element. Evidence: same list layout
+// as siblings (+0x00 head +0x04 +0x08) rowed callee 0x001DBACA caller 0x001DBF17.
+void Rva001DBDA4::rva001DBD5D()
+{
+	m_08 += m_04;
+	for( Node001DBDA4 *n = m_head->m_next; n != m_head; n = n->m_next )
+		n->m_value->rva001DBACA(m_08);
 }
