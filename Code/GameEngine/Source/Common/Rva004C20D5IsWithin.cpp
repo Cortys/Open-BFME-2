@@ -1,7 +1,3 @@
-// ?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z
-// partial score=0.93 date=2026-09-30
-// ?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z
-// partial score=0.93 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /arch:SSE2
 //
 // ?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z @0x004C20D5 82B. XY distance check.
@@ -25,20 +21,17 @@ struct Coord2D
 
 struct Coord3D : public Coord3DBase
 {
-	Coord3D &Sub(const Coord3DBase &left, const Coord3DBase &right)
-	{
-		x = left.x - right.x;
-		y = left.y - right.y;
-		z = left.z - right.z;
-		return *this;
-	}
 };
 
-// ?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z present-unmatched
 bool __stdcall Rva004C20D5IsWithin(float dist, const Coord3D *a, const Coord3D *b)
 {
 	Coord3D diff;
-	diff.Sub(*b, *a);
+	diff.x = b->x;
+	diff.y = b->y;
+	diff.z = b->z;
+	diff.x -= a->x;
+	diff.y -= a->y;
+	diff.z -= a->z;
 	float len = ((const Coord2D *)&diff)->GetLength();
 	if (dist >= len)
 		return true;

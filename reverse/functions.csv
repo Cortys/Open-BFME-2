@@ -49800,3 +49800,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0010414CGet@@YAMPAM@Z,,0x0010414C,34,Code/GameEngine/Source/Common/Rva0010414CGet.cpp,matched,chain lane atan2 angle wrap via rowed callees
 ?Rva0041AD08Read@@YAXVAsciiString@@PAVFile@@@Z,,0x0041AD08,248,Code/GameEngine/Source/Common/Rva0041AD08Read.cpp,matched,static private-reg ctx-in-edi unlock PristineMap
 ?Rva0010416EFloat@@YAMMM@Z,,0x0010416E,39,Code/GameEngine/Source/Common/Rva0010416EFloat.cpp,matched,unlock lane callers 0x0010451F 0x00104548 float 2pi TwoPi
+?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z,,0x004C20D5,82,Code/GameEngine/Source/Common/Rva004C20D5IsWithin.cpp,matched,clean C++; b->a load-then-subtract component order
