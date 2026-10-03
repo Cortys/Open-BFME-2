@@ -49678,3 +49678,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva00437E72@@UAE@XZ,,0x00437E72,18,Code/GameEngine/Source/Common/Rva00437E72Dtor.cpp,matched,dtor stores vtable g_00C3D294 clears g_Va00E032FC tail-jmps base 0x0054D2CF
 ??_GRva00437E72@@UAEPAXI@Z,,0x00437EEE,28,Code/GameEngine/Source/Common/Rva00437E72Dtor.cpp,matched,deleting dtor via rowed dtor 0x00437E72 and delete
 ?rva001DBFEE@AudioManager@@QAE_NXZ,,0x001DBFEE,46,Code/GameEngine/Source/Main/AudioManagerRva001DBFEE.cpp,matched,caller 0x001DC07E loads TheAudio into ecx for both calls
+?rva00078C10@Rva00078C10@@QAE_NPBV1@PAH1@Z,,0x00078C10,114,Code/GameEngine/Source/Common/Rva00078C10Method.cpp,matched,LINK BONUS via 0x00078F95 guarded LOD query with TheGameLODManager
