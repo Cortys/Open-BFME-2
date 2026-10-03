@@ -50462,3 +50462,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0052E0A1@Rva0052E0A1@@QAE_NH@Z,,0x0052E0A1,45,Code/GameEngine/Source/Common/Rva0052E0A1.cpp,matched,2-bit field compare-and-set 4 callers unlock lane
 ?Rva004E855CClose@@YAXXZ,,0x004E855C,196,Code/GameEngine/Source/Common/Rva004E855CMethod.cpp,matched,guarded chat close via GetText set CloseChat invoke plus refresh
 ?rva000AC4C6@WorldHeightMap@@QAEHH@Z,,0x000AC4C6,78,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva000AC4C6Finish.cpp,matched,recovered interval lookup; pointer anchored on start field
+?rva002DACF4@Rva002DACF4@@QAE?AVAsciiString@@HH@Z,,0x002DACF4,37,Code/GameEngine/Source/Common/Rva002DACF4Get.cpp,matched,copy ctor row 0x000365F0 ret 0xC imul-3 lea 0x74 callers 0x002DB64E
