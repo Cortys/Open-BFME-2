@@ -49990,3 +49990,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?portableMapPathToRealMapPath@GameState@@QBE?AVAsciiString@@ABV2@@Z,,0x002DC9F7,421,Code/GameEngine/Source/Common/System/SaveGame/GameStatePortableMapPathToReal.cpp,matched,inverse of 0x002DC833 plus retail LivingWorldScripts branch
 ??_GRva005ECA91@@MAEPAXI@Z,,0x005ECB0C,28,Code/GameEngine/Source/Common/Rva005ECA91Dtor.cpp,matched,deleting dtor slot0 vtable 0x008785B0 emitted by ??1 unit
 ??_GRva005ECFE4@@MAEPAXI@Z,,0x005ECFC8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005ECFE4.cpp,matched,deleting dtor slot0 vtable 0x008785B4 chain from 0x005ECFE4
+??$__insertion_sort@PAHVRva005E4300Cmp@@@_STL@@YAXPAH0VRva005E4300Cmp@@@Z,,0x005E4A1B,45,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva005E4300.cpp,matched,chain insertion family rowed callee 0x005E4862

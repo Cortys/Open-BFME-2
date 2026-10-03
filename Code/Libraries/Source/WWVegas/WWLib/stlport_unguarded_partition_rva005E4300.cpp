@@ -151,4 +151,21 @@ void __linear_insert(RandomAccessIter first, RandomAccessIter last,
 template void __linear_insert<int *, int,
 	Rva005E4300Cmp>(int *, int *, int, Rva005E4300Cmp);
 
+// ??$__insertion_sort@PAHVRva005E4300Cmp@@@_STL@@YAXPAH0VRva005E4300Cmp@@@Z @0x005E4A1B 45B
+// Insertion sort over int keys with stateful Rva005E4300Cmp: linear insert
+// each element. Evidence: calls rowed 0x005E4862; callers 0x005E4C4B/0x005E4C69
+// in 0x005E4C2F; same 45B shape as 0x00423DE1 and less<> 0x0040B247.
+template <class RandomAccessIter, class Compare>
+void __insertion_sort(RandomAccessIter first, RandomAccessIter last,
+	Compare comp)
+{
+	if (first == last)
+		return;
+	for (RandomAccessIter i = first + 1; i != last; ++i)
+		__linear_insert(first, i, *i, comp);
+}
+
+template void __insertion_sort<int *,
+	Rva005E4300Cmp>(int *, int *, Rva005E4300Cmp);
+
 }
