@@ -19,6 +19,7 @@ typedef void (__cdecl *Fn009A5AA0)(void *, void *, void *, int);
 // patches with the retail BFME2 bytes (0x00E23300/0x00DFD950/0x00BD7E60/
 // 0x00BD7EE0). Values are sacrificial, like the g_rva01142408 pair below.
 extern int g_rva00E23300;
+extern int g_bfmeSharedJX;
 extern int g_rva00DFD950[];
 extern const short g_rva00BD7E60[];
 extern const short g_rva00BD7EE0[];
@@ -27,7 +28,7 @@ extern const short g_rva00BD7EE0[];
 // immediate constants: the extern spellings above emit lea-form address
 // materialization (93B) where retail uses mov-imm form (90B). The immediates
 // are the retail BFME2 bytes, verified by the gate, not guesses.
-static int *const g_00E23300 = (int *)0x00E23300;
+static int *const g_00E23300 = (int *)&g_bfmeSharedJX;
 static int *const g_00DFD950 = (int *)0x00DFD950;
 static const short *const g_00BD7E60 = (const short *)0x00BD7E60;
 static const short *const g_00BD7EE0 = (const short *)0x00BD7EE0;
