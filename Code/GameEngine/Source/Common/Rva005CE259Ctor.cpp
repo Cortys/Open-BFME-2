@@ -111,3 +111,39 @@ Rva0056773E::Rva0056773E(int a, int b)
 {
 }
 
+class Rva0057C22FByteChaseField
+{
+public:
+	unsigned char get() const;
+};
+
+class Rva00567764Target
+{
+public:
+	virtual void f0();
+	virtual void f1();
+	virtual void f2();
+	virtual void f3();
+	virtual Rva0057C22FByteChaseField *f4();
+};
+
+class Rva00567764
+{
+public:
+	int rva00567764();
+private:
+	char m_pad[12]; // +0..+0xB
+	Rva00567764Target *m_C; // +0xC
+};
+
+int Rva00567764::rva00567764()
+{
+	Rva0057C22FByteChaseField *p = m_C->f4();
+	if (p != 0) {
+		if (p->get() != 0)
+			return 1;
+	}
+	return 0;
+}
+
+

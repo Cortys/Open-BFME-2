@@ -50011,3 +50011,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??_GRva00567960@@UAEPAXI@Z,,0x00567D54,28,Code/GameEngine/Source/Common/Rva00567960Dtor.cpp,matched,deleting dtor emits from dtor TU caller vtable slot0
 ?Rva00567FA3Destroy@@YAXPAURva004F691E@@0@Z,,0x00567FA3,25,Code/Libraries/Source/WWVegas/WWLib/Rva00567FA3Destroy.cpp,matched,Destroy stride16 via dtor 4F691E caller 0x005681CE
 ??0Rva0056773E@@QAE@HH@Z,,0x0056773E,29,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,ctor vtable plus4 zero plus8 plusC caller 0x00567E10
+?rva00567764@Rva00567764@@QAEHXZ,,0x00567764,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,predicate via slot4 and byte getter caller 0x0056816A
