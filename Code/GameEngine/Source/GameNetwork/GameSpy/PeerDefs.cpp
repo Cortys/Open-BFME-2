@@ -231,7 +231,11 @@ public:
 	virtual void setLocalBaseName(AsciiString name);
 	virtual AsciiString getLocalBaseName(void);
 
+	virtual void slot08(void);
+	virtual void slot09(void);
+	virtual void slot10(void);
 	virtual void setCurrentGroupRoom(Int groupID);
+	virtual Int getCurrentGroupRoom(void);
 	virtual void playerLeftGroupRoom(AsciiString nick);
 
 	virtual GameSpyStagingRoom *findStagingRoomByID(Int id);
@@ -267,6 +271,9 @@ public:
 	virtual void readAdditionalDisconnects(void);
 
 	virtual void joinGroupRoom(Int groupID);
+	virtual void leaveGroupRoom(void);
+	virtual void rva003854C5(void);
+	virtual void leaveStagingRoom(void);
 	virtual void setPingString(const AsciiString &ping);
 	virtual unsigned short rva003860FF(void);
 	virtual void rva003674FE(Int value);
@@ -632,4 +639,38 @@ void GameSpyInfo::joinGroupRoom(Int groupID)
 		TheGameSpyPeerMessageQueue->addRequest(req);
 		m_playerInfoMap.clear();
 	}
+}
+
+// ?leaveGroupRoom@GameSpyInfo@@UAEXXZ @0x0038544D 120B
+void GameSpyInfo::leaveGroupRoom(void)
+{
+	BfmeOpaqueOwnedRecord492 req;
+	*(Int *)req.bytes = 5;
+	*(Int *)(req.bytes + 0x118) = getCurrentGroupRoom();
+	TheGameSpyPeerMessageQueue->addRequest(req);
+	setCurrentGroupRoom(0);
+	m_playerInfoMap.clear();
+}
+
+// ?rva003854C5@GameSpyInfo@@UAEXXZ @0x003854C5 120B
+void GameSpyInfo::rva003854C5(void)
+{
+	BfmeOpaqueOwnedRecord492 req;
+	*(Int *)req.bytes = 6;
+	*(Int *)(req.bytes + 0x118) = getCurrentGroupRoom();
+	TheGameSpyPeerMessageQueue->addRequest(req);
+	setCurrentGroupRoom(0);
+	m_playerInfoMap.clear();
+}
+
+// ?leaveStagingRoom@GameSpyInfo@@UAEXXZ @0x003858DF 119B
+void GameSpyInfo::leaveStagingRoom(void)
+{
+	m_localStagingRoomID = 0;
+	BfmeOpaqueOwnedRecord492 req;
+	*(Int *)req.bytes = 12;
+	TheGameSpyPeerMessageQueue->addRequest(req);
+	m_playerInfoMap.clear();
+	m_joinedStagingRoom = 0;
+	m_isHosting = false;
 }

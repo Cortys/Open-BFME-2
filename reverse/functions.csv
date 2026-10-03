@@ -50447,3 +50447,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0041355DParse@@YAXPAVINI@@@Z,,0x0041355D,88,Code/GameEngine/Source/Common/Rva0041355DParse.cpp,matched,chain INI parse Pod16 insert via rowed tables
 ?Rva00547B17Check@@YA_NPAX0@Z,,0x00547B17,77,Code/GameEngine/Source/GameLogic/Object/Rva00547B17Check.cpp,matched,free range check via caller 0x00547C58 plus SSE shape plus ArmorStore flags
 ?Rva004E84ABRun@@YAXXZ,,0x004E84AB,56,Code/GameEngine/Source/Common/Rva004E84ABMethod.cpp,matched,guarded text entry refresh via TheEmptyString plus SetText
+?leaveGroupRoom@GameSpyInfo@@UAEXXZ,,0x0038544D,120,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 7: ZH leaveGroupRoom shape with request type 5 and current group id at +0x118 then setCurrentGroupRoom(0) via slot 11 and player map clear
+?rva003854C5@GameSpyInfo@@UAEXXZ,,0x003854C5,120,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 8: same shape as leaveGroupRoom with request type 6
+?leaveStagingRoom@GameSpyInfo@@UAEXXZ,,0x003858DF,119,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 47: ZH leaveStagingRoom with request type 12; clears local staging id and hosting state
