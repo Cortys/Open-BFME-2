@@ -46,6 +46,15 @@ public:
 	char m_pad146[0x150 - 0x146];
 	int m_150;
 };
+class Rva00552E3CSrc
+{
+public:
+	Sub340 m_340_0;
+	char m_pad4[0x144 - 4];
+	unsigned short m_144;
+	char m_pad146[0x150 - 0x146];
+	int m_150;
+};
 class Rva00552CF9
 {
 public:
@@ -73,6 +82,7 @@ public:
 	void rva00552CB8();
 	void rva00552D7B(const Rva00552D7BSrc *src);
 	void rva00552DDA(const Rva00552DDASrc *src);
+	void rva00552E3C(const Rva00552E3CSrc *src);
 };
 
 void Rva00552CF9::rva00552CF9(const Rva00552CF9 *src)
@@ -148,4 +158,23 @@ void Rva00552CF9::rva00552DDA(const Rva00552DDASrc *src)
 		m_4 = s;
 	}
 	m_1B0.copy(&src->m_1B0_0);
+}
+void Rva00552CF9::rva00552E3C(const Rva00552E3CSrc *src)
+{
+	if (m_0 && m_0 != src->m_150)
+		return;
+	int v = src->m_150;
+	m_490 = v;
+	m_300 = v;
+	m_158 = v;
+	m_0 = v;
+	if (src->m_144 > 0)
+	{
+		unsigned short s = src->m_144;
+		m_484 = s;
+		m_2F4 = s;
+		m_14C = s;
+		m_4 = s;
+	}
+	m_340.copy(&src->m_340_0);
 }
