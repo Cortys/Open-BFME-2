@@ -1,7 +1,16 @@
 // ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
-// partial score=0.94 date=2026-10-03
-// ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
+// partial score=0.95 date=2026-10-03
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z, retail 0x0059192A, 133 bytes.
+// Packet-size fit check: packetLen + 2*textLen + len <= 0x1DC, where len is the
+// per-field delta header (2 if the type differs, +2 relay, +5 timestamp, +2 player,
+// +2 constant). Evidence: string temp via rowed rva004D6119 0x004E6119 plus the
+// rowed wide releaseBuffer 0x00036E6D on the temporary; layout +0x1E0..+0x200 via
+// the vtable-shifted m_pad0/m_pad1.
+// The type byte and relay byte are read into named UnsignedByte locals so MSVC
+// keeps the type in ebx (as retail does) and, with the total inlined into the
+// return expression rather than held in a `total` local, frees a register so the
+// prolog pushes only ebx and esi instead of a third saved register.
 typedef int Int;
 typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
@@ -94,19 +103,13 @@ private:
 Bool NetPacket::rva0059192A(NetCommandRef *msg)
 {
 	NetCommandMsg *cmdMsg = msg->getCommand();
-	Int len;
-	len = (m_lastType1FF != cmdMsg->m_commandType) ? 2 : 0;
-	if (m_lastRelay200 != msg->getRelay()) {
-		len += 2;
-	}
-	if (m_lastTimestamp1F8 != cmdMsg->m_timestamp) {
-		len += 5;
-	}
-	if (m_lastPlayer1FE != cmdMsg->m_playerID) {
-		len += 2;
-	}
-	len += 2;
-	UnsignedByte textLen = ((const Rva004D6119 *)(const void *)cmdMsg)->rva004D6119().getLenByte();
-	Int total = m_packetLen + (Int)textLen * 2 + len;
-	return total <= MAX_PACKET_SIZE;
+	UnsignedByte curType = m_lastType1FF;
+	UnsignedByte curRelay = m_lastRelay200;
+	Int len = 2;
+	if (curType != cmdMsg->m_commandType) len += 2;
+	if (curRelay != msg->getRelay()) len += 2;
+	if (m_lastTimestamp1F8 != cmdMsg->m_timestamp) len += 5;
+	if (m_lastPlayer1FE != cmdMsg->m_playerID) len += 2;
+	Int textLen = (Int)((const Rva004D6119 *)(const void *)cmdMsg)->rva004D6119().getLenByte();
+	return m_packetLen + textLen * 2 + len <= MAX_PACKET_SIZE;
 }
