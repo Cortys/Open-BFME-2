@@ -34,24 +34,9 @@
 #pragma warning ( pop )
 
 
-// ??0ThreadClass@@ present-unmatched
-ThreadClass::ThreadClass(const char *thread_name, ExceptionHandlerType exception_handler) : handle(0), running(false), thread_priority(0)
-{
-	if (thread_name) {
-		assert(strlen(thread_name) < sizeof(ThreadName) - 1);
-		strcpy(ThreadName, thread_name);
-	} else {
-		strcpy(ThreadName, "No name");;
-	}
+// ??0ThreadClass@@ defined in ThreadClassCtor.cpp (kept copy for link).
 
-	ExceptionHandler = exception_handler;
-}
-
-// ??1ThreadClass@@ present-unmatched
-ThreadClass::~ThreadClass()
-{
-	Stop();
-}
+// ??1ThreadClass@@ defined in ThreadClassLifecycle.cpp (kept copy for link).
 
 // ?Internal_Thread_Function@ThreadClass@@ present-unmatched
 void __cdecl ThreadClass::Internal_Thread_Function(void* params)
