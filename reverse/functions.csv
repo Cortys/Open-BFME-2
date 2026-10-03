@@ -49880,3 +49880,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00358A53Play@@YAXXZ,,0x00358A53,120,Code/GameEngine/Source/Common/RTS/Rva00358A53Audio.cpp,matched,honest free name TheAudio slot138 gate plus 80 field30 0 via slot64 addAudioEvent
 ?Rva00358ACBPlay@@YAXXZ,,0x00358ACB,120,Code/GameEngine/Source/Common/RTS/Rva00358A53Audio.cpp,matched,sibling of 358A53 Misc plus84 field30 0 via slot64 addAudioEvent
 ?Rva0030CAF8Save@@YAXPAVRva0030CAF8Collection@@PAVDataChunkOutput@@@Z,,0x0030CAF8,323,Code/GameEngine/Source/Common/Rva0030CAF8Chain.cpp,matched,chain from 0x00537EAD sibling cursor pattern StandingWaveAreas
+?rva0030C1C8@Rva0030C1C8@@QAEXHABV?$StringBase@D@@@Z,,0x0030C1C8,52,Code/GameEngine/Source/Common/Rva0030C1C8Set.cpp,matched,unlock setter array plus virtual notify
