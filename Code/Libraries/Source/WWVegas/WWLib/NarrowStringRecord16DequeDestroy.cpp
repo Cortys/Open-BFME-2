@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /ICode/GameEngine/Source/Common
+// cl: /O1 /G7 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /ICode/GameEngine/Source/Common
 // stlport
 // Native0x0041A3A3 /33: destroy a range of nontrivial16-byte records.
 // Record dtor independently matches14B string teardown at7FAB3 and
@@ -20,3 +20,8 @@ template void _STL::__destroy<BfmeNarrowRecord16Iterator, BfmeNarrowRecord0041A6
 
 // Native41-byte public range-destroy wrapper at0x0041A4F1 calls41A459.
 template void _STL::_Destroy<BfmeNarrowRecord16Iterator>(BfmeNarrowRecord16Iterator, BfmeNarrowRecord16Iterator);
+
+// Native87-byte deque destructor41A57B calls public Destroy41A4F1
+// then the independently full40-byte base cleanup54FAAC. EHs preserves
+// the native unwind-state store around the potentially throwing teardown.
+template _STL::deque<BfmeNarrowRecord0041A617>::~deque();
