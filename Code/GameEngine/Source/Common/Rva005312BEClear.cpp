@@ -30,6 +30,7 @@ public:
 	unsigned char rva00531512(int a, int b);
 	void rva00531342(struct Rva005312BERect *r);
 	void rva0053155E(int a, int b, bool add, int value);
+	int rva0053161A(int a, int b, int index);
 	char m_pad[0x1BA30];
 	unsigned char m_flag1BA30;
 	char m_pad2[0x1BA38 - 0x1BA30 - 1];
@@ -117,4 +118,19 @@ void Rva005312BE::rva0053155E(int a, int b, bool add, int value)
 	if (i >= m_outer || j >= m_inner)
 		return;
 	m_ppItems[i][j].m_set.rva00531132(add, value);
+}
+
+// Ghidra83B at53161A; the direct call531660 proves the23B word accessor.
+// Same signed16-unit coordinate division, header offsets and44h cell stride
+// as the rowed grid getter/setter siblings above. Original owner and word
+// identity remain unknown; this only returns the selected stored bits.
+int Rva005312BE::rva0053161A(int a, int b, int index)
+{
+	if (a < 0 || b < 0)
+		return 0;
+	int i = a / 16;
+	int j = b / 16;
+	if (i >= m_outer || j >= m_inner)
+		return 0;
+	return m_ppItems[i][j].m_set.rva0053117F(index);
 }
