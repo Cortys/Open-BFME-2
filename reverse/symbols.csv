@@ -7274,3 +7274,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva006E1E30@Rva006E1E30@@QAEXPAURva006F9FC0Rect@@@Z,0x006E1E30,address-derived rect-filling method called by BfmePicker neighbour 0x6F9FC0; body unrowed
 ?rva0070AF90@Rva0070B380@@QAEPAXABVEAStringC@@@Z,0x0070AF90,"address-derived private-member callee of Rva0070B380::lookup at 0x0070B3A2; the hash-map lookup returning its +4 payload"
 ?rva00153f08@Rva00154058Holder@@QAEXPAX@Z,0x00153F08,"set-surface worker for the holder ctor at 0x00154058; Ghidra boundary 336B; address-derived name"
+?get_deformed_vertices@MeshModelClass@@QAEXPAVVector3@@0PBVHTreeClass@@@Z,0x0016BF40,"MeshModelClass skin deformation worker called from Get_Deformed_Vertices 0x001499D0; Ghidra boundary 0x0016BF40; donor name from meshgeometry.h"
