@@ -50232,3 +50232,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva001FF5F2Get@@YG?AVAsciiString@@W4NameKeyType@@@Z,,0x001FF5F2,51,Code/GameEngine/Source/Common/Rva001FF5F2Get.cpp,matched,free NameKey to AsciiString via keyToName pin and StringBase copy row
 ?onEnter@Rva00342FCD@@UAE?AW4StateReturnType@@XZ,,0x0034BCBD,94,Code/GameEngine/Source/Common/Rva00342FCDOnEnter.cpp,matched,vtable slot 4 of 0x00812FA0 tail-jmp to 0x00346FD0 float via 0x001E3F08
 ??_GRva0018BEC7@@UAEPAXI@Z,,0x0018BF09,28,Code/GameEngine/Source/Common/Rva0018BE87Finish.cpp,matched,deleting dtor via rowed dtor 0x0018BE87 plus delete
+?rva004CBE04@Rva004CBE04@@QAE_NABVAsciiString@@PAURva002C99FB@@@Z,,0x004CBE04,45,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004CBE04.cpp,matched,map find fetch via rowed find plus assign
