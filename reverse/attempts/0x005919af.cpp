@@ -1,4 +1,6 @@
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
+// partial score=0.93 date=2026-10-03
+// ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.92 date=2026-10-03
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.92 date=2026-10-03 seat8
