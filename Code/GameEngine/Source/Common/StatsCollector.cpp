@@ -31,6 +31,7 @@ extern "C" __declspec(dllimport) int __cdecl fclose(FILE *fp);
 extern "C" __declspec(dllimport) time_t __cdecl time(time_t *timer);
 extern "C" __declspec(dllimport) struct tm *__cdecl localtime(const time_t *timer);
 extern "C" __declspec(dllimport) char *__cdecl asctime(const struct tm *when);
+extern "C" __declspec(dllimport) unsigned int __cdecl strftime(char *str, unsigned int max, const char *fmt, const struct tm *tm);
 
 struct UnicodeStringData
 {
@@ -227,6 +228,17 @@ private:
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/StatsCollector.h
+class GlobalData
+{
+public:
+	unsigned char m_pad00[0xC];
+	AsciiString m_mapName;              // +0xC
+};
+
+extern GlobalData *TheWritableGlobalData;
+extern const char g_Rva0107301CEmptyString[];
+extern char g_00DC8AF0[];
+
 class StatsCollector
 {
 public:
@@ -239,6 +251,7 @@ public:
 	void writeFileEnd();
 
 private:
+	void createFileName();
 	void writeStatInfo();
 
 	AsciiString m_statsFileName;
@@ -431,6 +444,39 @@ void StatsCollector::writeFileEnd()
 		LogicFramesPerSecond, TheGameEngine->getFramesPerSecondLimit() );
 
 	fclose( f );
+}
+
+// ?createFileName@StatsCollector@@AAEXXZ @0x00437CFF 249B
+// BFME1 StatsCollector_createFileName.cpp donor with BFME2 repairs read from retail:
+// - GlobalData::m_mapName is at +0xC here (donor has +0x8).
+// - statsDir is the writable .data buffer at 0x00DC8AF0 (donor static).
+// - empty name uses the rowed g_Rva0107301CEmptyString (shared str() would emit a literal).
+// - AsciiString via the shared header so clear/reverseFind/set/removeLastChar/format resolve to rows.
+void StatsCollector::createFileName()
+{
+	m_statsFileName.clear();
+
+	char datestr[256] = "";
+	time_t longTime;
+	struct tm *curtime;
+	time(&longTime);
+	curtime = localtime(&longTime);
+	strftime(datestr, 256, "_%b%d_%I%M%p", curtime);
+
+	AsciiString name = TheWritableGlobalData->m_mapName;
+	const char *fname = name.reverseFind('\\');
+	if (fname)
+		name = fname + 1;
+
+	name.removeLastChar();
+	name.removeLastChar();
+	name.removeLastChar();
+	name.removeLastChar();
+
+	m_statsFileName.clear();
+	char *t = *(char **)(void *)&name;
+	const char *p = t ? t + 8 : g_Rva0107301CEmptyString;
+	m_statsFileName.format("%s%s%s.txt", g_00DC8AF0, p, datestr);
 }
 
 // ?writeStatInfo@StatsCollector@@AAEXXZ, retail 0x00437921 (556 bytes).
