@@ -50385,3 +50385,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0039F0D2@Team@@QAE_NXZ,,0x0039F0D2,17,Code/GameEngine/Source/Common/RTS/TeamRva0039F0D2.cpp,matched,Team bool getter via 0x118 map field 0x14
 ?Rva00339ABFCopy@@YAPAV?$vector@HV?$allocator@H@_STL@@@_STL@@PAV12@00PAXH@Z,,0x00339ABF,50,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_sciencevec.cpp,matched,copy-backward via rowed 0x0021C21B stride 0xC caller 0x00339D57
 ??1Rva0031FAF0@@QAE@XZ,,0x0032002C,105,Code/GameEngine/Source/Common/Rva0031FAF0Dtor.cpp,matched,dtor via clear plus List_base plus AsciiString deletor-caller
+?rva00052696@MilesAudioManager@@QAEPAXPAX@Z,,0x00052696,47,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052696.cpp,matched,MilesAudioManager handle-state table+0xBD4 type+0x14
