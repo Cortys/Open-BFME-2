@@ -49155,3 +49155,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva00342826@@QAE@PAVStateMachine@@@Z,,0x00342826,29,Code/GameEngine/Source/Common/Rva00342826Ctor.cpp,matched,base pin 0x0033F279 vtable 0x00812490 caller 0x00351D5C
 ??$copy_backward@PAVRva005EEFD2@@PAV1@@_STL@@YAPAVRva005EEFD2@@PAV1@00@Z,,0x005EF46B,29,Code/GameEngine/Source/Common/Rva005EF46BCopyBackward.cpp,matched,STL 3-arg copy_backward wrapper calling pinned 5-arg worker caller 0x005EFCA6
 ??0W3DBridgeBuffer@@QAE@XZ,,0x000DE52E,110,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DBridgeBufferCtor.cpp,matched,W3DBridgeBuffer ctor 200-bridge array via vector new calls clearAll and allocate
+?Rva002FE8AACreate@@YGPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x002FE8AA,34,Code/Libraries/Source/WWVegas/WWLib/stlport_list_nocase4_create_node_002FE8AA.cpp,matched,list node create allocating 0x10 via rowed allocator and pair construct
