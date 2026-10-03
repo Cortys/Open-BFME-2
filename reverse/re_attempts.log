@@ -6261,3 +6261,6 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ?Rva00075091Get@@YGPAVRva000748F6@@PAUMat12Src@@MHEH@Z	0x00075091	238	blocked	only scale load movss xmm0 late +0x67 vs +0x4c size+insns exact same wall as 0x74DB4 t=10 model=muse-04 (stash 0.97 kept)
 ?xfer@W3DGhostObjectManager@@MAEXPAVXfer@@@Z	0x000642F1	276	blocked	complex W3D manager load path with shroud partition 80B short t=12 model=muse-04
 ?rva002966A0@Object@@QAEXPAVPlayer@@0@Z	0x002966A0	169	partial	DoXfer emitted virtual call dword ptr [eax] vs retail direct E8; push esi late vs early with extra mov eax; g_bfmeWorldRV reloc matches t=8 model=muse-05 score=0.93 stash=reverse/attempts/0x002966a0.cpp
+??1Rva005E6D0D@@UAE@XZ	0x005E6D0D	103	blocked	dtor EH shape wrong: +14B 8 regions holder-call and hint-check layout mismatch t=5 model=muse-03
+?Rva005E6CA1Get@@YAPAURva005E6CA1Out@@PAU1@PAURva005E6CA1Obj@@@Z	0x005E6CA1	108	blocked	epilogue placement only size exact slots exact 6 variants for-loop goto-done both worse t=18 model=muse-03 (stash 0.96 kept)
+??0Rva0024076D@@QAE@XZ	0x0024076D	162	partial	EH zero and float-load match; this in esi vs edi array in eax vs esi ints order and allocator stosb remain t=20 model=muse-03 score=0.9 stash=reverse/attempts/0x0024076d.cpp
