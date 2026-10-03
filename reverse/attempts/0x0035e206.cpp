@@ -1,4 +1,6 @@
 // ??0Rva0035E00F@@QAE@XZ
+// partial score=0.95 date=2026-10-03
+// ??0Rva0035E00F@@QAE@XZ
 // partial score=0.93 date=2026-09-30
 // ??0Rva0035E00F@@QAE@XZ
 // partial score=0.93 date=2026-09-30
@@ -44,10 +46,28 @@ public:
 	int m_4C;
 };
 // ??0Rva0035E00F@@QAE@XZ present-unmatched
-Rva0035E00F::Rva0035E00F() : m_10(0), m_14(5), m_18(0), m_1C(0), m_20(0), m_24(0), m_28(-1), m_2C(0), m_30(0), m_34(0), m_38(0), m_3C(0), m_40(0), m_44(0), m_48(0), m_4C(0)
+Rva0035E00F::Rva0035E00F()
 {
-	_ReadWriteBarrier();
+	int *p28 = &m_28;
+	m_10 = 0;
+	m_14 = 5;
+	m_18 = 0;
+	m_1C = 0;
+	m_20 = 0;
+	m_24 = 0;
+	*p28 = -1;
+	m_2C = 0;
+	m_30 = 0;
+	m_34 = 0;
+	m_38 = 0;
+	m_3C = 0;
+	m_40 = 0;
+	m_44 = 0;
+	m_48 = 0;
+	m_4C = 0;
 	m_C = 0;
-	m_4 = m_14;
+	int *p14 = &m_14;
+	m_4 = *p14;
 	m_9 = true;
 }
+
