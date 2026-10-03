@@ -49762,3 +49762,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000682B8@Rva000682B8@@QAEX_N@Z,,0x000682B8,41,Code/GameEngine/Source/Common/Rva000682B8.cpp,matched,forwards bool to members at 0x3850 and 0x3854 via rowed callees
 ?rva000687B8@Rva000687B8@@QAEXXZ,,0x000687B8,55,Code/GameEngine/Source/Common/Rva000687B8.cpp,matched,releases holders at 0x37A4 and 0x37A8 with dec-ref and and-zero
 ?rva000683FF@Rva000683FF@@QAEXQAVVector3@@W4ObjectID@@_N@Z,,0x000683FF,11,Code/GameEngine/Source/Common/Rva000683FF.cpp,matched,forwards to W3DBibBuffer addBib at 0x385C via tail-jmp
+?Rva000685E2Reset@@YAXXZ,,0x000685E2,272,Code/GameEngine/Source/Common/Rva000685E2Reset.cpp,matched,unlock lane rowed callees extern D3DDevice counters neighbours O1
