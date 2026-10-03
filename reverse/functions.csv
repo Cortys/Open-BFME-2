@@ -50287,3 +50287,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FB65C@Rva003FB65C@@QAEXH@Z,,0x003FB65C,38,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,if ptr08 and aux18 call slot45 with 0.0
 ?rva003FB9C8@Rva003FB9C8@@QAEXHH@Z,,0x003FB9C8,35,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,init 2c 4c to 2 and 38 to 0 store args then slot3
 ??0Rva001DD1B3@@QAE@ABHABURva001DD063@@@Z,,0x001DD2BF,29,Code/GameEngine/Source/Common/Rva001DD1B3Ctor2.cpp,matched,chain lane two-arg ctor via rowed Rva001DD063 copy 0x001DD063
+??_GRva001709F8@@QAEPAXI@Z,,0x001709F8,28,Code/GameEngine/Source/Common/Rva00170999.cpp,matched,deleting dtor via twin-pinned 0x0017098D proved by gap shape plus flag test

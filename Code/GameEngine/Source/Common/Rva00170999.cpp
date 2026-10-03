@@ -8,6 +8,34 @@
 // return-by-value wrapper constructing in hidden buffer via 0x00170999.
 // Evidence: caller 0x001710A6 pushes hidden buffer plus refs then copy-constructs via 0x001709D7.
 // Retail 0x001709D7 33B: ??0Rva00170999@@QAE@ABV0@@Z copy ctor via rowed AssetReference copy plus 16B pod copy.
+// Retail 0x001709F8 28B: ??_GRva001709F8@@QAEPAXI@Z deleting dtor calling
+// ICF-twin ??1Rva001709F8@@QAE@XZ (byte-identical to rowed RefCountPtr TextureClass dtor 0x0017098D)
+// then conditional operator delete. Evidence: gap shape push esi plus flag test plus ret 4.
+
+class TextureClass
+{
+public:
+	void Release_Ref();
+};
+
+class Rva001709F8
+{
+public:
+	~Rva001709F8();
+private:
+	TextureClass *m_texture;
+};
+
+// ??1Rva001709F8@@QAE@XZ present-unmatched
+Rva001709F8::~Rva001709F8()
+{
+	if (m_texture) {
+		m_texture->Release_Ref();
+	}
+}
+
+// ?Rva001709F8Delete@@YAXPAVRva001709F8@@@Z present-unmatched
+void Rva001709F8Delete(Rva001709F8 *p) { delete p; }
 
 class CountedAsset;
 class AssetReference
