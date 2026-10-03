@@ -14,6 +14,7 @@ class ParabolicEase
 {
 public:
 	void rva0030E51F(Real easeInTime, Real easeOutTime, Real duration);
+	ParabolicEase *rva0008517E(Real easeInTime, Real easeOutTime, Real duration);
 	Real operator()(Real param) const;
 private:
 	Real m_in;
