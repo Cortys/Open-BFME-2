@@ -23,6 +23,19 @@ struct Rva004F10C2
 	bool rva004F10C2();
 };
 
+class GameWindow
+{
+public:
+	unsigned int winGetStatus();
+};
+
+struct Rva004F19D3
+{
+	unsigned char m_pad04[4];
+	Rva004F10C2 *m_head;
+	bool rva004F19D3();
+};
+
 bool Rva004F10C2::rva004F10C2()
 {
 	Rva004F10C2Node *node = m_head;
@@ -30,6 +43,17 @@ bool Rva004F10C2::rva004F10C2()
 		if ((node->m_obj->m_flag109 & 0x40) != 0 && node->m_flag19 == 0)
 			return true;
 		node = node->m_next;
+	}
+	return false;
+}
+
+bool Rva004F19D3::rva004F19D3()
+{
+	Rva004F10C2 *p = m_head;
+	while (p != 0) {
+		if (p->rva004F10C2())
+			return true;
+		p = (Rva004F10C2 *)((GameWindow *)p)->winGetStatus();
 	}
 	return false;
 }
