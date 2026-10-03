@@ -44,13 +44,20 @@ private:
 	int m_30;
 };
 
+class Rva0059710EHelper
+{
+public:
+	virtual int f0(int x);
+};
+
 class Rva005970ED : public Rva0059734B
 {
 public:
 	Rva005970ED();
+	void rva0059710E(int x);
 private:
 	bool m_34;
-	int m_38;
+	Rva0059710EHelper *m_38;
 	int m_3C;
 	int m_40;
 };
@@ -61,4 +68,9 @@ Rva005970ED::Rva005970ED()
 	, m_3C(-1)
 	, m_40(0)
 {
+}
+
+void Rva005970ED::rva0059710E(int x)
+{
+	m_40 = m_38->f0(x);
 }
