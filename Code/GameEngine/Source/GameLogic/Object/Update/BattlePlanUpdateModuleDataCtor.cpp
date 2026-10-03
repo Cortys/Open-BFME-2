@@ -1,3 +1,4 @@
+// cl: /O1 /arch:SSE /DNDEBUG /MD
 // ??0BattlePlanUpdateModuleData@@QAE@XZ
 // partial score=0.95 date=2026-10-03
 // ??0BattlePlanUpdateModuleData@@QAE@XZ
@@ -22,7 +23,16 @@
 // sinking the +0xA4 zero (mov [esi+0xA4],edi) plus pop edi to right after the
 // 1.0f load instead of keeping them at the end. Refuted: init-list vision,
 // volatile barrier (byte-identical, still sinks), /EHsc on/off, /G6,
+//
+// Scheduler note (established from the byte match): retail holds the +0xA4
+// zero and the pop edi at the end of the tail store block, after the +0x9C
+// 1.0f. MSVC7 otherwise groups that zero with the init-list zeros. Binding
+// m_visionObjectName's address into a local that stays live across the
+// scalar block keeps the zero with the tail stores where retail puts it.
 // pointer-members (revives the lea hoist), explicit member inits.
+// class-gate: allow AsciiString retail inlines the ctor to a single pointer
+// store at each of the thirteen name slots; the shared header's non-inline
+// ctor emits calls and the body stops byte-matching.
 class AsciiString
 {
 public:
@@ -86,11 +96,12 @@ BattlePlanUpdateModuleData::BattlePlanUpdateModuleData()
 	, m_transitionIdleFrames( 0 )
 	, m_battlePlanParalyzeFrames( 0 )
 {
+	const char **vn = &m_visionObjectName;
 	m_holdTheLineArmorDamageScalar = 1.0f;
 	m_searchAndDestroySightRangeScalar = 1.0f;
 	m_strategyCenterSearchAndDestroySightRangeScalar = 1.0f;
 	m_strategyCenterSearchAndDestroyDetectsStealth = true;
 	m_strategyCenterHoldTheLineMaxHealthScalar = 1.0f;
 	m_strategyCenterHoldTheLineMaxHealthChangeType = 1;
-	m_visionObjectName = 0;
+	*vn = 0;
 }
