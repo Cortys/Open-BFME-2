@@ -49567,3 +49567,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004D82F6@TurretAI@@QAEXXZ,,0x004D82F6,26,Code/GameEngine/Source/GameLogic/Object/Update/TurretAI_rva004D82F6.cpp,matched,unlock lane TheAudio slot 0x6c removeAudioEvent plus 0x20 handle then 1
 ?rva00594EFC@Rva00594EFC@@QAEHXZ,,0x00594EFC,11,Code/GameEngine/Source/GameNetwork/Rva00594EFCGet.cpp,matched,retail and-clear plus return plus4 thiscall ret0
 ?rva00413D46@Rva00413D46@@QAEXPAVINI@@@Z,,0x00413D46,18,Code/GameEngine/Source/Common/Rva00413D46Parse.cpp,matched,retail INI forward via table 0x839D54 sibling Rva00413DCC
+?Rva00203DA2Chain@@YAXPAVRva00203DA2A@@PAX@Z,,0x00203DA2,28,Code/GameEngine/Source/Common/Rva00203DA2Chain.cpp,matched,sibling chain slots 27 then 24 via virtual calls
