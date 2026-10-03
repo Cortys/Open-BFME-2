@@ -49324,3 +49324,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0059E3A7@Rva0059E3A7@@QAEXPBVModuleData@@@Z,,0x0059E3A7,23,Code/GameEngine/Source/Common/Rva0059E3A7Holder.cpp,matched,guarded ModuleData vector append at +0x10 via rowed push_back
 ??0Rva0059E436Data@@QAE@XZ,,0x0059E3BE,32,Code/GameEngine/Source/Common/Rva0059E436DataCtor.cpp,matched,default ctor vector at +4 int zero at +0x10 via rowed Vector_base
 ??0Rva0059E511Data@@QAE@XZ,,0x0059E499,32,Code/GameEngine/Source/Common/Rva0059E511DataCtor.cpp,matched,default ctor vector at +4 int zero at +0x10 via rowed Vector_base
+??0Rva0055B32B@@QAE@XZ,,0x0055B32B,60,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B32BCtor.cpp,matched,Default EH ctor with 8 Keyframes at plus4 and vtable 0x0081D134 via rowed Keyframe and iterator
