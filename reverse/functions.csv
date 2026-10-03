@@ -50426,3 +50426,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$fill@PAV?$vector@HV?$allocator@H@_STL@@@_STL@@V12@@_STL@@YAXPAV?$vector@HV?$allocator@H@_STL@@@0@0ABV10@@Z,,0x00339A70,29,Code/Libraries/Source/WWVegas/WWLib/stlport_fill_sciencevec.cpp,matched,fill stride 0xC via pinned 0x0021C21B callers 0x33A0E5 0x33A125
 ?rva00413FC1@Rva00413FC1@@QAEPAHH@Z,,0x00413FC1,54,Code/GameEngine/Source/Common/Thing/Rva00413FC1Lookup.cpp,matched,unlock lane via lower_bound and decrement rows
 ??_GRva0031FAF0@@QAEPAXI@Z,,0x0032013C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-14-32013C.cpp,matched,deleting dtor calls rowed dtor 0x0032002C then delete chain lane
+?rva0052E001@Rva0052E001@@QAE_N_N@Z,,0x0052E001,46,Code/GameEngine/Source/Common/Rva0052E001.cpp,matched,bit17 setter at plus0xC returning changed with callers
