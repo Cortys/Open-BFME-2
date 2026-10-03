@@ -7383,3 +7383,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?insert_unique@?$_Rb_tree@HU?$pair@$$CBHM@_STL@@U?$_Select1st@U?$pair@$$CBHM@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHM@_STL@@@2@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@U?$pair@$$CBHM@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHM@_STL@@@2@@_STL@@_N@2@ABU?$pair@$$CBHM@2@@Z,0x005C6AFD,hint 0x003590C9 fallback calls dup ICF twin of rowed no-hint
 ?rva005CB260@Rva005CB260@@QAEHH@Z,0x005CB260,int-return twin of rowed void forwarder same 5B slot1 ICF return used as int at 0x005279DD
 ??0VersionBlockEntry@@QAE@ABU0@@Z,0x00427F75,VersionBlockEntry 24B record copy ICF twin of rowed BfmeNarrowRecord copy at same address; insertion_sort 0x004287E8 constructs val from VersionBlockEntry star i via this copy
+?markAsDead@AIUpdateInterface@@QAEXXZ,0x0026296D,address read from the REL32 at StructureCollapseUpdate::onDie 0x004A466E; ZH port identity
+?deselectObject@GameLogic@@QAEXPAVObject@@IH@Z,0x0023C9F8,address read from the REL32 at StructureCollapseUpdate::onDie 0x004A466E; BFME2 PlayerMaskType 32-bit
+?beginStructureCollapse@StructureCollapseUpdate@@QAEXPBVDamageInfo@@@Z,0x004A459B,address read from the REL32 at StructureCollapseUpdate::onDie 0x004A466E
