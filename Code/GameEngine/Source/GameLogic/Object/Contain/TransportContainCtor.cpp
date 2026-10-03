@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??0TransportContain@@QAE@PAVThing@@PBVModuleData@@@Z, retail 0x00468559,
@@ -16,38 +16,26 @@ class Thing;
 class ModuleData;
 class Object;
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class OCBase00 { public: virtual void b00(); protected: const ModuleData *m_moduleData; Object *m_object; };
-class OCBase0C { public: virtual void b0C(); };
-class OCBase10 { public: virtual void b10(); private: unsigned char m_pad[0x0C]; };
-class OCBase20 { public: virtual void b20(); };
-class OCBase24 { public: virtual void b24(); };
-class OCBase28 { public: virtual void b28(); };
-class OCBase2C { public: virtual void b2C(); };
-class OCBase30 { public: virtual void b30(); };
-class OCBase34 { public: virtual void b34(); private: unsigned char m_pad[0xFC - 0x38]; };
+class B0 { public: virtual void b0(); protected: const ModuleData *m_moduleData; Object *m_object; };
+class B1 { public: virtual void b1(); };
+class B2 { public: virtual void b2(); private: unsigned char m_pad[12]; };
+class B3 { public: virtual void b3(); };
+class B4 { public: virtual void b4(); };
+class B5 { public: virtual void b5(); };
+class B6 { public: virtual void b6(); };
+class B7 { public: virtual void b7(); };
+class B8 { public: virtual void b8(); private: unsigned char m_pad[0xC8 - 4]; };
 
-class OpenContain : public OCBase00, public OCBase0C, public OCBase10, public OCBase20, public OCBase24,
-	public OCBase28, public OCBase2C, public OCBase30, public OCBase34
+class OpenContain : public B0, public B1, public B2, public B3, public B4, public B5, public B6, public B7, public B8
 {
 public:
 	OpenContain(Thing *thing, const ModuleData *moduleData);
 	virtual ~OpenContain();
 };
 
-class TransportInterface
-{
-public:
-	virtual void transportAnchor();
-};
+class TransportExtra { public: virtual void transportExtra(); };
 
 struct TransportPayloadEntry
 {
@@ -63,13 +51,11 @@ public:
 	_STL::vector<TransportPayloadEntry> m_payload;	// +0x180
 };
 
-class TransportContain : public OpenContain, public TransportInterface
+class TransportContain : public OpenContain, public TransportExtra
 {
 public:
 	TransportContain(Thing *thing, const ModuleData *moduleData);
-	virtual void b00(); virtual void b0C(); virtual void b10(); virtual void b20(); virtual void b24();
-	virtual void b28(); virtual void b2C(); virtual void b30(); virtual void b34();
-	virtual void transportAnchor();
+	virtual ~TransportContain(); // declared only; defined in TransportContainDtor.cpp (0x00467E61)
 	const TransportContainModuleData *getTransportContainModuleData() const { return (const TransportContainModuleData *)m_moduleData; }
 private:
 	int m_100;
@@ -94,12 +80,9 @@ TransportContain::TransportContain(Thing *thing, const ModuleData *moduleData)
 // Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
-#pragma comment(linker, "/alternatename:?transportAnchor@TransportInterface@@UAEXXZ=__purecall")
-#pragma comment(linker, "/alternatename:?b34@TransportContain@@UAEXXZ=??1Coord2D@@QAE@XZ")
-#pragma comment(linker, "/alternatename:?b0C@TransportContain@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
-#pragma comment(linker, "/alternatename:?b00@TransportContain@@UAEXXZ=??_GTransportContain@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?b1@B1@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
 
 // Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
-#pragma comment(linker, "/alternatename:?b2C@TransportContain@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+#pragma comment(linker, "/alternatename:?b6@B6@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
