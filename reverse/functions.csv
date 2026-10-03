@@ -49957,3 +49957,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005B6F1E@Rva005B6F1E@@QAEXPBG0@Z,,0x005B6F1E,242,Code/Libraries/Source/WWVegas/WWLib/Rva005B6F1EComInit.cpp,matched,ret 8 two wchar args wcslen new wcscpy CoCreateInstance chain vtable 0x1c 0x20 Release 0x8
 ?rva00211075@Rva00211075@@QAEXXZ,,0x00211075,106,Code/GameEngine/Source/Common/Rva00211075AudioNotify.cpp,matched,flag 0x2c0 TheAudio gate Opaque 0x164 audio event 1 slot 0x64
 ?Rva005EC135Delete@@YAXPAPAX@Z,,0x005EC135,33,Code/GameEngine/Source/Common/Rva005EC135Delete.cpp,matched,safe delete vector deleting dtor slot0 operator delete nulls
+??0Rva005ECA91@@QAE@XZ,,0x005ECA91,63,Code/GameEngine/Source/Common/Rva005ECA91Ctor.cpp,matched,ctor vtable vector BfmeE16 ObjectCreationList same class as dtor
