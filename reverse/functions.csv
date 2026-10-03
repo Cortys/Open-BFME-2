@@ -50262,3 +50262,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00496D43@Rva00496D43@@QAEPAXPAXABVAsciiString@@@Z,,0x00496D43,96,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496D43Finish.cpp,matched,linear vector lookup; compiler barrier pins loop count in eax; exact 96B
 ?rva001F93A3@Rva000427195@@QAE?AUInsertRet001F8F2A@@PBX@Z,,0x001F93A3,36,Code/GameEngine/Source/GameClient/Rva001F93A3Insert.cpp,matched,hashtable insert with grow via pinned 0x00212858 plus rowed 0x001F8F2A
 ?rva00170EBC@Rva00170EBC@@QAEX_N@Z,,0x00170EBC,26,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,tree clear at +8 plus flag init proved by callers 0x000E65DE and 0x000E7B57
+?rva004FF9C9@Rva004FF9C9@@QAEPAXH@Z,,0x004FF9C9,19,Code/Libraries/Source/WWVegas/WWLib/stlport_map_004FF9C9.cpp,matched,map find thunk node plus 0x34 returns inner vector
