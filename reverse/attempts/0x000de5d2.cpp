@@ -1,3 +1,5 @@
+// ?Rva000DE5D2Copy@@YGHPAGHGPAX@Z
+// partial score=0.93 date=2026-10-03
 // cl: /FIzh_ascii.h /Ireference/shims/bfme2_ascii_zh /Ireference/shims/bfme2_ascii /O1 /G7 /arch:SSE /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /DZH_EMIT_POOL_GLUE /Ireference/shims/bfmerendobj /Ireference/shims/debugvtable /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/bfmeanimobj /Ireference/shims/indexbuffercount /Ireference/shims/bfmecaps /Ireference/shims/bfmehcanim /Ireference/shims/bfmevector /Ireference/shims/bfmemapper /Ireference/shims/meshmatdesclayout /Ireference/shims/bfmeshader /Ireference/shims/bfmecpudetect /Ireference/shims/bfmepool /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWAudio /Ireference/shims/bfmealloc /Ireference/shims/bfmehashtable /Ireference/shims/bfmelist /Ireference/shims/asciistring_downloadmanager /Ireference/shims/stlp_nodealloc /Ireference/shims/asciistring_thin /ICode/GameEngine/Source/Common /Ireference/shims/w3droadbuffer /Ireference/shims/bfmeterraintracks /ICode/Libraries/Include/Lib /Ireference/shims
 // stlport
 // Ported verbatim from the Generals Zero Hour reference
@@ -426,17 +428,51 @@ void W3DTerrainLogic::loadPostProcess( void )
 // other spellings at the same addresses (same ABI). Bind the spellings used here.
 #pragma comment(linker, "/alternatename:_strcpy=?ji_00629176@@YAXXZ")
 
-// ?rva000DE5B7@Rva000DE5B7@@QAE?AVAsciiString@@XZ 0x000DE5B7 27 callee StringBase copy 0x000365F0 callers 0x000DE648 0x002DB64E
-// 27B AsciiString getter at +0x48 through the rowed StringBase copy ctor; same shape as
-// GameInfo::getMap 0x0023E943 and Rva002041E1 0x002041E1 (27B, /O1 /EHsc).
-struct Rva000DE5B7
+// ?Rva000DE5D2Copy@@YGHPAGHGPAX@Z 0x000DE5D2 118 caller 0x000DF11E vtable none
+struct De5d2Inner
 {
-	char m_pad[0x48];
-	AsciiString m_str;
-	AsciiString rva000DE5B7();
+	int _pad[3];
+	unsigned short *m_buf;
 };
-
-AsciiString Rva000DE5B7::rva000DE5B7()
+struct De5d2Mid
 {
-	return m_str;
+	char _pad0[0x24];
+	int m_count;
+	char _pad1[4];
+	De5d2Inner *m_inner;
+};
+struct De5d2Outer
+{
+	char _pad[0xC4];
+	De5d2Mid *m_mid;
+};
+// ?Rva000DE5D2Copy@@YGHPAGHGPAX@Z present-unmatched
+int __stdcall Rva000DE5D2Copy(unsigned short *dest, int destIndex, unsigned short bias, void *outerRaw)
+{
+	if (!outerRaw)
+		return 0;
+	De5d2Outer *outer = (De5d2Outer *)outerRaw;
+	De5d2Mid *mid = outer->m_mid;
+	int count = mid->m_count;
+	De5d2Inner *inner = mid->m_inner;
+	unsigned short *src = inner->m_buf + 2;
+	int tmp = (count + 2) * 3 + destIndex;
+	if (tmp >= 0x3e80)
+		return 0;
+	unsigned short *d = dest + destIndex;
+	if (count <= 0)
+		return count * 3;
+	int n = count;
+	do
+	{
+		unsigned short v0 = (unsigned short)(src[-2] + bias);
+		*d++ = v0;
+		unsigned short v1 = (unsigned short)(src[-1] + bias);
+		*d++ = v1;
+		unsigned short v2 = (unsigned short)(src[0] + bias);
+		*d++ = v2;
+		src += 3;
+		n--;
+	} while (n != 0);
+	return count * 3;
 }
