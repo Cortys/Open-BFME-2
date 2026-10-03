@@ -33,6 +33,8 @@ class GameWindow
 public:
 	void *winGetUserData();
 	WinInstanceData *winGetInstanceData();
+	unsigned int winSetStatus(unsigned int);
+	unsigned int winClearStatus(unsigned int);
 };
 
 #ifndef NULL
@@ -65,3 +67,50 @@ Bool GadgetCheckLikeButtonIsChecked(GameWindow *button)
 
 	return (instData->m_state >> 2) & 1;
 }
+
+/*
+**	Command & Conquer Generals Zero Hour(tm)
+**	Copyright 2025 Electronic Arts Inc.
+**
+**	This program is free software: you can redistribute it and/or modify
+**	it under the terms of the GNU General Public License as published by
+**	the Free Software Foundation, either version 3 of the License, or
+**	(at your option) any later version.
+**
+**	This program is distributed in the hope that it will be useful,
+**	but WITHOUT ANY WARRANTY; without even the implied warranty of
+**	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**	GNU General Public License for more details.
+**
+**	You should have received a copy of the GNU General Public License
+**	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+// Clean BFME1 donor6d9434269164392c5ba62aaa7c15a86b5b020d76.
+// Native327CB9/69 calls rowed instance/status methods and changes state+8 bit4;
+// donor supplies the check-like semantic names. Status mask80000 is native.
+void GadgetButtonEnableCheckLike( GameWindow *g, Bool makeCheckLike, Bool initiallyChecked )
+{
+
+	// sanity
+	if( g == NULL )
+		return;
+
+	// get inst data
+	WinInstanceData *instData = g->winGetInstanceData();
+	if( instData == NULL )
+		return;
+
+	// make it check like
+	if( makeCheckLike )
+		g->winSetStatus( 0x00080000 );
+	else
+		g->winClearStatus( 0x00080000 );
+
+	// set the initially checked "state"
+	if( initiallyChecked )
+		instData->m_state |= 4;
+	else
+		instData->m_state &= ~4;
+
+}  // end GadgetButtonEnableCheckLike
