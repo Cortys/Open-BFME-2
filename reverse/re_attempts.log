@@ -6136,3 +6136,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva004FCB61@Rva004FCB61@@QAEPAXPAX@Z	0x004FCB61	36	blocked	frameless-29B-vs-framed-36B dead-and-ebp-4-zero t=12 model=muse-10
 ?rva004FCB85@Rva004FCB85@@QAEPAXPAX@Z	0x004FCB85	36	blocked	same-wall-as-0x004FCB61 frameless-vs-framed dead-and-ebp-4-zero t=2 model=muse-10
 ?rva004FCBA9@Rva004FCBA9@@QAEPAXPAX@Z	0x004FCBA9	36	blocked	same-wall-as-0x004FCB61 frameless-vs-framed dead-and-ebp-4-zero t=1 model=muse-10
+?rva006F1530@@YAXPAVBfmeAptValue006DCD20@@@Z	0x6f1530	63	partial	isXmlNode guard then virtual call at vtable+0x24 then MakeBool; /O2 tail-calls both cdecl MakeBool sites and keeps the inner pointer in eax where retail uses ecx and a call-then-ret; /O1 drops the push esi frame; t=20min model=deepseek-flash score=0.85 stash=reverse/attempts/0x006f1530.cpp
