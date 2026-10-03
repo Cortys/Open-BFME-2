@@ -50541,3 +50541,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003AD48DInit@@YAXXZ,,0x003AD48D,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD48DInit.cpp,matched,guarded init calls rowed DefaultModuleTag3 getInstance and rowed atexit
 ?Rva002026B4Audio@@YAXXZ,,0x002026B4,19,Code/GameEngine/Source/Common/Rva002026B4Audio.cpp,matched,null-guarded TheAudio slot 0x188 via caller 0x00202790 plus view
 ?parseStance@@YAXPAVINI@@PAX@Z,,0x00425DDD,111,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?rva006D28D0@Rva006D2A60@@QAEXH_N@Z,,0x006D28D0,92,Code/GameEngine/Source/Common/Rva006D29E0Cluster.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

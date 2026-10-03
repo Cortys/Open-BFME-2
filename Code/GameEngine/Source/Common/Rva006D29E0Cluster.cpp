@@ -26,12 +26,13 @@ class Rva006DB160
 public:
 	void *allocBlock(int blockSize);
 
-	int m_pad0;
 	struct ValueBitfield
 	{
 		unsigned int mbIsAllocated : 1;
 		unsigned int mRest : 31;
-	} mValueBitfield;
+	};
+	ValueBitfield mBitfield0;
+	ValueBitfield mValueBitfield;
 };
 
 class Rva006D2A60 : public Rva006DB160
@@ -40,6 +41,25 @@ public:
 	void *allocBlock(int nBytes);
 	void rva006D28D0(int mode, bool value);
 };
+
+void Rva006D2A60::rva006D28D0(int mode, bool value)
+{
+	if (mode == 4)
+	{
+		mValueBitfield.mbIsAllocated = value;
+		return;
+	}
+	if (mode == 0)
+	{
+		mBitfield0.mbIsAllocated = value;
+		return;
+	}
+	g_bfmeAptAssertAtE17734("false", "..\\..\\include\\apt\\AptValueGCAllocator.h", 0x107);
+	if (g_bfmeAptBreakOnAssertAtDDC01C)
+	{
+		__asm int 3
+	}
+}
 
 void *Rva006D2A60::allocBlock(int nBytes)
 {
@@ -58,3 +78,4 @@ void *Rva006D2A60::allocBlock(int nBytes)
 	}
 	return p;
 }
+
