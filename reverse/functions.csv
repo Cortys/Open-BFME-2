@@ -49524,3 +49524,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00240C89Create@@YGPAURva00240C89Node@@ABUBfmeStringRecord00239B46@@@Z,,0x00240C89,34,Code/Libraries/Source/WWVegas/WWLib/Rva00240C89Create.cpp,matched,unlock lane allocator 0x307F0 plus dup 0x23FC3E caller 0x241959
 ?rva004D5FB4@Rva004D5795@@QAE?AVAsciiString@@XZ,,0x004D5FB4,140,Code/GameEngine/Source/GameNetwork/Rva004D5795Contents.cpp,matched,Rva004D5795 contents via base rva004D5B4C leavingPlayer format
 ?rva006d4ca0@@YAHPBD@Z,,0x006D4CA0,151,Code/Libraries/Source/EA/Apt/AptString/Rva006D4CA0Cluster.cpp,matched,UTF-8 lead-byte sequence-size worker: runs rva006d3e40 asserts then 1/2/3/4 from pBuffer[0]; address-derived name
+?rva006d4d40@@YAPAXPAXH@Z,,0x006D4D40,51,Code/Libraries/Source/EA/Apt/AptString/Rva006D4CA0Cluster.cpp,matched,UTF-8 cursor advance by count codepoints via rva006d4280; null at terminator; called by rva006d5e70; address-derived name
+?rva006d4d80@@YAHPBD@Z,,0x006D4D80,59,Code/Libraries/Source/EA/Apt/AptString/Rva006D4CA0Cluster.cpp,matched,UTF-8 codepoint count over a byte string via rva006d4280; stops at terminator; address-derived name

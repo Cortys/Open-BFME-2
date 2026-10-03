@@ -34,3 +34,44 @@ int __cdecl rva006d4ca0(const char *pBuffer)
 		return 2;
 	return ((cChar0 & 0xF0) != 0xE0) ? 4 : 3;
 }
+
+// ?rva006d4280@@YAPBDPBDPAH@Z @0x006D4280 (856B, unrowed). The cursor decoder
+// both workers below call: it returns the pointer past one UTF-8 sequence and
+// stores the decoded codepoint through the out parameter.
+const char *__cdecl rva006d4280(const char *pBuffer, int *pUnicode);
+
+// ?rva006d4d40@@YAPAXPAXH@Z @0x006D4D40 (51B). Advances a UTF-8 cursor by
+// `count` codepoints and returns the new cursor, or null at the terminator.
+// Called by EAStringC::rva006d5e70 0x006D5E70 with the payload and an index.
+void *__cdecl rva006d4d40(void *pBuffer, int count)
+{
+	const char *p = (const char *)pBuffer;
+	int i = 0;
+	if (count <= 0)
+		return (void *)p;
+	do
+	{
+		int value;
+		p = rva006d4280(p, &value);
+		if (value == 0)
+			return 0;
+		++i;
+	} while (i < count);
+	return (void *)p;
+}
+
+// ?rva006d4d80@@YAHPBD@Z @0x006D4D80 (59B). Counts the codepoints in a UTF-8
+// byte string, stopping at the terminator, via the same cursor decoder.
+int __cdecl rva006d4d80(const char *pBuffer)
+{
+	const char *p = pBuffer;
+	int count = 0;
+	for (;;)
+	{
+		int value;
+		p = rva006d4280(p, &value);
+		if (value == 0)
+			return count;
+		++count;
+	}
+}
