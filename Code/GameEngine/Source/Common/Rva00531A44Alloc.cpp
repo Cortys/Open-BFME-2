@@ -6,10 +6,12 @@
 // count) via the rowed ??_U@YAPAXI@Z, returns *this. Callers at 0x00531FC6
 // and 0x005323C2 are unclaimed so owner is unknown. No FP, no EH.
 void *__cdecl operator new[](unsigned int size);
+void __cdecl operator delete[](void *ptr);
 class Rva00531A44
 {
 public:
 	Rva00531A44 &rva00531A44(unsigned short count);
+	void rva00531A93();
 private:
 	unsigned short m_count;
 	unsigned short m_zero;
@@ -28,4 +30,11 @@ Rva00531A44 &Rva00531A44::rva00531A44(unsigned short count)
 	m_pC = new unsigned short[m_count];
 	m_p10 = new unsigned short[m_count];
 	return *this;
+}
+void Rva00531A44::rva00531A93()
+{
+	delete[] m_p10;
+	delete[] m_pC;
+	delete[] m_p8;
+	delete[] m_p4;
 }
