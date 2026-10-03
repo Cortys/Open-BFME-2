@@ -1,6 +1,8 @@
 // ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z
 // partial score=0.99 date=2026-10-03
 // ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z
+// partial score=0.99 date=2026-10-03
+// ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z
 // cl: /Os /Oy- /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 class CountedAsset
 {
