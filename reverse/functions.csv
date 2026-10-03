@@ -49898,3 +49898,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00356284@Rva00356284@@QAEXXZ,,0x00356284,227,Code/GameEngine/Source/Common/Rva00356284Audio.cpp,matched,Audio double-prefix refresh via TheAudio
 ?Rva004CF145@@YAXXZ,,0x004CF145,104,Code/GameEngine/Source/Common/Rva004CF145.cpp,matched,Audio event via TheAudio slot138
 ??$__pop_heap_aux@PAHHURva005E4300Cmp@@@_STL@@YAXPAH00URva005E4300Cmp@@@Z,,0x005E4AC4,30,Code/Libraries/Source/WWVegas/WWLib/stlport_pop_heap_rva005E4300.cpp,matched,chain calls just-landed 0x005E4A5F same 30B as 0x00423F9F
+??$pop_heap@PAHURva005E4300Cmp@@@_STL@@YAXPAH0URva005E4300Cmp@@@Z,,0x005E4C8C,23,Code/Libraries/Source/WWVegas/WWLib/stlport_pop_heap_rva005E4300.cpp,matched,chain calls just-landed 0x005E4AC4 same 23B as 0x00424637

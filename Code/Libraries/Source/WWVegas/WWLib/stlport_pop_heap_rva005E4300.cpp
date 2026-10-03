@@ -45,4 +45,16 @@ void __pop_heap_aux(RandomAccessIter first, RandomAccessIter last,
 template void __pop_heap_aux<int *, int,
 	Rva005E4300Cmp>(int *, int *, int *, Rva005E4300Cmp);
 
+// ??$pop_heap@PAHURva005E4300Cmp@@@_STL@@YAXPAH0URva005E4300Cmp@@@Z @0x005E4C8C 23B
+// Public pop_heap wrapper calling __pop_heap_aux with (int*)0 dummy.
+// Evidence: chain (calls just-landed 0x005E4AC4); same 23B shape as 0x00424637 precedent.
+template <class RandomAccessIter, class Compare>
+void pop_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
+{
+	__pop_heap_aux(first, last, (int *)0, comp);
+}
+
+template void pop_heap<int *,
+	Rva005E4300Cmp>(int *, int *, Rva005E4300Cmp);
+
 }
