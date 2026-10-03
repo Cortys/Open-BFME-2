@@ -28,6 +28,7 @@ public:
 	void rva006E1C40(void *a, void *b);
 	void rva006E1540();
 	bool rva006CFCD0() const;
+	void rva006E2690(int arg);
 
 	char m_pad04[0x4c - 0x4];
 	void *pData;
@@ -447,4 +448,104 @@ void BfmeWrapper1279::rva006F76B0()
 		node->rva006E1540();
 		node = node->m_next;
 	}
+}
+
+// ?rva006F80C0@BfmeWrapper1279@@QAEX_N@Z @0x006F80C0 202B chain from bfmeErase1279.
+// Walks m_query list via +0x54 saving next; v0 then skip undefined; provider
+// slot 3 lookup compare erase via 0x70B380/BfmeLookup; unlink+finish; flag
+// clears GC root + AptCIH 1; release-vector GC check; v1 then next.
+// Evidence: chain lane; callee 0x0070B2C0 just landed; LINK pin name.
+class EAStringC
+{
+public:
+	bool IsEmpty() const;
+};
+struct BfmeKey1279
+{
+	EAStringC m_str;
+};
+class Rva0070B380
+{
+public:
+	void *lookup(const EAStringC &key);
+};
+class BfmeLookup1279
+{
+public:
+	void bfmeErase1279(BfmeKey1279 &key);
+};
+class BfmeNestedBE;
+BfmeNestedBE *bfmeUnlinkNestedBE(BfmeNestedBE *item);
+class BfmeProvider1279
+{
+public:
+	virtual void reserved0() = 0;
+	virtual void reserved1() = 0;
+	virtual void reserved2() = 0;
+	virtual BfmeLookup1279 *bfmeGetLookup1279() = 0;
+};
+class BfmeNode1279 : public BfmeAptValue006DCD20
+{
+public:
+	void bfmeFinish1279();
+	BfmeKey1279 m_key;
+	char m_pad0C[0x48 - 0x0C];
+	BfmeProvider1279 *m_provider;
+	char m_pad4C[0x54 - 0x4C];
+	BfmeNode1279 *m_next;
+};
+class CullableClass;
+class CullSystemClass
+{
+protected:
+	CullableClass *Get_First_Collected_Object_Internal();
+	friend class BfmeWrapper1279;
+};
+class AptValueVector
+{
+public:
+	void ReleaseValues();
+};
+extern AptValueVector *g_releaseVectorAtE17710;
+extern void *g_00E182E0;
+void BfmeWrapper1279::rva006F80C0(bool flag)
+{
+	BfmeQuery1279 *query = m_query;
+	if (query == 0)
+		return;
+	BfmeNode1279 *cur = (BfmeNode1279 *)query->m_root->m_54;
+	if (cur == 0)
+		return;
+	do {
+		BfmeNode1279 *next = cur->m_next;
+		cur->v0();
+		if (!cur->isUndefined()) {
+			BfmeProvider1279 *prov = cur->m_provider;
+			if (prov != 0) {
+				BfmeLookup1279 *lookup = prov->bfmeGetLookup1279();
+				EAStringC &skey = (EAStringC &)cur->m_key;
+				if (!skey.IsEmpty()) {
+					if (lookup != 0) {
+						void *found = ((Rva0070B380 *)lookup)->lookup(skey);
+						if (found == cur)
+							((BfmeLookup1279 *)lookup)->bfmeErase1279(cur->m_key);
+					}
+				}
+			}
+			bfmeUnlinkNestedBE((BfmeNestedBE *)cur);
+			cur->bfmeFinish1279();
+		}
+		if (flag) {
+			cur->setGCRootCount(0);
+			((AptCIH *)cur)->rva006E2690(1);
+		}
+		AptValueVector *vec = g_releaseVectorAtE17710;
+		CullableClass *collected = ((CullSystemClass *)vec)->Get_First_Collected_Object_Internal();
+		if (collected != 0) {
+			if (g_00E182E0 == 0)
+				g_releaseVectorAtE17710->ReleaseValues();
+		}
+		cur->v1();
+		cur = next;
+	} while (cur != 0);
 }
