@@ -6457,3 +6457,6 @@ FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs do
 ?Rva0052BBF3Get@@YAHXZ	0x0052BBF3	184	blocked	eax-passed ptr ABI unclear caller 717B over 200B t=8 model=muse-10
 ?Rva0040A1ACFree@@YA_NPAPAX0_N@Z	0x0040A1AC	43	blocked	dead mov ecx g_00DFE344 before stdcall Free needs thiscall twin t=12 model=muse-10
 ??0Rva0030DA25@@QAE@UVec3@@ABVAsciiString@@MHPBVDict@@PAX@Z	0x0030DA25	432	partial	esi-edi swap for 1 and Dict ptr plus EH 2-3-2 vs 3-4-3 plus vtable-m4 order plus tail and-stosd vs mov t=25 model=muse-spark score=0.9 stash=reverse/attempts/0x0030da25.cpp
+?rva003593E8@Rva003593E8@@QAE_NABVAsciiString@@_N@Z	0x003593E8	366	partial	362 vs 366B first find fixed via != polarity plus 3 finds still omit xor plus esi-eax wall plus early pushes t=20 model=muse-04 score=0.92 stash=reverse/attempts/0x003593e8.cpp
+?rva0042682B@Rva004266A1@@QAEXHE@Z	0x0042682B	203	partial	207 vs 203B ecx-eax scratch wall for PlayerList chain plus B mem compare needs new idea t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x0042682b.cpp
+?rva00426914@Rva004266A1@@QAEXHE@Z	0x00426914	227	partial	234 vs 227B ecx-eax scratch wall for PlayerList plus GameLogic chain plus B mem compare needs new idea t=25 model=muse-04 score=0.9 stash=reverse/attempts/0x00426914.cpp
