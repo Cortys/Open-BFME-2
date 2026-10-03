@@ -32,6 +32,7 @@ public:
 	void *pData;
 	AptCIH *m_prev;
 	AptCIH *m_next;
+	unsigned int m_key;
 };
 
 // ?rva006F7AC0@Rva006F7AC0List@@QAE_NXZ @0x006F7AC0 33B
@@ -145,6 +146,10 @@ class BfmeQuery1279
 public:
 	BfmeQuery1279();
 	~BfmeQuery1279();
+
+	void bfmeQuery1279(int nDepth, int name, void **ppPrev, void **ppItem);
+	void rva006F6FB0(int key, AptCIH *pNewItem);
+	AptCIH *rva006F6D60(AptCIH *pOldItem, AptCIH *pNewItem);
 
 	static void *operator new(unsigned int size)
 	{
@@ -343,7 +348,7 @@ static __forceinline int rva006F6D60IsType14(const AptCIH *pNewItem)
 }
 
 // ?rva006F6D60@@YGPAVAptCIH@@PAV1@0@Z @0x006F6D60 159B
-AptCIH * __stdcall rva006F6D60(AptCIH *pOldItem, AptCIH *pNewItem)
+AptCIH *BfmeQuery1279::rva006F6D60(AptCIH *pOldItem, AptCIH *pNewItem)
 {
 	if (pNewItem->rva006CFCD0() || rva006F6D60IsType14(pNewItem)) {
 		if (pNewItem->pData == 0) {
@@ -359,4 +364,21 @@ AptCIH * __stdcall rva006F6D60(AptCIH *pOldItem, AptCIH *pNewItem)
 		pNewItem->m_next->m_prev = pNewItem;
 	pNewItem->m_prev->m_next = pNewItem;
 	return pNewItem;
+}
+
+// ?rva006F6FB0@BfmeQuery1279@@QAEXHPAVAptCIH@@@Z @0x006F6FB0 122B: query the
+// key, assert the found old item is undefined, splice the new item after the
+// query's previous node and set its 17-bit key.
+void BfmeQuery1279::rva006F6FB0(int key, AptCIH *pNewItem)
+{
+	AptCIH *pOldItem;
+	void *pPrev;
+	bfmeQuery1279(key, 0, &pPrev, (void **)&pOldItem);
+	if (pOldItem != 0 && !((const BfmeAptValue006DCD20 *)pOldItem)->isUndefined()) {
+		g_bfmeAptAssertAtE17734("pOldItem == NULL || pOldItem->isUndefined()", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0x208);
+		if (g_bfmeAptBreakOnAssertAtDDC01C)
+			__debugbreak();
+	}
+	AptCIH *node = rva006F6D60((AptCIH *)pPrev, pNewItem);
+	node->m_key = node->m_key ^ ((node->m_key ^ (unsigned int)key) & 0x1FFFFu);
 }
