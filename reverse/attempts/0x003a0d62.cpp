@@ -1,4 +1,6 @@
 // ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z
+// partial score=0.97 date=2026-10-03
+// ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z
 // partial score=0.95 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
@@ -60,10 +62,10 @@ void Rva003A0D62::rva003A0D62(const Rva0039D769 &src)
 		return;
 	{
 		int sum = m_sum.rva0039D5A9();
-		if (sum != 0)
-			m_total += src.m00;
-		else
+		if (sum == 0)
 			m_total = src.m00;
+		else
+			m_total += src.m00;
 	}
 	*(Rva0039D769 *)((char *)items + i * 0x18) = src;
 	m_sum.m_countAC++;
