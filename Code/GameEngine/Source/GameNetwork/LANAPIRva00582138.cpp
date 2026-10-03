@@ -1,10 +1,8 @@
-// ?rva00582138@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z
-// partial score=0.95 date=2026-09-29
-// ?rva00582138@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z
-// partial score=0.95 date=2026-09-29
-// cl: /O1 /Oy- /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/shims/bfme2_ascii
 //
-// ?rva00582138@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z, retail 0x00582138, 101 bytes.
+// ?rva00582138@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z, retail 0x00582138, 101 bytes. Banked partial (score 0.95) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
+//
 // Chain via BfmeNetAddress compare 0x00248CBF plus LANAPI m_inLobby +0x41 plus
 // m_currentGame +0x44 plus game flag +0x11 plus 8 slots stride 0x1D0 with address
 // at slot+0 plus virtual slot 45 (0xB4) with addr plus index plus narrow
@@ -14,29 +12,7 @@ typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef unsigned char UnsignedByte;
 
-template <typename T> struct StringInlineData
-{
-	int m_refCount;
-	int m_length;
-	T m_text[1];
-};
-
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	StringInlineData<T> *m_data;
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
+#include "ascii_string.h"
 
 struct BfmeNetAddress
 {
@@ -123,13 +99,12 @@ private:
 	LANGame *m_currentGame;
 };
 
-// ?rva00582138@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z present-unmatched
 void LANAPI::rva00582138(LANMessage *msg, const BfmeNetAddress *addr)
 {
 	if (m_inLobby != 0)
 		return;
 	LANGame *game = m_currentGame;
-	if (game == 0)
+	if (0 == game)
 		return;
 	if (game->m_flag11 != 0)
 		return;
