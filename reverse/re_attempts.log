@@ -6478,3 +6478,4 @@ FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs do
 ?rva00363BC7@Rva00363BC7@@QAEPAXPAUCoord2D@@PAM@Z	0x363bc7	170	landed	using the 1.0f constant literal instead of a named extern global fixes the normalize load order at +0x83; byte-exact landed t=30 model=deepseek-flash
 ?rva0035385E@Rva0035385E@@QAEXABUCoord3D@@@Z	0x0035385E	64	partial	second size loads begin into ecx forcing edi divisor with push edi pop edi and late src push vs retail ecx reuse plus early push t=25 model=muse-09 score=0.9 stash=reverse/attempts/0x0035385e.cpp
 ?rva004A6642@Rva004A6642@@QAE_NPAX@Z	0x004A6642	192	blocked	xmm rotation y-z-x in xmm1-2-0 vs retail xmm0-1-2 plus row3 mul order swapped size exact 192B t=18 model=muse-09 (stash 0.93 kept)
+?rva00533B74@Rva005312BE@@QAEXXZ	0x00533B74	120	blocked	EH dtor needs unclaimed 5B elem dtor 0x00531FCF plus ehvecdtr plus large Rva005312BE layout t=15 model=muse-10

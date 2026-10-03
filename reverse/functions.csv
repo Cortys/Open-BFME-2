@@ -50108,3 +50108,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00314056@GameWindow@@QAEHH@Z,,0x00314056,78,Code/GameEngine/Source/Common/GameWindowRva00314056.cpp,matched,GameWindow method via volatile hoisted TheWindowManager load plus rowed callees
 ?rva005D4B1F@Rva005D4B1F@@QAEXM@Z,,0x005D4B1F,79,Code/GameEngine/Source/Common/Rva005D4B1FSetLineSize.cpp,matched,float line-size setter via rowed Fire SetLineSize plus EmptyString fallback
 ?rva005D4AD0@Rva005D4AD0@@QAEXM@Z,,0x005D4AD0,79,Code/GameEngine/Source/Common/Rva005D4AD0SetPageSize.cpp,matched,float page-size setter via rowed Fire SetPageSize plus EmptyString fallback
+?rva004CA19C@AnimationSoundTree@@QAEPAXPBX@Z,,0x004CA19C,37,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,node factory via byte allocator plus Construct callers 0x004CA2C6 0x004CA2E1

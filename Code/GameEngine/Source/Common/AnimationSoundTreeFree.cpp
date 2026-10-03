@@ -61,6 +61,7 @@ public:
 	void rva004CA26A();
 	AnimationSoundTree *rva004CA018(void const *dummy);
 	AnimationSoundTree *rva004CA13D(void const *d1, void const *d2);
+	void *rva004CA19C(void const *v);
 
 private:
 	AnimationSoundTreeHeaderHandle m_handle;
@@ -162,4 +163,18 @@ void __cdecl Rva004CA048Construct(void *dest, const Rva004C9E94 &src)
 	if (!dest)
 		return;
 	new (dest) Rva004C9E94(src);
+}
+
+// ?rva004CA19C@AnimationSoundTree@@QAEPAXPBX@Z, retail 0x004CA19C, 37 bytes.
+// Node factory for the AnimationSoundTree RB: allocates the 0xB8 node via the
+// rowed byte allocator 0x000307F0, then copy-constructs the Rva004C9E94 value
+// at node+0x10 through the rowed 0x004CA048 helper above, returning the node.
+// Called twice from the insert helper 0x004CA293. Evidence: callees rowed
+// 0x000307F0 plus 0x004CA048; callers at 0x004CA2C6 and 0x004CA2E1; prev
+// 0x004CA167 same // cl: line.
+void *AnimationSoundTree::rva004CA19C(void const *v)
+{
+	char *node = _STL::allocator<char>::allocate(0xb8, 0);
+	Rva004CA048Construct(node + 0x10, *(Rva004C9E94 const *)v);
+	return node;
 }
