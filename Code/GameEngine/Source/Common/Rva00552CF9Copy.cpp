@@ -80,10 +80,19 @@ public:
 	void rva00552CF9(const Rva00552CF9 *src);
 	void rva00552E9E(int v);
 	void rva00552CB8();
+	void rva00552CDE(int v);
 	void rva00552D7B(const Rva00552D7BSrc *src);
 	void rva00552DDA(const Rva00552DDASrc *src);
 	void rva00552E3C(const Rva00552E3CSrc *src);
 };
+
+void Rva00552CF9::rva00552CDE(int v)
+{
+	m_490 = v;
+	m_300 = v;
+	m_158 = v;
+	m_0 = v;
+}
 
 void Rva00552CF9::rva00552CF9(const Rva00552CF9 *src)
 {
