@@ -1,6 +1,8 @@
 // ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.99 date=2026-10-03
 // ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
+// partial score=0.99 date=2026-10-03
+// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // NetPacket room check with string-length term plus wrapper data offset:
 // charges type 2 relay 2 timestamp 5 player 2 ID 3 plus fixed 1, adds
