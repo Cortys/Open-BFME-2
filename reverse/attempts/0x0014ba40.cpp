@@ -1,7 +1,7 @@
 // ?Rva0014BA40Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z
-// partial score=0.98 date=2026-10-03
-// cl: /O2 /G7 /DNDEBUG /MD /EHa
-// ?Rva0014BA40Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z 0x0014BA40 104B free RefCountPtr return via tmp copy; after Replace_Texture 0x0014B800; caller 0x0014BDBF; twin of 0x0014BAB0 (identical except handler reloc)
+// partial score=0.99 date=2026-10-03
+// cl: /O2 /G6 /DNDEBUG /MD /EHa
+// ?Rva0014BA40Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z 0x0014BAB0 104B free RefCountPtr return via tmp copy; after Replace_Texture 0x0014B800; caller 0x0014BDDF
 class RefCountClass {
 public:
     virtual void Delete_This();
@@ -22,7 +22,6 @@ public:
         return *this;
     }
 };
-// ?Rva0014BA40Get@@YA?AV?$RefCountPtr@VRefCountClass@@@@PAVRefCountClass@@@Z present-unmatched
 RefCountPtr<RefCountClass> Rva0014BA40Get(RefCountClass *src)
 {
     RefCountPtr<RefCountClass> tmp(src);
