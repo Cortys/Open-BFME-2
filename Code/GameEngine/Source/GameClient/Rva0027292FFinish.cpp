@@ -1,16 +1,18 @@
-// ?setTerrainDecalSize@Drawable@@QAEXMM@Z
-// partial score=0.91 date=2026-09-27
-// ?setTerrainDecalSize@Drawable@@QAEXMM@Z
-// partial score=0.91 date=2026-09-27
-// cl: /O2 /MD /G7
+// cl: /O1 /DNDEBUG /MD /EHsc /G7
 //
 // ?setTerrainDecalSize@Drawable@@QAEXMM@Z, retail 0x0027292F, 22 bytes.
-// First-module forwarder over draw modules at this+0x14C to DrawModule
-// slot 0x64. Evidence: BFME1 donor Drawable::setTerrainDecalSize in
+// First-module forwarder over draw modules at this+0x14C to the module's
+// virtual slot 0x64. Evidence: BFME1 donor Drawable::setTerrainDecalSize in
 // reference/open-bfme-1/Code/GameEngine/Source/GameClient/Drawable.cpp
 // (DrawModule** dm = getDrawModules(); if (*dm) (*dm)->setTerrainDecalSize);
-// retail +0x14C matches landed pristine twin 0x0027274D; 2-float ret-8 shape.
-
+// retail +0x14C matches the landed pristine twin 0x00272945; 2-float ret-8
+// shape.
+//
+// The module slot is declared (int, int) on purpose: /O1 refuses to
+// tail-call a float-argument virtual and emits an x87 copy instead. The
+// ABI for two 4-byte stack arguments is identical, so forwarding the same
+// two 32-bit values with an integer-typed declaration reproduces retail's
+// tail jmp [edx+0x64] exactly; the values forwarded are the float bits.
 class BfmeDrawModuleForDecalSize
 {
 public:
@@ -27,21 +29,22 @@ public:
 	virtual void slot50() = 0; virtual void slot54() = 0;
 	virtual void slot58() = 0; virtual void slot5C() = 0;
 	virtual void slot60() = 0;
-	virtual void setTerrainDecalSize(float x, float y) = 0;
+	virtual void setTerrainDecalSize(int x, int y) = 0;
 };
 
 class Drawable
 {
 public:
 	void setTerrainDecalSize(float x, float y);
+private:
+	char m_pad[0x14C];
+	BfmeDrawModuleForDecalSize **m_drawModules;
 };
 
-// ?setTerrainDecalSize@Drawable@@QAEXMM@Z present-unmatched
+// ?setTerrainDecalSize@Drawable@@QAEXMM@Z
 void Drawable::setTerrainDecalSize(float x, float y)
 {
-	BfmeDrawModuleForDecalSize *first =
-		**reinterpret_cast<BfmeDrawModuleForDecalSize ***>((unsigned char *)this + 0x14C);
-	if (first) {
-		first->setTerrainDecalSize(x, y);
-	}
+	BfmeDrawModuleForDecalSize **p = m_drawModules;
+	if (*p)
+		(*p)->setTerrainDecalSize(*(int *)&x, *(int *)&y);
 }
