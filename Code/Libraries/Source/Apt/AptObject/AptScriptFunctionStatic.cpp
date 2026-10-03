@@ -19,12 +19,20 @@ void *__cdecl operator new(unsigned int);
 extern AptValue *gpUndefinedValue;
 void __cdecl operator delete(void *);
 class AptScriptFunctionBase {
+public:
     static AptValue **spRegBlockBase, **spRegBlockCurrentFrameBase;
     static int snRegBlockCurrentFrameCount, snRegisterBlockSize;
 public:
     static void InitializeStaticData(const AptInitParmsT &);
     static void ShutdownStaticData();
     static void *PushStaticData();
+};
+
+class AptValue
+{
+public:
+    virtual void slot0();
+    virtual void slot1();
 };
 // These four class statics occupy consecutive zero-filled .data slots.
 // VA 0x00E1834C (.data, zero-filled tail).
@@ -64,4 +72,19 @@ void AptScriptFunctionBase::InitializeStaticData(const AptInitParmsT &parms)
     spRegBlockCurrentFrameBase=spRegBlockBase;
     for(int i=0;i<snRegisterBlockSize;++i) spRegBlockBase[i]=gpUndefinedValue;
     snRegBlockCurrentFrameCount=0;
+}
+
+void __cdecl Rva00709F70Set(int nIndex, AptValue *pNewValue)
+{
+    CHECK_AT(pNewValue,"pNewValue",0x2C2);
+    CHECK_AT(nIndex < 256,"nIndex < MAX_REGISTERS_IN_FUNCTION",0x2C3);
+    CHECK_AT(nIndex < (AptScriptFunctionBase::snRegisterBlockSize - (AptScriptFunctionBase::spRegBlockCurrentFrameBase - AptScriptFunctionBase::spRegBlockBase)),"nIndex < ( snRegisterBlockSize - (spRegBlockCurrentFrameBase-spRegBlockBase))",0x2C4);
+    int next = nIndex + 1;
+    if (next > AptScriptFunctionBase::snRegBlockCurrentFrameCount)
+        AptScriptFunctionBase::snRegBlockCurrentFrameCount = next;
+    AptValue **base = AptScriptFunctionBase::spRegBlockCurrentFrameBase;
+    AptValue *old = base[nIndex];
+    base[nIndex] = pNewValue;
+    pNewValue->slot0();
+    old->slot1();
 }

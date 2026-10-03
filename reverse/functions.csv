@@ -49513,3 +49513,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000858C1@Rva000858C1@@QAEPAV1@XZ,,0x000858C1,35,Code/GameEngine/Source/Common/Rva000858C1Init.cpp,matched,same callee and args as neighbouring rows 0x00085858-0x0008589E caller 0x0008B7CF
 ?rva0070F680@Rva0070F680@@QAEXPAXH@Z,,0x0070F680,96,Code/GameEngine/Source/Common/Rva0070F680.cpp,matched,chain lane callee 0x006E4B80 rowed callers 0x006E2C10 0x006E2D60
 ?rva004D5B4C@NetCommandMsg@@QAE?AVAsciiString@@XZ,,0x004D5B4C,223,Code/GameEngine/Source/GameNetwork/NetCommandMsgContents.cpp,matched,NetCommandMsg contents via DoesCommandRequireACommandID RvaGet format empty fallback
+?Rva00709F70Set@@YAXHPAVAptValue@@@Z,,0x00709F70,198,Code/Libraries/Source/Apt/AptObject/AptScriptFunctionStatic.cpp,matched,APT donor register-block globals byte-verified

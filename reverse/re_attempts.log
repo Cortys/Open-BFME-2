@@ -6258,3 +6258,5 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ?dup_004daade@@YAXXZ	0x004DAADE	31	blocked	duplicate of rowed hash_map ctor 0x00360B99 31B calling dup hashtable 0x004DAA9E vs 0x00360B59 t=12 model=muse-10
 ?rva006EB4B0@Rva006EB4B0@@QAEXXZ	0x006EB4B0	410	blocked	410B Apt EH 13-arg alignment left-center-right true needs donor and full shape t=8 model=muse-10
 ?rva006E4C70@Rva006E4C70@@QAEXXZ	0x006E4C70	224	blocked	224B AptCIH assert plus validate 0x006E3230 needs BFME1 Apt donor and pin-only 0x006CFCD0 t=5 model=muse-10
+?Rva00075091Get@@YGPAVRva000748F6@@PAUMat12Src@@MHEH@Z	0x00075091	238	blocked	only scale load movss xmm0 late +0x67 vs +0x4c size+insns exact same wall as 0x74DB4 t=10 model=muse-04 (stash 0.97 kept)
+?xfer@W3DGhostObjectManager@@MAEXPAVXfer@@@Z	0x000642F1	276	blocked	complex W3D manager load path with shroud partition 80B short t=12 model=muse-04
