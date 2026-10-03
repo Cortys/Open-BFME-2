@@ -42,3 +42,15 @@ void Rva0037F71FCopy(Rva0037F551 *dst, const Rva0037F551 &src)
 	if (dst)
 		dst->rva0037F551(src);
 }
+// ?Rva0037F757Fill@@YAPAVRva0037F551@@PAV1@IABV1@PAX@Z retail 0x0037F757 37B
+// Evidence: chain from 0x0037F71F; fill loop over Rva0037F551 stride 0x48; caller 0x0037FF20
+Rva0037F551 *Rva0037F757Fill(Rva0037F551 *dst, unsigned int count, const Rva0037F551 &src, void *unused)
+{
+	Rva0037F551 *cur = dst;
+	while (count > 0) {
+		Rva0037F71FCopy(cur, src);
+		++cur;
+		--count;
+	}
+	return cur;
+}
