@@ -1,11 +1,14 @@
-// ??1Rva003B262E@@MAE@XZ
-// partial score=0.94 date=2026-09-29
-// ??1Rva003B262E@@MAE@XZ
-// partial score=0.94 date=2026-09-29
 // cl: /O1 /MD
+//
 // ??1Rva003B262E@@MAE@XZ 0x003B262E 68B
 // Evidence: vtable 0x0081F3F4 at [this] with members at +4 Or list and +8 And ptr;
 // split deleteInstance(0) plus operator delete 0x0002FD60; caller deleting dtor 0x003B331E.
+// The barrier between clearing the Or node's next pointer and the virtual
+// deleteInstance call is what keeps the retail store-before-vtable-load order
+// (and emits no bytes).
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(__debugbreak, _ReadWriteBarrier)
+
 class Rva003B262EAnd
 {
 public:
@@ -43,6 +46,7 @@ Rva003B262E::~Rva003B262E()
 		while (cur) {
 			Rva003B262EOr *next = cur->m_next;
 			cur->m_next = 0;
+			_ReadWriteBarrier();
 			::operator delete(cur->deleteInstance(0));
 			cur = next;
 		}
