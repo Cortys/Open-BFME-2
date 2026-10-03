@@ -50095,3 +50095,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BCC94Do@@YAXXZ,,0x003BCC94,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCC94Do.cpp,matched,free Do calls g_00DFEF18 slot 0x28 with 1
 ??_GRva003908C2@@UAEPAXI@Z,,0x003909DE,28,Code/GameEngine/Source/Common/Rva003908C2Dtor.cpp,matched,chain deleting dtor via 0x003908C2 vtable 0x00819F74
 ?rva0053222F@Rva0053222F@@QAEXGG@Z,,0x0053222F,84,Code/GameEngine/Source/Common/Rva0053222FUnion.cpp,matched,union rank via caller 0x00532494 O1 like prev
+?rva00532479@Rva0053222F@@QAEXGG@Z,,0x00532479,36,Code/GameEngine/Source/Common/Rva0053222FUnion.cpp,matched,unite via Find twice plus Union same this caller 0x00532A82
