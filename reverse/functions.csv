@@ -49682,3 +49682,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva001DBACA@Rva00489360@@QAEXH@Z,,0x001DBACA,44,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,caller 0x001DBD5D passes list values with accumulated offset
 ??0Rva0041AC6A@@QAE@XZ,,0x0041AC6A,32,Code/GameEngine/Source/Common/Rva0041AC6ACtor.cpp,matched,leaf ctor via baseConstruct vtable secondVptr
 ??1Rva00104DB0@@UAE@XZ,,0x00104DB0,54,Code/GameEngine/Source/Common/Rva00104DB0Dtor.cpp,matched,leaf dtor via baseConstruct vtable member
+??0Rva004190DA@@QAE@ABVAsciiString@@PBV0@@Z,,0x004190DA,104,Code/GameEngine/Source/GameClient/Rva004190DACtor.cpp,matched,unlock ctor AsciiString map BitFlags via rowed callees
