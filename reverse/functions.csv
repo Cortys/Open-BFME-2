@@ -49431,3 +49431,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0020385F@Rva0020385FHost@@QAEXPAUParam0020385F@@@Z,,0x0020385F,192,Code/GameEngine/Source/Common/Rva0020385FHost.cpp,matched,unlock Sin Cos rowed xor-then-load shape
 ??0Rva005C663C@@QAE@XZ,,0x005C663C,108,Code/GameEngine/Source/GameClient/GUI/Rva005C663CCtor.cpp,matched,vtable 0x00C74914 Flash counter Create ShowButtonFlash
 ??1Rva005C663C@@UAE@XZ,,0x005C66A8,72,Code/GameEngine/Source/GameClient/GUI/Rva005C66A8Dtor.cpp,matched,dtor vtable 0x00C74914 base g_00BC6F20 Delete releaseBuffer
+??_GRva005C663C@@UAEPAXI@Z,,0x005C670C,28,Code/GameEngine/Source/GameClient/GUI/Rva005C66A8Dtor.cpp,matched,deleting dtor calls 0x005C66A8 plus operator delete
