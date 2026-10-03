@@ -1,4 +1,6 @@
 // ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
+// partial score=0.99 date=2026-10-03
+// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.99 date=2026-10-01
 // ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.99 date=2026-10-01
