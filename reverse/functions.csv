@@ -49593,3 +49593,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00111B5A@Rva00111B5A@@QAEPAURva00111B25Record@@PBD@Z,,0x00111B5A,42,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,stride 0x1c matches Rva00111B25Record layout plus rowed StringBase compare
 ?Rva00203DBEChain@@YAXPAVRva00203DBEA@@PAX@Z,,0x00203DBE,28,Code/GameEngine/Source/Common/Rva00203DBEChain.cpp,matched,sibling chain slots 30 then 24 via virtual calls
 ?Rva00203D4EChain@@YAXPAVRva00203D4EA@@PAX@Z,,0x00203D4E,28,Code/GameEngine/Source/Common/Rva00203D4EChain.cpp,matched,free chain slots 27/27 sibling 0x00203D6A
+?rva000FF50D@Rva000FF50D@@QAEXXZ,,0x000FF50D,217,Code/Libraries/Source/WWVegas/WWMath/Rva000FF50DSaveTracks.cpp,matched,unlock WaterTracks saveTracks .wak wb donor port
