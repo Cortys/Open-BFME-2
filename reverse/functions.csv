@@ -49992,3 +49992,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??_GRva005ECFE4@@MAEPAXI@Z,,0x005ECFC8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005ECFE4.cpp,matched,deleting dtor slot0 vtable 0x008785B4 chain from 0x005ECFE4
 ??$__insertion_sort@PAHVRva005E4300Cmp@@@_STL@@YAXPAH0VRva005E4300Cmp@@@Z,,0x005E4A1B,45,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva005E4300.cpp,matched,chain insertion family rowed callee 0x005E4862
 ??$__unguarded_insertion_sort@PAHVRva005E4300Cmp@@@_STL@@YAXPAH0VRva005E4300Cmp@@@Z,,0x005E4A48,23,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_insertion_sort_rva005E4300.cpp,matched,chain from just-landed aux 0x005E48A1
+??$__final_insertion_sort@PAHVRva005E4300Cmp@@@_STL@@YAXPAH0VRva005E4300Cmp@@@Z,,0x005E4C2F,68,Code/Libraries/Source/WWVegas/WWLib/stlport_final_insertion_sort_rva005E4300.cpp,matched,chain from 0x005E4A1B and 0x005E4A48 same 68B shape as 0x004243D4
