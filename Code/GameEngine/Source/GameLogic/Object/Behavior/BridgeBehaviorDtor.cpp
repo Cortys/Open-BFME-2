@@ -50,19 +50,34 @@ private:
 class BridgeBehaviorInterface
 {
 public:
+	// Slot order and signatures copied from ZH GameLogic/Module/BridgeBehavior.h
+	// (the header the kept BridgeBehavior.cpp compiles): the {for
+	// BridgeBehaviorInterface} vtable slice must hold these six refs.
+	virtual void setTower(BridgeTowerType towerType, Object *tower) = 0;
 	virtual ObjectID getTowerID(BridgeTowerType towerType) = 0;
+	virtual void createScaffolding() = 0;
+	virtual void removeScaffolding() = 0;
+	virtual bool isScaffoldInMotion() = 0;
+	virtual bool isScaffoldPresent() = 0;
 };
+
+class DamageInfo;
+enum BodyDamageType { BODY_PRISTINE = 0 }; // name fixes the W4BodyDamageType vtable relocs; values in ZH GameLogic/Damage.h
 
 class DamageModuleInterface
 {
 public:
-	virtual void onDamage() = 0;
+	// ZH GameLogic/Module/DamageModule.h: three slots, not one.
+	virtual void onDamage(DamageInfo *damageInfo) = 0;
+	virtual void onHealing(DamageInfo *damageInfo) = 0;
+	virtual void onBodyDamageStateChange(const DamageInfo *damageInfo, BodyDamageType oldState, BodyDamageType newState) = 0;
 };
 
 class DieModuleInterface
 {
 public:
-	virtual void onDie() = 0;
+	// ZH GameLogic/Module/DieModule.h: onDie takes the damage info.
+	virtual void onDie(const DamageInfo *damageInfo) = 0;
 };
 
 class PoolMember
@@ -79,9 +94,18 @@ class BridgeBehavior : public Rva0024A797, public MiBase1, public UpdateModuleIn
 {
 public:
 	virtual ~BridgeBehavior();
+	// Redeclared (never defined here) so each secondary-vtable slot references
+	// the BridgeBehavior:: body the kept BridgeBehavior.cpp defines.
+	virtual void setTower(BridgeTowerType towerType, Object *tower);
 	virtual ObjectID getTowerID(BridgeTowerType towerType);
-	virtual void onDamage();
-	virtual void onDie();
+	virtual void createScaffolding();
+	virtual void removeScaffolding();
+	virtual bool isScaffoldInMotion();
+	virtual bool isScaffoldPresent();
+	virtual void onDamage(DamageInfo *damageInfo);
+	virtual void onHealing(DamageInfo *damageInfo);
+	virtual void onBodyDamageStateChange(const DamageInfo *damageInfo, BodyDamageType oldState, BodyDamageType newState);
+	virtual void onDie(const DamageInfo *damageInfo);
 private:
 	char m_pad2C[0x100 - 0x2C];
 	PoolMember m_100;
