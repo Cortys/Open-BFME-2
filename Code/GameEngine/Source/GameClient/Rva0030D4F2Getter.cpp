@@ -21,6 +21,7 @@ private:
 };
 
 extern Rva00148F5ECache g_00DBDC84;
+extern Rva00148F5ECache g_00DBDC8C;
 
 class Dict
 {
@@ -34,6 +35,7 @@ class Rva0030D4F2
 {
 public:
 	int rva0030D4F2();
+	int rva0030D50C();
 private:
 	char m_pad0[0x24];
 	Dict m_dict;
@@ -42,4 +44,13 @@ private:
 int Rva0030D4F2::rva0030D4F2()
 {
 	return m_dict.getInt(g_00DBDC84.get(), 0);
+}
+
+// ?rva0030D50C@Rva0030D4F2@@QAEHXZ, retail 0x0030D50C, 26B.
+// Dict getter twin of 0x0030D4F2 above: same Dict at +0x24 via rowed getInt
+// with key from rowed NameKey cache get on g_00DBDC8C, exists null.
+// Caller 0x004E9CF9 in same caller as 0x0030D4F2.
+int Rva0030D4F2::rva0030D50C()
+{
+	return m_dict.getInt(g_00DBDC8C.get(), 0);
 }
