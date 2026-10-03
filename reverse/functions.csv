@@ -49680,3 +49680,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva001DBFEE@AudioManager@@QAE_NXZ,,0x001DBFEE,46,Code/GameEngine/Source/Main/AudioManagerRva001DBFEE.cpp,matched,caller 0x001DC07E loads TheAudio into ecx for both calls
 ?rva00078C10@Rva00078C10@@QAE_NPBV1@PAH1@Z,,0x00078C10,114,Code/GameEngine/Source/Common/Rva00078C10Method.cpp,matched,LINK BONUS via 0x00078F95 guarded LOD query with TheGameLODManager
 ?rva001DBACA@Rva00489360@@QAEXH@Z,,0x001DBACA,44,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,caller 0x001DBD5D passes list values with accumulated offset
+??0Rva0041AC6A@@QAE@XZ,,0x0041AC6A,32,Code/GameEngine/Source/Common/Rva0041AC6ACtor.cpp,matched,leaf ctor via baseConstruct vtable secondVptr
