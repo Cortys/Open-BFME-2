@@ -50029,3 +50029,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0BfmeStringRecord00426A5B@@QAE@XZ,,0x004267CC,29,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,default ctor via TheEmptyString plus flags 0 1 0 unblocks 2 callers
 ?Rva003BC306Do@@YGXPAVParameter@@M@Z,,0x003BC306,55,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC306Do.cpp,matched,leaf TerrainLogic slot 0x74 then slot 0x7c floats
 ?Rva003BCAA1Set@@YGXM@Z,,0x003BCAA1,57,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCAA1Set.cpp,matched,leaf float sets TheGameLogic plus 0xa0 scaled or minus 1
+??1Rva005681CE@@QAE@XZ,,0x005681CE,63,Code/Libraries/Source/WWVegas/WWLib/Rva005681CEDtor.cpp,matched,chain via Destroy 0x00567FA3 63B shape as 0x004F887C caller 0x0056820D
