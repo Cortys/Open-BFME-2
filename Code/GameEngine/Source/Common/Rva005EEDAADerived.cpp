@@ -43,8 +43,16 @@ Rva005D9DC1::~Rva005D9DC1()
 class Rva005DA0E2 : public Rva005EEDAA
 {
 public:
+	Rva005DA0E2();
 	virtual ~Rva005DA0E2();
 };
+
+// ??0Rva005DA0E2@@QAE@XZ @0x005DA0D0 18B: default ctor calls base 0x005EED92 then stores vtable 0x008764BC.
+// Evidence: call to rowed base ctor plus vtable store; sits immediately before its dtor 0x005DA0E2; caller 0x0058A707.
+// ??0Rva005DA0E2@@QAE@XZ @0x005DA0D0 present-unmatched
+Rva005DA0E2::Rva005DA0E2()
+{
+}
 
 Rva005DA0E2::~Rva005DA0E2()
 {

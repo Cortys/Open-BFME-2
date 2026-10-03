@@ -50315,3 +50315,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003339CE@Rva003339CE@@QAE_NPBDPA_N1@Z,,0x003339CE,308,Code/GameEngine/Source/Common/System/Rva003339CEBodyState.cpp,matched,BodyState single-token bitstring worker via Veterancy pattern
 ?rva00500804@Rva00500804@@QAEXPAX@Z,,0x00500804,53,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,erase right destroy rowed Rva004FFE89 free walk left
 ?rva00500ACF@Rva00500804@@QAEXXZ,,0x00500ACF,41,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,clear via rowed erase 0x00500804 resets head
+??0Rva005DA0E2@@QAE@XZ,,0x005DA0D0,18,Code/GameEngine/Source/Common/Rva005EEDAADerived.cpp,matched,ctor calls rowed base 0x005EED92 stores vtable 0x008764BC before dtor 0x005DA0E2
