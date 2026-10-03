@@ -6327,3 +6327,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva00214762@Rva002147D1@@QAE_NHPAXPAMPBV?$StringBase@D@@@Z	0x00214762	63	partial	lea eax+edx*4 vs mov ecx edx shl ecx 2; cmp [eax] vs [ecx+eax]; mov eax [eax] mov ecx eax vs mov ecx [ecx+eax]; 61/63B 0 reg diffs t=20 model=muse-17 score=0.94 stash=reverse/attempts/0x00214762.cpp
 ??0Rva000EADA7@@QAE@ABV0@@Z	0x000EADA7	473	partial	m_a0/m_b0 16B struct copies emit lea esi-edi plus 4x movsd vs retail lea eax-ecx plus explicit movs t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x000eada7.cpp
 ?rva000EA327@Rva000EA327@@QAE_NHMMMABUSrc48@@@Z	0x000EA327	358	blocked	frame plus this-in-ebx vs spill plus base-included lea; float and Region2D placement shape needs donor t=30 model=muse-04
+?Rva00300E42Check@@YA_NPAVGameInfo@@@Z	0x00300E42	114	partial	esi-edi swap only structural exact 40-40 insns t=22 model=muse-spark score=0.93 stash=reverse/attempts/0x00300e42.cpp

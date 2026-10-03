@@ -49697,3 +49697,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva005948F5@@QAE@XZ,,0x005948F5,35,Code/GameEngine/Source/GameNetwork/Rva005948F5Ctor.cpp,matched,caller 0x00595089 news 0x20 then calls; no vptr; neighbours ConstZeroGetters and UDPDrainDestructor
 ?rva00594D77@FirewallHelperClass@@QAEPAXG@Z,,0x00594D77,37,Code/GameEngine/Source/GameNetwork/Rva00594D77Search.cpp,matched,search spareSockets at +0x14 by port stride 8 from ctor layout and neighbours
 ?Rva002D46ADSet@@YAXH@Z,,0x002D46AD,155,Code/GameEngine/Source/GameClient/Rva002D46AD.cpp,matched,static Apt PalantirResources plus format percent-d via rva00225375
+??$__copy_ptrs@PBUBfmePod8@@PAU1@@_STL@@YAPAUBfmePod8@@PBU1@0PAU1@@Z,,0x002D4633,27,Code/Libraries/Source/WWVegas/WWLib/Rva002D4633CopyWrapper.cpp,matched,3-arg forwarder via rowed 4-arg 0x005B09BB with false_type temp
