@@ -61,81 +61,8 @@
 
 #define SPAWN_DELAY_MIN_FRAMES (16) // about as rapidly as you'd expect people to successively exit through the same door
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehaviorCtorThunk.cpp
-// ??0SpawnBehavior@@ present-unmatched
-SpawnBehavior::SpawnBehavior( Thing *thing, const ModuleData* moduleData ) 
-						 : UpdateModule( thing, moduleData )
-{
-	const SpawnBehaviorModuleData* md = getSpawnBehaviorModuleData();
-
-	// GEE, THIS IS NEW...
-	// NOW, WE CAN HAVE A LIST OF TEMPLATE NAMES
-	m_templateNameIterator = md->m_spawnTemplateNameData.begin();
-	m_spawnTemplate = TheThingFactory->findTemplate( *m_templateNameIterator );
-	//each time m_spawn template is used, it will increment m_templateNameIterator,
-	//thus scanning through the ordered list of template names
-	//looping back to the beginning
-
-	m_framesToWait = 0;
-	//Added By Sadullah Nader
-	//Initialization(s) inserted
-	m_firstBatchCount = 0;
-	//
-	if( md->m_isOneShotData )
-		m_oneShotCountdown = md->m_spawnNumberData;
-	else
-		m_oneShotCountdown = -1;
-
-	m_active = TRUE;
-
-	m_replacementTimes.clear();
-	// The initializing of the initial bursters is handled in the first update @todo invent an object::postConstructionProcess() some day
-	m_initialBurstCountdown = md->m_initialBurst;
-	m_initialBurstTimesInited = FALSE;
-
-
-	
-	m_aggregateHealth = md->m_aggregateHealth;
-
-	m_spawnCount = NONE_SPAWNED_YET;
-	m_active = TRUE;
-	m_selfTaskingSpawnCount = 0;
-} 
 
 // ------------------------------------------------------------------------------------------------
-// ?onDelete@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::onDelete()
-{
-	const SpawnBehaviorModuleData *modData = getSpawnBehaviorModuleData();
-
-	// destroy anything that we have spawned that is not already dead
-	if( modData->m_spawnedRequireSpawner )
-	{
-		Object *obj;
-
-		for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); /*empty*/ )
-		{
-
-			// get object
-			obj = TheGameLogic->findObjectByID( *it );
-
-			// increment iterator incase the id list is alterd because what we're about to do
-			++it;
-
-			//
-			// destroy this if it's alive, in the usual case this object "dies" and is
-			// not "destroyed".  on *death* we *KILL* our spawned things, but this is here
-			// and will *DESTROY* our spawned things if we ourselves are destroyed and they
-			// are still alive (such a case would be calling destroy object on us directly)
-			//
-			if( obj && obj->isEffectivelyDead() == FALSE )	
-				TheGameLogic->destroyObject( obj );
-
-		}  // end for, it
-
-	}  // end if
-		
-}
 
 // ------------------------------------------------------------------------------------------------
 // ?onDie@SpawnBehavior@@ present-unmatched
@@ -305,81 +232,12 @@ Bool SpawnBehavior::maySpawnSelfTaskAI( Real maxSelfTaskersRatio )
 }
 
 // ------------------------------------------------------------------------------------------------
-// ?getClosestSlave@SpawnBehavior@@ present-unmatched
-Object* SpawnBehavior::getClosestSlave( const Coord3D *pos )
-{
-	Object *closest = NULL;
-	Real closestDistance;
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			Real distance = ThePartitionManager->getDistanceSquared( obj, pos, FROM_CENTER_2D );
-			
-			if( !closest || closestDistance > distance ) 
-			{
-				closest = obj;
-				closestDistance = distance;
-			}
-		}
-	}
-	return closest; //Could be null!
-}
 
 // ------------------------------------------------------------------------------------------------
-// ?orderSlavesToAttackTarget@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::orderSlavesToAttackTarget( Object *target, Int maxShotsToFire, CommandSourceType cmdSource )
-{
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			AIUpdateInterface *ai = obj->getAI();
-			if( ai )
-			{
-				ai->aiForceAttackObject( target, maxShotsToFire, cmdSource );
-			}
-		}
-	}
-}
 
 // ------------------------------------------------------------------------------------------------
-// ?orderSlavesToAttackPosition@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::orderSlavesToAttackPosition( const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource )
-{
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			AIUpdateInterface *ai = obj->getAI();
-			if( ai )
-			{
-				ai->aiAttackPosition( pos, maxShotsToFire, cmdSource );
-			}
-		}
-	}
-}
 
 // ------------------------------------------------------------------------------------------------
-// ?orderSlavesToGoIdle@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::orderSlavesToGoIdle( CommandSourceType cmdSource )
-{
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			AIUpdateInterface *ai = obj->getAI();
-			if( ai )
-			{
-				ai->aiIdle( cmdSource );
-			}
-		}
-	}
-}
 
 // ------------------------------------------------------------------------------------------------
 // ?orderSlavesDisabledUntil@SpawnBehavior@@ present-unmatched
@@ -415,82 +273,8 @@ void SpawnBehavior::orderSlavesToClearDisabled( DisabledType type )
 }
 
 // ------------------------------------------------------------------------------------------------
-// ?getCanAnySlavesAttackSpecificTarget@SpawnBehavior@@ present-unmatched
-CanAttackResult SpawnBehavior::getCanAnySlavesAttackSpecificTarget( AbleToAttackType attackType, const Object *target, CommandSourceType cmdSource )
-{
-	Bool invalidShot = FALSE;
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			CanAttackResult result = obj->getAbleToAttackSpecificObject( attackType, target, cmdSource );
-
-			switch( result )
-			{
-				case ATTACKRESULT_POSSIBLE:
-				case ATTACKRESULT_POSSIBLE_AFTER_MOVING:
-					return result;
-
-				case ATTACKRESULT_NOT_POSSIBLE:
-					break;
-				
-				case ATTACKRESULT_INVALID_SHOT:
-					invalidShot = TRUE;
-					break;
-
-				default:
-					DEBUG_CRASH( ("SpawnBehavior::getCanAnySlavesAttackSpecificTarget encountered unhandled CanAttackResult of %d. Treating as not possible...", result) );
-					break;
-			}
-		}
-	}
-	//Prioritize the reasonings!
-	if( invalidShot )
-	{
-		return ATTACKRESULT_INVALID_SHOT;
-	}
-	return ATTACKRESULT_NOT_POSSIBLE;
-}
 
 // ------------------------------------------------------------------------------------------------
-// ?getCanAnySlavesUseWeaponAgainstTarget@SpawnBehavior@@ present-unmatched
-CanAttackResult SpawnBehavior::getCanAnySlavesUseWeaponAgainstTarget( AbleToAttackType attackType, const Object *victim, const Coord3D *pos, CommandSourceType cmdSource )
-{
-	Bool invalidShot = FALSE;
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			CanAttackResult result = obj->getAbleToUseWeaponAgainstTarget( attackType, victim, pos, cmdSource );
-
-			switch( result )
-			{
-				case ATTACKRESULT_POSSIBLE:
-				case ATTACKRESULT_POSSIBLE_AFTER_MOVING:
-					return result;
-
-				case ATTACKRESULT_NOT_POSSIBLE:
-					break;
-				
-				case ATTACKRESULT_INVALID_SHOT:
-					invalidShot = TRUE;
-					break;
-
-				default:
-					DEBUG_CRASH( ("SpawnBehavior::getCanAnySlavesUseWeaponAgainstTarget encountered unhandled CanAttackResult of %d. Treating as not possible...", result) );
-					break;
-			}
-		}
-	}
-	//Prioritize the reasonings!
-	if( invalidShot )
-	{
-		return ATTACKRESULT_INVALID_SHOT;
-	}
-	return ATTACKRESULT_NOT_POSSIBLE;
-}
 
 // ------------------------------------------------------------------------------------------------
 // ?giveSlavesStealthUpgrade@SpawnBehavior@@ present-unmatched
@@ -507,22 +291,6 @@ void SpawnBehavior::giveSlavesStealthUpgrade( Bool grantStealth )
 }
 
 // ------------------------------------------------------------------------------------------------
-// ?canAnySlavesAttack@SpawnBehavior@@ present-unmatched
-Bool SpawnBehavior::canAnySlavesAttack()
-{
-	for( objectIDListIterator it = m_spawnIDs.begin(); it != m_spawnIDs.end(); ++it )
-	{
-		Object *obj = TheGameLogic->findObjectByID( *it );
-		if( obj )
-		{
-			if( obj->isAbleToAttack() )
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
 
 
 // ------------------------------------------------------------------------------------------------
@@ -766,37 +534,6 @@ Bool SpawnBehavior::createSpawn()
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?onSpawnDeath@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::onSpawnDeath( ObjectID deadSpawn, DamageInfo *damageInfo )
-{
-	objectIDListIterator it = std::find(m_spawnIDs.begin(), m_spawnIDs.end(), deadSpawn);
-	
-	// If the iterator is at the end, we didn't find deadSpawn, so bail out.
-	// Otherwise, bad crash stuff will happen.
-	if (it == m_spawnIDs.end())
-		return;
-
-	//When one dies, you push (now + delay) as the time a new one should be made
-	const SpawnBehaviorModuleData* md = getSpawnBehaviorModuleData();
-	
-	Int replacementTime = md->m_spawnReplaceDelayData + TheGameLogic->getFrame();
-	m_replacementTimes.push_back( replacementTime );
-
-	m_spawnIDs.erase( it );
-
-	--m_spawnCount;
-
-	if ( (m_spawnCount == 0) && m_aggregateHealth) // I'm dead without my spawn
-	{
-		Object *killer = TheGameLogic->findObjectByID(damageInfo->in.m_sourceID);
-		if (killer != NULL) {
-			killer->scoreTheKill(getObject());
-		}
-		TheGameLogic->destroyObject(getObject());
-		//getObject()->kill();
-		return;
-	}
-}
 
 //-------------------------------------------------------------------------------------------------
 // ?stopSpawning@SpawnBehavior@@ present-unmatched
@@ -1097,92 +834,15 @@ void SpawnBehavior::crc( Xfer *xfer )
 }  // end crc
 
 // ------------------------------------------------------------------------------------------------
-/** Xfer method
-	* Version Info:
-	* 1: Initial version 
-	* 2: Added m_initialBurstTimesInited to the save. jba. 
-*/
-// ------------------------------------------------------------------------------------------------
-// ?xfer@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::xfer( Xfer *xfer )
-{
-	AsciiString name;
-
-	// version
-	XferVersion currentVersion = 2;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	BehaviorModule::xfer( xfer );
-
-	
-	if (version >= 2) {
-		xfer->xferBool(&m_initialBurstTimesInited);
-	}
-
-	// spawn template
-	name = m_spawnTemplate ? m_spawnTemplate->getName() : AsciiString::TheEmptyString;
-	xfer->xferAsciiString( &name );
-	if( xfer->getXferMode() == XFER_LOAD )
-	{
-
-		m_spawnTemplate = NULL;
-		if( name.isEmpty() == FALSE )
-		{
-		
-			m_spawnTemplate = TheThingFactory->findTemplate( name );
-			if( m_spawnTemplate == NULL )
-			{
-
-				DEBUG_CRASH(( "SpawnBehavior::xfer - Unable to find template '%s'\n", name.str() ));
-				throw SC_INVALID_DATA;
-
-			}  // end if
-
-		}  // end if
-
-	}  // end if
-
-	// one shot countdown
-	xfer->xferInt( &m_oneShotCountdown );
-
-	// frames to wait
-	xfer->xferInt( &m_framesToWait );
-
-	// first batch count
-	xfer->xferInt( &m_firstBatchCount );
-
-	// replacement times
-	if( xfer->getXferMode() == XFER_LOAD )
-		m_replacementTimes.clear();
-	xfer->xferSTLIntList( &m_replacementTimes );
-
-	// spawn ids
-	xfer->xferSTLObjectIDList( &m_spawnIDs );
-
-	// active
-	xfer->xferBool( &m_active );
-
-	// aggregate health
-	xfer->xferBool( &m_aggregateHealth );
-
-	// spawn count
-	xfer->xferInt( &m_spawnCount );
-
-	// self tasking spawn count
-	xfer->xferUnsignedInt( &m_selfTaskingSpawnCount );
-
-}  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
-// ?loadPostProcess@SpawnBehavior@@ present-unmatched
-void SpawnBehavior::loadPostProcess( void )
+// ?SpawnBehaviorFindAnchor@@YAXXZ present-unmatched
+void SpawnBehaviorFindAnchor()
 {
-
-	// extend base class
-	BehaviorModule::loadPostProcess();
-
-}  // end loadPostProcess
+	std::list<ObjectID> lst;
+	ObjectID v = (ObjectID)0;
+	volatile std::list<ObjectID>::iterator it = std::find(lst.begin(), lst.end(), v);
+	(void)it;
+}
