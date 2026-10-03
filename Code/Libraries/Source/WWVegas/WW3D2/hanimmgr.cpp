@@ -60,6 +60,14 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
  *	  HAnimManagerClass::Add_Anim -- Adds an externally created animation to the manager		  *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+// Retail Release_Ref at 0x005D1A7D uses dec-dword, while this unit needs
+// /G7 for StringClass::Get_Length. Keep the refcount inlines at size optimization.
+#include "wwstring.h"
+#include "vector3.h"
+#pragma optimize("t", off)
+#pragma optimize("s", on)
+#include "refcount.h"
+#pragma optimize("", on)
 #include "hanimmgr.h"
 #include <string.h>
 #include "hanim.h"
