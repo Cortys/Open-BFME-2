@@ -18,11 +18,6 @@ typedef unsigned int uint32;
 typedef unsigned __int64 uint64;
 #define ULL(x) x##Ui64
 
-template <class T>
-inline const T &(min)(const T &a, const T &b)
-{
-	return a < b ? a : b;
-}
 
 void _Stl_mult64(const uint64 u, const uint64 v, uint64 &high, uint64 &low)
 {
@@ -178,7 +173,9 @@ void _Stl_tenscale(uint64 &p, int exp, int &bexp)
 		return;
 	}
 	while (exp_hi) {
-		hi = (min)(num_hi, exp_hi);
+		// Keep the selected input as an lvalue to preserve the verified retail codegen.
+		const int &chosen_hi = num_hi < exp_hi ? num_hi : exp_hi;
+		hi = chosen_hi;
 		exp_hi -= hi;
 		hi += thi - 1;
 		_Stl_mult64(p, _Stl_tenpow[hi], prodhi, prodlo);
