@@ -50398,3 +50398,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000683DC@Rva000683DC@@QAEXXZ,,0x000683DC,35,Code/GameEngine/Source/Common/Rva000683DC.cpp,matched,two members 0x3858 notifyShroudChanged 0x3854 rva000E73CE neighbours
 ?rva00068295@Rva00068295@@QAEXXZ,,0x00068295,35,Code/GameEngine/Source/Common/Rva00068295.cpp,matched,two members 0x3850 rva000EA24D 0x3854 rva000E7016 neighbours
 ??1ControlBarSchemeManager@@QAE@XZ,,0x003204D9,101,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarSchemeManagerDtor.cpp,matched,manager dtor deletes schemes clears list nulls current
+?rva0039B24F@Rva0039B24F@@QAEXPAURva0039B24FInput@@H_N@Z,,0x0039B24F,64,Code/GameEngine/Source/Common/Rva0039B24FMethod.cpp,matched,virtual slot4 plus float10 plus conditional rva227
