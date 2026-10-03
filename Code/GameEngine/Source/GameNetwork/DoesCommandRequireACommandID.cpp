@@ -156,3 +156,26 @@ Int Rva005812C4Get(Rva005812C4Msg *msg)
 	}
 	return 0;
 }
+
+// ?Rva00581318Get@@YAHPAURva00581318Msg@@@Z, retail 0x00581318, 33 bytes.
+// Predicate over NetCommandMsg m_commandType at +0x14, same Int xor/inc shape
+// as siblings above. Retail order read off the chain: 7,0,1,2. Caller at
+// 0x004D31E5; honest-address free function.
+struct Rva00581318Msg
+{
+	char m_pad[0x14];
+	NetCommandType m_type;
+};
+
+Int Rva00581318Get(Rva00581318Msg *msg)
+{
+	NetCommandType type = msg->m_type;
+	if ((type == NETCOMMANDTYPE_REQUESTPLAYERLEAVE) ||
+		(type == (NetCommandType)0) ||
+		(type == (NetCommandType)1) ||
+		(type == (NetCommandType)2))
+	{
+		return 1;
+	}
+	return 0;
+}
