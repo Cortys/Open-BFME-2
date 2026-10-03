@@ -1,9 +1,7 @@
-// ??0FirewallHelperClass@@QAE@XZ
-// partial score=0.92 date=2026-09-30
-// ??0FirewallHelperClass@@QAE@XZ
-// partial score=0.92 date=2026-09-30
-// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX
-// ??0FirewallHelperClass@@QAE@XZ @0x00594CDD 154B FirewallHelperClass ctor
+// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX /Oy- /Op
+//
+// ??0FirewallHelperClass@@QAE@XZ, retail 0x00594cdd, 154 bytes. Banked partial (score 0.92) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Evidence: vtable 0x00870A2C at [this]; layout matches ZH FirewallHelper.h (spareSockets 8x8 at +0x14, manglers 4 at +0x54, sparePorts/mangledPorts at +0x68/+0x78, packetID +0x88, messages 8x30 at +0x8A length at +0x14, state/timeouts at +0x17C..+0x18C); timeGetTime IAT + div/div global g_00DD31F4; caller 0x00595143.
 class UDP;
 
@@ -64,7 +62,6 @@ private:
 	int m_currentTry;
 };
 
-// ??0FirewallHelperClass@@QAE@XZ present-unmatched
 FirewallHelperClass::FirewallHelperClass()
 {
 	m_currentTry = 0;
@@ -77,15 +74,15 @@ FirewallHelperClass::FirewallHelperClass()
 	m_lastBehavior = 0;
 	m_sourcePortAllocationDelta = 0;
 	m_lastSourcePortAllocationDelta = 0;
-	for (int i = 0; i < 8; ++i)
+	for (int i = 0; i < 8; i++)
 	{
-		m_mangledPorts[i] = 0;
-		m_sparePorts[i] = 0;
 		m_spareSockets[i].port = 0;
+		m_mangledPorts[i] = 0;
 		m_spareSockets[i].udp = 0;
 		m_messages[i].m_length = 0;
+		m_sparePorts[i] = 0;
 	}
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; 4 > i; ++i)
 		m_manglers[i] = 0;
 	m_currentState = 0;
 	g_00DD31F4 = timeGetTime() / 1000 % 1000 + 0x1000;
