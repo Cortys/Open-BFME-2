@@ -16,7 +16,10 @@ struct Rva00203E47IteratorView
 {
     void *current;
     Rva00203E47Next next;
-    // ?Rva00203E47IteratorView::Rva00203E47IteratorView present-unmatched
+    // Native25B constructor at 0x00203C7A. The preceding rowed 89B body
+    // at 0x00203C21 returns at 0x00203C79; rowed iterator advance begins
+    // at 0x00203C93 and reads current/+8 callback/+C adjustment. Its member
+    // type and owner remain address-derived; no original template name claimed.
     Rva00203E47IteratorView(void *p, Rva00203E47Next f) : current(p), next(f) {}
 };
 typedef char Rva00203E47SizeCheck[(sizeof(Rva00203E47IteratorView)==16)?1:-1];
