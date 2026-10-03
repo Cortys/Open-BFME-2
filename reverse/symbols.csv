@@ -7269,3 +7269,6 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva006E1C40@AptCIH@@QAEXPAX0@Z,0x006E1C40,address-derived member target called from AptCIH rva006E1DD0 (AptCIH.cpp pRect init); body unrowed
 ?rva006CFCD0@AptCIH@@QBE_NXZ,0x006CFCD0,address-derived AptCIH predicate called by rva006E1F90 (isSpriteInstBase assertion); body unrowed
 ??0Rva00624DB0@@QAE@XZ,0x00624DB0,address-derived 0x200-byte object constructor called from ShdDefFactoryClass ctor 0x61EEE0; body unrowed
+?rva006D0D70@Rva006D1090@@QAEXPAX@Z,0x006D0D70,address-derived list helper called from Rva006D1090 complete dtor 0x6D1090; body unrowed
+??1Rva006CE380@@QAE@XZ,0x006CE380,scalar destructor spelling of the rowed list clear 0x6CE380 reached as the base sub-object dtor of Rva006D1090
+?rva006E1E30@Rva006E1E30@@QAEXPAURva006F9FC0Rect@@@Z,0x006E1E30,address-derived rect-filling method called by BfmePicker neighbour 0x6F9FC0; body unrowed

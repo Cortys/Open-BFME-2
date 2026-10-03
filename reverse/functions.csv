@@ -49382,3 +49382,5 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?Rva00118C20@@YAXXZ,,0x00118C20,116,Code/Libraries/Source/WWVegas/WW3D2/Rva00118810Cluster.cpp,matched,address-derived stencil state store block sibling of 0x118BA0; Has_Stencil rowed
 ?rva00118CC0@Rva00118CC0@@QAEPAXH@Z,,0x00118CC0,121,Code/Libraries/Source/WWVegas/WW3D2/Rva00118810Cluster.cpp,matched,address-derived 44-byte-stride dynamic array grow helper; realloc via DIR32 pointer
 ?rva0061EDA0@BfmeFlagStageSequence@@QAEXXZ,,0x0061EDA0,119,Code/GameEngine/Source/Common/Rva0061EDA0Cluster.cpp,matched,BFME1 bfmeAdvanceStages donor with BFME2 delete-tail divergence; address-derived method on donor class
+??1Rva006D1090@@QAE@XZ,,0x006D1090,98,Code/GameEngine/Source/Common/Thing/Rva006D1090Cluster.cpp,matched,complete dtor walking +0 list via address-derived member 0x6D0D70 then base dtor 0x6CE380; EH frame from base sub-object
+?rva006F9FC0@Rva006F9FC0@@QAE_NPAVRva006E1E30@@H@Z,,0x006F9FC0,90,Code/GameEngine/Source/Common/Rva006F9FC0Cluster.cpp,matched,address-derived bounding-box containment predicate; rect filled by pinned 0x6E1E30
