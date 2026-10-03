@@ -98,7 +98,6 @@ Int GadgetComboBoxGetLength(GameWindow *comboBox)
 	return 0;
 }
 
-// ?GadgetComboBoxSetEnabledTextColors@@YAXPAVGameWindow@@HH@Z present-unmatched
 void GadgetComboBoxSetEnabledTextColors(GameWindow *comboBox, int color, int borderColor )
 {
 	// sanity
