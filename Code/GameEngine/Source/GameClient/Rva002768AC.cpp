@@ -16,6 +16,7 @@ struct Coord3D
 class Matrix3D
 {
 public:
+	Matrix3D();
 	int v[12];
 };
 
@@ -68,15 +69,17 @@ extern ClientFrameSubsystem *TheGameClient;
 class Rva002768AC
 {
 public:
+	virtual ~Rva002768AC() {}
+	Rva002768AC(Drawable *d);
 	void rva002768AC();
 private:
-	char m_pad00[4];
 	unsigned int m_time4;
 	int m_count8;
 	Drawable *m_drawC;
-	Matrix3D m_mat10;
+	Matrix3D m_mats[16];
 };
 
+// ?$?0Rva002768AC@@QAE@XZ present-unmatched
 void Rva002768AC::rva002768AC()
 {
 	if (m_drawC == 0)
@@ -84,7 +87,7 @@ void Rva002768AC::rva002768AC()
 	if (m_time4 >= TheGameClient->GetTime())
 		return;
 	m_time4 = TheGameClient->GetTime();
-	Matrix3D *mat = &m_mat10;
+	Matrix3D *mat = &m_mats[0];
 	if ((m_count8 = m_drawC->getCurrentClientBonePositions("B_TORNADO", 1, 0, mat, 0x10)) != 0)
 		return;
 	const Matrix3D *tm = m_drawC->getTransformMatrix();
