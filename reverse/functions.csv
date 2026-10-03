@@ -49633,3 +49633,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003B0433@Rva003B0433@@QAEXAAPBVModuleData@@@Z,,0x003B0433,33,Code/GameEngine/Source/Common/Rva003B0433Push.cpp,matched,unlock push ModuleData ref then push_heap greater via rowed callees
 ?rva003B0E83@Rva003B0E83@@QAEPAV1@XZ,,0x003B0E83,16,Code/GameEngine/Source/Common/Rva003B0E83Init.cpp,matched,unlock four 1.0f init via loop returning this
 ?rva003B0FAC@Rva003B0FAC@@QAEXABVAsciiString@@H@Z,,0x003B0FAC,26,Code/GameEngine/Source/Common/Rva003B0FACSet.cpp,matched,unlock set string at 0x10 then int at 0x14 via rowed set
+?rva003B0E38@Rva003B0E38@@QAEXPAVXfer@@@Z,,0x003B0E38,31,Code/GameEngine/Source/Common/Rva003B0E38Xfer.cpp,matched,unlock Version1 then uint at 0x4 via slot 0x78
