@@ -41,6 +41,7 @@ class SpellRechargeModifierUpgradeModuleData : public OpenContainModuleData
 {
 public:
 	SpellRechargeModifierUpgradeModuleData();
+	virtual ~SpellRechargeModifierUpgradeModuleData(); // declared only; defined in SpellRechargeModifierUpgradeModuleDataDtor.cpp (0x004B608A)
 
 private:
 	_STL::vector<AsciiString> m_vec118;	// +0x118
