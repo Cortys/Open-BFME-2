@@ -11,15 +11,26 @@ class Drawable
 {
 public:
 	bool rva00274C62(AsciiString *dst);
+	bool rva00274CB2(AsciiString *dst);
 private:
 	unsigned char m_pad[0x348];
 	AsciiString m_s348;
+	AsciiString m_s34C;
 };
 
 bool Drawable::rva00274C62(AsciiString *dst)
 {
 	if (!m_s348.isEmpty()) {
 		dst->set(m_s348);
+		return true;
+	}
+	return false;
+}
+
+bool Drawable::rva00274CB2(AsciiString *dst)
+{
+	if (!m_s34C.isEmpty()) {
+		dst->set(m_s34C);
 		return true;
 	}
 	return false;
