@@ -49742,3 +49742,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0023D201@GameLogic@@QAEXHH@Z,,0x0023D201,40,Code/GameEngine/Source/GameLogic/System/GameLogicSetPlayerLeaveStatus.cpp,matched,GameLogic 8-slot status init via frame at 0x40
 ?rva0023D24C@Rva0023D229@@QAEXH@Z,,0x0023D24C,35,Code/GameEngine/Source/Common/Rva0023D229Set.cpp,matched,same shape as sibling Set at 0x0023D229 col1 global TheGameLogic
 ?rva0023D26F@Rva0023D26F@@QAEX_N@Z,,0x0023D26F,48,Code/GameEngine/Source/Common/Rva0023D26FMethod.cpp,matched,leaf vcall 0x24 TheNetwork nullcheck vcall 0x38 members 0x38 0x3c 0x9d
+?rva00531BA7@Rva00531A44@@QAEXPAVXfer@@@Z,,0x00531BA7,173,Code/GameEngine/Source/Common/Rva00531BA7.cpp,matched,Rva00531A44 xfer-crc IsCRC slot 0x0C ushort slot 0x80 uchar 0x88 caller 0x005342CB
