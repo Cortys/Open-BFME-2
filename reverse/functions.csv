@@ -50662,3 +50662,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z,,0x0007894E,61,Code/GameEngine/Source/Common/Rva0007894EGet.cpp,matched,free stdcall bool tester Outer+8 flags 0x440/0x441 rowed rva vslot 0xC4
 ?rva001F4D2D@Rva001F4D2D@@QAEMXZ,,0x001F4D2D,34,Code/GameEngine/Source/Common/Rva001F4D2DFloat.cpp,matched,Float getter holder +0x9c fifth virtual slot default 0.0f sibling 0x001F4D4F
 ??0ParticleSystemInfo@FXParticleSystem@@QAE@XZ,0x001F4E82,0x001F4E82,216,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleSystemInfoCtor.cpp,matched,vtable 0x007BB5C8 store at this callers 0x001FC1F1 0x001FC71B init-list triples match copy layout
+?rva00594B2E@UDP@@QAE_N_N@Z,,0x00594B2E,40,Code/GameEngine/Source/GameNetwork/UDPBroadcast.cpp,matched,UDP setsockopt SOL_SOCKET SO_BROADCAST via IAT wsock32

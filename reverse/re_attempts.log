@@ -6978,3 +6978,5 @@ BfmeNarrowRecord28Deque::__destroy_aux	0x0041A382	33	landed	Ghidra33-byte bounda
 ?rva00504138@Rva00504138@@QAEPAVRva00064640Record@@H@Z	0x00504138	45	blocked	dec before header cmp and shared ret placement differ t=25 model=muse-03 (stash 0.93 kept)
 ?construct@DefaultModuleTemplate7CtorShim@FXParticleSystem@@QAEXXZ	0x001F448D	87	blocked	EH default ctor with 3 vtable data stores plus WindModuleInfo callee plus string literal needs sibling default pattern t=10 model=muse-03
 ?rva0037FF20@Rva0037FF20@@QAEXPAVRva0037F551@@ABV2@PBXI_N@Z	0x0037FF20	189	blocked	vector insert overflow needs G7 imul plus 4th param lea 0x1b mystery t=20 model=muse-06
+?rva004F1138@Rva004F1138@@QAE_NXZ	0x004F1138	286	blocked	outer head plus func-ptr indirect plus return-true path plus frame mismatch 4 variants stall at 254 of 286 t=15 model=muse-spark
+?Rva004F1B8CGet@@YAXPAMH@Z	0x004F1B8C	400	blocked	outer DLINK at +0x32c holder +0x334 Team chain via disp8 +0x40 Object pos +0x38 flag +0x108 needs shared-delta for iterator frame 0x3c vs 0x30 lea off and player-slot reuse t=25 model=muse-04
