@@ -1,4 +1,6 @@
 // ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
+// partial score=0.96 date=2026-10-04
+// ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
 // partial score=0.95 date=2026-10-03
 // ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
 // partial score=0.95 date=2026-10-03
@@ -113,5 +115,6 @@ Bool NetPacket::rva0059192A(NetCommandRef *msg)
 	if (m_lastTimestamp1F8 != cmdMsg->m_timestamp) len += 5;
 	if (m_lastPlayer1FE != cmdMsg->m_playerID) len += 2;
 	Int textLen = (Int)((const Rva004D6119 *)(const void *)cmdMsg)->rva004D6119().getLenByte();
-	return m_packetLen + textLen * 2 + len <= MAX_PACKET_SIZE;
+	Int total = m_packetLen + textLen * 2 + len;
+	return (UnsignedInt)total <= (UnsignedInt)MAX_PACKET_SIZE;
 }
