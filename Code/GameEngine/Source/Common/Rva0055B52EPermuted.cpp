@@ -1,7 +1,7 @@
-// ??0Rva0055B52E@@QAE@IPBURva0055B52ESrc@@@Z
-// partial score=0.93 date=2026-10-03
 // cl: /DNDEBUG /MD /EHsc /O1 /Ob2
-// ??0Rva0055B52E@@QAE@IPBURva0055B52ESrc@@@Z @0x0055B52E 145B
+//
+// ??0Rva0055B52E@@QAE@IPBURva0055B52ESrc@@@Z, retail 0x0055b52e, 145 bytes. Banked partial (score 0.93) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Ctor via rowed base 0x0055BCD2 plus member 0x0055B32B plus 8x getValue fill plus rowed 0x0055B39C.
 // Evidence: thiscall 2 args ret 8; calls rowed ??0Rva0055BCD2@@QAE@I@Z 0x0055BCD2 and ??0Rva0055B32B@@QAE@XZ 0x0055B32B and ?getValue@GameClientRandomVariable@@QBEMXZ 0x002341A1 and ?rva0055B39C@Rva0055B39C@@QAEXXZ 0x0055B39C; vtable VA 0x00C1D11C plus member VA 0x0081D10C plus s_slot3E4first; caller 0x003AC905; neighbours 0x0055B44D 0x0055B5BF same FXParticleSystem.
 class Rva0055BCD2
@@ -70,21 +70,20 @@ private:
 	unsigned int m_index;
 };
 
-// ??0Rva0055B52E@@QAE@IPBURva0055B52ESrc@@@Z present-unmatched
 Rva0055B52E::Rva0055B52E(unsigned int a, const Rva0055B52ESrc *src)
 	: Rva0055BCD2(a)
 {
 	*(const void **)&m_member = (const void *)"HZz";
 	*(const void **)this = g_00C1D11C;
 	*(void **)((char *)this + 8) = (void *)&s_slot3E4first;
-	const unsigned int *aSrc = &src->m_elems[0].m_frame;
 	unsigned int *zDst = &m_member.m_keys[0].m_frame;
-	int n = 8;
+	const unsigned int *aSrc = &src->m_elems[0].m_frame;
+	unsigned int n = 8;
 	do {
 		*(float *)(zDst - 1) = ((const GameClientRandomVariable *)(aSrc - 3))->getValue();
 		*zDst = *aSrc;
-		zDst += 2;
 		aSrc += 4;
+		zDst += 2;
 	} while (--n != 0);
 	m_time = m_member.m_keys[0].m_value;
 	m_index = 1;
