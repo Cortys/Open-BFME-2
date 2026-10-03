@@ -49720,3 +49720,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$_Destroy@VRva00142DF0String@@@_STL@@YAXPAVRva00142DF0String@@@Z,,0x00142D80,21,Code/GameEngine/Source/Common/System/Rva00142DF0StringVector.cpp,matched,placed by masked byte search of already-compiled unit
 ??0Intermediate3AE6A9@@QAE@ABV0@@Z,,0x00561D94,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE6A9CopyCtor.cpp,matched,placed by masked byte search of already-compiled unit
 ??0Rva005646BCSub@@QAE@XZ,,0x00564509,25,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005646BC.cpp,matched,placed by masked byte search of already-compiled unit
+?end@Rva00282021Store@@QAE?AURva00282021Cursor@@XZ,,0x0007EBCC,21,Code/GameEngine/Source/GameLogic/Map/Rva00282021WaterLookup.cpp,matched,placed by masked byte search of already-compiled unit
