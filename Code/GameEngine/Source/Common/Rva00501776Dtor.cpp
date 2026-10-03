@@ -24,3 +24,17 @@ struct Rva00501776
 Rva00501776::~Rva00501776()
 {
 }
+
+// ??1Rva005017AC@@QAE@XZ @0x005017AC 8B: outer dtor tail-jmps to ??1Rva00501776
+// after shifting this by +4. Evidence: retail is add ecx 4 plus jmp 0x00501776;
+// deleting-dtor caller at 0x00501D96 calls here then operator delete 0x0002FD60.
+struct Rva005017AC
+{
+	int m_head;
+	Rva00501776 m_mid;
+	~Rva005017AC();
+};
+
+Rva005017AC::~Rva005017AC()
+{
+}
