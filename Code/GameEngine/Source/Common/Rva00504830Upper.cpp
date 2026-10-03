@@ -64,3 +64,11 @@ Rva00504830Item *__cdecl Rva00504870LowerBound(Rva00504830Item *first, Rva005048
 	}
 	return first;
 }
+
+// ?Rva00504914Forward@@YAPAURva00504830Item@@PAU1@0PBMH@Z @ 0x00504914 (27B):
+// Forwards (first last value byte) plus trailing 0 to LowerBound 0x00504870.
+// Evidence: 5 pushes then call 0x504870 then add esp 0x14; chain from 0x00504870.
+Rva00504830Item *__cdecl Rva00504914Forward(Rva00504830Item *first, Rva00504830Item *last, const float *value, int b)
+{
+	return Rva00504870LowerBound(first, last, value, b, 0);
+}

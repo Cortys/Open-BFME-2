@@ -50535,3 +50535,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0028D99A@Object@@QAEX_N@Z,,0x0028D99A,75,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D99A.cpp,matched,Object disabled mask and template value dispatch via Player+0x1BC power calls
 ?rva003F7C0C@Rva003F7C0C@@QAEXPAX@Z,,0x003F7C0C,35,Code/GameEngine/Source/Common/Rva003F7C0CSetter.cpp,matched,unlock lane caller 0x003F8F2B SessionTask ParseINI virtual slot0 plus delete
 ?Rva00504870LowerBound@@YAPAURva00504830Item@@PAU1@0PBMHH@Z,,0x00504870,64,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,lower bound binary search over 16B records keyed by float
+?Rva00504914Forward@@YAPAURva00504830Item@@PAU1@0PBMH@Z,,0x00504914,27,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,forwarder to LowerBound with trailing 0
