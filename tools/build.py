@@ -1372,6 +1372,13 @@ _SWEEP_INCLUDE_DIRS = [
 ]
 
 
+def _sidecar_version(output):
+    try:
+        return json.loads(_deps_sidecar(output).read_text()).get("version")
+    except (OSError, ValueError, AttributeError):
+        return None
+
+
 def try_compile_source(source, output, *, input_proof=None, inventory=False):
     """Compile `source` to `output`. Return (ok, filtered_output, returncode).
 
@@ -1394,8 +1401,15 @@ def try_compile_source(source, output, *, input_proof=None, inventory=False):
     inventory_before = search_inventory(source, command, env) if inventory and is_cl else None
     retry_dirs = [] if inventory else None
     filtered, code = "", 1
-    for attempt in range(3):
-        before = input_proof.before(source, output, command, env) if input_proof else None
+    # input_proof's preprocessor snapshots cost two `cl -E` runs per TU, and
+    # the receipt they back is discarded whenever the sidecar comes out census
+    # grade (version 2), which an include inventory usually achieves. So take
+    # them only without an inventory, or on the one recompile below for a TU
+    # whose inventory-backed sidecar did not reach version 2.
+    proof_retry = inventory_before is None
+    for attempt in range(4):  # one more than before, for that recompile
+        before = (input_proof.before(source, output, command, env)
+                  if input_proof and proof_retry else None)
         result = subprocess.run(
             command + (["-showIncludes"] if is_cl else []),
             cwd=ROOT,
@@ -1410,6 +1424,9 @@ def try_compile_source(source, output, *, input_proof=None, inventory=False):
         if code == 0:
             _write_deps_sidecar(source, output, fingerprint, stdout, is_cl,
                                 command, env, inventory_before, retry_dirs)
+            if input_proof and not proof_retry and _sidecar_version(output) != 2:
+                proof_retry = True  # recompile once, witnessed by snapshots
+                continue
             if input_proof:
                 input_proof.after(source, output, command, env, before, stdout)
             return True, filtered, 0
@@ -1429,7 +1446,7 @@ def try_compile_source(source, output, *, input_proof=None, inventory=False):
         transient = (not stdout.strip()
                      or "Application could not be started" in stdout
                      or "ShellExecuteEx failed" in stdout)
-        if not transient or attempt == 2:
+        if not transient or attempt >= 2:
             return False, filtered, code
         print(f"retrying transient Wine launch failure for "
               f"{source.relative_to(ROOT)} ({attempt + 2}/3)", file=sys.stderr)
