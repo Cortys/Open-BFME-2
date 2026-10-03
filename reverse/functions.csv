@@ -49131,3 +49131,6 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva00118BA0@@YAXXZ,,0x00118BA0,118,Code/Libraries/Source/WWVegas/WW3D2/Rva00118BA0State.cpp,matched,unlock sibling G7 SSE HasStencil
 ?Rva00118810@@YAXXZ,,0x00118810,129,Code/Libraries/Source/WWVegas/WW3D2/Rva00118810Set.cpp,matched,DX8 render-state setup via rowed Set_DX8_Render_State caller 0x00155AD0
 ?rva00552CDE@Rva00552CF9@@QAEXH@Z,,0x00552CDE,27,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,Rva00552CF9 four-field int setter
+?rva00552C7ACallback@@YAXHHHHPAX@Z,,0x00552C7A,24,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,GameSpy stats callback flag setter
+?rva00552C92Callback@@YAXHHHHHHPAX@Z,,0x00552C92,12,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,GameSpy stats callback counter decrement
+?rva00552C9ECallback@@YAXHHHHPAX@Z,,0x00552C9E,26,Code/GameEngine/Source/Common/Rva00552C5FStats.cpp,matched,GameSpy stats callback record writer
