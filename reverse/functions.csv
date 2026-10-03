@@ -50220,3 +50220,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva004FF4F1@@QAE@I@Z,,0x004FF4F1,36,Code/Libraries/Source/WWVegas/WWLib/stlport_proxy_004FF4F1.cpp,matched,unlock single-proxy ctor via rowed 0x0014F3C4 and 0x000307F0 unblocks 0x004FF6AB
 ??0Rva004FF6AB@@QAE@II@Z,,0x004FF6AB,42,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_004FF6AB.cpp,matched,chain empty Rb-tree ctor via rowed 0x004FF4F1 zeroes count inits header
 ??0Rva004FF515@@QAE@I@Z,,0x004FF515,36,Code/Libraries/Source/WWVegas/WWLib/stlport_proxy_004FF515.cpp,matched,unlock single-proxy ctor via rowed 0x0014F3C4 and 0x000307F0 unblocks 0x004FF6FF
+??0Rva004FF6FF@@QAE@II@Z,,0x004FF6FF,42,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_004FF6FF.cpp,matched,chain empty Rb-tree ctor via rowed 0x004FF515 zeroes count inits header
