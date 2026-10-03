@@ -50166,3 +50166,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00408109@CreateAHeroData@@QAEIPBW4NameKeyType@@@Z,,0x00408109,71,Code/GameEngine/Source/Common/System/SaveGame/CreateAHeroDataRva004080DD.cpp,matched,CreateAHeroData NameKey lookup via TheNameKeyGenerator and map find
 ?DoHuffman@@YAXXZ,,0x006B7B60,612,Code/Libraries/Source/Benchmark/nbench1.cpp,matched,BYTEmark nbench1 DoHuffman; BSim-paired with BFME1 DoHuffman
 ?DoHuffIteration@@YAKPAD00KKPAUhuff_node@@@Z,,0x006B6C20,1504,Code/Libraries/Source/Benchmark/nbench1.cpp,matched,BYTEmark nbench1 DoHuffIteration; static helper in nbench1.c called by DoHuffman
+?rva003FDEAD@Rva003FDEAD@@QAEXXZ,,0x003FDEAD,110,Code/GameEngine/Source/Common/Rva003FDEAD.cpp,matched,rowed ctor 0x002D97D6 and dtor 0x002D9A43 plus TheAudio 0x009FE6E8 plus caller 0x003191CA plus sibling Rva003184B8 pattern
