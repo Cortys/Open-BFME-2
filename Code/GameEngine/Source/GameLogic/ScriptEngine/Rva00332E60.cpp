@@ -14,10 +14,14 @@ class Rva00332E60
 {
 public:
 	void *rva00332E60(int key);
+	void *rva0033321B(int key);
 
 private:
 	unsigned char m_pad[20];
 	Rva00332E60Entry m_entries[17];
+	unsigned char m_pad2[4];
+	int *m_a0Begin;
+	int *m_a0End;
 };
 
 void *Rva00332E60::rva00332E60(int key)
@@ -26,6 +30,18 @@ void *Rva00332E60::rva00332E60(int key)
 	{
 		if (m_entries[i].key == (unsigned int)key)
 			return &m_entries[i];
+	}
+	return 0;
+}
+
+void *Rva00332E60::rva0033321B(int key)
+{
+	int *begin = m_a0Begin;
+	int *end = m_a0End;
+	for (; begin != end; ++begin)
+	{
+		if (*begin == key)
+			return begin;
 	}
 	return 0;
 }
