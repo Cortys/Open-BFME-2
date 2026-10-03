@@ -6447,3 +6447,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva005B6F1E@Rva005B6F1E@@QAEXPBG0@Z	0x005B6F1E	242	partial	stack slots p1/p2 swapped ebp-8 vs ebp-c plus one reload mov t=25 model=muse-07 score=0.95 stash=reverse/attempts/0x005b6f1e.cpp
 ??1Rva005ECAD0@@QAE@XZ	0x005ECAD0	60	partial	vtable store 6B late after and lea vs retail before t=15 model=muse-07 score=0.93 stash=reverse/attempts/0x005ecad0.cpp
 ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z	0x44D47F	142	partial	slot.set(QP temp) form reproduces retail register allocation exactly (mov edi,eax hold); remaining diff is the 1-byte prologue frame: retail sub esp,0xc vs our push ecx/ecx and saved-esp slot -0x18 vs -0x14 t=25 model=deepseek-flash score=0.995 stash=reverse/attempts/0x0044d47f.cpp
+?rva00323FD9@Rva00323FD9@@QAEXH@Z	0x00323FD9	40	blocked	donor removeSelection static private-ABI ESI-ECX needs caller co-compile t=18 model=muse-03
