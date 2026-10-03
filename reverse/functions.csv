@@ -50673,3 +50673,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003F797C@Rva000427195@@QAEPAXPAXPBVAsciiString@@@Z,,0x003F797C,36,Code/GameEngine/Source/GameClient/EvaBucketEnsure.cpp,matched,eva ensure wrapper via resize and insert
 ?rva003F7B59@Rva003F7B59@@QAEPAXPBVAsciiString@@H@Z,,0x003F7B59,91,Code/GameEngine/Source/GameClient/EvaBucketAdd.cpp,matched,eva bucket add via pair temp and rowed ensure
 ?rva003F7478@Rva003F7478@@QAEXM@Z,,0x003F7478,40,Code/GameEngine/Source/Common/Rva003F7478Scale.cpp,matched,sse conditional scale via BfmeZeroRange and g_Va
+?Rva003AD511Init@@YAXXZ,,0x003AD511,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD511Init.cpp,matched,guarded init calls rowed RENDEROBJECT_UPDATE getInstance and rowed atexit
