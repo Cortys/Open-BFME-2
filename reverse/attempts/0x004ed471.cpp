@@ -1,4 +1,6 @@
 // ?rva004ED471@Rva004ED471@@QAEXPAVModelNodeClass@HLodClass@@PBV23@PBXI_N@Z
+// partial score=0.92 date=2026-10-03
+// ?rva004ED471@Rva004ED471@@QAEXPAVModelNodeClass@HLodClass@@PBV23@PBXI_N@Z
 // partial score=0.92 date=2026-09-28
 // ?rva004ED471@Rva004ED471@@QAEXPAVModelNodeClass@HLodClass@@PBV23@PBXI_N@Z
 // partial score=0.92 date=2026-09-28
@@ -28,8 +30,10 @@ public:
 };
 
 void __cdecl Rva004ED0D7Assign(HLodClass::ModelNodeClass *dst, const HLodClass::ModelNodeClass *src);
-HLodClass::ModelNodeClass * __cdecl Rva004ED0E9Copy(const HLodClass::ModelNodeClass *first, const HLodClass::ModelNodeClass *last, HLodClass::ModelNodeClass *result);
-HLodClass::ModelNodeClass * __cdecl Rva004ED10FFill(HLodClass::ModelNodeClass *dst, unsigned int count, const HLodClass::ModelNodeClass *src);
+HLodClass::ModelNodeClass * __cdecl Rva004ED0E9Copy(const HLodClass::ModelNodeClass *first, const HLodClass::ModelNodeClass *last, HLodClass::ModelNodeClass *result, const void *h)
+{ HLodClass::ModelNodeClass *r = result; const HLodClass::ModelNodeClass *f = first; while (f != last) { Rva004ED0D7Assign(r, f); ++f; ++r; } return r; }
+HLodClass::ModelNodeClass * __cdecl Rva004ED10FFill(HLodClass::ModelNodeClass *dst, unsigned int count, const HLodClass::ModelNodeClass *src, const void *h)
+{ HLodClass::ModelNodeClass *p = dst; unsigned int n = count; if (n <= 0) return p; do { Rva004ED0D7Assign(p, src); ++p; } while (--n != 0); return p; }
 extern "C" void __cdecl free(void *);
 
 class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
@@ -70,15 +74,15 @@ void Rva004ED471::rva004ED471(HLodClass::ModelNodeClass *pos, const HLodClass::M
 	_STL::allocator<BfmeStringRecord002CF4C6> *alloc = (_STL::allocator<BfmeStringRecord002CF4C6> *)&m_end;
 	HLodClass::ModelNodeClass *newStart = (HLodClass::ModelNodeClass *)alloc->allocate(len, 0);
 	(void)dummy;
-	HLodClass::ModelNodeClass *newFinish = Rva004ED0E9Copy(m_start, pos, newStart);
+	HLodClass::ModelNodeClass *newFinish = Rva004ED0E9Copy(m_start, pos, newStart, &count);
 	if (count == 1) {
 		Rva004ED0D7Assign(newFinish, value);
 		++newFinish;
 	} else {
-		newFinish = Rva004ED10FFill(newFinish, count, value);
+		newFinish = Rva004ED10FFill(newFinish, count, value, &count);
 	}
 	if (!atend) {
-		newFinish = Rva004ED0E9Copy(pos, m_finish, newFinish);
+		newFinish = Rva004ED0E9Copy(pos, m_finish, newFinish, &count);
 	}
 	HLodClass::ModelNodeClass *oldStart = m_start;
 	if (oldStart != 0) {
