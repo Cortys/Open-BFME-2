@@ -51,3 +51,10 @@ template class _STL::vector<BfmePod900, _STL::allocator<BfmePod900 > >;
 template class _STL::deque<BfmePod492, _STL::allocator<BfmePod492 > >;
 template class _STL::deque<BuddyRequest, _STL::allocator<BuddyRequest > >;
 template class _STL::deque<BfmePod840, _STL::allocator<BfmePod840 > >;
+
+template _STL::_Deque_iterator<BfmePod492, _STL::_Nonconst_traits<BfmePod492> > &
+_STL::_Deque_iterator<BfmePod492, _STL::_Nonconst_traits<BfmePod492> >::operator++();
+template _STL::_Deque_iterator<BfmePod840, _STL::_Nonconst_traits<BfmePod840> > &
+_STL::_Deque_iterator<BfmePod840, _STL::_Nonconst_traits<BfmePod840> >::operator++();
+template _STL::_Deque_iterator<BuddyRequest, _STL::_Nonconst_traits<BuddyRequest> > &
+_STL::_Deque_iterator<BuddyRequest, _STL::_Nonconst_traits<BuddyRequest> >::operator++();
