@@ -49358,3 +49358,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??0Rva004FD719Data@@QAE@XZ,,0x004FCCF0,36,Code/GameEngine/Source/Common/Rva004FD719DataCtor.cpp,matched,default ctor one vector plus int and byte zeros
 ?rva004FC299@Rva004FC275@@QAEXXZ,,0x004FC299,13,Code/GameEngine/Source/Common/Rva004FC275Set.cpp,matched,sibling forward to helper slot 1 via 24
 ?rva00580316@Rva00580316@@QAEXPAX@Z,,0x00580316,170,Code/GameEngine/Source/GameClient/GUI/OnlineCustomMatchPrefs.cpp,matched,PrimarySort SecondarySort StatusColumn literals plus caller 0x00446783
+?rva0014DC76@Rva0014DC76@@QAEXXZ,,0x0014DC76,17,Code/GameEngine/Source/Common/Rva0014DC76Init.cpp,matched,honest address name caller 0x0014F438 g_00BC6F24 init
