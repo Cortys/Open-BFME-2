@@ -50257,3 +50257,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00170C87@Rva00170B19@@QAEXPAPAXPAURva00170B19Node@@1ABVRva00151DAB@@1@Z,,0x00170C87,136,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,rb insert via create_node plus Rebalance proved by caller 0x00170E6B and size inc
 ?rva004B5E06@Rva004B5E06@@QAEXPAVXfer@@@Z,,0x004B5E06,64,Code/GameEngine/Source/GameLogic/Object/Behavior/FireWeaponWhenDeadBehaviorXferRva004B5E06.cpp,matched,slot 3 Version 1 2 gating bool plus base UpgradeModule xfer
 ?rva004B463C@ObjectCreationUpgrade@@QAEXXZ,,0x004B463C,189,Code/GameEngine/Source/GameLogic/Object/Upgrade/ObjectCreationUpgradeVslot8.cpp,matched,vslot8 rowed callees static SlaveWatcher key
+??1Rva004FFE81@@QAE@XZ,,0x004FFE81,8,Code/GameEngine/Source/GameLogic/Object/LocomotorSetMapThunks.cpp,matched,pair-value dtor thunk add ecx 4 jmp rowed Rb_tree dtor
