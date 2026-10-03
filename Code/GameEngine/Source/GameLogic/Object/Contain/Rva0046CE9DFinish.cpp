@@ -1,10 +1,6 @@
 // ?rva0046CE9D@Rva0046CE9D@@QAE_NPAVObject@@@Z
-// partial score=0.94 date=2026-09-30
-// ?rva0046CE9D@Rva0046CE9D@@QAE_NPAVObject@@@Z
-// partial score=0.94 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva0046CE9D@Rva0046CE9D@@QAE_NPAVObject@@@Z
-//
 // retail 0x0046CE9D (132 bytes). Chain from 0x00263763: every callee rowed.
 // Null param or null/expired tracker ID returns false; ID resolved via
 // TheGameLogic findObjectByID (rowed 0x00049DC5); distance via Object
@@ -50,23 +46,24 @@ private:
 	unsigned int m_expiry; // +0x170
 };
 
-// ?rva0046CE9D@Rva0046CE9D@@QAE_NPAVObject@@@Z present-unmatched
 bool Rva0046CE9D::rva0046CE9D(Object *obj)
 {
 	if (obj == 0)
 		return false;
-	if (m_id == INVALID_OBJECT_ID)
-		return false;
-	if (TheGameLogic->m_frame >= m_expiry)
-		return false;
-	Object *found = TheGameLogic->findObjectByID(m_id);
-	if (found == 0)
-		return false;
-	const void *other = *(const void *const *)((const char *)this - 0x114);
-	unsigned char flag = (unsigned char)(obj->rva00263763(other) < g_00BC8970);
-	Object *a = found->rva002931F5(false);
-	Object *b = obj->rva002931F5(false);
-	if (b == a)
-		return true;
-	return flag;
+	else {
+		if (m_id == INVALID_OBJECT_ID)
+			return false;
+		if (TheGameLogic->m_frame >= m_expiry)
+			return false;
+		Object *found = TheGameLogic->findObjectByID(m_id);
+		if (found == 0)
+			return false;
+		const void *other = *(const void *const *)((const char *)this - 0x114);
+		unsigned char flag = (unsigned char)(obj->rva00263763(other) < g_00BC8970);
+		Object *a = found->rva002931F5(false);
+		Object *b = obj->rva002931F5(false);
+		if (b == a)
+			return true;
+		return flag;
+	}
 }
