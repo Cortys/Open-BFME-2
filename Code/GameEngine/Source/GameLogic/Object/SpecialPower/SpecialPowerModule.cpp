@@ -65,35 +65,6 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ??0SpecialPowerModuleData@@QAE@XZ present-unmatched
-SpecialPowerModuleData::SpecialPowerModuleData()
-{
-
-	m_specialPowerTemplate = NULL;
-	m_updateModuleStartsAttack = false;
-	m_startsPaused = FALSE;
-	m_scriptedSpecialPowerOnly = FALSE;
-
-}  // end SpecialPowerModuleData
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-/* static */ void SpecialPowerModuleData::buildFieldParse(MultiIniFieldParse& p)
-{
-	BehaviorModuleData::buildFieldParse( p );
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "SpecialPowerTemplate",			INI::parseSpecialPowerTemplate, NULL, offsetof( SpecialPowerModuleData, m_specialPowerTemplate ) },
-		{ "UpdateModuleStartsAttack", INI::parseBool,									NULL, offsetof( SpecialPowerModuleData, m_updateModuleStartsAttack ) },
-		{ "StartsPaused",							INI::parseBool,									NULL, offsetof( SpecialPowerModuleData, m_startsPaused ) },
-		{ "InitiateSound",						INI::parseAudioEventRTS,				NULL, offsetof( SpecialPowerModuleData, m_initiateSound ) },
-		{ "ScriptedSpecialPowerOnly", INI::parseBool,									NULL, offsetof( SpecialPowerModuleData, m_scriptedSpecialPowerOnly ) },
-		{ 0, 0, 0, 0 }
-	};
-	p.add(dataFieldParse);
-
-}  // end buildFieldParse
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -267,16 +238,6 @@ const SpecialPowerTemplate * SpecialPowerModule::getSpecialPowerTemplate( void )
 }  // end ~SpecialPowerModule
 
 //-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-// ?SpecialPowerModule::getPowerName present-unmatched
-AsciiString SpecialPowerModule::getPowerName( void ) const
-{
-
-	return getSpecialPowerModuleData()->m_specialPowerTemplate->getName();
-}  // end ~SpecialPowerModule
-
-//-------------------------------------------------------------------------------------------------
-/** Is this module designed for the power identier template passed in? */
 //-------------------------------------------------------------------------------------------------
 // ?isModuleForPower@SpecialPowerModule@@UBE_NPBVSpecialPowerTemplate@@@Z present-unmatched
 Bool SpecialPowerModule::isModuleForPower( const SpecialPowerTemplate *specialPowerTemplate ) const
