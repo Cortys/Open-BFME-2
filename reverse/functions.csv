@@ -49858,3 +49858,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00531008@Rva00530FC5@@QAEXH@Z,,0x00531008,57,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,same-class two-level bit set callers in 0x005329C8 0x00532FEA
 ?rva005DDE69@Rva005DDE69@@QAEMIII@Z,,0x005DDE69,54,Code/GameEngine/Source/Common/Rva005DDE69Finish.cpp,matched,unlock lane bounds-checked range-max wrapper; _ReadWriteBarrier keeps m_begin out of a register across idiv; /O1 /G7 /MD
 ?rva0006AB98@Rva0006AB98@@QAEEHH@Z,,0x0006AB98,79,Code/GameEngine/Source/Common/Rva0006AB98Finish.cpp,matched,honest-address bit test over stride+0x34 grid at +0x74; _ReadWriteBarrier before the final load keeps this in esi; /O1 /MD
+??1Rva0018BEC7@@UAE@XZ,,0x0018BE87,64,Code/GameEngine/Source/Common/Rva0018BE87Finish.cpp,matched,WW3D registry dtor; vtable reset pair; trailing _ReadWriteBarrier holds EH epilogue scheduling; /O1 /EHsc /MD
