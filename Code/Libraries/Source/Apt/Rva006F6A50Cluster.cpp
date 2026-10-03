@@ -67,7 +67,18 @@ void __debugbreak();
 class BfmeAptValue006DCD20
 {
 public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
 	bool isUndefined() const;
+	void setGCRootCount(unsigned int n);
+	unsigned int m_flags;
+};
+
+class AptValue : public BfmeAptValue006DCD20
+{
+public:
+	void setIsDefined(bool defined);
 };
 
 class Rva006DB270
@@ -82,16 +93,35 @@ public:
 	void *allocBlock(int size);
 };
 
-extern Rva006DB270 *g_pChainBlockAllocator; // VA 0x00E176E8
-
-class BfmeNestedBE
+class Rva006D2A60
 {
 public:
-	virtual void v0();
-	virtual void v1();
-	virtual void v2();
-	int m_pad04[(0x4C / 4) - 1];
-	int m4C;
+	void *allocBlock(int size);
+};
+
+extern Rva006DB270 *g_pChainBlockAllocator;   // VA 0x00E176E8
+extern Rva006D2A60 *g_pChainBlockAllocatorF4; // VA 0x00E176F4
+
+// The sentinel/display-list node.  Its out-of-line constructor is the rowed
+// ??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z; the fields below are the ones this
+// cluster touches (prev +0x50, next +0x54, key/GC word +0x58).
+class Rva006CBDE0 : public AptValue
+{
+public:
+	Rva006CBDE0(int type, void *p1, AptValue *p2);
+
+	static void *operator new(unsigned int size)
+	{
+		return g_pChainBlockAllocatorF4->allocBlock((int)size);
+	}
+
+	char m_pad08[0x48 - 0x08];
+	AptValue *m_48;
+	void *m4C;
+	Rva006CBDE0 *m_50;
+	Rva006CBDE0 *m_54;
+	unsigned int m_58;
+	unsigned int m_5c;
 };
 
 class BfmeQuery1279
@@ -110,8 +140,21 @@ public:
 		g_pChainBlockAllocator->freeBlock(block, (int)size);
 	}
 
-	BfmeNestedBE *m_root;
+	Rva006CBDE0 *m_root;
 };
+
+// ??0BfmeQuery1279@@QAE@XZ @0x006F7B20 153B: construct the root sentinel from
+// the 0xE176F4 pool, mark it undefined with one GC root, clear its key link.
+BfmeQuery1279::BfmeQuery1279()
+{
+	m_root = new Rva006CBDE0(0x2e, (void *)0xbaadf00d, 0);
+	m_root->setIsDefined(false);
+	m_root->setGCRootCount(1);
+	m_root->v0();
+	m_root->m_58 |= 0x1ffff;
+	m_root->m_54 = 0;
+	m_root->m_50 = 0;
+}
 
 // ?BfmeQuery1279::~BfmeQuery1279 @0x006F7BC0 65B: assert the root sentinel is
 // undefined, clear its +0x4C then tail-call its second virtual.
