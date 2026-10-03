@@ -1,4 +1,9 @@
 // cl: /O1 /DNDEBUG /MD
+// Clean Open-BFME-1 6d9434269164392c5ba62aaa7c15a86b5b020d76 reference transfer.
+// Native font dispatcher313D73 and helper boundaries establish target operation/ABI.
+// Target field and call facts are distinct from donor names: row16/cell28/payload0C,
+// instance display pointers19C/1A0, virtual slot18, font1B4 and style3C are measured.
+// Font-sink pointer+04 / slot10 has an observed ABI; its original type remains unknown.
 
 // Text-color family from clean Open-BFME-1 6d9434269164392c5ba62aaa7c15a86b5b020d76.
 // Retail independently proves four distinct color-pair stores and the
@@ -16,6 +21,10 @@
 // like GadgetListBoxReset's +0xE8 call.
 
 typedef int Int;
+typedef unsigned char UnsignedByte;
+class GameFont;
+class DisplayString;
+enum { GWS_SCROLL_LISTBOX=0x20, GWS_COMBO_BOX=0x8000, GWS_ENTRY_FIELD=0x40, GWS_STATIC_TEXT=0x80 };
 struct WindowPickCoord { int x; int y; };
 // Method-only declaration of the independently rowed child-search provider.
 class Rva003141BCWindowView { public: Rva003141BCWindowView *winPointInChild(int, int, bool, bool = false); };
@@ -39,6 +48,10 @@ enum
 
 class GameWindow;
 void GadgetComboBoxSetEnabledTextColors(GameWindow *, int, int);
+void GadgetListBoxSetFont(GameWindow *, GameFont *);
+void GadgetComboBoxSetFont(GameWindow *, GameFont *);
+void GadgetTextEntrySetFont(GameWindow *, GameFont *);
+void GadgetStaticTextSetFont(GameWindow *, GameFont *);
 void GadgetComboBoxSetDisabledTextColors(GameWindow *, int, int);
 void GadgetComboBoxSetHiliteTextColors(GameWindow *, int, int);
 void GadgetComboBoxSetIMECompositeTextColors(GameWindow *, int, int);
@@ -67,6 +80,7 @@ class GameWindow
 {
 public:
 	Int winSetSize(Int width, Int height);
+	virtual void winSetFont(GameFont *);
 	void winSetEnabledTextColors(int color, int borderColor);
 	void winSetDisabledTextColors(int color, int borderColor);
 	void winSetHiliteTextColors(int color, int borderColor);
@@ -82,7 +96,7 @@ protected:
 	GameWindow *findNextLeaf();
 
 private:
-	unsigned char m_pad0[0x08];
+	unsigned char m_pad0[0x04];
 	UnsignedInt m_status;
 	Int m_sizeX;
 	Int m_sizeY;
@@ -390,3 +404,76 @@ void GameWindow::winSetIMECompositeTextColors(int color, int borderColor)
 	if (m_style & 0x8000)
 		GadgetComboBoxSetIMECompositeTextColors(this, color, borderColor);
 }
+
+class BfmeWindowDisplayString
+{
+public:
+	virtual void _pad0( void ) = 0;
+	virtual void _pad1( void ) = 0;
+	virtual void _pad2( void ) = 0;
+	virtual void _pad3( void ) = 0;
+	virtual void _pad4( void ) = 0;
+	virtual void _pad5( void ) = 0;
+	virtual void setFont( GameFont *font ) = 0;			///< vtable +0x18
+};
+
+// Shape only: whatever sits at GameWindow+0x04, BFME hands it the font through
+// its own vtable slot +0x10 every time the font changes, after whichever branch
+// ran. The reference makes no such call.
+class BfmeWindowFontSink
+{
+public:
+	virtual void _pad0( void ) = 0;
+	virtual void _pad1( void ) = 0;
+	virtual void _pad2( void ) = 0;
+	virtual void _pad3( void ) = 0;
+	virtual void setFont( GameFont *font ) = 0;			///< vtable +0x10
+};
+
+struct BfmeWindowFontLayout
+{
+	void *vtable;
+	BfmeWindowFontSink *fontSink;						///< this+0x04
+	UnsignedByte pad0[0x3c - 0x08];
+	UnsignedInt style;									///< this+0x3C
+	UnsignedByte pad1[0x1b4 - 0x40];
+	GameFont *font;										///< this+0x1B4
+	UnsignedByte pad2[0x1cc - 0x1b8];
+	DisplayString *text;								///< this+0x1CC
+	DisplayString *tooltip;								///< this+0x1D0
+};
+
+void GameWindow::winSetFont( GameFont *font )
+{
+	BfmeWindowFontLayout *self = (BfmeWindowFontLayout *)this;
+
+	// set font in window member
+	self->font = font;
+
+	// set font for other display strings in special gadget window controls
+	if( self->style & GWS_SCROLL_LISTBOX )
+		GadgetListBoxSetFont( this, font );
+	else if( self->style & GWS_COMBO_BOX )
+		GadgetComboBoxSetFont( this, font );
+	else if( self->style & GWS_ENTRY_FIELD )
+		GadgetTextEntrySetFont( this, font );
+	else if( self->style & GWS_STATIC_TEXT )
+		GadgetStaticTextSetFont( this, font );
+	else
+	{
+		BfmeWindowDisplayString *dString;
+
+		// set the font for the display strings all windows have
+		dString = (BfmeWindowDisplayString *)self->text;
+		if( dString )
+			dString->setFont( font );
+		dString = (BfmeWindowDisplayString *)self->tooltip;
+		if( dString )
+			dString->setFont( font );
+
+	}  // end else
+
+	if( self->fontSink )
+		self->fontSink->setFont( font );
+
+}  // end WinSetFont
