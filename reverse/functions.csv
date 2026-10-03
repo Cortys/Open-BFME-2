@@ -49964,3 +49964,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00527925Fire@@YAHPAX0PBD1PBM@Z,,0x00527925,106,Code/GameEngine/Source/Common/Rva00527925Fire.cpp,matched,free float Apt firer via rowed Get 0x002228E8 plus rowed AptCall 0x00222B19 and empty fallback
 ?rva005279DD@Rva005279DD@@QAEXXZ,,0x005279DD,270,Code/GameEngine/Source/Common/Rva005279DDFinish.cpp,matched,thiscall state switch via rowed AptCall wrappers plus float Fire 0x00527925 and slot16 scale
 ?rva00265143@AIUpdateInterface@@QAEHXZ,,0x00265143,48,Code/GameEngine/Source/GameLogic/Object/Update/Rva00265143Finish.cpp,matched,AI state vector size() subobject at +0x3C via machine +0x30
+?rva0044DEC1@GameModePreferences@@QAEXABVAsciiString@@@Z,,0x0044DEC1,103,Code/GameEngine/Source/Common/Rva0044DEC1Finish.cpp,matched,Password setter QP temporary held in edi via slot.set(temporary)
