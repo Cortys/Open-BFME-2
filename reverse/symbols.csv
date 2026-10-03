@@ -7455,3 +7455,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$_M_find@H@?$_Rb_tree@HU?$pair@$$CBHUBfmePod52@@@_STL@@U?$_Select1st@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@@_STL@@ABEPAU?$_Rb_tree_node@U?$pair@$$CBHUBfmePod52@@@_STL@@@1@ABH@Z,0x00388F63,ICF twin of rowed int-key _M_find at 0x00388F63; called by StancesStore::parseStanceTemplateDefinition
 ?TheStancesStore@@3PAVRva00425F10@@A,0x00A031D4,TheStancesStore global pointer at 0x00E031D4
 ?parseStance@@YAXPAVINI@@PAX@Z,0x00425DDD,Stance parser function at 0x00425DDD
+??$_Destroy@PAURva004FFE81@@@_STL@@YAXPAURva004FFE81@@0@Z,0x00500CB8,independent full 25-byte match of STLport Destroy; same range loop and element destructor as rowed Rva00500CB8Destroy; typed vector erase callee

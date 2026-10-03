@@ -118,3 +118,7 @@ template Rva004FFE81* _STL::__copy<Rva004FFE81*, Rva004FFE81*, int>(
 // The vector's nontrivial assignment dispatch reaches __copy at 0x0050094B.
 template Rva004FFE81* _STL::__copy_ptrs<Rva004FFE81*, Rva004FFE81*>(
     Rva004FFE81*, Rva004FFE81*, Rva004FFE81*, const _STL::__false_type&);
+
+// Native 0x0050126C has two pointer arguments, returns the first, copies
+// [last, finish) into first and destroys the vacated tail before updating finish.
+template Rva004FFE81* _STL::vector<Rva004FFE81>::erase(Rva004FFE81*, Rva004FFE81*);
