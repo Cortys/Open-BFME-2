@@ -50078,3 +50078,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005F2CBA@Rva005F2FEF@@QAEXM@Z,,0x005F2CBA,135,Code/GameEngine/Source/Common/Rva005F2CBAProgress.cpp,matched,Apt rank progress float plus50 flag4 via Fire AptCall strings SetMemberRankProgress
 ?rva005F2F49@Rva005F2A32@@QAEXM@Z,,0x005F2F49,19,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,chain forwarder to 0x005F2CBA via member plus4
 ?Rva003BC830Clear@@YGXABVAsciiString@@@Z,,0x003BC830,62,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC830Clear.cpp,matched,leaf player mask loop clearer 0x002A9F0F
+?Rva003BC33DDo@@YGXPAVParameter@@MMM@Z,,0x003BC33D,63,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC33DDo.cpp,matched,leaf TerrainLogic slot 0x74 then slot 0x80 floats
