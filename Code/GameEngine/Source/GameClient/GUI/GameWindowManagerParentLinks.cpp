@@ -32,7 +32,6 @@ Bool GameWindowManager::isEnabled(GameWindow *win)
  do { if((w->status&8)==0) return false; w=w->parent; } while(w);
  return true;
 }
-// ?isHidden@GameWindowManager@@UAE_NPAVGameWindow@@@Z present-unmatched
 Bool GameWindowManager::isHidden(GameWindow *win)
 {
  BfmeManagerWindowLinks *w=(BfmeManagerWindowLinks *)win;
