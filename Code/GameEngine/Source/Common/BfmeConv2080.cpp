@@ -1,3 +1,6 @@
+// Target 0x001B6400 forwards bytes to bfmeAllocBlock at 0x001B63C0.
+// Its allocator and native14B body differ from NameKeyGenerator::Bucket's
+// donor operator new. Address-derived identity; original class is unknown.
 struct BfmeSubJX
 {
 	int m_bfmeGapJX[14];
@@ -44,12 +47,12 @@ int g_bfmeTableJX;
 int bfmeAllocJT(BfmeThingJT *q);
 void bfmeFreeOneJT(void *q);
 
-class Bucket
+class Rva001B6400Allocation
 {
 public:
-	enum BucketMagicEnum { BFME_ZERO_JX = 0 };
+	enum AllocationTag { BFME_ZERO_JX = 0 };
 
-	static void *operator new(unsigned int n, BucketMagicEnum m);
+	static void *operator new(unsigned int n, AllocationTag m);
 };
 void *bfmeMakeBZB(void *q);
 BfmeSubJX *bfmeMakeSubJX();
@@ -126,7 +129,7 @@ CodecState *bfmeAllocJX()
 	cfg[12] = 0;
 	cfg[13] = 0;
 
-	CodecState *p = (CodecState *)Bucket::operator new(0x4954, Bucket::BFME_ZERO_JX);
+	CodecState *p = (CodecState *)Rva001B6400Allocation::operator new(0x4954, Rva001B6400Allocation::BFME_ZERO_JX);
 
 	if (p == 0)
 		return 0;

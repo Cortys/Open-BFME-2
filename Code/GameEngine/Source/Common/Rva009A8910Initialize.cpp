@@ -1,9 +1,12 @@
+// Target 0x001B6400 forwards bytes to bfmeAllocBlock at 0x001B63C0.
+// Its allocator and native14B body differ from NameKeyGenerator::Bucket's
+// donor operator new. Address-derived identity; original class is unknown.
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/NameKeyGenerator.h
-class Bucket
+class Rva001B6400Allocation
 {
 public:
-	enum BucketMagicEnum { Bucket_GLUE_NOT_IMPLEMENTED = 0 };
-	static void *__cdecl operator new(unsigned int bytes, BucketMagicEnum tag);
+	enum AllocationTag { Bucket_GLUE_NOT_IMPLEMENTED = 0 };
+	static void *__cdecl operator new(unsigned int bytes, AllocationTag tag);
 };
 
 void Rva009A8880Release(void *what);
@@ -27,9 +30,9 @@ int __cdecl Rva009A8910Initialize(
 {
 	Rva009A8880Release(self);
 
-	void *first = Bucket::operator new(
+	void *first = Rva001B6400Allocation::operator new(
 		(unsigned int)extra + self->m_size + 0x20,
-		Bucket::Bucket_GLUE_NOT_IMPLEMENTED);
+		Rva001B6400Allocation::Bucket_GLUE_NOT_IMPLEMENTED);
 	self->m_at248 = first;
 	if (first == 0)
 	{
@@ -38,9 +41,9 @@ int __cdecl Rva009A8910Initialize(
 	}
 	self->m_at244 = (void *)(((unsigned int)first + 0x1F) & ~0x1F);
 
-	void *second = Bucket::operator new(
+	void *second = Rva001B6400Allocation::operator new(
 		(unsigned int)extra + self->m_size + 0x20,
-		Bucket::Bucket_GLUE_NOT_IMPLEMENTED);
+		Rva001B6400Allocation::Bucket_GLUE_NOT_IMPLEMENTED);
 	self->m_at250 = second;
 	if (second == 0)
 	{
@@ -49,9 +52,9 @@ int __cdecl Rva009A8910Initialize(
 	}
 	self->m_at24C = (void *)(((unsigned int)second + 0x1F) & ~0x1F);
 
-	void *third = Bucket::operator new(
+	void *third = Rva001B6400Allocation::operator new(
 		(unsigned int)extra + self->m_size + 0x20,
-		Bucket::Bucket_GLUE_NOT_IMPLEMENTED);
+		Rva001B6400Allocation::Bucket_GLUE_NOT_IMPLEMENTED);
 	self->m_at258 = third;
 	if (third == 0)
 	{

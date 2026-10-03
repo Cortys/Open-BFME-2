@@ -1,8 +1,11 @@
+// Target 0x001B6400 forwards bytes to bfmeAllocBlock at 0x001B63C0.
+// Its allocator and native14B body differ from NameKeyGenerator::Bucket's
+// donor operator new. Address-derived identity; original class is unknown.
 // Retail 009A89C0. Existing bfmeInitCodecJX caller establishes this name.
 // Fields are offset-derived; sizes and helper ABIs were checked against retail.
 struct CodecState;
 struct Rva009A8910Context;
-class Bucket { public: enum BucketMagicEnum { Zero = 0 }; static void* operator new(unsigned, BucketMagicEnum); };
+class Rva001B6400Allocation { public: enum AllocationTag { Zero = 0 }; static void* operator new(unsigned, AllocationTag); };
 void Rva009A4E50Configure(void*,unsigned,int);
 void bfmeInitD70(void*,void*);
 int Rva009A86F0Allocate(void*);
@@ -90,7 +93,7 @@ int bfmeCheckJX(CodecState* s)
     if(!Rva009A86F0Allocate(s)) return 0;
     if(!Rva009A8910Initialize((Rva009A8910Context*)s,allocation)) {bfmeStepJW(s); return 0;}
     if(s->at0264==0 && (int)s->at023c!=0 && (*(int*)cfg!=(int)s->at023c || (int)s->at01b4!=(int)s->at0240)) {
-        void* p=Bucket::operator new(((unsigned)(((int)s->at0240+32)*((int)s->at023c+32)*3)>>1)+32,Bucket::Zero);
+        void* p=Rva001B6400Allocation::operator new(((unsigned)(((int)s->at0240+32)*((int)s->at023c+32)*3)>>1)+32,Rva001B6400Allocation::Zero);
         s->at0268=(unsigned)p;s->at0264=((unsigned)p+31)&~31;
     }
     return 1;

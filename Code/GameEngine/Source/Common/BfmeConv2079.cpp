@@ -1,3 +1,6 @@
+// Target 0x001B6400 forwards bytes to bfmeAllocBlock at 0x001B63C0.
+// Its allocator and native14B body differ from NameKeyGenerator::Bucket's
+// donor operator new. Address-derived identity; original class is unknown.
 class BfmeThingJT
 {
 public:
@@ -18,12 +21,12 @@ public:
 
 void bfmeFreeOneJT(void *q);
 
-class Bucket
+class Rva001B6400Allocation
 {
 public:
-	enum BucketMagicEnum { BFME_ZERO_JT = 0 };
+	enum AllocationTag { BFME_ZERO_JT = 0 };
 
-	static void *operator new(unsigned int n, BucketMagicEnum m);
+	static void *operator new(unsigned int n, AllocationTag m);
 };
 
 void bfmeFreeJT(BfmeThingJT *p)
@@ -59,7 +62,7 @@ int bfmeAllocJT(BfmeThingJT *p)
 {
 	bfmeFreeJT(p);
 
-	void *a = Bucket::operator new(0xa0, Bucket::BFME_ZERO_JT);
+	void *a = Rva001B6400Allocation::operator new(0xa0, Rva001B6400Allocation::BFME_ZERO_JT);
 
 	p->m_bfme274JT = a;
 
@@ -72,7 +75,7 @@ int bfmeAllocJT(BfmeThingJT *p)
 
 	p->m_bfme270JT = (void *)(((unsigned int)a + 0x1f) & 0xffffffe0);
 
-	void *b = Bucket::operator new(0xa0, Bucket::BFME_ZERO_JT);
+	void *b = Rva001B6400Allocation::operator new(0xa0, Rva001B6400Allocation::BFME_ZERO_JT);
 
 	p->m_bfme288JT = b;
 
@@ -85,7 +88,7 @@ int bfmeAllocJT(BfmeThingJT *p)
 
 	p->m_bfme284JT = (void *)(((unsigned int)b + 0x1f) & 0xffffffe0);
 
-	void *c = Bucket::operator new(0x120, Bucket::BFME_ZERO_JT);
+	void *c = Rva001B6400Allocation::operator new(0x120, Rva001B6400Allocation::BFME_ZERO_JT);
 
 	p->m_bfme28cJT = c;
 
@@ -98,7 +101,7 @@ int bfmeAllocJT(BfmeThingJT *p)
 
 	p->m_bfme290JT = (void *)(((unsigned int)c + 0x1f) & 0xffffffe0);
 
-	void *d = Bucket::operator new(0xa0, Bucket::BFME_ZERO_JT);
+	void *d = Rva001B6400Allocation::operator new(0xa0, Rva001B6400Allocation::BFME_ZERO_JT);
 
 	p->m_bfme280JT = d;
 
