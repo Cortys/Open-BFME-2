@@ -32,7 +32,11 @@ struct ThingTemplate
 	unsigned char m_kind0;
 };
 
-class AIUpdateInterface;
+class AIUpdateInterface
+{
+public:
+	Object *getCurrentVictim() const;
+};
 
 class Object
 {
@@ -51,6 +55,7 @@ public:
 	DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
 	int rva0039D9E3() const;
 	int rva0039DC63() const;
+	bool rva0039DAF4() const;
 };
 
 int Team::rva0039D9E3() const
@@ -91,4 +96,22 @@ int Team::rva0039DC63() const
 		++count;
 	}
 	return count;
+}
+
+// ?rva0039DAF4@Team@@QBE_NXZ @0x0039DAF4 (61B).
+// Team::rva0039DAF4(): true when any member has a current victim. Walks via
+// rowed iterate_TeamMemberList at 0x263864 and advance at 0x263526, reads
+// AI at Object+0x258 and calls rowed getCurrentVictim at 0x00268D71.
+// Caller at 0x004ED068. Same /O1 flags and 24-byte iterator as siblings.
+bool Team::rva0039DAF4() const
+{
+	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+		Object *cur = iter.cur();
+		AIUpdateInterface *ai = cur->m_ai;
+		if (ai == 0)
+			continue;
+		if (ai->getCurrentVictim() != 0)
+			return true;
+	}
+	return false;
 }
