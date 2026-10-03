@@ -109,12 +109,41 @@ class Scorer:
                 if compiled == target and not got["unresolved"]:
                     result = (1.0, True)
                 else:
-                    ratio = difflib.SequenceMatcher(None, compiled, target, autojunk=False).ratio()
-                    result = (ratio, False)
+                    result = (fitness(compiled, target), False)
         except (SystemExit, Exception):  # a symbol the candidate no longer emits, etc.
             result = (-1.0, False)
         self.seen[key] = result
         return result
+
+
+_DISASM = None
+
+
+def _instructions(blob):
+    global _DISASM
+    if _DISASM is None:
+        import capstone
+        _DISASM = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+    return [(insn.mnemonic, insn.op_str) for insn in _DISASM.disasm(bytes(blob), 0)]
+
+
+def fitness(compiled, target):
+    """0..1 closeness of two bodies (exact is checked separately).
+
+    A byte ratio is nearly flat across the changes a mutation causes: a
+    register swap or a reordered pair rewrites many bytes. Instruction
+    alignment sees them: the mnemonic sequence carries most of the weight,
+    full instructions (operands) refine it, the byte ratio breaks ties."""
+    ratio = lambda a, b: difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
+    try:
+        ours, theirs = _instructions(compiled), _instructions(target)
+    except Exception:  # no capstone: bytes alone, as before
+        return ratio(compiled, target)
+    if not ours or not theirs:
+        return ratio(compiled, target)
+    return (0.5 * ratio([m for m, _ in ours], [m for m, _ in theirs])
+            + 0.3 * ratio(ours, theirs)
+            + 0.2 * ratio(compiled, target))
 
 
 # ----------------------------------------------------------------- mutations
@@ -132,20 +161,35 @@ FLAG_SWAPS = [("/O1", "/O2"), ("/O2", "/O1"), ("/O2", "/Ox"), ("/Ox", "/O2"), ("
 FLAG_TOGGLES = ["/Op", "/Oy-"]
 
 
-def body_lines(lines):
-    """Indexes of lines inside function bodies (between a definition's braces)."""
-    out, depth, inside = [], 0, False
+def body_lines(lines, focus=None):
+    """Indexes of lines inside function bodies (between a definition's braces);
+    with `focus` (a regex for the target's name), only the target's body, so
+    mutations never spend trials on the unit's other functions. Falls back to
+    every body when the target's definition cannot be found."""
+    out, depth, inside, keep = [], 0, False, True
     for i, line in enumerate(lines):
         stripped = line.strip()
         if not inside and BODY_START.match(line) and "class " not in line and "struct " not in line:
             inside, depth = True, 0
+            keep = focus is None or bool(re.search(focus, line))
         if inside:
             depth += line.count("{") - line.count("}")
-            if depth > 0 and stripped and not stripped.startswith(("//", "#", "{", "}")):
+            if keep and depth > 0 and stripped and not stripped.startswith(("//", "#", "{", "}")):
                 out.append(i)
             if depth <= 0 and "}" in line:
                 inside = False
+    if focus is not None and not out:
+        return body_lines(lines)
     return out
+
+
+def focus_of(symbol):
+    """Regex for the definition line of the function a mangled name denotes."""
+    found = re.match(r"\?(\w+)@(?:(\w+)@@)?", symbol or "")
+    if not found or symbol.startswith("??"):
+        return None  # constructors, destructors, operators: keep every body
+    name = rf"\b{found.group(2)}\s*::\s*{found.group(1)}\s*\(" if found.group(2) else rf"\b{found.group(1)}\s*\("
+    return name
 
 
 def statement(line):
@@ -153,9 +197,9 @@ def statement(line):
     return s.endswith(";") and not re.match(r"(return|break|continue|goto|case|default)\b", s)
 
 
-def mutate(text, rng):
+def mutate(text, rng, focus=None):
     lines = text.split("\n")
-    body = body_lines(lines)
+    body = body_lines(lines, focus)
     kinds = ["swap", "swap", "cmp", "eq", "commute", "incr", "sign", "flag", "move", "ifelse",
              "const", "forwhile"]
     body_set = set(body)
@@ -305,6 +349,7 @@ def permute(rva, minutes=10.0, seed=None):
             handle.write(json.dumps(result) + "\n")
         return result
     deadline = time.time() + minutes * 60
+    focus = focus_of(symbol)
     current_text, current = best_text, best
     stale = 0
     since_gain = 0  # trials since the best improved
@@ -321,7 +366,7 @@ def permute(rva, minutes=10.0, seed=None):
         trials_before = scorer.trials
         candidate = current_text
         for _ in range(rng.choice((1, 1, 2, 3))):
-            candidate, _kind = mutate(candidate, rng)
+            candidate, _kind = mutate(candidate, rng, focus)
         fitness, exact = scorer.score(candidate)
         if fitness < 0:
             continue
