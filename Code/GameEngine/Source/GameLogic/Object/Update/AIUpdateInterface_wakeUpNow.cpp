@@ -28,16 +28,31 @@ protected:
 	void setWakeFrame(Object *obj, UpdateSleepTime when);
 };
 
+extern class GameLogic *TheGameLogic;
+
+struct GameLogicFrame
+{
+	char m_pad00[0x40];
+	unsigned int m_frame;
+};
+
+#define TheGameLogic (*(GameLogicFrame **)&TheGameLogic)
+
 class AIUpdateInterface
 {
 	char m_pad00[8];
 	Object *m_object;
-	char m_pad0C[0x3BD - 0x0C];
+	char m_pad0C[0x1A8 - 0x0C];
+	unsigned int m_vals1A8[4];
+	unsigned int m_frames1B8[4];
+	unsigned int m_count1C8;
+	char m_pad1CC[0x3BD - 0x1CC];
 	bool m_dead3BD;
 	char m_pad3BE[0x3C2 - 0x3BE];
 	bool m_isInUpdate;
 public:
 	void markAsDead();
+	void rva00262989(unsigned int val);
 protected:
 	void wakeUpNow();
 };
@@ -59,4 +74,26 @@ void AIUpdateInterface::markAsDead()
 	m_dead3BD = true;
 	m_object->setEffectivelyDead(true);
 	return wakeUpNow();
+}
+
+// ?rva00262989@AIUpdateInterface@@QAEXI@Z, retail 0x00262989, 97 bytes.
+// 4-entry frame/val cache at +0x1A8/+0x1B8 with count at +0x1C8: when full
+// find oldest (smallest frame) and reuse it, else append; then store
+// TheGameLogic frame at +0x40 and arg. Layout from retail offsets; frame
+// accessor via GameLogicFrame macro like sibling rva00262FFF TU.
+// Evidence: retail offsets plus TheGameLogic 0x009FE78C plus callers.
+void AIUpdateInterface::rva00262989(unsigned int val)
+{
+	unsigned int slot;
+	if (m_count1C8 == 4) {
+		slot = 0;
+		for (unsigned int i = 1; i < 4; ++i) {
+			if (m_frames1B8[i] < m_frames1B8[slot])
+				slot = i;
+		}
+	} else {
+		slot = m_count1C8++;
+	}
+	m_frames1B8[slot] = TheGameLogic->m_frame;
+	m_vals1A8[slot] = val;
 }
