@@ -1,5 +1,7 @@
 // ?getFontCharsHandle@@YAPAVFontCharsClass@@PBDM_NH@Z
-// partial score=0.97 date=2026-09-24
+// partial score=0.99 date=2026-10-03
+// ?getFontCharsHandle@@YAPAVFontCharsClass@@PBDM_NH@Z
+// partial score=0.99 date=2026-09-30
 // cl: /O1 /G7 /arch:SSE /EHsc
 
 // getFontCharsHandle, retail 0x0009017D (191 bytes).
@@ -13,6 +15,19 @@
 // vector Add. Is_Font, Initialize_GDI_Font, the default ctor and operator new
 // are rows; the Add call needs this TU's own FontCharsClass-star alias pin at
 // 0x0009014A (same 4-byte-element body as the rowed unsigned twin).
+//
+// SHAPE LAW (0.99 re-bank): the Add argument must be an RVALUE, written as the
+// ternary `font ? font : (FontCharsClass *)0`. Passing the local `font`
+// directly makes MSVC register a second exception object for the address-taken
+// local (`push ecx` twice, 194B, font spilled to eax/[ebp-0x14]). The rvalue
+// temporary removes that object and pins font in esi, giving the exact 191B
+// and matching 0x9017D..0x90208. The one remaining wall is scheduler-only:
+// retail stores the temporary to [ebp-0x10] at 0x90209 (inside the
+// Initialize_GDI_Font argument push sequence) while this build stores it at
+// 0x90225 (immediately before the Add call); every other byte is identical.
+// Casts (`(FontCharsClass *)font`, `font + 0`, `0 + font`), a named temp, a
+// function-scope local, an explicit operator new declaration and throw()
+// specs on the ctor/callee were all tried and do not move the store.
 
 class FontCharsClass
 {
@@ -58,6 +73,6 @@ FontCharsClass *getFontCharsHandle(const char *name, float pointSize, bool isBol
 	FontCharsClass *font = new FontCharsClass;
 	font->Initialize_GDI_Font(name, pointSize, isBold, extra);
 	font->Add_Ref();
-	FontCharsList.Add(font, 0);
+	FontCharsList.Add(font ? font : (FontCharsClass *)0, 0);
 	return font;
 }
