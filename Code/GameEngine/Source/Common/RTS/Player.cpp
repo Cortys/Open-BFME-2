@@ -3351,18 +3351,7 @@ struct BfmePlayerRadarEdgeFlag
 };
 
 //-------------------------------------------------------------------------------------------------
-// ?okToPlayRadarEdgeSound@Player@@QAE_NXZ
-// ?Player::okToPlayRadarEdgeSound present-unmatched
-Bool Player::okToPlayRadarEdgeSound( void )
-{
-	return (
-		! ((BfmeVictoryConditionsSlots *)TheVictoryConditions)->bfmeIsPlayerOut( this )
-		&& ! ((BfmePlayerRadarEdgeFlag *)this)->m_bfmeRadarEdgeSoundOff
-		&& ! ((BfmeInGameUIQuietFlag *)TheInGameUI)->m_bfmeSuppressed
-		&& ((BfmeGameLogicFrameSlice *)TheGameLogic)->m_bfmeStarted
-		&& ((BfmeGameLogicFrameSlice *)TheGameLogic)->m_bfmeFrame > 0 );
-
-}
+// Player::okToPlayRadarEdgeSound: interface aliases the verified PlayerRva002AA04C.cpp provider.
 
 //-------------------------------------------------------------------------------------------------
 /** The parameter object has just aquired a radar */
@@ -3391,27 +3380,7 @@ void Player::addRadar( Bool disableProof )
 //-------------------------------------------------------------------------------------------------
 /** The parameter object has is taking its radar away from the player */
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Player_removeRadar_Thunk.cpp
-// ?removeRadar@Player@@QAEX_N@Z present-unmatched
-void Player::removeRadar( Bool disableProof )
-{
-	Bool hadRadar = hasRadar();
-
-	// decrement count
-	DEBUG_ASSERTCRASH( m_radarCount > 0, ("removeRadar: An Object is taking its radar away, but the player radar count says they don't have radar!\n") );
-	--m_radarCount;
-
-	if( disableProof )
-		--m_disableProofRadarCount;// Disable proof is also in the normal refcount
-
-	if( hadRadar && !hasRadar()	&& okToPlayRadarEdgeSound() ) 
-	{
-		// This player just lost radar, so play the "You lost Radar!" sound
-		AudioEventRTS soundToPlay = TheAudio->getMiscAudio()->m_radarOfflineSound;
-		soundToPlay.setPlayerIndex(getPlayerIndex());
-		TheAudio->addAudioEvent(&soundToPlay);
-	}
-}  // end removeRadar
+// Player::removeRadar: byte-exact definition in Player_Radar.cpp.
 
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/Player_radar.cpp
@@ -3463,7 +3432,7 @@ void Player::enableRadar()
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // ?hasRadar@Player@@QBE_NXZ
-// Player::hasRadar: defined in Player_hasRadar.cpp (its row's unit).
+// Player::hasRadar: defined in Player_Radar.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------
