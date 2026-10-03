@@ -6387,3 +6387,6 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva002E75A3@Pathfinder@@QAEXPAUCoord3D@@0@Z	0x002E75A3	304	partial	first half x87 scheduling: fld INV before esi and mov ebx late plus push-pop interleaving; second half exact with hoisted base and imul t=18 model=muse-05 score=0.92 stash=reverse/attempts/0x002e75a3.cpp
 ?Rva002E7964@Pathfinder@@QAEXPAUICoord2D@@_NPBUCoord3D@@@Z	0x002E7964	68	blocked	register ecx vs eax for tmp.x and out t=18 model=muse-05 (stash 0.93 kept)
 ?computeNormalRadialOffset@@YAXABUCoord3D@@AAU1@0PAVObject@@M@Z	0x002E7A62	160	blocked	custom 3-reg ecx eax ebx plus ret vs fastcall t=5 model=muse-05
+?Rva00206DA4Enum@@YGXPAX@Z	0x00206DA4	91	blocked	hashtable iterator layout wall: retail sub esp 0x10 plus node-plus-8 second fetch plus second-plus-0xC string deref plus ebp-4 to ebp-minus-0xC spill vs ours push-ecx frame plus direct second access t=5 model=muse-07
+?rva000EE04A@W3DPropBuffer@@QAEXPBUCoord3D@@M@Z	0x000EE04A	232	partial	float loads folded to subss-mem vs movss-plus-reg radius order jbe-jae t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x000ee04a.cpp
+?clearAllProps@W3DPropBuffer@@QAEXXZ	0x000EE198	107	blocked	clearAllProps layout off by 0xC types at 0x2EE18 vs header dec-inc need O1 but file has none t=12 model=muse-spark
