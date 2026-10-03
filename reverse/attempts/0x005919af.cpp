@@ -1,7 +1,7 @@
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.92 date=2026-09-30
+// partial score=0.92 date=2026-10-03
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.92 date=2026-09-30
+// partial score=0.92 date=2026-10-03 seat8
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // ?rva005919AF@NetPacket@@QAEEPAVNetCommandRef@@@Z @0x005919AF (182B).
 // NetPacket room check with wide-string term: charges type 2 timestamp 5
