@@ -67,7 +67,7 @@ inline locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
 
 typedef ostreambuf_iterator<char, char_traits<char> > _NarrowOut;
 
-template <> _NarrowOut
+template <> inline _NarrowOut
 num_put<char, _NarrowOut>::do_put(_NarrowOut __s, ios_base& __f,
                                   char __fill, bool __val) const {
     if (!(__f.flags() & ios_base::boolalpha))
@@ -83,3 +83,22 @@ num_put<char, _NarrowOut>::do_put(_NarrowOut __s, ios_base& __f,
                                    (char)0, (char)0);
 }
 }
+
+// This boolean formatter is a header inline in the copier units. The anchor
+// retains this unit's row copy and is not retail code.
+class _StlportNarrowNumPutBoolAnchorAccess
+    : public _STL::num_put<char, _STL::_NarrowOut>
+{
+    friend void _bfmeStlportNarrowNumPutBoolInlineAnchor();
+};
+
+#pragma inline_depth(0)
+// ?_bfmeStlportNarrowNumPutBoolInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeStlportNarrowNumPutBoolInlineAnchor()
+{
+    static_cast<_StlportNarrowNumPutBoolAnchorAccess *>(0)
+        ->_STL::num_put<char, _STL::_NarrowOut>::do_put(
+            *static_cast<_STL::_NarrowOut *>(0),
+            *static_cast<_STL::ios_base *>(0), 0, false);
+}
+#pragma inline_depth()
