@@ -482,7 +482,7 @@ static Bool parseDefaultFont( GameFont *font, File *inFile, char *buffer )
 	// eat '=' 
 //	fscanf( inFile, "%*s" );
 	AsciiString str;
-	inFile->scanString(str);
+	((GoalScriptFileSlots*)inFile)->scanString(str);
 
   // Read the rest of the color definition
 	readUntilSemicolon( inFile, buffer, WIN_BUFFER_LENGTH );
