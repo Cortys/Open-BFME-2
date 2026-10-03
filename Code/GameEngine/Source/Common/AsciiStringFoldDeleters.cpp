@@ -111,6 +111,7 @@ class Rva005C31FB
 public:
 	virtual ~Rva005C31FB();
 	Rva005C31FB(int level, const AsciiString &name);
+	void rva005C3209();
 
 private:
 	int m_level;
@@ -127,4 +128,25 @@ Rva005C31FB::Rva005C31FB(int level, const AsciiString &name) : m_level(level), m
 
 Rva005C31FB::~Rva005C31FB()
 {
+}
+
+class Rva00222A8BTarget;
+extern Rva00222A8BTarget *TheRva00222A8BTarget;
+extern const char g_Rva0107301CEmptyString[];
+int __cdecl Rva00524EF4AptCall(Rva00222A8BTarget *t, void *a1, const char *a2, const char *a3);
+
+// ?rva005C3209@Rva005C31FB@@QAEXXZ @0x005C3209 55B: guarded DeleteContent AptCall.
+// If flag +0xC is clear return; else pass level +4 and name text +8 (or
+// g_Rva0107301CEmptyString when null) with literal "DeleteContent" to rowed
+// 0x00524EF4, then clear flag. Evidence: retail cmp/je flag, mov/test/add-8
+// string select, pushes to 0x00524EF4, neighbours Rva005C31FB ctor in this TU,
+// precedent Rva005C394DGo.cpp, callers 0x005C7954 0x005E0DC0.
+void Rva005C31FB::rva005C3209()
+{
+	if (!m_flag0C)
+		return;
+	char *t = *(char **)(void *)&m_name;
+	const char *s = t ? t + 8 : g_Rva0107301CEmptyString;
+	Rva00524EF4AptCall(TheRva00222A8BTarget, (void *)m_level, s, "DeleteContent");
+	m_flag0C = false;
 }
