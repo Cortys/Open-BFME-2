@@ -1,7 +1,5 @@
 // ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z
-// partial score=0.95 date=2026-09-29
-// ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z
-// partial score=0.95 date=2026-09-29
+// partial score=0.95 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD
 // ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z @0x003F3159 51B:
 // __thiscall copy-destroy tail over DynamicPortalLink ranges: rowed copy
@@ -31,7 +29,6 @@ private:
 	char m_pad04[4];
 	DynamicPortalLink *m_finish;
 };
-// ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z present-unmatched
 DynamicPortalLink *Rva003F3159::rva003F3159(DynamicPortalLink *a, DynamicPortalLink *b)
 {
 	_STL::__false_type tag;
