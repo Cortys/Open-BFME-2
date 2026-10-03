@@ -49551,3 +49551,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva006F80C0@BfmeWrapper1279@@QAEX_N@Z,,0x006F80C0,202,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,chain from bfmeErase1279; wrapper walk erase unlink finish
 ??1Rva002572D7Member@@QAE@XZ,,0x002572D7,23,Code/Libraries/Source/WWVegas/WWLib/Rva002572D7MemberDtor.cpp,matched,list clear via 0x00256F84 then free head callers and LINK name
 ?rva00358853@ScriptEngine@@QAEPAUBfmeStringRecord00204A30@@ABVAsciiString@@0M0H@Z,,0x00358853,148,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00358853.cpp,matched,ScriptEngine get-or-create via rowed CRC scan push_back
+?rva004D5DEF@NetAckBothCommandMsg@@QAE?AVAsciiString@@XZ,,0x004D5DEF,151,Code/GameEngine/Source/GameNetwork/NetAckBothCommandMsgContents.cpp,matched,NetAckBoth contents via base commandID origPlayer origExeSID origExeFrame
