@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2renderobj /arch:SSE /G7 /DNDEBUG /MD /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep
+// cl: /Ireference/shims/bfme2_vector3 /Ireference/shims/bfme2renderobj /arch:SSE /G7 /DNDEBUG /MD /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep
 // RenderObjClass::Intersect_Sphere_Quick, from the BFME1 WW3D2 rendobj.cpp
 // at donor revision 071013b3c6f1228dfda315732197bed0fd191209. Donor semantics:
 // obtain the object-space bounding sphere and run the inline quick ray/sphere
@@ -20,11 +20,21 @@ struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
 static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #pragma optimize("", on)
 
+#include "vector3.h" // select the verified three-word constructor before donor math headers
 #include "rendobj.h"
 #include "intersec.h"
 
 bool RenderObjClass::Intersect_Sphere_Quick(IntersectionClass *Intersection, IntersectionResultClass *Final_Result)
 {
 	SphereClass sphere = Get_Bounding_Sphere();
-	return Intersection->Intersect_Sphere_Quick(sphere, Final_Result);
+	// Expand the donor quick-sphere helper: the native 176-byte body
+	// inlines this calculation, including floating-point field assignment.
+	Vector3 sphere_vector;
+	sphere_vector.Set(sphere.Center.X - Intersection->RayLocation->X, sphere.Center.Y - Intersection->RayLocation->Y, sphere.Center.Z - Intersection->RayLocation->Z);
+	Final_Result->Alpha = Vector3::Dot_Product(sphere_vector, *Intersection->RayDirection);
+	Final_Result->Beta = sphere.Radius * sphere.Radius - (Vector3::Dot_Product(sphere_vector, sphere_vector) - Final_Result->Alpha * Final_Result->Alpha);
+	if (Final_Result->Beta < 0.0f) {
+		return Final_Result->Intersects = false;
+	}
+	return Final_Result->Intersects = true;
 }
