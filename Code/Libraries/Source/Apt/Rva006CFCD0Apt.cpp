@@ -1,7 +1,5 @@
 // ?isSpriteInstBase@Rva006CFCD0@@QBEHXZ
 // partial score=0.95 date=2026-09-27
-// ?isSpriteInstBase@Rva006CFCD0@@QBEHXZ
-// partial score=0.95 date=2026-09-27
 // cl: /O2 /MD
 // ?isSpriteInstBase@Rva006CFCD0@@QBEHXZ @0x006CFCD0 91B. Predicate for AptVFT
 // types 13 (0x1A000000) and 18 (0x24000000): returns true when defined and
@@ -27,19 +25,16 @@ class Rva006CFCD0 {
     virtual void vtableSlot0();
     unsigned int m_flags;
 public:
-    int isSpriteInstBase() const;
+    bool isSpriteInstBase() const;
 };
-// ?isSpriteInstBase@Rva006CFCD0@@QBEHXZ present-unmatched
-int Rva006CFCD0::isSpriteInstBase() const
+bool Rva006CFCD0::isSpriteInstBase() const
 {
     if (!this) {
         g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xE2);
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (reinterpret_cast<const BfmeAptValue006DCD20 *>(this)->isUndefined())
-        return 0;
-    if (reinterpret_cast<const Rva006DBB30SarDwordField *>(this)->get() == 0xD
-        || reinterpret_cast<const Rva006DBB30SarDwordField *>(this)->get() == 0x12)
-        return 1;
-    return 0;
+        return false;
+    return reinterpret_cast<const Rva006DBB30SarDwordField *>(this)->get() == 0xD
+        || reinterpret_cast<const Rva006DBB30SarDwordField *>(this)->get() == 0x12;
 }
