@@ -49218,3 +49218,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005C394D@Rva005C394D@@QAEXXZ,,0x005C394D,40,Code/GameEngine/Source/Common/Rva005C394DGo.cpp,matched,AptCall Go with empty fallback via rowed 0x00524EF4
 ?rva005C3209@Rva005C31FB@@QAEXXZ,,0x005C3209,55,Code/GameEngine/Source/Common/AsciiStringFoldDeleters.cpp,matched,guarded DeleteContent AptCall via rowed 0x00524EF4
 ?rva005D2664@Rva005D2664@@QAEXH@Z,,0x005D2664,55,Code/GameEngine/Source/Common/Rva005D2664Method.cpp,matched,indexed clear with guarded Hide tail via 0x005C3E79
+?rva005D269B@Rva005D2664@@QAEXXZ,,0x005D269B,23,Code/GameEngine/Source/Common/Rva005D2664Method.cpp,matched,loop 6x over sibling 0x005D2664

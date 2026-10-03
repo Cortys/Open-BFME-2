@@ -40,6 +40,7 @@ class Rva005D2664
 {
 public:
 	void rva005D2664(int idx);
+	void rva005D269B();
 private:
 	char m_header00[0x1C];
 };
@@ -54,4 +55,13 @@ void Rva005D2664::rva005D2664(int idx)
 	if (!((Rva0057C22FByteChaseField *)e->m_holder04)->get())
 		return;
 	e->m_holder04->rva005C3E79();
+}
+
+// ?rva005D269B@Rva005D2664@@QAEXXZ @0x005D269B 23B: loop 6x over 0x005D2664.
+// Calls sibling rowed 0x005D2664 with idx 0..5. Evidence: retail xor/push/call
+// inc/cmp-6/jl plus chain from 0x005D2664 in this TU.
+void Rva005D2664::rva005D269B()
+{
+	for (int i = 0; i < 6; ++i)
+		rva005D2664(i);
 }
