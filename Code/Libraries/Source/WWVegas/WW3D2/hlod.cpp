@@ -730,7 +730,7 @@ WW3DErrorType HLodDefClass::Load_W3D(ChunkLoadClass & cload)
  *   10/27/2000 gth : Created.                                                                 *
  *=============================================================================================*/
 // ?HLodDefClass::read_proxy_array present-unmatched
-bool HLodDefClass::read_proxy_array(ChunkLoadClass & cload)
+inline bool HLodDefClass::read_proxy_array(ChunkLoadClass & cload)
 {
 	REF_PTR_RELEASE(ProxyArray);
 
@@ -2156,34 +2156,7 @@ int HLodClass::Get_Proxy_Count(void) const
  * HISTORY:                                                                                    *
  *   10/27/2000 gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Get_Proxy present-unmatched
-bool HLodClass::Get_Proxy (int index, ProxyClass &proxy) const
-{
-	bool retval = false;
-
-	if (ProxyArray != NULL) {
-		
-		//
-		//	Lookup the proxy's transform
-		//
-		HTree->Base_Update(Get_Transform());
-		Matrix3D transform = HTree->Get_Transform((*ProxyArray)[index].Get_Bone_Index());
-		Set_Hierarchy_Valid(false);
-		
-		//
-		//	Pass the data onto the proxy object
-		//
-		proxy.Set_Transform(transform);
-		proxy.Set_Name((*ProxyArray)[index].Get_Name());		
-		retval = true;
-
-	} else {
-		proxy.Set_Name ("");
-		proxy.Set_Transform (Matrix3D (1));
-	}
-
-	return retval;
-}
+// HLodClass::Get_Proxy: defined in HLodGetProxy.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -2673,40 +2646,7 @@ int HLodClass::Get_Sub_Object_Bone_Index(int LodIndex, int ModelIndex)	const
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Add_Sub_Object_To_Bone present-unmatched
-int HLodClass::Add_Sub_Object_To_Bone(RenderObjClass * subobj,int boneindex, const Vector3 * offset)
-{
-	WWASSERT(subobj);
-	if ((boneindex < 0) || (boneindex >= HTree->Num_Pivots())) return 0;
-
-	subobj->Set_LOD_Bias(LODBias);
-	
-	ModelNodeClass newnode;
-	newnode.Model = subobj;
-	newnode.Model->Add_Ref();
-	newnode.Model->Set_Container(this);
-	newnode.Model->Set_Animation_Hidden(HTree->Get_Visibility (boneindex) == false);
-	newnode.BoneIndex = boneindex;
-	// BFME: retail copies the caller's Vector3 into the node, zeros when NULL.
-	if (offset) {
-		newnode.Offset = *offset;
-	} else {
-		newnode.Offset.X = newnode.Offset.Y = newnode.Offset.Z = 0.0f;
-	}
-
-	int result = AdditionalModels.Add(newnode);
-
-	Update_Sub_Object_Bits();
-	Update_Obj_Space_Bounding_Volumes();
-	Set_Hierarchy_Valid (false);
-	Set_Sub_Object_Transforms_Dirty(true);
-
-	if (Is_In_Scene()) {
-		subobj->Notify_Added(Scene);
-	}
-	
-	return result;
-}
+// HLodClass::Add_Sub_Object_To_Bone: defined in HLodAttachSubObject.cpp (its row's unit).
 
 
 /***********************************************************************************************
