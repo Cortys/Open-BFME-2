@@ -49420,3 +49420,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0037B3F7@Rva0037B3F7@@QAEXXZ,,0x0037B3F7,54,Code/GameEngine/Source/Common/System/Rva0037B3F7.cpp,matched,fclose clear then MessageStream v18 0x1D unless E70 set
 ?rva0037B7C7@Rva0037B7C7@@QAEXXZ,,0x0037B7C7,47,Code/GameEngine/Source/Common/System/Rva0037B7C7.cpp,matched,fread IAT plus rowed 0x0037B3F7 tail-jmp
 ?Rva0037BA48Get@@YA?AVUnicodeString@@XZ,,0x0037BA48,26,Code/GameEngine/Source/Common/System/Rva0037BA48Get.cpp,matched,rowed StringBase ctor 0x00037E30 plus wide global 0x0081875C
+?rva00276641@Drawable@@QAE_NPAVUnicodeString@@@Z,,0x00276641,109,Code/GameEngine/Source/GameClient/Drawable_rva00276641.cpp,matched,Drawable wide label via rowed 0x00274CB2 plus TheGameText fetch plus wide set
