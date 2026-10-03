@@ -145,3 +145,21 @@ AnimationSoundTree *AnimationSoundTree::rva004CA13D(void const *d1, void const *
 	*(void **)((char *)m_handle.m_header + 0x0C) = m_handle.m_header;
 	return this;
 }
+
+// ?Rva004CA048Construct@@YAXPAXABVRva004C9E94@@@Z, retail 0x004CA048, 18 bytes.
+// Value copy helper for the AnimationSoundTree RB nodes: null-checks dest,
+// then placement-constructs a Rva004C9E94 via its rowed copy ctor 0x004C9F76.
+// Called from the node factory 0x004CA19C with dest node+0x10 and the pair.
+// Evidence: callee rowed 0x004C9F76; caller at 0x004CA1B3; prev 0x004CA018
+// same // cl: line.
+class Rva004C9E94
+{
+public:
+	Rva004C9E94(const Rva004C9E94 &that);
+};
+void __cdecl Rva004CA048Construct(void *dest, const Rva004C9E94 &src)
+{
+	if (!dest)
+		return;
+	new (dest) Rva004C9E94(src);
+}

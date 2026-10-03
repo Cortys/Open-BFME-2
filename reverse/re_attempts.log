@@ -6098,3 +6098,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?Rva0055B65DWrite@@YAXPAXPAXPAX@Z	0x0055B65D	216	blocked	ostringstream wide_ios narrow_string version wall t=5 model=muse-12
 ?rva005EA0C0@Rva005EA183@@QAEXXZ	0x005EA0C0	47	partial	vtable g_00C78174 unresolved DIR32 left as 0 t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x005ea0c0.cpp
 ?rva005EA0F6@Rva005EA183@@QAEXXZ	0x005EA0F6	47	blocked	same vtable wall as 0x005EA0C0 partial no NEW idea t=2 model=muse-01
+??0Rva004C9E5D@@QAE@PBHM@Z	0x004C9E5D	55	blocked	barrier pins mov-first but movss late after push retail before t=18 model=muse-02 (stash 0.96 kept)
