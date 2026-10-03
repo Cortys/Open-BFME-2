@@ -6114,3 +6114,6 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?update@Rva0054484A@@UAE?AW4StateReturnType@@XZ	0x0054452A	72	partial	shared return sunk below body both guards point far second test je vs jne tried separate gives late push and worse t=25 model=muse-11 score=0.93 stash=reverse/attempts/0x0054452a.cpp
 ?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z	0x005440F6	61	partial	esi edi swapped plus neg sbb neg vs test setne t=25 model=muse-11 score=0.93 stash=reverse/attempts/0x005440f6.cpp
 ??0Rva0042FD9E@@QAE@XZ	0x0042FD9E	129	partial	mov ecx edi plus EH state 1 hoisted above zero stores and xorps before or t=30 model=muse-09 score=0.93 stash=reverse/attempts/0x0042fd9e.cpp
+?rva004CA6F3@AnimationSoundTree@@QAEXAAPAUAnimationSoundTreeNode@@PBX@Z	0x004CA6F3	26	partial	ecx-eax mirror on final 3 moves t=14 model=muse-02 score=0.88 stash=reverse/attempts/0x004ca6f3.cpp
+?rva0059FB4F@Rva0059FB4F@@QAE_NPAX@Z	0x0059FB4F	246	blocked	complex EH GameSpy virtuals unknown owner t=8 model=muse-02
+?Rva0041E912Fill@@YG_NABVAsciiString@@PAX@Z	0x0041E912	95	blocked	hashtable ArmorTemplate plus g_00E03124 layout needs donor t=10 model=muse-02
