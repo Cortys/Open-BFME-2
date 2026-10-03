@@ -77,29 +77,13 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-LaserUpdateModuleData::LaserUpdateModuleData()
-{
-	m_punchThroughScalar = 0.0f;
-}
+// LaserUpdateModuleData::LaserUpdateModuleData owned by LaserUpdateModuleDataCtor.cpp (row at 0x00363147).
 
-//-------------------------------------------------------------------------------------------------
-/*static*/ void LaserUpdateModuleData::buildFieldParse(MultiIniFieldParse& p)
-{
-	ModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "MuzzleParticleSystem",		INI::parseAsciiString,	NULL, offsetof( LaserUpdateModuleData, m_particleSystemName ) },
-		{ "TargetParticleSystem",		INI::parseAsciiString,  NULL, offsetof( LaserUpdateModuleData, m_targetParticleSystemName ) },
-		{ "PunchThroughScalar",			INI::parseReal,					NULL, offsetof( LaserUpdateModuleData, m_punchThroughScalar ) },
-		{ 0, 0, 0, 0 }
-	};
-	p.add(dataFieldParse);
-}
+// LaserUpdateModuleData::buildFieldParse owned by ModuleDataBuildFieldParse.cpp (row at 0x00363166).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-LaserUpdate::LaserUpdate( Thing *thing, const ModuleData* moduleData ) : ClientUpdateModule( thing, moduleData )
+inline LaserUpdate::LaserUpdate( Thing *thing, const ModuleData* moduleData ) : ClientUpdateModule( thing, moduleData )
 {
 	//Added By Sadullah Nader
 	//Initialization missing and needed
@@ -479,3 +463,11 @@ void LaserUpdate::loadPostProcess( void )
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?loadPostProcess@Rva006DCD20@@MAEXXZ=?ForceDelete@AptValue@@UAEXXZ")
+
+// Anchor keeps the rowed base ctor (??0ClientUpdateModule 0x006CBCB0) emitted
+// after LaserUpdate::LaserUpdate became inline (select-any): calling the
+// inline ctor forces both it and its base to emit without changing their bytes.
+#pragma inline_depth(0)
+// ?RvaLaserAnchor present-unmatched
+void RvaLaserAnchor(Thing *thing, const ModuleData *moduleData) { char buf[sizeof(LaserUpdate)]; LaserUpdate *p = ::new (buf) LaserUpdate(thing, moduleData); (void)p; }
+#pragma inline_depth()
