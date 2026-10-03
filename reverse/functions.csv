@@ -49086,3 +49086,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005ED7CC@Rva005ED445@@QAEXH@Z,,0x005ED7CC,125,Code/GameEngine/Source/Common/Rva005ED708Apt.cpp,matched,chain via Rva0057A9B7Fire like Rva005FE122 SetPlayerRowState
 ??1?$vector@UBfmeStringRecord005ED5F3@@V?$allocator@UBfmeStringRecord005ED5F3@@@_STL@@@_STL@@QAE@XZ,,0x005EDA4B,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ed5f3_allocate_copy.cpp,matched,vector dtor via whole-class emits Destroy plus free
 ?rva00274445@Drawable@@QAEXM@Z,,0x00274445,87,Code/GameEngine/Source/GameClient/Drawable_rva00274176.cpp,matched,Drawable iface loop plus memset pair via caller 0x00467AB8
+??0Rva006FC1D0@@QAE@XZ,,0x006FC1D0,102,Code/Libraries/Source/Apt/Rva006FC1D0Ctor.cpp,matched,Apt ctor sibling of Rva006D6500 via inlined Rva006D6360 base

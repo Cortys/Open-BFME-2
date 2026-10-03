@@ -5985,3 +5985,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ??0?$hash_map@W4NameKeyType@@VArmorTemplate@@U?$hash@W4NameKeyType@@@rts@@U?$equal_to@W4NameKeyType@@@_STL@@V?$allocator@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@6@@_STL@@QAE@XZ	0x001E3386	31	blocked	hash_map _STL ctor twin of 0x00360B99 calls hashtable twin 0x001E2F8E not 0x00360B59 needs pin not new TU t=18 model=muse-10
 ?rva001E3F4D@Rva001E3F4D@@QAEMPAURva001E3F4DArg@@H@Z	0x001E3F4D	96	blocked	factor movss+mulss vs direct mulss xmm2 vs xmm1 +4B base-late worse t=25 model=muse-10 (stash 0.93 kept)
 ??0Rva002419E2@@QAE@ABV0@@Z	0x002419E2	188	blocked	copy ctor AsciiString Region3D3 list-int movsd-loop vs 12-movs needs donor t=25 model=muse-10
+??0Rva005491E4@@QAE@XZ	0x005491E4	83	blocked	push 0x0a vs 0x1c order around m04 store t=12 model=muse-09 (stash 0.95 kept)
+?rva005490AE@Rva005490D2@@QBEHXZ	0x005490AE	36	blocked	add ecx4 early before test vs retail late after jle regs exact via p-outside t=18 model=muse-09 (stash 0.93 kept)
