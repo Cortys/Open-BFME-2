@@ -50008,3 +50008,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00567F91Copy@@YAXPAVRva00567BD7@@PBV1@@Z,,0x00567F91,18,Code/Libraries/Source/WWVegas/WWLib/Rva00567F91Copy.cpp,matched,conditional copy-construct via rowed copy ctor chain
 ?Rva00567FFCFill@@YAPAVRva00567BD7@@PAV1@IPBV1@@Z,,0x00567FFC,37,Code/Libraries/Source/WWVegas/WWLib/Rva00567FFCFill.cpp,matched,fill via rowed Copy chain returns end caller 0x005680EF
 ??1Rva00567960@@UAE@XZ,,0x00567960,60,Code/GameEngine/Source/Common/Rva00567960Dtor.cpp,matched,MI dtor second-base Rva005C7CBB caller 0x00567D54
+??_GRva00567960@@UAEPAXI@Z,,0x00567D54,28,Code/GameEngine/Source/Common/Rva00567960Dtor.cpp,matched,deleting dtor emits from dtor TU caller vtable slot0
