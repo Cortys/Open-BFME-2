@@ -1,5 +1,3 @@
-// ?rva000B49F9@Rva000B49F9@@QAEEXZ
-// partial score=0.96 date=2026-10-02
 // cl: /O1 /G7 /EHsc
 // ?rva000B49F9@Rva000B49F9@@QAEEXZ, RVA 0x000B49F9, 35 bytes.
 // Flag check: if ModelConditionFlags at +4 fails return true, if byte at
@@ -21,13 +19,15 @@ private:
 	char m_pad60[0x64 - 0x60];
 	unsigned char m_64;
 };
-// ?rva000B49F9@Rva000B49F9@@QAEEXZ present-unmatched
 unsigned char Rva000B49F9::rva000B49F9()
 {
 	if (!((ModelConditionFlags *)((char *)this + 4))->rva000B3EB3())
 		return 1;
-	if (*(unsigned char *)((char *)this + 0x64))
+	else if (*(unsigned char *)((char *)this + 0x64))
 		return 1;
-	unsigned char shifted = (unsigned char)(*(unsigned int *)((char *)this + 0x5C) >> 5);
-	return shifted & 1;
+	else
+	{
+		unsigned char r = (unsigned char)((*(unsigned int *)((char *)this + 0x5C) >> 5) & 1);
+		return r;
+	}
 }
