@@ -3,6 +3,8 @@
 // ?rva0035B570@Rva0035B570@@QAEXXZ
 // partial score=0.97 date=2026-10-03
 // ?rva0035B570@Rva0035B570@@QAEXXZ
+// partial score=0.97 date=2026-10-03
+// ?rva0035B570@Rva0035B570@@QAEXXZ
 // partial score=0.97 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /GX- /Ireference/shims/bfme2_ascii
 // ?rva0035B570@Rva0035B570@@QAEXXZ @0x0035B570 82B
