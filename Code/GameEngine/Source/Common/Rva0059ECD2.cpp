@@ -6,6 +6,12 @@ class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
 int __cdecl Rva00524EF4AptCall(Rva00222A8BTarget *t, void *a1, const char *a2, const char *a3);
 
+class GameWindow
+{
+public:
+	int winEnable(bool enable);
+};
+
 class Rva0059ECD2Aux
 {
 public:
@@ -28,12 +34,15 @@ public:
 	virtual void d09();
 	virtual const char *getStr();
 	void rva0059ECD2(int unused);
+	void rva0059EC72(int unused);
 private:
 	char m_pad04[0x54];
 	Rva0059ECD2Aux *m_p58;
 	char m_pad5C[0x42C];
 	int m_state488;
-	char m_pad48C[0x14];
+	char m_pad48C[0xC];
+	GameWindow *m_win498;
+	GameWindow *m_win49C;
 	unsigned char m_flag4A0;
 };
 
@@ -44,5 +53,15 @@ void Rva0059ECD2::rva0059ECD2(int /*unused*/)
 		Rva00524EF4AptCall(TheRva00222A8BTarget, level, getStr(), "ClosePassword");
 		m_state488 = 1;
 		m_flag4A0 = 0;
+	}
+}
+
+void Rva0059ECD2::rva0059EC72(int /*unused*/)
+{
+	int s = m_state488;
+	if (s == 2 || s == 3) {
+		m_win498->winEnable(false);
+		m_win49C->winEnable(false);
+		m_state488 = 4;
 	}
 }
