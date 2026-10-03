@@ -49400,3 +49400,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??1Rva003FE792@@QAE@XZ,,0x003FE6D5,19,Code/GameEngine/Source/Common/Rva003FE792.cpp,matched,TreeHint dtor with vtable and Release tail
 ??_GRva003FE792@@QAEPAXI@Z,,0x003FE7CA,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003FE792.cpp,matched,deleting dtor via rowed dtor and delete
 ?Rva003FECCASetPlayerFaction@@YAXPAPAX@Z,,0x003FECCA,52,Code/GameEngine/Source/GameClient/Rva003FECCA.cpp,matched,UI firer SetPlayerFaction via empty-or-label and invoke
+?rva0059E848@Rva0059E848@@QAEXXZ,,0x0059E848,25,Code/GameEngine/Source/Common/Rva0059E848Flush.cpp,matched,single-element vector flush via G7 and-al plus barrier reload
