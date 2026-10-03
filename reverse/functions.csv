@@ -49700,3 +49700,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$__copy_ptrs@PBUBfmePod8@@PAU1@@_STL@@YAPAUBfmePod8@@PBU1@0PAU1@@Z,,0x002D4633,27,Code/Libraries/Source/WWVegas/WWLib/Rva002D4633CopyWrapper.cpp,matched,3-arg forwarder via rowed 4-arg 0x005B09BB with false_type temp
 ??0Rva0041E4A3@@QAE@XZ,,0x0041E4A3,33,Code/GameEngine/Source/Common/Rva0041E4A3Ctor.cpp,matched,opaque ctor base 0x1B4E63 plus vector BfmeE16 plus vtable 0x83AEA8
 ?rva0041E561@Rva0041E4A3@@QAEXXZ,,0x0041E561,329,Code/GameEngine/Source/Common/Rva0041E561.cpp,matched,vslot1 of 0x83AEA8 six ModuleData news plus rowed push_back
+?rva0058E20D@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E20D,202,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E20D.cpp,matched,static NetPacket factory for Rva004D58DE via ctors and SetData
