@@ -50081,3 +50081,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BC33DDo@@YGXPAVParameter@@MMM@Z,,0x003BC33D,63,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC33DDo.cpp,matched,leaf TerrainLogic slot 0x74 then slot 0x80 floats
 ?Rva003BCADAForward@@YAXXZ,,0x003BCADA,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCADAForward.cpp,matched,leaf TacticalView slot 0xa0 tail forward
 ?Rva003BCAE8Forward@@YAXXZ,,0x003BCAE8,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCAE8Forward.cpp,matched,leaf TacticalView slot 0xa4 tail forward
+?rva003142E1@Rva003141BCWindowView@@QAEPAV1@HH_N0@Z,,0x003142E1,121,Code/GameEngine/Source/GameClient/GUI/GameWindowCursorSearch.cpp,matched,unlock child search Version hidden recursion

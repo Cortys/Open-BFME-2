@@ -20,6 +20,7 @@ public:
  CursorRegion m_region; unsigned char opaque24[0x1F8-0x24];
  Rva003141BCWindowView*m_next; void*unknown1FC; Rva003141BCWindowView*m_parent; Rva003141BCWindowView*m_child;
  Rva003141BCWindowView*winPointInChild(int,int,bool,bool=false);
+ Rva003141BCWindowView*rva003142E1(int,int,bool,bool);
 };
 class AudioManager; extern AudioManager *TheAudio;
 struct Rva003141BCMiscView { char unknown[0x88]; OpaqueRefElement4 disabledClick; };
@@ -241,4 +242,24 @@ Rva003141BCWindowView *CursorManagerView::getWindowUnderCursor( Int x, Int y, Bo
 	}
 
 	return window;
+}
+
+Rva003141BCWindowView *Rva003141BCWindowView::rva003142E1(int x, int y, bool a3, bool a4)
+{
+	for (Rva003141BCWindowView *child = m_child; child; child = child->m_next) {
+		int ox = child->m_region.lo.x;
+		int oy = child->m_region.lo.y;
+		Rva003141BCWindowView *parent = child->m_parent;
+		while (parent) {
+			ox += parent->m_region.lo.x;
+			oy += parent->m_region.lo.y;
+			parent = parent->m_parent;
+		}
+		if (x >= ox && x <= ox + child->m_size.x && y >= oy && y <= oy + child->m_size.y) {
+			if (a3 != true || !BitTest(child->m_status, WIN_STATUS_HIDDEN)) {
+				return child->winPointInChild(x, y, a4, false);
+			}
+		}
+	}
+	return this;
 }
