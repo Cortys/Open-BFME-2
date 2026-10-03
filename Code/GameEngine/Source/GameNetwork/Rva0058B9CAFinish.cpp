@@ -1,7 +1,3 @@
-// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z
-// partial score=0.97 date=2026-09-30
-// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z
-// partial score=0.97 date=2026-09-30
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /arch:SSE
 //
 // ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z @0x0058B9CA (177B):
@@ -75,20 +71,21 @@ public:
 	Real m_latencies[CONNECTION_LATENCY_HISTORY_LENGTH]; // +0x24
 };
 
-// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z present-unmatched
 NetCommandRef *Connection::rva0058B9CA(UnsignedShort commandID, UnsignedByte playerID, UnsignedInt timestamp, UnsignedInt executionFrame)
 {
 	NetCommandRef *pendingCommandRef = m_netCommandList->getFirstMessage();
-	while ((pendingCommandRef != 0) && ((pendingCommandRef->getCommand()->m_id != commandID) ||
-		(pendingCommandRef->getCommand()->m_playerID != playerID) ||
-		(pendingCommandRef->getCommand()->m_executionFrame != executionFrame) ||
-		(pendingCommandRef->getCommand()->m_timestamp != timestamp))) {
+	NetCommandMsg *cmd = 0;
+	while (pendingCommandRef != 0) {
+		cmd = pendingCommandRef->getCommand();
+		if (cmd->m_id == commandID && cmd->m_playerID == playerID &&
+			cmd->m_executionFrame == executionFrame && cmd->m_timestamp == timestamp)
+			break;
 		pendingCommandRef = pendingCommandRef->getNext();
 	}
 	if (pendingCommandRef == 0) {
 		return 0;
 	}
-	Int latencyHistoryIndex = pendingCommandRef->getCommand()->m_id % CONNECTION_LATENCY_HISTORY_LENGTH;
+	Int latencyHistoryIndex = cmd->m_id % CONNECTION_LATENCY_HISTORY_LENGTH;
 	m_averageLatency -= m_latencies[latencyHistoryIndex] * g_00C1B4F0;
 	Real roundTripMilliseconds = (Real)(timeGetTime() - pendingCommandRef->getTimeLastSent());
 	m_averageLatency += roundTripMilliseconds * g_00C1B4F0;
