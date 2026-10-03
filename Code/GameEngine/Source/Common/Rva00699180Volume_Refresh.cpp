@@ -24,6 +24,7 @@ public:
 	void rva00052048(int idx);
 	void rva00052098(int b);
 	void rva000520C6();
+	void rva000522DF(float volume);
 	void setVolumes(float volume, unsigned char flags);
 
 	char m_pad0[4];
@@ -159,6 +160,24 @@ void Rva00699180Owner::rva000520C6()
 			}
 		}
 	}
+}
+
+extern float g_Va00BBB8D8;
+
+// ?rva000522DF@Rva00699180Owner@@QAEXM@Z retail 0x000522DF 46B
+// Unlock: clamp volume 0..1 into m_vol at +0x98 then refreshAll.
+// Evidence: prev 0x000520C6 next 0x000523A0 same TU same class; m_vol store +0x98; float 1.0 via g_Va00BBB8D8; caller 0x0005C8FC.
+void Rva00699180Owner::rva000522DF(float volume)
+{
+	float v;
+	if (0.0f > volume)
+		v = 0.0f;
+	else if (volume > g_Va00BBB8D8)
+		v = g_Va00BBB8D8;
+	else
+		v = volume;
+	m_vol = v;
+	refreshAll();
 }
 
 void Rva00699180Owner::setVolumes(float volume, unsigned char flags)
