@@ -1,20 +1,26 @@
 // ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z
-// partial score=0.99 date=2026-09-30
-// ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z
-// partial score=0.99 date=2026-09-26
-// ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z
-// partial score=0.99 date=2026-09-26
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// partial score=0.995 date=2026-10-03
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
-// LAN-lobby user-name preference (retail 0x0044D47F): a UserPreferences
-// whose setUserName stores the quoted-printable encoding of a wide name
-// under the literal "UserName" key. Zero Hour/BFME1 donor is
-// LanLobbyUserNamePrefs::setUserName (same key, same shape); BFME2 takes
-// the name by const reference where the donor took it by value.
+// Game-mode-keyed preferences (vtable 0x00C3EF60, retail 0x0044D50D-
+// 0x0044D774): a UserPreferences whose typed accessors store every key as
+// "<mode>:<key>", with mode 0 = "Rts", 1 = "Strat" (War of the Ring) and
+// anything else unprefixed. The prefixed key is formatted into a scratch
+// AsciiString member (+0x18) and handed to the base accessor; write is a
+// plain forward. The class name is descriptive -- no retail spelling is
+// known. LANPreferences (vtable 0x00C3EF04) derives from it. The
+// UserPreferences model is the one in Common/UserPreferences.cpp.
 
 #include <map>
 #include <stdlib.h>
+
+struct _iobuf;
+typedef struct _iobuf FILE;
+extern "C" __declspec(dllimport) FILE *__cdecl _wfopen(const unsigned short *name, const unsigned short *mode);
+extern "C" __declspec(dllimport) int __cdecl fprintf(FILE *fp, const char *fmt, ...);
+extern "C" __declspec(dllimport) int __cdecl fclose(FILE *fp);
+extern "C" __declspec(dllimport) char *__cdecl fgets(char *buf, int n, FILE *fp);
 
 typedef bool Bool;
 typedef int Int;
@@ -28,79 +34,11 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-	Int compare(const char *other) const;
-	Int compareNoCase(const char *other) const;
-	void set(const T *text);
-	void trim(void);
-	Bool nextToken(StringBase *token, const char *seps);
 
-protected:
-	BfmeStringData<T> *m_data;
-};
 
-template <> class StringBase<unsigned short>
-{
-	friend class UnicodeString;
-	StringBase(const StringBase &other);
-	void releaseBuffer();
-
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-	bool isEmpty() const;
-	void set(const StringBase &other);
-	void trim(void);
-	Bool nextToken(StringBase *token, const unsigned short *seps);
-	void concat(const StringBase &other);
-	void concat(const unsigned short *text);
-
-protected:
-	BfmeStringData<unsigned short> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	static const AsciiString TheEmptyString;
-
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-	AsciiString &operator=(const char *text) { set(text); return *this; }
-
-	const char *str() const { return m_data ? &m_data->text[0] : ""; }
-	Bool isEmpty() const { return m_data == 0 || m_data->length == 0; }
-	void format(const char *fmt, ...);
-	void toLower();
-	Bool operator==(const char *other) const { return compare(other) == 0; }
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-	UnicodeString &operator=(const UnicodeString &other) { set(other); return *this; }
-	void translate(const char *text);
-	void trim(void) { StringBase<unsigned short>::trim(); }
-	Bool nextToken(UnicodeString *token, const unsigned short *seps)
-	{
-		return StringBase<unsigned short>::nextToken(token, seps);
-	}
-	const unsigned short *str() const { return m_data ? &m_data->text[0] : L""; }
-};
+#include "unicode_string.h"
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 
@@ -123,6 +61,8 @@ public:
 	UserPreferences();
 	virtual ~UserPreferences();
 
+	// MSVC lays overloaded virtuals out in reverse declaration order, so
+	// load(UnicodeString) takes slot 1 and load(AsciiString) slot 2.
 	virtual Bool load(const AsciiString &fname);
 	virtual Bool load(const UnicodeString &fname);
 	virtual Bool write(void);
@@ -142,18 +82,47 @@ protected:
 	UnicodeString m_filename;
 };
 
-AsciiString UnicodeStringToQuotedPrintable(UnicodeString original);
+class GameModePreferences : public UserPreferences
+{
+public:
+	GameModePreferences(Int mode);
+	virtual ~GameModePreferences();
 
+	virtual Bool write(void);
+	virtual Bool getBool(const AsciiString &key, Bool defaultValue) const;
+	virtual Real getReal(const AsciiString &key, Real defaultValue) const;
+	virtual Int getInt(const AsciiString &key, Int defaultValue) const;
+	virtual void setBool(const AsciiString &key, Bool val);
+	virtual void setReal(const AsciiString &key, Real val);
+	virtual void setInt(const AsciiString &key, Int val);
+
+	Int getStrategicScenario(void);
+	void setStrategicScenario(Int scenario);
+	Int rva0054F5A4(void);
+	void rva0054F7C0(Int val);
+	void rva0044DDFB(int *vals);
+	Int rva0044D836(void);
+	Int rva0044D88C(void);
+	AsciiString rva0044DBA5(void);
+	void rva0044DC54(Int val);
+	void rva0044DCB9(Int val);
+	void rva0044DD1E(Int val);
+	void rva0044DD83(AsciiString val);
+
+private:
+	const AsciiString &makeKey(const char *key) const;
+
+	Int m_mode;
+	mutable AsciiString m_key;
+};
+AsciiString UnicodeStringToQuotedPrintable(UnicodeString original);
 class LanLobbyUserNamePrefs : public UserPreferences
 {
 public:
 	void setUserName(UnicodeString user);
 };
-
-// ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z @0x44D47F
 void LanLobbyUserNamePrefs::setUserName(UnicodeString user)
 {
 	AsciiString key("UserName");
-	AsciiString encoded = UnicodeStringToQuotedPrintable(user);
-	(*this)[key] = encoded;
+	(*this)[key].set(UnicodeStringToQuotedPrintable(user));
 }
