@@ -49641,3 +49641,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva004D376A@@QAE@XZ,,0x004D376A,177,Code/GameEngine/Source/Common/Rva004D376ACtor.cpp,matched,ctor vtable 0x00C601DC grid 8x8 exact via align
 ?rva004D38D8@Rva004D38D8@@QAE_NM@Z,,0x004D38D8,46,Code/GameEngine/Source/Common/Rva004D38D8Check.cpp,matched,ratio check vs float arg early true when count <= 0
 ?rva004D3AB2@DisconnectManager@@QAEEH@Z,,0x004D3AB2,48,Code/GameEngine/Source/GameNetwork/DisconnectManagerRva004D3AB2.cpp,matched,timeout check vs GlobalData threshold early 0 when slot -1
+?Rva00373D28Get@@YGPAVRva00373EC6@@PAVObject@@@Z,,0x00373D28,29,Code/GameEngine/Source/GameLogic/Object/Rva00373D28Finish.cpp,matched,free __stdcall forwarder Object::rva002931F5(false) then rowed rva0028F4BC; explicit null return emits retail redundant jmp-xor null path
