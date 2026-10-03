@@ -7342,3 +7342,4 @@ _qsort,0x00629B4A,"msvcr71 qsort reached through the gen-import thunk ?ji_00629b
 ??0TreeHintOpaque0043671B@@QAE@XZ,0x00229811,twin of rowed Rva default ctor at 0x00229811 same UnicodeString plus subobject layout destroyed as TreeHintOpaque 0x00229840 for subscript 0x00437380
 _tolower,0x006298D4,CRT tolower import thunk called directly by the EAStringC utf8 lowercase fold 0x006D6100 (symmetric with the existing _toupper pin at 0x006298DA)
 ?rva006d4dc0@@YAXPADH@Z,0x006D4DC0,address-derived UTF-8 encoder writing one codepoint into an existing sequence; called by the EAStringC utf8 case folds 0x006D6100/0x006D6170; validates the sequence length via rva006d4ca0 and utf8EncodedLength 0x006D3DB0
+??4Video@@QAEAAV0@ABV0@@Z,0x00689380,native Video memberwise assignment; same three-string-plus-POD body as the rowed Rva000C3380 copy ctor ICF fold at this address; returns this (mov eax esi) and is called by INI::parseVideoDefinition 0x0075A4DC
