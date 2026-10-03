@@ -34,7 +34,6 @@ public:
 	void rva004E9B70();
 };
 
-// ?rva004E9B70@Rva004E9B70@@QAEXXZ present-unmatched
 void Rva004E9B70::rva004E9B70()
 {
 	RvaVector *v = &m_vec;
@@ -48,6 +47,6 @@ void Rva004E9B70::rva004E9B70()
 			::operator delete(p);
 			++pp;
 		} while (pp != end);
+		g_00E04484.erase(g_00E04484.m_begin, g_00E04484.m_end);
 	}
-	g_00E04484.erase(g_00E04484.m_begin, g_00E04484.m_end);
 }
