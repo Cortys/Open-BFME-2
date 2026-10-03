@@ -6278,3 +6278,5 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva005BC4CEStart@@YAHH@Z	0x005BC4CE	135	partial	size exact 135/135 41insns 0regdiffs branch polarity je-vs-jne fail-in-middle vs fail-at-end t=18 model=muse-18 score=0.96 stash=reverse/attempts/0x005bc4ce.cpp
 ?Rva0055AC77Load@@YAXPAVXfer@@PAUImageMap@@@Z	0x0055AC77	281	blocked	complex image map xfer with EH throw plus RB increment plus global lookup needs donor t=28 model=muse-11
 ?rva0043E3E2@Rva0043E3E2@@QAEXHH@Z	0x0043E3E2	186	blocked	frame and temp-slot mismatch with register and push-pop divergence suggests layout-model wrong t=5 model=muse-14
+?rva00086A94@Rva000869CF@@QAEXHHM@Z	0x00086A94	152	blocked	first two loads swapped eax-vs-edx t=12 model=muse-08 (stash 0.95 kept)
+?rva004D839A@Rva004D839A@@QAEXXZ	0x004D839A	55	partial	global TheGameLogic load retail [0xdfe78c] vs obj [0] size exact 21 insns t=6 model=muse-08 score=0.93 stash=reverse/attempts/0x004d839a.cpp
