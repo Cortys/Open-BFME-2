@@ -129,3 +129,15 @@ void Player::removeRadar(bool disableProof)
         reinterpret_cast<Rva002AA9C2AudioView *>(TheAudio)->addAudioEvent(&event);
     }
 }
+
+void Player::addRadar(bool disableProof)
+{
+    bool had = hasRadar();
+    ++radarCount;
+    if (disableProof) ++proofCount;
+    if (!had && hasRadar() && okToPlayRadarEdgeSound()) {
+        BfmeAudioEventPrefix136 event(reinterpret_cast<Rva002AA9C2AudioView *>(TheAudio)->getMiscAudio()->radarOnline, 0);
+        reinterpret_cast<Rva0033F15DDwordSlot *>(&event)->set(playerIndex);
+        reinterpret_cast<Rva002AA9C2AudioView *>(TheAudio)->addAudioEvent(&event);
+    }
+}

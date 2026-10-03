@@ -3356,26 +3356,7 @@ struct BfmePlayerRadarEdgeFlag
 //-------------------------------------------------------------------------------------------------
 /** The parameter object has just aquired a radar */
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Player_addRadar_Thunk.cpp
-// ?addRadar@Player@@QAEX_N@Z present-unmatched
-void Player::addRadar( Bool disableProof )
-{
-	Bool hadRadar = hasRadar();
-
-	// increment count
-	++m_radarCount;
-
-	if( disableProof )
-		++m_disableProofRadarCount;// Disable proof is also in the normal refcount
-
-	if( !hadRadar && hasRadar()	&& okToPlayRadarEdgeSound() )
-	{
-		// This player just got radar, so play the "You have Radar!" sound
-		AudioEventRTS soundToPlay = TheAudio->getMiscAudio()->m_radarOnlineSound;
-		soundToPlay.setPlayerIndex(getPlayerIndex());
-		TheAudio->addAudioEvent(&soundToPlay);
-	}
-}  // end addRadar
+// Player::addRadar: byte-exact definition in Player_Radar.cpp.
 
 //-------------------------------------------------------------------------------------------------
 /** The parameter object has is taking its radar away from the player */
