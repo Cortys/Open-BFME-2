@@ -51,6 +51,7 @@ public:
 	char m_pad486[0x490 - 0x486];
 	int m_490;
 	void rva00552CF9(const Rva00552CF9 *src);
+	void rva00552E9E(int v);
 };
 
 void Rva00552CF9::rva00552CF9(const Rva00552CF9 *src)
@@ -73,4 +74,11 @@ void Rva00552CF9::rva00552CF9(const Rva00552CF9 *src)
 	m_8.copy(&src->m_8);
 	m_1B0.copy(&src->m_1B0);
 	m_340.copy(&src->m_340);
+}
+void Rva00552CF9::rva00552E9E(int v)
+{
+	m_484 = (unsigned short)v;
+	m_2F4 = (unsigned short)v;
+	m_14C = (unsigned short)v;
+	m_4 = (unsigned short)v;
 }
