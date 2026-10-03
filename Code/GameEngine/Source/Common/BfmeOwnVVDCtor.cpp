@@ -46,8 +46,9 @@ class BfmeOwnVVD : public BfmeBaseVVD
 public:
 	BfmeOwnVVD();
 	~BfmeOwnVVD();
-	unsigned char Rva0042E8C1();
-	void rva0042E804();
+ unsigned char Rva0042E8C1();
+ void rva0042E804();
+ void rva0042E75F(unsigned int);
 
 private:
 	unsigned int m_04;                    // +0x04 body-set
@@ -176,8 +177,11 @@ public:
 	virtual void i37();
 	virtual void i38();
 	virtual void i39();
-	virtual void i40();
-	virtual void i41(int);
+ virtual void i40();
+ virtual void i41(int);
+ char m_pad04[0x11];
+ unsigned char m_15;
+ unsigned char m_16;
 };
 extern InGameUI *TheInGameUI;
 
@@ -288,8 +292,18 @@ public:
 	virtual void t101();
 	virtual void t102();
 	virtual void t103();
-	virtual void t104();
-	virtual void t105(int);
+ virtual void t104();
+ virtual void t105(int);
+ virtual void t106();
+ virtual void t107();
+ virtual void t108();
+ virtual void t109();
+ virtual void t110();
+ virtual void t111();
+ virtual void t112();
+ virtual void t113();
+ virtual void t114();
+ virtual bool t115();
 };
 extern TacticalView *TheTacticalView;
 
@@ -314,31 +328,71 @@ public:
 	virtual void m15();
 	virtual void m16();
 	virtual void m17();
-	virtual void m18();
-	virtual void m19(void *p);
+ virtual void m18();
+ virtual void m19(void *p);
+ char m_pad04[0x4fa4 - 4];
+ void *m_4fa4;
 };
 extern Mouse *TheMouse;
+
+class ClientFrameSubsystem
+{
+public:
+ char m_pad[0xc0];
+ unsigned char m_c0;
+};
+extern ClientFrameSubsystem *TheGameClient;
+
+extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
 
 class StatsCollector
 {
 public:
-	void endScrollTime();
+ void endScrollTime();
+ void startScrollTime();
 };
 extern StatsCollector *g_00E032F8;
 extern void *g_00DC8874;
 
 void BfmeOwnVVD::rva0042E804()
 {
-	m_38 = 0;
-	m_1c = 0;
-	TheInGameUI->i41(0);
-	if (m_39 == 0)
-		TheTacticalView->t105(0);
-	TheMouse->m19(g_00DC8874);
-	m_148 = 0;
-	if (g_00E032F8 == 0)
-		return;
-	return g_00E032F8->endScrollTime();
+ m_38 = 0;
+ m_1c = 0;
+ TheInGameUI->i41(0);
+ if (m_39 == 0)
+  TheTacticalView->t105(0);
+ TheMouse->m19(g_00DC8874);
+ m_148 = 0;
+ if (g_00E032F8 == 0)
+  return;
+ return g_00E032F8->endScrollTime();
+}
+
+// ?rva0042E75F@BfmeOwnVVD@@QAEXI@Z @0x0042E75F 165B evidence: same BfmeOwnVVD layout m_38 m_39 m_148 callers 0x0042EBEC 0x0042ED6E 0x0042F187 TheInGameUI +0x15 +0x16 slot 0xa4 TheTacticalView slot 0x1cc 0x1a4 TheGameClient +0xc0 TheMouse +0x4fa4 StatsCollector startScrollTime row timeGetTime IAT
+void BfmeOwnVVD::rva0042E75F(unsigned int arg)
+{
+ if (TheInGameUI->m_15 == 0)
+  return;
+ if (TheInGameUI->m_16 == 0)
+  return;
+ if (TheTacticalView->t115())
+  return;
+ if (TheGameClient->m_c0 != 0)
+  return;
+ void *tmp = TheMouse->m_4fa4;
+ m_38 = 1;
+ g_00DC8874 = tmp;
+ TheInGameUI->i41(1);
+ if (m_39 == 0)
+  TheTacticalView->t105(1);
+ if (arg != m_148)
+ {
+  m_148 = arg;
+  m_pad14c = timeGetTime();
+ }
+ if (g_00E032F8 == 0)
+  return;
+ g_00E032F8->startScrollTime();
 }
 
 // ?g_bfmeRva42E8C1Add@@3IA: the global at this VA is ?g_Va00DBA4E4@@3HA; this name is an alias for it.
