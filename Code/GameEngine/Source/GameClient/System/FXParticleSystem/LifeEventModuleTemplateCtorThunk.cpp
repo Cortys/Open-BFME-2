@@ -11,14 +11,12 @@ class ModuleTemplate
 {
 public:
     virtual ~ModuleTemplate();
-    virtual void v1() = 0;
 };
 
 class SecondaryModuleBase
 {
 public:
     virtual ~SecondaryModuleBase();
-    virtual void v1() = 0;
 };
 
 class ModuleInfo
@@ -50,7 +48,6 @@ class LifeEventModuleInfo
 public:
     LifeEventModuleInfo();
     virtual ~LifeEventModuleInfo();
-    virtual void v1() = 0;
 };
 
 class LifeEventModuleTemplate : public CategoryModuleTemplate<8>, public LifeEventModuleInfo
