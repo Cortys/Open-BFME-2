@@ -105,8 +105,14 @@ template <class T>
 class VectorClass
 {
 public:
+	virtual ~VectorClass()
+	{
+	}
+
 	T *Vector;
 	int VectorMax;
+	bool IsValid;
+	bool IsAllocated;
 	bool VectorClassPad[2];
 };
 
@@ -134,7 +140,7 @@ public:
 	bool Has_Time_Variant_Texture_Mappers();
 
 private:
-	unsigned char m_pad[0x0C - 4];
+	unsigned char m_pad[0x08 - 4];
 	DynamicVectorClass<VertexMaterialClass *> VertexMaterials;
 };
 
