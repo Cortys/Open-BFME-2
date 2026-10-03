@@ -114,39 +114,9 @@ static Real heightToSpeed(Real height)
 } 
 
 //-------------------------------------------------------------------------------------------------
-// ?PhysicsBehaviorModuleData::PhysicsBehaviorModuleData present-unmatched
-PhysicsBehaviorModuleData::PhysicsBehaviorModuleData()
-{
-	m_mass = DEFAULT_MASS;
-	m_shockResistance = 0.0f;
-	m_shockMaxYaw = DEFAULT_SHOCK_YAW;
-	m_shockMaxPitch = DEFAULT_SHOCK_PITCH;
-	m_shockMaxRoll = DEFAULT_SHOCK_ROLL;
-	
-	m_forwardFriction = DEFAULT_FORWARD_FRICTION;
-	m_lateralFriction = DEFAULT_LATERAL_FRICTION;
-	m_ZFriction = DEFAULT_Z_FRICTION;
-	m_aerodynamicFriction = DEFAULT_AERO_FRICTION;
-	m_centerOfMassOffset = 0.0f;
-	m_allowBouncing = false;
-	m_allowCollideForce = true;
-	m_killWhenRestingOnGround = false;
-	m_minFallSpeedForDamage = heightToSpeed(40.0f);
-	m_fallHeightDamageFactor = 1.0f;	// was 10. now is 1.
-	/*
-		thru some bizarre editing mishap, we have been double-apply pitch/roll/yaw rates
-		to objects for, well, a long time, it looks like. I have corrected that problem
-		in the name of efficiency, but to maintain the same visual appearance without having
-		to edit every freaking INI in the world at this point, I am just multiplying 
-		all the results by a factor so that the effect is the same (but with less execution time).
-		I have put this factor into INI in the unlikely event we ever need to change it,
-		but defaulting it to 2 is, in fact, the right thing for now... (srj)
-	*/
-	m_pitchRollYawFactor = 2.0f;
-	m_vehicleCrashesIntoBuildingWeaponTemplate = TheWeaponStore->findWeaponTemplate("VehicleCrashesIntoBuildingWeapon");
-	m_vehicleCrashesIntoNonBuildingWeaponTemplate = TheWeaponStore->findWeaponTemplate("VehicleCrashesIntoNonBuildingWeapon");
-
-}
+// LINK-DUP: ??0PhysicsBehaviorModuleData@@QAE@XZ owned by PhysicsBehaviorModuleDataCtor.cpp; declare only here.
+// LINK-DUP: ?buildFieldParse@PhysicsBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z owned by BehaviorModuleDataBuildFieldParse.cpp; declare only here.
+// LINK-DUP: ??0PhysicsBehavior@@QAE@PAVThing@@PBVModuleData@@@Z owned by PhysicsBehaviorCtor.cpp; declare only here.
 
 //-------------------------------------------------------------------------------------------------
 static void parseHeightToSpeed( INI* ini, void * /*instance*/, void *store, const void* /*userData*/ )
@@ -166,81 +136,10 @@ static void parseFrictionPerSec( INI* ini, void * /*instance*/, void *store, con
 } 
 
 //-------------------------------------------------------------------------------------------------
-/*static*/ void PhysicsBehaviorModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "Mass",								INI::parsePositiveNonZeroReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_mass ) },
-
-		{ "ShockResistance",		INI::parsePositiveNonZeroReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_shockResistance ) },
-		{ "ShockMaxYaw",				INI::parsePositiveNonZeroReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_shockMaxYaw ) },
-		{ "ShockMaxPitch",			INI::parsePositiveNonZeroReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_shockMaxPitch ) },
-		{ "ShockMaxRoll",				INI::parsePositiveNonZeroReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_shockMaxRoll ) },
-
-		{ "ForwardFriction",			parseFrictionPerSec,		NULL, offsetof( PhysicsBehaviorModuleData, m_forwardFriction ) },
-		{ "LateralFriction",			parseFrictionPerSec,		NULL, offsetof( PhysicsBehaviorModuleData, m_lateralFriction ) },
-		{ "ZFriction",						parseFrictionPerSec,		NULL, offsetof( PhysicsBehaviorModuleData, m_ZFriction ) },
-		{ "AerodynamicFriction",	parseFrictionPerSec,		NULL, offsetof( PhysicsBehaviorModuleData, m_aerodynamicFriction ) },
-
-		{ "CenterOfMassOffset",	INI::parseReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_centerOfMassOffset ) },
-		{ "AllowBouncing",			INI::parseBool,		NULL, offsetof( PhysicsBehaviorModuleData, m_allowBouncing ) },
-		{ "AllowCollideForce",	INI::parseBool,		NULL, offsetof( PhysicsBehaviorModuleData, m_allowCollideForce ) },
-		{ "KillWhenRestingOnGround", INI::parseBool, NULL, offsetof( PhysicsBehaviorModuleData, m_killWhenRestingOnGround) },
-
-		{ "MinFallHeightForDamage",			parseHeightToSpeed,		NULL, offsetof( PhysicsBehaviorModuleData, m_minFallSpeedForDamage) },
-		{ "FallHeightDamageFactor",			INI::parseReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_fallHeightDamageFactor) },
-		{ "PitchRollYawFactor",			INI::parseReal,		NULL, offsetof( PhysicsBehaviorModuleData, m_pitchRollYawFactor) },
-
-		{ "VehicleCrashesIntoBuildingWeaponTemplate", INI::parseWeaponTemplate, NULL, offsetof(PhysicsBehaviorModuleData, m_vehicleCrashesIntoBuildingWeaponTemplate) },
-		{ "VehicleCrashesIntoNonBuildingWeaponTemplate", INI::parseWeaponTemplate, NULL, offsetof(PhysicsBehaviorModuleData, m_vehicleCrashesIntoNonBuildingWeaponTemplate) },
-
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-}
-
-//-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 
 const Real INVALID_VEL_MAG = -1.0f;
-
-//-------------------------------------------------------------------------------------------------
-// ?PhysicsBehavior::PhysicsBehavior present-unmatched
-PhysicsBehavior::PhysicsBehavior( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	m_accel.zero();
-	m_prevAccel = m_accel;
-	m_vel.zero();
-	m_velMag = 0.0f;
-	m_yawRate = 0.0f;
-	m_rollRate = 0.0f;
-	m_pitchRate = 0.0f;
-	m_mass = getPhysicsBehaviorModuleData()->m_mass;
-	m_motiveForceExpires = 0;
-
-	m_flags = 0;
-	m_extraBounciness = 0.0f;
-	m_extraFriction = 0.0f;
-
-	m_currentOverlap = INVALID_ID;
-	m_previousOverlap = INVALID_ID;
-	m_lastCollidee = INVALID_ID;
-
-	m_ignoreCollisionsWith = INVALID_ID;
-
-	setAllowBouncing(getPhysicsBehaviorModuleData()->m_allowBouncing);
-	setAllowCollideForce(getPhysicsBehaviorModuleData()->m_allowCollideForce);
-
-	m_pui = NULL;
-	m_bounceSound = NULL;
-
-#ifdef SLEEPY_PHYSICS
-	setWakeFrame(getObject(), UPDATE_SLEEP_NONE);
-#endif
-}
 
 //-------------------------------------------------------------------------------------------------
 static ProjectileUpdateInterface* getPui(Object* obj)
