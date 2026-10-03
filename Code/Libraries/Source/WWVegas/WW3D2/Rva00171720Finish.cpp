@@ -1,14 +1,12 @@
-// ?rva00171720@MeshModelClass@@QAE_NXZ
-// partial score=0.96 date=2026-09-30
-// ?rva00171720@MeshModelClass@@QAE_NXZ
-// partial score=0.96 date=2026-09-30
 // cl: /G7 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 //
 // ?rva00171720@MeshModelClass@@QAE_NXZ retail 0x00171720 55B unlock lane.
 // MeshModelClass predicate using CurMatDesc fields +0xB8/+0x108 and +0xBC,
 // else PolygonRendererList emptiness via +0xA0/+0xA4. Evidence: CurMatDesc
 // at +0x94 from sibling meshmdl.cpp Needs_Vertex_Normals; callers 0x14BD10.
-
+// The two material-description gates return m_bc by implicit int-to-bool
+// conversion, which is what keeps retail's `cmp [ecx+0xbc],0; setne al`
+// free of the register-zeroing `xor eax,eax` an explicit `!= 0` emits.
 class MeshMatDescClass
 {
 public:
@@ -39,12 +37,11 @@ private:
 	int m_bc;
 };
 
-// ?rva00171720@MeshModelClass@@QAE_NXZ present-unmatched
 bool MeshModelClass::rva00171720()
 {
 	if (CurMatDesc->m_b8 != 0)
-		return m_bc != 0;
+		return m_bc;
 	if (CurMatDesc->m_108 != 0)
-		return m_bc != 0;
+		return m_bc;
 	return m_listFirst != (void *)&m_listHead;
 }
