@@ -1,5 +1,4 @@
 // ?_M_insert_overflow@?$vector@VRva004BA1D0@@V?$allocator@VRva004BA1D0@@@_STL@@@_STL@@IAEXPAVRva004BA1D0@@ABV3@ABU__false_type@2@I_N@Z
-// partial score=0.95 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /G7 /arch:SSE /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
@@ -12,19 +11,35 @@
 // Byte-identical shape to the PrereqUnitRec overflow at 0x004F5165 (183B,
 // same /G7 /arch:SSE + bfmealloc recipe) and the string-record overflows.
 // Retail calls allocate 0x0007E364, copy 0x004BA246, _Construct 0x004BA219,
-// fill_n 0x004BA26C and clear 0x004BA3CC, all rowed. Explicit member (not
-// whole-class) instantiation keeps push_back owned by its own TU.
+// fill_n 0x004BA26C and _M_clear 0x004BA3CC, all rowed. Explicit member (not
+// whole-class) instantiation keeps push_back owned by its own TU. The value
+// type carries a vector<AsciiString> at +4, so its dtor is non-trivial and
+// _M_clear is emitted out-of-line exactly as retail's call shows.
 #define _STLP_NO_EXCEPTIONS 1
 #include <vector>
+
+#include "ascii_string.h"
+
 class Rva004BA1D0
 {
 public:
-    Rva004BA1D0(const Rva004BA1D0 &other);
-    char m_bytes[0x2C];
+	Rva004BA1D0(const Rva004BA1D0 &other);
+private:
+	int m_00;
+	_STL::vector<AsciiString> m_04;
+	unsigned int m_10;
+	unsigned int m_14;
+	unsigned int m_18;
+	unsigned int m_1C;
+	unsigned int m_20;
+	unsigned int m_24;
+	unsigned int m_28;
 };
+
 namespace _STL
 {
 template <> void _Construct<Rva004BA1D0, Rva004BA1D0>(Rva004BA1D0 *, const Rva004BA1D0 &);
 }
+
 template void _STL::vector<Rva004BA1D0>::_M_insert_overflow(
     Rva004BA1D0 *, const Rva004BA1D0 &, const _STL::__false_type &, unsigned int, bool);
