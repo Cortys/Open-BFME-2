@@ -1,7 +1,5 @@
 // ?rva00334003@Rva00334003@@QAEXPAUlua_State@@PBURva00333374IdOwner@@@Z
-// partial score=0.93 date=2026-10-01
-// ?rva00334003@Rva00334003@@QAEXPAUlua_State@@PBURva00333374IdOwner@@@Z
-// partial score=0.93 date=2026-10-01
+// partial score=0.95 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ?rva00334003@Rva00334003@@QAEXPAUlua_State@@PBURva00333374IdOwner@@@Z, retail 0x00334003, 165B.
@@ -50,9 +48,9 @@ void Rva00334003::rva00334003(lua_State *L, const Rva00333374IdOwner *p)
 		return;
 	}
 	AsciiString name = Rva00333374Get(p);
+	int id = p->m_id;
 	char *t = *(char **)&name;
 	const char *s = t ? t + 8 : g_Rva0107301CEmptyString;
-	int id = p->m_id;
 	lua_getglobal(m_lua, s);
 	int top = lua_gettop(L);
 	if (lua_type(m_lua, top) == 1) {
