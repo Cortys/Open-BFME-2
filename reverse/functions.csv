@@ -50222,3 +50222,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva004FF515@@QAE@I@Z,,0x004FF515,36,Code/Libraries/Source/WWVegas/WWLib/stlport_proxy_004FF515.cpp,matched,unlock single-proxy ctor via rowed 0x0014F3C4 and 0x000307F0 unblocks 0x004FF6FF
 ??0Rva004FF6FF@@QAE@II@Z,,0x004FF6FF,42,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_004FF6FF.cpp,matched,chain empty Rb-tree ctor via rowed 0x004FF515 zeroes count inits header
 ??0Rva004FF55E@@QAE@I@Z,,0x004FF55E,36,Code/Libraries/Source/WWVegas/WWLib/stlport_proxy_004FF55E.cpp,matched,unlock single-proxy ctor via rowed 0x0014F3C4 and 0x000307F0 unblocks 0x004FF6D5
+?rva005AA4C1@Rva005AA4C1@@QAEXPAVArg005AA4C1@@@Z,,0x005AA4C1,156,Code/GameEngine/Source/Common/Rva005AA4C1.cpp,matched,vector Coord3D at +4 div 12 slots 0x78 0x8 0x60 0x4 rowed push_back 0x002CE7DC caller 0x005AA622
