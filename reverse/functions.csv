@@ -49609,3 +49609,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$__median@URva00599435Keyframe@@URva00599435Compare@@@_STL@@YAABURva00599435Keyframe@@ABU1@00URva00599435Compare@@@Z,,0x005993F6,63,Code/Libraries/Source/WWVegas/WWLib/stlport_rva00599435keyframe_linear_insert.cpp,matched,placed STLport __median over keyframe compare
 ??RRva00599435Compare@@QBE_NABURva00599435Keyframe@@0@Z,,0x005993DB,27,Code/Libraries/Source/WWVegas/WWLib/stlport_rva00599435keyframe_linear_insert.cpp,matched,placed keyframe comparator operator()
 ??RRva004F6352Cmp@@QBE_NABURva004F6352@@0@Z,,0x004F6023,28,Code/Libraries/Source/WWVegas/WWLib/stlport_rva004f6352_sort.cpp,matched,placed sort comparator operator()
+??RRva002E0864Cmp@@QBE_NPAX0@Z,,0x002E0706,24,Code/Libraries/Source/WWVegas/WWLib/stlport_rva002e0864_sort.cpp,matched,placed sort comparator operator()
