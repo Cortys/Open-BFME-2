@@ -44,10 +44,7 @@ public:
         return *this;
     }
     ~AsciiString();
-    int compare(const AsciiString &that) const
-    {
-        return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&that);
-    }
+    int compare(const AsciiString &that) const throw();
 private:
     char *m_text;
 };
@@ -58,3 +55,6 @@ inline bool operator<(const AsciiString &a, const AsciiString &b) { return a.com
 #pragma optimize("", on)
 
 template class _STL::list<AsciiString, _STL::allocator<AsciiString> >;
+
+// Retail comparison spelling names the verified worker at RVA 0x69D6.
+#pragma comment(linker, "/alternatename:?compare@AsciiString@@QBEHABV1@@Z=?compare@?$StringBase@D@@QBEHABV1@@Z")

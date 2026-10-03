@@ -8,38 +8,8 @@
 // (SidesList+0x44, 0x60 stride, count at +0x3C), compare via rowed
 // StringBase<char>::compare 0x000069D6 with bool materialization, temps via
 // rowed releaseBuffer 0x00036410. /G7 for imul scaling of the return pointer.
-// Private AsciiString/StringBase (not the shared header): the header's
-// non-throw compare emits two extra EH state stores (mov byte ptr [ebp-4],1/0)
-// around the compare call; declaring compare throw() drops them to match
-// retail 150B. Layout and row names unchanged.
-
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-
-public:
-	int compare(const StringBase &s) const throw();
-
-private:
-	void releaseBuffer();
-
-	void *m_data;
-};
-
-class AsciiString
-{
-public:
-	~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
-	int compare(const AsciiString &s) const throw()
-	{
-		return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&s);
-	}
-
-private:
-	char *m_text;
-};
-
-inline bool operator==(const AsciiString &a, const AsciiString &b) throw() { return a.compare(b) == 0; }
+// The shared comparison declaration preserves the native nonthrowing call.
+#include "ascii_string.h"
 
 enum NameKeyType
 {
