@@ -49226,3 +49226,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00058C6F@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UTreeHintPayload0005808E@@@_STL@@PBU23@@Z,,0x00058C6F,68,Code/Libraries/Source/WWVegas/WWLib/Rva00058C6FInsert.cpp,matched,hashtable insert via reserve bucketIndex and pinned New twin same table Rva000427195
 ?rva000467B2@Rva000467B2@@QAEXPAVAsciiString@@H@Z,,0x000467B2,117,Code/GameEngine/Source/Common/Rva000467B2.cpp,matched,bitflag string builder via ModelConditionNames rowed callees
 ?rva005D6FE5@Rva005D6FE5@@QAEEXZ,,0x005D6FE5,15,Code/GameEngine/Source/Common/Rva005D6FE5Method.cpp,matched,read and clear byte at base plus 0x121
+?Rva005EA09CFindMax@@YAPAMPAM0@Z,,0x005EA09C,36,Code/Libraries/Source/WWVegas/WWMath/Rva005EA09CMax.cpp,matched,max-float finder begin/end ptrs caller 0x005EAB9C deref
