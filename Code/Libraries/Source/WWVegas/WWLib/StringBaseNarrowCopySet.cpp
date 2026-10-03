@@ -59,10 +59,16 @@ public:
     }
 
     // ??1NarrowLock@@QAE@XZ present-unmatched
+    // Retail EH handler75CCE8 -> one-state map -> action75CCE0 selects
+    // the full35B guard cleanup358B0: test +4 and clear it after optional leave.
+    // Same8B callable view; original guard/template identity is unknown.
     __forceinline ~NarrowLock()
     {
-        if (!m_lock->m_flag)
-            LeaveCriticalSection(&m_lock->m_cs);
+        if (m_state) {
+            if (!m_lock->m_flag)
+                LeaveCriticalSection(&m_lock->m_cs);
+            m_state = 0;
+        }
     }
 };
 
