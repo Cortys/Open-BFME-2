@@ -66,3 +66,23 @@ void __cdecl Rva00500CB8Destroy(Rva004FFE81 *first, Rva004FFE81 *last)
 	for (; first != last; ++first)
 		first->~Rva004FFE81();
 }
+
+extern "C" void __cdecl free(void *block);
+
+// ?rva00501356@Rva00501356@@QAEXXZ @0x00501356 30B: vector storage helper.
+// Destroys [m_first, m_last) via rowed 0x00500CB8 then frees m_first.
+// Evidence: callees rowed 0x00500CB8 and 0x00030830; caller 0x00501A7C
+// overwrites start/finish/end right after the call.
+struct Rva00501356
+{
+	Rva004FFE81 *m_first;
+	Rva004FFE81 *m_last;
+	void rva00501356();
+};
+
+void Rva00501356::rva00501356()
+{
+	Rva00500CB8Destroy(m_first, m_last);
+	if (m_first)
+		free(m_first);
+}
