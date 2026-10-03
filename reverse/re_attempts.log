@@ -5957,3 +5957,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ??1Rva005E0B0F@@UAE@XZ	0x005E0B0F	128	partial	missing push 0 before first forwarder and missing EH state 2 before Release t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x005e0b0f.cpp
 ?rva003A3763@Rva000427195@@QAEAAUTreeHintPayload00207343@@ABVAsciiString@@@Z	0x003A3763	121	blocked	hashtableAsciiString-index 110B-vs-121B 8-structural-regions missing flag-state-stores and find-insert-tail shape STLport-vs-custom-table wall t=5 model=muse-09
 ?Rva000754DEInit@@YAXXZ	0x000754DE	363	blocked	mov ecx eax plus add eax 4 missing for refs addr mode dec cmp via ecx+4 not eax tried inline decrement variants t=12 model=muse-04 (stash 0.96 kept)
+?rva00085A03@Rva00085A03@@QAEXXZ	0x00085A03	180	blocked	complex 180B x87 SSE float mix with TerrainLogic Display virtuals no donor t=8 model=muse-04
