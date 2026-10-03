@@ -1,3 +1,5 @@
+// ?rva00219FE3@Rva00219B9E@@QAEHII@Z
+// partial score=0.9 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ?rva00219B9E@Rva00219B9E@@QAEPAXI@Z @0x00219B9E 44B
@@ -13,10 +15,6 @@
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
 #include "ascii_string.h"
-void *__cdecl ji_006291ae(void *dest, int val, unsigned int count);
-#pragma comment(linker, "/alternatename:?ji_006291ae@@YAPAXPAXHI@Z=?ji_006291ae@@YAXXZ")
-extern int g_00DFE368;
-extern int g_00DFE364;
 struct IntVec { int *m_start; int *m_finish; int *m_end; };
 struct Elem216 {
     char m_00[0x0C];
@@ -80,6 +78,7 @@ public:
     int rva00219E74(unsigned int o, unsigned int i);
     int rva00219ED5(unsigned int o, unsigned int i);
     int rva00219D52(unsigned int o);
+    int rva00219FE3(unsigned int o, unsigned int i);
     int rva0021A041(unsigned int o, unsigned int i);
     int rva0021A06C(unsigned int o, unsigned int i);
     int rva0021A097(unsigned int o, unsigned int i);
@@ -89,7 +88,6 @@ public:
     void *rva0021B0CA(unsigned int index);
     void *rva0021B22E(unsigned int o, unsigned int i);
     void *rva0021B670(const IdxPair *p);
-    void *rva00219C5D(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -428,18 +426,16 @@ int Rva00219B9E::rva00219D52(unsigned int o)
     return 0;
 }
 
-// ?rva00219C5D@Rva00219B9E@@QAEPAXI@Z @0x00219C5D 54B
-// One-time memset of g_00DFE364 guarded by g_00DFE368, then forwards index
-// through rowed rva00219B9E and returns element+0x68 unconditionally.
-// Evidence: retail test byte/or dword guard plus push 4/0/addr call to the
-// rowed memset thunk 0x006291AE, then push index call rva00219B9E plus
-// add eax,0x68; caller 0x00219F8E; same class/outer layout as siblings.
-void *Rva00219B9E::rva00219C5D(unsigned int index)
+// ?rva00219FE3@Rva00219B9E@@QAEHII@Z @0x00219FE3 51B
+// Two-level int forward to rowed rva00219C93 (element+0x64 or -1).
+// Same shape as 0x00219E74/0x0021A016 but null path returns -1 via or eax,-1.
+// Evidence: retail lea/mov/sub/sar 5 plus shl 5/lea/call plus or eax,-1.
+// ?rva00219FE3@Rva00219B9E@@QAEHII@Z present-unmatched
+int Rva00219B9E::rva00219FE3(unsigned int o, unsigned int i)
 {
-    if (!(*(unsigned char *)&g_00DFE368 & 1)) {
-        g_00DFE368 |= 1;
-        ji_006291ae(&g_00DFE364, 0, 4);
-    }
-    void *p = rva00219B9E(index);
-    return (char *)p + 0x68;
+    unsigned int count = m_outer.m_finish - m_outer.m_start;
+    if (o >= count)
+        return -1;
+    OuterElem32 *base = m_outer.m_start;
+    return ((Rva00219B9E *)&base[o])->rva00219C93(i);
 }

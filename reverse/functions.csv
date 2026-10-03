@@ -49813,3 +49813,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?_M_insert_overflow@?$vector@VRva001ED03C@@V?$allocator@VRva001ED03C@@@_STL@@@_STL@@IAEXPAVRva001ED03C@@ABV3@ABU__false_type@2@I_N@Z,,0x001ED476,183,Code/Libraries/Source/WWVegas/WWLib/StlportVectorInsertOverflowRva001ED03C.cpp,matched,STLport vector insert overflow rowed callees stride 0x24
 ?push_back@?$vector@VRva001ED03C@@V?$allocator@VRva001ED03C@@@_STL@@@_STL@@QAEXABVRva001ED03C@@@Z,,0x001ED549,55,Code/Libraries/Source/WWVegas/WWLib/StlportVectorInsertOverflowRva001ED03C.cpp,matched,STLport pushback over growth path 0x001ED476
 ?rva001ED338@Rva001ED338@@QAEXPAX@Z,,0x001ED338,18,Code/Libraries/Source/WWVegas/WWLib/Rva001ED338Init.cpp,matched,INI initFromINI forward with class table g_00BDF1D8
+?rva00219C5D@Rva00219B9E@@QAEPAXI@Z,,0x00219C5D,54,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,guarded memset via rowed thunk plus element plus 0x68 forward
