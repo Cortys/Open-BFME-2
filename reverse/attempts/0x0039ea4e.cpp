@@ -1,12 +1,6 @@
 // ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z
-// partial score=0.96 date=2026-10-01
-// ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z
-// partial score=0.95 date=2026-09-29
+// partial score=0.98 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD
-// ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z, retail 0x0039EA4E 78B.
-// RB-tree find for TeamFactory pair key: walks root at header+4, left +8,
-// right +0xC, key at +0x10 via rowed Less 0x0039D8FB. Returns header on miss.
-// Prev/next share /O1 /DNDEBUG /MD. Callers 0x39F5CC 0x39FDF7 0x39FE50.
 struct Rva0039D8FBKey
 {
     int m_first;
@@ -30,24 +24,28 @@ public:
     Rva0039EA4ENode *rva0039EA4E(const Rva0039D8FBKey &key);
 
 private:
+    __forceinline Rva0039EA4ENode *lower_bound(Rva0039EA4ENode *x, Rva0039EA4ENode *y, const Rva0039D8FBKey &key);
     Rva0039EA4ENode *m_header00;
 };
+
+__forceinline Rva0039EA4ENode *Rva0039EA4E::lower_bound(Rva0039EA4ENode *x, Rva0039EA4ENode *y, const Rva0039D8FBKey &key)
+{
+    while (x != 0) {
+        if (!(unsigned char)Rva0039D8FBLess(x->m_key10, key)) {
+            y = x;
+            x = x->m_left08;
+        } else
+            x = x->m_right0C;
+    }
+    return y;
+}
 
 // ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z present-unmatched
 Rva0039EA4ENode *Rva0039EA4E::rva0039EA4E(const Rva0039D8FBKey &key)
 {
     Rva0039EA4ENode *header = m_header00;
-    Rva0039EA4ENode *x = header->m_parent04;
-    Rva0039EA4ENode *y = header;
-    while (x) {
-        if (!(unsigned char)Rva0039D8FBLess(x->m_key10, key)) {
-            y = x;
-            x = x->m_left08;
-        }
-        else
-            x = x->m_right0C;
-    }
-    if (y == header || (unsigned char)Rva0039D8FBLess(key, y->m_key10))
-        y = header;
-    return y;
+    Rva0039EA4ENode *j = lower_bound(header->m_parent04, header, key);
+    if (j == header || (unsigned char)Rva0039D8FBLess(key, j->m_key10))
+        j = header;
+    return j;
 }
