@@ -6738,3 +6738,5 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?rva003FC149@Rva003FC149@@QAEXABVMatrix3@@@Z	0x003FC149	328	partial	movaps-vs-movss scaling mulss-mem-vs-mulss-reg mov-ecx-vs-mov-eax reload missing-mov-ecx-eax t=25 model=muse-07 score=0.96 stash=reverse/attempts/0x003fc149.cpp
 ?rva003FC291@Rva003FC291@@QAEXM@Z	0x003FC291	339	partial	copy xmm1-vs-xmm7 frame 0x30-vs-0x34 extra in xmm0-vs-spill movaps-temp scaling mem-vs-reg t=30 model=muse-07 score=0.9 stash=reverse/attempts/0x003fc291.cpp
 ?rva003FC82C@Rva003FC82C@@QAEXM@Z	0x003FC82C	556	blocked	rotation build is x87-double multiply not simple Z-rot size -130 t=15 model=muse-07
+?Rva005B9024Get@@YIHPBD@Z	0x005B9024	49	blocked	ecx-vs-eax param plus c0-cl-vs-al t=12 model=muse-09 (stash 0.93 kept)
+??1Rva00153729@@QAE@XZ	0x0015375A	44	blocked	copy ctor 44B needs explicit ehvec-copy via 0x6299C4 with vector copy 0x15350A and dtor 0x1536EA for 6x0xC array - implicit copy not emitted and _Construct probe yields only 19B dtor shape t=5 model=muse-09
