@@ -49477,3 +49477,4 @@ _rva0062AFC8D3DXVec3CatmullRom@24,,0x0062AFC8,6,Code/GameEngine/Source/Common/Rv
 ?Rva004384F2Free@@YGXPAVObject@@H@Z,,0x004384F2,58,Code/GameEngine/Source/GameLogic/Object/Update/Rva004384F2Free.cpp,matched,Object flag 0x20 at +0x115 gates virtual f68 at +0x250+0x110 taking code struct 1 plus rva0029130C int setup plus ret 8 two stack args plus caller 0x00438E89
 ??0Rva0059734B@@QAE@XZ,,0x00597331,26,Code/GameEngine/Source/Common/Rva0059734BCtor.cpp,matched,vtable 0x00870BD0 plus base 0x0055B048 plus sibling slot15 layout
 ??0Rva005970ED@@QAE@XZ,,0x005970ED,33,Code/GameEngine/Source/Common/Rva005970EDCtor.cpp,matched,vtable 0x00870B88 plus base 0x00597331 plus family layout
+?rva0059992A@Rva00599825@@QAEXPAVXfer@@@Z,,0x0059992A,177,Code/GameEngine/Source/Common/Rva00599825ListAdd.cpp,matched,Xfer Version bool uint list via XferObjectID IsStoring IsLoading same TU as 0x00599825 caller 0x004EC1D9
