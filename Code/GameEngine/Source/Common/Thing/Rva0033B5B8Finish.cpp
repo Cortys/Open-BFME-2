@@ -1,7 +1,3 @@
-// ?Rva0033B5B8Build@@YAXPAVModuleInfo@@W4ModuleType@@HH@Z
-// partial score=0.98 date=2026-09-30
-// ?Rva0033B5B8Build@@YAXPAVModuleInfo@@W4ModuleType@@HH@Z
-// partial score=0.98 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /EHsc
 // ?Rva0033B5B8Build@@YAXPAVModuleInfo@@W4ModuleType@@HH@Z @0x0033B5B8 124B
 // ModuleInfo entry loop: per 0x14-sized entry fetch name (rowed getNthName
@@ -9,7 +5,9 @@
 // getNthData 0x0033ACE8), then call our ModuleFactory create helper
 // 0x002567B9 with the factory global. Temp destroyed via releaseBuffer
 // 0x00036410. Evidence: chain lane (calls our helper); callers in 0x0033C965;
-// getNth rows; factory global 0x9FE960.
+// getNth rows; factory global 0x9FE960. The unnamed temporary is what makes
+// MSVC keep the hidden-return pointer in ebx across getNthData (a named local
+// is rematerialized as lea and loses the byte).
 template <typename T> class StringBase {
 public: ~StringBase() { releaseBuffer(); } bool isEmpty() const;
 private: void releaseBuffer(); void *m_data; };
@@ -21,6 +19,9 @@ enum ModuleType
 {
 	MODULE_TYPE_INVALID = 0
 };
+// class-gate: allow AsciiString reference-cast parameter only; no AsciiString
+// member is constructed, assigned or destroyed here, so this view emits no
+// COMDAT and cannot differ from the shared header at link.
 class AsciiString : public StringBase<char>
 {
 };
@@ -43,8 +44,6 @@ void Rva0033B5B8Build(ModuleInfo *info, ModuleType type, int c, int b)
 {
 	for (int i = 0; i < (info->m_end - info->m_begin) / 0x14; ++i)
 	{
-		BFMERetailAsciiString name = info->getNthName(i);
-		const AsciiString *pname = (const AsciiString *)&name;
-		TheModuleFactory->rva002567B9(*pname, (int)info->getNthData(i), type, b, c);
+		TheModuleFactory->rva002567B9((const AsciiString &)info->getNthName(i), (int)info->getNthData(i), type, b, c);
 	}
 }
