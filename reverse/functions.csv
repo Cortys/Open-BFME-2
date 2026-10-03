@@ -49713,3 +49713,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z,,0x002E674B,104,Code/GameEngine/Source/GameClient/Rva002E674BFinish.cpp,matched,GameText getStringsWithLabelPrefix LUT prefix filter via IAT strstr
 ?Rva000E63DCDo@@YGXPAVRva000E63DCObj@@@Z,,0x000E63DC,42,Code/GameEngine/Source/Common/Rva000E63DCFinish.cpp,matched,constructor temp reuses dead arg slot at /O1; retail 42B exact
 ?rva000F074E@Rva000F26DC@@QAEXHH@Z,,0x000F074E,117,Code/GameEngine/Source/Common/Rva000F074EFinish.cpp,matched,inline b+a*0xA0 subscript keeps retail lea esi form; named idx local gives add+mov and is 1B short
+??0Rva0055F218Sub@@QAE@XZ,,0x0055EF55,25,Code/GameEngine/Source/Common/Rva0055F218Ctor.cpp,matched,placed by masked byte search of already-compiled unit
