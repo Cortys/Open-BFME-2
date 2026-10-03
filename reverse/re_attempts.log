@@ -6062,3 +6062,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva00274591@Drawable@@QAEXXZ	0x00274591	551	blocked	xmm reg choice plus add order plus sub order third-accumulate flips to acc-first t=30 model=muse-10 (stash 0.93 kept)
 ?rva0029004B@Object@@QAEXXZ	0x0029004B	74	partial	or [esi+0x9a] after mov [esi+0x84] retail before t=18 model=muse-10 score=0.95 stash=reverse/attempts/0x0029004b.cpp
 ?HasBeenDisplayed@SubTitleManager@@QAE_NH@Z	0x00688680	98	blocked	int at +0x18 via edx vs byte at +0x20 via eax plus vector-size prologue and debug-call shape mismatch t=10 model=muse-10
+?rva002FED53@Rva002FED53@@QAEXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z	0x002FED53	28	blocked	honest wrapper calling 0x002FEC97 gives eax push-mem 23B vs retail edx placeholder 28B after 6 variants t=25 model=muse-05

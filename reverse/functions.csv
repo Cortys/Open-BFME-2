@@ -49236,3 +49236,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??1Rva0059E4D5@@UAE@XZ,,0x0059E4D5,60,Code/GameEngine/Source/Common/Rva0059E3FADtor.cpp,matched,virtual dtor vector plus string sibling of 0x0059E3FA
 ?rva0059ECAD@Rva0059ECAD@@QAEXH@Z,,0x0059ECAD,20,Code/GameEngine/Source/Common/Rva0059ECADSetter.cpp,matched,2-to-9 dword setter at plus 0x488
 ?rva0029004B@Object@@QAEXXZ,,0x0029004B,74,Code/GameEngine/Source/GameLogic/Object/Object_rva0029004B.cpp,matched,Object TU via neighbours 28FF9E and 2900E0 plus rowed callee 274401 and barrier for or-before-mov order
+?rva005ED411@Rva005ED445@@QAEXXZ,,0x005ED411,52,Code/GameEngine/Source/Common/Rva005ED411Apt.cpp,matched,Apt FadeOut via rowed AptCall thunk 0x005ED5EB same layout as Rva005ED445
