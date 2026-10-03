@@ -50088,3 +50088,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BCAF6Do@@YGXPAVParameter@@MMM@Z,,0x003BCAF6,65,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCAF6Do.cpp,matched,leaf TerrainLogic slot 0x88 then TacticalView slot 0xa8
 ?Rva00426F17Xfer@@YAPAVXfer@@PAV1@PAV?$vector@UBfmeStringRecord00426A5B@@V?$allocator@UBfmeStringRecord00426A5B@@@_STL@@@_STL@@@Z,,0x00426F17,248,Code/GameEngine/Source/Common/Rva00426F17Xfer.cpp,matched,xfer vector via version 1 1 plus helper 0x4266BC plus reserve push_back plus empty-check
 ?rva004260DE@Rva004260DE@@QAEPAHH@Z,,0x004260DE,31,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_int_find.cpp,matched,map int int at plus0C via rowed find plus second at plus14
+??1Rva0042643D@@UAE@XZ,,0x0042643D,183,Code/GameEngine/Source/Common/Rva0042643DDtor.cpp,matched,vtable 0x83C350 via base 0x1B4E74 plus Entry dtor 0x4DC9ED plus two owned vectors plus third vector
+??_GRva0042643D@@UAEPAXI@Z,,0x00426556,28,Code/GameEngine/Source/Common/Rva0042643DDtor.cpp,matched,deleting dtor via own ??1 unit plus base 0x1B4E74
