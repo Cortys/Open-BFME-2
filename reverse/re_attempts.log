@@ -6871,3 +6871,4 @@ _$E19	0x007B6850	10	refuted	Native complete10B is ECX=DA60E8 plus tail pool-clea
 ?rva000BB3E6@Rva000BB3E6@@QAEXHHHHVAsciiString@@PBVFXList@@@Z	0x000BB3E6	171	partial	doObj load scheduling mov then cmp reg vs retail cmp mem then mov t=25 model=muse-05 score=0.96 stash=reverse/attempts/0x000bb3e6.cpp
 ?rva000BB3E6@Rva000BB3E6@@QAEXHHHHVAsciiString@@PBVFXList@@@Z	0x000BB3E6	171	blocked	doObj load scheduling mov then cmp reg vs retail cmp mem then mov t=12 model=muse-05 (stash 0.96 kept)
 ?rva0002CBCC@Rva0002CBCC@@QAEXHH@Z	0x0002CBCC	108	blocked	linkbody EH Triple12+convert+set 4push vs 3push t=12 model=muse-spark
+??1Rva005ADA40@@QAE@XZ	0x005ADA40	114	partial	pop ecx vs and [esi+0x28] order plus or -1 fixed via EHs t=20 model=muse-02 score=0.96 stash=reverse/attempts/0x005ada40.cpp
