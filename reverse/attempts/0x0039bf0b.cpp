@@ -1,6 +1,8 @@
 // ?rva0039BF0B@Rva0039BF0B@@QAEHABV?$BitFlags@$0HE@@@0@Z
+// partial score=0.92 date=2026-10-03
+// ?rva0039BF0B@Rva0039BF0B@@QAEHABV?$BitFlags@$0HE@@@0@Z
 // partial score=0.91 date=2026-10-03
-// cl: /O2 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc
 template <int N> class BitFlags
 { public: bool testSetAndClear(const BitFlags &a, const BitFlags &b) const; private: unsigned m_words[7]; };
 struct ObjectCountMap { void *m_header; int m_pad04; int m_pad08; };
