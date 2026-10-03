@@ -49844,3 +49844,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00595E46Save@@YAXXZ,,0x00595E46,314,Code/GameEngine/Source/Common/Rva00595E46Firewall.cpp,matched,Firewall prefs via OptionPreferences map write
 ?rva005952C4@Rva00594DC0@@QAE_NPAXGPAG@Z,,0x005952C4,134,Code/GameEngine/Source/Common/Rva005952C4Recv.cpp,matched,Rva00594DC0 convert chain CRC htonl htons key at 0x88 via else tail
 ?flagNeedToRefresh@FirewallHelperClass@@QAEX_N@Z,,0x00595F80,215,Code/GameEngine/Source/Common/Rva00595F80Firewall.cpp,matched,ZH FirewallHelper donor TRUE FALSE FirewallNeedToRefresh via OptionPreferences write
+??$__pop_heap@PAHHURva005E4300Cmp@@@_STL@@YAXPAH00HURva005E4300Cmp@@@Z,,0x005E4A5F,41,Code/Libraries/Source/WWVegas/WWLib/stlport_pop_heap_rva005E4300.cpp,matched,same 41B shape as 0x00423EF7 and 0x002074D4 precedents
