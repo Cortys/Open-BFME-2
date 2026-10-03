@@ -50204,3 +50204,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005C8CA0@Rva005C8C73@@QAEPAXPBX@Z,,0x005C8CA0,58,Code/GameEngine/Source/Common/Rva005C8CA0LowerBound.cpp,matched,float-keyed tree lower_bound beside Rva005C8C73 erase/clear; res declared before head/cur rotates the loop to the shared bottom test
 ?markAsDead@AIUpdateInterface@@QAEXXZ,,0x0026296D,28,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_wakeUpNow.cpp,matched,named via BFME1 donor plus pinned setDead plus rowed wakeUp tail
 ?rva00262989@AIUpdateInterface@@QAEXI@Z,,0x00262989,97,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_wakeUpNow.cpp,matched,4-entry frame cache oldest-reuse via TheGameLogic frame plus callers
+??0Rva0034B952@@QAE@PAVObject@@VAsciiString@@@Z,,0x0034B952,206,Code/GameEngine/Source/GameLogic/AI/Rva0034B952Ctor.cpp,matched,base 0x004D79E1 plus vtable g_00C122A0 plus defineState 0x004D7B0F plus caller 0x0034BA20
