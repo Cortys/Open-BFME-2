@@ -1,5 +1,3 @@
-// ?rva0047FFFE@ShareExperienceBehavior@@QAEMPAVCoord3D@@PAUPos0047FFFE@@@Z
-// partial score=0.93 date=2026-10-03
 // cl: /O1 /GX /arch:SSE /MD /DNDEBUG
 // ?rva0047FFFE@ShareExperienceBehavior@@QAEMPAVCoord3D@@PAUPos0047FFFE@@@Z @ 0x0047FFFE 149B
 // Unlock: ShareExperience distance falloff between ModuleData radii. Evidence:
@@ -43,7 +41,6 @@ public:
 	float rva0047FFFE(Coord3D *a, Pos0047FFFE *b);
 };
 
-// ?rva0047FFFE@ShareExperienceBehavior@@QAEMPAVCoord3D@@PAUPos0047FFFE@@@Z present-unmatched
 float ShareExperienceBehavior::rva0047FFFE(Coord3D *a, Pos0047FFFE *b)
 {
 	ShareExperienceBehaviorModuleData *md = m_moduleData;
@@ -58,9 +55,9 @@ float ShareExperienceBehavior::rva0047FFFE(Coord3D *a, Pos0047FFFE *b)
 		diff.z -= a->z;
 		float len = diff.GetLength();
 		float f = g_Va00BBB8D8 - len / md->m_08;
-		if (f < BfmeZeroRange)
-			return BfmeZeroRange;
-		return f;
+		if (f >= BfmeZeroRange)
+			return f;
+		return BfmeZeroRange;
 	}
 	return g_Va00BBB8D8;
 }
