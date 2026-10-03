@@ -4,6 +4,19 @@
 // ?_M_clear@?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@IAEXXZ, retail 0x0015373C, 30 bytes.
 // Vector<Rva005F8F96> dtor (EH) plus _M_clear via rowed _Destroy 0x00153470 and _free 0x30830.
 // Same 63B+30B pair shape as Owner900 vector dtor+clear; /EHs provides the or [ebp-4],-1 state.
+// The emitted unsigned max copy must match retail RVA 0x00013740.
+// Define it for speed, then restore this unit's flags for its vector bodies.
+#pragma optimize("s", off)
+#pragma optimize("t", on)
+#include <stl/_algobase.h>
+namespace _STL {
+template <> inline const unsigned int &max<unsigned int>(const unsigned int &a, const unsigned int &b)
+{
+    return a < b ? b : a;
+}
+}
+#pragma optimize("", on)
+
 #include <vector>
 struct TargetRef00217D4C { virtual void *destroy(unsigned int flags); int references; };
 struct Rva005F8F96

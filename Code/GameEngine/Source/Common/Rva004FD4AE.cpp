@@ -5,6 +5,19 @@
 // Vector<ModuleData*> push_back at this+0x98.
 // Evidence: unlock lane unblocks 0x0059E6D3; abuts 0x004FD448; rowed push_back
 // 0x004DFCB0; neighbours carry /O1 /GX /MD.
+// The emitted unsigned max copy must match retail RVA 0x00013740.
+// Define it for speed, then restore this unit's flags for its vector bodies.
+#pragma optimize("s", off)
+#pragma optimize("t", on)
+#include <stl/_algobase.h>
+namespace _STL {
+template <> inline const unsigned int &max<unsigned int>(const unsigned int &a, const unsigned int &b)
+{
+    return a < b ? b : a;
+}
+}
+#pragma optimize("", on)
+
 #include <vector>
 
 class ModuleData;
