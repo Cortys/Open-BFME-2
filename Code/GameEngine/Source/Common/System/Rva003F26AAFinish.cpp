@@ -14,6 +14,9 @@
 // class and flags; callers 0x002B3CC5 0x002B670F 0x002B6749. The class really derives from
 // Snapshot (see the dtor TU); modeled here as pads since this body never touches the vptr.
 // The /Oy- keeps the EBP frame retail shows. /G7 fixes register allocation (ebx tab, ecx divisor).
+// Fix from the banked attempt: the found branch copies a into a local before
+// push_back; MSVC coalesces that local into the parameter home, emitting the
+// retail self-store mov eax,[ebp+8] / mov [ebp+8],eax before the push.
 #include <vector>
 #include "ascii_string.h"
 
@@ -45,7 +48,6 @@ private:
 	_STL::vector<_STL::vector<const ModuleData *> > m_slotsBlank; // +0x18c
 };
 
-// ?rva003F26AA@LivingWorldRegionConnection@@QAE_NPBVModuleData@@PAURva003F26AAPair@@@Z present-unmatched
 bool LivingWorldRegionConnection::rva003F26AA(const ModuleData *a, Rva003F26AAPair *out)
 {
 	Rva003F26AAPair **tab;
@@ -61,7 +63,8 @@ bool LivingWorldRegionConnection::rva003F26AA(const ModuleData *a, Rva003F26AAPa
 	for (unsigned i = 0; i < n; ++i) {
 		_STL::vector<const ModuleData *> &slot = (*slots)[i];
 		if ((((char *)slot.end() - (char *)slot.begin()) & ~3) == 0) {
-			(*slots)[i].push_back(a);
+			const ModuleData *md = a;
+			(*slots)[i].push_back(md);
 			*out = (*tab)[i];
 			return true;
 		}
