@@ -29,6 +29,7 @@ public:
 	Rva005C76C0();
 	Rva005C76C0(int count, const Rva0055A246 *source);
 	void rva005C7636();
+	void rva005C74B1();
 	int m_00;
 	int m_04;
 	Rva0055A246 m_08;
