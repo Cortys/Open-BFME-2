@@ -49272,3 +49272,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0055B367@Rva0055B367@@QAEXPAVXfer@@@Z,,0x0055B367,53,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B367Xfer.cpp,matched,FX xfer 8x Version1 plus Region2D RealRange slots
 ?rva000748DF@Rva000747E5@@QAEXH@Z,,0x000748DF,23,Code/GameEngine/Source/Common/System/Rva000747E5Method.cpp,matched,unlock lane caller 0x00046A50 same class Rva000747E5 slot 0x18
 ?rva005EA58B@Rva005EA58B@@QAEXXZ,,0x005EA58B,50,Code/Libraries/Source/WWVegas/WWMath/Rva005EA58BMethod.cpp,matched,validates unicode strings in 2 ranges via rowed validate
+?rva005EA8C4@Rva005EA58B@@QAEXXZ,,0x005EA8C4,31,Code/Libraries/Source/WWVegas/WWMath/Rva005EA58BMethod.cpp,matched,slot2 plus validate plus tail 0x005EA58B
