@@ -117,7 +117,6 @@ UnicodeString GadgetListBoxGetTextAndColor( GameWindow *listbox, Color *color, I
 	//return UnicodeString::TheEmptyString;
 
 }  // end GadgetListBoxGetText
-// ?GadgetListBoxGetText@@YA?AVUnicodeString@@PAVGameWindow@@HH@Z present-unmatched
 UnicodeString GadgetListBoxGetText( GameWindow *listbox, Int row, Int column)
 {
 	Color color;
