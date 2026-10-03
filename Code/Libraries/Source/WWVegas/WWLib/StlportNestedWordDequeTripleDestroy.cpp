@@ -14,3 +14,4 @@ typedef _STL::deque<InnerDeque,_STL::allocator<InnerDeque> > OuterDeque;
 namespace _STL { template<> OuterDeque::~deque(); }
 typedef _STL::_Deque_iterator<OuterDeque,_STL::_Nonconst_traits<OuterDeque> > OuterDequeIterator;
 template void _STL::__destroy_aux(OuterDequeIterator,OuterDequeIterator,const _STL::__false_type &);
+template void _STL::_Destroy(OuterDequeIterator,OuterDequeIterator);
