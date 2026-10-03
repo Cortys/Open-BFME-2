@@ -7316,3 +7316,4 @@ _qsort,0x00629B4A,"msvcr71 qsort reached through the gen-import thunk ?ji_00629b
 ?rva0070DFE0@BfmeAptValue006DCD20@@QAEXXZ,0x0070DFE0,"address-derived AptArray clear-prep helper 0x0070DFE0 called with this in ecx and no stack args by the array clear 0x006D93D0; body unrowed; Ghidra 70DFE0 112B"
 ?rva006C0500@BfmeBoxF0@@QBE_NPBV1@@Z,0x006C0500,"address-derived BfmeBoxF0 rotated-box SAT overlap test called by 0x006C0630 (this box on ecx arg other box on stack); 296B banked partial score 0.93 in reverse/attempts/0x006c0500.cpp; not rowed"
 ??0Rva006FBDB0@@QAE@VEAStringC@@HH@Z,0x006FBD40,"address-derived AptDebugStack element ctor called by 0x00700090 with a by-value EAStringC plus two ints; 0x0C-byte element with dtor 0x006FBDB0; body unrowed"
+?rva006E2690@AptCIH@@QAEXH@Z,0x006E2690,address-derived name for the large AptCIH teardown helper called by the 0x006E2A70 dtor with one int arg (retail pushes 0); body unrowed; pin unblocks Rva006CBF40 dtor
