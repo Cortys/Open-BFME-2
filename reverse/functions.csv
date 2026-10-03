@@ -49937,3 +49937,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?allow@PartitionFilterPossibleToAttack@@UAE_NPAVObject@@@Z,,0x00260FD0,37,Code/GameEngine/Source/GameLogic/Object/PartitionFilterPossibleToAttackAllow.cpp,matched,retail offsets +8+0xc+0x10 via caller 0x00350E4F BFME1 donor
 ?rva0030D808@Rva0030D808@@QAE?AVAsciiString@@XZ,,0x0030D808,43,Code/GameEngine/Source/GameClient/Rva0030D808Method.cpp,matched,Dict at +0x24 via rowed getAsciiString with key from rowed cache get on g_00DBDC6C twin of 0x0030D748
 ?rva005310E3@Rva005310E3@@QAEHXZ,,0x005310E3,30,Code/GameEngine/Source/Common/Rva005310E3.cpp,matched,signed count plus flag bytes doubled with callers 0x005318F4 0x00531FFC
+?rva005314C6@Rva005312BE@@QAEXHHE@Z,,0x005314C6,76,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,bounded setter writes m_cleared with value shares grid offsets

@@ -28,6 +28,7 @@ public:
 	void rva00531300();
 	void rva00531481();
 	void rva00531431(int a, int b);
+	void rva005314C6(int a, int b, unsigned char c);
 	unsigned char rva00531512(int a, int b);
 	void rva00531342(struct Rva005312BERect *r);
 	void rva0053155E(int a, int b, bool add, int value);
@@ -91,6 +92,19 @@ void Rva005312BE::rva00531431(int a, int b)
 	if (i >= m_outer || j >= m_inner)
 		return;
 	m_ppItems[i][j].m_35 = 1;
+}
+// ?rva005314C6@Rva005312BE@@QAEXHHE@Z, retail 0x005314C6, 76 bytes.
+// Bounded setter writes byte at +0x34 with value; gap between 0x00531481 and 0x00531512.
+// Callers at 0x002F368A 0x002F36AD; shares 0x1BA38/0x1BA3C/0x1BA40 stride 0x44.
+void Rva005312BE::rva005314C6(int a, int b, unsigned char c)
+{
+	if (a < 0 || b < 0)
+		return;
+	int i = a / 16;
+	int j = b / 16;
+	if (i >= m_outer || j >= m_inner)
+		return;
+	m_ppItems[i][j].m_cleared = c;
 }
 
 void Rva005312BE::rva00531342(Rva005312BERect *r)
