@@ -1,9 +1,3 @@
-// ?rva002728C5@Drawable@@QAEXMM@Z
-// partial score=0.97 date=2026-09-30
-// ?rva002728C5@Drawable@@QAEXMM@Z
-// partial score=0.97 date=2026-09-29
-// ?rva002728C5@Drawable@@QAEXMM@Z
-// partial score=0.97 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc /G7 /arch:SSE
 //
 // ?rva002728C5@Drawable@@QAEXMM@Z, retail 0x002728C5, 71 bytes.
@@ -12,7 +6,7 @@
 // (half at 0x00BC26F0) to +0xAC. Evidence: unlock lane; same +0x14C head
 // pattern as Drawable_rva00272835; slot 0x54 callee pops 8B (no add esp);
 // callers at 0x00485773; neighbours Drawable share flags.
-#define kHalf002728C5 (*(const float *)0x00BC26F0)
+extern const float g_00BC26F0;
 
 class Rva002728C5Elem
 {
@@ -42,11 +36,10 @@ private:
 	Rva002728C5Elem **m_list;
 };
 
-// ?rva002728C5@Drawable@@QAEXMM@Z present-unmatched
 void Drawable::rva002728C5(float a, float b)
 {
-	Rva002728C5Elem *e = *m_list;
-	if (e)
-		e->slot54(a, b);
-	m_unkAC = (a + b) * kHalf002728C5;
+	Rva002728C5Elem **head = m_list;
+	if (*head != 0)
+		(*head)->slot54(a, b);
+	m_unkAC = (a + b) * g_00BC26F0;
 }

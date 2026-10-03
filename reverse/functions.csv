@@ -49943,3 +49943,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z,,0x000550F7,120,Code/GameEngine/Source/Common/Rva000550F7Finish.cpp,matched,BFME1 volume tree chain: outer float+key vector scan erase then refresh; found-flag loop reproduces retail top-test
 ?rva003A0D62@Rva003A0D62@@QAEXABVRva0039D769@@@Z,,0x003A0D62,166,Code/GameEngine/Source/Common/Rva003A0D62Finish.cpp,matched,0x18 member array index; /G7 selects imul+lea
 ??1BuildListInfo@@MAE@XZ,,0x0032A186,120,Code/GameEngine/Source/GameLogic/Map/Rva0032A186Finish.cpp,matched,deleteInstance(0) slot 0 plus ??3 with _ReadWriteBarrier loop order
+?rva002728C5@Drawable@@QAEXMM@Z,,0x002728C5,71,Code/GameEngine/Source/GameClient/Rva002728C5Finish.cpp,matched,Drawable float forwarder; +0x14C head double-deref to slot 0x54 then (a+b)*0.5 to +0xAC; SSE half at 0xBC26F0
