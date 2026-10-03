@@ -49432,3 +49432,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??0Rva005C663C@@QAE@XZ,,0x005C663C,108,Code/GameEngine/Source/GameClient/GUI/Rva005C663CCtor.cpp,matched,vtable 0x00C74914 Flash counter Create ShowButtonFlash
 ??1Rva005C663C@@UAE@XZ,,0x005C66A8,72,Code/GameEngine/Source/GameClient/GUI/Rva005C66A8Dtor.cpp,matched,dtor vtable 0x00C74914 base g_00BC6F20 Delete releaseBuffer
 ??_GRva005C663C@@UAEPAXI@Z,,0x005C670C,28,Code/GameEngine/Source/GameClient/GUI/Rva005C66A8Dtor.cpp,matched,deleting dtor calls 0x005C66A8 plus operator delete
+?rva004F7B42@Rva004F7B42@@QAEHHH@Z,,0x004F7B42,41,Code/GameEngine/Source/Common/Rva004F7B42.cpp,matched,upper_bound then end compare ret first or -1 callers 0x004F81CC 0x005EAB20
