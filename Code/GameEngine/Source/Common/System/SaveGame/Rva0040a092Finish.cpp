@@ -1,8 +1,14 @@
-// ?Rva0040A092Parse@@YAXPAVINI@@PAXPAPBVCommandButton@@H@Z
-// partial score=0.99 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+//
 // ?Rva0040A092Parse@@YAXPAVINI@@PAXPAPBVCommandButton@@H@Z @0x0040A092 173B
-// Evidence: chain lane; calls rowed findCommandButton 0x0031BE3C via g_bfmeWorldRV, INI getNextToken 0x2DF97 getFilename 0x2C005 getLineNum 0x2BBED, INIException 0x2F681 throw via pinned _CxxThrowException; stores found button into out[index]; prev Rva00409FCC.cpp same flags/layout.
+// Evidence: chain lane; calls rowed findCommandButton 0x0031BE3C via g_bfmeWorldRV,
+// INI getNextToken 0x2DF97 getFilename 0x2C005 getLineNum 0x2BBED, INIException
+// 0x2F681 throw via pinned _CxxThrowException; stores found button into out[index];
+// prev Rva00409FCC.cpp same flags/layout.  ZH donor CommandSet::parseCommandButton
+// (ControlBar.cpp) is the same token/find/store shape.  The last byte is the
+// getFilename temp: writing `ini->getFilename().str()` and `ini->getLineNum()`
+// inline in the throw (rather than through named locals) makes the compiler keep
+// the return-value pointer in eax and reserve the 0x10-byte frame retail has.
 #include "ascii_string.h"
 
 class INI
@@ -38,7 +44,6 @@ public:
     INIException &operator=(const INIException &that);
 };
 
-// ?Rva0040A092Parse@@YAXPAVINI@@PAXPAPBVCommandButton@@H@Z present-unmatched
 void Rva0040A092Parse(INI *ini, void *unused, const CommandButton **out, int index)
 {
     const char *token = ini->getNextToken(0);
@@ -48,10 +53,7 @@ void Rva0040A092Parse(INI *ini, void *unused, const CommandButton **out, int ind
         found = ((ControlBar *)(void *)g_bfmeWorldRV)->findCommandButton(tmp);
     }
     if (found == 0) {
-        const AsciiString filename = ini->getFilename();
-        const char *fname = filename.str();
-        int line = ini->getLineNum();
-        throw INIException(3, g_00C39070, token, fname, line);
+        throw INIException(3, g_00C39070, token, ini->getFilename().str(), ini->getLineNum());
     }
     out[index] = found;
 }
