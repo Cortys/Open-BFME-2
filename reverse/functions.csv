@@ -49934,3 +49934,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BC5CESet@@YGXABVAsciiString@@H@Z,,0x003BC5CE,88,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC5CE.cpp,matched,sibling 0x003BC626 mask loop with Player+0x1c add
 ?Rva003BC785Set@@YGXABVAsciiString@@00@Z,,0x003BC785,106,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC785.cpp,matched,mask loop with availability and science lookup
 ?Rva003BC123Do@@YGXPAVParameter@@ABVAsciiString@@M1@Z,,0x003BC123,125,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC123.cpp,matched,named unit waypoint lookup with AIUpdate slot
+?allow@PartitionFilterPossibleToAttack@@UAE_NPAVObject@@@Z,,0x00260FD0,37,Code/GameEngine/Source/GameLogic/Object/PartitionFilterPossibleToAttackAllow.cpp,matched,retail offsets +8+0xc+0x10 via caller 0x00350E4F BFME1 donor
