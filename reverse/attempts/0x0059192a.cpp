@@ -1,14 +1,7 @@
 // ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
-// partial score=0.92 date=2026-09-30
+// partial score=0.94 date=2026-10-03
 // ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z
-// partial score=0.92 date=2026-09-30
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
-// ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z @0x0059192A (133B):
-// NetPacket room check sibling of rva0058D211: charges type 2 relay 2
-// timestamp 5 player 2 plus fixed 2 plus wide-text bytes (len*2) against
-// base +0x1E0 and returns total<=0x1DC. Evidence: identical NetPacket tail
-// layout +0x1F4/+0x1F8/+0x1FC/+0x1FE/+0x1FF/+0x200 and MAX 0x1DC as siblings;
-// rowed wide-string getter @0x004D6119 plus rowed wide releaseBuffer @0x36E70.
 typedef int Int;
 typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
@@ -17,8 +10,7 @@ typedef unsigned char UnsignedByte;
 typedef bool Bool;
 enum { MAX_PACKET_SIZE = 0x1DC };
 
-template <typename T>
-class StringBase
+template <typename T> class StringBase
 {
 public:
 	StringBase() : m_data(0) {}
@@ -36,7 +28,6 @@ public:
 	};
 	Header *m_data;
 };
-
 class UnicodeString : public StringBase<WideChar>
 {
 public:
@@ -49,7 +40,6 @@ public:
 		return 0;
 	}
 };
-
 class Rva004D6119
 {
 public:
@@ -58,7 +48,6 @@ private:
 	char m_pad[0x1c];
 	UnicodeString m_str1c;
 };
-
 class NetCommandMsg
 {
 public:
@@ -72,7 +61,6 @@ public:
 	UnsignedInt m_referenceCount;
 	UnicodeString m_text1c;
 };
-
 class NetCommandRef
 {
 public:
@@ -85,45 +73,40 @@ public:
 	UnsignedByte m_pad0D[3];
 	UnsignedInt m_timeLastSent;
 };
-
 class NetPacket
 {
 public:
 	virtual ~NetPacket();
 protected:
-	UnsignedByte m_packet[0x1DC];
-	Int m_packetLen;
-	UnsignedInt m_destAddress;
-	UnsignedShort m_destPort;
-	UnsignedShort m_unknown1EA;
-	Int m_numCommands;
-	NetCommandRef *m_lastCommand;
-	UnsignedInt m_unknown1F4;
-	UnsignedInt m_lastCommandTimestamp;
-	UnsignedShort m_lastCommandID;
-	UnsignedByte m_lastPlayerID;
-	UnsignedByte m_lastCommandType;
-	UnsignedByte m_lastRelay;
 	Bool rva0059192A(NetCommandRef *msg);
+private:
+	UnsignedByte m_pad0[0x1E0 - 4];
+	Int m_packetLen;
+	UnsignedByte m_pad1[0x1F4 - 0x1E4];
+	UnsignedInt m_lastFrame1F4;
+	UnsignedInt m_lastTimestamp1F8;
+	UnsignedShort m_lastID1FC;
+	UnsignedByte m_lastPlayer1FE;
+	UnsignedByte m_lastType1FF;
+	UnsignedByte m_lastRelay200;
 };
-
 // ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z present-unmatched
 Bool NetPacket::rva0059192A(NetCommandRef *msg)
 {
 	NetCommandMsg *cmdMsg = msg->getCommand();
-	Int len = 0;
-	len = (m_lastCommandType != cmdMsg->m_commandType) ? 2 : len;
-	if (m_lastRelay != msg->getRelay()) {
+	Int len;
+	len = (m_lastType1FF != cmdMsg->m_commandType) ? 2 : 0;
+	if (m_lastRelay200 != msg->getRelay()) {
 		len += 2;
 	}
-	if (m_lastCommandTimestamp != cmdMsg->m_timestamp) {
+	if (m_lastTimestamp1F8 != cmdMsg->m_timestamp) {
 		len += 5;
 	}
-	if (m_lastPlayerID != cmdMsg->m_playerID) {
+	if (m_lastPlayer1FE != cmdMsg->m_playerID) {
 		len += 2;
 	}
 	len += 2;
 	UnsignedByte textLen = ((const Rva004D6119 *)(const void *)cmdMsg)->rva004D6119().getLenByte();
 	Int total = m_packetLen + (Int)textLen * 2 + len;
-	return total <= (Int)MAX_PACKET_SIZE;
+	return total <= MAX_PACKET_SIZE;
 }
