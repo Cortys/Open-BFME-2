@@ -49253,3 +49253,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00074BC8@Rva0007517F@@UAEXPBMHHHH@Z,,0x00074BC8,119,Code/GameEngine/Source/Common/System/Rva0007517FCtor.cpp,matched,vtable slot13 wrapper like rva00075016 but calls slot12 with int second param
 ?rva0056EFF2@Rva0056EFF2@@QAEPAU1@PAX0@Z,,0x0056EFF2,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,registry pick obfuscate via Rva0056ED06Pick same family
 ??0Rva0010274F@@QAE@XZ,,0x0010274F,347,Code/GameEngine/Source/Common/Rva0010274FZeroInit.cpp,matched,leaf zero-init ctor 0xE0 with vec pointer lea pattern
+?onEnter@Rva0054484A@@UAE?AW4StateReturnType@@XZ,,0x00544480,170,Code/GameEngine/Source/Common/Rva0054484AOnEnter.cpp,matched,vslot slot4 BEC tricall plus ignoreObstacle plus base
