@@ -1,4 +1,6 @@
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
+// partial score=0.95 date=2026-10-03
+// ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
 // partial score=0.94 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z @0x0034290D 101B: AIInternalMoveToState-derived ctor, hash 0xCC44C7B1, vtable 0x00812610, 6 floats + 2 ints zero, bytes from 3 bool params, 0x6F=1.
@@ -79,4 +81,5 @@ Rva0034290D::Rva0034290D(StateMachine *machine, bool a, bool b, bool c)
 	m_71 = false;
 	m_6F = true;
 	m_70 = c;
+	_ReadWriteBarrier();
 }
