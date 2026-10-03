@@ -34,6 +34,7 @@ public:
 	void rva005F298F();
 	void rva005F29CB();
 	void rva005F2B76(int rank);
+	void rva005F2CBA(float progress);
 	void rva005F2D41(int val);
 private:
 	char m_pad00[8];
@@ -138,6 +139,7 @@ public:
 	void rva005F2A42();
 	void rva005F2A4A();
 	void rva005F2F41(int rank);
+	void rva005F2F49(float progress);
 	void rva005F2F5C(int val);
 	void rva005F3272(const UnicodeString &text);
 private:
@@ -168,6 +170,11 @@ void Rva005F2A32::rva005F2A4A()
 void Rva005F2A32::rva005F2F41(int rank)
 {
 	m_member04->rva005F2B76(rank);
+}
+
+void Rva005F2A32::rva005F2F49(float progress)
+{
+	m_member04->rva005F2CBA(progress);
 }
 
 void Rva005F2A32::rva005F2F5C(int val)
