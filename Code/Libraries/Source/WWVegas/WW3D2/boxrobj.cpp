@@ -750,7 +750,7 @@ void AABoxRenderObjClass::Set_Transform(const Matrix3D &m)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void AABoxRenderObjClass::Set_Position(const Vector3 &v)
+inline void AABoxRenderObjClass::Set_Position(const Vector3 &v)
 {
 	RenderObjClass::Set_Position(v);
 	update_cached_box();
@@ -1111,7 +1111,7 @@ void OBBoxRenderObjClass::Special_Render(SpecialRenderInfoClass & rinfo)
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
 // ?OBBoxRenderObjClass::Set_Transform present-unmatched
-void OBBoxRenderObjClass::Set_Transform(const Matrix3D &m)
+inline void OBBoxRenderObjClass::Set_Transform(const Matrix3D &m)
 {
 	RenderObjClass::Set_Transform(m);
 	update_cached_box();
@@ -1136,6 +1136,18 @@ void OBBoxRenderObjClass::Set_Position(const Vector3 &v)
 	RenderObjClass::Set_Position(v);
 	update_cached_box();
 }
+
+
+// Set_Position is a header inline in its copier units; the anchor retains this
+// unit's row copy and is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAABoxRenderObjSetPositionInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeAABoxRenderObjSetPositionInlineAnchor()
+{
+	static_cast<AABoxRenderObjClass *>(0)->AABoxRenderObjClass::Set_Position(
+		*static_cast<const Vector3 *>(0));
+}
+#pragma inline_depth()
 
 
 /***********************************************************************************************
@@ -1378,4 +1390,3 @@ RenderObjClass * BoxPrototypeClass::Create(void)
 ** Global instance of the box loader
 */
 BoxLoaderClass _BoxLoader;
-
