@@ -49256,3 +49256,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?onEnter@Rva0054484A@@UAE?AW4StateReturnType@@XZ,,0x00544480,170,Code/GameEngine/Source/Common/Rva0054484AOnEnter.cpp,matched,vslot slot4 BEC tricall plus ignoreObstacle plus base
 ?rva005DB3B3@Rva005DB3B3@@QAEXH@Z,,0x005DB3B3,351,Code/GameEngine/Source/Common/Rva005DB3B3Method.cpp,matched,unlock Apt playername playernum via GameSpy slot plus GameInfo slot plus rowed format plus bfmeSetText callers 0x005DB61E
 ?rva0059EF33@Rva0059ECAD@@QBEEXZ,,0x0059EF33,22,Code/GameEngine/Source/Common/Rva0059ECADSetter.cpp,matched,6-or-12 tester at plus 0x488 sibling of setter
+??0Rva005344C0@@QAE@ABU0@@Z,,0x00534676,29,Code/GameEngine/Source/Common/Rva005344C0Copy.cpp,matched,gap copy via rowed Rb_tree copy 534581 plus caller 5346F5 same flags

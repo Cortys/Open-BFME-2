@@ -7257,3 +7257,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ??0Rva00404781@@QAE@XZ,0x00404AA5,ICF twin of rowed rva00404AA5 same 12B body calls 0040475C proven by vector ctor push at 0056C266
 ??1Rva00404781@@QAE@XZ,0x000B3FD0,empty dtor folded at shared 1B ret proven by vector ctor dtor push at 0056C266
 ?rva00056E53@Rva000427195@@QAEPAUHashNode00056E53@@ABU?$pair@$$CBVAsciiString@@UTreeHintPayload0005808E@@@_STL@@@Z,0x00056E53,ICF twin of free New ignoring this receiver call site 0x58C6F
+??0?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@QAE@ABV01@@Z,0x00534581,twin of dup_00534581 row object-symbol via call site 00534676 plus row notes
