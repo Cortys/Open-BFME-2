@@ -49123,3 +49123,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva0042CBB6@@QAE@XZ,,0x0042CBB6,101,Code/GameEngine/Source/Common/Rva0042CBB6Ctor.cpp,matched,thiscall returns this vtable g_00C3C6F4 memset thunk 0x006291AE global g_00E03210 caller 0x0023A4C3
 ?rva0042CB81@Rva0042CBB6@@QAEXH@Z,,0x0042CB81,53,Code/GameEngine/Source/Common/Rva0042CB81.cpp,matched,layout matches Rva0042CBB6Ctor callers 5 unblocks 0x0042D068
 ?rva0042CAEB@Rva0042CBB6@@QAEXH@Z,,0x0042CAEB,16,Code/GameEngine/Source/Common/Rva0042CB81.cpp,matched,conditional clear on match via Rva0042CBB6 layout
+?rva00274C88@Drawable@@QAEXPAVAsciiString@@@Z,,0x00274C88,42,Code/GameEngine/Source/GameClient/Drawable_rva00274C62.cpp,matched,Drawable 0x34C setter clears when empty else rowed set via isEmpty plus releaseBuffer

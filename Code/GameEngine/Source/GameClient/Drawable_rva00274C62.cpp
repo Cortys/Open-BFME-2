@@ -12,6 +12,7 @@ class Drawable
 public:
 	bool rva00274C62(AsciiString *dst);
 	bool rva00274CB2(AsciiString *dst);
+	void rva00274C88(AsciiString *src);
 private:
 	unsigned char m_pad[0x348];
 	AsciiString m_s348;
@@ -34,4 +35,12 @@ bool Drawable::rva00274CB2(AsciiString *dst)
 		return true;
 	}
 	return false;
+}
+
+void Drawable::rva00274C88(AsciiString *src)
+{
+	if (src->isEmpty())
+		m_s34C.clear();
+	else
+		m_s34C.set(*src);
 }
