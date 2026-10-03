@@ -50434,3 +50434,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0009A2CDRun@@YAXXZ,,0x0009A2CD,61,Code/GameEngine/Source/Common/Rva0009A2CDDispatch.cpp,matched,chain from 0x0007BA35 four guarded dispatches plus tail jmp
 ??_GFrameDataManager@@UAEPAXI@Z,,0x0058B86E,28,Code/GameEngine/Source/Common/FrameDataManagerDtor.cpp,matched,vtable slot0 0x00870A0C deleting dtor calls rowed dtor plus scalar delete
 ?erase@?$vector@UBfmePod28@@V?$allocator@UBfmePod28@@@_STL@@@_STL@@QAEPAUBfmePod28@@PAU3@@Z,,0x00216267,47,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod28_single_erase.cpp,matched,vector Pod28 single erase via copy-ptrs pin plus abuts 0x00216296 plus callers 0x00216664 plus 0x002167E9
+??0Rva003200EB@@QAE@XZ,,0x003200EB,81,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva003200EB.cpp,matched,ctor list clear plus 1.0f defaults via literal
