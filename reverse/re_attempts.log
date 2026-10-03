@@ -6421,3 +6421,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva0030C2CESave@@YAXPAVRva0030C2CECollection@@PAVDataChunkOutput@@@Z	0x0030C2CE	316	blocked	direct cur index keeps lea-vs-shl plus esi-edi plus inc placement t=8 model=muse-09 (stash 0.93 kept)
 ??1AIGroup@@UAE@XZ	0x0036E564	141	blocked	AIGroup dtor wall vtable-zero plus list-size-plus8 plus missing rva-call plus second-vtable-base t=15 model=muse-09
 ?rva00224D80@Rva00224D80@@QAEHXZ	0x00224D80	127	blocked	singleton static-guard plus atexit plus holder-plus-virtual plus size-0x20-mismatch wall t=12 model=muse-09
+?getSciencePurchaseCost@ScienceStore@@QBEHW4ScienceType@@@Z	0x001FF3DC	86	partial	exact 86B 0 structural regions; short-circuit OR over a GameLogic local reproduces retail branch order; only mode lives in eax vs retail esi (3 register operands) t=25 model=deepseek-flash score=0.97 stash=reverse/attempts/0x001ff3dc.cpp
