@@ -54,7 +54,6 @@ void Rva00086761CameraMove::rva00086761(Rva00089894Point *pLoc)
 // Same primary tableBC7568 slot32/BC75E8 selects this method. The field
 // parent2A8 is canonical owner base m_28 at280+28. EAX incidentally holds
 // normalized value; original return contract remains unknown.
-// ?Rva00086761CameraMove::rva0008690A present-unmatched
 void Rva00086761CameraMove::rva0008690A(int value)
 {
  if (value<=1) value=1;
