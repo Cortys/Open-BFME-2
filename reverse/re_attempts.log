@@ -6336,3 +6336,5 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva002AAC74@Rva002AAC74@@QAEXXZ	0x002AAC74	42	blocked	loop global reload order swapped plus extra mov eax edx vs retail store global scheduling wall t=8 model=muse-01 (stash 0.9 kept)
 ?rva00282870@Rva00282870@@QAEXXZ	0x00282870	178	blocked	STL insert 178B with 5 callees allocate Copy Set Fill dtor needs container identity plus 5-arg thiscall signature unclear t=10 model=muse-01
 ?rva00531196@Rva00531196@@QAEXPAI@Z	0x00531196	159	partial	first RMW mov+xor+mov vs xor-mem+xor-mem add-esp late vs early rest exact t=22 model=muse-02 score=0.97 stash=reverse/attempts/0x00531196.cpp
+?rva00573F3A@Rva00573F03@@QAEXPAUCoord3DBase@@@Z	0x00573F3A	101	partial	frame matches via float v3 but early xmm1 xmm2 loads plus reg-reg addss remain mem t=24 model=muse-11 score=0.91 stash=reverse/attempts/0x00573f3a.cpp
+?rva00573F3A@Rva00573F03@@QAEXPAUCoord3DBase@@@Z	0x00573F3A	101	blocked	frame matches via float v3 and z-first stores but early 3-load plus reg-reg addss remain 2x mem addss tried scalars struct-copies address-taken plus O2 t=18 model=muse-11 (stash 0.91 kept)
