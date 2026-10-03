@@ -49068,3 +49068,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva000857F2@Rva000857F2@@QAEXXZ,,0x000857F2,35,Code/GameEngine/Source/Common/Rva000857F2Clear.cpp,matched,thiscall clears three floats and five bytes unlocks 0x0008D925
 ??0Rva002768AC@@QAE@PAVDrawable@@@Z,,0x00278869,65,Code/GameEngine/Source/GameClient/Rva002768AC.cpp,matched,ctor via rowed Matrix3D and rowed 0x002768AC and TheGameClient caller 0x002788C7
 ?rva0027D1C6@Rva0027D1C6@@QAEPAV1@XZ,,0x0027D1C6,41,Code/GameEngine/Source/Common/Rva0027D1C6.cpp,matched,init returns this like Rva0027D244Init via eax base
+?rva005E0D94@Rva005E0D94@@QAEXXZ,,0x005E0D94,8,Code/GameEngine/Source/Common/Rva005E0D94Method.cpp,matched,chain forwarder to rowed 0x005E0CC7
