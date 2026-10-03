@@ -454,85 +454,20 @@ void GameWindowManager::unlinkChildWindow( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Check window and parents to see if this window is enabled */
 //-------------------------------------------------------------------------------------------------
-// ?GameWindowManager::isEnabled present-unmatched
-Bool GameWindowManager::isEnabled( GameWindow *win )
-{
+// GameWindowManager::isEnabled is defined in GameWindowManagerParentLinks.cpp.
 
-	// sanity
-	if( win == NULL )
-		return FALSE;
-	
-	if( BitTest( win->m_status, WIN_STATUS_ENABLED ) == FALSE )
-	{
-		return FALSE;
-	}
-
-	while( win->m_parent )
-	{
-		win = win->m_parent;
-		if( BitTest( win->m_status, WIN_STATUS_ENABLED ) == FALSE )
-		{
-			return FALSE;
-		}
-	}
-
-	return TRUE;
-
-}  // end isEnabled
 
 //-------------------------------------------------------------------------------------------------
 /** Check window and parents to see if this window is hidden */
 //-------------------------------------------------------------------------------------------------
-// ?GameWindowManager::isHidden present-unmatched
-Bool GameWindowManager::isHidden( GameWindow *win )
-{
+// GameWindowManager::isHidden is defined in GameWindowManagerParentLinks.cpp.
 
-	// we'll allow for the idea that if a window doesn't exist it is hidden
-	if( win == NULL )
-		return TRUE;
-	
-	if( BitTest( win->m_status, WIN_STATUS_HIDDEN ))
-	{
-		return TRUE;
-	}
-
-	while( win->m_parent )
-	{
-		win = win->m_parent;
-		if( BitTest( win->m_status, WIN_STATUS_HIDDEN ))
-		{
-			return TRUE;
-		}
-	}
-
-	return FALSE;
-
-}  // end isHidden
 
 //-------------------------------------------------------------------------------------------------
 // Adds a child window to its parent.
 //-------------------------------------------------------------------------------------------------
-// ?GameWindowManager::addWindowToParent present-unmatched
-void GameWindowManager::addWindowToParent( GameWindow *window, 
-																					 GameWindow *parent )
-{
-	if( parent ) 
-	{
+// GameWindowManager::addWindowToParent is defined in GameWindowManagerParentLinks.cpp.
 
-		// add to parent's list of children
-		window->m_prev = NULL;
-		window->m_next = parent->m_child;
-
-		if( parent->m_child )
-			parent->m_child->m_prev = window;
-
-		parent->m_child = window;
-
-		window->m_parent = parent;
-
-	}
-
-}  // end addWindowToParent
 
 //-------------------------------------------------------------------------------------------------
 /** Add a child window to the parent, put place it at the end of the 
