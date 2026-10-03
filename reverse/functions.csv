@@ -50480,3 +50480,8 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00153664@Rva00153664@@QAEXHPBDPAVRva0015354E@@@Z,,0x00153664,134,Code/Libraries/Source/WWVegas/WWLib/Rva00153664.cpp,matched,chain from 0x001535FF slots 0x10 0x20 0x04 reuses Rva0015354E and Rva001531E6
 ?Rva001117B4IsPow2@@YGEH@Z,,0x001117B4,47,Code/GameEngine/Source/Common/Rva001117B4Finish.cpp,matched,power-of-two test 1..64 with shared true block
 ?rva004ED471@Rva004ED471@@QAEXPAVModelNodeClass@HLodClass@@PBV23@PBXI_N@Z,,0x004ED471,189,Code/Libraries/Source/WWVegas/WW3D2/Rva004ED471Finish.cpp,matched,HLod ModelNode vector overflow via empty allocator temp
+??1Rva00425F10@@UAE@XZ,,0x004260A3,59,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,
+??_GRva00425F10@@UAEPAXI@Z,,0x0042619C,28,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,
+??0Rva00425F10@@QAE@XZ,,0x004261B8,55,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,
+??0BfmePod52@@QAE@W4NameKeyType@@@Z,,0x00425E85,33,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,
+?parseStanceTemplateDefinition@Rva00425F10@@SAXPAVINI@@@Z,,0x00426203,259,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,

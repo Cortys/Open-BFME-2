@@ -1,4 +1,5 @@
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /DNDEBUG /MD
+// stlport
 //
 // ?init@FontLibrary@@UAEXXZ, retail 0x00217561, 89 bytes.
 // FontLibrary subsystem init: virtual slot 1 (offset 0x4) of vtable 0x007E5AD0.
@@ -34,6 +35,10 @@ public:
 	INI();
 	~INI();
 	void loadFile(AsciiString filename, INILoadType loadType, Xfer *xfer);
+	const char *getNextToken(const char *seps);
+	AsciiString getFilename() const;
+	int getLineNum() const;
+	void initFromINI(void *what, const struct FieldParse *parseTable);
 private:
 	char m_storage[0x87C];
 };
@@ -42,7 +47,7 @@ class SubsystemInterface
 {
 public:
 	SubsystemInterface();
-	~SubsystemInterface();
+	virtual ~SubsystemInterface();
 	virtual void init();
 	void setName(AsciiString name);
 
@@ -90,17 +95,105 @@ void ControlBarResizer::init()
 
 // ?rva00425F10@Rva00425F10@@UAEXXZ, retail 0x00425F10, 89 bytes.
 // The same body loading "Data\\INI\\Stances.ini", in slot 1 of vtable 0xC3C2AC
-// (the slot FontLibrary::init fills in its vtable). The constructor and
-// destructor that install that vtable (0x004260B6, 0x004261D7) are unrowed, so
-// the class is not identified and keeps this address.
-class Rva00425F10
+// (the slot FontLibrary::init fills in its vtable).
+#include <map>
+
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0
+};
+
+struct StanceData
+{
+	StanceData();
+	int m_attributeModifier;
+	int m_meleeBehavior;
+};
+
+struct BfmePod52
+{
+	BfmePod52(NameKeyType key);
+	NameKeyType m_nameKey;
+	StanceData m_stances[6];
+};
+
+BfmePod52::BfmePod52(NameKeyType key) : m_nameKey(key)
+{
+}
+
+class NameKeyGenerator
 {
 public:
-	virtual void rva00425F10();
+	NameKeyType nameToKey(const char *name);
+	const AsciiString &keyToName(NameKeyType key);
 };
+
+extern NameKeyGenerator *TheNameKeyGenerator;
+
+class INIException
+{
+public:
+	char *mFailureMessage;
+	int m_argCount;
+	INIException(int argCount, const char *format, ...);
+	INIException(const INIException &that);
+	~INIException();
+	INIException &operator=(const INIException &that);
+};
+
+struct FieldParse
+{
+	const char *token;
+	void *parseFunc;
+	unsigned int offset;
+	unsigned int defaultValue;
+};
+
+void __cdecl parseStance(INI *ini, void *data);
+
+class Rva00425F10 : public SubsystemInterface
+{
+public:
+	Rva00425F10();
+	virtual ~Rva00425F10();
+	virtual void rva00425F10();
+	static void parseStanceTemplateDefinition(INI *ini);
+private:
+	_STL::map<int, BfmePod52> m_map;
+};
+
+extern Rva00425F10 *TheStancesStore;
+
+Rva00425F10::Rva00425F10()
+{
+}
+
+Rva00425F10::~Rva00425F10()
+{
+}
 
 void Rva00425F10::rva00425F10()
 {
 	INI ini;
 	ini.loadFile("Data\\INI\\Stances.ini", INI_LOAD_OVERWRITE, 0);
+}
+
+
+void Rva00425F10::parseStanceTemplateDefinition(INI *ini)
+{
+	const char *token = ini->getNextToken(0);
+	NameKeyType key = TheNameKeyGenerator->nameToKey(token);
+	_STL::map<int, BfmePod52>::iterator it = TheStancesStore->m_map.find(key);
+	if (it != TheStancesStore->m_map.end())
+	{
+		throw INIException(3, "%s(%d) : Stance %s already defined",
+			ini->getFilename(), ini->getLineNum(), TheNameKeyGenerator->keyToName(key));
+	}
+	_STL::map<int, BfmePod52>::iterator it2 =
+		TheStancesStore->m_map.insert(_STL::pair<const int, BfmePod52>(key, BfmePod52(key))).first;
+	FieldParse parseTable[] = {
+		{ "Stance", (void *)parseStance, 0, 0 },
+		{ 0, 0, 0, 0 }
+	};
+	ini->initFromINI(&it2->second, parseTable);
 }
