@@ -50355,3 +50355,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva005011DA@@QAE@XZ,,0x005011DA,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector dtor via rowed 0x00500CB8 and free 0x00030830 caller 0x00501776
 ?rva000E7016@Rva000E7016@@QAEXXZ,,0x000E7016,195,Code/GameEngine/Source/Common/Rva000E7016Reset.cpp,matched,DX8 guard base plus dual ref release float reload and fill
 ?rva000E73CE@Rva000E73CE@@QAEXXZ,,0x000E73CE,46,Code/GameEngine/Source/Common/Rva000E73CE.cpp,matched,shroud null fill over stride A0 via rowed global
+??0Rva000E771B@@QAE@XZ,,0x000E771B,25,Code/GameEngine/Source/Common/Rva000E771BCtor.cpp,matched,Region2D array ctor via vector iterator
