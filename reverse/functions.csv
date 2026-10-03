@@ -49353,3 +49353,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?Rva003FEE43SetPlayerRank@@YA_NH@Z,,0x003FEE43,136,Code/GameEngine/Source/Common/Rva003FEE43.cpp,matched,Apt PlayerRank via static key format and bfmeSetText
 ?Rva003FEECBSetPalantirCommandPoints@@YA_NHH@Z,,0x003FEECB,181,Code/GameEngine/Source/Common/Rva003FEECB.cpp,matched,Apt Palantir command points via static key int-gated format set and bfmeSetText
 ?Rva003FECFECreateButtonFlash@@YAXPAPAX@Z,,0x003FECFE,52,Code/GameEngine/Source/GameClient/Rva003FECFE.cpp,matched,UI firer CreateButtonFlash via empty-or-label and invoke
+??0Rva004FD7FBData@@QAE@XZ,,0x004FCE41,50,Code/GameEngine/Source/Common/Rva004FD7FBDataCtor.cpp,matched,default ctor two vectors plus two zeros via caller Parse
