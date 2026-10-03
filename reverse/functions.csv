@@ -50415,3 +50415,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0039BAD2@Rva0039BAD2@@QAEXPAURva0039BAD2Input@@H@Z,,0x0039BAD2,56,Code/GameEngine/Source/Common/Rva0039BAD2Method.cpp,matched,input bits select 14 18 1C always 1E0
 ??0Rva00346CDD@@QAE@PAVStateMachine@@@Z,,0x00346CDD,24,Code/GameEngine/Source/Common/Rva00346CDDCtor.cpp,matched,ctor via rowed base Rva0034005D and vtable g_00C136A0
 ?rva005D62E8@Rva005D62E8@@QAEPAV1@PAVPlayerInfo@@@Z,,0x005D62E8,178,Code/GameEngine/Source/Common/Rva005D62E8.cpp,matched,thiscall returns this PlayerInfo profile map find vf24 vf31 isIgnored
+??0Rva00413F8B@@QAE@XZ,,0x00413F8B,54,Code/GameEngine/Source/Common/Thing/ModuleFactoryCtor_Rva00413F8B.cpp,matched,unlock lane ctor with vector and map via rowed ctors
