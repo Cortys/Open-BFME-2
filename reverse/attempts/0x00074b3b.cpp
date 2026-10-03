@@ -1,4 +1,6 @@
 // ?Rva00074B3BGet@@YGPAVRva000748F6@@PAUVec3@@0HEH@Z
+// partial score=0.97 date=2026-10-04
+// ?Rva00074B3BGet@@YGPAVRva000748F6@@PAUVec3@@0HEH@Z
 // partial score=0.95 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /arch:SSE
 // ?Rva00074B3BGet@@YGPAVRva000748F6@@PAUVec3@@0HEH@Z, retail 0x00074B3B, 141 bytes.
@@ -47,9 +49,10 @@ Rva000748F6 *__stdcall Rva00074B3BGet(Vec3 *a, Vec3 *b, int c, unsigned char d, 
 	g->m34 = c;
 	g->m38 = d;
 	float bx = b->x, by = b->y, bz = b->z;
-	g->m_r2.diff = bz - a->z;
-	g->m_r1.diff = by - a->y;
-	g->m_r0.diff = bx - a->x;
+	float d0 = bx - a->x, d1 = by - a->y, d2 = bz - a->z;
+	g->m_r2.diff = d2;
+	g->m_r1.diff = d1;
+	g->m_r0.diff = d0;
 	float ax = a->x, ay = a->y, az = a->z;
 	g->m_r0.z1 = 0.0f;
 	g->m_r0.z2 = 0.0f;
