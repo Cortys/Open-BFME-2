@@ -15,7 +15,13 @@ public:
 class Locomotor
 {
 public:
-	int getLegalSurfaces() const { return m_template->m_surfaces; }
+	// Rva0028B81EGetSurfaces: NOT the real Locomotor::getLegalSurfaces (kept
+	// copy in AIUpdate.cpp tests m_template==null and calls
+	// Overridable::getFinalOverride). Retail 0x0028B81E inlines only the
+	// direct m_template->m_surfaces load, so this TU uses an honest
+	// address-named accessor to avoid emitting a differing
+	// ?getLegalSurfaces@Locomotor@@QBEHXZ COMDAT.
+	int rva0028B81EGetSurfaces() const { return m_template->m_surfaces; }
 
 private:
 	unsigned char m_pad[4];
@@ -44,5 +50,5 @@ private:
 
 bool Object::isUsingAirborneLocomotor() const
 {
-	return (m_ai && m_ai->getCurLocomotor() && ((m_ai->getCurLocomotor()->getLegalSurfaces() & (1 << 3)) != 0));
+	return (m_ai && m_ai->getCurLocomotor() && ((m_ai->getCurLocomotor()->rva0028B81EGetSurfaces() & (1 << 3)) != 0));
 }
