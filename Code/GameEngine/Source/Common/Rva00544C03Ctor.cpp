@@ -4,6 +4,7 @@
 // 0xA2C0BF2B then zero of +0x20 then vtable 0x00C69C98. Evidence:
 // vtable store at [this]; base StateCtor row; prev 0x00544AD2 same dir.
 class StateMachine;
+class Xfer;
 
 enum StateReturnType
 {
@@ -17,7 +18,7 @@ public:
 	virtual ~State();
 	virtual void slot01();
 	virtual void slot02();
-	virtual void slot03();
+	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
 	virtual void slot05();
 	virtual StateReturnType update();
@@ -183,19 +184,77 @@ public:
 	virtual int w08();
 };
 
+typedef unsigned int UnsignedInt;
+
+class Xfer
+{
+public:
+	void Version1();
+	virtual ~Xfer();
+	virtual bool isLoading();
+	virtual bool isSaving();
+	virtual void slot03();
+	virtual void slot04();
+	virtual void slot05();
+	virtual void slot06();
+	virtual void slot07();
+	virtual void slot08();
+	virtual void slot09();
+	virtual Xfer &xferVersion(struct XferVersion &version);
+	virtual Xfer &xferTypeName(const char *const &name);
+	virtual void slot12();
+	virtual void slot13();
+	virtual void slot14();
+	virtual void slot15();
+	virtual void slot16();
+	virtual void slot17();
+	virtual void slot18();
+	virtual void slot19();
+	virtual void slot20();
+	virtual void slot21();
+	virtual void slot22();
+	virtual void slot23();
+	virtual void slot24(int *value);
+	virtual void slot25();
+	virtual void slot26();
+	virtual void xferAsciiString(void *value);
+	virtual void slot28();
+	virtual void slot29();
+	virtual Xfer &xferUnsignedInt(UnsignedInt &value);
+	virtual void slot31();
+	virtual void slot32();
+	virtual void slot33();
+	virtual void slot34();
+	virtual void slot35();
+	virtual void slot36(int *value);
+};
+
+struct XferVersion
+{
+	unsigned char m_version;
+	unsigned char m_currentVersion;
+};
+
 class Rva00544C03 : public State
 {
 public:
 	Rva00544C03(StateMachine *machine);
+	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
 private:
-	int m_20;
+	UnsignedInt m_20;
 };
 
 Rva00544C03::Rva00544C03(StateMachine *machine) : State(machine, 0xA2C0BF2Bu)
 {
 	m_20 = 0;
 	*(const void **)this = g_00C69C98;
+}
+
+void Rva00544C03::xfer(Xfer *xfer)
+{
+	xfer->Version1();
+	xfer->xferUnsignedInt(m_20);
 }
 
 StateReturnType Rva00544C03::onEnter()
