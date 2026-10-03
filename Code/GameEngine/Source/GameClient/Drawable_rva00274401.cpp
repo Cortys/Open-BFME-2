@@ -1,5 +1,3 @@
-// ?rva00274401@Drawable@@QAEXXZ
-// partial score=0.93 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /EHsc /Oy- /G7
 //
 // ?rva00274401@Drawable@@QAEXXZ, retail 0x00274401, 68 bytes.
@@ -53,7 +51,6 @@ private:
 	bool m_flag44a;
 };
 
-// ?rva00274401@Drawable@@QAEXXZ present-unmatched
 void Drawable::rva00274401()
 {
 	if (!m_flag44a)
@@ -61,17 +58,12 @@ void Drawable::rva00274401()
 	m_flag44a = false;
 	((Rva002714CA *)this)->rva002714CA();
 	rva002743D7();
-	ElemA274401 **p = m_arr154;
-	if (p == 0)
-		return;
-	ElemA274401 *a = *p;
-	if (a == 0)
-		return;
-	do {
+	for (ElemA274401 **p = m_arr154; p != 0; ++p) {
+		ElemA274401 *a = *p;
+		if (a == 0)
+			return;
 		ElemB274401 *b = a->slot12();
 		if (b != 0)
 			b->slot1();
-		++p;
-		a = *p;
-	} while (a != 0);
+	}
 }
