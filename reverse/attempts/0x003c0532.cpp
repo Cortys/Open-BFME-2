@@ -1,4 +1,6 @@
 // ?Rva003C0532Do@@YGX_N@Z
+// partial score=0.93 date=2026-10-04
+// ?Rva003C0532Do@@YGX_N@Z
 // partial score=0.93 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1
 // ?Rva003C0532Do@@YGX_N@Z @0x003C0532 88B. Audio slot 0x98 with (arg==0) then AsciiString "/___MusicScript_Init" temp to ScriptEngine slot then set byte. Evidence: callees rowed, string literal in packet, externs TheAudio g_Va009FE16C, caller 0x003CC10A.
