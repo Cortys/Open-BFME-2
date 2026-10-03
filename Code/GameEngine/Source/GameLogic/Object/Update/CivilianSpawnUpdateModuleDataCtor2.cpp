@@ -40,6 +40,7 @@ class CivilianSpawnUpdateModuleData : public CivilianSpawnBase
 {
 public:
 	CivilianSpawnUpdateModuleData();
+	virtual ~CivilianSpawnUpdateModuleData();
 
 private:
 	Rva003623E5Filter m_filter0C;	// +0x0C
