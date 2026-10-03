@@ -1,4 +1,6 @@
 // ?rva0028D900@Object@@QAE_NPAM0@Z
+// partial score=0.96 date=2026-10-03
+// ?rva0028D900@Object@@QAE_NPAM0@Z
 // partial score=0.95 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva0028D900@Object@@QAE_NPAM0@Z, RVA 0x0028D900, 154B. Unlock lane:
@@ -44,18 +46,18 @@ bool Object::rva0028D900(float *out1, float *out2)
     float v = g_00BC8980;
     if (m_sub4)
         v = m_sub4->m_val534;
-    float high = g_00BED19C;
     float mult = m_multB8;
-    float s = mult * v;
     float low = g_bfmeClearA;
+    float s = v * mult;
+    float high = g_00BED19C;
     if (s <= high)
     {
-        if (s < low)
+        if (low > s)
             s = low;
-        else if (s > high)
+        else if (high < s)
             s = high;
     }
-    else if (s > high)
+    else if (high < s)
     {
         s = high;
     }
