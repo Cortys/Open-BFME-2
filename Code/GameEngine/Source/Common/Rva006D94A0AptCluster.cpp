@@ -32,6 +32,42 @@ public:
 	static BfmeAptValue006DCD20 *Create(int value);
 };
 
+// Value-object GC views shared with AptNativeHashMark.cpp: the shr-and-field
+// word at +4 and the 14-slot AptValue vtable whose slot 13 (0x34) is the mark
+// dispatch. Only the field word and the slot offset are used here.
+class Rva006DBB40ShrAndField
+{
+public:
+	bool get() const;
+};
+
+class AptValue
+{
+public:
+	virtual void AddRef();
+	virtual void Release();
+	virtual void unused2();
+	virtual void unused3();
+	virtual void unused4();
+	virtual void unused5();
+	virtual void unused6();
+	virtual void unused7();
+	virtual void unused8();
+	virtual void unused9();
+	virtual void unused10();
+	virtual void unused11();
+	virtual void unused12();
+	virtual void unused13();
+	void setGCMark(bool value);
+};
+
+// The Rva006D6360 base forwarder 0x006DCC00 (slot 0x34 native-hash mark).
+class Rva006D6360
+{
+public:
+	void rva006DCC00();
+};
+
 class BfmeAptValue006DCD20
 {
 public:
@@ -41,10 +77,12 @@ public:
 	int isArray() const;
 	BfmeAptValue006DCD20 *rva006DCFA0();
 	BfmeAptValue006DCD20 *rva006DCEE0();
+	BfmeAptValue006DCD20 *rva006D8A50(int nIndex);
 	void rva006D9500(int nCapacity);
 	void rva006D8AD0(int nIndex, BfmeAptValue006DCD20 *pNewValue);
 	void rva006D95E0(int nIndex, BfmeAptValue006DCD20 *pValue);
 	void rva006DD6C0(EAStringC *pBuffer);
+	void rva006D94A0();
 
 	unsigned int m_flags;
 	char m_pad[0x18];
@@ -166,4 +204,26 @@ BfmeAptValue006DCD20 *rva006DA0C0(BfmeAptValue006DCD20 *pValue, int mode)
 	}
 
 	return g_aptUndefinedAtE18078;
+}
+
+// ?rva006D94A0@BfmeAptValue006DCD20@@QAEXXZ @0x006D94A0 (92 bytes).
+// Array GC-mark traversal (AptValue vtable slot 13 / 0x34): forwards to the
+// Rva006D6360 slot-0x34 native-hash mark, then walks every element, and for
+// each unmarked value sets its GC mark and recurses through the same slot.
+// Every access re-reads the element through At 0x006D8A50, matching retail's
+// four separate calls per iteration.
+// Evidence: vtable 0x008EA778 slot 0x34 = this body; forwarder thunk 0x0070DFD0
+// -> 0x006DCC00; callees At 0x006D8A50, get 0x006DBB40, setGCMark 0x006DBC50.
+void BfmeAptValue006DCD20::rva006D94A0()
+{
+	((Rva006D6360 *)this)->rva006DCC00();
+
+	for (int i = 0; i < mnLength; ++i)
+	{
+		if (rva006D8A50(i) && !((const Rva006DBB40ShrAndField *)rva006D8A50(i))->get())
+		{
+			((AptValue *)rva006D8A50(i))->setGCMark(true);
+			((AptValue *)rva006D8A50(i))->unused13();
+		}
+	}
 }
