@@ -49673,3 +49673,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004D6806@Rva004D6806@@QAE?AVAsciiString@@XZ,,0x004D6806,192,Code/GameEngine/Source/GameNetwork/Rva004D6806Contents.cpp,matched,chain of 0x004D5B4C via translate format empty fallback
 ??1Rva004D67D0@@MAE@XZ,,0x004D67D0,54,Code/GameEngine/Source/GameNetwork/Rva004D67D0Dtor.cpp,matched,dtor via caller 0x004D67B4 plus layout Rva004D6806 plus vtable pair
 ??_GRva004D67D0@@MAEPAXI@Z,,0x004D67B4,28,Code/GameEngine/Source/GameNetwork/Rva004D67D0Dtor.cpp,matched,deleting dtor via ??1 0x004D67D0 plus caller shape
+?rva004D6BF0@Rva004D6BF0@@QAEXPAX@Z,,0x004D6BF0,57,Code/GameEngine/Source/Common/Rva004D6BF0Erase.cpp,matched,find-and-erase via Rva0025BF8C plus null check plus EBP frame
