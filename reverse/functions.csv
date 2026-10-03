@@ -50129,3 +50129,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BC4FFForward@@YAXXZ,,0x003BC4FF,17,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4FFForward.cpp,matched,script forwards to TheAudio slot 0xbc with 0
 ?rva004080DD@CreateAHeroData@@QAE_NABVAsciiString@@PAI@Z,,0x004080DD,44,Code/GameEngine/Source/Common/System/SaveGame/CreateAHeroDataRva004080DD.cpp,matched,CreateAHeroData try-get via map50 callers 0x408109 0x40A99A rowed Mfind
 ?Rva003BC566Forward@@YAXXZ,,0x003BC566,17,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC566Forward.cpp,matched,script forwards to TheAudio slot 0xc8 with 0
+?Rva003BC1A0Forward@@YAXXZ,,0x003BC1A0,18,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC1A0Forward.cpp,matched,script forwards TheTerrainLogic to TheRadar slot 0x10
