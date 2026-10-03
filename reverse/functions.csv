@@ -50226,3 +50226,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0BfmeRecordOwner900@@QAE@XZ,,0x004CB74C,162,Code/Libraries/Source/WWVegas/WWLib/OwnedRecord900Ctor.cpp,matched,default ctor dual clears plus vectors plus members plus map
 ?rva004CBDAC@Rva004CBDAC@@QAE_NHPAURva002C99FB@@@Z,,0x004CBDAC,35,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004CBDAC.cpp,matched,indexed record fetch via rowed assign plus caller
 ?rva004CBDCF@Rva004CBDCF@@QAE_NHPAURva002C99FB@@@Z,,0x004CBDCF,53,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004CBDCF.cpp,matched,guarded fetch via reroll plus float plus rowed fetch
+??$_Construct@URva001DD1B3@@U1@@_STL@@YAXPAURva001DD1B3@@ABU1@@Z,,0x001DD3AA,18,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_rva001dd1b3.cpp,matched,placement copy via rowed Rva001DD1B3 copy
