@@ -1,5 +1,13 @@
 // cl: /O1 /DNDEBUG /MD
 
+// Text-color family from clean Open-BFME-1 6d9434269164392c5ba62aaa7c15a86b5b020d76.
+// Retail independently proves four distinct color-pair stores and the
+// ComboBox style-bit dispatch at GameWindow +0x3C. The paired helpers call
+// the rowed winGetUserData provider and then the same setter on optional
+// child pointers at data +0x2C and +0x28. Donor supplies semantic names;
+// native boundaries, stores and reciprocal calls establish target ABI/offsets.
+// Disabled helper intentionally gets user data before its null test, as retail does.
+
 // GameWindow small setters, retail 0x00313B87/0x00313CF2/0x00314147.
 // Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/GameWindow.cpp
 // (BFME1 0x00478250/0x00478440/0x00478E70). BFME moves the window fields:
@@ -30,6 +38,10 @@ enum
 };
 
 class GameWindow;
+void GadgetComboBoxSetEnabledTextColors(GameWindow *, int, int);
+void GadgetComboBoxSetDisabledTextColors(GameWindow *, int, int);
+void GadgetComboBoxSetHiliteTextColors(GameWindow *, int, int);
+void GadgetComboBoxSetIMECompositeTextColors(GameWindow *, int, int);
 
 typedef WindowMsgHandledType (*GameWinInputFunc)(GameWindow *, UnsignedInt, WindowMsgData, WindowMsgData);
 
@@ -55,6 +67,10 @@ class GameWindow
 {
 public:
 	Int winSetSize(Int width, Int height);
+	void winSetEnabledTextColors(int color, int borderColor);
+	void winSetDisabledTextColors(int color, int borderColor);
+	void winSetHiliteTextColors(int color, int borderColor);
+	void winSetIMECompositeTextColors(int color, int borderColor);
 	GameWindow *winPointInAnyChild(Int x, Int y, bool ignoreHidden, bool ignoreEnableCheck);
 	UnsignedInt winClearStatus(UnsignedInt status);
 	Int winSetInputFunc(GameWinInputFunc input);
@@ -74,7 +90,18 @@ private:
 	Int m_regionLoY;
 	Int m_regionHiX;
 	Int m_regionHiY;
-	unsigned char m_pad1[0x1E0 - 0x24];
+	unsigned char m_pad24[0x3C - 0x24];
+	unsigned m_style;
+	unsigned char m_pad40[0x18C - 0x40];
+	int m_enabledColor;
+	int m_enabledBorderColor;
+	int m_disabledColor;
+	int m_disabledBorderColor;
+	int m_hiliteColor;
+	int m_hiliteBorderColor;
+	int m_imecompositeColor;
+	int m_imecompositeBorderColor;
+	unsigned char m_pad1AC[0x1E0 - 0x1AC];
 	GameWinInputFunc m_inputFunc;
 	unsigned char m_pad1E4[0x1F8 - 0x1E4];
 	GameWindow *m_next;
@@ -331,3 +358,38 @@ GameWindow *GameWindow::winPointInAnyChild( Int x, Int y, bool ignoreHidden, boo
 	return this;
 
 }  // end WinPointInAnyChild
+
+void GameWindow::winSetEnabledTextColors(int color, int borderColor)
+{
+	m_enabledColor = color;
+	m_enabledBorderColor = borderColor;
+	if (m_style & 0x8000)
+		GadgetComboBoxSetEnabledTextColors(this, color, borderColor);
+}
+
+// ?winSetDisabledTextColors@GameWindow@@QAEXHH@Z present-unmatched
+void GameWindow::winSetDisabledTextColors(int color, int borderColor)
+{
+	m_disabledColor = color;
+	m_disabledBorderColor = borderColor;
+	if (m_style & 0x8000)
+		GadgetComboBoxSetDisabledTextColors(this, color, borderColor);
+}
+
+// ?winSetHiliteTextColors@GameWindow@@QAEXHH@Z present-unmatched
+void GameWindow::winSetHiliteTextColors(int color, int borderColor)
+{
+	m_hiliteColor = color;
+	m_hiliteBorderColor = borderColor;
+	if (m_style & 0x8000)
+		GadgetComboBoxSetHiliteTextColors(this, color, borderColor);
+}
+
+// ?winSetIMECompositeTextColors@GameWindow@@QAEXHH@Z present-unmatched
+void GameWindow::winSetIMECompositeTextColors(int color, int borderColor)
+{
+	m_imecompositeColor = color;
+	m_imecompositeBorderColor = borderColor;
+	if (m_style & 0x8000)
+		GadgetComboBoxSetIMECompositeTextColors(this, color, borderColor);
+}
