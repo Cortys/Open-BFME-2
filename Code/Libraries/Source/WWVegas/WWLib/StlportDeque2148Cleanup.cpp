@@ -5,3 +5,6 @@
 #include <deque>
 struct BfmeOpaque2148 { unsigned char bytes[0x864]; };
 template class _STL::deque<BfmeOpaque2148, _STL::allocator<BfmeOpaque2148> >;
+template _STL::_Deque_iterator<BfmeOpaque2148, _STL::_Nonconst_traits<BfmeOpaque2148> > &
+_STL::_Deque_iterator<BfmeOpaque2148, _STL::_Nonconst_traits<BfmeOpaque2148> >::operator++();
+
