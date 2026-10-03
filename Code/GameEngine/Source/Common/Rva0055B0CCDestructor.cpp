@@ -57,3 +57,21 @@ Rva0055B0CC::~Rva0055B0CC()
 	m_14.clear();
 	rva0055B01F();
 }
+
+// ?rva0055B156@Rva0055B156@@QAEXH@Z @0x0055B156 16B
+// Gap between 0x0055B0CC dtor and deleting dtor same TU same flags.
+// Evidence: thiscall 1 int arg ret 4; lea [esp+4] push plus add ecx 0x1c
+// plus rowed list<int> push_back 0x0005548F; caller 0x004F20CE.
+class Rva0055B156
+{
+public:
+	void rva0055B156(int val);
+private:
+	char m_pad[0x1c];
+	_STL::list<int, _STL::allocator<int> > m_list;
+};
+
+void Rva0055B156::rva0055B156(int val)
+{
+	m_list.push_back(val);
+}
