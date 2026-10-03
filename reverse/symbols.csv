@@ -7379,3 +7379,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$__pop_heap@PAHHHURva005E4300Cmp@@@_STL@@YAXPAH00HURva005E4300Cmp@@0@Z,0x005E4A5F,ICF twin of rowed 5-arg pop heap at same address; 6-arg overload Distance int identical 41B body called by 30B aux 0x005E4AC4
 ?setTeamNumber@GameSlot@@QAEXH@Z,0x002E6A93,twin of dup row via object-symbol in owning TU and matched call at 0x003BC669
 ?rva001FF725@ScienceStore@@QBE?AW4ScienceType@@ABVAsciiString@@@Z,0x001FF725,twin of free row via TheScienceStore thiscall at 0x003BC6DC and identical body
+??4Rva0054103E@@QAEAAV0@ABV0@@Z,0x0054103E,"ICF fold with the Rva0054103E copy ctor: retail vector insert 0x00541DDF assigns *__position = __x_copy at 0x00541E4F and its REL32 reads 0x0054103E; same fold pattern as ??4PlaneClass/??4SphereClass at 0x004254E"
