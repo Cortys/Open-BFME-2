@@ -125,6 +125,7 @@ public:
 	virtual void slot02();
 	virtual void slot03();
 	void rva003FB9C8(int a, int b);
+	void rva003FB9EB(int a, int b);
 private:
 	char m_pad04[0x28];
 	int m_2c; // +0x2c
@@ -141,6 +142,16 @@ void Rva003FB9C8::rva003FB9C8(int a, int b)
 	m_38 = 0;
 	m_2c = 2;
 	m_4c = 2;
+	m_50 = b;
+	m_34 = a;
+	slot03();
+}
+
+void Rva003FB9C8::rva003FB9EB(int a, int b)
+{
+	m_38 = 0;
+	m_2c = 1;
+	m_4c = 1;
 	m_50 = b;
 	m_34 = a;
 	slot03();
