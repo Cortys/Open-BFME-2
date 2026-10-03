@@ -36,9 +36,12 @@ public:
 	~INI();
 	void loadFile(AsciiString filename, INILoadType loadType, Xfer *xfer);
 	const char *getNextToken(const char *seps);
+	int scanIndexList(const char *token, const char * const *names);
 	AsciiString getFilename() const;
 	int getLineNum() const;
 	void initFromINI(void *what, const struct FieldParse *parseTable);
+	static void parseAttributeModifier(INI *ini, void *instance, void *store, const void *userData);
+	static void parseMeleeBehavior(INI *ini, void *instance, void *store, const void *userData);
 private:
 	char m_storage[0x87C];
 };
@@ -141,15 +144,28 @@ public:
 	INIException &operator=(const INIException &that);
 };
 
+typedef void (*INIFieldParseProc)(INI *, void *, void *, const void *);
+
 struct FieldParse
 {
 	const char *token;
-	void *parseFunc;
-	unsigned int offset;
-	unsigned int defaultValue;
+	INIFieldParseProc parseFunc;
+	const void *userData;
+	int offset;
 };
 
-void __cdecl parseStance(INI *ini, void *data);
+extern const char *TheStanceNames[];
+
+void __cdecl parseStance(INI *ini, void *data)
+{
+	int index = ini->scanIndexList(ini->getNextToken(0), TheStanceNames);
+	FieldParse parseTable[] = {
+		{ "AttributeModifier", INI::parseAttributeModifier, 0, 0 },
+		{ "MeleeBehavior", INI::parseMeleeBehavior, 0, 4 },
+		{ 0, 0, 0, 0 }
+	};
+	ini->initFromINI(&((BfmePod52 *)data)->m_stances[index], parseTable);
+}
 
 class Rva00425F10 : public SubsystemInterface
 {
@@ -192,7 +208,7 @@ void Rva00425F10::parseStanceTemplateDefinition(INI *ini)
 	_STL::map<int, BfmePod52>::iterator it2 =
 		TheStancesStore->m_map.insert(_STL::pair<const int, BfmePod52>(key, BfmePod52(key))).first;
 	FieldParse parseTable[] = {
-		{ "Stance", (void *)parseStance, 0, 0 },
+		{ "Stance", (INIFieldParseProc)parseStance, 0, 0 },
 		{ 0, 0, 0, 0 }
 	};
 	ini->initFromINI(&it2->second, parseTable);
