@@ -50658,3 +50658,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0028B35B@Object@@QBE_NPBV1@@Z,,0x0028B35B,50,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B35B.cpp,matched,Object geometry intersect via bfmeIntersects rowed pin
 ?Rva003AD4AEInit@@YAXXZ,,0x003AD4AE,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4AEInit.cpp,matched,guarded init calls rowed DefaultModuleTag2 getInstance and rowed atexit
 ?Rva003AD4CFInit@@YAXXZ,,0x003AD4CF,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4CFInit.cpp,matched,guarded init calls rowed DefaultModuleTag7 getInstance and rowed atexit
+?Rva003AD4F0Init@@YAXXZ,,0x003AD4F0,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4F0Init.cpp,matched,guarded init calls rowed LIFE_EVENT getInstance and rowed atexit
