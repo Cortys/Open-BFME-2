@@ -13,6 +13,7 @@ class Rva001DBDA4
 {
 public:
 	bool rva001DBD83() const;
+	void rva001DBE17();
 };
 
 struct AudioLock
@@ -29,11 +30,17 @@ class AudioManager
 {
 public:
 	bool rva001DBFEE();
+	void rva001DBE6E();
 private:
 	char m_pad00[0x24];
 	Rva001DBDA4 *m_24;
-	char m_pad28[0x10];
+	Rva001DBDA4 *m_28;
+	Rva001DBDA4 *m_2C;
+	Rva001DBDA4 *m_30;
+	char m_pad34[0x4];
 	AudioLock m_38;
+	char m_pad50[0x19];
+	bool m_69;
 };
 
 bool AudioManager::rva001DBFEE()
@@ -46,4 +53,31 @@ bool AudioManager::rva001DBFEE()
 		b = true;
 	LeaveCriticalSection(&m_38);
 	return b;
+}
+
+// Retail 0x001DBE6E 72B: AudioManager slot 9 release of four Rva001DBDA4 lists plus clear byte at +0x69.
+// Evidence: vtable 0x007DBC30 slot 9 of AudioManager ctor; rowed rva001DBE17 callee; offsets +0x24 +0x28 +0x30 +0x2C +0x69; neighbours 0x001DBE51 and 0x001DBFEE.
+void AudioManager::rva001DBE6E()
+{
+	if (m_24)
+	{
+		m_24->rva001DBE17();
+		m_24 = 0;
+	}
+	if (m_28)
+	{
+		m_28->rva001DBE17();
+		m_28 = 0;
+	}
+	if (m_30)
+	{
+		m_30->rva001DBE17();
+		m_30 = 0;
+	}
+	if (m_2C)
+	{
+		m_2C->rva001DBE17();
+		m_2C = 0;
+	}
+	m_69 = false;
 }
