@@ -50546,3 +50546,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?isAllocated@Rva006D2A60@@QAE_NH@Z,,0x006D2880,69,Code/GameEngine/Source/Common/Rva006D29E0Cluster.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?rva003FBA0E@Rva003FBA0E@@QAEXHHHHHM@Z,,0x003FBA0E,74,Code/GameEngine/Source/Common/Rva003FBA0ERva003FBA0E.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
 ?parseDefaultFont@@YA_NPAVGameFont@@PAVFile@@PAD@Z,,0x00315B5E,69,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerScript.cpp,matched,banked attempt exact; scanString through BFME 2's File slot view in the home unit
+?rva000B65FD@Rva000B65FD@@QAEHXZ,,0x000B65FD,23,Code/Libraries/Source/STLport/Rva000B65FDFinish.cpp,matched,base+nullable word phi via cached pointer-to-pointer dereferenced twice keeps the pp live across the test so both arms materialise
