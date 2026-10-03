@@ -49785,3 +49785,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva002E73D4@@QAE@HHH@Z,,0x002E73D4,39,Code/GameEngine/Source/GameLogic/Object/Rva002E73D4Ctor.cpp,matched,ctor three ints plus zeroed tail caller 0x002F3297
 ??0Rva002E7B02@@QAE@HHABU_Rva002E7B02Cell@@@Z,,0x002E7B02,39,Code/GameEngine/Source/GameLogic/Object/Rva002E7B02.cpp,matched,ctor copies two ints plus 3-int cell caller 0x002EDFD0
 ??0Rva002E7DF5@@QAE@HABU_Rva002E7DF5Cell@@@Z,,0x002E7DF5,49,Code/GameEngine/Source/GameLogic/Object/Rva002E7DF5.cpp,matched,ctor int plus cell float global and flag caller 0x002EE8C2
+?rva002E7261@Rva002E7261@@QAEHHPBU_Rva002E7261Arg@@HH@Z,,0x002E7261,53,Code/GameEngine/Source/GameLogic/Object/Rva002E7261.cpp,matched,match inner 0x28 else store word and ints caller 0x002E810A
