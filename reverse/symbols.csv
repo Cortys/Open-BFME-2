@@ -7386,3 +7386,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?markAsDead@AIUpdateInterface@@QAEXXZ,0x0026296D,address read from the REL32 at StructureCollapseUpdate::onDie 0x004A466E; ZH port identity
 ?deselectObject@GameLogic@@QAEXPAVObject@@IH@Z,0x0023C9F8,address read from the REL32 at StructureCollapseUpdate::onDie 0x004A466E; BFME2 PlayerMaskType 32-bit
 ?beginStructureCollapse@StructureCollapseUpdate@@QAEXPBVDamageInfo@@@Z,0x004A459B,address read from the REL32 at StructureCollapseUpdate::onDie 0x004A466E
+??$_M_find@H@?$_Rb_tree@HHU?$_Identity@H@_STL@@U?$less@H@2@V?$allocator@H@2@@_STL@@ABEPAU?$_Rb_tree_node@H@1@ABH@Z,0x00388F63,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded

@@ -50036,3 +50036,22 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0046CE9D@Rva0046CE9D@@QAE_NPAVObject@@@Z,,0x0046CE9D,132,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046CE9DFinish.cpp,matched,retail 132B early shared-return anchor retained by explicit else after obj null check; exact match
 ?rva00496B48@Rva00496B48@@QAE_NXZ,,0x00496B48,138,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496B48Finish.cpp,matched,retail 138B nested-if with for-loop break keeps redundant bottom null test; exact match
 ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z,,0x003F3159,51,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003F3159Finish.cpp,matched,dynamic portal vector erase-range; copy dummy at dead-arg-slot [ebp+0xb] via /Oy-; Rva002983DAEraseRange precedent
+?didPlayerPreorder@GameSpyInfo@@UBE_NH@Z,,0x00383580,32,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::didPlayerPreorder
+?markPlayerAsPreorder@GameSpyInfo@@UAEXH@Z,,0x00383E80,28,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::markPlayerAsPreorder
+?setLocalIPs@GameSpyInfo@@UAEXII@Z,,0x00381D9E,23,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::setLocalIPs
+?rva00381DC4@GameSpyInfo@@UAE_NXZ,,0x00381DC4,22,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 52: m_isHosting || m_joinedStagingRoom
+?hasStagingRoomListChanged@GameSpyInfo@@UAE_NXZ,,0x00381DDA,8,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::hasStagingRoomListChanged
+?setMOTD@GameSpyInfo@@UAEXABVAsciiString@@@Z,,0x0038200D,8,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::setMOTD
+?addToIgnoreList@GameSpyInfo@@UAEXVAsciiString@@@Z,,0x003846A8,61,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::addToIgnoreList
+?removeFromIgnoreList@GameSpyInfo@@UAEXVAsciiString@@@Z,,0x003871BF,55,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::removeFromIgnoreList
+?isIgnored@GameSpyInfo@@UAE_NVAsciiString@@@Z,,0x003846E5,41,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::isIgnored
+?returnIgnoreList@GameSpyInfo@@UAE?AV?$set@VAsciiString@@U?$less@VAsciiString@@@_STL@@V?$allocator@VAsciiString@@@3@@_STL@@XZ,,0x00385AFE,30,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefs.cpp GameSpyInfo::returnIgnoreList
+?markAsDisconnectedAfterGameStart@GameSpyInfo@@UAEXH@Z,,0x00386117,14,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::markAsDisconnectedAfterGameStart
+?setLocalName@GameSpyInfo@@UAEXVAsciiString@@@Z,,0x00386188,52,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::setLocalName
+?getLocalName@GameSpyInfo@@UAE?AVAsciiString@@XZ,,0x003861BC,27,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::getLocalName
+?getLocalEmail@GameSpyInfo@@UAE?AVAsciiString@@XZ,,0x003861D7,27,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::getLocalEmail
+?setLocalEmail@GameSpyInfo@@UAEXVAsciiString@@@Z,,0x003861F2,52,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::setLocalEmail
+?getLocalPassword@GameSpyInfo@@UAE?AVAsciiString@@XZ,,0x00386226,27,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::getLocalPassword
+?setLocalPassword@GameSpyInfo@@UAEXVAsciiString@@@Z,,0x00386241,52,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::setLocalPassword
+?setLocalBaseName@GameSpyInfo@@UAEXVAsciiString@@@Z,,0x00386275,55,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::setLocalBaseName
+?getLocalBaseName@GameSpyInfo@@UAE?AVAsciiString@@XZ,,0x003862AC,30,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,BFME1/ZH PeerDefsImplementation.h GameSpyInfo::getLocalBaseName
