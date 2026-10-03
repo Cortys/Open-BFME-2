@@ -50406,3 +50406,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$_M_allocate_and_copy@PAVRva00468520@@@?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@IAEPAUBfmeE8@@IPAVRva00468520@@0@Z,,0x00153489,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmee8_allocate_copy.cpp,matched,same 45B ebp-tag shape as 0x00319304 caller 0x15380D callees rowed
 ??_GRva004134AE@@QAEPAXI@Z,,0x00413492,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004134AE.cpp,matched,chain lane deleting dtor via rowed dtor and delete
 ??0Rva0041386B@@QAE@XZ,,0x0041386B,54,Code/GameEngine/Source/Common/Thing/ModuleFactoryCtor.cpp,matched,unlock lane ctor with vector and map via rowed ctors
+??_GRva004FFE89@@QAEPAXI@Z,,0x005000BA,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004FFE89.cpp,matched,chain deleting dtor via rowed dtor plus delete
