@@ -1331,7 +1331,7 @@ Bool Player::computeSuperweaponTarget(const SpecialPowerTemplate *power, Coord3D
 /** Get this player's current enemy. NOTE - Can be NULL. */
 //-------------------------------------------------------------------------------------------------
 // ?getCurrentEnemy@Player@@QAEPAV1@XZ present-unmatched
-Player  *Player::getCurrentEnemy( void )
+inline Player  *Player::getCurrentEnemy( void )
 {
 	return m_ai?m_ai->getAiEnemy():NULL; 
 }
