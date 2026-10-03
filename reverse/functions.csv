@@ -49774,3 +49774,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0021929DFree@@YGXPAPAX@Z,,0x0021929D,35,Code/GameEngine/Source/Common/Rva0021929DFree.cpp,matched,virtual slot 0 with 0 then delete and clear via caller 0x0040A1AC
 ?rva00219D52@Rva00219B9E@@QAEHI@Z,,0x00219D52,51,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer 32B selects inner 216B count via idiv like neighbours
 ?Rva0014F995CopyBackward@@YAXPAURva0014F718@@00@Z,,0x0014F995,29,Code/GameEngine/Source/Common/Rva0014F995CopyBackward.cpp,matched,forwarder to rowed 0x0014F718 callers 222B insert paths
+?Rva0014FA62Copy@@YAPAURva0014F718@@PAU1@00PAXH@Z,,0x0014FA62,46,Code/GameEngine/Source/Common/Rva0014FA62Copy.cpp,matched,stride 8 sar3 single-dword +4 copy sibling backward 0x0014F718 caller 0x00150248 pushes 5
