@@ -913,3 +913,15 @@ void Rva00500804::rva00500804(void *p)
 		node = left;
 	}
 }
+
+void Rva00500804::rva00500ACF()
+{
+	if (m_04Flag == 0)
+		return;
+	RvaTreeValueHead *h = (RvaTreeValueHead *)m_00Head;
+	rva00500804(h->m_first);
+	((RvaTreeValueHead *)m_00Head)->m_next = (RvaTreeValueHead *)m_00Head;
+	((RvaTreeValueHead *)m_00Head)->m_first = 0;
+	((RvaTreeValueHead *)m_00Head)->m_child = (RvaTreeValueHead *)m_00Head;
+	m_04Flag = 0;
+}
