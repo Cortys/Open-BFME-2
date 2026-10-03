@@ -49879,3 +49879,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva006E2560@AptCIH@@QAEXH@Z,,0x006E2560,193,Code/Libraries/Source/Apt/AptCIHMCInfo006E2560.cpp,matched,AptCIH type dispatch via rowed get and sprite tail
 ?Rva00358A53Play@@YAXXZ,,0x00358A53,120,Code/GameEngine/Source/Common/RTS/Rva00358A53Audio.cpp,matched,honest free name TheAudio slot138 gate plus 80 field30 0 via slot64 addAudioEvent
 ?Rva00358ACBPlay@@YAXXZ,,0x00358ACB,120,Code/GameEngine/Source/Common/RTS/Rva00358A53Audio.cpp,matched,sibling of 358A53 Misc plus84 field30 0 via slot64 addAudioEvent
+?Rva0030CAF8Save@@YAXPAVRva0030CAF8Collection@@PAVDataChunkOutput@@@Z,,0x0030CAF8,323,Code/GameEngine/Source/Common/Rva0030CAF8Chain.cpp,matched,chain from 0x00537EAD sibling cursor pattern StandingWaveAreas

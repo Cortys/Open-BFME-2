@@ -7373,3 +7373,4 @@ _tolower,0x006298D4,CRT tolower import thunk called directly by the EAStringC ut
 ?rva007064f0@@YAPAVBfmeAptValue006DCD20@@HHPAVEAStringC@@@Z,0x007064F0,3-arg Apt helper reached only from 0x7065E0; 229B body builds an EAStringC temp and calls 0x6D3750/0x6FEC00/0x6DF9A0; Ghidra FUN_00b064f0; identity unproven; address-derived name
 ?isCIH@BfmeAptValue006DCD20@@QBE_N_N@Z,0x006DC580,bool-return alias of the matched ?isCIH row at the same address; the 0x7065E0 call site tests al not eax so this spelling is the retail one; alias pin only
 ?isString@BfmeAptValue006DCD20@@QBE_NXZ,0x006DC0D0,bool-return alias of the matched ?isString row at the same address; the 0x7065E0 call site tests al not eax so this spelling is the retail one; alias pin only
+_Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equality

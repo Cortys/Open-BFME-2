@@ -6411,3 +6411,9 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva00200E95Get@@YAXXZ	0x00200E95	10	blocked	10B mov-eax plus call-EH_prolog with no ret; deleting-shape caller 0x00200E79 calls it as dtor but no vptr store; same TU has 68B dtor at 0x00200EA0; free-vs-method unclear t=18 model=muse-14
 ?rva00069DB1@Rva00069DB1@@QAEXXZ	0x00069DB1	369	blocked	complex render 15 callees virtual slot 100 ShaderClass temp RenderStateStruct StringClass EH needs donor t=20 model=muse-spark
 ?rva00069C5F@Rva00069C5F@@QAEXMMMM@Z	0x00069C5F	135	blocked	SSE distance loop wall: lea base e8 vs ec plus arg slots swapped ebp8 vs ebp10 plus x87 fld-fadd-fcomi vs retail movss-addss-comiss plus flag off 0x10 vs 0xc plus missing push ecx t=8 model=muse-04
+??0Rva001DED2B@@QAE@XZ	0x001DED2B	31	partial	align exact 0 reg 0 mem diffs but gate calls 0x3A37FA vs retail 0x1DE80F dup needs hashtable twin pin at 0x1DE80F t=8 model=muse-09 score=0.96 stash=reverse/attempts/0x001ded2b.cpp
+?rva00308417@Rva00308417@@QAEXPAMMH@Z	0x00308417	242	blocked	xmm3-vs-xmm4 plus spill ebp+C-vs-ebp-4 plus out1-3-2-0-vs-1-2-3-0 plus missing sub-esp-0x10 plus extra movaps t=15 model=muse-09 (stash 0.91 kept)
+?rva00308325@Rva00308325@@QAEXPAMMH@Z	0x00308325	242	blocked	twin-of-00308417 same xmm-spill-frame wall no NEW idea t=5 model=muse-09
+?rva00308509@Rva00308509@@QAEXPAUVec4@@MH@Z	0x00308509	242	blocked	twin-of-00308417 same xmm-spill-frame wall no NEW idea t=5 model=muse-09
+?rva0030822F@Rva0030822F@@QAEXPAUInterpElem@@M@Z	0x0030822F	246	blocked	twin-of-00308417 same xmm-spill-frame wall no NEW idea t=5 model=muse-09
+?Rva0030C2CESave@@YAXPAVRva0030C2CECollection@@PAVDataChunkOutput@@@Z	0x0030C2CE	316	partial	esi-edi swap plus lea-vs-shl plus inc placement plus g_table extern t=12 model=muse-09 score=0.93 stash=reverse/attempts/0x0030c2ce.cpp
