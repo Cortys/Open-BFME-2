@@ -8,6 +8,11 @@
 // then the mapped object copy constructor 0x22D106 on the second pair field.
 // Comparison reaches the established AsciiString operator< at 0x5598C.
 // Semantic donor: BFME1 RvaTreeInsertUniqueHint.cpp and STLport pair/tree.
+#include <stl/_prolog.h>
+#include <stl/type_traits.h>
+#undef _STLP_DEFAULT_CONSTRUCTOR_BUG
+#undef _STLP_DEFAULT_CONSTRUCTED
+#define _STLP_DEFAULT_CONSTRUCTED(_TTp) _TTp()
 #include <map>
 #include "ascii_string.h"
 bool operator<(const AsciiString &, const AsciiString &);
@@ -26,6 +31,7 @@ struct TreeHintOpaque0043671B {
     UnicodeString m_text;
     BfmeSubobject0022CE19 m_subobject;
     unsigned int m_wordDEC, m_wordDF0;
+    TreeHintOpaque0043671B();
     TreeHintOpaque0043671B(const TreeHintOpaque0043671B &);
     ~TreeHintOpaque0043671B();
 };
@@ -59,3 +65,5 @@ typedef _STL::map<AsciiString,TreeHintOpaque0043671B,_STL::less<AsciiString >,_S
 template MapInsert00436e3b::iterator MapInsert00436e3b::insert(MapInsert00436e3b::iterator, const TreeHintPair0043671B &);
 
 template void _STL::_Construct<TreeHintOpaque0043671B,TreeHintOpaque0043671B>(TreeHintOpaque0043671B*, const TreeHintOpaque0043671B&);
+
+template TreeHintOpaque0043671B &MapInsert00436e3b::operator[](const AsciiString &);
