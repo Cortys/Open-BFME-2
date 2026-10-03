@@ -115,7 +115,7 @@ SecondaryModuleBase::SecondaryModuleBase()
 // Seven bytes, and the most folded body in the image: 139 function starts
 // carry exactly these bytes at exactly this extent, ~ModuleTemplate at
 // 0x000011BD and ~Xfer at 0x000053E7 among them. Present, unpinnable.
-SecondaryModuleBase::~SecondaryModuleBase()
+inline SecondaryModuleBase::~SecondaryModuleBase()
 {
 }
 
@@ -914,7 +914,7 @@ const char *DefaultPhysicsModuleInfo::GetSnapshotName()
 // 64 bytes that occur nowhere in .text, not once, at any alignment. Retail
 // inlined every use of this copy constructor; the out-of-line definition is
 // kept only so the class's matched siblings compile.
-DefaultPhysicsModuleInfo::DefaultPhysicsModuleInfo(const DefaultPhysicsModuleInfo &that)
+inline DefaultPhysicsModuleInfo::DefaultPhysicsModuleInfo(const DefaultPhysicsModuleInfo &that)
 {
     m_unknown04.x = that.m_unknown04.x;
     m_unknown04.y = that.m_unknown04.y;
