@@ -49748,3 +49748,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?xfer@BodyModule@@MAEXPAVXfer@@@Z,,0x0058B043,39,Code/GameEngine/Source/GameLogic/Object/Body/BodyModuleXfer.cpp,matched,BodyModule xfer Version1 base damageScalar slot3
 ?rva00451EAC@Rva00451EAC@@QAEXXZ,,0x00451EAC,153,Code/GameEngine/Source/GameLogic/Object/Update/Rva00451EACMethod.cpp,matched,AI idle face driver via TheGameLogic findObjectByID isKindOf
 ?push_back@?$vector@UBfmeStringRecord005D511F@@V?$allocator@UBfmeStringRecord005D511F@@@_STL@@@_STL@@QAEXABUBfmeStringRecord005D511F@@@Z,,0x005D5548,55,Code/GameEngine/Source/Common/StringRecordVectorGrowthG7.cpp,matched,STLport vector stringrecord pushback via rowed Construct plus rowed overflow caller 0x005D5614
+?rva002196A9@Rva002196A9@@QAEHI@Z,,0x002196A9,34,Code/GameEngine/Source/Common/Rva002196A9BitCheck.cpp,matched,bit test caller 0x0021D5A2 word at +0x68
