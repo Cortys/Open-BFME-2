@@ -23,6 +23,7 @@ public:
 	void rva00052015(int b);
 	void rva00052048(int idx);
 	void rva00052098(int b);
+	void rva000520C6();
 	void setVolumes(float volume, unsigned char flags);
 
 	char m_pad0[4];
@@ -34,6 +35,7 @@ public:
 	float m_scale;
 	char m_padA0[0xC8 - 0xA0];
 	float m_slot[12][4];
+	char m_dirty[6][2][4];
 };
 
 extern "C" void *memcpy(void *dst, const void *src, unsigned int n);
@@ -142,6 +144,21 @@ void Rva00699180Owner::rva00052098(int b)
 {
 	rva00052048(b);
 	rva00051FFE(b);
+}
+
+// ?rva000520C6@Rva00699180Owner@@QAEXXZ retail 0x000520C6 46B
+// Unlock: triple-nested 6x2x4 decrement of positive dirty bytes at this+0x188.
+// Evidence: prev 0x00052098 next 0x000523A0 same TU same class; dirty store in refreshPair at +0x188+(b+a*2)*4+i; caller 0x00062881.
+void Rva00699180Owner::rva000520C6()
+{
+	for (int a = 0; a < 6; ++a) {
+		for (int b = 0; b < 2; ++b) {
+			for (int i = 0; i < 4; ++i) {
+				if (m_dirty[a][b][i] > 0)
+					--m_dirty[a][b][i];
+			}
+		}
+	}
 }
 
 void Rva00699180Owner::setVolumes(float volume, unsigned char flags)
