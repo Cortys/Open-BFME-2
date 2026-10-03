@@ -765,15 +765,15 @@ SphereEmissionVolumeModuleConcreteAssign g_sphereEmissionVolumeModuleConcreteAss
 
 typedef BoxEmissionVolumeModuleConcrete &(BoxEmissionVolumeModuleConcrete::*BoxEmissionVolumeModuleConcreteAssign)(const BoxEmissionVolumeModuleConcrete &);
 
-BoxEmissionVolumeModuleConcreteAssign g_boxEmissionVolumeModuleConcreteAssign = &BoxEmissionVolumeModuleConcrete::operator=;
+extern BoxEmissionVolumeModuleConcreteAssign g_boxEmissionVolumeModuleConcreteAssign;
 
 typedef LineEmissionVolumeModuleConcrete &(LineEmissionVolumeModuleConcrete::*LineEmissionVolumeModuleConcreteAssign)(const LineEmissionVolumeModuleConcrete &);
 
-LineEmissionVolumeModuleConcreteAssign g_lineEmissionVolumeModuleConcreteAssign = &LineEmissionVolumeModuleConcrete::operator=;
+extern LineEmissionVolumeModuleConcreteAssign g_lineEmissionVolumeModuleConcreteAssign;
 
 typedef CylinderEmissionVolumeModuleConcrete &(CylinderEmissionVolumeModuleConcrete::*CylinderEmissionVolumeModuleConcreteAssign)(const CylinderEmissionVolumeModuleConcrete &);
 
-CylinderEmissionVolumeModuleConcreteAssign g_cylinderEmissionVolumeModuleConcreteAssign = &CylinderEmissionVolumeModuleConcrete::operator=;
+extern CylinderEmissionVolumeModuleConcreteAssign g_cylinderEmissionVolumeModuleConcreteAssign;
 
 typedef OrthoEmissionVelocityModuleConcrete &(OrthoEmissionVelocityModuleConcrete::*OrthoEmissionVelocityModuleConcreteAssign)(const OrthoEmissionVelocityModuleConcrete &);
 
@@ -793,15 +793,15 @@ SphericalEmissionVelocityModuleConcreteAssign g_sphericalEmissionVelocityModuleC
 
 typedef LightningDrawModuleConcrete &(LightningDrawModuleConcrete::*LightningDrawModuleConcreteAssign)(const LightningDrawModuleConcrete &);
 
-LightningDrawModuleConcreteAssign g_lightningDrawModuleConcreteAssign = &LightningDrawModuleConcrete::operator=;
+extern LightningDrawModuleConcreteAssign g_lightningDrawModuleConcreteAssign;
 
 typedef TerrainFireEmissionModuleConcrete &(TerrainFireEmissionModuleConcrete::*TerrainFireEmissionModuleConcreteAssign)(const TerrainFireEmissionModuleConcrete &);
 
-TerrainFireEmissionModuleConcreteAssign g_terrainFireEmissionModuleConcreteAssign = &TerrainFireEmissionModuleConcrete::operator=;
+extern TerrainFireEmissionModuleConcreteAssign g_terrainFireEmissionModuleConcreteAssign;
 
 typedef LightningEmissionModuleConcrete &(LightningEmissionModuleConcrete::*LightningEmissionModuleConcreteAssign)(const LightningEmissionModuleConcrete &);
 
-LightningEmissionModuleConcreteAssign g_lightningEmissionModuleConcreteAssign = &LightningEmissionModuleConcrete::operator=;
+extern LightningEmissionModuleConcreteAssign g_lightningEmissionModuleConcreteAssign;
 
 typedef RenderObjectUpdateModuleConcrete &(RenderObjectUpdateModuleConcrete::*RenderObjectUpdateModuleConcreteAssign)(const RenderObjectUpdateModuleConcrete &);
 
@@ -809,27 +809,27 @@ RenderObjectUpdateModuleConcreteAssign g_renderObjectUpdateModuleConcreteAssign 
 
 typedef RenderObjectDrawModuleConcrete &(RenderObjectDrawModuleConcrete::*RenderObjectDrawModuleConcreteAssign)(const RenderObjectDrawModuleConcrete &);
 
-RenderObjectDrawModuleConcreteAssign g_renderObjectDrawModuleConcreteAssign = &RenderObjectDrawModuleConcrete::operator=;
+extern RenderObjectDrawModuleConcreteAssign g_renderObjectDrawModuleConcreteAssign;
 
 typedef GpuDrawModuleConcrete &(GpuDrawModuleConcrete::*GpuDrawModuleConcreteAssign)(const GpuDrawModuleConcrete &);
 
-GpuDrawModuleConcreteAssign g_gpuDrawModuleConcreteAssign = &GpuDrawModuleConcrete::operator=;
+extern GpuDrawModuleConcreteAssign g_gpuDrawModuleConcreteAssign;
 
 typedef DefaultConcrete0 &(DefaultConcrete0::*DefaultConcrete0Assign)(const DefaultConcrete0 &);
 
-DefaultConcrete0Assign g_defaultConcrete0Assign = &DefaultConcrete0::operator=;
+extern DefaultConcrete0Assign g_defaultConcrete0Assign;
 
 typedef DefaultConcrete1 &(DefaultConcrete1::*DefaultConcrete1Assign)(const DefaultConcrete1 &);
 
-DefaultConcrete1Assign g_defaultConcrete1Assign = &DefaultConcrete1::operator=;
+extern DefaultConcrete1Assign g_defaultConcrete1Assign;
 
 typedef DefaultConcrete2 &(DefaultConcrete2::*DefaultConcrete2Assign)(const DefaultConcrete2 &);
 
-DefaultConcrete2Assign g_defaultConcrete2Assign = &DefaultConcrete2::operator=;
+extern DefaultConcrete2Assign g_defaultConcrete2Assign;
 
 typedef DefaultConcrete3 &(DefaultConcrete3::*DefaultConcrete3Assign)(const DefaultConcrete3 &);
 
-DefaultConcrete3Assign g_defaultConcrete3Assign = &DefaultConcrete3::operator=;
+extern DefaultConcrete3Assign g_defaultConcrete3Assign;
 
 typedef DefaultConcrete6 &(DefaultConcrete6::*DefaultConcrete6Assign)(const DefaultConcrete6 &);
 
@@ -852,5 +852,24 @@ LifeEventModuleNamedConcreteAssign g_lifeEventModuleNamedConcreteAssign = &LifeE
 typedef TerrainCollisionModuleNamedConcrete &(TerrainCollisionModuleNamedConcrete::*TerrainCollisionModuleNamedConcreteAssign)(const TerrainCollisionModuleNamedConcrete &);
 
 TerrainCollisionModuleNamedConcreteAssign g_terrainCollisionModuleNamedConcreteAssign = &TerrainCollisionModuleNamedConcrete::operator=;
+
+#pragma inline_depth(0)
+// ?bfmeEmitFXParticleSystemModulesAssign@@YAXXZ present-unmatched
+void bfmeEmitFXParticleSystemModulesAssign()
+{
+    (void)&BoxEmissionVolumeModuleConcrete::operator=;
+    (void)&LineEmissionVolumeModuleConcrete::operator=;
+    (void)&CylinderEmissionVolumeModuleConcrete::operator=;
+    (void)&LightningDrawModuleConcrete::operator=;
+    (void)&TerrainFireEmissionModuleConcrete::operator=;
+    (void)&LightningEmissionModuleConcrete::operator=;
+    (void)&RenderObjectDrawModuleConcrete::operator=;
+    (void)&GpuDrawModuleConcrete::operator=;
+    (void)&DefaultConcrete0::operator=;
+    (void)&DefaultConcrete1::operator=;
+    (void)&DefaultConcrete2::operator=;
+    (void)&DefaultConcrete3::operator=;
+}
+#pragma inline_depth()
 
 }
