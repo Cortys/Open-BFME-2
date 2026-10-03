@@ -205,3 +205,45 @@ void BfmeWrapper1279::rva006F8190()
 	delete m_query;
 	m_query = 0;
 }
+
+// ---------------------------------------------------------------------------
+// AptCIH descriptor wrapper at 0x006F6A50: holds a descriptor pointer and builds
+// a 0x1C interpretation of it only when the descriptor reports kind 3.
+
+class Rva006F69D0
+{
+public:
+	Rva006F69D0(void *descriptor, int second, int fourth) throw();
+
+	char m_pad[0x1c];
+
+	static void *operator new(unsigned int size)
+	{
+		return ((Rva006DB160 *)g_pChainBlockAllocator)->allocBlock((int)size);
+	}
+};
+
+class Rva006F6A50
+{
+public:
+	Rva006F6A50(void *descriptor, int second, int third, int fourth);
+
+	void *m_00;
+	Rva006F69D0 *m_04;
+	int m_08;
+	int m_0c;
+	int m_10;
+};
+
+// ??0Rva006F6A50@@QAE@PAXHHH@Z @0x006F6A50 101B
+Rva006F6A50::Rva006F6A50(void *descriptor, int second, int third, int fourth)
+{
+	m_00 = descriptor;
+	m_10 = third;
+	if (descriptor != 0 && *(int *)descriptor == 3)
+		m_04 = new Rva006F69D0(descriptor, second, fourth);
+	else
+		m_04 = 0;
+	m_08 = 0;
+	m_0c = 0;
+}

@@ -49461,3 +49461,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??1BfmeWrapper1279@@QAE@XZ,,0x006F84F0,93,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeWrapper1279 dtor: clear the chain then delete the BfmeQuery1279 through the pool
 ?rva006F8190@BfmeWrapper1279@@QAEXXZ,,0x006F8190,142,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeWrapper1279 method: assert m_query non-null clear the chain delete it and null the field
 ??0BfmeQuery1279@@QAE@XZ,,0x006F7B20,153,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,BfmeQuery1279 ctor: F4-pool allocate the 0x60 sentinel construct it kind 0x2E marker 0xbaadf00d then mark undefined set one GC root clear key link
+??0Rva006F6A50@@QAE@PAXHHH@Z,,0x006F6A50,101,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,descriptor wrapper ctor: store descriptor and third arg then pool-build a 0x1C interpretation when descriptor kind is 3
