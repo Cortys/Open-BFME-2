@@ -50106,3 +50106,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?bfmeUseFDE@BfmeThingFDE@@QAEXPAX@Z,,0x004B9B99,173,Code/GameEngine/Source/Common/Bfme/Rva004B9B99Finish.cpp,matched,BFME1 BfmeConv893 FDE donor retargeted to BFME2 Drawable sink; forceinline while helper flips MSVC 7.1 allocation to retail (table esi idx-eax end-ebx)
 ?rva00363BC7@Rva00363BC7@@QAEPAXPAUCoord2D@@PAM@Z,,0x00363BC7,170,Code/GameEngine/Source/Common/Rva00363BC7Finish.cpp,matched,unlock vector normalize: min-length clamp via g_00BCF628 and 1.0f pooled literal; callers 0x001E3572 0x00365F4B
 ?rva00314056@GameWindow@@QAEHH@Z,,0x00314056,78,Code/GameEngine/Source/Common/GameWindowRva00314056.cpp,matched,GameWindow method via volatile hoisted TheWindowManager load plus rowed callees
+?rva005D4B1F@Rva005D4B1F@@QAEXM@Z,,0x005D4B1F,79,Code/GameEngine/Source/Common/Rva005D4B1FSetLineSize.cpp,matched,float line-size setter via rowed Fire SetLineSize plus EmptyString fallback
