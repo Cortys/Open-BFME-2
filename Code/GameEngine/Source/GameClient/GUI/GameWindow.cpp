@@ -375,7 +375,6 @@ void GameWindow::winSetDisabledTextColors(int color, int borderColor)
 		GadgetComboBoxSetDisabledTextColors(this, color, borderColor);
 }
 
-// ?winSetHiliteTextColors@GameWindow@@QAEXHH@Z present-unmatched
 void GameWindow::winSetHiliteTextColors(int color, int borderColor)
 {
 	m_hiliteColor = color;
