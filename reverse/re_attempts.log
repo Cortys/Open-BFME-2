@@ -6465,3 +6465,5 @@ FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs do
 ?d_00012190@@YAXXZ	0x00012190	122	blocked	Not a standalone function: SEH-frame head of the STLport money_get body (sret iterator, calls istreambuf_iterator operator==, ORs eofbit on equal); the else je lands exactly on 0x0001220A (the next 2680B dump), so retail is one 2802B function split at a Ghidra boundary. Existing stash is the do_get body (0.65), wrong extent. Recover only as one extent 0x00012190..0x00012C82 t=20 model=claude-sonnet
 ??1Rva004A69BF@@UAE@XZ	0x004A69BF	123	blocked	and-ebp-4-0 early before 3E4 store vs retail after load t=12 model=muse-09 (stash 0.96 kept)
 ??0Rva00532361@@QAE@XZ	0x00532361	190	blocked	needs element ctor 0x531FBE and dtor thunk 0x531FCF rowed first both claimed by muse-02 plus placement cookie vs member order plus EH state wall t=18 model=muse-10
+?rva005F2E85@Rva005F2FEF@@QAEXXZ	0x005F2E85	188	blocked	float clamp SSE register allocation diverges after 2 variants t=12 model=muse-03
+?Rva00390911Load@@YAXPAXPAX@Z	0x00390911	205	blocked	vector xfer load 5 virtuals plus throw needs vtable mapping t=10 model=muse-03
