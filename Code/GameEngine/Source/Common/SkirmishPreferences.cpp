@@ -43,6 +43,7 @@ public:
 	Int compareNoCase(const char *other) const;
 	Bool startsWith(const StringBase &other) const throw();
 	void set(const T *text);
+	void set(const StringBase<T> &other);
 	void trim(void);
 	Bool nextToken(StringBase *token, const char *seps);
 
@@ -270,7 +271,7 @@ SkirmishPreferences::SkirmishPreferences(Int profileIndex)
 	if (it == ((const SkirmishFindMap *)(const PreferenceMap *)this)->end())
 		return;
 
-	m_currentUserName = it->m_value;
+	((StringBase<char> *)&m_currentUserName)->set(*(const StringBase<char> *)&it->m_value);
 }
 
 // ??1SkirmishPreferences@@UAE@XZ @0x43C286
@@ -295,11 +296,12 @@ Bool SkirmishPreferences::write(void)
 // ?setCurrentUserName@SkirmishPreferences@@QAEXABVUnicodeString@@@Z @0x43C4D2
 void SkirmishPreferences::setCurrentUserName(const UnicodeString &newName)
 {
-	m_currentUserName = UnicodeStringToQuotedPrintable(newName);
+	((StringBase<char> *)&m_currentUserName)->set(
+		(const StringBase<char> &)UnicodeStringToQuotedPrintable(newName));
 
 	AsciiString key("CurrentUserName");
 	AsciiString &slot = (*this)[key];
-	slot = m_currentUserName;
+	((StringBase<char> *)&slot)->set(*(const StringBase<char> *)&m_currentUserName);
 }
 
 // ?formatProfileKey@SkirmishPreferences@@QAE?AVAsciiString@@PBV2@PBD@Z @0x43BA95

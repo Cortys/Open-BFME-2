@@ -1,7 +1,13 @@
 // Open-BFME5 conversions, BFME2 repair: the three string members copy
-// through AsciiString::operator= at 0x366F0 (the ledger's established
-// identity for that body, shared with Rva000C3380Copy); the donor's local
+// through StringBase<char>::set at 0x366F0 (retail's inlined AsciiString
+// assignment target, shared with Rva000C3380Copy); the donor's local
 // BfmeUniVIA::bfmeSetVIA label names the same bytes.
+
+template <class T> class StringBase
+{
+public:
+	void set(const StringBase<T> &other);
+};
 
 class AsciiString
 {
@@ -33,9 +39,9 @@ BfmeElemVIA *__cdecl bfmeCopyVIA(BfmeElemVIA *first, BfmeElemVIA *last, BfmeElem
 		int i = n;
 		do
 		{
-			dest->m_bfme00 = first->m_bfme00;
-			dest->m_bfme04 = first->m_bfme04;
-			dest->m_bfme08 = first->m_bfme08;
+			((StringBase<char> *)&dest->m_bfme00)->set(*(const StringBase<char> *)&first->m_bfme00);
+			((StringBase<char> *)&dest->m_bfme04)->set(*(const StringBase<char> *)&first->m_bfme04);
+			((StringBase<char> *)&dest->m_bfme08)->set(*(const StringBase<char> *)&first->m_bfme08);
 			dest->m_bfme0c = first->m_bfme0c;
 			dest->m_bfme10 = first->m_bfme10;
 			dest->m_bfme14 = first->m_bfme14;
