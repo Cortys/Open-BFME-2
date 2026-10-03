@@ -33,6 +33,7 @@ public:
 	void rva00531342(struct Rva005312BERect *r);
 	void rva0053155E(int a, int b, bool add, int value);
 	int rva0053161A(int a, int b, int index);
+	bool rva005315C8(int a, int b);
 	char m_pad[0x1BA30];
 	unsigned char m_flag1BA30;
 	char m_pad2[0x1BA38 - 0x1BA30 - 1];
@@ -158,3 +159,17 @@ int Rva005312BE::rva0053161A(int a, int b, int index)
 		return 0;
 	return m_ppItems[i][j].m_set.rva0053117F(index);
 }
+// ?rva005315C8@Rva005312BE@@QAE_NHH@Z, retail 0x005315C8, 82 bytes.
+// Leaf: bounded check whether cell count is positive; shares 0x1BA38/0x1BA3C/0x1BA40 stride 0x44.
+// Caller at 0x002F7C3F; sibling getter 0x00531512 shape.
+bool Rva005312BE::rva005315C8(int a, int b)
+{
+	if (a < 0 || b < 0)
+		return false;
+	int i = a / 16;
+	int j = b / 16;
+	if (i >= m_outer || j >= m_inner)
+		return false;
+	return m_ppItems[i][j].m_set.m_count > 0;
+}
+
