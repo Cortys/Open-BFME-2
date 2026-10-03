@@ -63,6 +63,12 @@ class Rva00219B62 {
 public:
     int rva00219B62(unsigned int index);
 };
+class Rva00219B80 {
+    char m_pad[0x3C];
+    IntVec m_vec;
+public:
+    int rva00219B80(unsigned int index);
+};
 class Rva00219B9E {
     char m_pad[0x14];
     Vec216 m_vec;
@@ -517,6 +523,20 @@ int Rva00219B9E::rva00219F00(unsigned int o, unsigned int o2, unsigned int i)
     if (o < count) {
         _ReadWriteBarrier();
         return ((Rva00219B9E *)((char *)m_outer.m_start + (o << 5)))->rva00219C3E(o2, i);
+    }
+    return 0;
+}
+// ?rva00219B80@Rva00219B80@@QAEHI@Z @0x00219B80 30B
+// Twin of 0x00219B62 at +0x3C/+0x40 (Elem216::m_3C): same sar-2 barrier reload.
+// Evidence: retail mov edx [ecx+0x40] sub [ecx+0x3C] sar 2 cmp jae xor else
+// mov ecx [ecx+0x3C] mov eax [ecx+eax*4]; caller 0x00219C13 in 0x00219C00;
+// unblocks 0x00219C00.
+int Rva00219B80::rva00219B80(unsigned int index)
+{
+    unsigned int count = (unsigned int)(((char *)m_vec.m_finish - (char *)m_vec.m_start) >> 2);
+    if (index < count) {
+        _ReadWriteBarrier();
+        return m_vec.m_start[index];
     }
     return 0;
 }
