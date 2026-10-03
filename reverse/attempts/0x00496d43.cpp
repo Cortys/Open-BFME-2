@@ -1,4 +1,6 @@
 // ?rva00496D43@Rva00496D43@@QAEPAXPAXABVAsciiString@@@Z
+// partial score=0.94 date=2026-10-03
+// ?rva00496D43@Rva00496D43@@QAEPAXPAXABVAsciiString@@@Z
 // partial score=0.94 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHs-c- /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // ?rva00496D43@Rva00496D43@@QAEPAXPAXABVAsciiString@@@Z, retail 0x00496D43 96B.
@@ -16,10 +18,11 @@ struct Rva0028F59A
 	Rva0028F59A(int unused, int bit);
 };
 
-struct WeaponTemplateSetHead
+class WeaponTemplateSetHead
 {
-	char m_data[0x4C];
+public:
 	WeaponTemplateSetHead(const WeaponTemplateSetHead &that);
+	char m_data[0x4C];
 };
 
 struct Rva00496D43Elem : public AsciiString
