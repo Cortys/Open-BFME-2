@@ -6558,3 +6558,4 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?Rva00411205Get@@YA_NXZ	0x00411205	155	blocked	STL-EH map-insert 155B needs full pair-map reconstruction t=10 model=muse-03
 ?rva0059EE96@Rva0059EE96@@QAEXEE@Z	0x0059EE96	76	partial	inline f10() as the AptCall arg: first diff moves +0x5 to +0x12 and size 77B to 75B; target pushes the string imm per ternary branch, cl emits mov eax,imm+push and reorders m_p58 load ahead of the flag store t=25 model=deepseek-flash score=0.96 stash=reverse/attempts/0x0059ee96.cpp
 ?rva005D1210@Rva005D1210@@QAEXXZ	0x005D1210	61	blocked	nonvirtual-dtor-EH-needs-member-dtor-giving-70B-vs-61B-extra-call-and-or-minus1-after-clear-vs-retail-before t=28 model=muse-07
+?Rva0034C6EFGet@@YA_NXZ	0x0034C6EF	206	blocked	StateMachine factory 206B with 3 new-defineState EH states t=10 model=muse-03
