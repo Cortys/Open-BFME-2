@@ -76,7 +76,7 @@ static SegLineRendererClass _LineRenderer;
 ** StreakLineClass implementation:
 */
 
-StreakLineClass::StreakLineClass(void) :
+inline StreakLineClass::StreakLineClass(void) :
 		MaxSubdivisionLevels(0),
 		NormalizedScreenArea(0.0f)
 {
@@ -84,7 +84,7 @@ StreakLineClass::StreakLineClass(void) :
 
 }
 
-StreakLineClass::StreakLineClass(const StreakLineClass & src) :
+inline StreakLineClass::StreakLineClass(const StreakLineClass & src) :
 		MaxSubdivisionLevels(src.MaxSubdivisionLevels),
 		NormalizedScreenArea(src.NormalizedScreenArea),
 		PointLocations(src.PointLocations),
@@ -95,6 +95,19 @@ StreakLineClass::StreakLineClass(const StreakLineClass & src) :
 		Personalities(src.Personalities)
 {
 }
+
+
+// These constructors are header inlines in the copier unit; the anchor retains
+// this unit's row copies and is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStreakLineClassCtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeStreakLineClassCtorInlineAnchor()
+{
+	static_cast<StreakLineClass *>(0)->StreakLineClass::StreakLineClass();
+	static_cast<StreakLineClass *>(0)->StreakLineClass::StreakLineClass(
+		*static_cast<const StreakLineClass *>(0));
+}
+#pragma inline_depth()
 
 StreakLineClass & StreakLineClass::operator = (const StreakLineClass &that)
 {
@@ -731,5 +744,4 @@ bool StreakLineClass::Cast_Ray(RayCollisionTestClass & raytest)
 
 	return retval;
 }
-
 
