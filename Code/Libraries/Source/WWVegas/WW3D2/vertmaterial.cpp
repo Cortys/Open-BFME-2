@@ -567,7 +567,7 @@ WW3DErrorType VertexMaterialClass::Load_W3D(ChunkLoadClass & cload)
 }
 
 // ?Parse_W3dVertexMaterialStruct@VertexMaterialClass@@QAEXABUW3dVertexMaterialStruct@@@Z present-unmatched
-void VertexMaterialClass::Parse_W3dVertexMaterialStruct(const W3dVertexMaterialStruct & vmat)
+inline void VertexMaterialClass::Parse_W3dVertexMaterialStruct(const W3dVertexMaterialStruct & vmat)
 {
 	Vector3 tmp;
 	W3dUtilityClass::Convert_Color(vmat.Ambient,&tmp);
@@ -996,9 +996,8 @@ WW3DErrorType VertexMaterialClass::Save_W3D(ChunkSaveClass & csave)
 	return WW3D_ERROR_OK;
 }
 
-// ?Apply@VertexMaterialClass@@ABEXXZ matched in VertexMaterialApply.cpp; this
-// unmatched copy stays because its out-of-line call emits WW3D::Is_Coloring_Enabled
-void VertexMaterialClass::Apply(void) const
+// ?Apply@VertexMaterialClass@@ABEXXZ present-unmatched (select-any inline copy; row owned by VertexMaterialApply.cpp)
+inline void VertexMaterialClass::Apply(void) const
 {
 	int i;
 
@@ -1127,7 +1126,8 @@ VertexMaterialClass * VertexMaterialClass::Get_Preset(PresetType type)
 
 // These seven setters are header inlines; ordinary definitions here collided
 // with select-any copies. The anchor keeps this unit's row copies; it is not
-// retail code.
+// retail code. It also keeps WW3D::Is_Coloring_Enabled emitted after Apply
+// became a select-any inline copy (its inlined call no longer emits it).
 #pragma inline_depth(0)
 // ?_bfmeVertexMaterialSetterAnchor@@YAXPAVVertexMaterialClass@@@Z absent-from-retail
 void _bfmeVertexMaterialSetterAnchor(VertexMaterialClass *material)
@@ -1139,5 +1139,6 @@ void _bfmeVertexMaterialSetterAnchor(VertexMaterialClass *material)
 	material->Set_Opacity(0.0f);
 	material->Set_Shininess(0.0f);
 	material->Set_Specular(0.0f, 0.0f, 0.0f);
+	(void)WW3D::Is_Coloring_Enabled();
 }
 #pragma inline_depth()
