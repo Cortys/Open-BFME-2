@@ -1,5 +1,3 @@
-// ?Rva005BC4CEStart@@YAHH@Z
-// partial score=0.96 date=2026-10-03
 // cl: /O1 /MD
 //
 // ?Rva005BC4CEStart@@YAHH@Z
@@ -23,7 +21,6 @@ extern unsigned char g_00E06576;
 
 unsigned long __stdcall Rva005BC4AEThread(void *param);
 
-// ?Rva005BC4CEStart@@YAHH@Z present-unmatched
 int __cdecl Rva005BC4CEStart(int param)
 {
     if (g_00E06584 == 0) {
@@ -37,12 +34,8 @@ int __cdecl Rva005BC4CEStart(int param)
     while (g_00DD3C7C == 0) {
         Sleep(5);
     }
-    if (g_00E06584 != 1) {
+    if (g_00E06584 != 1 || g_00DD3C7C == 0)
         return 0;
-    }
-    if (g_00DD3C7C == 0) {
-        return 0;
-    }
     _ReadWriteBarrier();
     int result = (g_00E06575 != 0) ? 1 : 0;
     g_00E06584 = 0;
