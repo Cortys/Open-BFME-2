@@ -49671,3 +49671,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004D6468@Rva004D5A30@@QAE?AVAsciiString@@XZ,,0x004D6468,141,Code/GameEngine/Source/GameNetwork/Rva004D5A30Contents.cpp,matched,vtable slot3 0x00860294 ctor 0x004D5A30 base 0x004D5B4C format 0x008604EC empty fallback
 ?rva004D6661@Rva004D65DC@@QAE?AVAsciiString@@XZ,,0x004D6661,167,Code/GameEngine/Source/GameNetwork/Rva004D65DCContents.cpp,matched,vtable slot 3 of 0x00860530 ctor 0x004D65DC format authToken authKey
 ?rva004D6806@Rva004D6806@@QAE?AVAsciiString@@XZ,,0x004D6806,192,Code/GameEngine/Source/GameNetwork/Rva004D6806Contents.cpp,matched,chain of 0x004D5B4C via translate format empty fallback
+??1Rva004D67D0@@MAE@XZ,,0x004D67D0,54,Code/GameEngine/Source/GameNetwork/Rva004D67D0Dtor.cpp,matched,dtor via caller 0x004D67B4 plus layout Rva004D6806 plus vtable pair
+??_GRva004D67D0@@MAEPAXI@Z,,0x004D67B4,28,Code/GameEngine/Source/GameNetwork/Rva004D67D0Dtor.cpp,matched,deleting dtor via ??1 0x004D67D0 plus caller shape
