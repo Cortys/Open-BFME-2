@@ -17,6 +17,8 @@ void *__cdecl ji_006291ae(void *dest, int val, unsigned int count);
 #pragma comment(linker, "/alternatename:?ji_006291ae@@YAPAXPAXHI@Z=?ji_006291ae@@YAXXZ")
 extern int g_00DFE368;
 extern int g_00DFE364;
+extern int g_00DFE3E4;
+extern int g_00DFE3E0;
 struct IntVec { int *m_start; int *m_finish; int *m_end; };
 struct Elem216 {
     char m_00[0x0C];
@@ -90,6 +92,7 @@ public:
     void *rva0021B22E(unsigned int o, unsigned int i);
     void *rva0021B670(const IdxPair *p);
     void *rva00219C5D(unsigned int index);
+    void *rva00219F8E(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -442,4 +445,25 @@ void *Rva00219B9E::rva00219C5D(unsigned int index)
     }
     void *p = rva00219B9E(index);
     return (char *)p + 0x68;
+}
+// ?rva00219F8E@Rva00219B9E@@QAEPAXII@Z @0x00219F8E 85B
+// One-time memset of g_00DFE3E0 guarded by g_00DFE3E4, then outer 32B vector
+// at +0x14C selects element o and forwards i through rowed 0x00219C5D;
+// out-of-range returns &g_00DFE3E0. Same guard idiom as 0x00219C5D and same
+// outer reinterpret-cast pattern as 0x00219E74/0x0021A016.
+// Evidence: retail test byte/or dword guard plus push 4/0/addr call to rowed
+// memset thunk 0x006291AE, lea eax,[edi+0x14C] plus sar 5 outer count,
+// shl 5 plus call 0x00219C5D; callers 0x002446DE/0x0044089E/0x00441549/0x0052BC1D.
+void *Rva00219B9E::rva00219F8E(unsigned int o, unsigned int i)
+{
+    void *fallback = &g_00DFE3E0;
+    if (!(*(unsigned char *)&g_00DFE3E4 & 1)) {
+        g_00DFE3E4 |= 1;
+        ji_006291ae(fallback, 0, 4);
+    }
+    unsigned int count = Vec32Size(&m_outer);
+    if (o >= count)
+        return fallback;
+    OuterElem32 *base = m_outer.m_start;
+    return ((Rva00219B9E *)&base[o])->rva00219C5D(i);
 }
