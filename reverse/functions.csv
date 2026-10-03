@@ -49597,3 +49597,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?bfmeFinish1279@BfmeNode1279@@QAEXXZ,,0x006E2B40,193,Code/Libraries/Source/Apt/BfmeNode1279Finish.cpp,matched,LINK BONUS BfmeNode teardown via AptCIH cluster
 ?realMapPathToPortableMapPath@GameState@@QBE?AVAsciiString@@ABV2@@Z,,0x002DC833,452,Code/GameEngine/Source/Common/System/SaveGame/GameStateRealMapPathToPortable.cpp,matched,GameState save remap via BFME1 donor plus Unicode save dir and LivingWorldScripts branch
 ?Rva0014F718CopyBackward@@YAPAURva0014F718@@PAU1@00PAXH@Z,,0x0014F718,46,Code/GameEngine/Source/Common/Rva0014F718CopyBackward.cpp,matched,forwarder 0x0014F995 pushes 5 stride 8 single-dword +4 copy
+?rva0015B8C0@MeshMatDescClass@@QAEXXZ,,0x0015B8C0,157,Code/Libraries/Source/WWVegas/WW3D2/MeshMatDescUniqueArrays.cpp,matched,MeshMatDesc loop 4 at +0xb8 via RefPtr callee 0x15B110

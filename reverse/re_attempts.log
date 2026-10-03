@@ -6286,3 +6286,6 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva0026003EGet@@YAHHPAXMM@Z	0x26003E	158	partial	improved body: exact 158B size and clamp orientation match (if m>0 clamped=(a<15)?a:15 else 0); only x87 fstp [ebp-4] is scheduled 3 bytes before retail (retail emits after first pop); t=25 model=deepseek-flash score=0.99 stash=reverse/attempts/0x0026003e.cpp
 ??0Rva001495A0@@QAE@XZ	0x001495A0	204	partial	add eax,1 before 314 stores vs after 320 store; 204/204B 43/43insns rest exact t=30 model=muse-16 score=0.93 stash=reverse/attempts/0x001495a0.cpp
 ?rva004D8990@TurretAI@@QAE_NMMM@Z	0x004D8990	431	blocked	sweep prelude with 2pi vs unk68-unk6c plus FPU-SSE range needs donor t=22 model=muse-08
+?rva000E9D18@Rva000E9D18@@QAEXABUCoord3D@@ABVGeometryInfo@@M@Z	0x000E9D18	228	blocked	layout offsets off by 0x3c plus null-base fld/push and register scheduling wall t=8 model=muse-06
+?rva004F571B@Rva004F571B@@QAE_NPAVObject@@@Z	0x004F571B	129	blocked	ebx holds obj vs retail stack plus sub-esp vs pushecx plus TheGameLogic push order wall t=25 model=muse-06
+?Rva00120850Set@@YAXPAUCursorTextureSlot@@0@Z	0x00120850	228	blocked	EH frame 8 vs c plus esi-for-secondSurface vs stack plus early-bool duplication wall t=30 model=muse-06
