@@ -49927,3 +49927,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva002B2E77Append@@YGXH@Z,,0x002B2E77,23,Code/GameEngine/Source/Common/Rva002B2E77Finish.cpp,matched,stdcall int wrapper tail-appends via rowed 0x0030F936 callers push value
 ?Rva003BC7EFSet@@YGXABVAsciiString@@H@Z,,0x003BC7EF,65,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC7EF.cpp,matched,sibling 0x003BB233 65B shape via rowed rva00357475 and getEachPlayerFromMask
 ?Rva003BC86ESet@@YGXABVAsciiString@@0@Z,,0x003BC86E,65,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC86E.cpp,matched,sibling 0x003BB233 65B shape via rowed rva00357475 and getEachPlayerFromMask
+?Rva003BCBC7Set@@YGXABVAsciiString@@M@Z,,0x003BCBC7,65,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BCBC7.cpp,matched,sibling 0x003BB233 65B shape via rowed rva00357475 and getEachPlayerFromMask
