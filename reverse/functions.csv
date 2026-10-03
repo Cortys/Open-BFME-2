@@ -49778,3 +49778,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00150248Copy@@YAXPAURva0014F718@@00@Z,,0x00150248,29,Code/GameEngine/Source/Common/Rva00150248Copy.cpp,matched,wrapper to rowed 0x0014FA62 sibling of 0x00150265
 ??_GRva0015058E@@UAEPAXI@Z,,0x001510A6,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0015058E.cpp,matched,rowed ??1 at 0x0015058E plus rowed delete at 0x0002FD60 same 28B family shape
 ??0Upgrades@CashHackSpecialPowerModuleData@@QAE@HABH@Z,,0x003FA38C,35,Code/GameEngine/Source/GameLogic/Object/SpecialPower/CashHackUpgradesCopyCtor.cpp,matched,Upgrades 2-arg ctor via zeroing member and OR caller 0x003FA69E
+??0Rva003FA776@@QAE@XZ,,0x003FA745,49,Code/GameEngine/Source/Common/Rva003FA776Ctor.cpp,matched,vtable 0x00C37930 dtor 0x003FA776 base Rva001E3624 callers 0x0021116F
