@@ -49076,3 +49076,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva00085553Get@@YAXHH@Z,,0x00085553,44,Code/GameEngine/Source/Common/Rva00085553Init.cpp,matched,free function sets five globals from second arg unlocks 0x00085EE6
 ?rva00552CF9@Rva00552CF9@@QAEXPBV1@@Z,,0x00552CF9,130,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,thiscall copies fields and three sub-objects via virtuals caller 0x0055941D
 ?rva00552E9E@Rva00552CF9@@QAEXH@Z,,0x00552E9E,34,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class as 0x00552CF9 sets three shorts and int caller 0x00517F9D
+??1Rva003371B1@@QAE@XZ,,0x003372B7,53,Code/GameEngine/Source/Common/Rva003371B1Dtor.cpp,matched,leaf pin prev-copy layout Destroy-caller
