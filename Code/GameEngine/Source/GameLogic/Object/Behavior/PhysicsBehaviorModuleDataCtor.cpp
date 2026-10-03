@@ -17,20 +17,23 @@
 
 extern const int g_009BA4E4;
 
+extern "C" const void *const vtbl_0084ED70[];  // ??_7PhysicsBehaviorModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_0084ED70=??_7PhysicsBehaviorModuleData@@6B@")
+
 class UpdateModuleData
 {
 public:
 	UpdateModuleData() {}
-	virtual ~UpdateModuleData();
+	~UpdateModuleData();
 };
 
 class PhysicsBehaviorModuleData : public UpdateModuleData
 {
 public:
 	PhysicsBehaviorModuleData();
-	virtual ~PhysicsBehaviorModuleData();
 
 private:
+	const void *m_vtable; // +0x00, retail vtable 0x0084ED70
 	unsigned int m_unused04;
 	float m_firstHeight;
 	float m_secondHeight;
@@ -60,6 +63,7 @@ private:
 
 // ??0PhysicsBehaviorModuleData@@QAE@XZ @0x00390119
 PhysicsBehaviorModuleData::PhysicsBehaviorModuleData() :
+	m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_0084ED70))),
 	m_firstHeight(1.3f),
 	m_secondHeight(1.3f),
 	m_firstPercentIndent(0.33f),
