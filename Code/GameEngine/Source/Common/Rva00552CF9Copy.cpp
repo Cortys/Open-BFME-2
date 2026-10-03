@@ -52,6 +52,7 @@ public:
 	int m_490;
 	void rva00552CF9(const Rva00552CF9 *src);
 	void rva00552E9E(int v);
+	void rva00552CB8();
 };
 
 void Rva00552CF9::rva00552CF9(const Rva00552CF9 *src)
@@ -81,4 +82,12 @@ void Rva00552CF9::rva00552E9E(int v)
 	m_2F4 = (unsigned short)v;
 	m_14C = (unsigned short)v;
 	m_4 = (unsigned short)v;
+}
+void Rva00552CF9::rva00552CB8()
+{
+	m_0 = 0;
+	m_4 = 0;
+	m_8.d0();
+	m_1B0.d0();
+	m_340.d0();
 }

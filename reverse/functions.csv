@@ -49088,3 +49088,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00274445@Drawable@@QAEXM@Z,,0x00274445,87,Code/GameEngine/Source/GameClient/Drawable_rva00274176.cpp,matched,Drawable iface loop plus memset pair via caller 0x00467AB8
 ??0Rva006FC1D0@@QAE@XZ,,0x006FC1D0,102,Code/Libraries/Source/Apt/Rva006FC1D0Ctor.cpp,matched,Apt ctor sibling of Rva006D6500 via inlined Rva006D6360 base
 ??0Rva006FC240@@QAE@XZ,,0x006FC240,134,Code/Libraries/Source/Apt/Rva006FC1D0Ctor.cpp,matched,Apt error ctor with two Error strings via MI bits base
+?rva00552CB8@Rva00552CF9@@QAEXXZ,,0x00552CB8,38,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,same class clears two ints then three slot0 virtuals caller 0x00556262
