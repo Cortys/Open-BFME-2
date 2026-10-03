@@ -52,8 +52,13 @@ public:
 
 void OptionPreferences::rva002E537B(Int val)
 {
-	if (val != -1)
-		(*this)[AsciiString("IdealStaticGameLOD")].set(BfmeLODLevelNames[val]);
-	else
+	if (val != -1) {
+		AsciiString key("IdealStaticGameLOD");
+		// Retail loads the name before the map call and retains it in EDI.
+		const char *levelName = BfmeLODLevelNames[val];
+		AsciiString &value = (*this)[key];
+		value.set(levelName);
+	} else {
 		erase(AsciiString("IdealStaticGameLOD"));
+	}
 }

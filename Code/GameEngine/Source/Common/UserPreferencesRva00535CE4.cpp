@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /DNDEBUG /MD /EHsc
 // ?rva00535CE4@UserPreferences@@QAEHVAsciiString@@@Z @0x00535CE4 74B
 // UserPreferences Losses path: append Losses to by-value AsciiString, slot6 virtual
 // with (arg, 0), return its int, EH dtor via releaseBuffer.
@@ -123,58 +123,11 @@
 // ?rva00535A96@UserPreferences@@QAEXVAsciiString@@M@Z @0x00535A96 75B
 // UserPreferences AverageGameTime-setter path: append AverageGameTime to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
 // Evidence: concat AverageGameTime 0x00868E5C slot 0x28 releaseBuffer gap same TU unlock.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	void concat(const char *s);
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	StringBase(const char *s);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned len;
-		unsigned cap;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
-	AsciiString() {}
-	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
-	AsciiString(const char *s) : m_data(s) {}
-	~AsciiString() { m_data.releaseBuffer(); }
-	void concat(const char *s) { m_data.concat(s); }
-	void translate(const class UnicodeString &src);
-	void __cdecl format(const char *fmt, ...);
-private:
-	StringBase<char> m_data;
-};
-
-
+// Native callers preserve the one-pointer string ABI. Use the shared
+// view and its independently verified workers instead of private wrappers.
+#include "ascii_string.h"
+#include "unicode_string.h"
 typedef unsigned short WideChar;
-
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	// Inline, as retail's by-value returns call the StringBase<WideChar> copy
-	// constructor (0x00037050) directly.
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	__forceinline ~UnicodeString() { m_data.releaseBuffer(); }
-	void __cdecl format(const UnicodeString *fmt, ...);
-private:
-	StringBase<WideChar> m_data;
-};
 
 struct SYSTEMTIME
 {

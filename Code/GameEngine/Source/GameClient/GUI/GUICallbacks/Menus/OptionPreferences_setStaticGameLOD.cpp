@@ -54,7 +54,10 @@ void OptionPreferences::rva002E52FC(int index)
 {
 	if (index != -1) {
 		AsciiString key("StaticGameLOD");
-		(*this)[key].set(BfmeLODLevelNames[index]);
+		// Retail retains the name in EDI across the map lookup.
+		const char *levelName = BfmeLODLevelNames[index];
+		AsciiString &value = (*this)[key];
+		value.set(levelName);
 	} else {
 		AsciiString key("StaticGameLOD");
 		erase(key);

@@ -127,12 +127,14 @@ public:
 	{
 		return ((StringBase<char> *)this)->nextToken((StringBase<char> *)tok, delims);
 	}
-	void clear() { ((StringBase<char> *)this)->clear(); }
-	void set(const char *s) { ((StringBase<char> *)this)->set(s); }
+	void clear();
+	void set(const char *s);
 	void set(const AsciiString &s) { ((StringBase<char> *)this)->set(*(const StringBase<char> *)&s); }
-	void concat(const char *s) { ((StringBase<char> *)this)->concat(s); }
+	// Retail call sites pin this spelling to the same 37-byte worker as
+	// StringBase<char>::concat(const char *) at RVA 0x00005629.
+	void concat(const char *s);
 	void concat(char c) { ((StringBase<char> *)this)->concat(c); }
-	void concat(const AsciiString &s) { ((StringBase<char> *)this)->concat(*(const StringBase<char> *)&s); }
+	void concat(const AsciiString &s);
 	void toLower() { ((StringBase<char> *)this)->toLower(); }
 	void toUpper() { ((StringBase<char> *)this)->toUpper(); }
 	void trim() { ((StringBase<char> *)this)->trim(); }
@@ -162,3 +164,16 @@ inline bool operator==(const AsciiString &a, const AsciiString &b) { return a.co
 inline bool operator!=(const AsciiString &a, const AsciiString &b) { return a.compare(b) != 0; }
 inline bool operator<(const AsciiString &a, const AsciiString &b) { return a.compare(b) < 0; }
 #pragma optimize("", on)
+
+// The existing one-pointer view and thiscall argument agree with that
+// worker. Resolve the spelling directly; a five-byte forwarding COMDAT
+// would define a different body at the already verified address.
+#pragma comment(linker, "/alternatename:?concat@AsciiString@@QAEXPBD@Z=?concat@?$StringBase@D@@QAEXPBD@Z")
+
+// These existing retail spellings share the same one-pointer thiscall ABI:
+// set(text) -> StringBase set at 0x55F5 (37 bytes); concat(string) ->
+// StringBase concat at 0x6987 (42 bytes). clear is the releaseBuffer worker
+// at 0x36410, which clears the pointer as it releases the buffer.
+#pragma comment(linker, "/alternatename:?set@AsciiString@@QAEXPBD@Z=?set@?$StringBase@D@@QAEXPBD@Z")
+#pragma comment(linker, "/alternatename:?concat@AsciiString@@QAEXABV1@@Z=?concat@?$StringBase@D@@QAEXABV1@@Z")
+#pragma comment(linker, "/alternatename:?clear@AsciiString@@QAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")

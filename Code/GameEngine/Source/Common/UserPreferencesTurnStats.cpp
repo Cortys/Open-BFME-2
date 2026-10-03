@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z @0x005378E9 355B
 // UserPreferences turn-stats path: append TurnsPlayed to faction copy, bump it,
 // track Longest/ShortestGameTurns, recompute AverageGameTurns.
@@ -7,41 +7,9 @@
 // 1.0f 0x007BB8D8 ret 8 chain same TU unlock.
 // The running-average denominator adds the 1.0f literal (pooled at
 // 0x00BBB8D8), not a float global standing in for it.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	void concat(const char *s);
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	StringBase(const char *s);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned len;
-		unsigned cap;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
-	AsciiString() {}
-	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
-	AsciiString(const char *s) : m_data(s) {}
-	~AsciiString() { m_data.releaseBuffer(); }
-	void concat(const char *s) { m_data.concat(s); }
-private:
-	StringBase<char> m_data;
-};
-
+// Native callers preserve the one-pointer string ABI. Use the shared
+// view and its independently verified workers instead of private wrappers.
+#include "ascii_string.h"
 
 class UserPreferences
 {

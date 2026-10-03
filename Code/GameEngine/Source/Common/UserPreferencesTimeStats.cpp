@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // ?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z @0x00537A9B 397B
 // UserPreferences record-game-time path: TimePlayed add, Longest max, Shortest min-nonzero, Average recompute via total-games.
 // Evidence: TimePlayed 0x00868E2C slot 0x28, Longest 0x00868E38 getter setter, Shortest 0x00868E48 getter setter,
@@ -6,38 +6,9 @@
 // Call sites 0x005BFA94 and 0x005BFE18. Structural inference: the average is
 // recomputed in place in the getter's result (one float slot reused for the
 // argument), as the turn-count sibling 0x005378E9 does with its own locals.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-public:
-	void concat(const char *s);
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	StringBase(const char *s);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned len;
-		unsigned cap;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
-	AsciiString(const char *s) : m_data(s) {}
-	~AsciiString() { m_data.releaseBuffer(); }
-	void concat(const char *s) { m_data.concat(s); }
-private:
-	StringBase<char> m_data;
-};
+// Native callers preserve the one-pointer string ABI. Use the shared
+// view and its independently verified workers instead of private wrappers.
+#include "ascii_string.h"
 
 class UserPreferences
 {
