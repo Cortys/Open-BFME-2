@@ -1,15 +1,16 @@
-// ?Rva000E63DCDo@@YGXPAVRva000E63DCObj@@@Z
-// partial score=0.93 date=2026-10-02
 // cl: /O1 /MD
-// ?Rva000E63DCDo@@YGXPAURva000E63DCObj@@@Z retail 0x000E63DC 42B unlock lane.
+// ?Rva000E63DCDo@@YGXPAVRva000E63DCObj@@@Z retail 0x000E63DC 42B unlock lane.
 // Evidence: vtable slot 3 of 0x007CEAB4 (class of ??0Rva000E6AC0@@QAE@XZ); two virtual calls
 // on the single object arg (offsets 0x10 and 0x28); callers at 0x000E96CD and 0x000ED499.
-// Shape: if (obj->check()) return; Two t={1,1}; obj->apply(&t); reuses dead arg slot at /O1.
+// Shape: if (obj->check()) return; TwoBools t(1,1); obj->apply(&t). The two-argument
+// constructor makes MSVC place the 2-byte temporary in the dead incoming arg slot at
+// [ebp+8], which a plain member-by-member assignment does not (/O1 stack slot reuse).
 
 struct TwoBools
 {
     char a;
     char b;
+    TwoBools(char x, char y) : a(x), b(y) {}
 };
 
 class Rva000E63DCObj
@@ -28,13 +29,10 @@ public:
     virtual void apply(TwoBools *p);
 };
 
-// ?Rva000E63DCDo@@YGXPAURva000E63DCObj@@@Z present-unmatched
 void __stdcall Rva000E63DCDo(Rva000E63DCObj *obj)
 {
     if (obj->check())
         return;
-    TwoBools t;
-    t.a = 1;
-    t.b = 1;
+    TwoBools t(1, 1);
     obj->apply(&t);
 }
