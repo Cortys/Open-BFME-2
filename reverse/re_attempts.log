@@ -6059,3 +6059,6 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva004A57DB@Rva004A54A8@@QAEXMM@Z	0x004A57DB	112	partial	SSE movss order swapped plus jbe/jae jb/ja need thresh-first high-first t=20 model=muse-07 score=0.94 stash=reverse/attempts/0x004a57db.cpp
 ?rva004A5628@Rva004A54A8@@QAEXXZ	0x004A5628	435	blocked	435B EH plus x87 SSE mix plus static BoneFXUpdate init plus pin-only nextWithNumeric needs scope table 0x78DE23 t=5 model=muse-07
 ?rva0059EE96@Rva0059EE96@@QAEXEE@Z	0x0059EE96	76	partial	push-imm string vs mov-reg plus edi-save vs stack t=18 model=muse-07 score=0.95 stash=reverse/attempts/0x0059ee96.cpp
+?rva00274591@Drawable@@QAEXXZ	0x00274591	551	blocked	xmm reg choice plus add order plus sub order third-accumulate flips to acc-first t=30 model=muse-10 (stash 0.93 kept)
+?rva0029004B@Object@@QAEXXZ	0x0029004B	74	partial	or [esi+0x9a] after mov [esi+0x84] retail before t=18 model=muse-10 score=0.95 stash=reverse/attempts/0x0029004b.cpp
+?HasBeenDisplayed@SubTitleManager@@QAE_NH@Z	0x00688680	98	blocked	int at +0x18 via edx vs byte at +0x20 via eax plus vector-size prologue and debug-call shape mismatch t=10 model=muse-10
