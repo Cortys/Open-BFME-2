@@ -1,4 +1,6 @@
 // ?rva003641F2@Path@@QAEPAUCoord3D@@PAU2@@Z
+// partial score=0.98 date=2026-10-03
+// ?rva003641F2@Path@@QAEPAUCoord3D@@PAU2@@Z
 // partial score=0.96 date=2026-10-01
 // ?rva003641F2@Path@@QAEPAUCoord3D@@PAU2@@Z
 // cl: /O1 /DNDEBUG /MD /arch:SSE
@@ -95,9 +97,9 @@ private:
 
 Coord3D *Path::rva003641F2(Coord3D *out)
 {
+volatile bool unused = 0;
 	Coord3D tmp;
 	PathNode *sel = m_unknown10;
-	volatile unsigned int unused = 0;
 	Waypoint *waypoint = 0;
 	while (sel != 0) {
 		int wp = sel->m_waypointID;
