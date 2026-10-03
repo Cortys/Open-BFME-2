@@ -31,6 +31,7 @@ public:
 	unsigned int m_40;
 	AsciiString m_44;
 	void rva0050C2E6(const Rva0050C2E6 &other);
+	void rva0050C395(Rva0050C2E6 &other);
 };
 
 void Rva0050C2E6::rva0050C2E6(const Rva0050C2E6 &other)
@@ -53,4 +54,26 @@ void Rva0050C2E6::rva0050C2E6(const Rva0050C2E6 &other)
 	((StringBase<char> *)&m_3C)->set(*(const StringBase<char> *)&other.m_3C);
 	m_40 = other.m_40;
 	((StringBase<char> *)&m_44)->set(*(const StringBase<char> *)&other.m_44);
+}
+
+void Rva0050C2E6::rva0050C395(Rva0050C2E6 &other)
+{
+	((StringBase<char> *)&other.m_00)->set(*(const StringBase<char> *)&m_00);
+	((StringBase<char> *)&other.m_04)->set(*(const StringBase<char> *)&m_04);
+	((StringBase<char> *)&other.m_08)->set(*(const StringBase<char> *)&m_08);
+	((StringBase<char> *)&other.m_0C)->set(*(const StringBase<char> *)&m_0C);
+	((StringBase<char> *)&other.m_10)->set(*(const StringBase<char> *)&m_10);
+	other.m_14 = m_14;
+	other.m_18 = m_18;
+	((StringBase<char> *)&other.m_1C)->set(*(const StringBase<char> *)&m_1C);
+	((StringBase<char> *)&other.m_20)->set(*(const StringBase<char> *)&m_20);
+	other.m_24 = m_24;
+	((StringBase<char> *)&other.m_28)->set(*(const StringBase<char> *)&m_28);
+	other.m_2C = m_2C;
+	other.m_30 = m_30;
+	other.m_34 = m_34;
+	other.m_38 = m_38;
+	((StringBase<char> *)&other.m_3C)->set(*(const StringBase<char> *)&m_3C);
+	other.m_40 = m_40;
+	((StringBase<char> *)&other.m_44)->set(*(const StringBase<char> *)&m_44);
 }
