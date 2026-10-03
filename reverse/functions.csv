@@ -50552,3 +50552,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva0008A234@@QAE@ABV?$StringBase@D@@PBUThreeInts@@MMMMMM@Z,,0x0008A234,111,Code/GameEngine/Source/Rva0008A234Finish.cpp,matched,pointer local for m_10 keeps the int store alive while the first float load hoists above the int block
 ?rva007B9AC0@@YAXXZ,,0x007B9AC0,9,Code/GameEngine/Source/Common/System/TimePeriodInit.cpp,matched,atexit callback calling timeEndPeriod(1)
 ?rva007B5510@@YAXXZ,,0x007B5510,20,Code/GameEngine/Source/Common/System/TimePeriodInit.cpp,matched,startup init calling timeBeginPeriod(1) and atexit(0x007B9AC0)
+?rva007B5542@@YAXXZ,,0x007B5542,22,Code/GameEngine/Source/Common/System/AtlModuleInit.cpp,matched,
+?rva007B9AEA@@YAXXZ,,0x007B9AEA,22,Code/GameEngine/Source/Common/System/AtlModuleInit.cpp,matched,
