@@ -13,12 +13,19 @@ class Team
 {
 public:
 	bool rva0039F0D2();
+	bool rva0039F824();
 private:
 	unsigned char m_pad00[0x118];
 	TeamMapInner *m_ptr118;
+	TeamMapInner *m_ptr11C;
 };
 
 bool Team::rva0039F0D2()
 {
 	return m_ptr118->m_14 != 0;
+}
+
+bool Team::rva0039F824()
+{
+	return m_ptr11C->m_14 != 0;
 }
