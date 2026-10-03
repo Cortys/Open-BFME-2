@@ -1,4 +1,6 @@
 // ?rva0059EE96@Rva0059EE96@@QAEXEE@Z
+// partial score=0.96 date=2026-10-03
+// ?rva0059EE96@Rva0059EE96@@QAEXEE@Z
 // partial score=0.95 date=2026-10-03
 // cl: /O1 /MD
 //
@@ -52,6 +54,5 @@ void Rva0059EE96::rva0059EE96(unsigned char a0, unsigned char a1)
 	}
 	m_flag4C1 = a0;
 	void *lvl = m_mid58->m_level274;
-	const char *pref = f10();
-	Rva00524EF4AptCall(TheRva00222A8BTarget, lvl, pref, a0 ? "EnableButtonPlayGame" : "DisableButtonPlayGame");
+	Rva00524EF4AptCall(TheRva00222A8BTarget, lvl, f10(), a0 ? "EnableButtonPlayGame" : "DisableButtonPlayGame");
 }
