@@ -1,8 +1,7 @@
 // ?rva004780E7@SlaughterHordeContain@@UAEPAVPlayer@@PBV2@@Z
-// partial score=0.97 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
-// ?rva004780E7@SlaughterHordeContain@@UAEPAVPlayer@@PBVPlayer@@@Z, retail 0x004780E7, 90 bytes.
+// ?rva004780E7@SlaughterHordeContain@@UAEPAVPlayer@@PBV2@@Z, retail 0x004780E7, 90 bytes.
 // Virtual slot 57 (offset 0xE4) of vtable 0x00C48AA0 (SlaughterHordeContain primary
 // 0x00C48AA0 per SlaughterHordeContainDtor; secondary at +0x20 per nine-base
 // OpenContain chain). GarrisonContain::getApparentControllingPlayer variant:
@@ -13,6 +12,11 @@
 // getControllingPlayer@Object 0x0028AFA9 getRelationship@Player 0x002AD0C6
 // getControllingPlayer@Team 0x0039D7CF, TheTeamFactory 0x00A028BC,
 // GarrisonContain.cpp getApparentControllingPlayer donor shape.
+//
+// The hide-flag and null-myPlayer guards are one short-circuit test so both
+// exits share the single materialize-eax exit at 0x0047813A; splitting them
+// lets cl skip the dead `mov eax,edi` for the myPlayer==0 arm and lands one
+// byte off (jump target 0x0047813C instead of 0x0047813A).
 
 class Player;
 class Team;
@@ -141,13 +145,10 @@ private:
 	int m_9E8;
 };
 
-// ?rva004780E7@SlaughterHordeContain@@UAEPAVPlayer@@PBV2@@Z present-unmatched
 Player *SlaughterHordeContain::rva004780E7(const Player *observing)
 {
 	Player *myPlayer = m_object->getControllingPlayer();
-	if (!m_hideFlag)
-		return myPlayer;
-	if (!myPlayer)
+	if (!m_hideFlag || !myPlayer)
 		return myPlayer;
 	if (!observing)
 		return myPlayer;
