@@ -1,5 +1,6 @@
 // ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
-// partial score=0.93 date=2026-10-02
+// partial score=0.94 date=2026-10-03
+// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
 // cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD /EHsc
 // ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z @0x00577C23 125B: Apt forward with 1 int plus 1 bool.
 // Builds int AsciiString via rowed 0x00222834 and bool text via rowed 0x004E678B,
@@ -29,7 +30,7 @@ __forceinline const char *GetStr(const AsciiString &s)
 int __cdecl Rva00577C23AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, int *pInt, bool *pFlag)
 {
 	AsciiString intStr = Rva00222834Get(*pInt);
-	char *tmp;
-	char *boolStr = *Rva004E678BGet((char **)&tmp, *pFlag);
+	char *boolStr = 0;
+	Rva004E678BGet(&boolStr, *pFlag);
 	return target->rva00222B19(level, prefix, function, 2, GetStr(intStr), boolStr, 0, 0, 0);
 }
