@@ -49415,3 +49415,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0050C395@Rva0050C2E6@@QAEXAAV1@@Z,,0x0050C395,177,Code/GameEngine/Source/GameNetwork/Rva0050C2E6Copy.cpp,matched,reverse copier same class via rowed set
 ?rva0050C807@Rva0050C807@@QBE?AVAsciiString@@H@Z,,0x0050C807,66,Code/GameEngine/Source/Common/Rva0050C807Get.cpp,matched,bounds-checked string getter via rowed copy
 ?rva0030594D@Rva0030594D@@QAEXPAVXfer@@@Z,,0x0030594D,31,Code/GameEngine/Source/Common/Rva0030594DXfer.cpp,matched,Xfer Version1 int slot 0x7c reverse layout
+?rva0037B3D1@Rva0037B3D1@@QAEXXZ,,0x0037B3D1,38,Code/GameEngine/Source/Common/System/Rva0037B3D1.cpp,matched,fclose plus rowed releaseBuffer then slot1 tail via clear

@@ -6189,3 +6189,5 @@ rva006ebdd0	0x6ebdd0	125	blocked	AptCharacter render sibling of 0x6EBD30: guarde
 ?rva003B3EEA@Rva003B3EEA@@QAEXXZ	0x003B3EEA	31	blocked	SIB base-index swapped edx+eax vs eax+edx at +0xe +0x16 G7-removed gives lea-shl t=8 model=muse-04 (stash 0.94 kept)
 ?Rva00075091Get@@YGPAVRva000748F6@@PAUMat12Src@@MHEH@Z	0x00075091	238	partial	only scale load movss xmm0 late +0x67 vs +0x4c size+insns exact same wall as 0x74DB4 sib-exhausted t=6 model=muse-04 score=0.97 stash=reverse/attempts/0x00075091.cpp
 ?Rva0030596CIntersects@@YA_NPAXUCoord3D@@M@Z	0x0030596C	137	partial	push ebx esi edi late saves early jne xor jmp vs shared je t=18 model=muse-04 score=0.93 stash=reverse/attempts/0x0030596c.cpp
+?rva0037AE4E@RecorderClass@@QAEXXZ	0x0037AE4E	148	blocked	exact size-insns with 2 stack offsets plus IAT-global relocs t=15 model=muse-06 (stash 0.95 kept)
+?rva0037B7F6@Rva0037B7F6@@QAEXXZ	0x0037B7F6	478	blocked	layout offsets and extra locals differ t=25 model=muse-spark
