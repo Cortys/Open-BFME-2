@@ -7461,3 +7461,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?Rva006CD230Append@@YAXPAX0@Z,0x006CD230,address-derived recursive Apt path builder; called from 0x006CD2A0 with a node and a char** cursor; body unrowed
 ?rva006E47C0@Rva006E34D0@@QAEXXZ,0x006E47C0,address-derived Apt teardown member of the 0x00E176D0 object; called from 0x006CD330; body unrowed
 ?rva006D7090@@YAPAXPBD@Z,0x006D7090,address-derived AptValueFactory string creational helper; called from 0x006CB9D0; body unrowed
+?rva006E3530@Rva006E34D0@@QAEXHHH@Z,0x006E3530,address-derived Apt three-int input packer member of the 0x00E176D0 object; called from 0x006CC9A0; body unrowed
