@@ -1,12 +1,11 @@
-// ?rva005C8CA0@Rva005C8C73@@QAEPAXPBX@Z
-// partial score=0.96 date=2026-10-03
 // cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX /arch:SSE
-//
 // ?rva005C8CA0@Rva005C8C73@@QAEPAXPBX@Z @0x005C8CA0 58B.
-// STLport float-keyed tree lower_bound between the rowed Rva005C8C73 erase
-// (0x005C8C73) and clear (0x005C8CDA).  Callers 0x005C8D07 and 0x005C8DDF.
-// Node +0x08 left / +0x0C right / +0x10 float key; head +0x04 first.
-
+// STLport float-keyed tree lower_bound, between the rowed Rva005C8C73 erase
+// (0x005C8C73) and clear (0x005C8CDA) in RvaTreeEraseClearFamily.cpp. Callers
+// 0x005C8D07 and 0x005C8DDF. Header +0x04 root, node +0x08 left / +0x0C right
+// / +0x10 float key. The res local is initialized before the head/cur locals
+// on purpose: that order is what makes MSVC /O1 rotate the loop to the shared
+// bottom test (initial jmp) instead of emitting a duplicate entry test.
 struct RvaTreeFamilyNode
 {
 	char m_pad[8]; // +0x00..0x07
@@ -41,21 +40,15 @@ struct Rva005C8CA0Node
 
 void *Rva005C8C73::rva005C8CA0(const void *key)
 {
+	Rva005C8CA0Node *res = (Rva005C8CA0Node *)m_00Head;
 	RvaTreeFamilyHead *head = (RvaTreeFamilyHead *)m_00Head;
 	Rva005C8CA0Node *cur = (Rva005C8CA0Node *)head->m_first;
 	const float *kf = (const float *)key;
-	Rva005C8CA0Node *res = (Rva005C8CA0Node *)head;
 	while (cur)
 	{
-		if (!(cur->m_key < *kf))
-		{
-			res = cur;
-			cur = cur->m_left;
-		}
-		else
-			cur = cur->m_right;
+		if (!(cur->m_key < *kf)) { res = cur; cur = cur->m_left; }
+		else cur = cur->m_right;
 	}
-	if (res == (Rva005C8CA0Node *)head || res->m_key > *kf)
-		res = (Rva005C8CA0Node *)head;
+	if (res == (Rva005C8CA0Node *)head || res->m_key > *kf) res = (Rva005C8CA0Node *)head;
 	return res;
 }
