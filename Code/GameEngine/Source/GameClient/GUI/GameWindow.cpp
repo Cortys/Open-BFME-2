@@ -367,7 +367,6 @@ void GameWindow::winSetEnabledTextColors(int color, int borderColor)
 		GadgetComboBoxSetEnabledTextColors(this, color, borderColor);
 }
 
-// ?winSetDisabledTextColors@GameWindow@@QAEXHH@Z present-unmatched
 void GameWindow::winSetDisabledTextColors(int color, int borderColor)
 {
 	m_disabledColor = color;
