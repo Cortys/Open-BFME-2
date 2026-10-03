@@ -41,6 +41,16 @@ class GameWindow;
 class GameSpyGroupRoom;
 class BuddyInfo {};
 
+struct BfmeOpaqueOwnedRecord492
+{
+	union {
+		unsigned int alignmentWitness;
+		unsigned char bytes[492];
+	};
+	BfmeOpaqueOwnedRecord492();
+	~BfmeOpaqueOwnedRecord492();
+};
+
 class GameSpyStagingRoom
 {
 public:
@@ -65,6 +75,7 @@ public:
 	Int m_desync;
 	Int m_pad;
 	~PlayerInfo();
+	Bool isIgnored(void);
 };
 
 struct AsciiComparator
@@ -102,6 +113,111 @@ public:
 };
 
 extern Int GetAdditionalDisconnectsFromUserFile(Int playerID);
+
+class GameSpyPeerMessageQueueInterface
+{
+public:
+	virtual void s00(void);
+	virtual void s01(void);
+	virtual void s02(void);
+	virtual void s03(void);
+	virtual void s04(void);
+	virtual void s05(void);
+	virtual void addRequest(const BfmeOpaqueOwnedRecord492 &req);
+};
+
+extern GameSpyPeerMessageQueueInterface *TheGameSpyPeerMessageQueue;
+
+class GameSpyInfoInterface
+{
+public:
+	virtual void s00(void);
+	virtual void s01(void);
+	virtual void s02(void);
+	virtual void s03(void);
+	virtual void s04(void);
+	virtual void s05(void);
+	virtual void s06(void);
+	virtual void s07(void);
+	virtual void s08(void);
+	virtual void s09(void);
+	virtual void s0A(void);
+	virtual void s0B(void);
+	virtual void s0C(void);
+	virtual void s0D(void);
+	virtual void s0E(void);
+	virtual void s0F(void);
+	virtual void s10(void);
+	virtual void s11(void);
+	virtual void s12(void);
+	virtual void s13(void);
+	virtual void s14(void);
+	virtual void s15(void);
+	virtual void s16(void);
+	virtual void s17(void);
+	virtual void s18(void);
+	virtual void s19(void);
+	virtual void s1A(void);
+	virtual void s1B(void);
+	virtual void s1C(void);
+	virtual void s1D(void);
+	virtual void s1E(void);
+	virtual void s1F(void);
+	virtual void s20(void);
+	virtual void s21(void);
+	virtual void s22(void);
+	virtual void s23(void);
+	virtual void s24(void);
+	virtual void s25(void);
+	virtual void s26(void);
+	virtual void s27(void);
+	virtual void s28(void);
+	virtual void s29(void);
+	virtual void s2A(void);
+	virtual void s2B(void);
+	virtual void s2C(void);
+	virtual void s2D(void);
+	virtual void s2E(void);
+	virtual void s2F(void);
+	virtual void s30(void);
+	virtual void s31(void);
+	virtual void s32(void);
+	virtual void s33(void);
+	virtual void s34(void);
+	virtual void s35(void);
+	virtual void s36(void);
+	virtual void s37(void);
+	virtual void s38(void);
+	virtual void s39(void);
+	virtual void s3A(void);
+	virtual void s3B(void);
+	virtual void s3C(void);
+	virtual void s3D(void);
+	virtual void s3E(void);
+	virtual void s3F(void);
+	virtual void s40(void);
+	virtual void s41(void);
+	virtual void s42(void);
+	virtual void s43(void);
+	virtual void s44(void);
+	virtual void s45(void);
+	virtual void s46(void);
+	virtual void s47(void);
+	virtual void s48(void);
+	virtual void s49(void);
+	virtual void s4A(void);
+	virtual void s4B(void);
+	virtual void s4C(void);
+	virtual Bool isSavedIgnored(Int profileID);
+	virtual void s4E(void);
+	virtual void s4F(void);
+	virtual void s50(void);
+	virtual void s51(void);
+	virtual void s52(void);
+	virtual Bool isIgnored(AsciiString nick);
+};
+
+extern GameSpyInfoInterface *TheGameSpyInfo;
 
 class GameSpyInfo
 {
@@ -149,6 +265,15 @@ public:
 	virtual void markPlayerAsPreorder(Int profileID);
 
 	virtual void readAdditionalDisconnects(void);
+
+	virtual void joinGroupRoom(Int groupID);
+	virtual void setPingString(const AsciiString &ping);
+	virtual unsigned short rva003860FF(void);
+	virtual void rva003674FE(Int value);
+	virtual void rva00386139(AsciiString value);
+	virtual AsciiString rva0038616D(void);
+	virtual PlayerInfo *rva00382CCE(const char *key);
+	virtual PlayerInfo *rva00382D0A(Int profileID);
 
 private:
 	Bool m_sawFullGameList;				// +0x04
@@ -416,4 +541,95 @@ void GameSpyInfo::removeFromSavedIgnoreList(Int profileID)
 Bool GameSpyInfo::isSavedIgnored(Int profileID)
 {
 	return m_savedIgnoreMap.find(profileID) != m_savedIgnoreMap.end();
+}
+
+// ?isIgnored@PlayerInfo@@QAE_NXZ @0x00382841 56B
+Bool PlayerInfo::isIgnored(void)
+{
+	return (m_profileID) ? TheGameSpyInfo->isSavedIgnored(m_profileID) : TheGameSpyInfo->isIgnored(m_name);
+}
+
+// ?rva00383207@GameSpyInfo@@UAE_NPAVGameSpyStagingRoom@@@Z @0x00383207 55B
+Bool GameSpyInfo::rva00383207(GameSpyStagingRoom *room)
+{
+	StagingRoomMap::iterator it = m_stagingRooms.begin();
+	while (it != m_stagingRooms.end())
+	{
+		if (it->second == room)
+			return true;
+		++it;
+	}
+	Bool r = (&m_localStagingRoom == (void *)room);
+	return r;
+}
+
+// ?setPingString@GameSpyInfo@@UAEXABVAsciiString@@@Z @0x0030D420 8B
+void GameSpyInfo::setPingString(const AsciiString &ping)
+{
+	m_pingString = ping;
+}
+
+// ?rva003860FF@GameSpyInfo@@UAEGXZ @0x003860FF 5B
+unsigned short GameSpyInfo::rva003860FF(void)
+{
+	return 0x1F98;
+}
+
+// ?rva003674FE@GameSpyInfo@@UAEXH@Z @0x003674FE 10B
+void GameSpyInfo::rva003674FE(Int value)
+{
+	m_unk0068 = value;
+}
+
+// ?rva00386139@GameSpyInfo@@UAEXVAsciiString@@@Z @0x00386139
+void GameSpyInfo::rva00386139(AsciiString value)
+{
+	m_unk0060 = value;
+}
+
+// ?rva0038616D@GameSpyInfo@@UAE?AVAsciiString@@XZ @0x0038616D
+AsciiString GameSpyInfo::rva0038616D(void)
+{
+	return m_unk0060;
+}
+
+// ?rva00382CCE@GameSpyInfo@@UAEPAVPlayerInfo@@PBD@Z @0x00382CCE
+PlayerInfo *GameSpyInfo::rva00382CCE(const char *key)
+{
+	PlayerInfoMap::iterator it = m_playerInfoMap.begin();
+	while (it != m_playerInfoMap.end())
+	{
+		PlayerInfo *info = &it->second;
+		if (info->m_locale.compare(key) == 0)
+			return info;
+		++it;
+	}
+	return 0;
+}
+
+// ?rva00382D0A@GameSpyInfo@@UAEPAVPlayerInfo@@H@Z @0x00382D0A
+PlayerInfo *GameSpyInfo::rva00382D0A(Int profileID)
+{
+	PlayerInfoMap::iterator it = m_playerInfoMap.begin();
+	while (it != m_playerInfoMap.end())
+	{
+		PlayerInfo *info = &it->second;
+		if (info->m_profileID == profileID)
+			return info;
+		++it;
+	}
+	return 0;
+}
+
+// ?joinGroupRoom@GameSpyInfo@@UAEXH@Z @0x003853DA
+void GameSpyInfo::joinGroupRoom(Int groupID)
+{
+	if (groupID > 0)
+	{
+		BfmeOpaqueOwnedRecord492 req;
+		*(Int *)req.bytes = 4;
+		*(Int *)(req.bytes + 0x118) = groupID;
+		TheGameSpyPeerMessageQueue->addRequest(req);
+		m_playerInfoMap.clear();
+	}
 }
