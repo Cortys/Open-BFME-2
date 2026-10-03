@@ -50537,3 +50537,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva00504870LowerBound@@YAPAURva00504830Item@@PAU1@0PBMHH@Z,,0x00504870,64,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,lower bound binary search over 16B records keyed by float
 ?Rva00504914Forward@@YAPAURva00504830Item@@PAU1@0PBMH@Z,,0x00504914,27,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,forwarder to LowerBound with trailing 0
 ?Rva003AD44BInit@@YAXXZ,,0x003AD44B,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD44BInit.cpp,matched,guarded init calls rowed DefaultModuleTag1 getInstance and rowed atexit
+?Rva003AD46CInit@@YAXXZ,,0x003AD46C,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD46CInit.cpp,matched,guarded init calls rowed DefaultModuleTag0 getInstance and rowed atexit
