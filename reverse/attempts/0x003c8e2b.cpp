@@ -1,5 +1,7 @@
 // ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z
 // partial score=0.95 date=2026-10-03
+// ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z
+// partial score=0.95 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z retail 0x003C8E2B 94B
 // Evidence: between Rva003C89D1Guard and Rva003C90B1Exit; caller 0x003CC1A3; rowed getTeamNamed 0x003584E9 plus iterate 0x00263864 plus advance 0x00263526 plus aiExit 0x0036F39B
