@@ -1,5 +1,4 @@
 // ?rva004F5473@Rva004F54BF@@QAE_NPAVObject@@_N@Z
-// partial score=0.96 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /EHsc
 // stlport
 // ?rva004F5473@Rva004F54BF@@QAE_NPAVObject@@_N@Z, retail 0x004F5473, 76 bytes.
@@ -56,8 +55,9 @@ public:
 };
 
 extern GlobalData *TheWritableGlobalData;
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
-// ?rva004F5473@Rva004F54BF@@QAE_NPAVObject@@_N@Z present-unmatched
 bool Rva004F54BF::rva004F5473(Object *obj, bool flag)
 {
 	if (obj != 0) {
@@ -65,7 +65,9 @@ bool Rva004F54BF::rva004F5473(Object *obj, bool flag)
 			if (!flag || obj->testStatus(OBJECT_STATUS_26))
 				return true;
 			int limit = TheWritableGlobalData->m_limitA98;
-			return m_count < limit;
+			int count = m_count;
+			_ReadWriteBarrier();
+			return count < limit;
 		}
 	}
 	return false;
