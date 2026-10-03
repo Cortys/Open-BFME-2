@@ -50325,3 +50325,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1?$vector@URva001D28F0Element@@V?$allocator@URva001D28F0Element@@@_STL@@@_STL@@QAE@XZ,,0x00689DB0,103,Code/Libraries/Source/WWVegas/WWLib/Rva00689DB0Finish.cpp,matched,Vector Rva001D28F0Element dtor 103B exact with /EHs (prior bank used /EHsc and lost the EH trylevel store)
 ?rva001DBE6E@AudioManager@@QAEXXZ,,0x001DBE6E,72,Code/GameEngine/Source/Main/AudioManagerRva001DBFEE.cpp,matched,AudioManager slot9 release four lists clear-0x69 rowed-rva001DBE17
 ?Rva006FA020Validate@@YA_NXZ,,0x006FA020,224,Code/Libraries/Source/Apt/AptAnimationPoolBILValidate.cpp,matched,unlock lane BIL validation via AptAnimationPoolData layout and rowed callees
+?rva0039FE11@Rva0039FE6COwner@@QAEXABURva003A0CD1@@@Z,,0x0039FE11,91,Code/GameEngine/Source/Common/RTS/TeamFactoryErasePrototype.cpp,matched,sibling findPrototype 0x0039FE6C plus caller 0x003A0CD1 plus rowed erase
