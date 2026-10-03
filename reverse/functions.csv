@@ -50269,3 +50269,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00455076@CastleBehavior@@QAEXABUOpaqueRefElement4@@H@Z,,0x00455076,104,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleBehaviorSlot13.cpp,matched,slot13 audio prefix via TheAudio and rowed CondSetter
 ?Rva00427294Parse@@YAXPAVINI@@PAX11@Z,,0x00427294,125,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
 ?parseArmorDefinition@LivingWorldAutoResolveArmorStore@@SAXPAVINI@@@Z,,0x00427392,281,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,
+?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z,,0x0039EA4E,78,Code/GameEngine/Source/Common/RTS/Rva0039EA4EFinish.cpp,matched,RB-tree lower_bound accumulator-first decl order keeps result in ebx
