@@ -48,6 +48,12 @@ struct Vec32 {
     OuterElem32 *m_finish;
     OuterElem32 *m_end;
 };
+struct Elem16 { char m_data[16]; };
+struct Vec16 {
+    Elem16 *m_start;
+    Elem16 *m_finish;
+    Elem16 *m_end;
+};
 static __forceinline unsigned VecSize(const Vec216 *v) { return v->m_finish - v->m_start; }
 static __forceinline Elem216 &VecAt(Vec216 *v, unsigned i) { return v->m_start[i]; }
 static __forceinline unsigned Vec32Size(const Vec32 *v) { return v->m_finish - v->m_start; }
@@ -74,6 +80,8 @@ class Rva00219B9E {
     Vec216 m_vec;
     char m_pad2[0x14C - 0x20];
     Vec32 m_outer;
+    char m_pad3[0x15C - 0x158];
+    Vec16 m_15c;
 public:
     void *rva00219B9E(unsigned int index);
     int rva00219CDF(unsigned int index);
@@ -111,6 +119,7 @@ public:
     int rva00219F00(unsigned int o, unsigned int o2, unsigned int i);
     int rva00219C00(unsigned int o, unsigned int i);
     int rva00219E9F(unsigned int o, unsigned int o2, unsigned int i);
+    void *rva00219D85(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -567,6 +576,24 @@ int Rva00219B9E::rva00219E9F(unsigned int o, unsigned int o2, unsigned int i)
     if (o < count) {
         _ReadWriteBarrier();
         return ((Rva00219B9E *)((char *)m_outer.m_start + (o << 5)))->rva00219C00(o2, i);
+    }
+    return 0;
+}
+// ?rva00219D85@Rva00219B9E@@QAEPAXI@Z @0x00219D85 37B
+// Bounds-checked 16-byte element accessor at +0x15C/+0x160.
+// Returns null when index >= (finish-start)/16 via sar 4, else start+index*16.
+// Evidence: retail mov edx [ecx+0x160] mov eax [esp+4] add ecx 0x15c sub sar 4
+// cmp jae xor else shl 4 add; callers 0x00219DD7/0x00219E17/0x00219E5C and
+// 0x0021AD93/0x0021ADB3/0x0021BCE1/0x0021BD76; same class as neighbours
+// (m_outer at +0x14C, this vector at +0x15C).
+void *Rva00219B9E::rva00219D85(unsigned int index)
+{
+    Vec16 *v = &m_15c;
+    char *finish = (char *)v->m_finish;
+    unsigned int count = (unsigned int)((finish - (char *)v->m_start) >> 4);
+    if (index < count) {
+        _ReadWriteBarrier();
+        return &v->m_start[index];
     }
     return 0;
 }
