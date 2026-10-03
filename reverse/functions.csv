@@ -49266,3 +49266,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005ED5EB@Rva005ED976@@QAEXXZ,,0x005ED5EB,8,Code/GameEngine/Source/Common/Rva005ED445Apt.cpp,matched,thunk via plus4 to rowed FadeOut 0x005ED411 caller 0x005D13C8 precedent 0x005ED976
 ?rva0039DE46@Team@@QAE_NPAVBfmeTab1026@@_N@Z,,0x0039DE46,126,Code/GameEngine/Source/Common/RTS/TeamRva0039DE46.cpp,matched,Team member scan via iterate 0x263864 and bfmeHas1026 pin 0x362437
 ??1Rva002FE620@@UAE@XZ,,0x002FE6B7,63,Code/GameEngine/Source/Common/Rva002FE620Ctor.cpp,matched,dtor vtable 00807240 two AsciiStrings caller 002FE69B
+??_GRva002FE620@@UAEPAXI@Z,,0x002FE69B,28,Code/GameEngine/Source/Common/Rva002FE620Ctor.cpp,matched,deleting dtor calls 002FE6B7 vtable 00807240
