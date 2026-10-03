@@ -1,5 +1,4 @@
 // ?rva00496B48@Rva00496B48@@QAE_NXZ
-// partial score=0.95 date=2026-10-02
 // cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // ?rva00496B48@Rva00496B48@@QAE_NXZ, retail 0x00496B48 138B. Unlock: landing
 // makes 0x00496BD2 ready. Walks +0x274 chain from this+8, checks [[+4]+0x116]
@@ -52,7 +51,6 @@ protected:
 
 struct ObjectHack : public Object
 {
-// ?find@ObjectHack@@SAPAVModule@@PBVObject@@W4NameKeyType@@@Z present-unmatched
 	static Module *find(const Object *o, NameKeyType k) { return ((ObjectHack *)o)->findModule(k); }
 };
 
@@ -65,31 +63,25 @@ private:
 	Object *m_obj08;
 };
 
-// ?rva00496B48@Rva00496B48@@QAE_NXZ present-unmatched
 bool Rva00496B48::rva00496B48()
 {
 	Object *o = m_obj08;
-	if (o == 0)
-		return true;
-	do {
-		Object *next = o->m_next274;
-		if (next == 0)
-			break;
-		o = next;
-	} while (o != 0);
-	if (o == 0)
-		return true;
-	ObjectInner04 *inner = o->m_04;
-	if ((inner->m_116 & 0x40) == 0)
-		return true;
-	static NameKeyType s_key = TheNameKeyGenerator->nameToKey("AllowBannerSpawnUpgrade");
-	Module *m = ObjectHack::find(o, s_key);
-	if (m == 0)
-		return true;
-	bool ok = true;
-	if (!(&m->m_10)->allow())
-		ok = false;
-	if (!ok)
-		return false;
+	if (o != 0) {
+		for (; o != 0; o = o->m_next274) {
+			if (o->m_next274 == 0)
+				break;
+		}
+		if (o != 0) {
+			ObjectInner04 *inner = o->m_04;
+			if (inner->m_116 & 0x40) {
+				static NameKeyType s_key = TheNameKeyGenerator->nameToKey("AllowBannerSpawnUpgrade");
+				Module *m = ObjectHack::find(o, s_key);
+				if (m != 0) {
+					if (!(&m->m_10)->allow())
+						return false;
+				}
+			}
+		}
+	}
 	return true;
 }

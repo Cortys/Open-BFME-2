@@ -50034,3 +50034,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z,,0x0044D47F,142,Code/GameEngine/Source/Common/Rva0044D47FFinish.cpp,matched,donor operator[] form key temp first matches frame
 ?Rva0007B734Find@@YAPAURva0007B734Item@@PAU1@0P6A_NPBU1@1@Z@Z,,0x0007B734,47,Code/Libraries/Source/WWVegas/WWLib/Rva0007B734Finish.cpp,matched,min_element shape /O1 archSSE gives cmov loop
 ?rva0046CE9D@Rva0046CE9D@@QAE_NPAVObject@@@Z,,0x0046CE9D,132,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046CE9DFinish.cpp,matched,retail 132B early shared-return anchor retained by explicit else after obj null check; exact match
+?rva00496B48@Rva00496B48@@QAE_NXZ,,0x00496B48,138,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496B48Finish.cpp,matched,retail 138B nested-if with for-loop break keeps redundant bottom null test; exact match
