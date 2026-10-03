@@ -49159,3 +49159,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva002747B8@Rva002747B8@@QAEXMMM@Z,,0x002747B8,65,Code/GameEngine/Source/GameClient/Drawable_rva002747B8.cpp,matched,Subobject at caller plus 0x8c stores 3 floats then int copies plus marker 3 plus minus 2
 ??0Rva005445D4@@QAE@PAVStateMachine@@@Z,,0x005445D4,37,Code/GameEngine/Source/Common/Rva005445D4Ctor.cpp,matched,State derived ctor via hash 0x90B65C1D plus vtable 0x00869A20
 ??0Rva005447ED@@QAE@PAVStateMachine@@@Z,,0x005447ED,29,Code/GameEngine/Source/Common/Rva005447EDCtor.cpp,matched,State derived ctor via hash 0x26F20F3B plus vtable 0x00869AB0
+??0Rva0054482D@@QAE@PAVStateMachine@@@Z,,0x0054482D,29,Code/GameEngine/Source/Common/Rva0054482DCtor.cpp,matched,State derived ctor via hash 0x58821EDA plus vtable 0x00C69B58
