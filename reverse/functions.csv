@@ -49702,3 +49702,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0041E561@Rva0041E4A3@@QAEXXZ,,0x0041E561,329,Code/GameEngine/Source/Common/Rva0041E561.cpp,matched,vslot1 of 0x83AEA8 six ModuleData news plus rowed push_back
 ?rva0058E20D@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E20D,202,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E20D.cpp,matched,static NetPacket factory for Rva004D58DE via ctors and SetData
 ?rva002AA1BF@Rva002AA191@@QAEXPAX@Z,,0x002AA1BF,37,Code/GameEngine/Source/Common/Rva002AA191Find.cpp,matched,10-slot erase via Rva004D6BF0 same class offset 0x708
+?rva00537EAD@Rva00537EAD@@QAEXPAVDataChunkOutput@@@Z,,0x00537EAD,60,Code/GameEngine/Source/Common/Rva00537EADWrite.cpp,matched,DataChunk writer two AsciiStrings float byte via rowed write calls
