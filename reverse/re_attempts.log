@@ -6301,3 +6301,7 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ??1Rva003B00D6@@UAE@XZ	0x003B00D6	94	blocked	dtor loop virtual-plus-delete unclear with two vptrs t=12 model=muse-09
 ?rva00203F0E@ScriptEngine@@QAE_NPAX@Z	0x00203F0E	154	blocked	shared frame compare sbb/inc vs jae/xor/mov al,1; bits jne vs je t=15 model=muse-07 (stash 0.94 kept)
 ?rva00225DA9@GameEngine@@QAEXXZ	0x00225DA9	361	partial	fmul/and scheduling plus xmm0/xmm1 swap plus extra mov ecx,esi; imul fixed via /G7 t=25 model=muse-07 score=0.89 stash=reverse/attempts/0x00225da9.cpp
+?Rva006017DAParse@@YAPADPBDPADH@Z	0x006017DA	149	blocked	SIB eax-plus-esi not esi-plus-eax in 3 tail accesses persists across both-ints reversed and f[n] spellings plus mov eax esi before pop edi not after t=18 model=muse-10 (stash 0.95 kept)
+?rva003A4F21@StrafeAreaUpdate@@QAE_NPBUCoord3D@@0@Z	0x003A4F21	185	blocked	SSE movss-subss with 0x18 frame vs x87 fsub with 0xc frame plus store reorder 6 regions size 162 vs 185 t=5 model=muse-10
+?rva003A45D2@Rva003A45D2@@QAEXPAX@Z	0x003A45D2	266	blocked	this spilled to stack not ebx with rec in ebx not edi and divisor hoisted in edi not ecx plus frame 0x8c not 0x88 t=15 model=muse-10
+?rva004D3822@Rva004D3822@@QAEXXZ	0x004D3822	163	partial	size exact 163 with SIB ebx-plus-edx not edx-minus-0x32 disp plus push order and inner dec reg not mem t=18 model=muse-10 score=0.93 stash=reverse/attempts/0x004d3822.cpp
