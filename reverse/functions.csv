@@ -49704,3 +49704,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002AA1BF@Rva002AA191@@QAEXPAX@Z,,0x002AA1BF,37,Code/GameEngine/Source/Common/Rva002AA191Find.cpp,matched,10-slot erase via Rva004D6BF0 same class offset 0x708
 ?rva00537EAD@Rva00537EAD@@QAEXPAVDataChunkOutput@@@Z,,0x00537EAD,60,Code/GameEngine/Source/Common/Rva00537EADWrite.cpp,matched,DataChunk writer two AsciiStrings float byte via rowed write calls
 ?rva00537F74@Rva00537F74@@QAEXABVAsciiString@@@Z,,0x00537F74,44,Code/GameEngine/Source/Common/Rva00537F74Setter.cpp,matched,setter compare set plus virtual slot2 via rowed calls
+?rva00537FA0@Rva00537FA0@@QAEXABVAsciiString@@@Z,,0x00537FA0,44,Code/GameEngine/Source/Common/Rva00537FA0Setter.cpp,matched,setter compare set plus virtual slot3 via prev row shape
