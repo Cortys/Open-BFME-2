@@ -1,17 +1,12 @@
 // ?Rva002E9B31Get@@YAHPAX@Z
-// partial score=0.99 date=2026-09-29
-// ?Rva002E9B31Get@@YAHPAX@Z
-// partial score=0.99 date=2026-09-28
-// ?Rva002E9B31Get@@YAHPAX@Z
-// partial score=0.99 date=2026-09-28
 // cl: /O1 /arch:SSE /DNDEBUG /MD
 // ?Rva002E9B31Get@@YAHPAX@Z @0x002E9B31 180B
-// Free __cdecl int (void*) with Object-like layout: +4 template carrying kind
-// bytes +0x109 &4 +0x115 &0x20 +0x11F &0x80 plus float +0x52C, radius +0xB8.
-// Evidence: 9 callers push one pointer and caller-clean (pop ecx / add esp 0x10)
-// proving __cdecl; float immediates 2.0 10.0 20.0 0.0 0.1 0.3 match .rdata
-// 0xBC28F4 0xBC2428 0xBC5CCC 0xBBAEAC 0xBC2424 0xBCCB3C; floor via msvcr71 IAT
-// 0xBBA570; unblocks 0x002EBCA7 0x002EBCD6 0x002EBBFB 0x002EC479 0x005852DF.
+// Free __cdecl int (void*) over an Object-like layout: +4 template, kind bytes
+// +0x109 &4, +0x115 &0x20, +0x11F &0x80, float +0x52C, radius +0xB8.
+// Evidence: 9 __cdecl callers; float immediates 2.0 10.0 20.0 0.0 0.1 0.3 at
+// .rdata 0xBC28F4 0xBC2428 0xBC5CCC 0xBBAEAC 0xBC2424 0xBCCB3C; floor via
+// msvcr71 IAT 0xBBA570; unblocks 0x002EBCA7 0x002EBCD6 0x002EBBFB 0x002EC479
+// 0x005852DF.
 extern "C" __declspec(dllimport) double __cdecl floor(double);
 
 static __forceinline float fast_floor(float f)
@@ -48,8 +43,6 @@ struct Rva002E9B31Obj
 	unsigned char m_pad08[0xB8 - 8];
 	float m_B8;
 };
-
-// ?Rva002E9B31Get@@YAHPAX@Z present-unmatched
 int __cdecl Rva002E9B31Get(void *p)
 {
 	Rva002E9B31Obj *obj = (Rva002E9B31Obj *)p;
@@ -63,9 +56,10 @@ int __cdecl Rva002E9B31Get(void *p)
 		if (20.0f > f)
 			f = 20.0f;
 	}
-	float g = tmpl->m_52C;
-	if (g > 0.0f)
-		f = g;
+	// Reading the field twice makes MSVC materialise its address (`add eax,0x52c`)
+	// before the load, exactly as retail does; a single read folds the disp.
+	if (tmpl->m_52C > 0.0f)
+		f = tmpl->m_52C;
 	float ff = fast_floor(f * 0.1f + 0.3f);
 	int n = fast_round(ff);
 	if (n == 0)
