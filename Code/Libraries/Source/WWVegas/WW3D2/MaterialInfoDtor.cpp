@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc
+// cl: /G7 /DNDEBUG /MD /EHsc
 // BFME MaterialInfoClass destructor at 0x00930F60 / 175 bytes.
 // Layout/vtable identities follow MaterialInfoClassCtor.cpp. Free releases
 // materials first, then owned texture cells and vertex-pointer storage unwind.
@@ -18,18 +18,11 @@ template <class T>
 class RefCountPtr
 {
 public:
-	RefCountPtr() : Referent(0) {}
-	~RefCountPtr()
-	{
-		if (Referent != 0)
-		{
-			Referent->Release_Ref();
-			Referent = 0;
-		}
-	}
+ 	RefCountPtr() : Referent(0) {}
+ 	~RefCountPtr();
 
 private:
-	T *Referent;
+ 	T *Referent;
 };
 
 typedef RefCountPtr<TextureClass> TextureVectorCell;
@@ -37,20 +30,20 @@ typedef RefCountPtr<TextureClass> TextureVectorCell;
 class TextureVectorBaseCtorShim
 {
 public:
-	__declspec(noinline) TextureVectorBaseCtorShim(int, TextureVectorCell const *);
-	virtual ~TextureVectorBaseCtorShim() {
+ 	__declspec(noinline) TextureVectorBaseCtorShim(int, TextureVectorCell const *);
+ 	virtual ~TextureVectorBaseCtorShim() {
   if(Vector && IsAllocated) { delete[] Vector; Vector=0; }
   IsAllocated=false;
   VectorMax=0;
  }
- TextureVectorBaseCtorShim &operator=(const TextureVectorBaseCtorShim &);
+ 	TextureVectorBaseCtorShim &operator=(const TextureVectorBaseCtorShim &);
 
 private:
-	TextureVectorCell *Vector;
-	int VectorMax;
-	bool IsValid;
-	bool IsAllocated;
-	bool VectorClassPad[2];
+ 	TextureVectorCell *Vector;
+ 	int VectorMax;
+ 	bool IsValid;
+ 	bool IsAllocated;
+ 	bool VectorClassPad[2];
 };
 
 // VectorClass<VertexMaterialClass *>'s vtable (retail 0x00BD4628, installed by the
