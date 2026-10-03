@@ -101,6 +101,7 @@ public:
     void *rva0021B670(const IdxPair *p);
     void *rva00219C5D(unsigned int index);
     void *rva00219F8E(unsigned int o, unsigned int i);
+    int rva00219C3E(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -488,5 +489,18 @@ int Rva00219B62::rva00219B62(unsigned int index)
         _ReadWriteBarrier();
         return m_vec.m_start[index];
     }
+    return 0;
+}
+// ?rva00219C3E@Rva00219B9E@@QAEHII@Z @0x00219C3E 31B
+// Two-level int lookup: rowed 0x00219B9E selects the 216B element via o,
+// then rowed 0x00219B62 selects the inner int at +0x30 via i; null yields 0.
+// Evidence: retail push [esp+4] call 0x219B9E test je xor else push [esp+8]
+// mov ecx,eax call 0x219B62; same this passthrough proves Rva00219B9E owner;
+// caller 0x00219F2A in 0x00219F00; unblocks 0x00219F00.
+int Rva00219B9E::rva00219C3E(unsigned int o, unsigned int i)
+{
+    void *p = rva00219B9E(o);
+    if (p)
+        return ((Rva00219B62 *)p)->rva00219B62(i);
     return 0;
 }
