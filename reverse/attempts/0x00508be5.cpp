@@ -1,9 +1,7 @@
 // ??0Made002CC64B@@QAE@XZ
-// partial score=0.95 date=2026-10-03
+// partial score=0.96 date=2026-10-03
 // ??0Made002CC64B@@QAE@XZ
-// partial score=0.95 date=2026-09-30
-// ??0Made002CC64B@@QAE@XZ
-// partial score=0.95 date=2026-09-30
+// partial score=0.96 date=2026-10-03
 // cl: /O1 /MD /DNDEBUG /arch:SSE /GX-
 // ??0Made002CC64B@@QAE@XZ @0x00508BE5 97B: AttributeModifierNugget ctor over
 // rowed base Rva00507823; vtable 0x864370, and-zero +0x128, BitFlags11 at
@@ -47,8 +45,10 @@ private:
 };
 
 // ??0Made002CC64B@@QAE@XZ present-unmatched
-Made002CC64B::Made002CC64B() : m_128(0)
+Made002CC64B::Made002CC64B() : m_138()
 {
+	int *p128 = &m_128;
+	*p128 = 0;
 	m_12C = 0x1D;
 	m_130 = 0.0f;
 	m_134 = 3.1415927f;
