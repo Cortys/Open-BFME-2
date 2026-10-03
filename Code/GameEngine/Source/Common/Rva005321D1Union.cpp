@@ -5,10 +5,16 @@
 // Callees none. Same TU default flags as neighbours. Caller 0x00532470.
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
+class Rva00531C5A
+{
+public:
+    unsigned short rva00531C5A(unsigned short idx);
+};
 class Rva005321D1
 {
 public:
     void rva005321D1(unsigned short a, unsigned short b);
+    void rva00532455(unsigned short a, unsigned short b);
 private:
     int m_00;
     unsigned short *m_map;
@@ -38,4 +44,11 @@ void Rva005321D1::rva005321D1(unsigned short a, unsigned short b)
     if (m_counts[b] >= 0xFE)
         return;
     m_counts[b]++;
+}
+// ?rva00532455@Rva005321D1@@QAEXGG@Z @ 0x00532455 (36B): __thiscall unite via Find on both args then Union.
+// Evidence: same this calls rowed Find 0x531C5A twice plus rowed Union 0x5321D1 plus callers in 0x5324D8 0x533BEC.
+void Rva005321D1::rva00532455(unsigned short a, unsigned short b)
+{
+    Rva00531C5A *self = (Rva00531C5A *)this;
+    rva005321D1(self->rva00531C5A(a), self->rva00531C5A(b));
 }
