@@ -6560,3 +6560,5 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ?rva005D1210@Rva005D1210@@QAEXXZ	0x005D1210	61	blocked	nonvirtual-dtor-EH-needs-member-dtor-giving-70B-vs-61B-extra-call-and-or-minus1-after-clear-vs-retail-before t=28 model=muse-07
 ?Rva0034C6EFGet@@YA_NXZ	0x0034C6EF	206	blocked	StateMachine factory 206B with 3 new-defineState EH states t=10 model=muse-03
 ??0Rva005D18E2@@QAE@PAXPAXPAX@Z	0x005D18E2	278	blocked	complex EH ctor with vector string delegate find rotate needs donor t=12 model=muse-07
+??0Rva001FFE39@@QAE@XZ	0x001FFE39	62	partial	vptr and m14 6-9B late after lea setup t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x001ffe39.cpp
+?Rva001DEA96Parse@@YAXPAVINI@@@Z	0x001DEA96	243	blocked	index in ecx not eax with base reload 12B short typed-found nested-val base-local eva-local tried t=35 model=muse-05 (stash 0.93 kept)
