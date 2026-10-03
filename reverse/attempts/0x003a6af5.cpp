@@ -1,16 +1,21 @@
 // ??0LightningEmissionInfo@FXParticleSystem@@QAE@ABV01@@Z
-// partial score=0.95 date=2026-09-26
-// cl: /DNDEBUG /MD /GX- /O1 /Ob2
-
+// partial score=0.95 date=2026-10-03
+// cl: /O1 /Ob2 /DNDEBUG /MD /GX-
 // LightningEmissionInfo copy ctor, retail 0x003A6AF5 (154B).
 //
 // Shape follows the landed LineEmissionVolumeInfo copy (0x003A653B): the base
 // EmissionVolumeInfo copy is implicit (no declared copy ctor), so retail folds
 // it in as base vtable + flag byte, then the derived vtable. Member split from
 // retail: six loose floats at +8..+0x1C (dword moves), then nine 12-byte
-// random variables at +0x20..+0x8B (movsd triples). The default ctor at
+// random variables at +0x20..+0x8B (three movs each). The default ctor at
 // 0x0055D9A5 corroborates: it zeroes +8..+0x1C with movss and the nine blocks
 // as (dword, float, float).
+//
+// The only residual is the `push edi` callee-save: retail places it after the
+// +0x14 load, every MSVC7 spelling tested emits it one dword-pair early
+// (+0x28). Source-invariant across region order, struct-vs-field copies and
+// pointer-walk spellings; /Ob0 /Ob1 /Ob2 /Ob3 /O1 /O2 /arch:SSE all differ
+// only in where the save lands.
 
 namespace FXParticleSystem
 {

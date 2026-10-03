@@ -1,4 +1,6 @@
 // ??0BattlePlanUpdateModuleData@@QAE@XZ
+// partial score=0.95 date=2026-10-03
+// ??0BattlePlanUpdateModuleData@@QAE@XZ
 // partial score=0.95 date=2026-09-26
 // cl: /O1 /arch:SSE /DNDEBUG /MD
 

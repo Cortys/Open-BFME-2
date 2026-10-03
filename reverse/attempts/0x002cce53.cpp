@@ -1,6 +1,8 @@
 // ?rva002CCE53@Weapon@@QBEMXZ
 // partial score=0.95 date=2026-10-03
 // ?rva002CCE53@Weapon@@QBEMXZ
+// partial score=0.95 date=2026-10-03
+// ?rva002CCE53@Weapon@@QBEMXZ
 // ?rva002CCE53@Weapon@@QBEMXZ
 // cl: /O1 /DNDEBUG /MD
 // ?rva002CCE53@Weapon@@QBEMXZ @0x002CCE53 128B evidence: Weapon neighbours prev deleting dtor next getStatus plus computeStatus row; float div via BfmeZeroRange and 1.0 plus 2pow32 fixup; Rva000B2EB5 precedent flags and externs
