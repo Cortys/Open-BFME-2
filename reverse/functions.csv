@@ -49157,3 +49157,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0W3DBridgeBuffer@@QAE@XZ,,0x000DE52E,110,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DBridgeBufferCtor.cpp,matched,W3DBridgeBuffer ctor 200-bridge array via vector new calls clearAll and allocate
 ?Rva002FE8AACreate@@YGPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x002FE8AA,34,Code/Libraries/Source/WWVegas/WWLib/stlport_list_nocase4_create_node_002FE8AA.cpp,matched,list node create allocating 0x10 via rowed allocator and pair construct
 ?rva002747B8@Rva002747B8@@QAEXMMM@Z,,0x002747B8,65,Code/GameEngine/Source/GameClient/Drawable_rva002747B8.cpp,matched,Subobject at caller plus 0x8c stores 3 floats then int copies plus marker 3 plus minus 2
+??0Rva005445D4@@QAE@PAVStateMachine@@@Z,,0x005445D4,37,Code/GameEngine/Source/Common/Rva005445D4Ctor.cpp,matched,State derived ctor via hash 0x90B65C1D plus vtable 0x00869A20
