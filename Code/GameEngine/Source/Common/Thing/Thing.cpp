@@ -158,7 +158,7 @@ Thing::~Thing()
 
 //=============================================================================
 // ?getTemplate@Thing@@ present-unmatched
-const ThingTemplate *Thing::getTemplate() const
+inline const ThingTemplate *Thing::getTemplate() const
 {
 	return m_template;
 }
