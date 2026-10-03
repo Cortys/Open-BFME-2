@@ -49611,3 +49611,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??RRva004F6352Cmp@@QBE_NABURva004F6352@@0@Z,,0x004F6023,28,Code/Libraries/Source/WWVegas/WWLib/stlport_rva004f6352_sort.cpp,matched,placed sort comparator operator()
 ??RRva002E0864Cmp@@QBE_NPAX0@Z,,0x002E0706,24,Code/Libraries/Source/WWVegas/WWLib/stlport_rva002e0864_sort.cpp,matched,placed sort comparator operator()
 ??_Gstrstream@_STL@@UAEPAXI@Z,,0x006031D0,45,Code/Libraries/Source/WWVegas/WWLib/stlport_strstream_dtor.cpp,matched,placed STLport strstream scalar deleting dtor
+??RRva004EBE74Cmp@@QBE_NPBURva004EBE74Item@@0@Z,,0x004EAB8A,21,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_rva004ebe74.cpp,matched,placed sort comparator operator()
