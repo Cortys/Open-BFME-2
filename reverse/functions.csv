@@ -49806,3 +49806,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0W3DTruckDraw@@QAE@PAVThing@@PBVModuleData@@@Z,,0x000CB3FB,381,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DTruckDrawCtor.cpp,matched,slot ctor vtable 0xBCC650 base 0x000C0DD8 two 0x88 sounds plus handles
 ??$__unguarded_partition@PAHHVRva005E4300Cmp@@@_STL@@YAPAHPAH0HVRva005E4300Cmp@@@Z,,0x005E459F,73,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva005E4300.cpp,matched,73B partition via rowed Rva005E4300Cmp same shape as 0x004231A0
 ??$__median@PAHVRva005E4300Cmp@@@_STL@@YAPAHPAH00VRva005E4300Cmp@@@Z,,0x005E4534,107,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva005E4300.cpp,matched,107B median via Rva005E4300Cmp same file as partition
+??0Rva001ED03C@@QAE@ABV0@@Z,,0x001ED03C,109,Code/GameEngine/Source/Common/Rva001ED03CCopy.cpp,matched,unlock lane copy ctor callers 0x001ED20D rowed callees
