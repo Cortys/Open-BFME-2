@@ -115,30 +115,7 @@ private:
 	StreakRendererClass StreakRenderer;
 };
 
-// ??0StreakLineClass@@QAE@XZ
-inline StreakLineClass::StreakLineClass(void) :
-	MaxSubdivisionLevels(0),
-	NormalizedScreenArea(0.0f),
-	PointLocations(0),
-	PointColors(0),
-	PointWidths(0),
-	LineRenderer(),
-	StreakRenderer()
-{
-	Personalities = 0;
-}
-
-// The retail copy constructor deliberately default-constructs RenderObjClass.
-inline StreakLineClass::StreakLineClass(const StreakLineClass &src) :
- MaxSubdivisionLevels(src.MaxSubdivisionLevels),
- Personalities(src.Personalities),
- NormalizedScreenArea(src.NormalizedScreenArea),
- PointLocations(src.PointLocations),
- PointColors(src.PointColors),
- PointWidths(src.PointWidths),
- LineRenderer(src.LineRenderer),
- StreakRenderer(src.StreakRenderer)
-{}
+// ??0StreakLineClass@@QAE@XZ etc. are owned by streak.cpp; declared only here.
 
 // Anchor keeps this unit's select-any ctor copies (and the vector bodies they
 // reference) emitted; it is not retail code.
