@@ -47,7 +47,7 @@ public:
 	UnsignedInt m_offset;
 	UnsignedInt m_size;
 	ArchivedFileInfo();
-	~ArchivedFileInfo() {}
+	~ArchivedFileInfo();
 	void clear();
 };
 #pragma optimize("", on)
