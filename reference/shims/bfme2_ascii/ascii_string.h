@@ -151,7 +151,7 @@ public:
 	bool endsWithNoCase(const AsciiString &s) const { return endsWithNoCase(s.str()); }
 	int compare(const char *p) const { return ((const StringBase<char> *)this)->compare(p); }
 	int compareNoCase(const char *p) const { return ((const StringBase<char> *)this)->compareNoCase(p); }
-	int compare(const AsciiString &s) const { return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&s); }
+	int compare(const AsciiString &s) const throw();
 	int compareNoCase(const AsciiString &s) const { return ((const StringBase<char> *)this)->compareNoCase(*(const StringBase<char> *)&s); }
 
 	static const AsciiString TheEmptyString;
@@ -177,3 +177,8 @@ inline bool operator<(const AsciiString &a, const AsciiString &b) { return a.com
 #pragma comment(linker, "/alternatename:?set@AsciiString@@QAEXPBD@Z=?set@?$StringBase@D@@QAEXPBD@Z")
 #pragma comment(linker, "/alternatename:?concat@AsciiString@@QAEXABV1@@Z=?concat@?$StringBase@D@@QAEXABV1@@Z")
 #pragma comment(linker, "/alternatename:?clear@AsciiString@@QAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
+
+// BoneFXUpdate retail calls identify this spelling with the 42-byte worker
+// at RVA 0x69D6. Its verified callees read lengths and compare bytes; the
+// nonthrowing declaration preserves ScriptConditions' retail EH scheduling.
+#pragma comment(linker, "/alternatename:?compare@AsciiString@@QBEHABV1@@Z=?compare@?$StringBase@D@@QBEHABV1@@Z")

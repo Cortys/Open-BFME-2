@@ -1,46 +1,15 @@
-// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /arch:SSE2 /O1
 // ZH donor: GeneralsMD ScriptConditions.cpp evaluateTeamStateIs and
 // evaluateTeamStateIsNot. Target evidence: the evaluateCondition jump table
 // (0x007EC5C0) sends cases 11 and 12 to 0x003E9471 and 0x003E94E5, which
 // initConditionTemplates names TEAM_STATE_IS and TEAM_STATE_IS_NOT; both
 // compare the team state string at +0x44 with a copied parameter string via
 // the rowed StringBase<char>::compare 0x000069D6.
-// Private AsciiString/StringBase (not the shared header), as in
-// SidesList_findSideInfo.cpp: retail stores no EH state for the copied name
-// around the compare call, which needs compare declared throw().
+// The shared AsciiString compare declaration is nonthrowing: retail stores
+// no EH state for the copied name around the comparison. Its existing ABI
+// spelling resolves directly to the verified StringBase worker.
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-
-public:
-	int compare(const StringBase &s) const throw();
-
-private:
-	StringBase(const StringBase &s);
-	void releaseBuffer();
-
-	void *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &s)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&s);
-	}
-	~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
-	int compare(const AsciiString &s) const throw()
-	{
-		return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&s);
-	}
-
-private:
-	char *m_text;
-};
-
-inline bool operator==(const AsciiString &a, const AsciiString &b) { return a.compare(b) == 0; }
+#include "ascii_string.h"
 
 class Parameter
 {
