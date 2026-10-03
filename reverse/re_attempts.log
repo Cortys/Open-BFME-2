@@ -6484,3 +6484,4 @@ FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs do
 ?rva004E9B70@Rva004E9B70@@QAEXXZ	0x004E9B70	86	landed	finished banked partial: final global erase belongs inside the non-empty branch so the entry guard skips it; exact 86B t=20 model=deepseek-flash
 ??0Rva004DF418@@QAE@PAVThing@@PBVModuleData@@@Z	0x004df418	104	partial	protected setWakeFrame so the call resolves to its 0x44DF71 pin; remaining diff is only the three stores vs the m_24 init call schedule t=25 model=deepseek-flash score=0.95 stash=reverse/attempts/0x004df418.cpp
 ??0Rva00426713@@QAE@XZ	0x00426713	36	partial	order swap and-10 before mov-0C-BBB554 needs volatile-cast-only per lever21 t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x00426713.cpp
+?Rva00216332Call@@YAHPAX0PBDPBIPBQAX@Z	0x216332	104	landed	landed exact 104B: forceinline ref helper reads sret m_data via EAX then *extra then empty-string ternary; twin of landed 0x216517; t=20 model=deepseek-flash
