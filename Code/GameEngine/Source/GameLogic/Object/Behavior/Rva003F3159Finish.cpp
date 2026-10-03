@@ -1,14 +1,12 @@
-// ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z
-// partial score=0.97 date=2026-10-03
-// ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z
-// partial score=0.95 date=2026-10-03
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /Oy- /DNDEBUG /MD
 // ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z @0x003F3159 51B:
 // __thiscall copy-destroy tail over DynamicPortalLink ranges: rowed copy
 // 0x003F2460 with a __false_type tag temp, then rowed _Destroy 0x003F29F8
 // over [mid m_finish), update m_finish, return first arg. Caller 0x003F3AE3
 // unblocks 0x003F3AB5. Call stays external via dup cast and declared-only
 // _Destroy template per LivingWorldRegionConnectionHelpers precedent.
+// The copy's by-reference dummy is the dead-arg-slot address [ebp+0xb]
+// (Rva002983DAEraseRange precedent); /Oy- keeps the ebp frame retail uses.
 struct DynamicPortalLink
 {
 	void *m_owned;
@@ -33,8 +31,7 @@ private:
 };
 DynamicPortalLink *Rva003F3159::rva003F3159(DynamicPortalLink *a, DynamicPortalLink *b)
 {
-	_STL::__false_type tag;
-	DynamicPortalLink *mid = (DynamicPortalLink *)((Rva003F2460Copy4Fn)&Rva003F2460Copy)((char *)b, (char *)m_finish, (char *)a, &tag);
+	DynamicPortalLink *mid = (DynamicPortalLink *)((Rva003F2460Copy4Fn)&Rva003F2460Copy)((char *)b, (char *)m_finish, (char *)a, (char *)&a + 3);
 	_STL::_Destroy(mid, m_finish);
 	m_finish = mid;
 	return a;
