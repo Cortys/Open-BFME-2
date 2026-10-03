@@ -49105,3 +49105,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005E0B8F@Rva005E0B0F@@QAEXH@Z,,0x005E0B8F,47,Code/GameEngine/Source/Common/Rva005E0B8FMethod.cpp,matched,vslot slot3 vtable 877960 same sequence as dtor 0x005E0B0F via pins and clear row
 ??1Rva005CB31D@@QAE@XZ,,0x005CB31D,26,Code/GameEngine/Source/Common/Rva005CB31DClear.cpp,matched,holder dtor releases Rva005E0B0F ptr via rowed dtor and delete
 ??1Rva005CB4E6Elem@@QAE@XZ,,0x005CB4E6,69,Code/GameEngine/Source/Common/Rva005CB4E6ElemDtor.cpp,matched,chain holder dtor 0x005CB31D via ctor 0x005CB4C7
+?rva002B3753@Rva002B3753@@QAEHXZ,,0x002B3753,22,Code/GameEngine/Source/Common/Rva002B3753.cpp,matched,
