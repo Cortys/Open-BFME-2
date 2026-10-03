@@ -50021,3 +50021,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00406E53@Rva00406E53@@QAEHXZ,,0x00406E53,18,Code/GameEngine/Source/Common/Rva00406E53.cpp,matched,unlock forward m_0C m_10 to rva00219E74 on g_00DFE344
 ?rva00406E7D@Rva00406E7D@@QAEHXZ,,0x00406E7D,18,Code/GameEngine/Source/Common/Rva00406E7D.cpp,matched,unlock forward m_0C m_10 to rva00219ED5 on g_00DFE344 sibling of 0x00406E53
 ?rva005320C1@Rva00531E74@@QAEXXZ,,0x005320C1,67,Code/GameEngine/Source/Common/Rva00531E74.cpp,matched,same 0x3E84 as m_buckets[4001] plus same-class callee 0x531E74 plus caller 0x533BD1
+?rva0030D4F2@Rva0030D4F2@@QAEHXZ,,0x0030D4F2,26,Code/GameEngine/Source/GameClient/Rva0030D4F2Getter.cpp,matched,Dict getter via rowed getInt plus NameKey g_00DBDC84 twin of Rva0030D773 setter

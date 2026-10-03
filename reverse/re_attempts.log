@@ -6456,3 +6456,4 @@ FUN_009675b3	0x005675B3	321	blocked	321B PartitionSolver EH sort vector needs do
 ?onDie@StructureCollapseUpdate@@UAEXPBVDamageInfo@@@Z	0x004A466E	81	landed	opaque TU with explicit this-0x1c moduleData/this-0x18 object/this-0x20 self, m_ai +0x258, 32-bit PlayerMaskType; three REL32 callees pinned; byte-exact. t=40 model=deepseek-flash
 ?Rva0052BBF3Get@@YAHXZ	0x0052BBF3	184	blocked	eax-passed ptr ABI unclear caller 717B over 200B t=8 model=muse-10
 ?Rva0040A1ACFree@@YA_NPAPAX0_N@Z	0x0040A1AC	43	blocked	dead mov ecx g_00DFE344 before stdcall Free needs thiscall twin t=12 model=muse-10
+??0Rva0030DA25@@QAE@UVec3@@ABVAsciiString@@MHPBVDict@@PAX@Z	0x0030DA25	432	partial	esi-edi swap for 1 and Dict ptr plus EH 2-3-2 vs 3-4-3 plus vtable-m4 order plus tail and-stosd vs mov t=25 model=muse-spark score=0.9 stash=reverse/attempts/0x0030da25.cpp
