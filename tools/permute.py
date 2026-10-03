@@ -456,6 +456,8 @@ def main(argv=None):
     parser.add_argument("rvas", nargs="*")
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--top", type=int, default=0)
+    parser.add_argument("--next", type=int, default=0,
+                        help="run the next N untried banked bodies no other agent has claimed, claiming them")
     parser.add_argument("--min-score", type=float, default=0.9)
     parser.add_argument("--minutes", type=float, default=10.0)
     parser.add_argument("--jobs", type=int, default=int(os.environ.get("BUILD_POOL", "1") or 1))
@@ -490,15 +492,40 @@ def main(argv=None):
             print(f"{score:.2f} {size:6d} {rva} {symbol}")
         print(f"{len(items)} banked attempt(s) at score >= {args.min_score}")
         return 0
-    rvas = args.rvas or [rva for _, _, rva, _ in items[:args.top]]
+    claimed = []
+    if args.next:
+        # Several agents may run the closer on this fork: take the next
+        # untried bodies nobody holds, and claim them before starting.
+        import claims
+        tried = set()
+        if (OUT / "results.jsonl").exists():
+            for line in (OUT / "results.jsonl").read_text().splitlines():
+                try:
+                    tried.add(json.loads(line)["rva"].lower())
+                except (ValueError, KeyError):
+                    pass
+        busy = claims.busy_rvas()
+        wanted = [rva for _, _, rva, _ in items
+                  if rva not in tried and int(rva, 16) not in busy][:args.next]
+        got, _refused = claims.claim([int(rva, 16) for rva in wanted], note="permute")
+        claimed = [f"0x{rva:08x}" for rva in got]
+        rvas = claimed if got or not wanted else wanted  # no network: run unclaimed
+    else:
+        rvas = args.rvas or [rva for _, _, rva, _ in items[:args.top]]
     if not rvas:
-        parser.error("give RVAs or --top N")
+        parser.error("give RVAs, --top N or --next N (nothing untried and unclaimed left)")
     OUT.mkdir(parents=True, exist_ok=True)
-    wins = 0
+    wins, misses = 0, []
     with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
         for result in pool.map(permute, rvas, [args.minutes] * len(rvas)):
             wins += bool(result.get("exact"))
+            if not result.get("exact"):
+                misses.append(result["rva"])
             print(json.dumps(result), flush=True)
+    if claimed:
+        import claims
+        # wins stay claimed until --land; add_match releases them on landing
+        claims.release([int(rva, 16) for rva in misses if rva in claimed])
     print(f"permute: {wins} of {len(rvas)} closed exactly")
     return 0
 
