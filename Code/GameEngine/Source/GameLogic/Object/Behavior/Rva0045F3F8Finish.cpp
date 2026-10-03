@@ -137,7 +137,6 @@ private:
 	bool m_active;
 };
 
-// ?shouldTryToSpawn@SpawnBehavior@@QAE_NXZ present-unmatched
 bool SpawnBehavior::shouldTryToSpawn()
 {
 	if (!m_active)
@@ -151,11 +150,10 @@ bool SpawnBehavior::shouldTryToSpawn()
 	}
 	if (obj->testStatus(OBJECT_STATUS_UNDER_CONSTRUCTION) || obj->testStatus(OBJECT_STATUS_SOLD))
 		return false;
-	unsigned int v124 = obj->m_124;
-	unsigned int vbit = v124 >> 26;
-	if ((vbit & 1) != 0)
+	unsigned char vbit = (unsigned char)(obj->m_124 >> 26);
+	if (vbit & 1)
 		return false;
-	unsigned char dead = obj->m_dead;
-	unsigned char inv = ~dead;
-	return inv & 1;
+	unsigned char inv = ~obj->m_dead;
+	unsigned char bit = inv & 1;
+	return bit;
 }
