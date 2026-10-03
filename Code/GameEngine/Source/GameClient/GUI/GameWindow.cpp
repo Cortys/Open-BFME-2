@@ -8,6 +8,9 @@
 // like GadgetListBoxReset's +0xE8 call.
 
 typedef int Int;
+#define NULL 0
+#define BitTest(value, mask) (((value) & (mask)) != 0)
+enum { WIN_STATUS_TAB_STOP = 0x100 };
 typedef unsigned int UnsignedInt;
 typedef UnsignedInt WindowMsgData;
 
@@ -54,6 +57,7 @@ public:
 
 protected:
 	GameWindow *findFirstLeaf();
+	GameWindow *findNextLeaf();
 
 private:
 	unsigned char m_pad0[0x08];
@@ -123,3 +127,57 @@ GameWindow *GameWindow::findFirstLeaf()
         leaf = leaf->m_child;
     return leaf;
 }
+
+// ?findNextLeaf@GameWindow@@IAEPAV1@XZ
+// Same clean BFME1 donor revision as findFirstLeaf. Native boundary
+// 0x00313A25-0x00313A9E proves next +0x1F8, parent +0x200, child +0x204,
+// and the stop bit 0x100. Ascending to the root tail-calls the rowed
+// first-leaf walk at 0x0031396B. Donor control flow and labels are retained;
+// all member accesses use the independently measured target window layout.
+GameWindow *GameWindow::findNextLeaf( void )
+{
+	GameWindow *leaf = (GameWindow *)this;
+
+	if( leaf->m_next )
+	{
+
+		if( leaf->m_next->m_status & WIN_STATUS_TAB_STOP )
+			return (GameWindow *)leaf->m_next;
+
+		for( leaf = leaf->m_next; leaf; leaf = leaf->m_child )
+			if( leaf->m_child == NULL || BitTest( leaf->m_status,
+																						WIN_STATUS_TAB_STOP ) )
+				return (GameWindow *)leaf;
+
+	}  // end if
+	else 
+	{
+
+		while( leaf->m_parent )
+		{
+
+			leaf = leaf->m_parent;
+
+			if( leaf->m_parent && leaf->m_next )
+			{
+
+				for( leaf = leaf->m_next; leaf; leaf = leaf->m_child )
+					if( leaf->m_child == NULL ||
+							BitTest( leaf->m_status, WIN_STATUS_TAB_STOP ) )
+						return (GameWindow *)leaf;
+
+			}  // end if
+
+		}  // end while
+
+		if( leaf )
+			return (GameWindow *)leaf->findFirstLeaf();
+		else
+			return NULL;
+
+	}  // end else
+
+	return NULL;
+
+}  // end findNextLeav
+
