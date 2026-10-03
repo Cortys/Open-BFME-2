@@ -52,6 +52,9 @@ public:
 	UnsignedInt winClearStatus(UnsignedInt status);
 	Int winSetInputFunc(GameWinInputFunc input);
 
+protected:
+	GameWindow *findFirstLeaf();
+
 private:
 	unsigned char m_pad0[0x08];
 	UnsignedInt m_status;
@@ -63,6 +66,11 @@ private:
 	Int m_regionHiY;
 	unsigned char m_pad1[0x1E0 - 0x24];
 	GameWinInputFunc m_inputFunc;
+	unsigned char m_pad1E4[0x1F8 - 0x1E4];
+	GameWindow *m_next;
+	GameWindow *m_prev;
+	GameWindow *m_parent;
+	GameWindow *m_child;
 };
 
 // ?winSetSize@GameWindow@@QAEHHH@Z, retail 0x00313B87 (63B).
@@ -96,4 +104,22 @@ Int GameWindow::winSetInputFunc(GameWinInputFunc input)
 		m_inputFunc = input;
 
 	return WIN_ERR_OK;
+}
+
+// ?findFirstLeaf@GameWindow@@IAEPAV1@XZ
+// Clean BFME1 GameWindow.cpp at revision
+// 6d9434269164392c5ba62aaa7c15a86b5b020d76, compiled under BFME2 /O1 /G7,
+// emitted a unique 31-byte first-leaf walk at RVA 0x0031396B. Native boundary
+// 0x0031396B-0x0031398A proves the parent (+0x200) and first-child (+0x204)
+// chains; the native next-leaf body tail-calls it after ascending to the root.
+// The donor's auxiliary layout emitted the bytes; this is the established
+// GameWindow first-leaf operation, using the target-measured window offsets.
+GameWindow *GameWindow::findFirstLeaf()
+{
+    GameWindow *leaf = this;
+    while (leaf->m_parent)
+        leaf = leaf->m_parent;
+    while (leaf->m_child)
+        leaf = leaf->m_child;
+    return leaf;
 }
