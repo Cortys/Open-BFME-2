@@ -50368,3 +50368,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva00501776@@QAE@XZ,,0x00501776,54,Code/GameEngine/Source/Common/Rva00501776Dtor.cpp,matched,dtor with vectors at +0x14/+0x20 via rowed 0x005011DA and EH prolog
 ?rva001DBFD1@AudioManager@@QAEXXZ,,0x001DBFD1,29,Code/GameEngine/Source/Main/AudioManagerRva001DBFEE.cpp,matched,vtable 0x007DBC30 slot 12 AudioManager rowed rva001DBE51 offsets +0x30 +0x2C
 ?rva001DBD5D@Rva001DBDA4@@QAEXXZ,,0x001DBD5D,38,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,same list layout as siblings rowed callee 0x001DBACA caller 0x001DBF17
+?Rva004B0E34Get@@YG_NI@Z,,0x004B0E34,32,Code/GameEngine/Source/Common/Rva004B0E34Finish.cpp,matched,12-way bool switch byte-table+jump-table; caller 0x004B0FA0 Gen_0028EF10 link+0x9C; shared-ret body+table reproduce only under /O1
