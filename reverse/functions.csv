@@ -50445,3 +50445,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0039B668@Rva0039B668@@QAEXH@Z,,0x0039B668,27,Code/GameEngine/Source/Common/Rva0039B668Method.cpp,matched,guarded add to +0xD8 under TheGameLogic flag retail bytes
 ??_GControlBarSchemeManager@@QAEPAXI@Z,,0x0031AA18,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-14-31AA18.cpp,matched,deleting dtor via family delete helper
 ?Rva0041355DParse@@YAXPAVINI@@@Z,,0x0041355D,88,Code/GameEngine/Source/Common/Rva0041355DParse.cpp,matched,chain INI parse Pod16 insert via rowed tables
+?Rva00547B17Check@@YA_NPAX0@Z,,0x00547B17,77,Code/GameEngine/Source/GameLogic/Object/Rva00547B17Check.cpp,matched,free range check via caller 0x00547C58 plus SSE shape plus ArmorStore flags
