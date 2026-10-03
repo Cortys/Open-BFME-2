@@ -16,12 +16,19 @@ struct Rva00333261Entry
 	unsigned char pad[0x20];
 };
 
+struct Rva0033323DEntry
+{
+	int key;
+	unsigned char pad[0x98];
+};
+
 class Rva00332E60
 {
 public:
 	void *rva00332E60(int key);
 	void *rva0033321B(int key);
 	void *rva00333261(int key);
+	void *rva0033323D(int key);
 
 private:
 	unsigned char m_pad[20];
@@ -29,7 +36,10 @@ private:
 	unsigned char m_pad2[4];
 	int *m_a0Begin;
 	int *m_a0End;
-	unsigned char m_pad3[0x20];
+	unsigned char m_pad3[0x14];
+	Rva0033323DEntry *m_bcBegin;
+	Rva0033323DEntry *m_bcEnd;
+	unsigned char m_pad4[4];
 	Rva00333261Entry *m_c8Begin;
 	Rva00333261Entry *m_c8End;
 };
@@ -60,6 +70,18 @@ void *Rva00332E60::rva00333261(int key)
 {
 	Rva00333261Entry *begin = m_c8Begin;
 	Rva00333261Entry *end = m_c8End;
+	for (; begin != end; ++begin)
+	{
+		if (begin->key == key)
+			return begin;
+	}
+	return 0;
+}
+
+void *Rva00332E60::rva0033323D(int key)
+{
+	Rva0033323DEntry *begin = m_bcBegin;
+	Rva0033323DEntry *end = m_bcEnd;
 	for (; begin != end; ++begin)
 	{
 		if (begin->key == key)
