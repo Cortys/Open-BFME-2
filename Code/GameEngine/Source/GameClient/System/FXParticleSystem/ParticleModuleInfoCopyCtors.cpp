@@ -102,9 +102,10 @@ public:
 class LineEmissionVolumeInfo : public EmissionVolumeInfo5AC
 {
 public:
-	LineEmissionVolumeInfo(const LineEmissionVolumeInfo &that) throw();
+  LineEmissionVolumeInfo(const LineEmissionVolumeInfo &that) throw();
+  virtual ~LineEmissionVolumeInfo();
 private:
-	float m_unk[6];
+  float m_unk[6];
 };
 }
 
@@ -171,9 +172,10 @@ public:
 class SphereEmissionVolumeInfo : public EmissionVolumeInfo738
 {
 public:
-	SphereEmissionVolumeInfo(const SphereEmissionVolumeInfo &that) throw();
+  SphereEmissionVolumeInfo(const SphereEmissionVolumeInfo &that) throw();
+  virtual ~SphereEmissionVolumeInfo();
 private:
-	float m_radius;
+  float m_radius;
 };
 }
 
@@ -258,9 +260,10 @@ public:
 class TerrainFireEmissionInfo : public EmissionVolumeInfo9A9
 {
 public:
-	TerrainFireEmissionInfo(const TerrainFireEmissionInfo &that) throw();
+  TerrainFireEmissionInfo(const TerrainFireEmissionInfo &that) throw();
+  virtual ~TerrainFireEmissionInfo();
 private:
-	float m_unk[4];
+  float m_unk[4];
 };
 }
 
