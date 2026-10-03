@@ -17,6 +17,7 @@ public:
 	void rva00530FAE();
 	Rva00530FC5 *rva00530F47(int arg);
 	bool rva0053104A(int *out);
+	void rva00531008(int arg);
 private:
 	unsigned int m_count;
 	int *m_data;
@@ -107,4 +108,12 @@ bool Rva00530FC5::rva0053104A(int *out)
 		}
 	}
 	return false;
+}
+// ?rva00531008@Rva00530FC5@@QAEXH@Z @ 0x00531008 (57B): __thiscall two-level bit set m_data at +4 and m_bits at +8; callers in 0x005329C8 0x00532FEA.
+void Rva00530FC5::rva00531008(int arg)
+{
+	unsigned int u = (unsigned int)arg;
+	m_data[u >> 5] |= 1 << (u & 31);
+	unsigned int w = u >> 5;
+	m_bits[w >> 5] |= 1u << (w & 31);
 }

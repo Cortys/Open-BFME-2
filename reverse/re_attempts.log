@@ -6403,3 +6403,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?rva0030B3D1@Rva0030B92C@@QAEXXZ	0x0030B3D1	478	partial	480vs478 +2B: radius needs 2 pushes not 4 (push ecx x2 vs push ebx/edi+ecx x2) fld m_14 first vs m_18 frame 0x20 vs 0x18 stack slots shifted 4 regs ecx-ebx edx-ecx t=30 model=muse-17 score=0.92 stash=reverse/attempts/0x0030b3d1.cpp
 ?rva00531B3A@Rva00531A44@@QAEXG@Z	0x00531B3A	109	blocked	union-find singletonize chain peels first loop iteration into 48B extra t=18 model=muse-02
 ?rva00531C8C@Rva00531C5A@@QAEXG@Z	0x00531C8C	109	blocked	union-find singletonize chain peels first loop iteration into 40B extra tried for goto if-block O1 Os ushort uint locals t=25 model=muse-02
+?rva00531720@Rva00531720@@QAEEII@Z	0x00531720	55	partial	lea early edx vs late esi and bit regs swapped 53 vs 55B t=22 model=muse-02 score=0.91 stash=reverse/attempts/0x00531720.cpp
