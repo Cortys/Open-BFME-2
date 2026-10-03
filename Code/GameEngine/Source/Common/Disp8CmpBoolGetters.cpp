@@ -270,3 +270,14 @@ bool Rva00210C66CmpBoolField::get() const
 {
 	return m_value == 1 || m_value == 2;
 }
+class Rva00368594CmpBoolField
+{
+public:
+	bool get() const;
+	char m_lead[0x558];
+	unsigned char m_byte;
+};
+bool Rva00368594CmpBoolField::get() const
+{
+	return m_byte == 0 ? true : false;
+}
