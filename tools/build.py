@@ -1372,6 +1372,77 @@ _SWEEP_INCLUDE_DIRS = [
 ]
 
 
+# Content-addressed object store, shared by every worktree of this repository
+# (it lives in the git common directory). A compile stores its object and
+# sidecar under its portable command fingerprint and source hash; a later
+# compile of the same inputs, in any worktree or after switching commits,
+# restores them instead of running cl.exe, but only when compile_is_current
+# accepts the restored pair, so the store can never serve a stale object.
+# BFME_OBJSTORE=off disables it.
+OBJSTORE_KEEP = 4  # entries per (command, source) key: header variants
+
+
+@functools.lru_cache(maxsize=1)
+def _objstore_root():
+    if os.environ.get("BFME_OBJSTORE", "on") == "off":
+        return None
+    common = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--git-common-dir"],
+                            capture_output=True, text=True).stdout.strip()
+    if not common:
+        return None
+    return (ROOT / common).resolve() / "bfme-objstore"
+
+
+def _objstore_dir(source, fingerprint):
+    store = _objstore_root()
+    if store is None:
+        return None
+    rel = source.resolve().relative_to(ROOT).as_posix() if source.resolve().is_relative_to(ROOT) else str(source)
+    key = hashlib.sha256(f"{fingerprint}\0{_hash_file(str(source))}\0{rel}".encode()).hexdigest()
+    return store / key[:2] / key
+
+
+def _restore_object(source, output, fingerprint):
+    entry_dir = _objstore_dir(source, fingerprint)
+    if entry_dir is None or not entry_dir.is_dir():
+        return False
+    for obj in sorted(entry_dir.glob("*.obj"), key=lambda p: p.stat().st_mtime, reverse=True):
+        meta = obj.with_suffix(".deps.json")
+        if not meta.exists():
+            continue
+        output.parent.mkdir(parents=True, exist_ok=True)
+        for src, dst in ((obj, output), (meta, _deps_sidecar(output))):
+            tmp = dst.with_name(dst.name + ".restore")
+            shutil.copyfile(src, tmp)  # a fresh inode: never shared with the store
+            os.replace(tmp, dst)
+        if compile_is_current(source, output):
+            os.utime(obj)
+            return True
+        _deps_sidecar(output).unlink(missing_ok=True)
+        output.unlink(missing_ok=True)
+    return False
+
+
+def _store_object(source, output, fingerprint):
+    entry_dir = _objstore_dir(source, fingerprint)
+    sidecar = _deps_sidecar(output)
+    if entry_dir is None or not output.exists() or not sidecar.exists():
+        return
+    try:
+        entry_dir.mkdir(parents=True, exist_ok=True)
+        name = hashlib.sha256(sidecar.read_bytes()).hexdigest()[:16]
+        for src, dst in ((output, entry_dir / f"{name}.obj"), (sidecar, entry_dir / f"{name}.deps.json")):
+            tmp = dst.with_name(dst.name + f".{os.getpid()}.tmp")
+            shutil.copyfile(src, tmp)
+            os.replace(tmp, dst)
+        entries = sorted(entry_dir.glob("*.obj"), key=lambda p: p.stat().st_mtime, reverse=True)
+        for old in entries[OBJSTORE_KEEP:]:
+            old.with_suffix(".deps.json").unlink(missing_ok=True)
+            old.unlink(missing_ok=True)
+    except OSError:
+        pass  # the store is an accelerator; a failure only costs a recompile
+
+
 def _sidecar_version(output):
     try:
         return json.loads(_deps_sidecar(output).read_text()).get("version")
@@ -1400,6 +1471,8 @@ def try_compile_source(source, output, *, input_proof=None, inventory=False):
     fingerprint = _cmd_fingerprint(command, env)
     inventory_before = search_inventory(source, command, env) if inventory and is_cl else None
     retry_dirs = [] if inventory else None
+    if not inventory and _restore_object(source, output, fingerprint):
+        return True, "", 0
     filtered, code = "", 1
     # input_proof's preprocessor snapshots cost two `cl -E` runs per TU, and
     # the receipt they back is discarded whenever the sidecar comes out census
@@ -1429,6 +1502,7 @@ def try_compile_source(source, output, *, input_proof=None, inventory=False):
                 continue
             if input_proof:
                 input_proof.after(source, output, command, env, before, stdout)
+            _store_object(source, output, fingerprint)
             return True, filtered, 0
         # Retry once with the sweep include dirs on the path (header resolution
         # only — never affects codegen of already-matched sources).
