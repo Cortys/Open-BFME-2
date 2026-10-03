@@ -6397,3 +6397,4 @@ _bfmeReload1221	0x0070F710	275	blocked	second-loop low in edx not ebx with y in 
 ?Rva00415843Alloc@@YAPAXABVRva0041579E@@@Z	0x00415843	37	blocked	STL allocate static vs thiscall version wall plus Construct inlined t=12 model=muse-spark
 ?Rva00422377Get@@YAXPAURva00422377Out@@PAURva00422377In@@@Z	0x00422377	232	partial	xor-zero and flag-ptr regs fixed via flag local; left extra movaps from split float, shape-init store grouping, xmm2 vs xmm0 allocation in tail scaling t=22 model=muse-spark score=0.9 stash=reverse/attempts/0x00422377.cpp
 ?rva002AC06A@Rva002AC06A@@QAEXPAVXfer@@@Z	0x002AC06A	318	partial	ebx edi swap for this zero plus stack ver left cur and test vs cmp t=25 model=muse-07 score=0.9 stash=reverse/attempts/0x002ac06a.cpp
+?dup_00415643@@YAXXZ	0x00415643	31	blocked	hash_map Stl dup identical to 0x00360B99 calling dup hashtable 0x0041553A needs gen-alias landing t=22 model=muse-07

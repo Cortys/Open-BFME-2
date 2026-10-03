@@ -1,7 +1,3 @@
-// ?rva002ACE2B@Player@@QAEHPAX@Z
-// partial score=0.93 date=2026-09-30
-// ?rva002ACE2B@Player@@QAEHPAX@Z
-// partial score=0.93 date=2026-09-30
 // cl: /O1 /G7 /MD /GX- /arch:SSE
 // stlport
 // ?rva002ACE2B@Player@@QAEHPAX@Z @0x002ACE2B 161B: Player method iterating
@@ -14,7 +10,6 @@
 #include <vector>
 #include <list>
 
-extern "C" float kF7C;
 extern float g_Va007C26F0;
 extern "C" __declspec(dllimport) double __cdecl floor(double);
 
@@ -72,7 +67,6 @@ private:
 	_STL::list<int> m_list6f4;
 };
 
-// ?rva002ACE2B@Player@@QAEHPAX@Z present-unmatched
 int Player::rva002ACE2B(void *arg)
 {
 	int i = 0;
@@ -91,7 +85,7 @@ int Player::rva002ACE2B(void *arg)
 			f = e->m_04[i];
 		++i;
 	}
-	float prod = f * kF7C;
+	float prod = f * 100.0f;
 	float diff = g_Va007C26F0 - prod;
 	double d = floor((double)diff);
 	float t = (float)d;
