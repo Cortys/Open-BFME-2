@@ -6104,3 +6104,6 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva0059E848@Rva0059E848@@QAEXXZ	0x0059E848	25	partial	edx diff with begin reuse vs eax diff with mem sub and al byte plus reload order t=15 model=muse-07 score=0.9 stash=reverse/attempts/0x0059e848.cpp
 ?rva0039DB89@Team@@QAEXHPAPAVThingTemplate@@_NPAH1@Z	0x0039DB89	124	partial	124of124 structural 0 ebx edi swap plus push pop order t=18 model=muse-08 score=0.98 stash=reverse/attempts/0x0039db89.cpp
 ?rva004CD45C@Rva004CD45C@@QAEPAXXZ	0x004CD45C	128	partial	131of128 sar vs test plus static relocs t=22 model=muse-08 score=0.94 stash=reverse/attempts/0x004cd45c.cpp
+??0Rva002DE4E6@@QAE@XZ	0x002DE4E6	153	blocked	array ctors UNCLAIMED 295983 4F87AA plus EH order mismatch t=15 model=muse-05
+?rva0014DA92@Rva0014F699@@QAEXPBXV?$RefCountPtr@VTextureClass@@@@@Z	0x0014DA92	154	partial	and EBP-4 scheduling shifts copies by 4B t=20 model=muse-05 score=0.93 stash=reverse/attempts/0x0014da92.cpp
+??0Rva0014DB9F@@QAE@XZ	0x0014DB9F	160	blocked	ICF trivial ctor size SSE EH vtable wall t=12 model=muse-05

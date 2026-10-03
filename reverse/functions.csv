@@ -49285,3 +49285,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva00074AFFGet@@YGPAVRva000748F6@@H@Z,,0x00074AFF,60,Code/GameEngine/Source/Common/System/Rva00074AFFInit.cpp,matched,chain lane static init guard returns global Rva000748F6
 ?rva004CD4DC@Rva004CD4DC@@QAEXPAVObject@@@Z,,0x004CD4DC,63,Code/GameEngine/Source/GameLogic/Object/Update/ModuleRva004CD4DC.cpp,matched,Update FX dispatcher via Object rva0029439D and FXList doFXObj slot 0x1EC
 ?xfer@SiegeDockingBehavior@@MAEXPAVXfer@@@Z,,0x0045A02F,318,Code/GameEngine/Source/GameLogic/Object/Behavior/SiegeDockingBehaviorXfer.cpp,matched,slot3 vtable 0x008414DC BFME1 donor reuse Poisoned base model
+??1Rva0014F699@@UAE@XZ,,0x0014D1E3,52,Code/GameEngine/Source/Common/Rva0014F699Assign.cpp,matched,dtor 004C element RefCountPtr 48 vtable BC6F24 callers 14DC42 1505A9
