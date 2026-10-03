@@ -50498,3 +50498,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?setSuppressNewWindows@ScriptActionsRva003BA8C4@@QAEX_N@Z,,0x003BA8C4,25,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_Rva003BA8C4.cpp,matched,vslot15 ScriptActions setSuppressNewWindows with 0xE03138 slot24 notify
 ?set@Rva003BA8DDHolder@@QAEXM@Z,,0x003BA8DD,22,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_Rva003BA8DD.cpp,matched,Opaque GameLogic float setter at plus0x950 with no E8 callers
 ??0ScriptActionsInterface@@QAE@XZ,,0x003BA89A,18,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_ctor.cpp,matched,ScriptActionsInterface default ctor base SubsystemInterface plus 0xC1FD98 vptr store
+?rva0037F551@Rva0037F551@@QAEAAV1@ABV1@@Z,,0x0037F551,45,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F51A; two 0x20 copies plus int and bool; caller 0x0037F71F
