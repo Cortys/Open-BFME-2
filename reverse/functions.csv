@@ -49238,3 +49238,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0029004B@Object@@QAEXXZ,,0x0029004B,74,Code/GameEngine/Source/GameLogic/Object/Object_rva0029004B.cpp,matched,Object TU via neighbours 28FF9E and 2900E0 plus rowed callee 274401 and barrier for or-before-mov order
 ?rva005ED411@Rva005ED445@@QAEXXZ,,0x005ED411,52,Code/GameEngine/Source/Common/Rva005ED411Apt.cpp,matched,Apt FadeOut via rowed AptCall thunk 0x005ED5EB same layout as Rva005ED445
 ??0Rva004C9E94@@QAE@ABVRva0036CA00Str@@PBHMABVWeaponTemplateSetHead@@2@Z,,0x004C9E94,95,Code/GameEngine/Source/GameClient/Drawable/Update/Rva004C9E94Ctor.cpp,matched,ctor 5 args copy-ctor inits OR of ModelConditionFlags predicate caller 0x004CAA5E
+?Rva004C9D93Less@@YG_NPAX0@Z,,0x004C9D93,45,Code/GameEngine/Source/GameLogic/Object/Update/Rva004C9D93Compare.cpp,matched,stdcall comparator int at 0 float at 8 used by AnimationSoundTree RB helpers
