@@ -49149,3 +49149,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva00559F7EGet@@YAHH@Z,,0x00559F7E,23,Code/GameEngine/Source/Common/Rva00559F7ESwitchGetters.cpp,matched,2-case int switch returning 2 or 4; callers 0x00559FCE 0x00559FD4
 ?Rva00559F95Get@@YAHH@Z,,0x00559F95,23,Code/GameEngine/Source/Common/Rva00559F7ESwitchGetters.cpp,matched,2-case int switch returning 3 or 2; callers 0x00559FCE 0x00559FD4
 ??0Rva003429B9@@QAE@PAVStateMachine@@@Z,,0x003429B9,59,Code/GameEngine/Source/Common/Rva003429B9Ctor.cpp,matched,AIInternalMoveToState-derived ctor hash 0xFA014ECE vtable 0x008126C0
+?rva00336B88@Rva00336B88@@QAEXW4CommandSourceType@@@Z,,0x00336B88,92,Code/GameEngine/Source/Common/Rva00336B88AICommand.cpp,matched,AICommandParms 0x3A via 0x00351BD0 slot0 free 0x00030830 caller 0x003371A8
