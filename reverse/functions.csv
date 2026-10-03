@@ -49796,3 +49796,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva000686F2@Rva000686F2@@QAEXXZ,,0x000686F2,198,Code/GameEngine/Source/Common/Rva000686F2.cpp,matched,leaf lane rowed ctors global flag neighbours O1 G7 EHsc
 ?rva0006933D@Rva0006933D@@QAEHXZ,,0x0006933D,113,Code/GameEngine/Source/Common/Rva0006933D.cpp,matched,chain lane rowed callees holders clears O1
 ?rva00069322@Rva00069322@@QAE?AVAssetReference@@XZ,,0x00069322,27,Code/GameEngine/Source/Common/Rva00069322.cpp,matched,unlock lane AssetReference getter at 3C O1
+?Rva0010410FWrap@@YAMM@Z,,0x0010410F,61,Code/GameEngine/Source/Common/Rva0010410FWrap.cpp,matched,unlock lane callers fmod wrapper g_00BC746C
