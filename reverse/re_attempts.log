@@ -6626,3 +6626,4 @@ $L62673	0x00765877	25	blocked	Ghidra765877/25 named Unwind; native reads parent 
 ??0Rva001FFE39@@QAE@XZ	0x001FFE39	62	blocked	vptr and m14 late after lea setup t=20 model=muse-05 (stash 0.93 kept)
 ??0Rva001DED2B@@QAE@XZ	0x001DED2B	31	blocked	align exact but gate picks 0x3A37FA not 0x1DE80F twin pin divergent t=12 model=muse-05 (stash 0.96 kept)
 ?rva0033436F@Rva0033436F@@QAE_NXZ	0x0033436F	407	blocked	complex Lua ScriptAction parser with float and EH needs donor t=10 model=muse-05
+?rva00334212@Rva00334212@@QAE_NXZ	0x00334212	349	blocked	complex Lua Condition parser with float and EH needs donor t=8 model=muse-05

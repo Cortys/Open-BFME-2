@@ -50330,3 +50330,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0039F597@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z,,0x0039F597,49,Code/GameEngine/Source/Common/RTS/Rva0039F597Find.cpp,matched,same map and less as 0x0039EA4E without trailing correction plus callers 0x0039FB77 0x003A2952
 ?rva003FC7C7@Rva003FC7FC@@QAEXABVRvaSmartPtr12@@@Z,,0x003FC7C7,53,Code/GameEngine/Source/Common/Rva003FC7FCClear.cpp,matched,unlock lane caller-proven thiscall copies smartptr then loads particle id
 ?rva00334506@Rva003339CE@@QAEXVAsciiString@@@Z,,0x00334506,129,Code/GameEngine/Source/Common/System/Rva003339CEParse.cpp,matched,BodyState multi-token parser via worker and nextToken
+?rva003340C1@Rva003340C1@@QAEXPADHABVAsciiString@@@Z,,0x003340C1,57,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003340C1DoBuffer.cpp,matched,Lua dobuffer helper via GetStr and lua_State
