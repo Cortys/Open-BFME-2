@@ -5954,3 +5954,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva004CFB8B@Rva004CFB8B@@QAEXVAsciiString@@@Z	0x004CFB8B	55	partial	push eax before add ecx vs retail add before push same 55B 14insns zero mem-reg t=10 model=muse-03 score=0.97 stash=reverse/attempts/0x004cfb8b.cpp
 ?rva005FEE09@Rva005FEE09@@QAEHXZ	0x005FEE09	131	blocked	extra push-edi mov-edi-ecx pop-edi as this arrives in edi not ecx t=12 model=muse-spark (stash 0.93 kept)
 ?rva005E0E99@Rva005E0E99@@QAEX_N@Z	0x005E0E99	72	partial	param in al with reload vs retail bl kept in ebx t=18 model=muse-spark score=0.93 stash=reverse/attempts/0x005e0e99.cpp
+??1Rva005E0B0F@@UAE@XZ	0x005E0B0F	128	partial	missing push 0 before first forwarder and missing EH state 2 before Release t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x005e0b0f.cpp
