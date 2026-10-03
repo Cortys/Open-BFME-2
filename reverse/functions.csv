@@ -50235,3 +50235,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004CBE04@Rva004CBE04@@QAE_NABVAsciiString@@PAURva002C99FB@@@Z,,0x004CBE04,45,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004CBE04.cpp,matched,map find fetch via rowed find plus assign
 ?rva004CBE31@Rva004CBE31@@QAE_NABVAsciiString@@PAURva002C99FB@@@Z,,0x004CBE31,53,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004CBE31.cpp,matched,guarded map fetch via reroll plus float plus rowed
 ??0Rva004FF6D5@@QAE@II@Z,,0x004FF6D5,42,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_004FF6D5.cpp,matched,chain empty Rb-tree ctor via rowed 0x004FF55E zeroes count inits header
+?rva004FF8DA@Rva004FF8DA@@QAE_NHH@Z,,0x004FF8DA,54,Code/Libraries/Source/WWVegas/WWLib/stlport_map_004FF8DA.cpp,matched,unlock map int-int find plus stride12 vec88 presence idx8
