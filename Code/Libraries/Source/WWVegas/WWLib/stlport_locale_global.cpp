@@ -136,7 +136,7 @@ __forceinline locale::locale(const locale& that) {
  _M_impl = impl;
 }
 
-__forceinline locale::~locale()
+inline locale::~locale()
 {
 	_M_impl->_M_decr();
 }
