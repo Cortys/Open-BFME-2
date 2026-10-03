@@ -1,22 +1,13 @@
-// ?rva00363BC7@Rva00363BC7@@QAEPAXPAUCoord2D@@PAM@Z
-// partial score=0.98 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva00363BC7@Rva00363BC7@@QAEPAXPAUCoord2D@@PAM@Z, retail 0x00363BC7, 170 bytes.
 // Unlock: if +0x08 null zeroes out vec and sets *len to g_00BCF628 returning
 // null; else builds dx dy from template +0xC/+0x10 minus this +0xC/+0x10,
 // length via rowed Coord2D::length, clamps *len to g_00BCF628, normalizes out
-// vec via 1.0f g_00BBB8D8. Evidence: unlock lane, callers 0x001E3572 0x00365F4B;
-// externs g_Va00BCF628 g_Va00BBB8D8 as annotated; len kept in ST0 via local.
-//
-// Improvement over the previous bank (0.97): the clamp condition reads
-// `g_Va00BCF628 > len`, which emits retail's `fld st(0); fld [g]; fcomip
-// st,st(1)` order and the matching `g <= len` skip. The prior `len > g`
-// spelling compiled to the transposed `fld [g]; fld st(1)` and clamped on the
-// opposite edge. Remaining diff: the normalize's `movss xmm1,[out]` is
-// scheduled after the 1.0f load instead of before it (xmm1/xmm0 swap, +0x83).
+// vec by the 1.0f literal pooled at 0x00BBB8D8. Evidence: unlock lane, callers
+// 0x001E3572 0x00365F4B; len kept in ST0 via local. The literal (not a named
+// extern global) is what puts the `movss xmm1,[out]` load before the 1.0f load.
 
 extern float g_Va00BCF628;
-extern float g_Va00BBB8D8;
 
 struct Coord2D
 {
@@ -57,7 +48,7 @@ void *Rva00363BC7::rva00363BC7(Coord2D *out, float *outLen)
 	if (g_Va00BCF628 > len) {
 		*outLen = g_Va00BCF628;
 	}
-	float inv = g_Va00BBB8D8 / *outLen;
+	float inv = 1.0f / *outLen;
 	out->x *= inv;
 	out->y *= inv;
 	return m_08;
