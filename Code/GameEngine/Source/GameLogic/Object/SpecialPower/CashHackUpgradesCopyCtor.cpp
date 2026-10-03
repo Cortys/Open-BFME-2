@@ -36,8 +36,17 @@ public:
 		Rva003B31ADMember m_amount; // +4, money amount
 
 		Upgrades(const Upgrades &src);
+		Upgrades(int science, const int &amount);
 	};
 };
+
+// ??0Upgrades@CashHackSpecialPowerModuleData@@QAE@HABH@Z @0x003FA38C 35B ctor science plus amount ref via zeroing member and OR. Evidence caller 0x003FA69E forwards both args to temp then push_back.
+CashHackSpecialPowerModuleData::Upgrades::Upgrades(int science, const int &amount)
+	: m_science(science)
+	, m_amount()
+{
+	m_amount.m_value |= amount;
+}
 
 // ??0Upgrades@CashHackSpecialPowerModuleData@@QAE@ABU12@@Z @0x003FA3AF
 CashHackSpecialPowerModuleData::Upgrades::Upgrades(const Upgrades &src)
