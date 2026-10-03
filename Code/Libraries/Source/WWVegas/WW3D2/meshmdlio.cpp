@@ -1670,53 +1670,9 @@ WW3DErrorType MeshModelClass::read_prelit_material (ChunkLoadClass &cload, MeshL
  *   05/02/00   IML : Created.                                                                 *
  *   7/13/2001  hy : Added static sort postprocessing                                          *
  *=============================================================================================*/
-void MeshModelClass::post_process()
-{
-#if 0
-	// we want to allow this now due to usage of the static sort 
-	// Ensure no sorting, multipass meshes (for they are abomination...)
-	if (DefMatDesc->Get_Pass_Count() > 1 && Get_Flag(SORT)) {
-		WWDEBUG_SAY(( "Turning SORT off for multipass mesh %s\n",Get_Name() ));
-		Set_Flag(SORT, false);
-	}
-#endif
+// MeshModelClass::post_process: defined in MeshModelPostProcess.cpp (its row's unit).
 
-	// skinned meshes should not have cull trees
-	if (Get_Flag(MeshGeometryClass::SKIN)) {
-		if (CullTree) {
-			REF_PTR_RELEASE(CullTree);
-		}
-	}
-
-	// turn off backface culling if the mesh is supposed to be two-sided
-	if (Get_Flag(MeshGeometryClass::TWO_SIDED)) {
-
-		DefMatDesc->Disable_Backface_Culling();
-		if (AlternateMatDesc != NULL) {
-			AlternateMatDesc->Disable_Backface_Culling();
-		}
-
-	}
-
-	// fog activation.
-	if (WW3DAssetManager::Get_Instance()->Get_Activate_Fog_On_Load()) { 
-		post_process_fog();
-	}
-
-	// if the mesh is sorting, pick an appropriate static sort level
-	// if default isn't set
-	if (Get_Flag(SORT) && SortLevel==SORT_LEVEL_NONE && WW3D::Is_Munge_Sort_On_Load_Enabled()) {
-		compute_static_sort_levels();
-	}
-
-	// If we need to, modify the mesh model to support overbrightening (change all
-	// GRADIENT_MODULATE to GRADIENT_MODULATE2X)
-	if (WW3D::Is_Overbright_Modify_On_Load_Enabled()) {
-		modify_for_overbright();
-	}
-}
-
-void MeshModelClass::post_process_fog(void)
+inline void MeshModelClass::post_process_fog(void)
 {
 	// If two pass...
 	if (DefMatDesc->Get_Pass_Count() == 2) {
@@ -1804,21 +1760,7 @@ void MeshModelClass::post_process_fog(void)
 	}
 }
 
-unsigned int MeshModelClass::get_sort_flags(int pass) const
-{
-	unsigned int flags = 0;
-	ShaderClass::StaticSortCategoryType scat;
-	if (Has_Shader_Array(pass)) {
-		for (int tri = 0; tri < CurMatDesc->ShaderArray[pass]->Get_Count(); tri++) {
-			scat = CurMatDesc->ShaderArray[pass]->Get_Element(tri).Get_SS_Category();
-			flags |= (1 << scat);
-		}			
-	} else {
-		scat = Get_Single_Shader(pass).Get_SS_Category();
-		flags |= (1 << scat);
-	}
-	return flags;
-}
+// MeshModelClass::get_sort_flags(int): defined in MeshModelClassGetSortFlagsPass.cpp (its row's unit).
 
 unsigned int MeshModelClass::get_sort_flags(void) const
 {
@@ -1933,14 +1875,7 @@ void MeshModelClass::install_materials(MeshLoadContextClass * context)
 }
 
 
-void MeshModelClass::install_alternate_material_desc(MeshLoadContextClass * context)
-{
-	if (context->AlternateMatDesc.Is_Empty() == false) {
-		WWASSERT(AlternateMatDesc == NULL);
-		AlternateMatDesc = W3DNEW MeshMatDescClass;
-		AlternateMatDesc->Init_Alternate(*DefMatDesc,context->AlternateMatDesc);
-	}
-}
+// MeshModelClass::install_alternate_material_desc: defined in MeshModelInstallAlternate.cpp (its row's unit).
 
 /***********************************************************************************************
  * MeshLoadContextClass::MeshLoadContextClass -- constructor for MeshLoadContextClass          *
@@ -1954,7 +1889,7 @@ void MeshModelClass::install_alternate_material_desc(MeshLoadContextClass * cont
  * HISTORY:                                                                                    *
  *   12/10/98   GTH : Created.                                                                 *
  *=============================================================================================*/
-MeshLoadContextClass::MeshLoadContextClass(void)
+inline MeshLoadContextClass::MeshLoadContextClass(void)
 {
 	memset(&Header,0,sizeof(Header));
 	memset(&MatInfo,0,sizeof(MatInfo));
@@ -1978,7 +1913,7 @@ MeshLoadContextClass::MeshLoadContextClass(void)
  * HISTORY:                                                                                    *
  *   12/10/98   GTH : Created.                                                                 *
  *=============================================================================================*/
-MeshLoadContextClass::~MeshLoadContextClass(void)
+inline MeshLoadContextClass::~MeshLoadContextClass(void)
 {
 	int i;
 
