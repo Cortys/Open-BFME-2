@@ -7265,3 +7265,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ?rva006FBBA0@Rva8D0D80Result@@QAE_NPAVRva8D0D80String@@PAVRva8D0D80Value@@@Z,0x006FBBA0,address-derived member tail target reached from 0x006FBE60; body blocked at 64B - see re_attempts.log
 ?Rva006D88C0MakeBool@@YAPAVAptValue@@_N@Z,0x006D88C0,address-derived MakeBool callee reached from 0x006F1530; body blocked at 263B - see re_attempts.log
 ?rva006D9500@BfmeAptValue006DCD20@@QAEXH@Z,0x006D9500,Apt array capacity resize (allocateBlock-freeBlock grow) address-derived pin
+??1Rva006FBDB0@@QAE@XZ,0x006FBDB0,address-derived element destructor called by 0x00706330; zeroes +4 then tail-jumps the EAStringC destructor at 0x006D3010
