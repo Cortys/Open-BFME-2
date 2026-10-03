@@ -7350,3 +7350,4 @@ _tolower,0x006298D4,CRT tolower import thunk called directly by the EAStringC ut
 ??1Rva00089894ArrayElement@@QAE@XZ,0x0004F82B,independently verified complete8B callback adjusts element+C and directly tail-calls canonical StringBase releaseBuffer36410; alias copy not historical ICF
 ??1Rva000851F3@@UAE@XZ,0x0008523A,independently verified complete7B base cleanup installs actual BC745C then RET; same covered range no new byte credit
 ?rva00047A69C@Rva0089971@@UAEXH@Z,0x0047A69C,BC74F4 slot1 independently points to complete3B RET4; only ABI word known; existing range alias copy without historical identity
+??0Pivot24@@QAE@ABU0@@Z,0x00427F75,"Pivot24 is the 0x18-byte version-record value type for Rva00428372AdjustHeap; its out-of-line copy constructor is the 24-byte record copy at this address (rowed as BfmeNarrowRecord00427F75 in NarrowStringRecordCopyBFME2.cpp)"
