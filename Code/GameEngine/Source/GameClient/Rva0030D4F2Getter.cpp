@@ -22,6 +22,7 @@ private:
 
 extern Rva00148F5ECache g_00DBDC84;
 extern Rva00148F5ECache g_00DBDC8C;
+extern Rva00148F5ECache g_00DBDC74;
 
 class Dict
 {
@@ -36,6 +37,7 @@ class Rva0030D4F2
 public:
 	int rva0030D4F2();
 	int rva0030D50C();
+	int rva0030D428();
 private:
 	char m_pad0[0x24];
 	Dict m_dict;
@@ -53,4 +55,9 @@ int Rva0030D4F2::rva0030D4F2()
 int Rva0030D4F2::rva0030D50C()
 {
 	return m_dict.getInt(g_00DBDC8C.get(), 0);
+}
+
+int Rva0030D4F2::rva0030D428()
+{
+	return m_dict.getInt(g_00DBDC74.get(), 0);
 }
