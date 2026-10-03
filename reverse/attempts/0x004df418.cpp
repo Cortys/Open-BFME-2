@@ -1,5 +1,7 @@
 // ??0Rva004DF418@@QAE@PAVThing@@PBVModuleData@@@Z
 // partial score=0.95 date=2026-10-03
+// ??0Rva004DF418@@QAE@PAVThing@@PBVModuleData@@@Z
+// partial score=0.95 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /GX
 class Thing;
 class ModuleData;
@@ -14,8 +16,9 @@ class UpdateModule
 {
 public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
-public:
+protected:
 	void setWakeFrame(Object *obj, UpdateSleepTime when);
+public:
 	const void *m_vtable;
 	int m_pad04;
 	Object *m_object;
