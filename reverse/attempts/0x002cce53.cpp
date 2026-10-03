@@ -1,15 +1,13 @@
 // ?rva002CCE53@Weapon@@QBEMXZ
-// partial score=0.93 date=2026-10-01
+// partial score=0.95 date=2026-10-03
 // ?rva002CCE53@Weapon@@QBEMXZ
-// partial score=0.93 date=2026-10-01
+// ?rva002CCE53@Weapon@@QBEMXZ
 // cl: /O1 /DNDEBUG /MD
 // ?rva002CCE53@Weapon@@QBEMXZ @0x002CCE53 128B evidence: Weapon neighbours prev deleting dtor next getStatus plus computeStatus row; float div via BfmeZeroRange and 1.0 plus 2pow32 fixup; Rva000B2EB5 precedent flags and externs
 extern const float BfmeZeroRange;
 extern float g_Va00BBB8D8;
 extern float g_00BC26EC;
-
 typedef bool Bool;
-
 enum WeaponStatus
 {
 	READY_TO_FIRE,
@@ -19,13 +17,11 @@ enum WeaponStatus
 	PRE_ATTACK,
 	WEAPON_STATUS_5
 };
-
 class ObjectFilter
 {
 public:
 	bool isValid() const;
 };
-
 class WeaponTemplate
 {
 public:
@@ -34,22 +30,18 @@ public:
 	char m_pad7C[0x120 - 0x78 - 4];
 	ObjectFilter m_ammo;
 };
-
 struct GameLogicFrame
 {
 	char m_pad00[0x40];
 	unsigned int m_frame;
 };
-
 class GameLogic
 {
 public:
 	char m_pad00[0x40];
 	unsigned int m_frame;
 };
-
 extern GameLogic *TheGameLogic;
-
 class Weapon
 {
 public:
@@ -67,7 +59,6 @@ private:
 	unsigned int m_frame24;
 	unsigned int m_frame28;
 };
-
 // ?rva002CCE53@Weapon@@QBEMXZ present-unmatched
 float Weapon::rva002CCE53() const
 {
@@ -75,8 +66,6 @@ float Weapon::rva002CCE53() const
 	if (s == READY_TO_FIRE)
 		goto ret_one;
 	if (s == OUT_OF_AMMO)
-		goto ret_zero;
-	if (s <= OUT_OF_AMMO)
 		goto ret_zero;
 	if (s <= RELOADING_CLIP)
 		goto frame;
