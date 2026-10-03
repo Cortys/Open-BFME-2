@@ -1,4 +1,6 @@
 // ??0Rva006FBC90Owner@@QAE@PAVAptValue@@@Z
+// partial score=0.94 date=2026-10-03
+// ??0Rva006FBC90Owner@@QAE@PAVAptValue@@@Z
 // partial score=0.92 date=2026-09-29
 // ??0Rva006FBC90Owner@@QAE@PAVAptValue@@@Z
 // partial score=0.92 date=2026-09-29
@@ -49,6 +51,7 @@ public:
 // ??0Rva006FBC90Owner@@QAE@PAVAptValue@@@Z present-unmatched
 Rva006FBC90Owner::Rva006FBC90Owner(AptValue *p) : BfmeAptValue006DCD20(0x14), m_hash(4)
 {
+    *(void **)this = (void *)0x00CED880;
     m_ctor = p;
     if (p)
         p->AddRef();
