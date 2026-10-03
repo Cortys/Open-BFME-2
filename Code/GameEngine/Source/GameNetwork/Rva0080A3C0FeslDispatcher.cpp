@@ -197,7 +197,7 @@ class Rva007E8810Message
 {
 public:
  Rva007E8810Message();
- ~Rva007E8810Message() { ((Gen_007e86c0 *)this)->m(); }
+ ~Rva007E8810Message();
  unsigned m_00, m_04, m_08, m_0c, m_10, m_14, m_18, m_1c, m_20, m_24, m_28, m_2c;
  char m_30;
 };
@@ -252,3 +252,7 @@ void BfmeThingUNC::rva0080A680(Rva0080A680Input *input)
   }
  }
 }
+
+// Existing retail thiscall teardown spelling targets the matched seven-byte
+// vptr reinstall worker at RVA 0x655780, also used by Gen_007e86c0::m.
+#pragma comment(linker, "/alternatename:??1Rva007E8810Message@@QAE@XZ=??1BfmeMsg@@UAE@XZ")
