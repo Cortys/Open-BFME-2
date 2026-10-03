@@ -49987,3 +49987,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00272945@Drawable@@QAEXH@Z,,0x00272945,22,Code/GameEngine/Source/GameClient/Rva00272945Finish.cpp,matched,Drawable +0x14C module ptr array virtual slot 0x60 tail call; named array pointer reproduces retail eax registration
 ?xfer@Rva004C1866@@MAEXPAVXfer@@@Z,,0x004C1974,104,Code/GameEngine/Source/Common/Rva004C1866Xfer.cpp,matched,slot 3 of 0x0085BE38 Version1 plus bool float bool uint uint plus ImmortalBody base
 ?xfer@DelayedDeathBody@@MAEXPAVXfer@@@Z,,0x004C17CC,62,Code/GameEngine/Source/GameLogic/Object/Body/DelayedDeathBodyXfer.cpp,matched,slot 3 of 0x0085BBE8 Version1 plus 2 bools base-last
+?portableMapPathToRealMapPath@GameState@@QBE?AVAsciiString@@ABV2@@Z,,0x002DC9F7,421,Code/GameEngine/Source/Common/System/SaveGame/GameStatePortableMapPathToReal.cpp,matched,inverse of 0x002DC833 plus retail LivingWorldScripts branch
