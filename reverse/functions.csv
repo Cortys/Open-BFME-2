@@ -49794,3 +49794,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002DAAF2@Rva002DAAF2@@QAE_NABVAsciiString@@HHHH@Z,,0x002DAAF2,38,Code/GameEngine/Source/Common/Rva002DAAF2.cpp,matched,vtable slot 4 of Rva002DAB18 class; rowed isEmpty and set; bool early-out
 ?Rva00428594PopHeap@@YAXPAUVersionBlockEntry@@00UPivot24@@VVersionBlockKeyCompare@@H@Z,,0x00428594,95,Code/GameEngine/Source/Common/Rva00428594PopHeap.cpp,matched,linkbody pop-heap via prereq assign narrow copy adjust-heap
 ?rva000686F2@Rva000686F2@@QAEXXZ,,0x000686F2,198,Code/GameEngine/Source/Common/Rva000686F2.cpp,matched,leaf lane rowed ctors global flag neighbours O1 G7 EHsc
+?rva0006933D@Rva0006933D@@QAEHXZ,,0x0006933D,113,Code/GameEngine/Source/Common/Rva0006933D.cpp,matched,chain lane rowed callees holders clears O1
