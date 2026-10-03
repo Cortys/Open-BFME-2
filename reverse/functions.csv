@@ -49203,3 +49203,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0056C0F0@Rva0056C0F0@@QAEXIPAUVec3@@@Z,,0x0056C0F0,125,Code/GameEngine/Source/Common/Rva0056C0F0Method.cpp,matched,cell index to world via scale plus TerrainLogic height
 ?rva003683EA@Rva003683EA@@QAEXPBUCoord3D@@H@Z,,0x003683EA,73,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva003683EA.cpp,matched,caller 0x0036BD51 rowed 0x00265667 plus gen-alias 0x003E3BFB
 ?rva003B3536@Rva003B3536@@QAEXAAVDataChunkInput@@PAX@Z,,0x003B3536,123,Code/GameEngine/Source/Common/Rva003B3536Load.cpp,matched,unlock lane DataChunkInput loader bool bool int bool AsciiString ret8
+??0Rva003B3536@@QAE@ABV0@@Z,,0x003B3507,47,Code/GameEngine/Source/Common/Rva003B3536Load.cpp,matched,unlock lane copy ctor layout bool bool int bool AsciiString ret4

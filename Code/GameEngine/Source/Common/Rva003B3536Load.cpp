@@ -18,6 +18,7 @@ public:
 class Rva003B3536
 {
 public:
+	Rva003B3536(const Rva003B3536 &other);
 	void rva003B3536(DataChunkInput &input, void *info);
 
 private:
@@ -27,6 +28,15 @@ private:
 	bool m_d; // +8
 	AsciiString m_e; // +0xC
 };
+
+Rva003B3536::Rva003B3536(const Rva003B3536 &other)
+	: m_a(other.m_a)
+	, m_b(other.m_b)
+	, m_c(other.m_c)
+	, m_d(other.m_d)
+	, m_e(other.m_e)
+{
+}
 
 void Rva003B3536::rva003B3536(DataChunkInput &input, void *info)
 {
