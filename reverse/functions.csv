@@ -49441,3 +49441,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ??0Rva00572C6E@@QAE@XZ,,0x00572C5A,20,Code/GameEngine/Source/Common/Rva00572C6ECtor.cpp,matched,vtable 0x0086E088 plus base 0x005CB22A null held caller 0x0041E682
 ?updatePoolSizes@Rva00914860Sizer@@QAEXHHPAH@Z,,0x0017F150,86,Code/Libraries/Source/WWVegas/WW3D2/Rva0017f150Cluster.cpp,matched,PointGroupClass vertex-array sizing prologue out-of-line copy; VertexLoc/UV/Diffuse Resize; needs /G7 for sub eax 1
 ?rva000329E0@GeneralAllocator@Allocator@EA@@QAE_NH@Z,,0x000329E0,54,Code/GameEngine/Source/Common/System/Rva00032050Cluster.cpp,matched,ValidateHeap re-entrancy guard byte 0x484 around validator 0x321F0; exported _VerifyIntegrity wrapper caller
+?rva006E0D40@Rva006E0D40@@QAEXXZ,,0x006E0D40,22,Code/Libraries/Source/Apt/Rva006E0D40Cluster.cpp,matched,Apt refcount release decrementing 16-bit field 0x5C then cdecl teardown 0x6CE1C0(0); callers 0x6FAC33 and 0x709E2D
