@@ -50474,3 +50474,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??$find@U?$_Rb_tree_iterator@HU?$_Const_traits@H@_STL@@@_STL@@H@_STL@@YA?AU?$_Rb_tree_iterator@HU?$_Const_traits@H@_STL@@@0@U10@0ABH@Z,,0x0054E82C,32,Code/GameEngine/Source/Common/Rva0054E7C3Find.cpp,matched,set int find forwarder to __find 0x54E7C3 unblocks 0x54E86D
 ?rva0054E86D@Rva0054F434@@UAE_NH@Z,,0x0054E86D,47,Code/GameEngine/Source/Common/Rva0054E86DContains.cpp,matched,Rva0054F434 slot10 set int contains via rowed find 0x54E82C
 ?rva0030D428@Rva0030D4F2@@QAEHXZ,,0x0030D428,26,Code/GameEngine/Source/GameClient/Rva0030D4F2Getter.cpp,matched,Dict getter twin g_00DBDC74 caller 0x00282752
+?rva0059EEE2@Rva0059EE96@@QAEXXZ,,0x0059EEE2,81,Code/GameEngine/Source/Common/Rva0059EE96Finish.cpp,matched,unlock human-count guard via GameSpyInfo and rva0059EE96
