@@ -1,7 +1,3 @@
-// ?rva003236A0@Rva003236A0@@QAEXHH@Z
-// partial score=0.94 date=2026-09-29
-// ?rva003236A0@Rva003236A0@@QAEXHH@Z
-// partial score=0.94 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD
 //
 // ?rva003236A0@Rva003236A0@@QAEXHH@Z, retail 0x003236A0, 36 bytes.
@@ -17,6 +13,9 @@ public:
 
 void Rva00325388Send(GameWindow *window, int a, int b, int c);
 
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 struct Rva003236A0Data
 {
 	char m_pad[8];
@@ -31,12 +30,12 @@ private:
 	GameWindow *m_win;
 };
 
-// ?rva003236A0@Rva003236A0@@QAEXHH@Z present-unmatched
 void Rva003236A0::rva003236A0(int a, int b)
 {
 	if (m_win == 0)
 		return;
 	Rva003236A0Data *data = (Rva003236A0Data *)m_win->winGetUserData();
 	GameWindow *v = data->m_win;
+	_ReadWriteBarrier();
 	Rva00325388Send(v, b, a, 0);
 }
