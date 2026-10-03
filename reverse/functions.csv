@@ -50173,3 +50173,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004C4430@Rva004C4430@@QAEX_N@Z,,0x004C4430,77,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva004C4430Finish.cpp,matched,SpecialPower flag gate sets float via local Object pointer getControllingPlayer then tail bool setter
 ?rva0027900B@@YA_NPAD@Z,,0x0027900B,105,Code/GameEngine/Source/GameClient/Rva0027900BFinish.cpp,matched,static internal-linkage PlayerTemplateStore name lookup helper object arg in EAX as retail caller mov eax edi call
 ??1Rva004E9B46@@UAE@XZ,,0x004E9BC6,77,Code/GameEngine/Source/Common/Rva004E9BC6Dtor.cpp,matched,Rva004E9B46 dtor via rva004E9B70 holder free and shared base
+??_GRva004E9B46@@UAEPAXI@Z,,0x004E9F52,28,Code/GameEngine/Source/Common/Rva004E9BC6Dtor.cpp,matched,Rva004E9B46 deleting dtor via own unit
