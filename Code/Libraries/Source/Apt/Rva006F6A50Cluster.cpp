@@ -247,3 +247,62 @@ Rva006F6A50::Rva006F6A50(void *descriptor, int second, int third, int fourth)
 	m_08 = 0;
 	m_0c = 0;
 }
+
+// ---------------------------------------------------------------------------
+// Rva006F8D70 (0x20 bytes) ctor: vtable + a BfmeWrapper1279 sub-object at +0x1C
+// and an AptNativeHash at +0x10.  Its deleting dtor (0x006F8D70), complete dtor
+// (0x006F8DA0) and the vtable RVA 0x008ED398 already exist in the ledger.
+
+extern const void *const g_00CED398[];
+
+class AptNativeHash
+{
+public:
+	AptNativeHash(int size);
+
+	static void *operator new(unsigned int size)
+	{
+		return ((Rva006DB160 *)g_pChainBlockAllocator)->allocBlock((int)size);
+	}
+
+	char m_pad[0x14];
+};
+
+// The base's inlined ctor writes +0x14, +0x04, +0x0C and +0x10; its vtable store
+// is dead and dropped, so the derived vtable store below is the only one left.
+class Rva006F8D70Base
+{
+public:
+	Rva006F8D70Base()
+	{
+		m_14 = 0;
+		m_04 = -1;
+		m_0c = 0;
+		m_10 = 0;
+	}
+
+	virtual ~Rva006F8D70Base();
+
+	int m_04;
+	int m_pad08;
+	int m_0c;
+	AptNativeHash *m_10;
+	unsigned char m_14;
+	char m_pad15[3];
+};
+
+class Rva006F8D70 : public Rva006F8D70Base
+{
+public:
+	Rva006F8D70();
+	virtual ~Rva006F8D70();
+
+	char m_pad18[4];
+	BfmeWrapper1279 m_holder;
+};
+
+// ??0Rva006F8D70@@QAE@XZ @0x006F8550 134B
+Rva006F8D70::Rva006F8D70()
+{
+	m_10 = new AptNativeHash(4);
+}
