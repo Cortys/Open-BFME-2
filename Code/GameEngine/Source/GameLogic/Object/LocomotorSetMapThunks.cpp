@@ -114,3 +114,7 @@ Rva004FFE81& Rva004FFE81::operator=(const Rva004FFE81& other)
 template Rva004FFE81* _STL::__copy<Rva004FFE81*, Rva004FFE81*, int>(
     Rva004FFE81*, Rva004FFE81*, Rva004FFE81*,
     const _STL::random_access_iterator_tag&, int*);
+
+// The vector's nontrivial assignment dispatch reaches __copy at 0x0050094B.
+template Rva004FFE81* _STL::__copy_ptrs<Rva004FFE81*, Rva004FFE81*>(
+    Rva004FFE81*, Rva004FFE81*, Rva004FFE81*, const _STL::__false_type&);
