@@ -1,5 +1,3 @@
-// ?rva004036B1@Rva004036B1@@QAE_NPAXPAMPBV?$StringBase@D@@@Z
-// partial score=0.97 date=2026-09-30
 // cl: /O1 /MD /Oy- /G7
 // ?rva004036B1@Rva004036B1@@QAE_NPAXPAMPBV?$StringBase@D@@@Z @0x004036B1 (92B)
 // Thiscall range find over 0x14-byte elems comparing key at +0 then an
@@ -26,14 +24,13 @@ private:
 };
 extern "C" void _ReadWriteBarrier();
 #pragma intrinsic(_ReadWriteBarrier)
-// ?rva004036B1@Rva004036B1@@QAE_NPAXPAMPBV?$StringBase@D@@@Z present-unmatched
 bool Rva004036B1::rva004036B1(void *key, float *out, const StringBase<char> *filter)
 {
 	for (Elem004036B1 *p = m_begin; p != m_end; p++) {
 		if (p->m_key == key) {
 			if (filter != 0) {
-				int n = p->m_strEnd - p->m_strBegin;
-				if (n == 0)
+				unsigned n = (unsigned)(p->m_strEnd - p->m_strBegin);
+				if (n <= 0)
 					goto copy;
 				_ReadWriteBarrier();
 				for (StringBase<char> *s = p->m_strBegin; s != p->m_strEnd; s++) {

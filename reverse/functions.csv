@@ -49599,3 +49599,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva0014F718CopyBackward@@YAPAURva0014F718@@PAU1@00PAXH@Z,,0x0014F718,46,Code/GameEngine/Source/Common/Rva0014F718CopyBackward.cpp,matched,forwarder 0x0014F995 pushes 5 stride 8 single-dword +4 copy
 ?rva0015B8C0@MeshMatDescClass@@QAEXXZ,,0x0015B8C0,157,Code/Libraries/Source/WWVegas/WW3D2/MeshMatDescUniqueArrays.cpp,matched,MeshMatDesc loop 4 at +0xb8 via RefPtr callee 0x15B110
 ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z,,0x003971BF,121,Code/GameEngine/Source/Common/Rva003971BFFinish.cpp,matched,ObjectID +0x50/+0x74 range check; unsigned n>0 reproduces retail sar-vs-test range test; lands 121B
+?rva004036B1@Rva004036B1@@QAE_NPAXPAMPBV?$StringBase@D@@@Z,,0x004036B1,92,Code/GameEngine/Source/Common/Rva004036B1Finish.cpp,matched,0x14-stride key range find; unsigned n<=0 reproduces retail sar-vs-test pointer-count check; lands 92B
