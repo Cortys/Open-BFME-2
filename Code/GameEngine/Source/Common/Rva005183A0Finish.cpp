@@ -28,18 +28,13 @@ class Rva005183A0
 public:
 	bool rva005183A0();
 };
-// ?rva005183A0@Rva005183A0@@QAE_NXZ present-unmatched
 bool Rva005183A0::rva005183A0()
 {
 	if (m_val310 == 0)
 		return false;
 	if (m_val310 == 5)
 	{
-		int f;
-		{
-			OptionPreferences opt;
-			f = opt.Rva002E432EForward();
-		}
+		int f = OptionPreferences().Rva002E432EForward();
 		return f != 0;
 	}
 	return true;
