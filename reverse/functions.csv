@@ -50192,3 +50192,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005FBB83@Rva005FBB68@@QAEXM@Z,,0x005FBB83,19,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,float forward to rowed rva005FB9C6
 ?rva005F6439@Rva005F6439@@QAEXM@Z,,0x005F6439,135,Code/GameEngine/Source/Common/Rva005F6439Apt.cpp,matched,gap Rva005F6220Apt float at +0x30 Fire SetLeaderRankProgress AptCall _show flag +0x37
 ??_GRva001DA2D5@@UAEPAXI@Z,,0x001DA754,28,Code/Libraries/Source/WWVegas/WWLib/Rva001DA2D5Finish.cpp,matched,deleting dtor via own ??1 unit Rva001DA2D5 caller none
+?rva0045EDD5@StancesBehavior@@QAE_NH@Z,,0x0045EDD5,87,Code/GameEngine/Source/GameLogic/Object/Behavior/StancesBehaviorCheck.cpp,matched,chain via rowed map-find 0x4260DE plus StancesBehavior Xfer-NameKey share O1 plus caller 0x4751E5 plus vtable slots 0x7c and 0x260
