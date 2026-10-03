@@ -50528,3 +50528,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva006C1F60@@QAE@XZ,,0x006C3CC0,93,Code/GameEngine/Source/Common/Rva006C3CC0Cluster.cpp,matched,Rva006C1F60 destructor; flush via 0x6C38D0 then implicit member +0x684 dtor (rva006C17B0) and GeneralAllocator base dtor; EH funclets name both
 ?allocBlock@Rva006D2A60@@QAEPAXH@Z,,0x006D29E0,127,Code/GameEngine/Source/Common/Rva006D29E0Cluster.cpp,matched,AptValueGCAllocator value alloc; base 0x6DB160 allocBlock then mbIsAllocated false/true with asserts from AptValueGCAllocator.cpp
 ?Rva005048F9Forward@@YAPAURva00504830Item@@PAU1@0PBMH@Z,,0x005048F9,27,Code/GameEngine/Source/Common/Rva00504830Upper.cpp,matched,forwarder to UpperBound with trailing 0
+?Rva0037F731Copy@@YAPAVRva0037F551@@PAV1@00PAX@Z,,0x0037F731,38,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F71F copy range stride 0x48 callers 0x0037F77C 0x0037FF20

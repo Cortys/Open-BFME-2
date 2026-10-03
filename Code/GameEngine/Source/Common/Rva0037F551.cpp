@@ -54,3 +54,15 @@ Rva0037F551 *Rva0037F757Fill(Rva0037F551 *dst, unsigned int count, const Rva0037
 	}
 	return cur;
 }
+// ?Rva0037F731Copy@@YAPAVRva0037F551@@PAV1@00PAX@Z retail 0x0037F731 38B
+// Evidence: chain from 0x0037F71F; copy range stride 0x48; callers 0x0037F77C 0x0037FF20
+Rva0037F551 *Rva0037F731Copy(Rva0037F551 *first, Rva0037F551 *last, Rva0037F551 *dst, void *unused)
+{
+	Rva0037F551 *cur = dst;
+	while (first != last) {
+		Rva0037F71FCopy(cur, *first);
+		++first;
+		++cur;
+	}
+	return cur;
+}
