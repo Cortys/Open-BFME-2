@@ -49231,3 +49231,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005EA5BD@Rva005EA183@@QAEXXZ,,0x005EA5BD,17,Code/Libraries/Source/WWVegas/WWMath/Rva005EA183Method.cpp,matched,chain calls 0x005EA183 tail slot2
 ?rva0039DD4B@Team@@QAE_N_N@Z,,0x0039DD4B,119,Code/GameEngine/Source/Common/RTS/TeamRva0039DD4B.cpp,matched,Team flag-gated 0x10E and 0x108 scan via rowed iterate and DLINK pin
 ?rva0039DDC2@Team@@QAE_NURva0039DDC2Filter@@_N@Z,,0x0039DDC2,132,Code/GameEngine/Source/Common/RTS/TeamRva0039DDC2.cpp,matched,Team flag-gated kind scan via rowed iterate plus rowed isKindOfMulti and default storage
+?onEnter@Rva005447ED@@UAE?AW4StateReturnType@@XZ,,0x00544133,124,Code/GameEngine/Source/Common/Rva005447EDOnEnter.cpp,matched,vslot slot4 onEnter TurretStateMachine goal BEC tri-call plus ignoreObstacle then base onEnter
