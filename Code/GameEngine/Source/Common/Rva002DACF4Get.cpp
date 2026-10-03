@@ -7,6 +7,7 @@ class Rva002DACF4
 {
 public:
 	AsciiString rva002DACF4(int a, int b);
+	void rva002DAEED(int a, int b, AsciiString s);
 private:
 	char m_pad[0x74];
 	AsciiString m_arr[64];
@@ -14,4 +15,9 @@ private:
 AsciiString Rva002DACF4::rva002DACF4(int a, int b)
 {
 	return m_arr[a * 3 + b];
+}
+void Rva002DACF4::rva002DAEED(int a, int b, AsciiString s)
+{
+	AsciiString &slot = m_arr[a * 3 + b];
+	slot = s;
 }
