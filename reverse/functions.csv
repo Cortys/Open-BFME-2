@@ -49804,3 +49804,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002F1BD5@Rva002F1BD5@@QAEHHPAURva002F1BD5Arg@@HH@Z,,0x002F1BD5,80,Code/GameEngine/Source/Common/System/Rva002F1BD5Finish.cpp,matched,clean C++; ternary id select reproduces retail jmp+xor
 ?xfer@Rva004BD78F@@MAEXPAVXfer@@@Z,,0x004BD9A1,42,Code/GameEngine/Source/Common/Rva004BD78FXfer.cpp,matched,slot 3 of 0x0085AE34 Version1 plus base BodyModule plus bool at +0x18
 ??0W3DTruckDraw@@QAE@PAVThing@@PBVModuleData@@@Z,,0x000CB3FB,381,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DTruckDrawCtor.cpp,matched,slot ctor vtable 0xBCC650 base 0x000C0DD8 two 0x88 sounds plus handles
+??$__unguarded_partition@PAHHVRva005E4300Cmp@@@_STL@@YAPAHPAH0HVRva005E4300Cmp@@@Z,,0x005E459F,73,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva005E4300.cpp,matched,73B partition via rowed Rva005E4300Cmp same shape as 0x004231A0

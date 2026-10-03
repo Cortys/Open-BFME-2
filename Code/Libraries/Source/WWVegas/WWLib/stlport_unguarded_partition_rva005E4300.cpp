@@ -1,0 +1,54 @@
+// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+
+// ??$__unguarded_partition@PAHHVRva005E4300Cmp@@@_STL@@YAPAHPAH0HVRva005E4300Cmp@@@Z
+// retail 0x005E459F, 73 bytes. Quicksort partition over int sort keys with
+// the pinned thiscall comparator Rva005E4300Cmp (member operator()(int,int)
+// at 0x005E4300, by-value ints, stateful): scan up while comp(*first,pivot),
+// scan down while comp(pivot,*last), swap on cross, return the split.
+// Evidence: calls both rowed to 0x005E4300; same 73B shape as
+// stlport_unguarded_partition_rva00422ca8.cpp 0x004231A0 (inline iter_swap,
+// out-of-line stateful comp, frame). Pin
+// ??$__unguarded_partition@PAHHU?$greater@H@_STL@@@_STL@@YAPAHPAH0HU?$greater@H@0@@Z
+// names this address from the greater<int> introsort_loop caller, but the body
+// calls the stateful by-value comparator, so the honest name is the Rva one.
+
+class Rva005E4300Cmp
+{
+public:
+	bool operator()(int a, int b) const;
+};
+
+namespace _STL
+{
+
+template <class ForwardIter1, class ForwardIter2>
+__forceinline void iter_swap(ForwardIter1 left, ForwardIter2 right)
+{
+	int temporary = *left;
+	*left = *right;
+	*right = temporary;
+}
+
+template <class RandomAccessIter, class Tp, class Compare>
+RandomAccessIter __unguarded_partition(RandomAccessIter first,
+	RandomAccessIter last, Tp pivot, Compare comp)
+{
+	while (true)
+	{
+		while (comp(*first, pivot))
+			++first;
+		--last;
+		while (comp(pivot, *last))
+			--last;
+		if (!(first < last))
+			return first;
+		iter_swap(first, last);
+		++first;
+	}
+}
+
+template int *__unguarded_partition<int *, int,
+	Rva005E4300Cmp>(int *, int *, int, Rva005E4300Cmp);
+
+}
