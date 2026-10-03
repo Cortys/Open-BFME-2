@@ -50476,3 +50476,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0030D428@Rva0030D4F2@@QAEHXZ,,0x0030D428,26,Code/GameEngine/Source/GameClient/Rva0030D4F2Getter.cpp,matched,Dict getter twin g_00DBDC74 caller 0x00282752
 ?rva0059EEE2@Rva0059EE96@@QAEXXZ,,0x0059EEE2,81,Code/GameEngine/Source/Common/Rva0059EE96Finish.cpp,matched,unlock human-count guard via GameSpyInfo and rva0059EE96
 ?Rva0037BA97Init@@YA?AUTriple12@@PBUPair8@@H@Z,,0x0037BA97,43,Code/GameEngine/Source/Common/System/Rva0037BA97Finish.cpp,matched,struct-return Triple12 builder from Pair8 plus int; exact 43B
+?rva0037F51A@Rva0037F51A@@QAEAAV1@ABV1@@Z,,0x0037F51A,55,Code/GameEngine/Source/Common/Rva0037F51A.cpp,matched,same 0x20 layout as 0x0037F4EA; callers 0x0037F551 0x0037F950
