@@ -8,3 +8,7 @@
 #include "BfmeNarrowRecord0041A5D2.h"
 typedef _STL::deque<BfmeNarrowRecord0041A5D2>::iterator BfmeNarrowRecord28Iterator;
 template void _STL::__destroy_aux<BfmeNarrowRecord28Iterator>(BfmeNarrowRecord28Iterator, BfmeNarrowRecord28Iterator, const _STL::__false_type&);
+
+// Native45-byte dispatch41A42C forwards two iterator values and false tag
+// to the independently rowed33-byte loop41A382.
+template void _STL::__destroy<BfmeNarrowRecord28Iterator, BfmeNarrowRecord0041A5D2>(BfmeNarrowRecord28Iterator, BfmeNarrowRecord28Iterator, BfmeNarrowRecord0041A5D2*);
