@@ -50301,3 +50301,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FB9EB@Rva003FB9C8@@QAEXHH@Z,,0x003FB9EB,35,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,init 2c 4c to 1 and 38 to 0 store args then slot3
 ?rva0033323D@Rva00332E60@@QAEPAXH@Z,,0x0033323D,36,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,range search +0xbc stride 0x9c via caller 0x00333918 same object
 ?rva00333918@Rva00332E60@@QAEPAXH@Z,,0x00333918,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,combined search tries 4 tables in turn callers 9 sites
+?rva003FBF38@Rva003FBF38@@QAEEXZ,,0x003FBF38,24,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,null 0 else slot100 ternary 0 1
