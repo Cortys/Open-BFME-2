@@ -5,6 +5,19 @@
 // then appends it via 0x473F13. Copy/fill workers advance by 16 bytes and
 // construct via 0x469C61 -> 0x4254E. The original project type is unresolved.
 // The folded copy and allocator are existing ranges, not additional claims.
+// The emitted unsigned max copy must match retail RVA 0x00013740.
+// Define it for speed, then restore this unit's flags for its vector bodies.
+#pragma optimize("s", off)
+#pragma optimize("t", on)
+#include <stl/_algobase.h>
+namespace _STL {
+template <> inline const unsigned int &max<unsigned int>(const unsigned int &a, const unsigned int &b)
+{
+    return a < b ? b : a;
+}
+}
+#pragma optimize("", on)
+
 #include <vector>
 struct BfmeFloat4Record00469C61 {
     float x, y, z, w;

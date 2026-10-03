@@ -1,6 +1,19 @@
 // cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ??$__uninitialized_fill_n@PAVRva00064640Record@@IV1@@_STL@@YAPAVRva00064640Record@@PAV1@IABV1@ABU__false_type@0@@Z 0x00469CC8 37B evidence: 0x1c-stride fill via rowed _Construct 0x469C73 caller 0x4701B6 record layout from copy ctor 0x50403D
+// The emitted unsigned max copy must match retail RVA 0x00013740.
+// Define it for speed, then restore this unit's flags for its vector bodies.
+#pragma optimize("s", off)
+#pragma optimize("t", on)
+#include <stl/_algobase.h>
+namespace _STL {
+template <> inline const unsigned int &max<unsigned int>(const unsigned int &a, const unsigned int &b)
+{
+    return a < b ? b : a;
+}
+}
+#pragma optimize("", on)
+
 #include <vector>
 class Rva00064640Record {
 public:
