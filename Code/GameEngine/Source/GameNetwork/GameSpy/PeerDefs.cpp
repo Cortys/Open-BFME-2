@@ -1,9 +1,13 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmealloc /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_STLP_NO_EXCEPTIONS
 // stlport
 
 // Open-BFME: GameSpyInfo methods in PeerDefs.cpp (reconciled from Zero Hour's
 // GameNetwork/GameSpy/PeerDefs.cpp and PeerDefsImplementation.h).
 
+#include <utility>
+#undef _STLP_DEFAULT_CONSTRUCTED
+#define _STLP_DEFAULT_CONSTRUCTED(T) T()
+#define _BFME_RETAIL_TREE_INSERT_LAYOUT
 #include <map>
 #include <set>
 
@@ -34,10 +38,34 @@ template <> struct less<AsciiString>
 }
 
 class GameWindow;
-class GameSpyStagingRoom;
 class GameSpyGroupRoom;
-class BuddyInfo;
-class PlayerInfo;
+class BuddyInfo {};
+
+class GameSpyStagingRoom
+{
+public:
+	virtual ~GameSpyStagingRoom();
+	static void operator delete(void *p) { ::operator delete(p); }
+};
+
+class PlayerInfo
+{
+public:
+	AsciiString m_name;
+	AsciiString m_locale;
+	AsciiString m_clan;
+	Int m_wins;
+	Int m_losses;
+	Int m_profileID;
+	Int m_flags;
+	Int m_rankPoints;
+	Int m_side;
+	Int m_preorder;
+	Int m_dc;
+	Int m_desync;
+	Int m_pad;
+	~PlayerInfo();
+};
 
 struct AsciiComparator
 {
@@ -50,6 +78,30 @@ typedef _STL::map<Int, GameSpyGroupRoom> GroupRoomMap;
 typedef _STL::map<Int, GameSpyStagingRoom *> StagingRoomMap;
 typedef _STL::map<Int, BuddyInfo> BuddyInfoMap;
 typedef _STL::map<AsciiString, PlayerInfo, AsciiComparator> PlayerInfoMap;
+typedef _STL::map<AsciiString, AsciiString> PreferenceMap;
+
+class UserPreferences : public PreferenceMap
+{
+public:
+	UserPreferences();
+	virtual ~UserPreferences();
+	virtual Bool load(const AsciiString &fname);
+	virtual Bool load(const UnicodeString &fname);
+	virtual Bool write(void);
+	void rva003B2322(const AsciiString &val, Int num, Bool flag);
+protected:
+	UnicodeString m_filename;
+};
+
+class IgnorePreferences : public UserPreferences
+{
+public:
+	IgnorePreferences();
+	virtual ~IgnorePreferences();
+	SavedIgnoreMap getIgnores(void);
+};
+
+extern Int GetAdditionalDisconnectsFromUserFile(Int playerID);
 
 class GameSpyInfo
 {
@@ -63,10 +115,25 @@ public:
 	virtual void setLocalBaseName(AsciiString name);
 	virtual AsciiString getLocalBaseName(void);
 
+	virtual void setCurrentGroupRoom(Int groupID);
+	virtual void playerLeftGroupRoom(AsciiString nick);
+
+	virtual GameSpyStagingRoom *findStagingRoomByID(Int id);
+	virtual Bool rva00383207(GameSpyStagingRoom *room);
+	virtual void clearStagingRoomList(void);
+	virtual GameSpyStagingRoom *getCurrentStagingRoom(void);
 	virtual Bool hasStagingRoomListChanged(void);
 	virtual Bool rva00381DC4(void);
 
+	virtual Bool isBuddy(Int id);
+
 	virtual void setMOTD(const AsciiString &motd);
+
+	virtual void addToSavedIgnoreList(Int profileID, AsciiString nick);
+	virtual void removeFromSavedIgnoreList(Int profileID);
+	virtual Bool isSavedIgnored(Int profileID);
+	virtual SavedIgnoreMap returnSavedIgnoreList(void);
+	virtual void loadSavedIgnoreList(void);
 
 	virtual IgnoreList returnIgnoreList(void);
 	virtual void addToIgnoreList(AsciiString nick);
@@ -80,6 +147,8 @@ public:
 
 	virtual Bool didPlayerPreorder(Int profileID) const;
 	virtual void markPlayerAsPreorder(Int profileID);
+
+	virtual void readAdditionalDisconnects(void);
 
 private:
 	Bool m_sawFullGameList;				// +0x04
@@ -254,3 +323,97 @@ AsciiString GameSpyInfo::getLocalBaseName(void)
 	return m_localBaseName;
 }
 
+// ?readAdditionalDisconnects@GameSpyInfo@@UAEXXZ @0x003853C6 20B
+void GameSpyInfo::readAdditionalDisconnects(void)
+{
+	m_additionalDisconnects = GetAdditionalDisconnectsFromUserFile(m_localProfileID);
+}
+
+// ?isBuddy@GameSpyInfo@@UAE_NH@Z @0x003835D7 29B
+Bool GameSpyInfo::isBuddy(Int id)
+{
+	return m_buddyMap.find(id) != m_buddyMap.end();
+}
+
+// ?findStagingRoomByID@GameSpyInfo@@UAEPAVGameSpyStagingRoom@@H@Z @0x00383846 31B
+GameSpyStagingRoom *GameSpyInfo::findStagingRoomByID(Int id)
+{
+	StagingRoomMap::iterator it = m_stagingRooms.find(id);
+	if (it != m_stagingRooms.end())
+		return it->second;
+	return 0;
+}
+
+// ?getCurrentStagingRoom@GameSpyInfo@@UAEPAVGameSpyStagingRoom@@XZ @0x003835A0 48B
+GameSpyStagingRoom *GameSpyInfo::getCurrentStagingRoom(void)
+{
+	if (m_isHosting || m_joinedStagingRoom)
+		return reinterpret_cast<GameSpyStagingRoom *>(&m_localStagingRoom);
+
+	StagingRoomMap::iterator it = m_stagingRooms.find(m_localStagingRoomID);
+	if (it != m_stagingRooms.end())
+		return it->second;
+	return 0;
+}
+
+// ?clearStagingRoomList@GameSpyInfo@@UAEXXZ @0x00382E2F 68B
+void GameSpyInfo::clearStagingRoomList(void)
+{
+	Int numRoomsRemoved = 0;
+	m_sawFullGameList = false;
+	m_stagingRoomsDirty = false;
+
+	StagingRoomMap::iterator it = m_stagingRooms.begin();
+	while (it != m_stagingRooms.end())
+	{
+		++numRoomsRemoved;
+
+		::delete it->second;
+		m_stagingRooms.erase(it);
+		it = m_stagingRooms.begin();
+	}
+	if (numRoomsRemoved > 0)
+	{
+	}
+}
+
+// ?setCurrentGroupRoom@GameSpyInfo@@UAEXH@Z @0x003862DB 18B
+void GameSpyInfo::setCurrentGroupRoom(Int groupID)
+{
+	m_currentGroupRoomID = groupID;
+	m_playerInfoMap.clear();
+}
+
+// ?playerLeftGroupRoom@GameSpyInfo@@UAEXVAsciiString@@@Z @0x00384660 72B
+void GameSpyInfo::playerLeftGroupRoom(AsciiString nick)
+{
+	PlayerInfoMap::iterator it = m_playerInfoMap.find(nick);
+	if (it != m_playerInfoMap.end())
+	{
+		m_playerInfoMap.erase(it);
+	}
+}
+
+// ?addToSavedIgnoreList@GameSpyInfo@@UAEXHVAsciiString@@@Z @0x00385E2A 118B
+void GameSpyInfo::addToSavedIgnoreList(Int profileID, AsciiString nick)
+{
+	m_savedIgnoreMap[profileID] = nick;
+	IgnorePreferences pref;
+	pref.rva003B2322(nick, profileID, true);
+	pref.write();
+}
+
+// ?removeFromSavedIgnoreList@GameSpyInfo@@UAEXH@Z @0x00385B1C 92B
+void GameSpyInfo::removeFromSavedIgnoreList(Int profileID)
+{
+	m_savedIgnoreMap.erase(profileID);
+	IgnorePreferences pref;
+	pref.rva003B2322(AsciiString::TheEmptyString, profileID, false);
+	pref.write();
+}
+
+// ?isSavedIgnored@GameSpyInfo@@UAE_NH@Z @0x003839B9 32B
+Bool GameSpyInfo::isSavedIgnored(Int profileID)
+{
+	return m_savedIgnoreMap.find(profileID) != m_savedIgnoreMap.end();
+}
