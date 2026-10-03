@@ -436,3 +436,12 @@ void Rva0032431FSet(GameWindow *listbox, Int row, unsigned char value)
 		return;
 	data->rows[row].f0C = value;
 }
+
+// BFME1 6d943426 donor; native multiselect byte+B and signed16 capacity+0.
+Int GadgetListBoxGetListLength(GameWindow *listbox)
+{
+ void *listboxData=listbox->winGetUserData();
+ if(*(Bool *)((char *)listboxData+0x0B))
+  return *(Short *)listboxData;
+ else return 1;
+}
