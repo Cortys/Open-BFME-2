@@ -49103,3 +49103,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva001103A5@Rva001103A5@@QAIXABV?$RefCountPtr@VTextureClass@@@@@Z,,0x001103A5,49,Code/Libraries/Source/WWVegas/WW3D2/Rva001103A5Setter.cpp,matched,fastcall texture slot setter with dual dirty flags callers 0xA9F98
 ??1Rva005E0B0F@@UAE@XZ,,0x005E0B0F,128,Code/GameEngine/Source/Common/Rva005E0B0FDtor.cpp,matched,dtor vtable 877960 base 86E330 forwarder int holder Release strings
 ?rva005E0B8F@Rva005E0B0F@@QAEXH@Z,,0x005E0B8F,47,Code/GameEngine/Source/Common/Rva005E0B8FMethod.cpp,matched,vslot slot3 vtable 877960 same sequence as dtor 0x005E0B0F via pins and clear row
+??1Rva005CB31D@@QAE@XZ,,0x005CB31D,26,Code/GameEngine/Source/Common/Rva005CB31DClear.cpp,matched,holder dtor releases Rva005E0B0F ptr via rowed dtor and delete
