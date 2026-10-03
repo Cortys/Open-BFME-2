@@ -50358,3 +50358,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva000E771B@@QAE@XZ,,0x000E771B,25,Code/GameEngine/Source/Common/Rva000E771BCtor.cpp,matched,Region2D array ctor via vector iterator
 ?rva000520C6@Rva00699180Owner@@QAEXXZ,,0x000520C6,46,Code/GameEngine/Source/Common/Rva00699180Volume_Refresh.cpp,matched,dirty decrement via member array plus callers plus rowed callees
 ?Rva00413D58Parse@@YAXPAVINI@@@Z,,0x00413D58,115,Code/GameEngine/Source/Common/Rva00413D58Parse.cpp,matched,chain lane INI dispatch Attacker Defender via 0x00413D46
+?rva00214E02@Rva00214E02@@QAEPAV1@ABV1@@Z,,0x00214E02,274,Code/GameEngine/Source/Common/Rva00214E02Copy.cpp,matched,copy assign five strings via set callers 0x002150C8 0x00215278 0x002152A6
