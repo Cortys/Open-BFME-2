@@ -49331,3 +49331,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0042FB8F@Rva0042FB8F@@QAE_NPAVDrawable@@PAVGameMessage@@@Z,,0x0042FB8F,285,Code/GameEngine/Source/GameClient/GUI/Rva0042FB8F.cpp,matched,selection-limit gate via InGameUI message and ObjectID append donor killThemKillThemAll
 ?rva000749C1@Rva0007517F@@UAEXPAD0HHHHHH@Z,,0x000749C1,145,Code/GameEngine/Source/Common/System/Rva0007517FCtor.cpp,matched,vslot 21 of 0x007C6620 in Rva0007517F TU like siblings
 ?rva0055B39C@Rva0055B39C@@QAEXXZ,,0x0055B39C,61,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B39C.cpp,matched,FX keyframe interp via index plus0x58 and result plus0x54
+?rva00065E3C@Rva0065CA4@@QAEXM@Z,,0x00065E3C,153,Code/GameEngine/Source/Common/Rva00065E3CMethod.cpp,matched,float accum via temp Rva0065CA4 list with rowed callees and pin dtor
