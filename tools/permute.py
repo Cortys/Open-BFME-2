@@ -151,7 +151,8 @@ def statement(line):
 def mutate(text, rng):
     lines = text.split("\n")
     body = body_lines(lines)
-    kinds = ["swap", "swap", "cmp", "eq", "commute", "incr", "sign", "flag", "move", "ifelse"]
+    kinds = ["swap", "swap", "cmp", "eq", "commute", "incr", "sign", "flag", "move", "ifelse",
+             "const", "forwhile"]
     body_set = set(body)
 
     def indent(line):
@@ -178,6 +179,31 @@ def mutate(text, rng):
                 line = lines.pop(i)
                 lines.insert(j, line)
                 return "\n".join(lines), kind
+        elif kind == "const" and body:
+            # toggle const on a local declaration with an initializer
+            i = rng.choice(body)
+            found = re.match(r"^(\s*)(const\s+)?([A-Za-z_][\w:<>]*(?:\s+[A-Za-z_]\w*)*\s*\**\s*[A-Za-z_]\w*\s*=[^=].*;)\s*$",
+                             lines[i])
+            if found and not re.match(r"\s*(return|delete|throw)\b", lines[i]):
+                lines[i] = found.group(1) + ("" if found.group(2) else "const ") + found.group(3)
+                return "\n".join(lines), kind
+        elif kind == "forwhile" and body:
+            # for (init; cond; step) { B }  ->  init; while (cond) { B step; }
+            i = rng.choice(body)
+            found = re.match(r"^(\s*)for \(([^;]*);([^;]*);([^)]*)\)\s*$", lines[i])
+            if found and i + 1 < len(lines) and lines[i + 1].strip() == "{":
+                pad, init, cond, step = found.group(1), found.group(2).strip(), found.group(3).strip(), found.group(4).strip()
+                depth, k = 0, i + 1
+                while k < len(lines):
+                    depth += lines[k].count("{") - lines[k].count("}")
+                    if depth == 0:
+                        break
+                    k += 1
+                inner = lines[i + 2:k]
+                if k < len(lines) and cond and step and not any(re.search(r"\bcontinue\b", l) for l in inner):
+                    head = ([f"{pad}{init};"] if init else []) + [f"{pad}while ({cond})", f"{pad}{{"]
+                    lines[i:k + 1] = head + inner + [f"{pad}\t{step};", f"{pad}}}"]
+                    return "\n".join(lines), kind
         elif kind == "ifelse" and body:
             # if (c) { A } else { B }  ->  if (!(c)) { B } else { A }, braces on own lines
             i = rng.choice(body)
