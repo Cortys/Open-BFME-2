@@ -49727,3 +49727,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Init@_DOGMA_MemPool@@QAEXPAU1@I@Z,,0x006DADD0,22,Code/Libraries/Source/Apt/DogmaPoolAllocBlock.cpp,matched,placed by masked byte search of already-compiled unit
 ?ClampedPowerOfTwo009056F0@@YAIII@Z,,0x0011E650,29,Code/Libraries/Source/WWVegas/WW3D2/TextureLoaderValidateTextureSize.cpp,matched,placed by masked byte search of already-compiled unit
 ?rva00366561@Rva00366561@@QAE_NHH@Z,,0x00366561,42,Code/GameEngine/Source/Common/Rva00366561Finish.cpp,matched,store order m_28 then m_30 without barriers reproduces retail b-load before m_30 store; two dword guards at +0x34/+0x38; caller 0x006E71BF
+?get@Rva002E3A8DHolder@@QAEPAURva002E3A8DPair@@PAU2@H@Z,,0x002E3A8D,27,Code/GameEngine/Source/Common/Rva002E3A8DFinish.cpp,matched,pointer-return get pins retail EAX tail
