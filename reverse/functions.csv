@@ -49705,3 +49705,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00537EAD@Rva00537EAD@@QAEXPAVDataChunkOutput@@@Z,,0x00537EAD,60,Code/GameEngine/Source/Common/Rva00537EADWrite.cpp,matched,DataChunk writer two AsciiStrings float byte via rowed write calls
 ?rva00537F74@Rva00537F74@@QAEXABVAsciiString@@@Z,,0x00537F74,44,Code/GameEngine/Source/Common/Rva00537F74Setter.cpp,matched,setter compare set plus virtual slot2 via rowed calls
 ?rva00537FA0@Rva00537FA0@@QAEXABVAsciiString@@@Z,,0x00537FA0,44,Code/GameEngine/Source/Common/Rva00537FA0Setter.cpp,matched,setter compare set plus virtual slot3 via prev row shape
+?rva0030D773@Rva0030D773@@QAEXH@Z,,0x0030D773,149,Code/GameEngine/Source/GameClient/Rva0030D773Method.cpp,matched,MapObject setter via rowed setInt plus NameKey plus template lookup WallHub ExpansionLocator caller 0x0030DA25
