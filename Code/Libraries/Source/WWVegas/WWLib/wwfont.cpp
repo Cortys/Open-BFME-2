@@ -49,6 +49,16 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"always.h"
+#include	"point.h"
+#include	"trect.h"
+// LINK-COMDAT: this TU is /Od but the kept TRect<int>/TPoint2D<int> copies
+// (e.g. xsurface.cpp) are optimized. Declare the int specializations before
+// _convert.h/wwfont.h first use them, so this object emits no differing
+// COMDATs and calls the kept copies.
+template<> TRect<int>::TRect(int, int, int, int);
+template<> TPoint2D<int> const TPoint2D<int>::Bias_To(TRect<int> const &) const;
+template<> TRect<int> const TRect<int>::Intersect(TRect<int> const &, int *, int *) const;
+template<> bool TRect<int>::Is_Valid() const;
 #include	"_convert.h"
 #include	"wwfont.h"
 //#include	<stdlib.h>
@@ -79,6 +89,7 @@
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::WWFontClass present-unmatched
 WWFontClass::WWFontClass(void const * fontdata, bool isoutlined, int shadow, ConvertClass *convert, unsigned char *remap) : 
 	IsOutlinedData(isoutlined), 
 	Shadow(shadow),
@@ -102,6 +113,7 @@ WWFontClass::WWFontClass(void const * fontdata, bool isoutlined, int shadow, Con
  * HISTORY:                                                                                    * 
  *   01/24/2000 SKB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Set_Font_Data present-unmatched
 void *WWFontClass::Set_Font_Data(void const * fontdata)
 {
 	void *old = (void *) FontData;
@@ -131,6 +143,7 @@ void *WWFontClass::Set_Font_Data(void const * fontdata)
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Char_Pixel_Width present-unmatched
 int WWFontClass::Char_Pixel_Width(char c) const
 {
 	int raw = (*(((unsigned char *)FontData) + FontData->WidthBlockOffset + (unsigned char)c));
@@ -154,6 +167,7 @@ int WWFontClass::Char_Pixel_Width(char c) const
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::String_Pixel_Width present-unmatched
 int WWFontClass::String_Pixel_Width(char const * string) const
 {
 	if (string == NULL) return(0);
@@ -190,6 +204,7 @@ int WWFontClass::String_Pixel_Width(char const * string) const
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Raw_Width present-unmatched
 int WWFontClass::Raw_Width(void) const
 {
 	return(*(((unsigned char *)FontData) + FontData->InfoBlockOffset + FONTINFOMAXWIDTH));
@@ -211,6 +226,7 @@ int WWFontClass::Raw_Width(void) const
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Raw_Height present-unmatched
 int WWFontClass::Raw_Height(void) const
 {
 	return(*(((unsigned char *)FontData) + FontData->InfoBlockOffset + FONTINFOMAXHEIGHT));
@@ -232,6 +248,7 @@ int WWFontClass::Raw_Height(void) const
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Get_Width present-unmatched
 int WWFontClass::Get_Width(void) const
 {
 	return(Raw_Width() + ((FontXSpacing > 0) ? FontXSpacing : 0));
@@ -253,6 +270,7 @@ int WWFontClass::Get_Width(void) const
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Get_Height present-unmatched
 int WWFontClass::Get_Height(void) const
 {
 	return(Raw_Height() + ((FontYSpacing > 0) ? FontYSpacing : 0));
@@ -275,6 +293,7 @@ int WWFontClass::Get_Height(void) const
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Set_XSpacing present-unmatched
 int WWFontClass::Set_XSpacing(int x)
 {
 	int old = FontXSpacing;
@@ -315,6 +334,7 @@ int WWFontClass::Set_XSpacing(int x)
  * HISTORY:                                                                                    * 
  *   05/26/1997 JLB : Created.                                                                 * 
  *=============================================================================================*/
+// ?WWFontClass::Set_YSpacing present-unmatched
 int WWFontClass::Set_YSpacing(int y)
 {
 	int old = FontYSpacing;
@@ -371,6 +391,7 @@ int WWFontClass::Set_YSpacing(int y)
  *   01/24/2000 SKB : put in call for Get_Remap_Palette                                        * 
  *   01/24/2000 SKB : Put in call for get converer.                                            * 
  *=============================================================================================*/
+// ?WWFontClass::Print present-unmatched
 Point2D WWFontClass::Print(char const * string, Surface & surface, Rect const & cliprect, Point2D const & drawpoint, ConvertClass const & convertref, unsigned char const * remap) const
 {
 	if (string == NULL) return(drawpoint);
