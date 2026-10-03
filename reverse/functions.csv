@@ -49474,3 +49474,4 @@ _rva0062AFC8D3DXVec3CatmullRom@24,,0x0062AFC8,6,Code/GameEngine/Source/Common/Rv
 ?rva004F81CC@Rva004F81CC@@QAEHH@Z,,0x004F81CC,15,Code/GameEngine/Source/Common/Rva004F81CC.cpp,matched,forward to rowed 0x004F7B42 with member 0x7c chain
 ??0Rva005DAAB6@@QAE@XZ,,0x005DAA71,45,Code/GameEngine/Source/Common/Rva005DAAB6Ctor.cpp,matched,vtable 0x008765A8 plus base 0x0055B048 plus sibling slot15 layout
 ?reserve@?$vector@URva004DA181Element@@V?$allocator@URva004DA181Element@@@_STL@@@_STL@@QAEXI@Z,,0x004DA039,126,Code/Libraries/Source/WWVegas/WWLib/StlportReserveRva004DA039.cpp,matched,STLport vector reserve 340B stride via POD helpers and Rva clear
+?Rva004384F2Free@@YGXPAVObject@@H@Z,,0x004384F2,58,Code/GameEngine/Source/GameLogic/Object/Update/Rva004384F2Free.cpp,matched,Object flag 0x20 at +0x115 gates virtual f68 at +0x250+0x110 taking code struct 1 plus rva0029130C int setup plus ret 8 two stack args plus caller 0x00438E89
