@@ -26,7 +26,7 @@ class ModuleInfo
 class EventModuleInfo : public ModuleInfo
 {
 public:
-    EventModuleInfo() {}
+    EventModuleInfo();
 
     bool m_first;
     bool m_second;
