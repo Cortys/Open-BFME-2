@@ -50469,3 +50469,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??1Rva00355CD8@@UAE@XZ,,0x00355CD8,62,Code/GameEngine/Source/Common/Rva00355CD8Dtor.cpp,matched,dtor via deleting dtor plus shared EH scope plus base row
 ??_GRva00355CD8@@UAEPAXI@Z,,0x00355FC1,28,Code/GameEngine/Source/Common/Rva00355CD8Dtor.cpp,matched,deleting dtor emits from own dtor TU
 ?rva0052E0CE@Rva0052E0CE@@QAE_N_N@Z,,0x0052E0CE,46,Code/GameEngine/Source/Common/Rva0052E0CE.cpp,matched,bit-23 setter 2 callers unlock lane sibling pattern
+?rva004E8220@Rva004E8220@@QAEXH@Z,,0x004E8220,20,Code/GameEngine/Source/Common/Rva004E8220Method.cpp,matched,leaf thiscall 1to2 setter at 27C via caller 004E8499
