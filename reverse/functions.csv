@@ -49632,3 +49632,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?erase@?$vector@URva00B6CF1@@V?$allocator@URva00B6CF1@@@_STL@@@_STL@@QAEPAURva00B6CF1@@PAU3@0@Z,,0x000C0628,51,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_erase.cpp,matched,vector Rva00B6CF1 range erase via rowed copy_ptrs 0x000B67BC plus rowed Destroy 0x000BDCD6 plus finish store
 ?rva003B0433@Rva003B0433@@QAEXAAPBVModuleData@@@Z,,0x003B0433,33,Code/GameEngine/Source/Common/Rva003B0433Push.cpp,matched,unlock push ModuleData ref then push_heap greater via rowed callees
 ?rva003B0E83@Rva003B0E83@@QAEPAV1@XZ,,0x003B0E83,16,Code/GameEngine/Source/Common/Rva003B0E83Init.cpp,matched,unlock four 1.0f init via loop returning this
+?rva003B0FAC@Rva003B0FAC@@QAEXABVAsciiString@@H@Z,,0x003B0FAC,26,Code/GameEngine/Source/Common/Rva003B0FACSet.cpp,matched,unlock set string at 0x10 then int at 0x14 via rowed set
