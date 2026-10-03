@@ -50027,3 +50027,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva00426C4D@@QAE@XZ,,0x00426C4D,28,Code/GameEngine/Source/Common/Rva00426C4DCtor.cpp,matched,stores vtable g_00C3C458 at plus0 plus vector BfmeE16 at plus4 via rowed Vector_base ctor 0x211E58 callers 0x426CEB 0x426D3F prove 0x10-byte class
 ?Rva00426D14Parse@@YAXPAVINI@@@Z,,0x00426D14,194,Code/GameEngine/Source/Common/Rva00426D14Parse.cpp,matched,calls rowed ctor 0x426C4D plus wrapper 0x42666E with holder g_00E031E8 plus debug slots plus literal plus filler plus throw
 ??0BfmeStringRecord00426A5B@@QAE@XZ,,0x004267CC,29,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,default ctor via TheEmptyString plus flags 0 1 0 unblocks 2 callers
+?Rva003BC306Do@@YGXPAVParameter@@M@Z,,0x003BC306,55,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC306Do.cpp,matched,leaf TerrainLogic slot 0x74 then slot 0x7c floats
