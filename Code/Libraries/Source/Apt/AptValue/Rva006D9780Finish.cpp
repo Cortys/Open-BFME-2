@@ -1,14 +1,11 @@
 // ?rva006D9780@BfmeAptValue006DCD20@@QAE_NPAV1@PAVEAStringC@@0@Z
-// partial score=0.95 date=2026-10-03
 // cl: /O2 /MD
-// Banked near miss: ?rva006D9780@BfmeAptValue006DCD20@@QAE_NPAV1@PAVEAStringC@@0@Z
-// @0x006D9780 (145B). Only the condition block layout differs from retail: retail
-// sinks the `return false` block to the end of the function (`cmp [edi],'0';
-// jne fail` with the body as fallthrough), while VC7.1 /O2 emits it inline
-// (`cmp; je body; <fail>; body`). isArray assert, both atoi calls, the double
-// data() eval, value selection and checked store all match byte-for-byte.
-// Tried: direct &&, nested if, || with/without else, empty-then/else, gotos,
-// static/inline atoiOrZero helper (emits sete), /O1, /EHsc.
+// Apt array set-by-key at 0x006D9780 (145B). The two-test condition
+// (atoi(text) != 0 || *text == '0') had to be hoisted into a `bool ok` local:
+// writing it directly in the `if` makes VC7.1 /O2 sink the `return false` block
+// inline, while the local reproduces retail's body-fallthrough / fail-at-end
+// layout byte-for-byte. isArray assert, both atoi calls, the double data() eval,
+// value selection and checked store then follow exactly.
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 extern "C" int __cdecl atoi(const char *);
@@ -51,7 +48,8 @@ bool BfmeAptValue006DCD20::rva006D9780(BfmeAptValue006DCD20 *pContext, EAStringC
 	}
 
 	const char *text = pKey->rva00620090();
-	if (atoi(text) != 0 || *text == '0')
+	bool ok = atoi(text) != 0 || *text == '0';
+	if (ok)
 	{
 		int index = atoi(pKey->rva00620090());
 		pContext->rva006DCFA0()->rva006D95E0(index, pValue ? pValue : g_aptUndefinedAtE18078);
