@@ -1,17 +1,7 @@
 // ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
 // partial score=0.99 date=2026-10-03
 // ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.99 date=2026-10-03
-// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.99 date=2026-10-03
-// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.99 date=2026-10-03
-// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.99 date=2026-10-01
-// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z
-// partial score=0.99 date=2026-10-01
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
-// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z @0x005917DB (177B).
 // NetPacket room check with string-length term plus wrapper data offset:
 // charges type 2 relay 2 timestamp 5 player 2 ID 3 plus fixed 1, adds
 // AsciiString length from the +0x1C getter (rowed as CDDrive::getPath
@@ -118,7 +108,6 @@ public:
 	UnsignedByte m_lastRelay;
 };
 
-// ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z present-unmatched
 UnsignedByte NetPacket::rva005917DB(NetCommandRef *msg)
 {
 	Int len = 0;
