@@ -14,10 +14,13 @@
 class Xfer;
 class Snapshot {
 public:
-    __forceinline virtual ~Snapshot() {}
-    virtual void crc(Xfer *);
-    virtual const char *typeName() const;
-    virtual void xfer(Xfer *);
+    Snapshot() {}
+    Snapshot(const Snapshot &o) {}
+    virtual ~Snapshot();
+protected:
+    virtual void crc(Xfer *xfer) = 0;
+    virtual void xfer(Xfer *xfer) = 0;
+    virtual void loadPostProcess() = 0;
 };
 struct TreeHintPayload001F8ACB { unsigned int value; };
 bool operator<(const AsciiString &, const AsciiString &);
@@ -67,5 +70,8 @@ public:
         RegisterCreateAHeroAtRva0021D517(this);
     }
     virtual ~CreateAHeroData();
+    virtual void crc(Xfer *xfer);
+    virtual void xfer(Xfer *xfer);
+    virtual void loadPostProcess();
 };
 template void _STL::_Construct<CreateAHeroData,CreateAHeroData>(CreateAHeroData *,const CreateAHeroData &);
