@@ -3,37 +3,53 @@
 // ?updateTreadPositions@W3DTankTruckDraw@@IAEXM@Z 0x000CDFC8 116 donor W3DTankTruckDraw.cpp caller 0x000CE66F offsets 0x304/0x354
 #include <stdlib.h>
 #include <math.h>
-#include "Common/Thing.h"
-#include "Common/ThingFactory.h"
-#include "Common/GameAudio.h"
-#include "Common/GlobalData.h"
-#include "Common/ThingTemplate.h"
-#include "Common/Xfer.h"
-#include "GameLogic/Weapon.h"
-#include "GameLogic/GameLogic.h"
-#include "GameLogic/Module/PhysicsUpdate.h"
-#include "GameLogic/Module/BodyModule.h"
-#include "GameLogic/ScriptEngine.h"
-#include "GameLogic/Module/AIUpdate.h"
-#include "GameClient/Drawable.h"
-#include "GameClient/ParticleSys.h"
-#include "W3DDevice/GameClient/W3DGameClient.h"
-#include "W3DDevice/GameClient/Module/W3DTankTruckDraw.h"
-#include "WW3D2/matinfo.h"
+
+typedef float Real;
+typedef int Int;
+
+class Vector2
+{
+public:
+	float X;
+	float Y;
+	void Set(float x, float y) { X = x; Y = y; }
+};
+
+struct Material_Override
+{
+	int Struct_ID;
+	Vector2 customUVOffset;
+};
+
+enum TreadType { TREAD_LEFT = 0, TREAD_RIGHT = 1, TREAD_MIDDLE = 2 };
+
+struct TreadObjectInfo
+{
+	void *m_robj;
+	int m_type;
+	Material_Override m_materialSettings;
+};
+
+class W3DTankTruckDraw
+{
+protected:
+	void updateTreadPositions(Real uvDelta);
+};
+
 void W3DTankTruckDraw::updateTreadPositions(Real uvDelta)
 {
 	unsigned char *self = (unsigned char *)this;
 	TreadObjectInfo *pTread = (TreadObjectInfo *)(self + 0x304);
 	Real offset_u;
-	for (Int i=0; i<*(Int *)(self + 0x354); i++)
+	for (Int i = 0; i < *(Int *)(self + 0x354); i++)
 	{
 		if (pTread->m_type == TREAD_LEFT)
 			offset_u = pTread->m_materialSettings.customUVOffset.X + uvDelta;
 		else
 		if (pTread->m_type == TREAD_RIGHT)
 			offset_u = pTread->m_materialSettings.customUVOffset.X - uvDelta;
-		offset_u = offset_u - WWMath::Floor(offset_u);
-		pTread->m_materialSettings.customUVOffset.Set(offset_u,0);
+		offset_u = offset_u - floorf(offset_u);
+		pTread->m_materialSettings.customUVOffset.Set(offset_u, 0);
 		pTread++;
 	}
 }
