@@ -1,4 +1,6 @@
 // ?rva0040DAA0@Rva0040DAA0@@QBEPAXABV?$StringBase@D@@PAH@Z
+// partial score=0.93 date=2026-10-03
+// ?rva0040DAA0@Rva0040DAA0@@QBEPAXABV?$StringBase@D@@PAH@Z
 // partial score=0.93 date=2026-10-01
 // cl: /O1 /Ireference/shims/bfme2_ascii
 // ?rva0040DAA0@Rva0040DAA0@@QBEPAXABV?$StringBase@D@@PAH@Z @0x0040DAA0 80B linear find by string over 8-byte entries at +0x40/+0x44; returns entry target and optional index via compare row 0x000069D6

@@ -1,9 +1,5 @@
 // ??0Rva0040E3EE@@QAE@XZ
-// partial score=0.97 date=2026-09-29
-// ??0Rva0040E3EE@@QAE@XZ
-// partial score=0.97 date=2026-09-29
-// ??0Rva0040E3EE@@QAE@XZ
-// partial score=0.97 date=2026-09-29
+// partial score=0.98 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
 #include <vector>
@@ -68,8 +64,10 @@ private:
 	int m_60;
 	int m_64;
 };
+
 // ??0Rva0040E3EE@@QAE@XZ present-unmatched
 Rva0040E3EE::Rva0040E3EE()
-	: Rva0040E3EEBase(), m_vtable(reinterpret_cast<const void *>(0x008394F0)), m_14(0), m_18(TheEmptyString), m_1c(0), m_20(TheEmptyString), m_24(0xFF000000), m_28(0xFF000000), m_2c(1), m_30(0), m_34(0), m_38(0), m_3c(1), m_40(_STL::allocator<BfmeE16>()), m_4c(_STL::allocator<BfmeE16>()), m_58(0.0f), m_5c(0.0f), m_60(0), m_64(0)
+	: Rva0040E3EEBase(), m_14(0), m_18(TheEmptyString), m_1c(0), m_20(TheEmptyString), m_24(0xFF000000), m_28(0xFF000000), m_2c(1), m_30(0), m_34(0), m_38(0), m_3c(1), m_40(_STL::allocator<BfmeE16>()), m_4c(_STL::allocator<BfmeE16>()), m_58(0.0f), m_5c(0.0f), m_60(0), m_64(0)
 {
+	m_vtable = reinterpret_cast<const void *>(0x00C394F0);
 }

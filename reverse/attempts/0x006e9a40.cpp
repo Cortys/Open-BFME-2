@@ -1,4 +1,6 @@
 // ?rva006E9A40@Rva006E0DE0@@QAEXPAVAptValue@@@Z
+// partial score=0.96 date=2026-10-03
+// ?rva006E9A40@Rva006E0DE0@@QAEXPAVAptValue@@@Z
 // partial score=0.94 date=2026-10-01
 // ?rva006E9A40@Rva006E0DE0@@QAEXPAVAptValue@@@Z
 // partial score=0.94 date=2026-10-01
@@ -46,12 +48,11 @@ void Rva006E0DE0::rva006E9A40(AptValue *p)
 				__debugbreak();
 		}
 	}
+	int nMax = m_nMaxElements;
+	AptValue **tab = m_ppElements;
 	++m_nElements;
 	int idx = m_nElements;
-	AptValue **arr = m_ppElements;
-	if (arr[idx] != 0) {
-		int nMax = m_nMaxElements;
-		AptValue **tab = m_ppElements;
+	if (tab[idx] != 0) {
 		for (;;) {
 			if (idx >= nMax)
 				idx = 0;
@@ -61,6 +62,6 @@ void Rva006E0DE0::rva006E9A40(AptValue *p)
 				break;
 		}
 	}
-	arr[idx] = p;
+	tab[idx] = p;
 	p->AddRef();
 }
