@@ -49096,3 +49096,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?allocateBridgeBuffers@W3DBridgeBuffer@@QAEXXZ,,0x000DD8B8,144,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DBridgeAllocateBridgeBuffers.cpp,matched,BFME1 donor allocateBridgeBuffers VB 8004 IB 16004
 ?clearAllBridges@W3DBridgeBuffer@@QAEXXZ,,0x000DD948,55,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DBridgeClearBridge.cpp,matched,retail stride 0x114 bridges at 0x10 counts cleared
 ?rva000DD878@W3DBridgeBuffer@@QAEXH@Z,,0x000DD878,64,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DBridgeBufferRva000DD878.cpp,matched,W3DBridgeBuffer method via neighbours and caller 0x000DF745
+?rva0052A36A@Rva0052A36A@@QAEXPAUOut0052A36A@@@Z,,0x0052A36A,29,Code/GameEngine/Source/Common/Rva0052A36A.cpp,matched,leaf array fetch base plus idx times 20 float int to out

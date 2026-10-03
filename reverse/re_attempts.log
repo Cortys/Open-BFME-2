@@ -5991,3 +5991,4 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva005EF46BCopyBackward@@YAPAVRva005EEFD2@@PAV1@00@Z	0x005EF46B	29	partial	exact bytes only call reloc needs 5-arg __copy_backward retype of row 0x005EF000 t=15 model=muse-08 score=0.99 stash=reverse/attempts/0x005ef46b.cpp
 ?Rva005EF53ACopy@@YAPAVRva005EEFD2@@PAV1@00@Z	0x005EF53A	29	blocked	same wall as 0x005EF46B needs row 0x005EF4C0 retyped 3-arg to 5-arg __copy t=2 model=muse-08
 ?rva000DDAB7@W3DBridge@@QAEXPAVVirtualArg@@@Z	0x000DDAB7	96	partial	push ebx hoisted global vtable across AssetReference copy vs retail late single load plus mov [ebp+8],esp t=18 model=muse-08 score=0.92 stash=reverse/attempts/0x000ddab7.cpp
+?rva0052A4B5@Rva0052A4B5@@QAEXXZ	0x0052A4B5	134	blocked	STL fill plus memset rep vs call wall t=15 model=muse-07
