@@ -44,3 +44,15 @@ struct Rva004FFE81
 Rva004FFE81::~Rva004FFE81()
 {
 }
+
+struct Rva004FFE89
+{
+	int m_first;
+	int m_second;
+	BfmeLocomotorSetMap m_map;
+	~Rva004FFE89();
+};
+
+Rva004FFE89::~Rva004FFE89()
+{
+}
