@@ -118,3 +118,27 @@ GameWindow *TabWindowManagerView::gogoGadgetRadioButton(GadgetCreateView *view,
     if (text.getLength()) GadgetRadioSetText(window, text);
     return window;
 }
+
+GameWindow *TabWindowManagerView::gogoGadgetStaticText(GadgetCreateView *view,
+    StaticTextDataView *data, GameFont *font, bool visual)
+{
+    ((FactoryInstanceView *)view->instance)->style &= ~0x1000;
+    GameWindow *window;
+    if (((FactoryInstanceView *)view->instance)->style & 0x80)
+        window = createFromView(view);
+    else return 0;
+    if (window)
+    {
+        ((Rva003140CF *)window)->rva003140CF((int)view->parent);
+        StaticTextDataView *copy = new StaticTextDataView;
+        memcpy(copy, data, sizeof(StaticTextDataView));
+        copy->text = ((DisplayStringFactoryView *)TheDisplayStringManager)->newDisplayString();
+        ((DisplayStringRecordView *)copy->text)->setWordWrapCentered(
+            (*(unsigned int *)((char *)view->instance + 0x10) & 0x40000) != 0);
+        window->winSetUserData(copy);
+        assignDefaultGadgetLook(window, font, visual);
+        UnicodeString text = winTextLabelToText(*(AsciiString *)((char *)view->instance + 0x188));
+        if (text.getLength()) GadgetStaticTextSetText(window, text);
+    }
+    return window;
+}
