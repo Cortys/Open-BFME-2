@@ -49214,3 +49214,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??0Rva00544884@@QAE@PAVStateMachine@@@Z,,0x00544884,29,Code/GameEngine/Source/Common/Rva00544884Ctor.cpp,matched,State derived ctor via hash 0x7EC09A9E plus vtable 0x00C69C30
 ?xfer@Rva005445D4@@UAEXPAVXfer@@@Z,,0x00544AD2,65,Code/GameEngine/Source/Common/Rva005445D4Xfer.cpp,matched,slot3 xfer Version12 ObjectID plus uint via 0x78
 ?rva005C3ACD@Rva005C3ACD@@QAEXXZ,,0x005C3ACD,113,Code/GameEngine/Source/Common/Rva005C3ACDHide.cpp,matched,Hide AptCall empty fallback and 12B array clear with slot2 tailcall
+?rva005C3E79@Rva005C3E79@@QAEXXZ,,0x005C3E79,8,Code/GameEngine/Source/Common/Rva005C3ACDHide.cpp,matched,ptr-chase tail-jmp to rowed Hide callee callers 0x005D2692 0x0056825C
