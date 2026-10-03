@@ -7346,3 +7346,7 @@ _tolower,0x006298D4,CRT tolower import thunk called directly by the EAStringC ut
 ??_7Rva0040EDB@@6B@,0x007C16B8
 ??_7Rva00041004@@6B@,0x007C16DC
 ??_7Rva00514E6B@@6B@,0x007C93A0
+??_7Rva0089971@@6B@,0x007C74F4,target BC74F4 three slots independently identify scalar899C9 empty RET4 47A69C and RET24 initializer86B2C; original names unknown
+??1Rva00089894ArrayElement@@QAE@XZ,0x0004F82B,independently verified complete8B callback adjusts element+C and directly tail-calls canonical StringBase releaseBuffer36410; alias copy not historical ICF
+??1Rva000851F3@@UAE@XZ,0x0008523A,independently verified complete7B base cleanup installs actual BC745C then RET; same covered range no new byte credit
+?rva00047A69C@Rva0089971@@UAEXH@Z,0x0047A69C,BC74F4 slot1 independently points to complete3B RET4; only ABI word known; existing range alias copy without historical identity

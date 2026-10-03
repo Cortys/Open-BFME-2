@@ -10,38 +10,7 @@
 // Derived BC74F4 has matching RET4/RET24 slots. The first slot argument
 // and final unused word of the second retain only their ABI word views.
 // Original names, complete layout and historical class identity are unknown.
-typedef float Real;
-
-class ParabolicEase
-{
-public:
-	void rva0030E51F(Real easeInTime, Real easeOutTime, Real duration);
-	ParabolicEase *rva0008517E(Real easeInTime, Real easeOutTime, Real duration);
-	Real operator()(Real param) const;
-private:
-	Real m_in;
-	Real m_out;
-};
-
-class Rva000851F3
-{
-public:
-	Rva000851F3();
-	// ?Rva000851F3::~Rva000851F3 present-unmatched
-	virtual ~Rva000851F3() {}
-	virtual void slot1(int) = 0;
-	virtual void slot2(int, int, Real, Real, int, int) = 0;
-private:
-	int m_04;
-	int m_08;
-	int m_0C;
-	ParabolicEase m_10;
-	float m_18;
-	float m_1C;
-	int m_20;
-	bool m_24;
-	int m_28;
-};
+#include "../../Include/GameClient/Rva0008990CArrayOwner.h"
 
 Rva000851F3::Rva000851F3()
 {
