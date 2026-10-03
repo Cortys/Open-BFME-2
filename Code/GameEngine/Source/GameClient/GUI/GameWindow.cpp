@@ -8,9 +8,12 @@
 // like GadgetListBoxReset's +0xE8 call.
 
 typedef int Int;
+struct WindowPickCoord { int x; int y; };
+// Method-only declaration of the independently rowed child-search provider.
+class Rva003141BCWindowView { public: Rva003141BCWindowView *winPointInChild(int, int, bool, bool = false); };
 #define NULL 0
 #define BitTest(value, mask) (((value) & (mask)) != 0)
-enum { WIN_STATUS_TAB_STOP = 0x100 };
+enum { WIN_STATUS_TAB_STOP = 0x100, WIN_STATUS_HIDDEN = 0x10 };
 typedef unsigned int UnsignedInt;
 typedef UnsignedInt WindowMsgData;
 
@@ -52,6 +55,7 @@ class GameWindow
 {
 public:
 	Int winSetSize(Int width, Int height);
+	GameWindow *winPointInAnyChild(Int x, Int y, bool ignoreHidden, bool ignoreEnableCheck);
 	UnsignedInt winClearStatus(UnsignedInt status);
 	Int winSetInputFunc(GameWinInputFunc input);
 
@@ -283,3 +287,47 @@ GameWindow *GameWindow::findPrevLeaf( void )
 
 }  // end findPrevLeaf
 
+
+// ?winPointInAnyChild@GameWindow@@QAEPAV1@HH_N0@Z
+// Same clean BFME1 GameWindow donor revision as the leaf walkers. Native
+// 0x003142E1-0x0031435A proves signed bounds, accumulated parent origins,
+// hidden bit 0x10, and the call to the independently matched child-search
+// provider at 0x003141BC. The method-only provider declaration preserves its
+// measured four-argument ABI and makes no claim about its complete class size.
+GameWindow *GameWindow::winPointInAnyChild( Int x, Int y, bool ignoreHidden, bool ignoreEnableCheck )
+{
+	GameWindow *parent;
+	GameWindow *child;
+	WindowPickCoord origin;
+
+	for( child = ((GameWindow *)this)->m_child; child; child = child->m_next ) 
+	{
+
+		origin.x = child->m_regionLoX;
+		origin.y = child->m_regionLoY;
+		parent = child->m_parent;
+
+		while( parent ) 
+		{
+
+			origin.x += parent->m_regionLoX;
+			origin.y += parent->m_regionLoY;
+			parent = parent->m_parent;
+
+		}  // end while
+
+		if( x >= origin.x && x <= origin.x + child->m_sizeX &&
+				y >= origin.y && y <= origin.y + child->m_sizeY )
+		{
+
+			if( !(ignoreHidden == true &&	BitTest( child->m_status, WIN_STATUS_HIDDEN )) )
+				return (GameWindow *)((Rva003141BCWindowView *)child)->winPointInChild( x, y, ignoreEnableCheck );
+
+		}  // end if
+
+	}  // end for child
+
+	// not in any children, must be in parent
+	return this;
+
+}  // end WinPointInAnyChild
