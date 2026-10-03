@@ -38,3 +38,29 @@ Rva00504830Item *__cdecl Rva005048F9Forward(Rva00504830Item *first, Rva00504830I
 {
 	return Rva00504830UpperBound(first, last, value, b, 0);
 }
+
+// ?Rva00504870LowerBound@@YAPAURva00504830Item@@PAU1@0PBMHH@Z @ 0x00504870 (64B):
+// Lower-bound binary search over 16-byte records keyed by first float.
+// len=(last-first); while len>0 { half=len>>1; mid=first+half;
+// if mid->key<*value { first=mid+1; len=len-half-1 } else len=half }
+// return first. Evidence: sar 4/shl 4 stride 16; movss value/comiss mid/jbe;
+// caller at 0x00504926 pushes 5 args; unlocks 0x00504914.
+Rva00504830Item *__cdecl Rva00504870LowerBound(Rva00504830Item *first, Rva00504830Item *last, const float *value, int unused1, int unused2)
+{
+	int len = last - first;
+	while (len > 0)
+	{
+		int half = len >> 1;
+		Rva00504830Item *mid = first + half;
+		if (mid->key < *value)
+		{
+			first = mid + 1;
+			len = len - half - 1;
+		}
+		else
+		{
+			len = half;
+		}
+	}
+	return first;
+}
