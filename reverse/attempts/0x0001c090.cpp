@@ -1,5 +1,6 @@
 // ?register_callback@ios_base@_STL@@QAEXP6AXW4event@12@AAV12@H@ZH@Z
-// partial score=0.95 date=2026-10-03
+// partial score=0.97 date=2026-10-03
+// ?register_callback@ios_base@_STL@@QAEXP6AXW4event@12@AAV12@H@ZH@Z
 // cl: /O2 /Ob0 /MD
 // ?register_callback@ios_base@_STL@@QAEXP6AXW4event@12@AAV12@H@ZH@Z
 // STLport 4.5.3 ios_base::register_callback, retail 0x0001C090, 132 bytes.
@@ -66,11 +67,11 @@ void ios_base::register_callback(event_callback fn, int index)
 	grow_array(&grown, m_callbacks, m_num_callbacks, m_callback_index);
 	if (grown.first)
 	{
-		m_num_callbacks = grown.second;
-		m_callbacks = grown.first;
-		m_callbacks[m_callback_index].fn = fn;
-		m_callbacks[m_callback_index].index = index;
-		++m_callback_index;
+		GrowPair<Callback> tmp = grown;
+		m_num_callbacks = tmp.second;
+		m_callbacks = tmp.first;
+		Callback cb = { fn, index };
+		m_callbacks[m_callback_index++] = cb;
 		return;
 	}
 
