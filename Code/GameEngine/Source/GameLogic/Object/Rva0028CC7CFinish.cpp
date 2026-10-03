@@ -1,5 +1,4 @@
 // ?rva0028CC7C@Object@@QAE_NH@Z
-// partial score=0.93 date=2026-10-01
 // cl: /O1 /MD
 // ?rva0028CC7C@Object@@QAE_NH@Z @0x0028CC7C 61B
 // Object containedBy-gated inner check: cont = m_contained274; inner = cont provider slot31 or 0; if null return true else inner slot84(this param).
@@ -64,15 +63,10 @@ bool Object::rva0028CC7C(int key)
 {
 	if (m_contained274 != 0) {
 		Rva0028CC7CProvider *prov = m_contained274->m_provider250;
-		Rva0028CC7CInner *inner;
-		if (prov != 0)
-			inner = prov->slot31();
-		else
-			inner = 0;
+		Rva0028CC7CInner *inner = prov != 0 ? prov->slot31() : 0;
 		if (inner != 0) {
-			if (inner->slot84(this, key))
-				return true;
-			return false;
+			if (!inner->slot84(this, key))
+				return false;
 		}
 	}
 	return true;
