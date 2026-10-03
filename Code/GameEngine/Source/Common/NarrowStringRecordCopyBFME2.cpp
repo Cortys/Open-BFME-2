@@ -23,12 +23,7 @@ BfmeNarrowRecord000BFDC7::BfmeNarrowRecord000BFDC7(const BfmeNarrowRecord000BFDC
 template void _STL::_Construct<BfmeNarrowRecord000BFDC7,BfmeNarrowRecord000BFDC7>(BfmeNarrowRecord000BFDC7*,const BfmeNarrowRecord000BFDC7&);
 
 // Complete retail record copy at 0x0041A5D2.
-struct BfmeNarrowRecord0041A5D2 {
-    _STL::basic_string<char> text0; unsigned short short0; _STL::basic_string<char> text1;
-    BfmeNarrowRecord0041A5D2(const BfmeNarrowRecord0041A5D2 &o);
-    BfmeNarrowRecord0041A5D2();
-    BfmeNarrowRecord0041A5D2 &operator=(const BfmeNarrowRecord0041A5D2 &o);
-};
+#include "BfmeNarrowRecord0041A5D2.h"
 BfmeNarrowRecord0041A5D2::BfmeNarrowRecord0041A5D2(const BfmeNarrowRecord0041A5D2 &o) : text0(o.text0), short0(o.short0), text1(o.text1) {}
 BfmeNarrowRecord0041A5D2::BfmeNarrowRecord0041A5D2() {}
 BfmeNarrowRecord0041A5D2 &BfmeNarrowRecord0041A5D2::operator=(const BfmeNarrowRecord0041A5D2 &o)

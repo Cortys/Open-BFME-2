@@ -9,8 +9,5 @@
 // Callers: 0x0041A241/0x0041A3C4/0x0041A486/0x0041A843/0x0041A96D.
 #include <memory>
 #include <string>
-struct BfmeNarrowRecord0041A5D2 {
-    _STL::basic_string<char> text0; unsigned short short0; _STL::basic_string<char> text1;
-    ~BfmeNarrowRecord0041A5D2();
-};
+#include "BfmeNarrowRecord0041A5D2.h"
 BfmeNarrowRecord0041A5D2::~BfmeNarrowRecord0041A5D2() {}

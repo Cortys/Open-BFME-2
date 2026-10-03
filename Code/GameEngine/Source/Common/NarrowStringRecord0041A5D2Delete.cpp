@@ -8,11 +8,7 @@
 // would add state stores around the throwing dtor call).
 #include <memory>
 #include <string>
-struct BfmeNarrowRecord0041A5D2 {
-    _STL::basic_string<char> text0; unsigned short short0; _STL::basic_string<char> text1;
-    ~BfmeNarrowRecord0041A5D2();
-    void *rva0041A241(unsigned int flags);
-};
+#include "BfmeNarrowRecord0041A5D2.h"
 void *BfmeNarrowRecord0041A5D2::rva0041A241(unsigned int flags)
 {
 	this->~BfmeNarrowRecord0041A5D2();

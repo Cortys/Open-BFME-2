@@ -19,11 +19,7 @@ protected:
     void _M_reserve_map_at_back(unsigned);
 };
 }
-struct BfmeNarrowRecord0041A5D2 {
-    _STL::basic_string<char> text0; unsigned short short0; _STL::basic_string<char> text1;
-    BfmeNarrowRecord0041A5D2(const BfmeNarrowRecord0041A5D2 &o);
-    ~BfmeNarrowRecord0041A5D2();
-};
+#include "BfmeNarrowRecord0041A5D2.h"
 struct Rva0041A96D : _STL::deque<BfmePod28, _STL::allocator<BfmePod28> > {
     unsigned char m_pad0[0x10];
     BfmeNarrowRecord0041A5D2 *_M_cur10;

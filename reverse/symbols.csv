@@ -7464,3 +7464,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva006E3530@Rva006E34D0@@QAEXHHH@Z,0x006E3530,address-derived Apt three-int input packer member of the 0x00E176D0 object; called from 0x006CC9A0; body unrowed
 ??1GeneralAllocator@Allocator@EA@@QAE@XZ,0x00033D50,PPMalloc GeneralAllocator base destructor; the EH unwind funclet of Rva006C1F60 dtor 0x006C3CC0 calls it via thunk 0x00034D00; same body as the address-derived pin ?rva00033D50@Rva006C1F60@@QAE_NXZ
 ?rva006D28D0@Rva006D2A60@@QAEXH_N@Z,0x006D28D0,AptValueGCAllocator mbIsAllocated setter selected by mode 0 or 4; called from 0x006D29E0 and 0x006D2CB0; body unrowed
+?_M_increment@?$_Deque_iterator_base@UBfmeNarrowRecord0041A5D2@@@_STL@@QAEXXZ,0x00419DD2,independent full36-byte match; target28-byte element stride and112-byte node; native destroy41A382 calls this typed increment; original record meaning unknown
