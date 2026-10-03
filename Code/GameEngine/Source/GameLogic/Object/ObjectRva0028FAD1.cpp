@@ -1,9 +1,7 @@
-// ?rva0028FAD1@Object@@QAEXPAV1@@Z
-// partial score=0.96 date=2026-09-29
-// ?rva0028FAD1@Object@@QAEXPAV1@@Z
-// partial score=0.96 date=2026-09-29
-// cl: /O1 /DNDEBUG /MD /GX-
-// ?rva0028FAD1@Object@@QAEXPAV1@@Z, retail 0x0028FAD1, 158 bytes.
+// cl: /O1 /DNDEBUG /MD /GX- /Op
+//
+// ?rva0028FAD1@Object@@QAEXPAV1@@Z, retail 0x0028fad1, 158 bytes. Banked partial (score 0.96) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Evidence: unlock; callers 0x4648B1 and 0x4F5784 pass Object* this with Object* arg;
 // sets containedBy +0x274 and +0x27C from TheGameLogic+0x40; bit0 at +0x439;
 // calls rowed setStatus 0x23DB0E and pinned Rva0028CDEB 0x28CDEB; two vtable +0xB0 calls on +0x250 module.
@@ -102,7 +100,6 @@ struct RetBits
 	int test(int i) { return (m_bits[i >> 5] >> (i & 31)) & 1; }
 };
 
-// ?rva0028FAD1@Object@@QAEXPAV1@@Z present-unmatched
 void Object::rva0028FAD1(Object *arg)
 {
 	if (m_p04->m_flag & 0x80) {
@@ -118,8 +115,8 @@ void Object::rva0028FAD1(Object *arg)
 			ObjectStatusMask mask;
 			void *ret = mod->slot44(&mask, this);
 			unsigned int bits = *(unsigned int *)ret;
-			_ReadWriteBarrier();
 			bits >>= 3;
+			_ReadWriteBarrier();
 			if ((bits & 1) != 0)
 				m_bit439 |= 1;
 			else

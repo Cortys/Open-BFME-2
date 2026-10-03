@@ -49276,3 +49276,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva004CA048Construct@@YAXPAXABVRva004C9E94@@@Z,,0x004CA048,18,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,copy helper via rowed copy ctor caller 0x004CA1B3
 ??0Rva000748F6@@QAE@XZ,,0x000748F6,25,Code/GameEngine/Source/Common/System/Rva000747E5Method.cpp,matched,unlock lane vector ctor iterator 3x Region3D at plus4
 ?rva005EA575@Rva005EA575@@QAEHXZ,,0x005EA575,22,Code/Libraries/Source/WWVegas/WWMath/Rva005EA575Method.cpp,matched,indexed elem address via ranges sizes 0xC 0x24
+?rva0028FAD1@Object@@QAEXPAV1@@Z,,0x0028FAD1,158,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028FAD1.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
