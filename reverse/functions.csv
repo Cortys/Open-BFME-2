@@ -50186,3 +50186,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0028D86F@Rva0028D86F@@QAEXABU?$_Base_bitset@$03@_STL@@@Z,,0x0028D86F,34,Code/GameEngine/Source/GameLogic/Object/Rva0028D86F.cpp,matched,bitset OR at 0x370 via rowed 0x0028C53E plus WeaponSet update via pin 0x002C8C97 plus caller 0x004B577C
 ?Rva003BC4D1Do@@YGXH@Z,,0x003BC4D1,23,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4D1Do.cpp,matched,script forwards int arg to TheAudio vslot 0xb4 with 0
 ?Rva003BC4E8Do@@YGXH@Z,,0x003BC4E8,23,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC4E8Do.cpp,matched,script forwards int arg to TheAudio vslot 0xb8 with 0
+??_GBuildListInfo@@MAEPAXI@Z,,0x0032A4BB,28,Code/GameEngine/Source/GameLogic/Map/Rva0032A186Finish.cpp,matched,deleting dtor via own ??1 unit BuildListInfo caller none
