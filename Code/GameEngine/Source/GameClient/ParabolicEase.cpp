@@ -13,7 +13,7 @@ typedef float Real;
 class ParabolicEase
 {
 public:
-	void setEaseTimes(Real easeInTime, Real easeOutTime);
+	void rva0030E51F(Real easeInTime, Real easeOutTime, Real duration);
 	Real operator()(Real param) const;
 private:
 	Real m_in;
@@ -36,4 +36,53 @@ Real ParabolicEase::operator()(Real param) const
 	} else {
 		return (m_in + 2.0f * (m_out - m_in) + (2.0f * (param - m_out) + m_out * m_out - param * param) / (1.0f - m_out)) / denominator;
 	}
+}
+
+// Clean BFME1 6d9434269164392c5ba62aaa7c15a86b5b020d76,
+// game/GameEngine/Source/Common/ParabolicEaseSetEaseTimesBFME.cpp,
+// /O1 /G7 /arch:SSE /MD /EHsc. Ghidra178B/RET12 at30E51F ends exactly
+// at the existing171B operator30E5D1. Three float inputs and two float
+// stores at+0/+4 are independently visible in target. Init caller8647C
+// passes this+1C0; evaluator8AAD4 uses that same offset. Donor carries
+// ease/duration semantics and class name; original target setter name,
+// full class identity and object size remain unknown. Preserve NaN branches.
+namespace
+{
+	template <typename T>
+	// ?clamp present-unmatched
+	inline T clamp(T value, T minimum = T(0), T maximum = T(1))
+	{
+		if (value < minimum)
+			return minimum;
+		else if (value > maximum)
+			return maximum;
+		return value;
+	}
+}
+
+void ParabolicEase::rva0030E51F(Real easeInTime, Real easeOutTime, Real duration)
+{
+	if (duration > 0.0f)
+	{
+		if (easeInTime > 0.0f)
+			easeInTime /= duration;
+		else
+			easeInTime = 0.0f;
+
+		if (easeOutTime > 0.0f)
+			easeOutTime /= duration;
+		else
+			easeOutTime = 0.0f;
+	}
+
+	m_in = easeInTime;
+	if (m_in < 0.0f || m_in > 1.0f)
+		m_in = clamp(m_in);
+
+	m_out = 1.0f - easeOutTime;
+	if (m_out < 0.0f || m_out > 1.0f)
+		m_out = clamp(m_out);
+
+	if (m_in > m_out)
+		m_in = m_out;
 }
