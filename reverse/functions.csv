@@ -50272,3 +50272,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z,,0x0039EA4E,78,Code/GameEngine/Source/Common/RTS/Rva0039EA4EFinish.cpp,matched,RB-tree lower_bound accumulator-first decl order keeps result in ebx
 ??0Rva004DF418@@QAE@PAVThing@@PBVModuleData@@@Z,,0x004DF418,104,Code/GameEngine/Source/Common/Rva004DF418Finish.cpp,matched,member-init order pins stores before m_24 ctor
 ?Rva0059BD85Find@@YG_NPAURange0059BD85@@HPAX@Z,,0x0059BD85,52,Code/GameEngine/Source/Common/Rva0059BD85Finish.cpp,matched,20-byte stride range find; index declared before count so scheduler assigns esi/edi like retail
+?rva00108AD8@Rva00108AD8@@QAEXXZ,,0x00108AD8,95,Code/GameEngine/Source/Common/Rva00108AD8Finish.cpp,matched,table held as pointer in non-virtual IterBase matching sibling Rva000F1AD8Clear; fixes vptr and table store order
