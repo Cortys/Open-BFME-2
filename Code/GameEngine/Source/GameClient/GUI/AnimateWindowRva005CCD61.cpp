@@ -27,3 +27,18 @@ void Rva005CCD61::rva005CCD61(const UnicodeString &arg)
 		m_str.set(arg);
 	}
 }
+
+class Rva005CCE13
+{
+public:
+	void rva005CCE13(const UnicodeString &arg);
+private:
+	int m_00;
+	int m_04;
+	Rva005CCD61 *m_08;
+};
+
+void Rva005CCE13::rva005CCE13(const UnicodeString &arg)
+{
+	return m_08->rva005CCD61(arg);
+}
