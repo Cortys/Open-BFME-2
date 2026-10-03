@@ -134,6 +134,73 @@ void __cdecl rva007B6AA0()
 	return p->~AsciiString();
 }
 
+namespace _STL
+{
+template <class T>
+class char_traits {};
+
+template <class T>
+class allocator {};
+
+template <class CharT, class Traits, class Alloc>
+class basic_string
+{
+public:
+	~basic_string();
+};
+}
+
+typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > StlNarrowString;
+
+extern unsigned g_Va00DDEB2C;
+extern unsigned g_Va00DDEF08;
+extern unsigned g_Va00DDEEFC;
+extern unsigned g_Va00DDEF14;
+extern unsigned g_Va00DDEEE4;
+extern unsigned g_Va00DDEF38;
+
+// ?rva007B68C0@@YAXXZ @ 0x007B68C0 (10B). Global string dtor thunk: ecx=&g_Va00DDEB2C then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
+void __cdecl rva007B68C0()
+{
+	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEB2C;
+	return p->~basic_string();
+}
+
+// ?rva007B69D0@@YAXXZ @ 0x007B69D0 (10B). Global string dtor thunk: ecx=&g_Va00DDEF08 then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
+void __cdecl rva007B69D0()
+{
+	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEF08;
+	return p->~basic_string();
+}
+
+// ?rva007B69E0@@YAXXZ @ 0x007B69E0 (10B). Global string dtor thunk: ecx=&g_Va00DDEEFC then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
+void __cdecl rva007B69E0()
+{
+	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEEFC;
+	return p->~basic_string();
+}
+
+// ?rva007B69F0@@YAXXZ @ 0x007B69F0 (10B). Global string dtor thunk: ecx=&g_Va00DDEF14 then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
+void __cdecl rva007B69F0()
+{
+	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEF14;
+	return p->~basic_string();
+}
+
+// ?rva007B6A20@@YAXXZ @ 0x007B6A20 (10B). Global string dtor thunk: ecx=&g_Va00DDEEE4 then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
+void __cdecl rva007B6A20()
+{
+	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEEE4;
+	return p->~basic_string();
+}
+
+// ?rva007B6A30@@YAXXZ @ 0x007B6A30 (10B). Global string dtor thunk: ecx=&g_Va00DDEF38 then tail-jmp to rowed ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (0x00142D70).
+void __cdecl rva007B6A30()
+{
+	StlNarrowString *p = (StlNarrowString *)&g_Va00DDEF38;
+	return p->~basic_string();
+}
+
 // ??1SortingRenderStateStruct@@QAE@XZ rowed target for next thunks (184B @0x0011C5C0).
 class SortingRenderStateStruct
 {
