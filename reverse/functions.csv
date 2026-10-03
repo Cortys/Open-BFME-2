@@ -49224,3 +49224,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0039DF87@Team@@QAE_NPAVBfmeTab1026@@@Z,,0x0039DF87,113,Code/GameEngine/Source/Common/RTS/TeamGetControllingPlayer.cpp,matched,Team member scan via rowed iterate 0x263864 and DLINK pin plus bfmeHas1026 pin with same-TU ecx reuse
 ?rva0039DFF8@Team@@QAE_NXZ,,0x0039DFF8,74,Code/GameEngine/Source/Common/RTS/TeamRva0039DFF8.cpp,matched,Team AI ready scan via rowed iterate and DLINK pin with slot 0x1b8 virtual
 ?rva00058C6F@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UTreeHintPayload0005808E@@@_STL@@PBU23@@Z,,0x00058C6F,68,Code/Libraries/Source/WWVegas/WWLib/Rva00058C6FInsert.cpp,matched,hashtable insert via reserve bucketIndex and pinned New twin same table Rva000427195
+?rva000467B2@Rva000467B2@@QAEXPAVAsciiString@@H@Z,,0x000467B2,117,Code/GameEngine/Source/Common/Rva000467B2.cpp,matched,bitflag string builder via ModelConditionNames rowed callees
