@@ -49298,3 +49298,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?rva0059E390@Rva0059E390@@QAEXPBVModuleData@@@Z,,0x0059E390,23,Code/GameEngine/Source/Common/Rva0059E390Holder.cpp,matched,guarded ModuleData append via rowed push_back plus caller Parse
 ?rva004B0EBC@EmotionTrackerUpdate@@QAE_NXZ,,0x004B0EBC,41,Code/GameEngine/Source/GameLogic/Object/Update/EmotionTrackerUpdateRva004B0EBC.cpp,matched,EmotionTrackerUpdate vector 0x90 honest bool loop
 ?rva004B0D70@EmotionTrackerUpdate@@QAEXHPAXH@Z,,0x004B0D70,48,Code/GameEngine/Source/GameLogic/Object/Update/EmotionTrackerUpdateRva004B0EBC.cpp,matched,EmotionTrackerUpdate honest method via TheGameLogic frame plus 0x74
+?rva0056F07F@Rva0056F07F@@QAEPAU1@PAX0@Z,,0x0056F07F,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap obfuscated init via ED06Pick constants c840885 100c1887

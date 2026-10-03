@@ -6110,3 +6110,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ?rva004C4E93@Rva004C4E93@@QAEXPBUCoord3D@@@Z	0x004C4E93	137	blocked	push esi+0x80 6B early before y z stores vs late after stores only scheduling left t=15 model=muse-03 (stash 0.95 kept)
 ?rva004B0A24@Rva004B0A24@@QAEXPAMMM@Z	0x004B0A24	134	blocked	x87 tail vs SSE retail; prologue exact with O1 archSSE2; sincos forces x87 for this shape; Rotate_Y shows SSE possible t=35 model=muse-03
 ??0Rva004B0EE5@@QAE@PAVThing@@@Z	0x004B0EE5	187	blocked	ctor needs EH_prolog plus FS; O1 GX Oy- gives frame but no EH; masks-points match via m_player reloads t=30 model=muse-03
+?rva005EA8E3@Rva005EA8E3@@QAEXHH@Z	0x005EA8E3	55	partial	Range ptr in eax vs ecx plus begin kept vs reloaded only register allocation left t=20 model=muse-01 score=0.92 stash=reverse/attempts/0x005ea8e3.cpp
