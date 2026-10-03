@@ -50427,3 +50427,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00413FC1@Rva00413FC1@@QAEPAHH@Z,,0x00413FC1,54,Code/GameEngine/Source/Common/Thing/Rva00413FC1Lookup.cpp,matched,unlock lane via lower_bound and decrement rows
 ??_GRva0031FAF0@@QAEPAXI@Z,,0x0032013C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-14-32013C.cpp,matched,deleting dtor calls rowed dtor 0x0032002C then delete chain lane
 ?rva0052E001@Rva0052E001@@QAE_N_N@Z,,0x0052E001,46,Code/GameEngine/Source/Common/Rva0052E001.cpp,matched,bit17 setter at plus0xC returning changed with callers
+?rva0039B632@Rva0039B632@@QAEXH@Z,,0x0039B632,27,Code/GameEngine/Source/Common/Rva0039B632Method.cpp,matched,TheGameLogic flag 98 gates add into this D0
