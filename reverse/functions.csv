@@ -49918,3 +49918,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00219C3E@Rva00219B9E@@QAEHII@Z,,0x00219C3E,31,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,two-level int lookup via 0x00219B9E then 0x00219B62 caller 0x00219F00
 ?rva00219F00@Rva00219B9E@@QAEHIII@Z,,0x00219F00,54,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer 32B then 0x00219C3E three-level lookup caller 0x00406E8F
 ?rva00219B80@Rva00219B80@@QAEHI@Z,,0x00219B80,30,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,twin of 0x00219B62 at plus 0x3C barrier reload caller 0x00219C00
+?rva00219C00@Rva00219B9E@@QAEHII@Z,,0x00219C00,31,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,twin of 0x00219C3E via +0x3C caller 0x00219EC9
