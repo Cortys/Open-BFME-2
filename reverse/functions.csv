@@ -50452,3 +50452,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?leaveStagingRoom@GameSpyInfo@@UAEXXZ,,0x003858DF,119,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 47: ZH leaveStagingRoom with request type 12; clears local staging id and hosting state
 ?reset@GameSpyInfo@@UAEXXZ,,0x00385D25,261,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,GameSpyInfo vtable slot 1: ZH reset plus BFME 2 fields at +0x60/+0x64/+0x68 and +0x163C; callees are rowed map/set/stats clears
 ?rva0035BE55@Shell@@QAE_NXZ,,0x0035BE55,58,Code/GameEngine/Source/GameClient/GUI/Shell/ShellRva0035BE55.cpp,matched,Shell predicate via rowed Audio 0x001DBFEE and globals TheAudio plus TheWritableGlobalData callers 0x0050D145
+?rva0054E84C@Rva0054E84C@@QAE_NXZ,,0x0054E84C,33,Code/GameEngine/Source/Common/Rva0054E84CBody.cpp,matched,honest list scan via callers in 0x0054E8DC no callees
