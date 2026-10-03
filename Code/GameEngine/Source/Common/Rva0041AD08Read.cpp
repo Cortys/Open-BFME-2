@@ -1,10 +1,9 @@
-// ?Rva0041AD08Read@@YAXVAsciiString@@PAVFile@@@Z
-// partial score=0.99 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva0041AD08Read@@YAXVAsciiString@@PAVFile@@@Z, retail 0x0041AD08, 248 bytes.
 // Evidence: unlock lane, callers at 0x0041B35F/0x0041B3CA in 0x0041AFDA, callee openFile 0x00600C34,
 // _bfmeFormatText 0x0060C36E, new[] 0x0002FDE0, delete[] 0x0002FD80, releaseBuffer 0x00036410,
 // EmptyString g_Rva0107301CEmptyString, TheFileSystem, PristineMap literal, guard throw info.
+// Static with TU-local caller for private register convention (ctx in edi from entry, shape lever 462).
 #include "ascii_string.h"
 
 class OpenedFile
@@ -75,8 +74,7 @@ void __stdcall _CxxThrowException(void *a, void *b);
 void *__cdecl operator new[](unsigned int size);
 void __cdecl operator delete[](void *p);
 
-// ?Rva0041AD08Read@@YAXVAsciiString@@PAVFile@@@Z present-unmatched
-void __cdecl Rva0041AD08Read(AsciiString path, File *ctx)
+static void __cdecl Rva0041AD08Read(AsciiString path, File *ctx)
 {
 	char *t = *(char **)(void *)&path;
 	const char *name = t ? t + 8 : g_Rva0107301CEmptyString;
@@ -113,4 +111,10 @@ void __cdecl Rva0041AD08Read(AsciiString path, File *ctx)
 	ctx->f_read2(buf, size);
 	ctx->f_close2();
 	delete[] buf;
+}
+
+// ?Rva0041AD08Caller@@YAXVAsciiString@@PAVFile@@@Z present-unmatched
+void __cdecl Rva0041AD08Caller(AsciiString p, File *c)
+{
+	Rva0041AD08Read(p, c);
 }

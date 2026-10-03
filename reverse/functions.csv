@@ -49798,3 +49798,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00069322@Rva00069322@@QAE?AVAssetReference@@XZ,,0x00069322,27,Code/GameEngine/Source/Common/Rva00069322.cpp,matched,unlock lane AssetReference getter at 3C O1
 ?Rva0010410FWrap@@YAMM@Z,,0x0010410F,61,Code/GameEngine/Source/Common/Rva0010410FWrap.cpp,matched,unlock lane callers fmod wrapper g_00BC746C
 ?Rva0010414CGet@@YAMPAM@Z,,0x0010414C,34,Code/GameEngine/Source/Common/Rva0010414CGet.cpp,matched,chain lane atan2 angle wrap via rowed callees
+?Rva0041AD08Read@@YAXVAsciiString@@PAVFile@@@Z,,0x0041AD08,248,Code/GameEngine/Source/Common/Rva0041AD08Read.cpp,matched,static private-reg ctx-in-edi unlock PristineMap
