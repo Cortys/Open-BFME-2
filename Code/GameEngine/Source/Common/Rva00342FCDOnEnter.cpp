@@ -1,6 +1,4 @@
-// ?onEnter@Rva00342FCD@@UAE?AW4StateReturnType@@XZ
-// partial score=0.9 date=2026-10-01
-// cl: /O1 /MD
+// cl: /O1 /MD /arch:SSE
 //
 // ?onEnter@Rva00342FCD@@UAE?AW4StateReturnType@@XZ @0x0034BCBD 94B
 // Override of Rva0033FE65::onEnter via vtable slot 4 of 0x00812FA0
@@ -95,19 +93,20 @@ public:
 	virtual StateReturnType onEnter();
 private:
 	int m_28;
-	bool m_2C;
+	unsigned char m_2C;
 };
 
-// ?onEnter@Rva00342FCD@@UAE?AW4StateReturnType@@XZ present-unmatched
 StateReturnType Rva00342FCD::onEnter()
 {
 	OwnerLike *owner = m_machine->m_owner14;
 	Rva001E3F08 *holder = owner->m_ai258->m_iface1F0;
-	bool flag;
+	int flag;
 	if (holder == 0)
-		flag = false;
+		flag = 0;
+	else if (holder->rva001E3F08((Rva001E3F08Arg *)owner) == 0.0f)
+		flag = 1;
 	else
-		flag = (holder->rva001E3F08((Rva001E3F08Arg *)owner) == 0.0);
+		flag = 0;
 	m_2C = flag;
 	Object *goal = ((TurretStateMachine *)m_machine)->getGoalObject();
 	int v = m_28;
