@@ -49836,3 +49836,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva001DC5EC@Rva001DC07E@@QAEXXZ,,0x001DC5EC,74,Code/GameEngine/Source/Main/Rva001DC07E.cpp,matched,guarded wait-loop call under lock at +0x38 with flag at +0x68 same this as 0x001DC07E
 ?rva000EE15B@W3DPropBuffer@@QAEXXZ,,0x000EE15B,61,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DPropBufferRva000EE15B.cpp,matched,W3DPropBuffer visible refresh via embedded check inversion caller 0xEE4B2
 ?rva0041557A@Rva000427195@@QAE?AUInsertRet0041539F@@PBX@Z,,0x0041557A,36,Code/GameEngine/Source/GameClient/Rva0041557AInsert.cpp,matched,hashtable grow-plus-insert via rowed insert and pinned grow
+?rva002ACA86@Player@@QAEXHPBVGameMessage@@@Z,,0x002ACA86,117,Code/GameEngine/Source/Common/RTS/PlayerRva002ACA86.cpp,matched,Player GameMessage ObjectID fill via Clear getArgument findObjectByID Find Add TheGameLogic
