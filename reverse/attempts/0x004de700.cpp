@@ -1,3 +1,5 @@
+// ?framesUntilNext@ObjectSMCHelper@@AAEHXZ
+// partial score=0.95 date=2026-10-03
 // ?rva004DE700@ObjectSMCHelper@@QAEHXZ
 // partial score=0.95 date=2026-10-01
 // ?rva004DE700@ObjectSMCHelper@@QAEHXZ
