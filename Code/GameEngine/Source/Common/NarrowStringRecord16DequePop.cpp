@@ -10,9 +10,7 @@
 #include <memory>
 #include <string>
 void __cdecl free(void *);
-struct BfmeNarrowRecord0041A617 {
-    _STL::basic_string<char> text; unsigned short short0; unsigned char flag;
-};
+#include "BfmeNarrowRecord0041A617.h"
 struct Rva0041A3F7 {
     BfmeNarrowRecord0041A617 *_M_cur;
     BfmeNarrowRecord0041A617 *_M_first;

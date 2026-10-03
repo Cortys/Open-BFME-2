@@ -18,11 +18,7 @@
 
 extern "C" void __cdecl free(void *ptr);
 
-struct BfmeNarrowRecord0041A617 {
-    _STL::basic_string<char> text; unsigned short short0; unsigned char flag;
-    BfmeNarrowRecord0041A617(const BfmeNarrowRecord0041A617 &o);
-    ~BfmeNarrowRecord0041A617() {}
-};
+#include "BfmeNarrowRecord0041A617.h"
 
 namespace _STL {
 template <class _Tp, class _Alloc> class deque {

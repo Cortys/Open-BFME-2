@@ -7456,3 +7456,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?TheStancesStore@@3PAVRva00425F10@@A,0x00A031D4,TheStancesStore global pointer at 0x00E031D4
 ?parseStance@@YAXPAVINI@@PAX@Z,0x00425DDD,Stance parser function at 0x00425DDD
 ??$_Destroy@PAURva004FFE81@@@_STL@@YAXPAURva004FFE81@@0@Z,0x00500CB8,independent full 25-byte match of STLport Destroy; same range loop and element destructor as rowed Rva00500CB8Destroy; typed vector erase callee
+??1BfmeNarrowRecord0041A617@@QAE@XZ,0x0007FAB3,independent complete 14-byte match; native16-byte record destroy loop41A3A3 callee; class layout comes from copy41A617 assignment41A820 and pop41A3F7; original semantic name unknown
+?_M_increment@?$_Deque_iterator_base@UBfmeNarrowRecord0041A617@@@_STL@@QAEXXZ,0x00419DF6,independent complete 38-byte match; native16-byte record destroy loop41A3A3 callee; class layout comes from copy41A617 assignment41A820 and pop41A3F7; original semantic name unknown
