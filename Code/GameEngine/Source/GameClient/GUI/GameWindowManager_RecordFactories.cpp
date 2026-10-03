@@ -64,3 +64,14 @@ GameWindow *TabWindowManagerView::gogoGadgetTabControl(GadgetCreateView *view,
     assignDefaultGadgetLook(window, font, visual);
     return window;
 }
+
+GameWindow *TabWindowManagerView::gogoGadgetProgressBar(GadgetCreateView *view,
+    GameFont *font, bool visual)
+{
+    if (!(((FactoryInstanceView *)view->instance)->style & 0x100)) return 0;
+    GameWindow *window = ((TabWindowManagerView *)TheWindowManager)->createFromView(view);
+    if (!window) return 0;
+    ((Rva003140CF *)window)->rva003140CF((int)view->parent);
+    assignDefaultGadgetLook(window, font, visual);
+    return window;
+}
