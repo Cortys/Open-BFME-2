@@ -49278,3 +49278,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005EA575@Rva005EA575@@QAEHXZ,,0x005EA575,22,Code/Libraries/Source/WWVegas/WWMath/Rva005EA575Method.cpp,matched,indexed elem address via ranges sizes 0xC 0x24
 ?rva0028FAD1@Object@@QAEXPAV1@@Z,,0x0028FAD1,158,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028FAD1.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
 ?rva0037ADB6@Rva0037ADB6@@QAEXXZ,,0x0037ADB6,152,Code/GameEngine/Source/Common/System/Rva0037ADB6Write.cpp,matched,recorder file patch via ftell fseek fwrite plus globals g_00DBC800 and TheGameLogic
+?rva0059ECD2@Rva0059ECD2@@QAEXH@Z,,0x0059ECD2,70,Code/GameEngine/Source/Common/Rva0059ECD2.cpp,matched,state 0xA apt ClosePassword via rowed AptCall plus virtual prefix plus neighbours

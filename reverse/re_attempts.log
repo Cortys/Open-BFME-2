@@ -6101,3 +6101,4 @@ FUN_008c9cf7	0x004C9CF7	128	blocked	vslot12 needs TheRadar slot12 sig plus smart
 ??0Rva004C9E5D@@QAE@PBHM@Z	0x004C9E5D	55	blocked	barrier pins mov-first but movss late after push retail before t=18 model=muse-02 (stash 0.96 kept)
 ?rva00059FBB@Rva00056F61@@QAEPAUTreeHintPayload0005808E@@PBVAsciiString@@@Z	0x00059FBB	121	blocked	natural pair tmp gives unconditional releaseBuffer vs retail flag-guarded shared epilogue plus separate iterator pair slots sub 0x10 vs retail shared 0xc after 3 variants t=20 model=muse-06
 ?rva001FDE3F@Rva00056F61@@QAEPAUTreeHintPayload0005808E@@PBVAsciiString@@@Z	0x001FDE3F	125	blocked	flag plus esi result sharing wall t=25 model=muse-06
+?rva0059E848@Rva0059E848@@QAEXXZ	0x0059E848	25	partial	edx diff with begin reuse vs eax diff with mem sub and al byte plus reload order t=15 model=muse-07 score=0.9 stash=reverse/attempts/0x0059e848.cpp
