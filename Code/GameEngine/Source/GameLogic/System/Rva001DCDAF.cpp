@@ -22,6 +22,7 @@ class Rva001DCDAF
 {
 public:
     bool rva001DCDAF(Arg001DCDAF const *a, Vec001DCDAF const *b, Vec001DCDAF const *c);
+    float rva001DCE4C(Arg001DCDAF const *a);
 
 private:
     float m_0;
@@ -56,4 +57,9 @@ bool Rva001DCDAF::rva001DCDAF(Arg001DCDAF const *a, Vec001DCDAF const *b, Vec001
         }
         return true;
     }
+}
+
+float Rva001DCDAF::rva001DCE4C(Arg001DCDAF const *a)
+{
+    return (float)a->u4 - m_4;
 }
