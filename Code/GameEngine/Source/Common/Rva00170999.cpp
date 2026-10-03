@@ -76,6 +76,11 @@ Rva00151DAB::Rva00151DAB(const unsigned int &key, const AssetReference &ref)
 {
 }
 
+Rva00151DAB __cdecl Rva00170A3DGet(const unsigned int &key, const AssetReference &ref)
+{
+	return Rva00151DAB(key, ref);
+}
+
 namespace _STL
 {
 template <class _T1, class _T2> void _Construct(_T1 *__p, const _T2 &__val);
