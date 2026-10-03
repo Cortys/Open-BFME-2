@@ -49963,3 +49963,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva005B5485@Rva005B5485@@QAEXHPAD_N@Z,,0x005B5485,104,Code/GameEngine/Source/Common/Rva005B5485.cpp,matched,snprintf count via D52 or manual sar5 chain via D52
 ?Rva00527925Fire@@YAHPAX0PBD1PBM@Z,,0x00527925,106,Code/GameEngine/Source/Common/Rva00527925Fire.cpp,matched,free float Apt firer via rowed Get 0x002228E8 plus rowed AptCall 0x00222B19 and empty fallback
 ?rva005279DD@Rva005279DD@@QAEXXZ,,0x005279DD,270,Code/GameEngine/Source/Common/Rva005279DDFinish.cpp,matched,thiscall state switch via rowed AptCall wrappers plus float Fire 0x00527925 and slot16 scale
+?rva00265143@AIUpdateInterface@@QAEHXZ,,0x00265143,48,Code/GameEngine/Source/GameLogic/Object/Update/Rva00265143Finish.cpp,matched,AI state vector size() subobject at +0x3C via machine +0x30
