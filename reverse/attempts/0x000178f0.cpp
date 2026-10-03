@@ -1,18 +1,15 @@
 // ?do_transform@?$collate@G@_STL@@MBE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@2@PBG0@Z
 // partial score=0.98 date=2026-10-03
-// ?do_transform@?$collate@G@_STL@@MBE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@2@PBG0@Z
-// partial score=0.98 date=2026-10-03
-// ?do_transform@?$collate@G@_STL@@MBE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@2@PBG0@Z
-// partial score=0.98 date=2026-10-03
-// ?do_transform@?$collate@G@_STL@@MBE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@2@PBG0@Z
-// partial score=0.98 date=2026-10-02
 // cl: /O2 /EHsc /MD /D_STLP_USE_STATIC_LIB
 // stlport
+// ?do_transform@?$collate@G@_STL@@MBE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@2@PBG0@Z
+// @0x000178F0 (87B)
 //
 // STLport 4.5.3 collate<wchar_t>::do_transform, identified by slot 2 of
 // ??_7?$collate@G@_STL@@6B@. Its _collate.h declaration places this virtual
 // between do_compare and do_hash. Retail initializes the returned basic_string
 // from the input range through the matched _M_range_initialize body at 0xBF90.
+// From stash 0x000178f0 score 0.98.
 
 typedef unsigned short wchar_t;
 
