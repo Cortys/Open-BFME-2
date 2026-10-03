@@ -50131,3 +50131,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BC566Forward@@YAXXZ,,0x003BC566,17,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC566Forward.cpp,matched,script forwards to TheAudio slot 0xc8 with 0
 ?Rva003BC1A0Forward@@YAXXZ,,0x003BC1A0,18,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC1A0Forward.cpp,matched,script forwards TheTerrainLogic to TheRadar slot 0x10
 ?Rva003BC8F0Set@@YGX_N@Z,,0x003BC8F0,19,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC8F0Set.cpp,matched,script sets GameLogic plus 0x9f byte from bool arg
+?Rva003BCA7BSet@@YGX_N@Z,,0x003BCA7B,19,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCA7BSet.cpp,matched,script sets GameLogic +0x9a byte from bool arg
