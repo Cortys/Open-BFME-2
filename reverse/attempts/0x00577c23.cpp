@@ -1,14 +1,13 @@
 // ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
-// partial score=0.94 date=2026-10-03
-// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
-// partial score=0.94 date=2026-10-03
-// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
+// partial score=0.96 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD /EHsc
-// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z @0x00577C23 125B: Apt forward with 1 int plus 1 bool.
-// Builds int AsciiString via rowed 0x00222834 and bool text via rowed 0x004E678B,
-// passes their text or empty plus zeros as 2 args to thiscall twin rva00222B19
-// 0x00222B19 with argc 2. Evidence: chain packet calls just-landed 0x00222B19
-// plus rowed gets plus releaseBuffer 0x00036410 plus empty 0x007BAC1C.
+// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z
+// ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z, retail 0x00577C23, 125 bytes.
+// Apt forward with 1 int plus 1 bool. Builds int AsciiString via rowed
+// 0x00222834 and bool text via rowed 0x004E678B, passes their text or empty
+// plus zeros as 2 args to thiscall twin rva00222B19 0x00222B19 with argc 2.
+// Evidence: chain packet calls just-landed 0x00222B19 plus rowed gets plus
+// releaseBuffer 0x00036410 plus empty 0x007BAC1C.
 #include "ascii_string.h"
 
 class Rva00222A8BTarget
@@ -32,7 +31,7 @@ __forceinline const char *GetStr(const AsciiString &s)
 int __cdecl Rva00577C23AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, int *pInt, bool *pFlag)
 {
 	AsciiString intStr = Rva00222834Get(*pInt);
-	char *boolStr = 0;
-	Rva004E678BGet(&boolStr, *pFlag);
+	char *boolSlot;
+	char *boolStr = *Rva004E678BGet(&boolSlot, *pFlag);
 	return target->rva00222B19(level, prefix, function, 2, GetStr(intStr), boolStr, 0, 0, 0);
 }
