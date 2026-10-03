@@ -49402,3 +49402,4 @@ _rva0062AF4AD3DXVec4Transform@12,,0x0062AF4A,6,Code/GameEngine/Source/Common/Rva
 ?Rva003FECCASetPlayerFaction@@YAXPAPAX@Z,,0x003FECCA,52,Code/GameEngine/Source/GameClient/Rva003FECCA.cpp,matched,UI firer SetPlayerFaction via empty-or-label and invoke
 ?rva0059E848@Rva0059E848@@QAEXXZ,,0x0059E848,25,Code/GameEngine/Source/Common/Rva0059E848Flush.cpp,matched,single-element vector flush via G7 and-al plus barrier reload
 ?rva0014D405@Rva0014D405@@QAEXXZ,,0x0014D405,18,Code/GameEngine/Source/Common/Rva0014D405Clear.cpp,matched,caller 0x0014A880 honest address name lea shape
+?rva0014D417@Rva0014D417@@QAEXH@Z,,0x0014D417,26,Code/GameEngine/Source/Common/Rva0014D417Set.cpp,matched,caller 0x0017438B honest address name setne shape
