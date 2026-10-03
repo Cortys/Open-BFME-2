@@ -49930,3 +49930,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BCBC7Set@@YGXABVAsciiString@@M@Z,,0x003BCBC7,65,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BCBC7.cpp,matched,sibling 0x003BB233 65B shape via rowed rva00357475 and getEachPlayerFromMask
 ?Rva003BCB37Set@@YGXABVAsciiString@@H@Z,,0x003BCB37,67,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BCB37.cpp,matched,free stdcall mask loop via ScriptEngine 0x00357475 and PlayerList sibling shape
 ?Rva003BC626Set@@YGXABVAsciiString@@H@Z,,0x003BC626,84,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC626.cpp,matched,sibling 0x003BC7EF mask loop with Player+8 virtual and GameSlot setTeamNumber
+?Rva003BC6D9Set@@YGXABVAsciiString@@0@Z,,0x003BC6D9,86,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC6D9.cpp,matched,mask loop with ScienceStore lookup and grantScience
