@@ -49074,3 +49074,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva000854CF@Rva000854CF@@QAEPAUOut12@@PAU2@@Z,,0x000854CF,29,Code/GameEngine/Source/Common/Rva000854CFCopy.cpp,matched,thiscall copies 12B at +0x620 float int int returns out unlocks 0x0008ADEA
 ?rva00085FA8@Rva00085FA8@@QAEXPAM@Z,,0x00085FA8,178,Code/GameEngine/Source/Common/Rva00085FA8Delta.cpp,matched,thiscall projects two points via Camera at +0x104 writes screen delta unlocks 0x00087E4C
 ?Rva00085553Get@@YAXHH@Z,,0x00085553,44,Code/GameEngine/Source/Common/Rva00085553Init.cpp,matched,free function sets five globals from second arg unlocks 0x00085EE6
+?rva00552CF9@Rva00552CF9@@QAEXPBV1@@Z,,0x00552CF9,130,Code/GameEngine/Source/Common/Rva00552CF9Copy.cpp,matched,thiscall copies fields and three sub-objects via virtuals caller 0x0055941D
