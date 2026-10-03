@@ -49268,3 +49268,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??1Rva002FE620@@UAE@XZ,,0x002FE6B7,63,Code/GameEngine/Source/Common/Rva002FE620Ctor.cpp,matched,dtor vtable 00807240 two AsciiStrings caller 002FE69B
 ??_GRva002FE620@@UAEPAXI@Z,,0x002FE69B,28,Code/GameEngine/Source/Common/Rva002FE620Ctor.cpp,matched,deleting dtor calls 002FE6B7 vtable 00807240
 ??0Rva005344C0@@QAE@PBHABV?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@@Z,,0x005346BC,29,Code/GameEngine/Source/Common/Rva005344C0Copy.cpp,matched,unlock two-arg pair build via rowed Rb_tree copy 534581 plus caller 534A63
+?rva0039DEC4@Team@@QAE_NXZ,,0x0039DEC4,88,Code/GameEngine/Source/Common/RTS/TeamRva0039DEC4.cpp,matched,Team member kind scan sibling model of DE46 DF1C via iterate 0x263864
