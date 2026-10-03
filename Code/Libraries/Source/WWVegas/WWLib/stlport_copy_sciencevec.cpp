@@ -64,3 +64,15 @@ SciVec *__cdecl Rva00339ABFCopy(SciVec *first, SciVec *last, SciVec *dest, void 
 	}
 	return dest;
 }
+
+// ?Rva00339D57Copy@@YAPAV?$vector@HV?$allocator@H@_STL@@@_STL@@PAV12@00PAX@Z @0x00339D57 29B copy-backward wrapper via rowed 0x00339ABF stride 0xC with dummy trailing args.
+// Retail: push ebp / mov ebp esp / push ecx / push 0 / lea eax [ebp-1] / push eax / push [ebp+0x10] / push [ebp+0xc] / push [ebp+0x8] / call 0x339ABF / add esp 0x14 / leave / ret.
+// Target facts: __cdecl (first last dest tag) -> dest; forwards first three to rowed Rva00339ABFCopy with fresh 1-byte tag at [ebp-1] and extra 0; outer tag at [ebp+0x14] unused; caller 0x0033A05E pushes 4.
+// Callers: 0x0033A0D8 in 0x0033A05E pushes 4; callees: rowed 0x00339ABF backward copy.
+// Precedent: twin 0x001FFC38 same 29B shape calling forward 0x00339A8D; honest Rva address-derived free-function name.
+
+SciVec *__cdecl Rva00339D57Copy(SciVec *first, SciVec *last, SciVec *dest, void *tag)
+{
+	char tmp;
+	return Rva00339ABFCopy(first, last, dest, &tmp, 0);
+}
