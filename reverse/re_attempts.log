@@ -5980,3 +5980,5 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?Rva002162CFFire@@YAPAXPAX0PBDPBI@Z	0x002162CF	99	blocked	eax-ecx mirror plus mov-ecx-target scheduling t=20 model=muse-07 (stash 0.94 kept)
 ?Rva0021642FCall@@YAHPAX0PBDPBM@Z	0x0021642F	103	blocked	eax ecx mirror for string vs zero plus mov eax eax vs mov ecx ebp-10 plus scheduling t=8 model=muse-07 (stash 0.95 kept)
 ?Rva00216332Call@@YAHPAX0PBDPBIPBQAX@Z	0x00216332	104	partial	header via ebp slot vs eax deref plus a1 late plus 2 push regs t=15 model=muse-07 score=0.97 stash=reverse/attempts/0x00216332.cpp
+?Rva0027D3D9Forward@@YGXHHPAVMatrix3D@@M@Z	0x0027D3D9	50	blocked	vtable-temp esi-vs-eax plus early fld-mov order t=15 model=muse-05 (stash 0.93 kept)
+?rva0027D483@Rva0027D483@@QAEXPAX0@Z	0x0027D483	298	blocked	loop-epilogue-shared-ret plus float-preload-order t=10 model=muse-05 (stash 0.9 kept)

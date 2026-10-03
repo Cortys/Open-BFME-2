@@ -49083,3 +49083,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva006BD830@GeometryInfo@@QBEMXZ,,0x006BD830,108,Code/GameEngine/Source/Common/GeometryInfo_getMaxHeightAbovePosition.cpp,matched,GeometryInfo max via 0x14C plus BfmeZeroRange plus dual flag
 ?Rva00216517Fire@@YAHPAVRva00222A8BTarget@@PAXPBDPBIPBM@Z,,0x00216517,153,Code/GameEngine/Source/GameClient/Rva00216517Fire.cpp,matched,int-return firer via rowed gets and invoke row 0x00222A8B with empty fallback
 ?rva00216670@Rva00216670@@QAEXIM@Z,,0x00216670,75,Code/GameEngine/Source/GameClient/Rva00216670.cpp,matched,chain from 0x00216517 banner offset guard via SetBannerXOffset
+?rva005ED7CC@Rva005ED445@@QAEXH@Z,,0x005ED7CC,125,Code/GameEngine/Source/Common/Rva005ED708Apt.cpp,matched,chain via Rva0057A9B7Fire like Rva005FE122 SetPlayerRowState
