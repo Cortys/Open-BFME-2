@@ -85,6 +85,7 @@ class Scorer:
         self.trials = 0
         self.hits = 0  # consecutive candidates already compiled: the search is spinning
         self.unresolved = False
+        self.last = None
 
     def score(self, text):
         """(fitness 0..1, exact) for a candidate source; (-1, False) if it does not compile."""
@@ -106,6 +107,7 @@ class Scorer:
                 got = build.compile_function(row, self.symbol_map, output)
                 compiled, target = got["bytes"], got["target"]
                 self.unresolved = bool(got["unresolved"])
+                self.last = (compiled, target)
                 if compiled == target and not got["unresolved"]:
                     result = (1.0, True)
                 else:
@@ -125,6 +127,25 @@ def _instructions(blob):
         import capstone
         _DISASM = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
     return [(insn.mnemonic, insn.op_str) for insn in _DISASM.disasm(bytes(blob), 0)]
+
+
+def unreachable(compiled, target):
+    """Why no source reordering can close this body, or None.
+
+    When every instruction already has retail's mnemonic and registers and
+    only numbers differ (displacements, immediates), the gap is a layout,
+    offset or constant fact: mutations only move statements and operators."""
+    try:
+        ours, theirs = _instructions(compiled), _instructions(target)
+    except Exception:
+        return None
+    if not ours or len(ours) != len(theirs) or [m for m, _ in ours] != [m for m, _ in theirs]:
+        return None
+    strip = lambda op: re.sub(r"0x[0-9a-f]+|\b\d+\b", "#", op)
+    differing = [(a, b) for (_, a), (_, b) in zip(ours, theirs) if a != b]
+    if differing and all(strip(a) == strip(b) for a, b in differing):
+        return f"only constants or offsets differ ({len(differing)} instruction(s)): a layout fact, not an order"
+    return None
 
 
 def fitness(compiled, target):
@@ -345,6 +366,13 @@ def permute(rva, minutes=10.0, seed=None):
         result = {"rva": rva, "symbol": symbol, "size": size, "start": round(best, 4),
                   "best": round(best, 4), "exact": False, "trials": scorer.trials,
                   "stop": "unresolved calls: pin the callees"}
+        with (OUT / "results.jsonl").open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(result) + "\n")
+        return result
+    reason = unreachable(*scorer.last) if scorer.last else None
+    if reason:
+        result = {"rva": rva, "symbol": symbol, "size": size, "start": round(best, 4),
+                  "best": round(best, 4), "exact": False, "trials": scorer.trials, "stop": reason}
         with (OUT / "results.jsonl").open("a", encoding="utf-8") as handle:
             handle.write(json.dumps(result) + "\n")
         return result
