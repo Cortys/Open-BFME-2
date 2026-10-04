@@ -51947,3 +51947,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?checkBridges@Player@@UAE_NPAVObject@@PAVWaypoint@@@Z,,0x002A9C0D,25,Code/GameEngine/Source/Common/RTS/PlayerAIDelegates.cpp,matched,ZH Player AI delegate; vtable 0x00BFDF3C slots 4-7 in ZH order; m_ai +0x2DC
 ?getAiBaseCenter@Player@@UAE_NPAUCoord3D@@@Z,,0x002A9C26,34,Code/GameEngine/Source/Common/RTS/PlayerAIDelegates.cpp,matched,ZH Player AI delegate; vtable 0x00BFDF3C slots 4-7 in ZH order; m_ai +0x2DC
 ?repairStructure@Player@@UAEXW4ObjectID@@@Z,,0x002A9C48,23,Code/GameEngine/Source/Common/RTS/PlayerAIDelegates.cpp,matched,ZH Player AI delegate; vtable 0x00BFDF3C slots 4-7 in ZH order; m_ai +0x2DC
+?setLOD@TerrainTextureClass@@QAEXH@Z,,0x000EF2A0,33,Code/GameEngineDevice/Source/W3DDevice/GameClient/TerrainTex.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
