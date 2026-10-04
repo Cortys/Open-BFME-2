@@ -15,6 +15,9 @@
 // EH state 0 before the first copy comes from the empty base with declared-only
 // dtor (AIUpdateModuleDataCtor precedent); /arch:SSE for the xorps/movss float zeroes.
 
+extern "C" const void *const vtbl_00C0D904[];  // ??_7BuildListInfo@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C0D904=??_7BuildListInfo@@6B@")
+
 #include "ascii_string.h"
 
 
@@ -76,7 +79,7 @@ private:
 };
 
 BuildListInfo::BuildListInfo() :
-	m_vtable(reinterpret_cast<void *>(0x00C0D904)),
+	m_vtable(reinterpret_cast<void *>(((unsigned int)vtbl_00C0D904))),
 	m_buildingName(AsciiString::TheEmptyString),
 	m_templateName(),
 	m_nextBuildList(0),
