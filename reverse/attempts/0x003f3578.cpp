@@ -1,5 +1,5 @@
 // ?rva003F3578@ConnectionVec@@QAEPAVLivingWorldRegionConnection@@PAV2@@Z
-// partial score=0.91 date=2026-10-04
+// partial score=0.92 date=2026-10-04
 // cl: /O1 /Oy- /DNDEBUG /MD
 // ?rva003F3578@ConnectionVec@@QAEPAVLivingWorldRegionConnection@@PAV2@@Z @0x003F3578 56B
 // Vector erase over LivingWorldRegionConnection ranges: rowed copy
@@ -30,7 +30,7 @@ LivingWorldRegionConnection *ConnectionVec::rva003F3578(LivingWorldRegionConnect
 {
 	LivingWorldRegionConnection *finish = m_finish;
 	LivingWorldRegionConnection *next = pos + 1;
-	if (finish != next)
+	if (next != finish)
 		((Rva003F325A4Fn)&Rva003F325ACopy)((Rva003F2A11 *)(void *)next, (Rva003F2A11 *)(void *)finish, (Rva003F2A11 *)(void *)pos, (char *)&pos + 3);
 	m_finish -= 1;
 	m_finish->~LivingWorldRegionConnection();

@@ -7241,3 +7241,5 @@ FUN_006f0bb5	0x002F0BB5	43	blocked	EH wrapper two rowed Rva002EB46E calls needs 
 ?isAngleDifferent@@YA_NMM@Z	0x0028B119	40	blocked	pop before fxch vs fxch before pop t=15 model=muse-07 (stash 0.95 kept)
 ?rva0049DEC8@ProductionUpdate@@QAEXXZ	0x0049DEC8	154	blocked	6 global addr remain [0] vs retail VAs - externs not relocating t=5 model=muse-07
 ?rva003F3578@ConnectionVec@@QAEPAVLivingWorldRegionConnection@@PAV2@@Z	0x003F3578	56	partial	register allocation edi-edx eax-ecx swapped pos reloaded not kept t=12 model=muse-06 score=0.91 stash=reverse/attempts/0x003f3578.cpp
+?rva003F3FFE@Rva003F3FFE@@QAEXAAVXfer@@@Z	0x003F3FFE	152	blocked	pid in eax vs edi plus two stores vs single merge store t=18 model=muse-06 (stash 0.93 kept)
+?rva003F3578@ConnectionVec@@QAEPAVLivingWorldRegionConnection@@PAV2@@Z	0x003F3578	56	partial	register allocation edi-edx swapped pos reloaded not kept cmp fixed t=15 model=muse-06 score=0.92 stash=reverse/attempts/0x003f3578.cpp
