@@ -11,6 +11,7 @@ class Rva003F8090
 {
 public:
 	void rva003F8090();
+	void *rva003F80C3();
 private:
 	char m_00[0xc];
 	Rva003F7F30 **m_0c;
@@ -29,6 +30,26 @@ void Rva003F8090::rva003F8090()
 		(*p)->rva003F7F30();
 		++p;
 	}
+}
+
+// ?rva003F80C3@Rva003F8090@@QAEPAXXZ @0x003F80C3 30B.
+// Indexed accessor over [+0xC,+0x10) with index at +0x18; null on OOB or negative.
+// Evidence: unlock lane; same offsets as 0x003F8090; callers at 0x003F8525 0x003F854A 0x003F8FB6 0x003F8FCA jmp at 0x003F81C9.
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+void *Rva003F8090::rva003F80C3()
+{
+	int idx = m_18;
+	if (idx >= 0)
+	{
+		int count = m_10 - m_0c;
+		if ((unsigned)idx < (unsigned)count)
+		{
+			_ReadWriteBarrier();
+			return m_0c[idx];
+		}
+	}
+	return 0;
 }
 
 // ?rva003F8076@Rva003F8076@@QAEXXZ @0x003F8076 13B.
