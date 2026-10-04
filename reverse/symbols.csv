@@ -7994,3 +7994,17 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1LightEnvironmentClass@@QAE@XZ,0x0069E440,empty LightEnvironmentClass destructor called on MeshClass+0xCC by the MeshClass destructor 0x0014A5B0 (BFME1 donor names the same call 0x0094A880); ICF-folded empty body
 ?getCanAttackObject@ActionManager@@QAE?AW4CanAttackResult@@PBVObject@@0W4CommandSourceType@@W4AbleToAttackType@@@Z,0x0041C6CF,address read from the REL32 displacement at a placed body
 ?rva006C1DC0@Rva006C1F60@@QAE_NI@Z,0x006C1DC0,"address-derived Rva006C1F60 validator called by 0x006C1E20 with one arg; reads +0x680 +0x684 +0x68C and hashes arg1 against a bucket array; returns bool (ret 4); identity unproven"
+?ji_009facad@@YAXXZ,0x0062AF26,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoVKH@BfmeThingVKH@@QAE?AUBfmeMat4VKH@@H@Z (0x00075295)
+?bfmeDropVE@BfmeSubVE@@QAEXPAX@Z,0x00306D7B,callee read from the retail REL32 in placed BFME1-donor body ?bfmeKillVE@BfmeThingVE@@QAEPAXH@Z (0x000AD930)
+?bfmeFreeVE@@YAXPAX@Z,0x0002FD60,callee read from the retail REL32 in placed BFME1-donor body ?bfmeKillVE@BfmeThingVE@@QAEPAXH@Z (0x000AD930)
+?bfmeBaseInitZQ@BfmeOwnerZQ@@QAEXPAX000HH@Z,0x00131B57,callee read from the retail REL32 in placed BFME1-donor body ?bfmeInitZQ@BfmeOwnerZQ@@QAEPAV1@PAX000@Z (0x000EF272)
+?bfmeClearMembers@@YAXPAVLGA_MemberObj@@@Z,0x003ED7A2,callee read from the retail REL32 in placed BFME1-donor body ??4LargeGroupAudioKeyMap@@QAEAAV0@ABV0@@Z (0x003ED989)
+?j_000163ba@@YAXXZ,0x0026F4F4,callee read from the retail REL32 in placed BFME1-donor body ??4LargeGroupAudioKeyMap@@QAEAAV0@ABV0@@Z (0x003ED989)
+?bfmeRetainMembers@@YAXPAVLargeGroupAudioKeyMap@@@Z,0x003ED498,callee read from the retail REL32 in placed BFME1-donor body ??4LargeGroupAudioKeyMap@@QAEAAV0@ABV0@@Z (0x003ED989)
+?erase@Rva006DF050Slot@@QAEIABH@Z,0x000D3BFD,callee read from the retail REL32 in placed BFME1-donor body ?eraseKey@Rva006DF050@@QAEXH@Z (0x000D3C4B)
+?m@Gen_00064730@@QAEHXZ,0x005801F2,callee read from the retail REL32 in placed BFME1-donor body ?refresh@Rva003BBA00@@QAE_NXZ (0x003FD2F6)
+?at@Gen_00064730@@QAEPAVGen003BBA00Element@@H@Z,0x00504138,callee read from the retail REL32 in placed BFME1-donor body ?refresh@Rva003BBA00@@QAE_NXZ (0x003FD2F6)
+?bfmeQueryRallyOverride@@YAPAVObject@@PAV1@PBUCoord3D@@@Z,0x004A0403,callee read from the retail REL32 in placed BFME1-donor body ?setRallyPoint@QueueProductionExitUpdate@@UAEXPBUCoord3D@@@Z (0x004A051B)
+?bfmeTestQP@@YADPAX0@Z,0x004D9367,callee read from the retail REL32 in placed BFME1-donor body ?bfmeEitherQP@@YAHPAX0@Z (0x004D93B5)
+?bfmeCompact@Gen_0018BC70@@QAEPAVBfmeVecAK@@_N@Z,0x004D6D4F,callee read from the retail REL32 in placed BFME1-donor body ?bfmeVisitAll@Gen_0018BC70@@QAEXPAVBfmeVisitorBF@@@Z (0x004D6E95)
+?bfmeSameUW@@YADPAXPAVBfmeItemUW@@0@Z,0x0030141B,callee read from the retail REL32 in placed BFME1-donor body ?Rva00452FE0Same@@YAHABURva00452FE0Key@@0@Z (0x00301B24)

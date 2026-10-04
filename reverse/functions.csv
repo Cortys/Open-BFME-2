@@ -51646,3 +51646,18 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva002B2646@Rva002B2646@@QAE_NPAUArg54@@0@Z,,0x002B2646,44,Code/GameEngine/Source/Common/Rva002B2646Check.cpp,matched,chain 0x002B254F virtual+0x28 via g_00E02D6C
 ?rva002B2672@Rva002B2672@@QAE_NPAUArg54@@0@Z,,0x002B2672,44,Code/GameEngine/Source/Common/Rva002B2672Check.cpp,matched,chain on 0x002B254F via sibling pattern virtual 0x2C
 ??0Rva00360474@@QAE@XZ,,0x00360474,54,Code/GameEngine/Source/Common/Rva00360474Ctor.cpp,matched,unlock lane ctor base Rva001DBAA4 vtable 0x816808
+?bfmeGoVKH@BfmeThingVKH@@QAE?AUBfmeMat4VKH@@H@Z,,0x00075295,40,Code/GameEngine/Source/Common/BfmeConv1401.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?bfmeKillVE@BfmeThingVE@@QAEPAXH@Z,,0x000AD930,40,Code/GameEngine/Source/Common/BfmeThreeHundredSixtyTwo.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?bfmeInitZQ@BfmeOwnerZQ@@QAEPAV1@PAX000@Z,,0x000EF272,40,Code/GameEngine/Source/Common/BfmeConv1803.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+??4LargeGroupAudioKeyMap@@QAEAAV0@ABV0@@Z,,0x003ED989,40,Code/GameEngine/Source/Common/LargeGroupAudioKeyMapAssignment.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?eraseKey@Rva006DF050@@QAEXH@Z,,0x000D3C4B,41,Code/GameEngine/Source/Common/Bfme/Rva006DF050EraseTen.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?sendIfState7@BfmeB996@@QAE_NPAVBfmePkt996@@@Z,,0x001068A7,42,Code/GameEngine/Source/Common/Rva007E3190BfmeSendIfState7.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?refresh@Rva003BBA00@@QAE_NXZ,,0x003FD2F6,43,Code/GameEngine/Source/Common/V4SubObjectSizeGuard.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+??0Rva007B8190Init@@QAE@XZ,,0x000EFD4B,44,Code/GameEngine/Source/Common/Rva007B8190InitCtor.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?bfmeGoCSA@BfmeThingCSA@@QAEXPAX@Z,,0x00264A86,44,Code/GameEngine/Source/Common/BfmeConv638.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?setRallyPoint@QueueProductionExitUpdate@@UAEXPBUCoord3D@@@Z,,0x004A051B,44,Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/QueueProductionExitUpdateSetRallyPoint.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?copyVec3Strided@@YAXPAURva0090FB60Vec3@@HPBU1@H@Z,,0x00177C7B,45,Code/GameEngine/Source/Common/SmallGaps/copyVec3Strided.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?bfmeEitherQP@@YAHPAX0@Z,,0x004D93B5,45,Code/GameEngine/Source/Common/BfmeConv2142.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?bfmeVisitAll@Gen_0018BC70@@QAEXPAVBfmeVisitorBF@@@Z,,0x004D6E95,47,Code/GameEngine/Source/Common/Bfme5CompactVisitor.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?Rva00452FE0Same@@YAHABURva00452FE0Key@@0@Z,,0x00301B24,48,Code/GameEngine/Source/Common/Rva00452FE0Same.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?bfmeReset@Gen_00490F00@@QAEXXZ,,0x00355F75,48,Code/GameEngine/Source/Common/BfmeOneHundredSixteen.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
