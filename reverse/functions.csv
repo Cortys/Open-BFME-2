@@ -52233,3 +52233,7 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?update@Rva0054482D@@UAE?AW4StateReturnType@@XZ,,0x005443ED,56,Code/GameEngine/Source/Common/Rva00544364OnEnter.cpp,matched,vslot slot 6 same class sibling onEnter
 ?update@Rva00544884@@UAE?AW4StateReturnType@@XZ,,0x00544707,56,Code/GameEngine/Source/Common/Rva0054467AFinish.cpp,matched,vslot slot 6 same class sibling onEnter
 ?onExit@Rva00544884@@UAEXW4StateExitType@@@Z,,0x0054473F,61,Code/GameEngine/Source/Common/Rva0054467AFinish.cpp,matched,vslot slot 5 same class sibling update
+?h00040601@GenAlpha@@QAEXXZ,,0x000F0AD7,16,Code/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp,matched,BFME1 donor game/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp (6d943426) recompiled /Os; unique masked placement on unclaimed .text
+?h000053B7@GenAlpha@@QAEXXZ,,0x000F0AE7,16,Code/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp,matched,BFME1 donor game/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp (6d943426) recompiled /Os; unique masked placement on unclaimed .text
+?h000217DD@GenBeta@@QAEXXZ,,0x001071EC,17,Code/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp,matched,BFME1 donor game/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp (6d943426) recompiled /Os; unique masked placement on unclaimed .text
+?h00005592@GenBeta@@QAEXXZ,,0x001071FD,17,Code/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp,matched,BFME1 donor game/GameEngine/Source/Common/S3GuardedGlobalTriples.cpp (6d943426) recompiled /Os; unique masked placement on unclaimed .text
