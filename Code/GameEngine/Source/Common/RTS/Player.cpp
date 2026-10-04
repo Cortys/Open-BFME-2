@@ -275,6 +275,8 @@ void PlayerRelationMap::crc( Xfer *xfer )
 	* 1: Initial version 
 	*/
 // ------------------------------------------------------------------------------------------------
+// Matched body: RelationMapXfer.cpp @ 0x2ADEBE (BFME 2 order). This ZH copy stays
+// because it emits the rowed hash_map iterator ++ and _M_skip_to_next bodies.
 // ?xfer@PlayerRelationMap@@MAEXPAVXfer@@@Z present-unmatched
 void PlayerRelationMap::xfer( Xfer *xfer )
 {
