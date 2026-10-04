@@ -344,34 +344,7 @@ void StructureCollapseUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?StructureCollapseUpdate::xfer present-unmatched
-void StructureCollapseUpdate::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// collapse frame
-	xfer->xferUnsignedInt( &m_collapseFrame );
-
-	// burst frame
-	xfer->xferUnsignedInt( &m_burstFrame );
-
-	// collapse state
-	xfer->xferUser( &m_collapseState, sizeof( StructureCollapseStateType ) );
-
-	// collapse velocity
-	xfer->xferReal( &m_collapseVelocity );
-
-	// current height
-	xfer->xferReal( &m_currentHeight );
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/StructureCollapseUpdateXfer.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
