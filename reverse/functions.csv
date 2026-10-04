@@ -52173,3 +52173,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?adjustTimer@ScriptEngine@@IAEXPAVScriptAction@@_N1@Z,,0x00209639,169,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineAdjustTimer.cpp,matched,ScriptEngine adjustTimer via float helper and shape levers
 ?setTimer@ScriptEngine@@IAEXPAVScriptAction@@_N1@Z,,0x002094CB,255,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineSetTimer.cpp,matched,ScriptEngine setTimer via float helper chain
 ?rva00391994@Rva00391994@@QAE_NXZ,,0x00391994,69,Code/GameEngine/Source/Common/Rva00391994Check.cpp,matched,command-button 0x16 scan over 32 slots via rowed Object name plus rowed lookup plus pinned getCommandButton
+?rva002917E8@Rva002917E8@@QAE_NXZ,,0x002917E8,79,Code/GameEngine/Source/Common/Rva002917E8Check.cpp,matched,Object 6-bit plus command-button 0x10 flag scan via rowed name plus rowed lookup plus pinned button
