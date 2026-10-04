@@ -563,6 +563,27 @@ typename TAG::TemplateType *ConcreteModuleClass<TAG>::createTemplate(INI *ini) c
     extern MOD##Concrete g_##MOD##Concrete;                                                       \
     template class ConcreteModuleClass<MOD##Tag>;                                                                                                                                                       extern MOD##Tag &(MOD##Tag::*g_##MOD##TagAssign)(const MOD##Tag &);
 
+// The emission-volume wrappers' INI createTemplate (0x003AB3D5 and the four
+// FX_WRAPPER_NOTHROW_CTOR ones after it) open no unwind state around the new
+// and the wrapper constructor call - only around parse - which is what VC7.1
+// emits when the constructor is declared not to throw.
+#define FX_WRAPPER_NOTHROW_CTOR(CATEGORY, KEY, MOD, TMPL)                                                      \
+    extern const char *const KEY##_MODULE_KEY;                                                    \
+    extern const char *const KEY##_MODULE_NAME;                                                   \
+                                                                                                  \
+    class MOD;                                                                                    \
+                                                                                                  \
+    typedef ModuleTag<CATEGORY, KEY##_MODULE_KEY, KEY##_MODULE_NAME, MOD, TMPL,                   \
+        DefaultParticleModule<CATEGORY> >                                                         \
+        MOD##Tag;                                                                                 \
+                                                                                                  \
+    typedef ConcreteModuleTemplate<MOD##Tag> MOD##Concrete;                                       \
+    typedef ConcreteModuleClass<MOD##Tag> MOD##ClassConcrete;                                     \
+                                                                                                  \
+    extern MOD##Concrete g_##MOD##Concrete;                                                       \
+    template <> MOD##Concrete::ConcreteModuleTemplate() throw();                                  \
+    template class ConcreteModuleClass<MOD##Tag>;                                                                                                                                                       extern MOD##Tag &(MOD##Tag::*g_##MOD##TagAssign)(const MOD##Tag &);
+
 // The point volume's tag is a plain struct rather than a ModuleTag
 // instantiation - the U rather than V in the decorated name is what says so.
 extern const char *const POINT_EMISSION_VOLUME_MODULE_KEY;
@@ -583,15 +604,16 @@ struct PointEmissionVolumeModuleTag
 
 typedef ConcreteModuleTemplate<PointEmissionVolumeModuleTag> PointEmissionVolumeModuleConcrete;
 typedef ConcreteModuleClass<PointEmissionVolumeModuleTag> PointEmissionVolumeModuleClassConcrete;
+template <> PointEmissionVolumeModuleConcrete::ConcreteModuleTemplate() throw();
 
 extern PointEmissionVolumeModuleConcrete g_pointEmissionVolumeModuleConcrete;
 template class ConcreteModuleClass<PointEmissionVolumeModuleTag>;
 
-FX_WRAPPER(5, SPHERE_EMISSION_VOLUME, SphereEmissionVolumeModule,
+FX_WRAPPER_NOTHROW_CTOR(5, SPHERE_EMISSION_VOLUME, SphereEmissionVolumeModule,
     SphereEmissionVolumeModuleTemplate)
-FX_WRAPPER(5, BOX_EMISSION_VOLUME, BoxEmissionVolumeModule, BoxEmissionVolumeModuleTemplate)
-FX_WRAPPER(5, LINE_EMISSION_VOLUME, LineEmissionVolumeModule, LineEmissionVolumeModuleTemplate)
-FX_WRAPPER(5, CYLINDER_EMISSION_VOLUME, CylinderEmissionVolumeModule,
+FX_WRAPPER_NOTHROW_CTOR(5, BOX_EMISSION_VOLUME, BoxEmissionVolumeModule, BoxEmissionVolumeModuleTemplate)
+FX_WRAPPER_NOTHROW_CTOR(5, LINE_EMISSION_VOLUME, LineEmissionVolumeModule, LineEmissionVolumeModuleTemplate)
+FX_WRAPPER_NOTHROW_CTOR(5, CYLINDER_EMISSION_VOLUME, CylinderEmissionVolumeModule,
     CylinderEmissionVolumeModuleTemplate)
 
 FX_WRAPPER(4, SPHERICAL_EMISSION_VELOCITY, SphericalEmissionVelocityModule,
