@@ -50669,3 +50669,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?update@Rva0054484A@@UAE?AW4StateReturnType@@XZ,,0x0054452A,72,Code/GameEngine/Source/Common/Rva0054452AFinish.cpp,matched,BEC tricall update shared-fail exit goto
 ?rva004AE5B8@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z,,0x004AE5B8,124,Code/GameEngine/Source/GameLogic/Object/Update/ToggleDeploySpecialAbilityUpdateSlot23.cpp,matched,vslot 23 of ToggleDeploy via audio event plus DeployStyle helper
 ?rva003F7737@Rva003F7737@@QAEPAXPBX@Z,,0x003F7737,37,Code/GameEngine/Source/GameClient/Rva003F7737NewNode.cpp,matched,hashtable new-node via rowed allocator and dup
+?rva003F78A9@Rva000427195@@QAEPAXPAXPBVAsciiString@@@Z,,0x003F78A9,124,Code/GameEngine/Source/GameClient/EvaBucketInsert.cpp,matched,eva bucket find-or-insert via rowed index compare new-node
