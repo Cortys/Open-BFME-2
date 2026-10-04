@@ -1,4 +1,6 @@
 // ?rva004C55FC@GrabPassengerSpecialPower@@QAEHXZ
+// partial score=0.97 date=2026-10-04
+// ?rva004C55FC@GrabPassengerSpecialPower@@QAEHXZ
 // partial score=0.95 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /EHsc
 
@@ -68,7 +70,10 @@ public:
 private:
 	char m_pad[0x11C];
 public:
-	unsigned int m_flags11C;
+	union {
+		unsigned int m_flags11C;
+		unsigned char m_flags11C_byte[4];
+	};
 };
 
 // ?rva004C55FC@GrabPassengerSpecialPower@@QAEHXZ present-unmatched
@@ -86,21 +91,22 @@ int GrabPassengerSpecialPower::rva004C55FC()
 		if (*(unsigned char *)((char *)this + 0x2C) == 0)
 			return 1;
 		*(unsigned char *)((char *)this + 0x2C) = 0;
-		if ((((unsigned char *)(*(Object **)((char *)this - 8)))[0x11F] & 0x40) == 0)
+		if (((*((Object **)((char *)this - 8)))->m_flags11C_byte[3] & 0x40) == 0)
 			return 0x3FFFFFFF;
-		((unsigned char *)(*(Object **)((char *)this - 8)))[0x11F] &= (unsigned char)0xBF;
-		(*(Object **)((char *)this - 8))->rva0028AE6D();
+		(*((Object **)((char *)this - 8)))->m_flags11C_byte[3] &= (unsigned char)0xBF;
+		(*((Object **)((char *)this - 8)))->rva0028AE6D();
 		return 0x3FFFFFFF;
 	}
 	if (*(unsigned char *)((char *)this + 0x2D) == 0)
 		return 1;
 	if (*(unsigned char *)((char *)this + 0x2C) != 0)
 		return 1;
+	unsigned int mask = 0x40000000;
 	*(unsigned char *)((char *)this + 0x2D) = 0;
 	*(unsigned char *)((char *)this + 0x2C) = 1;
-	if (((*(Object **)((char *)this - 8))->m_flags11C & 0x40000000) != 0)
+	if (((*((Object **)((char *)this - 8)))->m_flags11C & mask) != 0)
 		return 1;
-	(*(Object **)((char *)this - 8))->m_flags11C |= 0x40000000;
-	(*(Object **)((char *)this - 8))->rva0028AE6D();
+	(*((Object **)((char *)this - 8)))->m_flags11C |= mask;
+	(*((Object **)((char *)this - 8)))->rva0028AE6D();
 	return 1;
 }
