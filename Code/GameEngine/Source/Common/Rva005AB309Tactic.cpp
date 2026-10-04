@@ -31,6 +31,13 @@ extern int g_009BA4E8;
 // it back.
 int g_00E06414 = g_009BA4E8 / 2;
 
+// .data 0x009BC1B8: a NULL-terminated name list {"TARGETLESS", NULL}. The
+// ring-team creation here (0x005AB4B9) and two sibling tactics (0x004ED955,
+// 0x005ABAF6) push its first entry into a team-name format (0x00C62A08);
+// no code reads past it. The NULL-terminated lists that follow it in .data
+// (NONE/HOLD/KILL/SPAWN, ...) are separate tables nothing here references.
+const char *g_009BC1B8[] = { "TARGETLESS", 0 };
+
 struct Coord3DBase
 {
 	float x;
