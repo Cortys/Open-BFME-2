@@ -52104,3 +52104,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva005FBB4D@Rva005FBB68@@QAEXH@Z,,0x005FBB4D,8,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,tail jmp wrapper via plus4 to rowed rva005FB872 same class as neighbours
 ?onEnter@Rva00544867@@UAE?AW4StateReturnType@@XZ,,0x0054477C,113,Code/GameEngine/Source/Common/Rva0054477COnEnter.cpp,matched,vslot slot 4 ctor Rva00544867 sibling tri pattern
 ?onEnter@Rva005442CC@@UAE?AW4StateReturnType@@XZ,,0x005442CC,124,Code/GameEngine/Source/GameLogic/AI/Rva005442CCOnEnter.cpp,matched,gap TU flags tri-pattern tail base onEnter
+?rva007B75E2@@YAXXZ,,0x007B75E2,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap dtor thunk g_00DFE180 BfmeDualVtableReleaseDtor between 0x007B75D8 0x007B75EC

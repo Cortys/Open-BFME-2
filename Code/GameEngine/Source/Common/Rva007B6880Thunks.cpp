@@ -2015,3 +2015,19 @@ void __cdecl Rva007B7090Set()
 	g_00DB6200 = &g_00BD23B4;
 }
 
+class BfmeDualVtableReleaseDtor
+{
+public:
+	virtual ~BfmeDualVtableReleaseDtor();
+};
+
+extern unsigned g_00DFE180;
+// g_00DFE180: packet annotates VA 0x009FE180 (data), no name yet.
+
+// ?rva007B75E2@@YAXXZ @ 0x007B75E2 (10B). Global BfmeDualVtableReleaseDtor dtor thunk: ecx=&g_00DFE180 then tail-jmp to rowed ??1BfmeDualVtableReleaseDtor@@UAE@XZ (0x00203629). No callers. Between 0x007B75D8 and 0x007B75EC. Honest address name.
+void __cdecl rva007B75E2()
+{
+	BfmeDualVtableReleaseDtor *p = (BfmeDualVtableReleaseDtor *)&g_00DFE180;
+	return p->BfmeDualVtableReleaseDtor::~BfmeDualVtableReleaseDtor();
+}
+
