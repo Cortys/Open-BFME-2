@@ -7968,3 +7968,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeEnd982C@BfmeHub982@@QAEXXZ,0x00110611,address read from the REL32 displacement at a placed body
 ?bfmeStep982C@@YAXXZ,0x000AA5E1,address read from the REL32 displacement at a placed body
 ?bfmeTouch982C@BfmeT982@@QAEXXZ,0x000A9570,address read from the REL32 displacement at a placed body
+?addConsumption@Energy@@AAEXH@Z,0x004DF1AF,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?addProduction@Energy@@AAEXH@Z,0x004DF18D,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
