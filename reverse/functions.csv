@@ -52432,3 +52432,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ??0BfmeParserBindingVE@@QAE@PAVSidesList@@P81@AE_NAAVDataChunkInput@@PAUDataChunkInfo@@@ZPAV2@ABVAsciiString@@5@Z,,0x000AD73D,51,Code/GameEngine/Source/Common/System/BfmeDataChunkParserBinding.cpp,matched,BFME1 donor BfmeDataChunkParserBinding.cpp at /Os; retail inlines the base ctor and calls the registration directly
 ?updateNemesis@TunnelTracker@@QAEXPBVObject@@@Z,,0x004F5935,74,Code/GameEngine/Source/Common/RTS/TunnelTrackerUpdateNemesis.cpp,matched,BFME1 updateNemesis donor with inlined kind bits plus frame
 ?rva00347AE8@Rva00342843@@UAEXXZ,,0x00347AE8,85,Code/GameEngine/Source/GameLogic/AI/Rva00347AE8.cpp,matched,vtable slot6 of Rva00342843 with CritterDesync log and tailjmp to bfmeTail932E
+??0Rva0021E85A@@QAE@ABV0@@Z,,0x0021E85A,250,Code/GameEngine/Source/Common/Rva0021E85ACopy.cpp,matched,copy ctor five AsciiString plus maps via throw FixedStorage caller 0x0021EF82
