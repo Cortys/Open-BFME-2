@@ -51072,3 +51072,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?Rva00565668Copy@@YAPAVRva00564B1A@@PAV1@00PAD@Z,,0x00565668,29,Code/GameEngine/Source/Common/Rva00565668Copy.cpp,matched,wrapper over rowed Copy 0x00564CD4 via caller 0x00565898 neighbours FillN
 ?rva00565898@Rva00565898@@QAEPAVRva00564B1A@@PAV2@0@Z,,0x00565898,51,Code/GameEngine/Source/Common/Rva00565898Erase.cpp,matched,erase via Copy 0x00565668 plus DestroyRange 0x0052C37A callers 0x00565A8E
 ?rva0006C995@Rva0006C995@@QAEPAV1@PAURva001408C0Target@@@Z,,0x0006C995,58,Code/Libraries/Source/WWVegas/WWLib/Rva0006C995Insert.cpp,matched,unlock set insert via rowed 0x00080691 and 0x0061F600 flag 0x10
+?rva003A105B@Team@@QAEPAVObject@@XZ,,0x003A105B,101,Code/GameEngine/Source/Common/RTS/TeamRva003A105B.cpp,matched,Team target ObjectID validation via rowed findObjectByID getControllingPlayer rva002943B2
