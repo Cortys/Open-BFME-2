@@ -8,6 +8,7 @@
 // (push-14/cdq/pop-ecx idiv); the second bound compares unsigned so the miss
 // jumps with jae while the negative guard keeps its signed jl.
 
+#pragma optimize("sy", on)
 template <typename T>
 class StringBase
 {
@@ -15,18 +16,18 @@ class StringBase
 
 public:
 	StringBase() : m_data(0) {}
-
-private:
 	StringBase(const StringBase<T> &that);
+private:
 	T *m_data;
 };
 
-class BFMERetailAsciiString : public StringBase<char>
+class BFMERetailAsciiString : private StringBase<char>
 {
 public:
 	__forceinline BFMERetailAsciiString(const BFMERetailAsciiString &other) : StringBase<char>(other) {}
 	~BFMERetailAsciiString();
 };
+#pragma optimize("", on)
 
 struct ModuleNugget
 {
