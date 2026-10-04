@@ -14,15 +14,44 @@
 // 0x0028AE6D) reproduce in place of the volatile field.
 // ?rva00390CCA@PhysicsBehavior@@QAEX_N@Z @0x00390CCA 134B. Identity: PhysicsBehavior method beside ctor 0x3907A6; clears vector at +0x20, zeroes +0x50/+0x54, checks +0x5F and moduleData+0x59, setWakeFrame FOREVER via 0x44DF71 or kill via Object::kill, weapon cleanup via WeaponStore 0x2CE964 and TheWeaponStore.
 // Evidence: callers 0x390E61/0x390FAF; callees rowed/pinned in packet; neighbours 0x3908A1/0x3913E4; same layout/flags as PhysicsBehaviorCtor.
-#include <vector>
-
-extern "C" void _ReadWriteBarrier(void);
-#pragma intrinsic(_ReadWriteBarrier)
+#include <stddef.h>
 
 struct Gen_p12pod
 {
 	int a[3];
 };
+
+namespace _STL
+{
+
+template <class T>
+class allocator
+{
+};
+
+template <class T, class A = allocator<T> >
+class vector
+{
+public:
+	T *m_start;
+	T *m_finish;
+	T *m_end;
+};
+
+template <>
+class vector<Gen_p12pod, allocator<Gen_p12pod> >
+{
+public:
+	Gen_p12pod *m_start;
+	Gen_p12pod *m_finish;
+	Gen_p12pod *m_end;
+	Gen_p12pod *erase(Gen_p12pod *first, Gen_p12pod *last);
+	Gen_p12pod *begin() { return m_start; }
+	Gen_p12pod *end() { return m_finish; }
+	void clear() { erase(begin(), end()); }
+};
+
+}
 
 struct Coord3D
 {
