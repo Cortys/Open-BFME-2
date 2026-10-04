@@ -51113,3 +51113,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??R?$less@M@_STL@@QBE_NABM0@Z,,0x0050473A,27,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_float_00372ff4.cpp,matched,unique masked-byte placement (locate.py sweep)
 ?rva0040A7F1@Rva0040A7F1@@QBEHH@Z,,0x0040A7F1,30,Code/GameEngine/Source/Common/Rva0040A7F1Finish.cpp,matched,unsigned bounds-checked index; volatile base read defeats strength reduction giving retail sar/jb and base reload in branch
 ??$__pop_heap_aux@PAHHVRva00204BB8@@@_STL@@YAXPAH00VRva00204BB8@@@Z,,0x0021D484,30,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_rva00204bb8.cpp,matched,unique masked-byte placement (locate.py sweep)
+??0?$vector@UBfmeRecord0040B61A@@V?$allocator@UBfmeRecord0040B61A@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x0040B3DE,93,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_BfmeRecord0040B61A_allocate_copy.cpp,matched,unique masked-byte placement (locate.py sweep)
