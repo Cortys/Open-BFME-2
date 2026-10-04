@@ -1,5 +1,4 @@
 // ?rva002A8FE0@Rva002A8FE0@@QAEXXZ
-// partial score=0.94 date=2026-10-02
 // cl: /O1 /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // ?rva002A8FE0@Rva002A8FE0@@QAEXXZ @ 0x002A8FE0 (73B). Leaf array-of-lists
 // clear calling rowed ?Rva002A8D2DFree@@YGXPAURva002A8D2DNode@@@Z at 0x002A8D2D.
@@ -7,8 +6,10 @@
 // via m_next at +0 then clears the slot; size at +0x10 cleared. Evidence:
 // callers at 0x002A91F2 0x002A924D and jmp 0x002A91D8; Free TU names sole
 // caller as this loop. Retail mov ecx esi before call proves thiscall receiver;
-// Free body ignores ecx so stdcall row is ICF-identical. Unsigned index gives
-// retail jb; i hoisted before early je gives retail push/pop order.
+// the Free body ignores ecx so the rowed stdcall body is ICF-identical and the
+// member spelling aliases it (symbols.csv pin plus /alternatename). The plain
+// for-loop folds the unsigned entry guard into the sar flags (je) and
+// recomputes the bound each pass (cmp edi,eax; jb), exactly as retail does.
 struct Rva002A8D2DNode
 {
 	void *m_next;
@@ -27,14 +28,10 @@ private:
 	int m_10;
 };
 
-// ?rva002A8FE0@Rva002A8FE0@@QAEXXZ present-unmatched
+#pragma comment(linker, "/alternatename:?Free@Rva002A8FE0@@QAEXPAURva002A8D2DNode@@@Z=?Rva002A8D2DFree@@YGXPAURva002A8D2DNode@@@Z")
 void Rva002A8FE0::rva002A8FE0()
 {
 	unsigned i = 0;
-	if ((((char *)m_end - (char *)m_start) >> 2) == 0) {
-		m_10 = 0;
-		return;
-	}
 	for (; i < (unsigned)(((char *)m_end - (char *)m_start) >> 2); ++i) {
 		struct Rva002A8D2DNode *node = m_start[i];
 		while (node) {
