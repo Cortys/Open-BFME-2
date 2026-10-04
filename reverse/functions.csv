@@ -51751,3 +51751,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0Rva0010EE4F@@QAE@ABVRva0036CA00Str@@@Z,,0x0010EE4F,24,Code/GameEngine/Source/Common/Rva0010EE4FCtor.cpp,matched,Derived ctor via rowed base 0x001164D3 plus vtable sibling 0x0010EE9E
 ??0Rva0010EE86@@QAE@ABVRva0036CA00Str@@@Z,,0x0010EE86,24,Code/GameEngine/Source/Common/Rva0010EE86Ctor.cpp,matched,Derived ctor via rowed base 0x001164D3 plus vtable sibling 0x0010EE4F
 ?Register_For_Rendering@MeshModelClass@@QAEXXZ,,0x00173230,150,Code/Libraries/Source/WWVegas/WW3D2/Rva00173230Finish.cpp,matched,retail 150B exact; callee pins respelled to real mangled names; goto spelling reaches retail block layout
+?rva002966A0@Object@@QAEXPAVPlayer@@0@Z,,0x002966A0,169,Code/GameEngine/Source/GameLogic/Object/Rva002966A0Finish.cpp,matched,retail 169B exact; restored cl flags and non-virtual DoXfer call

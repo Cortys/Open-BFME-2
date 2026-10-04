@@ -1,7 +1,14 @@
 // ?rva002966A0@Object@@QAEXPAVPlayer@@0@Z
-// partial score=0.93 date=2026-10-03
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
-// ?rva002966A0@Object@@QAEXPAVPlayer@@0@Z @0x002966A0 169B.
+// Object::rva002966A0 at 0x002966A0, 169 bytes. Banked at 0.93 behind two walls:
+//
+//   1. The banked file had lost its `// cl:` line, so it silently compiled under
+//      the BASE flags at 176 bytes and failed at +0x5 with two extra callee-saved
+//      spills. Restoring the flags it was measured under drops it to the retail
+//      size of 169 and moves the first difference to +0x23.
+//   2. The DoXfer call was declared virtual, emitting `mov eax,[ecx] / call [eax]`
+//      where retail has a direct `call 0x0047A69C`. See EmissionVelocityInfo below.
+//
 // Evidence: caller 0x00297530; callees rowed aiIdle 0x001E8A38, DoXfer 0x0047A69C,
 // makeDirty 0x0073A0F0, init 0x007584C0, rva00625840 0x00625840,
 // setScriptStatus 0x00292969, isLocalPlayer 0x002A9D89 (x2); global g_bfmeWorldRV.
@@ -44,6 +51,15 @@ class EmissionVelocityInfo
 {
 public:
 	virtual void DoXfer(Xfer &xfer);
+	// The same body as DoXfer, reached DIRECTLY. Retail at 0x002966C9 does
+	// `lea ecx,[ebx+0x3bc] / call 0x0047A69C` -- a non-virtual call to the address
+	// the ledger already rows as ?DoXfer@EmissionVelocityInfo@FXParticleSystem@@
+	// UAEXAAVXfer@@@Z (the shared empty-override fold). Calling it virtually
+	// instead costs two instructions (`mov eax,[ecx] / call [eax]`) and 7 bytes.
+	// Both spellings are declared because the resolver keys the REL32 site on the
+	// mangled name: `UAEX` is the virtual one, and a direct call needs `QAEX`, so
+	// the non-virtual spelling carries its own pin to the same address.
+	void DoXferDirect(Xfer &xfer);
 };
 }
 
@@ -101,13 +117,12 @@ public:
 	void rva002966A0(Player *a, Player *b);
 };
 
-// ?rva002966A0@Object@@QAEXPAVPlayer@@0@Z present-unmatched
 void Object::rva002966A0(Player *a, Player *b)
 {
 	Rva002966A0Holder *holder = *(Rva002966A0Holder **)((char *)this + 0x258);
 	if (holder != 0 && a != b)
 		holder->m_ai.aiIdle(CMD_FROM_AI);
-	((FXParticleSystem::EmissionVelocityInfo *)((char *)b + 0x3bc))->DoXfer(*(Xfer *)this);
+	((FXParticleSystem::EmissionVelocityInfo *)((char *)b + 0x3bc))->DoXferDirect(*(Xfer *)this);
 	Rva002966A0Item **arr = *(Rva002966A0Item ***)((char *)this + 0x244);
 	for (; *arr != 0; ++arr)
 		(*arr)->rva002966A0Call(a, b);
