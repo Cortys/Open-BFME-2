@@ -1,17 +1,11 @@
 // ?rva006C1D60@Rva006C1D60@@QAE_NI_N@Z
-// partial score=0.92 date=2026-10-04
+// partial score=0.95 date=2026-10-04
+// cl: /EHsc /DNDEBUG /DWIN32 /MD
 // ?rva006C1D60@Rva006C1D60@@QAE_NI_N@Z 0x006C1D60 (93B, chain from 0x006C18A0)
 // Enable-guarded hash-table find-then-remove wrapper around Rva006C1850.
-// Banked 0.90 had the whole body behind early returns; retail keeps the
-// m_enabled test as a COLD forward branch to a shared tail (`mov al,[ecx+0x680];
-// test al,al; je <end>`), which only the outer `if (m_enabled) { ... }` form
-// reproduces. That form is now byte-identical through +0x9 (the enabled
-// branch itself), where the previous bank diverged at +0x8 (jne vs je).
-// Residual: the `!table` return binds edi and is emitted inline
-// (`jne over; xor al,al; pop esi; ret`) where retail forwards it to the shared
-// pop-edi false block; the compiler also rotates the key loop. Every guard
-// spelling that merges the false exits instead hoists the callee-saves and
-// fuses the table load, so the two are not simultaneously reachable.
+// Retail keeps the m_enabled test as a COLD forward branch to a shared tail
+// (`mov al,[ecx+0x680]; test al,al; je <end>`), reproduced only by the outer
+// `if (m_enabled) { ... }` form.
 struct Rva006C1850Node
 {
 	unsigned int m_key;
@@ -49,20 +43,19 @@ bool Rva006C1D60::rva006C1D60(unsigned int key, bool freeValue)
 	{
 		Rva006C1850 *t = &m_table;
 		Rva006C1850Node **table = t->m_table;
-		if (!table)
-			return false;
-		int h = (key >> 3) % t->m_bucketCount;
-		Rva006C1850Node *node = table[h];
-		if (!node)
-			return false;
-		for (; node != 0; node = node->m_next)
-			if (node->m_key == key)
-				break;
-		if (!node)
-			return false;
-		bool result = true;
-		t->rva006C18A0(key, freeValue);
-		return result;
+		if (table != 0)
+		{
+			int h = (key >> 3) % t->m_bucketCount;
+			Rva006C1850Node *node = table[h];
+			while (node != 0 && node->m_key != key)
+				node = node->m_next;
+			if (node != 0)
+			{
+				t->rva006C18A0(key, freeValue);
+				return true;
+			}
+		}
+		return false;
 	}
 	return false;
 }
