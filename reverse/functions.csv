@@ -52451,3 +52451,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva002A8AE4@Rva002A8F24@@QAEPAURva002A8AE4Record@@PAX@Z,,0x002A8AE4,64,Code/GameEngine/Source/Common/Rva002A8AE4.cpp,matched,caller 0x005056C7 with rowed get and getNthPlayer via ThePlayerList
 ??0Rva000AEFAA@@QAE@PAXPAVBfmeParserRegistryVE@@PBVAsciiString@@@Z,,0x000AEFAA,104,Code/GameEngine/Source/Common/Rva000AEFAA.cpp,matched,unlock BlendTileData binding ctor via base pin
 ?rva002C6EA4@Rva002C6EA4@@QAE_NABVAsciiString@@@Z,,0x002C6EA4,31,Code/GameEngine/Source/Common/Rva002C6EA4Method.cpp,matched,unlock map find end compare 17c AsciiString map M_find row
+?xfer@W3DSailModelDraw@@MAEXPAVXfer@@@Z,,0x000D0816,72,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DSailModelDrawXfer.cpp,matched,slot3 xfer base W3DScriptedModelDraw Version 1 1 float 2E8 bool 2EC
