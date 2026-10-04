@@ -121,8 +121,8 @@ class Scorer:
 
 # Bumped when the search changes enough that bodies it already failed on are
 # worth another run (--next --retry). 2: instruction fitness, target-only
-# mutations, triage and early stops.
-VERSION = 2
+# mutations, triage and early stops. 3: width/compound/not/temp mutations.
+VERSION = 3
 
 _DISASM = None
 
@@ -224,11 +224,28 @@ def statement(line):
     return s.endswith(";") and not re.match(r"(return|break|continue|goto|case|default)\b", s)
 
 
+WIDTHS = [("int", "long"), ("unsigned int", "unsigned long"), ("char", "bool"),
+          ("unsigned char", "bool"), ("short", "unsigned short"), ("int", "unsigned int")]
+SIMPLE_RETURN = re.compile(r"^(?:static\s+|inline\s+)*((?:unsigned\s+|signed\s+|const\s+)*"
+                           r"(?:int|long|short|char|bool|float|double|DWORD|BOOL|Bool|Int|UnsignedInt|Real))\s+[\w:~]+\s*\(")
+
+
+def _return_type(lines, i):
+    """The simple return type of the function enclosing line i, or None."""
+    for k in range(i, -1, -1):
+        found = SIMPLE_RETURN.match(lines[k])
+        if found:
+            return found.group(1)
+        if BODY_START.match(lines[k]):
+            return None
+    return None
+
+
 def mutate(text, rng, focus=None):
     lines = text.split("\n")
     body = body_lines(lines, focus)
     kinds = ["swap", "swap", "cmp", "eq", "commute", "incr", "sign", "flag", "move", "ifelse",
-             "const", "forwhile"]
+             "const", "forwhile", "width", "compound", "not", "temp"]
     body_set = set(body)
 
     def indent(line):
@@ -330,6 +347,47 @@ def mutate(text, rng, focus=None):
                         break
             if new != line:
                 lines[i] = new
+                return "\n".join(lines), kind
+        elif kind == "width" and body:
+            # same-size spellings MSVC 7.1 can treat differently in register
+            # allocation and frame layout (exactness is the only judge)
+            i = rng.choice(body)
+            line = lines[i]
+            for a, b in rng.sample(WIDTHS, len(WIDTHS)):
+                for x, y in ((a, b), (b, a)):
+                    new = re.sub(rf"^(\s*(?:const\s+)?){x}\b(?=\s+[\w*&])", rf"\g<1>{y}", line, count=1)
+                    if new != line:
+                        lines[i] = new
+                        return "\n".join(lines), kind
+        elif kind == "compound" and body:
+            i = rng.choice(body)
+            line = lines[i]
+            new = re.sub(r"^(\s*)([\w.\->\[\]]+)\s*([-+*/|&^])=\s*(.+);", r"\1\2 = \2 \3 (\4);", line, count=1)
+            if new == line:
+                new = re.sub(r"^(\s*)([\w.\->\[\]]+)\s*=\s*\2\s*([-+*/|&^])\s*\(?([^;()]+)\)?;",
+                             r"\1\2 \3= \4;", line, count=1)
+            if new != line:
+                lines[i] = new
+                return "\n".join(lines), kind
+        elif kind == "not" and body:
+            i = rng.choice(body)
+            line = lines[i]
+            new = re.sub(r"!\s*([A-Za-z_][\w.\->]*)\b(?!\s*\()", r"(\1 == 0)", line, count=1)
+            if new == line:
+                new = re.sub(r"\(([A-Za-z_][\w.\->]*) == 0\)", r"!\1", line, count=1)
+            if new != line:
+                lines[i] = new
+                return "\n".join(lines), kind
+        elif kind == "temp" and body:
+            i = rng.choice(body)
+            decl = re.match(r"^(\s*)[\w:<>\s*&]+?\s+\**(\w+)\s*=\s*([^;]+);\s*$", lines[i])
+            if decl and i + 1 < len(lines) and re.match(rf"^\s*return\s+{decl.group(2)}\s*;", lines[i + 1]):
+                lines[i:i + 2] = [f"{decl.group(1)}return {decl.group(3)};"]
+                return "\n".join(lines), kind
+            ret = re.match(r"^(\s*)return\s+([^;]+[-+*/&|^<>?][^;]*);\s*$", lines[i])
+            rtype = _return_type(lines, i)
+            if ret and rtype:
+                lines[i:i + 1] = [f"{ret.group(1)}{rtype} result = {ret.group(2)};", f"{ret.group(1)}return result;"]
                 return "\n".join(lines), kind
         elif kind == "flag":
             for k, line in enumerate(lines[:12]):
