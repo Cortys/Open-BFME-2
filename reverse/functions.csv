@@ -50712,3 +50712,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva004530ED@@QAE@XZ,,0x004530D0,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004530EDCtor.cpp,matched,default ctor zeroing 20B caller 0x00453B48 same class as copy 0x004530ED
 ?rva003F7954@Rva003F7954@@QAEXXZ,,0x003F7954,40,Code/GameEngine/Source/GameClient/EvaBucketReset.cpp,matched,clears table at +8 via rowed 0x003A2A41 zeroes +0x1C 1.0f floats caller 0x0020EB4E
 ??0Rva003F7EC7@@QAE@H@Z,,0x003F7E9D,42,Code/Libraries/Source/WWVegas/WW3D2/Rva003F7EC7Ctor.cpp,matched,ctor stores vtable arg at +4 zeroes rest caller 0x003F90A1
+??0Rva002DAC58@@QAE@XZ,,0x002DAC34,36,Code/GameEngine/Source/Common/Rva002DAC58Ctor.cpp,matched,ctor via rowed baseConstruct plus lists plus global g_00DFF088 plus caller 0x0022E874
