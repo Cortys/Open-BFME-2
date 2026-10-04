@@ -50728,3 +50728,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00357DF8@Rva00357DF8@@QAEXABUBfmeSpecialPowerTimer8@@@Z,,0x00357DF8,28,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357DF8.cpp,matched,begin-insert shape as sibling 0x00357E14 via rowed insert 0x0036E30E
 ?rva003F7D29@Rva003F7D29@@QAEEXZ,,0x003F7D29,24,Code/Libraries/Source/WWVegas/WW3D2/WaterRenderObjRva003F7D29.cpp,matched,unlock caller 0x003F8052 grid at 0x1c WaterRenderObjClass plus8 0xd early-out
 ?rva003F7F30@Rva003F7F30@@QAEXXZ,,0x003F7F30,27,Code/Libraries/Source/WWVegas/WW3D2/WaterRenderObjRva003F7F30.cpp,matched,unlock caller 0x003F8090 callee clear rowed offsets 0xc 0x14 0x18
+?rva003F7BE9@Rva003F7BE9@@QAEXPBVModuleData@@@Z,,0x003F7BE9,35,Code/GameEngine/Source/Common/Rva003F7BE9Setter.cpp,matched,leaf caller 0x003F9291 slot0 with 0 then delete same as 0x003F7C0C
