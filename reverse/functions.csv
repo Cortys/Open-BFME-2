@@ -50982,3 +50982,19 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva007B7CA5@@YAXXZ,,0x007B7CA5,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7CA5
 ?rva007B7CB9@@YAXXZ,,0x007B7CB9,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7CB9
 ?rva007B7CCD@@YAXXZ,,0x007B7CCD,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7CCD
+?rva007B7CE1@@YAXXZ,,0x007B7CE1,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7CEB@@YAXXZ,,0x007B7CEB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7CFF@@YAXXZ,,0x007B7CFF,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D09@@YAXXZ,,0x007B7D09,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D13@@YAXXZ,,0x007B7D13,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D1D@@YAXXZ,,0x007B7D1D,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D4F@@YAXXZ,,0x007B7D4F,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D63@@YAXXZ,,0x007B7D63,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D6D@@YAXXZ,,0x007B7D6D,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D8B@@YAXXZ,,0x007B7D8B,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7D9F@@YAXXZ,,0x007B7D9F,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7DA9@@YAXXZ,,0x007B7DA9,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7DBD@@YAXXZ,,0x007B7DBD,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7DE5@@YAXXZ,,0x007B7DE5,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7DEF@@YAXXZ,,0x007B7DEF,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva007B7DF9@@YAXXZ,,0x007B7DF9,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
