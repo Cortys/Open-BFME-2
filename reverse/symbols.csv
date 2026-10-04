@@ -7850,3 +7850,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??_ERva00576C4B@@UAEPAXI@Z,0x00576DD5,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x00576D05 jumps here
 ?parseUnsignedInt@INI@@SAXPAV1@PAX1PBX@Z,0x0002EF72,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?set@Rva00504EADCurve@@QAEXMMMM@Z,0x00504EAD,BFME2 function-curve key insert taking float tangents; REL32 at 0x00504FDB in addKey 0x00504F09
+??_EW3DShadowGeometry@@UAEPAXI@Z,0x000F1EE4,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x000F1EBA jumps here
+??_ERva002D3573@@UAEPAXI@Z,0x002D40D8,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x002D35BF jumps here
