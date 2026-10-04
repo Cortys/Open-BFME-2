@@ -1,4 +1,6 @@
 // ?rva000E70D9@Rva000E70D9@@QAEXH@Z
+// partial score=0.98 date=2026-10-04
+// ?rva000E70D9@Rva000E70D9@@QAEXH@Z
 // partial score=0.98 date=2026-10-03
 // cl: /O1 /MD /G7 /arch:SSE
 // ?rva000E70D9@Rva000E70D9@@QAEXH@Z 0x000E70D9 103B
@@ -15,7 +17,7 @@ struct Rva000E70D9Elem
 {
 	float f00;
 	float f04;
-	float f08;
+	float f08;   // cursor is &f08: class offset 0x1960 == m_elems[0] + 8
 	unsigned char m_pad0C[0x34];
 	int m_field40;
 	unsigned char m_flag44;
@@ -42,21 +44,20 @@ public:
 // ?rva000E70D9@Rva000E70D9@@QAEXH@Z present-unmatched
 void Rva000E70D9::rva000E70D9(int id)
 {
-	char *base = (char *)this;
 	float z = 0.0f;
-	float *f = (float *)(base + 0x1960);
-	for (int i = 0; i < m_count; ++i, f += 0x28) {
-		if (((int *)f)[20] != id)
+	for (int i = 0; i < m_count; ++i) {
+		float *f = (float *)&m_elems[i].f08;
+		if (*(const int *)((const char *)f + 0x48) != id)
 			continue;
 		float one = g_Va00BBB8D8;
 		f[-2] = z;
 		f[-1] = z;
 		f[0] = z;
-		((int *)f)[14] = -2;
-		f[16] = z;
-		f[17] = z;
-		f[18] = z;
-		f[19] = one;
+		*(int *)((char *)f + 0x30) = -2;
+		f[8] = z;
+		f[9] = z;
+		f[10] = z;
+		f[11] = one;
 		m_dirty = 1;
 	}
 }
