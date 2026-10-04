@@ -51269,3 +51269,6 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?parseWaterSettingDefinition@INI@@SAXPAV1@@Z,,0x00200BEB,198,Code/GameEngine/Source/Common/INI/INIWater.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?parseMultiplayerColorDefinition@INI@@SAXPAV1@@Z,,0x001EF3BF,178,Code/GameEngine/Source/Common/INI/INIMultiplayer.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?parseCrateTemplateDefinition@CrateSystem@@SAXPAVINI@@@Z,,0x0035CFEA,173,Code/GameEngine/Source/GameLogic/System/CrateSystem.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?rva00505924@Rva00506909@@AAEXXZ,,0x00505924,125,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,per-item 0x004EDF03 then 0x004ECE1C over the vectors at +0x10/+0x28/+0x40/+0x58; called from 0x005069B4
+?rva00505F80@Rva00506909@@AAEXXZ,,0x00505F80,80,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,seed the +0x1C vector with a new 0x58-byte object (ctor 0x005AA7DF) when empty; ctor setup member
+?rva00505FD0@Rva00506909@@AAEXXZ,,0x00505FD0,80,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,seed the +0x34 vector with a new 0x60-byte object (ctor 0x005AA9DB) when empty; ctor setup member
