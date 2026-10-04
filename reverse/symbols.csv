@@ -8239,3 +8239,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1Rva005C9D30@@QAE@XZ,0x001F9025,tail-jump target of ??1Sub005CD540Outer@@QAE@XZ at retail 0x001FA95A read from its jmp displacement; body unrowed
 ?getType@Dict@@QBE?AW4DataType@1@W4NameKeyType@@@Z,0x0031317C,callee of ?known@Dict@@QBE_NW4NameKeyType@@W4DataType@1@@Z at retail 0x002A9880 read from its REL32 displacement; address already carries the matched ?getType@Dict@@QBE?AW4DataType@1@H@Z row
 ?Rva00077140@@YAHHH@Z,0x0022CB03,callee of ??9Rva00077710Value@@QBE_NABV0@@Z at retail 0x0022CF4C read from its REL32 displacement; body unrowed
+?bfmeDoD1005@BfmeItem1005@@QAEXH@Z,0x0028D8B6,callee of ?rva00220820Forward@@YAXPAVBfmeItem1005@@PBURva00220820Pair@@@Z at retail 0x004625AA read from its REL32 displacement; address already carries the ?releaseWeaponLock@Object row
+?handleNode@Rva006BDB00@@QAEXPAVRva006BDB00Node@@@Z,0x00063A77,callee of ?detach@Rva006BD6C0@@QAEXXZ at retail 0x00063C33 read from its REL32 displacement; address already carries the matched ?removeGhostObject@W3DGhostObjectManager row
+??0Rva00489210@@QAE@XZ,0x001DBAA4,base ctor called by ??0S4BuiltRva0059D1F0@@QAE@XZ at retail 0x0035D32B read from its REL32 displacement; address already carries the matched ??0Rva001DBAA4@@QAE@XZ row
+??RRva00450B90Predicate@@QBE_NPBURva00450B90Item@@@Z,0x00300021,predicate called twice by the placed STLport __partition at retail 0x003008A0 read from both REL32 displacements; body unrowed
