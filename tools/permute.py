@@ -470,6 +470,59 @@ def _literal_sites(text):
             for m in LITERAL.finditer(masked)]
 
 
+LOCAL_DECL = re.compile(r"^\s*(?:const\s+|unsigned\s+|signed\s+|struct\s+|class\s+)*[A-Za-z_][\w:<>,\s]*?[\s*&]+"
+                        r"[A-Za-z_]\w*\s*(?:\[[^\]]*\])?\s*(?:=[^;]*)?;\s*(?://.*)?$")
+NOT_DECL = re.compile(r"^\s*(return|delete|goto|throw|case|else|if|for|while|do|switch)\b")
+
+
+def _stack_gap(compiled, target):
+    """True when the differing instructions are frame-relative ([ebp/esp ...]
+    or the prologue's sub esp): a local variable layout fact."""
+    for (m1, o1), (m2, o2) in zip(_instructions(compiled), _instructions(target)):
+        if (m1, o1) != (m2, o2) and not ("ebp" in o1 or "esp" in o1):
+            return False
+    return True
+
+
+def _local_declarations(lines, focus):
+    """Indexes of local declaration lines in the target function's body."""
+    body = set(body_lines(lines, focus))
+    return [i for i in sorted(body) if LOCAL_DECL.match(lines[i]) and not NOT_DECL.match(lines[i])
+            and "(" not in lines[i].split("=")[0]]
+
+
+def stack_search(text, scorer, best, focus, budget):
+    """Hill-climb local declaration order: move one declaration to every other
+    declaration slot of the same block, keep what scores better. MSVC lays out
+    a frame from declaration order and size, so this is the lever a
+    frame-offset gap needs; statements are never moved past a use because
+    only declaration lines change places."""
+    exact = False
+    improved = True
+    while improved and not exact and scorer.trials < budget:
+        improved = False
+        lines = text.split("\n")
+        decls = _local_declarations(lines, focus)
+        for i in decls:
+            for j in decls:
+                if i == j or scorer.trials >= budget:
+                    continue
+                indent = lambda k: len(lines[k]) - len(lines[k].lstrip())
+                if indent(i) != indent(j):
+                    continue
+                moved = lines[:]
+                line = moved.pop(i)
+                moved.insert(j if j < i else j, line)
+                candidate = "\n".join(moved)
+                fitness, exact = scorer.score(candidate)
+                if exact or fitness > best:
+                    text, best, improved = candidate, fitness, True
+                    break
+            if improved or exact:
+                break
+    return text, best, exact
+
+
 def offset_search(rva, budget=400):
     """Close a body whose only gap is numbers (offsets, pads, constants): apply
     each retail-minus-ours delta to each integer literal in the source, keep
@@ -494,6 +547,8 @@ def offset_search(rva, budget=400):
         return {"rva": rva, "symbol": symbol, "error": "banked body does not compile here"}
     if not exact and not (scorer.last and unreachable(*scorer.last)):
         return {"rva": rva, "symbol": symbol, "skip": "not an offset-only gap", "start": round(start, 4)}
+    if _stack_gap(*scorer.last):
+        text, best, exact = stack_search(text, scorer, best, focus_of(symbol), budget // 2)
     improved = True
     while not exact and improved and scorer.trials < budget and scorer.last:
         improved = False
@@ -517,6 +572,30 @@ def offset_search(rva, budget=400):
     with (OUT / "offsets.jsonl").open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(result) + "\n")
     return result
+
+
+def _same_body(a, b):
+    """True when retail holds the same function at RVAs a and b: identical
+    instructions over a's ledger size, call/jump targets compared as absolute
+    addresses (so position-relative displacements do not differ)."""
+    import capstone
+    sizes = getattr(_same_body, "sizes", None)
+    if sizes is None:
+        sizes = _same_body.sizes = {int(r["target_rva"], 16): int(r["target_size"])
+                                    for r in build.load_all_function_rows()}
+    size = sizes.get(a)
+    if not size or a == b:
+        return False
+    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+
+    def listing(start):
+        def local(match):  # a branch inside the body: compare as an offset
+            value = int(match.group(0), 16)
+            return f"L+{value - start:#x}" if start <= value < start + size else match.group(0)
+        return [(i.mnemonic, re.sub(r"0x[0-9a-f]+", local, i.op_str))
+                for i in md.disasm(build.read_target_bytes(start, size), start)]
+    one, two = listing(a), listing(b)
+    return bool(one) and one == two
 
 
 def pin_probe(rva):
@@ -550,19 +629,26 @@ def pin_probe(rva):
         got = build.compile_function(row, build.load_symbol_map(), output)
     except (SystemExit, Exception) as error:
         return {"rva": rva, "skip": f"compile_function: {str(error)[:80]}"}
-    if not got["unresolved"]:
-        return {"rva": rva, "skip": "no unresolved calls"}
     compiled, target, base = bytearray(got["bytes"]), got["target"], int(rva, 16)
+    symbol_map = build.load_symbol_map()
     pins = {}
     for offset, rtype, name in got["relocs"]:
-        if rtype != 0x0014 or name not in got["unresolved"] or offset + 4 > len(target):
+        if rtype != 0x0014 or offset + 4 > len(target) or compiled[offset:offset + 4] == target[offset:offset + 4]:
             continue
         address = (base + offset + 4 + struct.unpack_from("<i", target, offset)[0]) & 0xFFFFFFFF
+        if name not in got["unresolved"]:
+            # Resolved, but retail calls another address: pin only an
+            # identical copy (an ICF fold the linker kept twice), never a
+            # different function under this name.
+            if not any(_same_body(known, address) for known in symbol_map.get(name, [])):
+                return {"rva": rva, "skip": f"{name}: retail calls 0x{address:08X}, a different body"}
         if pins.setdefault(name, address) != address:
             return {"rva": rva, "skip": f"{name} called at two different targets"}
         compiled[offset:offset + 4] = target[offset:offset + 4]
-    if bytes(compiled) != bytes(target) or set(pins) != set(got["unresolved"]):
-        return {"rva": rva, "skip": "differs beyond the unresolved calls"}
+    if not pins:
+        return {"rva": rva, "skip": "no call to pin"}
+    if bytes(compiled) != bytes(target):
+        return {"rva": rva, "skip": "differs beyond the calls"}
     (workdir / "win.cpp").write_text(text, encoding="latin-1", errors="replace")
     return {"rva": rva, "symbol": symbol, "pins": {name: f"0x{address:08X}" for name, address in pins.items()}}
 
