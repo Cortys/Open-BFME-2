@@ -4572,46 +4572,7 @@ void DozerAIUpdate::crc( Xfer *xfer )
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/DozerAIUpdate_xferMethodThunk.cpp
-// ?xfer@DozerAIUpdate@@MAEXPAVXfer@@@Z present-unmatched
-void DozerAIUpdate::xfer( Xfer *xfer )
-{
-  // version
-  XferVersion currentVersion = 1;
-  XferVersion version = currentVersion;
-  xfer->xferVersion( &version, currentVersion );
- 
- // extend base class
-	AIUpdateInterface::xfer(xfer);
-
-	Int numTasks = DOZER_NUM_TASKS;
-	xfer->xferInt(&numTasks);
-	if (numTasks != DOZER_NUM_TASKS) {
-		DEBUG_CRASH(("DOZER_NUM_TASKS changed unexpectedly."));
-		throw SC_INVALID_DATA;
-	}
-	Int i, j;
-	for (i=0; i<DOZER_NUM_TASKS; i++) {
-		xfer->xferObjectID(&m_task[i].m_targetObjectID);
-		xfer->xferUnsignedInt(&m_task[i].m_taskOrderFrame);
-	}
-	xfer->xferSnapshot(m_dozerMachine);
-	xfer->xferUser(&m_currentTask, sizeof(m_currentTask));
-
-	Int dockPoints = DOZER_NUM_DOCK_POINTS;
-	xfer->xferInt(&dockPoints);
-	if (dockPoints!=DOZER_NUM_DOCK_POINTS) {
-		DEBUG_CRASH(("DOZER_NUM_DOCK_POINTS changed unexpectedly."));
-		throw SC_INVALID_DATA;
-	}
-	for (i=0; i<DOZER_NUM_TASKS; i++) {
-		for (j=0; j<DOZER_NUM_DOCK_POINTS; j++) {
-			xfer->xferBool(&m_dockPoint[i][j].valid);
-			xfer->xferCoord3D(&m_dockPoint[i][j].location);
-		}
-	}
-	xfer->xferUser(&m_buildSubTask, sizeof(m_buildSubTask));
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DozerAIUpdateXfer.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
