@@ -51014,3 +51014,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva007B808D@@YAXXZ,,0x007B808D,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
 ?rva007B8097@@YAXXZ,,0x007B8097,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
 ?rva007B80AB@@YAXXZ,,0x007B80AB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
+?rva002E6F92@Rva002E6F92@@QAEHHPAUIn002E6F92@@HH@Z,,0x002E6F92,77,Code/GameEngine/Source/Common/Rva002E6F92Finish.cpp,matched,Float nibble select; temp aggregate keeps both cvtsi2ss in xmm0/xmm1; caller 0x002E840D
