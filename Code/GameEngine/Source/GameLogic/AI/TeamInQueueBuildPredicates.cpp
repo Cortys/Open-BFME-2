@@ -1,0 +1,67 @@
+// cl: /O1 /Ob0
+//
+// Bodies ported from Open-BFME-1's
+// GameEngine/Source/GameLogic/AI/TeamInQueueBuildPredicates.cpp (donor
+// revision 6d9434269164392c5ba62aaa7c15a86b5b020d76, donor flags plus /O1).
+// Compiled that way each body below places uniquely on unclaimed game.dat
+// .text by masked whole-.text search, and ./build.sh reproduces it byte for
+// byte: TeamInQueue::isMinimumBuilt 0x004F06A6 (39B),
+// TeamInQueue::areBuildsComplete 0x004F06CD (24B). Callee addresses are read
+// off retail's call sites (reverse/symbols.csv). Only the placed bodies are
+// carried; the donor's other definitions are omitted.
+// Retail BFME1 TeamInQueue work-order checks. Identity evidence:
+// targets/game/reverse/identity_evidence/0x00160f80-team-in-queue-build-predicates.md.
+// The retail queue has a vptr at +0, four link pointers at +4..+0x10,
+// and the work-order head at +0x14. The native Zero Hour member names
+// are retained, while offsets below are witnessed by the retail methods.
+
+struct WorkOrder
+{
+	char m_unreconstructed_00[8];
+	unsigned int m_factoryID;     // +0x08
+	WorkOrder *m_next;             // +0x0C
+	int m_numCompleted;            // +0x10
+	int m_numRequired;             // +0x14
+	bool m_required;               // +0x18
+};
+
+class TeamInQueue
+{
+public:
+	virtual ~TeamInQueue();
+	bool isAllBuilt();
+	bool isMinimumBuilt();
+	bool areBuildsComplete();
+
+private:
+	char m_unreconstructed_04[0x10];
+	WorkOrder *m_workOrders;       // +0x14
+};
+
+
+// ?isMinimumBuilt@TeamInQueue@@QAE_NXZ
+bool TeamInQueue::isMinimumBuilt()
+{
+	for (WorkOrder *order = m_workOrders; order; order = order->m_next)
+	{
+		int count = order->m_numCompleted;
+		if (order->m_factoryID != 0)
+			++count;
+		if (order->m_numRequired > count && order->m_required)
+			return false;
+	}
+	return true;
+}
+
+// ?areBuildsComplete@TeamInQueue@@QAE_NXZ
+bool TeamInQueue::areBuildsComplete()
+{
+	WorkOrder *order = m_workOrders;
+	while (order)
+	{
+		if (order->m_factoryID != 0)
+			return false;
+		order = order->m_next;
+	}
+	return true;
+}

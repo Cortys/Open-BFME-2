@@ -51884,3 +51884,5 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?winMakeColor@GameWindowManager@@UAEHEEEE@Z,,0x00314C1D,33,Code/GameEngine/Source/GameClient/GUI/GameWindowGlobal.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?getManglerLocation@GameSpyConfig@@UAE_NHAAVAsciiString@@AAG@Z,,0x0054E7EA,66,Code/GameEngine/Source/GameNetwork/GameSpy/GSConfig.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?friend_newModuleInstance@ObjectCreationUpgrade@@SAPAVModule@@PAVThing@@PBVModuleData@@@Z,,0x0024FF6B,65,Code/GameEngine/Source/GameLogic/Object/Upgrade/ObjectCreationUpgradeFactories.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?isMinimumBuilt@TeamInQueue@@QAE_NXZ,,0x004F06A6,39,Code/GameEngine/Source/GameLogic/AI/TeamInQueueBuildPredicates.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?areBuildsComplete@TeamInQueue@@QAE_NXZ,,0x004F06CD,24,Code/GameEngine/Source/GameLogic/AI/TeamInQueueBuildPredicates.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
