@@ -1,5 +1,3 @@
-// ?Rva003F1E87DeleteRange@@YA_NPAPAVRva003F0C6C@@0URva003F1E87Holder@@@Z
-// partial score=0.95 date=2026-10-04
 // cl: /O1 /DNDEBUG /MD /GX- /Oy-
 //
 // ?Rva003F1E87DeleteRange@@YA_NPAPAVRva003F0C6C@@0URva003F1E87Holder@@@Z, retail 0x003F1E87 33B
@@ -17,7 +15,6 @@ struct Rva003F1E87Holder
 	void doDelete(Rva003F0C6C *p);
 };
 
-// ?Rva003F1E87DeleteRange@@YA_NPAPAVRva003F0C6C@@0URva003F1E87Holder@@@Z present-unmatched
 bool __cdecl Rva003F1E87DeleteRange(Rva003F0C6C **first, Rva003F0C6C **last, Rva003F1E87Holder h)
 {
 	for (; first != last; ++first)
