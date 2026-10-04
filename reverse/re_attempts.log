@@ -7411,3 +7411,4 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva00209144@ScriptEngine@@IAEXPAVScriptAction@@H_N1@Z	0x00209144	436	partial	ebx holds counter vs retail ebx=1 with counter spilled to stack and cmp vs ebx and tails via bl t=30 model=muse-02 score=0.92 stash=reverse/attempts/0x00209144.cpp
 ?rva004C21A9@Rva004C21A9@@QAEXPAX@Z	0x004C21A9	135	partial	frame and push order plus mov ecx ebx missing 133 vs 135 t=25 model=muse-02 score=0.93 stash=reverse/attempts/0x004c21a9.cpp
 ?Rva005F0383Get@@YAPBVImage@@PAXH@Z	0x005F0383	240	blocked	EH and-state late plus missing mov-byte-1-0 around findImage plus branch-vs-cmove plus esi-edi swap ours 232B vs 240B 7 regions t=15 model=muse-02
+??0Rva0041F56F@@QAE@XZ	0x0041F56F	427	blocked	EH prolog vs vector allocator lea tradeoff 6 variants EHs gives prolog EHsc- loses lea NO_EXCEPTIONS no change needs shared delta t=25 model=muse-04
