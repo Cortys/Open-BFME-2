@@ -52303,3 +52303,5 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?grabHexInt3@@YAHPBD@Z,,0x003FF4D4,56,Code/GameEngine/Source/GameNetwork/GameInfoGrabHexInt3.cpp,matched,BFME1 donor GameInfoGrabHexInt3.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?Rva00783F90StorePackedColor@@YAXI@Z,,0x000A98DC,112,Code/GameEngine/Source/GameClient/GUI/Rva00783F90PackedColor.cpp,matched,BFME1 donor Rva00783F90PackedColor.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?removeFromBuildList@SidesInfo@@QAEHPAVBuildListInfo@@@Z,,0x0032983F,65,Code/GameEngine/Source/GameLogic/Map/SidesList.cpp,matched,BFME1 donor SidesList.cpp recompiled /Os; unique masked placement on unclaimed .text
+?GameSpyUpdateOverlays@@YAXXZ,,0x00548C30,33,Code/GameEngine/Source/GameNetwork/GameSpyOverlay.cpp,matched,BFME1 donor GameSpyOverlay.cpp recompiled /Os; unique masked placement on unclaimed .text
+?RaiseGSMessageBox@@YAXXZ,,0x00548BFB,31,Code/GameEngine/Source/GameNetwork/GameSpyOverlay_RaiseGSMessageBox_YAXXZ.cpp,matched,BFME1 donor GameSpyOverlay.cpp recompiled /Os; unique masked placement on unclaimed .text
