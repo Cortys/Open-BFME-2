@@ -7566,3 +7566,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0GameResultsQueue@@QAE@XZ,0x00551A94,callee of ?createNewGameResultsInterface@GameResultsInterface@@SAPAV1@ at retail 0x00551B28 read from its REL32 displacement; body unrowed
 ??0FileSystem@@QAE@XZ,0x00063517,callee of ?createFileSystem@GameEngine@@MAEPAVFileSystem@@XZ at retail 0x00042004 read from its REL32 displacement; ICF alias onto ??0W3DGhostObjectManager@@QAE@XZ (matched)
 ?updateAnim@ControlBarScheme@@QAEXPAVControlBarSchemeAnimation@@@Z,0x0031F799,callee of ?update@ControlBarScheme@@QAEXXZ at retail 0x0031F872 read from its REL32 displacement; body unrowed
+?_adjustVariable@@YAXABVAsciiString@@H_N1@Z,0x002054FF,callee of ?Rva00341350AdjustVariableForwarder@@YGXABVAsciiString@@HD@Z at retail 0x00206559 read from its REL32 displacement; body unrowed
