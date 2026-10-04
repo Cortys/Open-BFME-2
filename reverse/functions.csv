@@ -51266,3 +51266,6 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GBfmeNarrowRecord000BFDC7@@QAEPAXI@Z,,0x0021FA92,28,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrowrecord_bfdc7_fill.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??1?$SubsystemSlot@VCDManagerInterface@@@@UAE@XZ,,0x00229427,78,Code/Libraries/Source/subsystem/SubsystemInterface.cpp,matched,unique masked-byte placement (locate.py sweep)
 ?getGroupNumeralString@W3DDisplayStringManager@@UAEPAVDisplayString@@H@Z,,0x00090417,25,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringManager.cpp,matched,ZH W3DDisplayStringManager getGroupNumeralString (vtable 0x00BC7E20 slot 16)
+?parseWaterSettingDefinition@INI@@SAXPAV1@@Z,,0x00200BEB,198,Code/GameEngine/Source/Common/INI/INIWater.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?parseMultiplayerColorDefinition@INI@@SAXPAV1@@Z,,0x001EF3BF,178,Code/GameEngine/Source/Common/INI/INIMultiplayer.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?parseCrateTemplateDefinition@CrateSystem@@SAXPAVINI@@@Z,,0x0035CFEA,173,Code/GameEngine/Source/GameLogic/System/CrateSystem.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
