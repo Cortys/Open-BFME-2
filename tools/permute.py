@@ -652,6 +652,91 @@ def offset_search(rva, budget=400):
     return result
 
 
+# Codegen flags a sibling unit is known to need, each with the flags it
+# replaces. Agents found tactic units that match only under /G7 (imul for
+# x*5) while the body was otherwise right.
+FLAG_CHOICES = [("/G7", ("/G6", "/G5")), ("/G6", ("/G7", "/G5")), ("/O1", ("/O2", "/Ox")),
+                ("/O2", ("/O1", "/Ox")), ("/Ob1", ("/Ob2",)), ("/Op", ()), ("/Oy-", ()),
+                ("/GX-", ("/EHsc", "/GX"))]
+
+
+def _with_flags(text, add, remove=()):
+    """`text` with `add` on its `// cl:` line (one is inserted when absent) and
+    `remove` taken off; None when nothing would change."""
+    lines = text.split("\n")
+    at = next((k for k, line in enumerate(lines[:12]) if line.startswith("// cl:")), None)
+    words = lines[at].split()[2:] if at is not None else []
+    if add in words and not any(w in words for w in remove):
+        return None
+    words = [w for w in words if w not in remove and w != add] + [add]
+    line = "// cl: " + " ".join(words)
+    if at is None:
+        lines.insert(1, line)  # line 0 names the symbol
+    else:
+        lines[at] = line
+    return "\n".join(lines)
+
+
+def _flag_variants(text):
+    for add, remove in FLAG_CHOICES:
+        variant = _with_flags(text, add, remove)
+        if variant is not None:
+            yield variant
+    lines = text.split("\n")
+    for k, line in enumerate(lines[:12]):  # dropping a toggle already present
+        if line.startswith("// cl:"):
+            for flag in ("/Op", "/Oy-", "/Ob1"):
+                if flag in line.split():
+                    yield "\n".join(lines[:k] + [" ".join(w for w in line.split() if w != flag)]
+                                     + lines[k + 1:])
+
+
+def flag_search(rva, rounds=2):
+    """Try each codegen flag change on a banked body, keep the best, and go
+    one round deeper from it: a few compiles per body, so it can sweep every
+    banked attempt. Only a byte-exact compile is a win."""
+    rva = rva.lower()
+    try:
+        text = (ATTEMPTS / f"{rva}.cpp").read_text(encoding="latin-1", errors="replace")
+    except FileNotFoundError:
+        return {"rva": rva, "error": "banked attempt gone: closed elsewhere"}
+    found = re.match(r"//\s*(\S+)", text)
+    symbol = found.group(1) if found else ""
+    size = attempt_sizes().get((symbol, rva))
+    if not size:
+        return {"rva": rva, "error": "no size in re_attempts.log"}
+    workdir = OUT / rva
+    workdir.mkdir(parents=True, exist_ok=True)
+    scorer = Scorer(rva, symbol, size, workdir)
+    best, exact = scorer.score(text)
+    start = best
+    if best < 0:
+        return {"rva": rva, "symbol": symbol, "error": "banked body does not compile here"}
+    for _ in range(rounds):
+        if exact:
+            break
+        round_best = None
+        for candidate in _flag_variants(text):
+            fitness, exact = scorer.score(candidate)
+            if exact:
+                text, best = candidate, fitness
+                break
+            if fitness > best and (round_best is None or fitness > round_best[1]):
+                round_best = (candidate, fitness)
+        if exact or round_best is None:
+            break
+        text, best = round_best
+    if exact:
+        (workdir / "win.cpp").write_text(text, encoding="latin-1", errors="replace")
+    result = {"rva": rva, "symbol": symbol, "size": size, "start": round(start, 4), "best": round(best, 4),
+              "exact": exact, "trials": scorer.trials, "mode": "flags"}
+    if best > start and not exact:
+        result["flags"] = next((l for l in text.split("\n")[:12] if l.startswith("// cl:")), "")
+    with (OUT / "flags.jsonl").open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(result) + "\n")
+    return result
+
+
 def _copy_of(name, address):
     """True when the ledger already proves `name`'s code at `address`: a
     matched row there whose object-symbol is `name` (a dup_ row: a second
@@ -857,6 +942,8 @@ def main(argv=None):
                         help="land every build/permute/<rva>/win.cpp via add_match (no commit)")
     parser.add_argument("--pins", action="store_true",
                         help="find banked bodies exact but for unresolved calls; pin those calls from retail")
+    parser.add_argument("--flags", action="store_true",
+                        help="sweep codegen flag changes (/G7, /O1, /Op, ...) over banked attempts not swept yet")
     parser.add_argument("--offsets", action="store_true",
                         help="offset search on bodies the triage found differ only in numbers (or the RVAs given)")
     parser.add_argument("--all", action="store_true",
@@ -904,6 +991,21 @@ def main(argv=None):
             kept += 1
         print(f"permute: {kept} of {len(found)} banked body(ies) close with pins that pass "
               "pin_consistency; --land lands them")
+        return 0
+    if args.flags:
+        rvas = args.rvas
+        if not rvas:
+            done = set()
+            if (OUT / "flags.jsonl").exists():
+                done = {json.loads(l)["rva"] for l in (OUT / "flags.jsonl").read_text().splitlines() if l.strip()}
+            rvas = [rva for _, _, rva, _ in queue(0.0) if rva not in done]
+        wins = 0
+        with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
+            for result in pool.map(flag_search, rvas):
+                wins += bool(result.get("exact"))
+                if result.get("exact") or "flags" in result:
+                    print(json.dumps(result), flush=True)
+        print(f"permute: flag sweep closed {wins} of {len(rvas)}")
         return 0
     if args.offsets:
         # bodies the triage marked as a layout fact, or the RVAs given
