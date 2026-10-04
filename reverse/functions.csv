@@ -52086,3 +52086,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva004E98DE@Rva004E98DE@@QAEEXZ,,0x004E98DE,25,Code/GameEngine/Source/GameLogic/SkirmishAI/AIWallBuilder/Rva004E98DEMethod.cpp,matched,thiscall owner at +8 via g_00DFEEF8 pin rva002A8AB1 tests +0x16c signed gt caller 0x004E9DB8
 ??1Rva004EDCE9@@UAE@XZ,,0x004EDCE9,100,Code/GameEngine/Source/Common/Rva004EDCE9Dtor.cpp,matched,vtable 0x008629E4 stop 0x004ED748 AsciiString+0x2C frees+0x14+0x4 tail-called by 4 derived
 ??_GRva004EDCE9@@UAEPAXI@Z,,0x004EDEE7,28,Code/GameEngine/Source/Common/Rva004EDCE9Dtor.cpp,matched,deleting dtor tail of 0x004EDCE9 via same TU
+?rva004EDA60@Rva004ECECD@@QAEXXZ,,0x004EDA60,44,Code/GameEngine/Source/Common/Rva004EDA60Method.cpp,matched,AITactic guard m50 m20 rva004ED372 rva004ED748 caller 0x004EDDCC
