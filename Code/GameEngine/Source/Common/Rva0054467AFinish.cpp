@@ -5,6 +5,14 @@
 // ?update@Rva00544884@@UAE?AW4StateReturnType@@XZ, retail 0x00544707, 56 bytes.
 // Virtual slot 6 (offset 0x18, update) of vtable 0x00869C30, same class.
 // Gets goal via rowed getGoalObject, finds BEC via rowed bfmeFindBEC, calls slot 0x1C with owner and +0x20, tail-chains to pinned base update 0x00347460. Evidence: vslot slot 6; prev onEnter same TU.
+// ?onExit@Rva00544884@@UAEXW4StateExitType@@@Z, retail 0x0054473F, 61 bytes.
+// Virtual slot 5 (offset 0x14, onExit) of vtable 0x00869C30, same class.
+// Gets goal via rowed getGoalObject, finds BEC via rowed bfmeFindBEC, notifies slot 0x2C with owner, clears machine+0x38 to 0, chains to rowed base onExit 0x003473A4. Evidence: vslot slot 5; prev update same TU.
+enum StateExitType
+{
+	EXIT_NORMAL = 0,
+	EXIT_OTHER = 1
+};
 enum StateReturnType
 {
 	STATE_CONTINUE = 0,
@@ -40,9 +48,10 @@ class StateMachine
 {
 public:
 	Object *getOwner() const { return m_owner; }
-private:
 	unsigned char m_pad00[0x14];
 	Object *m_owner; // +0x14
+	unsigned char m_pad18[0x38 - 0x18];
+	bool m_38; // +0x38
 };
 
 class TurretStateMachine : public StateMachine
@@ -71,7 +80,7 @@ public:
 	virtual void v08();
 	virtual void v09();
 	virtual void v10();
-	virtual void v11();
+	virtual void v11(Object *owner);
 	virtual void v12();
 	virtual void v13();
 	virtual void v14();
@@ -89,7 +98,7 @@ public:
 	virtual void slot02();
 	virtual void slot03();
 	virtual StateReturnType onEnter();
-	virtual void slot05();
+	virtual void onExit(StateExitType exitType);
 	virtual StateReturnType update();
 	virtual void slot07();
 	virtual bool isIdle() const;
@@ -110,6 +119,7 @@ class AIInternalMoveToState : public State
 {
 public:
 	virtual StateReturnType onEnter();
+	virtual void onExit(StateExitType exitType);
 	virtual StateReturnType update();
 protected:
 	unsigned char m_pad1C[0x20 - 0x1C];
@@ -122,6 +132,7 @@ class Rva00544884 : public AIInternalMoveToState
 {
 public:
 	virtual StateReturnType onEnter();
+	virtual void onExit(StateExitType exitType);
 	virtual StateReturnType update();
 };
 
@@ -164,5 +175,17 @@ StateReturnType Rva00544884::update()
 		return STATE_FAILURE;
 	bec->v07(m_machine->getOwner(), &m_goalPosition);
 	return AIInternalMoveToState::update();
+}
+
+void Rva00544884::onExit(StateExitType exitType)
+{
+	Object *goal = ((TurretStateMachine *)m_machine)->getGoalObject();
+	if (goal != 0) {
+		BfmeGotBEC *bec = ((BfmeSubBEC *)goal)->bfmeFindBEC();
+		if (bec != 0)
+			bec->v11(m_machine->getOwner());
+	}
+	m_machine->m_38 = false;
+	AIInternalMoveToState::onExit(exitType);
 }
 #pragma comment(linker, "/alternatename:_theLogicRandomLogFile=?g_00DFEFF0@@3PAXA")
