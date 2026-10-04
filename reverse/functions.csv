@@ -50852,3 +50852,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B77A4@@YAXXZ,,0x007B77A4,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B77A4
 ?rva007B77AE@@YAXXZ,,0x007B77AE,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B77AE
 ?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z,,0x001E438B,54,Code/GameEngine/Source/Common/Rva001E438BRva001E438B.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
+?setFlag@Rva006BE560Owner@@QAEXHD@Z,,0x006BE560,56,Code/GameEngine/Source/Common/Rva006BE560SetFlag.cpp,matched,ported from BFME1 donor UnclaimedSmallLeaves01.cpp (6d943426) via bfme1_sweep tier T1 held at copy-tier S; only the placed body carried
