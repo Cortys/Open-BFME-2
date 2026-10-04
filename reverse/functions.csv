@@ -52046,3 +52046,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??4Payload@DeliverPayloadNugget@@QAEAAU01@ABU01@@Z,,0x0027F589,29,Code/GameEngine/Source/GameLogic/Map/DeliverPayloadNuggetPayloadAssign.cpp,matched,payload assign scalar plus TreeHintRef rowed callee STL copy caller
 ?rva0027F09F@Rva0027F09F@@QAEXHH@Z,,0x0027F09F,52,Code/GameEngine/Source/Common/Rva0027F09FSearch.cpp,matched,array search at +0x578 call rowed 0x0027D378
 ?rva0027F108@BfmeThingCME@@QAEHPAXMHH@Z,,0x0027F108,52,Code/GameEngine/Source/Common/BfmeConv624.cpp,matched,BfmeThingCME param forwarding to bfmeCallCME via tmp
+?rva0027F2D6@Rva0027F2D6@@QAEXH@Z,,0x0027F2D6,52,Code/GameEngine/Source/Common/Rva0027F2D6Search.cpp,matched,array search +0x578 call rowed 0x0027D378 with +0x28
