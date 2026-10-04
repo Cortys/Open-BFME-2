@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /arch:SSE /EHsc
 //
 // AITNGuard (tunnel-network guard) state bodies ported from Zero Hour's
 // GameEngine/Source/GameLogic/AI/AITNGuard.cpp (GeneralsMD tree vendored under
@@ -24,6 +24,14 @@
 //    the give-up frame at +0x24 from TAiData +0x3C, new AIAttackState through
 //    the rowed ctor; guard mode at machine +0x4C). Retail keeps TheGameLogic
 //    in a register across the nemesis lookup, so it is read once into a local.
+//  - AITNGuardOuterState::update, retail 0x00546577 (110 bytes): slot 6 of
+//    0x00C6A198; Zero Hour's body. The team's prototype is +0x30 and its
+//    template info's m_attackCommonTarget lands at prototype +0x216 (the split
+//    between prototype and embedded template info is not established; it is
+//    modelled as info at +0x200).
+//  - AITNGuardAttackAggressorState::onEnter, retail 0x0054675D (241 bytes):
+//    slot 4 of 0x00C6A298; Zero Hour's body (body module +0x254, vslot 15
+//    getLastDamageInfo, source id +8).
 // BFME2 layout (target evidence): the attack sub-state is deleted with a
 // global-scope delete (vslot 0 with flag 0, then ::operator delete); owner
 // team +0x304, object id +0x74, player tunnel tracker +0x2E8, guard machine
@@ -48,12 +56,29 @@ enum StateReturnType
 	STATE_FAILURE = -2
 };
 class Object;
+struct TeamTemplateInfo
+{
+	unsigned char m_pad00[0x16];
+	Bool m_attackCommonTarget; // +0x16 (prototype +0x216)
+};
+class TeamPrototype
+{
+public:
+	const TeamTemplateInfo *getTemplateInfo(void) const { return &m_teamTemplate; }
+private:
+	unsigned char m_pad00[0x200];
+	TeamTemplateInfo m_teamTemplate; // +0x200
+};
 class Team
 {
 public:
+	const TeamPrototype *getPrototype(void) { return m_proto; }
 	void rva0039D84A(Object *target);
 	void setTeamTargetObject(Object *target) { rva0039D84A(target); }
 	Object *getTeamTargetObject();
+private:
+	unsigned char m_pad00[0x30];
+	TeamPrototype *m_proto; // +0x30
 };
 class TunnelTracker
 {
@@ -69,16 +94,41 @@ private:
 	unsigned char m_pad00[0x2E8];
 	TunnelTracker *m_tunnelSystem; // +0x2E8
 };
+struct DamageInfoInput
+{
+	unsigned char m_pad00[0x08];
+	ObjectID m_sourceID; // +0x08
+};
+struct DamageInfo
+{
+	DamageInfoInput in;
+};
+template <int N> class VSlots : public VSlots<N - 1>
+{
+public:
+	virtual void gap(char (*)[N]) = 0;
+};
+template <> class VSlots<0>
+{
+};
+class BodyModuleInterface : public VSlots<15>
+{
+public:
+	virtual const DamageInfo *getLastDamageInfo() const = 0;
+};
 class Object
 {
 public:
+	BodyModuleInterface *getBodyModule() const { return m_body; }
 	ObjectID getID() const { return m_id; }
 	Team *getTeam() { return m_team; }
 	Player *getControllingPlayer() const;
 private:
 	unsigned char m_pad00[0x74];
 	ObjectID m_id; // +0x74
-	unsigned char m_pad78[0x304 - 0x78];
+	unsigned char m_pad78[0x254 - 0x78];
+	BodyModuleInterface *m_body; // +0x254
+	unsigned char m_pad258[0x304 - 0x258];
 	Team *m_team; // +0x304
 };
 class GameLogic
@@ -122,6 +172,7 @@ public:
 	virtual void slot13();
 	virtual void setGoalObject(const Object *obj);
 	Object *getOwner() const { return m_owner; }
+	Object *getGoalObject();
 	inline StateID getCurrentStateID() const;
 private:
 	State *m_currentState; // +0x04
@@ -164,6 +215,7 @@ public:
 	virtual StateReturnType update();
 	StateID getID() const { return m_ID; }
 	StateMachine *getMachine() const { return m_machine; }
+	Object *getMachineGoalObject() const { return m_machine->getGoalObject(); }
 protected:
 	Object *getMachineOwner() const { return m_machine->getOwner(); }
 	StateID m_ID; // +0x04
@@ -215,6 +267,7 @@ class AITNGuardOuterState : public State
 public:
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
+	virtual StateReturnType update();
 private:
 	AITNGuardMachine *getGuardMachine() { return (AITNGuardMachine *)getMachine(); }
 	unsigned char m_pad1C[0x20 - 0x1C];
@@ -231,11 +284,13 @@ private:
 class AITNGuardAttackAggressorState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 private:
 	AITNGuardMachine *getGuardMachine() { return (AITNGuardMachine *)getMachine(); }
-	unsigned char m_pad1C[0x28 - 0x1C];
+	unsigned char m_pad1C[0x20 - 0x1C];
+	TunnelNetworkExitConditions m_exitConditions; // +0x20
 	AIAttackState *m_attackState; // +0x28
 };
 
@@ -360,6 +415,72 @@ StateReturnType AITNGuardOuterState::onEnter( void )
 
 	m_exitConditions.m_attackGiveUpFrame = logic->getFrame() + TheAI->getAiData()->m_guardChaseUnitFrames;
 	m_attackState = new AIAttackState(getMachine(), false, true, false, &m_exitConditions);
+	m_attackState->getMachine()->setGoalObject(nemesis);
+
+	StateReturnType returnVal = m_attackState->onEnter();
+	if (returnVal == STATE_CONTINUE) {
+		return STATE_CONTINUE;
+	}
+
+	// if we had no one to attack, we were successful, so go to the next state.
+	return STATE_SUCCESS;
+}
+
+StateReturnType AITNGuardOuterState::update( void )
+{
+	Object *owner = getMachineOwner();
+	Object* goalObj = m_attackState->getMachineGoalObject();
+	if (goalObj) 
+	{
+	}	else {
+		Object* nemesis = TheGameLogic->findObjectByID(getGuardMachine()->getNemesisID()) ;
+		if (nemesis) {
+			goalObj = nemesis;
+		}
+		// Check if team auto targets same victim.
+		Object *teamVictim = NULL;
+		if (goalObj == NULL && owner->getTeam()->getPrototype()->getTemplateInfo()->m_attackCommonTarget) 
+		{
+			teamVictim = owner->getTeam()->getTeamTargetObject();
+			if (teamVictim) 
+			{	
+				goalObj = teamVictim;	
+			}
+			m_attackState->getMachine()->setGoalObject(goalObj);
+			return m_attackState->onEnter();
+		}
+	}
+	
+	return m_attackState->update();
+}
+
+StateReturnType AITNGuardAttackAggressorState::onEnter( void )
+{
+	Object *obj = getMachineOwner();
+	ObjectID nemID = INVALID_ID;
+
+	if (obj->getBodyModule() && obj->getBodyModule()->getLastDamageInfo()->in.m_sourceID) {
+		nemID = obj->getBodyModule()->getLastDamageInfo()->in.m_sourceID;
+		getGuardMachine()->setNemesisID(nemID);	 
+
+	}
+
+	AITNGuardMachine *machine = getGuardMachine();
+	Object *nemesis = TheGameLogic->findObjectByID(machine->getNemesisID());
+	if (nemesis == NULL) 
+	{
+		return STATE_SUCCESS;
+	}
+
+	Player *ownerPlayer = machine->getOwner()->getControllingPlayer();
+	TunnelTracker *tunnels = NULL;
+	if (ownerPlayer) {
+		tunnels = ownerPlayer->getTunnelSystem();
+	}
+	if (tunnels) tunnels->updateNemesis(nemesis);
+
+	m_exitConditions.m_attackGiveUpFrame = TheGameLogic->getFrame() + TheAI->getAiData()->m_guardChaseUnitFrames;
+	m_attackState = new AIAttackState(getMachine(), true, true, false, &m_exitConditions);
 	m_attackState->getMachine()->setGoalObject(nemesis);
 
 	StateReturnType returnVal = m_attackState->onEnter();
