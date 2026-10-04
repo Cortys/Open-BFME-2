@@ -90,15 +90,6 @@ public:
 		StringBase<char>::concat(text, length);
 	}
 
-	// Forced inline: retail scanReal copies the char to its own stack slot and
-	// calls the two-argument StringBase::concat directly.
-	__forceinline void concat(char value)
-	{
-		char text[2];
-		text[0] = value;
-		StringBase<char>::concat(text, 1);
-	}
-
 	const char *str() const
 	{
 		return m_data ? m_data->data : "";
@@ -705,7 +696,9 @@ bool LocalFile::scanReal( float &newReal )
 	}
 
 	do {
-		tempstr.concat( c );
+		char value[2];
+		value[0] = c;
+		tempstr.concat(value, 1);
 		if (c == '.') {
 			sawDec = true;
 		}
