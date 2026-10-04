@@ -51062,3 +51062,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0?$pair@$$CBVUnicodeString@@_N@_STL@@QAE@ABVUnicodeString@@AB_N@Z,,0x00387CE8,27,Code/GameEngine/Source/GameClient/LanguageFilterMapInsert.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GRva0029D3B0@@UAEPAXI@Z,,0x0029F762,28,Code/GameEngine/Source/GameClient/Rva0029D3B0Dtor.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_G?$CategoryModuleTemplateBase@$05@FXParticleSystem@@UAEPAXI@Z,,0x001F4471,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ButterflyDrawModuleTemplateCtorThunk.cpp,matched,unique masked-byte placement (locate.py sweep)
+??_GUpdateModule@@UAEPAXI@Z,,0x004AF161,28,Code/GameEngine/Source/GameLogic/Object/Behavior/BuildingBehaviorCtorThunk.cpp,matched,unique masked-byte placement (locate.py sweep)
