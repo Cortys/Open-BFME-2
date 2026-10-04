@@ -1,10 +1,10 @@
 // ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z
-// partial score=0.95 date=2026-10-03
-// ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z
-// partial score=0.95 date=2026-10-03
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// partial score=0.95 date=2026-10-04
 // ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z retail 0x003C8E2B 94B
-// Evidence: between Rva003C89D1Guard and Rva003C90B1Exit; caller 0x003CC1A3; rowed getTeamNamed 0x003584E9 plus iterate 0x00263864 plus advance 0x00263526 plus aiExit 0x0036F39B
+// Evidence: between Rva003C89D1Guard and Rva003C90B1Exit; caller 0x003CC1A3;
+// rowed getTeamNamed 0x003584E9 plus iterate 0x00263864 plus advance 0x00263526
+// plus aiExit 0x0036F39B.
+// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 template<class T> class StringBase
 {
 	friend class AsciiString;
@@ -68,19 +68,27 @@ public:
 	AIUpdateInterface *getAI() const { return *(AIUpdateInterface **)((const char *)this + 0x258); }
 };
 
+// The retail body holds ONE zero live in a register across the whole function
+// (xor esi,esi at +0x07, then push esi +0x09, cmp eax,esi +0x23,
+// cmp eax,esi +0x3D, push esi +0x43, cmp [ebp-0x1c],esi +0x54). Naming one
+// extern null lets cl load it once and reuse it at every site; the pointer
+// compares become register-to-register instead of test-reg,reg.
+extern Object *const g_nilObject;
+
 #define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 // ?Rva003C8E2BExit@@YGXABVAsciiString@@@Z present-unmatched
 void __stdcall Rva003C8E2BExit(const AsciiString &teamName)
 {
+	Object *const nil = g_nilObject;
 	Team *team = TheScriptEngine->getTeamNamed(teamName, false);
-	if (!team)
+	if ((Object *)team == nil)
 		return;
 	for (DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList(); !iter.done(); iter.advance()) {
 		Object *obj = iter.cur();
 		AIUpdateInterface *ai = obj->getAI();
-		if (!ai)
+		if ((Object *)ai == nil)
 			continue;
-		ai->m_command.aiExit(0, CMD_FROM_SCRIPT);
+		ai->m_command.aiExit(nil, CMD_FROM_SCRIPT);
 	}
 }
