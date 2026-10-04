@@ -52168,3 +52168,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ??0Rva004E3CD0@@QAE@XZ,,0x004E3C8F,65,Code/GameEngine/Source/Common/Rva004E3CD0Ctor.cpp,matched,vtable 0x00862054 callers 0x004E3D1B 0x004E3D38 0x004E3F8B vector base 0x00211E58
 ??0Rva004E3D2A@@QAE@XZ,,0x004E3D18,18,Code/GameEngine/Source/Common/Rva004E3D2ACtor.cpp,matched,base 0x004E3C8F vtable 0x00862070 chain
 ??0Rva004E3D47@@QAE@XZ,,0x004E3D35,18,Code/GameEngine/Source/Common/Rva004E3D47Ctor.cpp,matched,base 0x004E3C8F vtable 0x0086208C chain
+??0Rva004E32F2@@QAE@XZ,,0x004E32D5,29,Code/GameEngine/Source/Common/Rva004E32D5Ctor.cpp,matched,vtable 0x00861F68 caller 0x004E331C tree pin 0x005011C1
