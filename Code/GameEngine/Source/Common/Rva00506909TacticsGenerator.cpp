@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/bfme2_ascii
 // stlport
 //
 // The skirmish-AI object built at 0x00506909 (caller 0x002C616A), in the
@@ -16,6 +16,90 @@
 //               1 -> 0x00506265, 3 -> 0x0050633B, else false (caller
 //               0x002C67B4).
 #include <vector>
+#include "ascii_string.h"
+
+struct Coord3DBase;
+// BFME2's Xfer: operator== overloads, grouped by cl at the first overload
+// slot in reverse declaration order (Rva004E0513Xfer.cpp has the same view).
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class Coord2D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+class Snapshot;
+
+class Xfer
+{
+public:
+	class Version;
+
+	Xfer();
+	virtual ~Xfer();
+
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
+class Xfer::Version
+{
+public:
+	Version(unsigned char current, unsigned char minimum)
+		: m_current(current), m_minimum(minimum) {}
+
+	unsigned char m_current;
+	unsigned char m_minimum;
+};
+
 
 // Elements of the four vectors at +0x10/+0x28/+0x40/+0x58: each gets
 // 0x004EDF03 then 0x004ECE1C from the 0x00505924 pass (both in the
@@ -25,13 +109,16 @@ struct Rva00506909Request;
 struct Rva00506909Item
 {
 	virtual ~Rva00506909Item();
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void xfer(Xfer *xfer);	// slot 5
 	void rva004EDF03();
 	void rva004ECE1C();
 	void rva004ED81D(Rva00506909Request *request, void *arg);
 	void rva004ED955(void *owner);
 	void rva004ED6D2(struct Rva005059A1Unit *unit);
 	void rva004EDD4D(struct Rva005059A1Unit *unit);
-	char m_pad04[0x30 - 4];
+	char m_pad04[0x2C - 4];
+	AsciiString m_name;	// +0x2C
 	int m_id;	// +0x30
 };
 
@@ -50,6 +137,8 @@ struct Rva00506909Gen
 	virtual bool isRequired();	// slot 10
 	unsigned char m_pad04[0x24 - 4];
 	void *m_arg;	// +0x24
+	int m_28;
+	AsciiString m_name;	// +0x2C
 };
 
 #define RVA00506909_GEN(name, size) \
@@ -112,9 +201,14 @@ public:
 	void rva00505A56(Rva005059A1Unit *unit);
 	Rva00506909(void *owner);
 	~Rva00506909();
+	void xfer(Xfer *xfer);
 	void rva005069B4();
 	bool rva005069CE(Rva00506909Request *request, void *arg);
 private:
+	Rva00506909Item *rva00505D91(const AsciiString &name);
+	Rva00506909Item *rva00505DC4(const AsciiString &name);
+	Rva00506909Item *rva00505DF7(const AsciiString &name);
+	Rva00506909Item *rva00505E2A(const AsciiString &name);
 	void rva00505E5D();
 	void rva00505F80();
 	void rva00505FD0();
@@ -423,4 +517,125 @@ Rva00506909::~Rva00506909()
 		::delete *item;
 	for (item = m_58.begin(); item != m_58.end(); ++item)
 		::delete *item;
+}
+
+// 0x0050652D: Version(1, 1), the four generator-pool sizes, then each item
+// list: its count, then every item's name followed by the item itself;
+// loading rebuilds each item from its name (0x00505D91).
+void Rva00506909::xfer(Xfer *xfer)
+{
+	Xfer::Version version(1, 1);
+	*xfer == version;
+	unsigned int poolSize;
+	poolSize = m_04.size();
+	*xfer == poolSize;
+	poolSize = m_1C.size();
+	*xfer == poolSize;
+	poolSize = m_34.size();
+	*xfer == poolSize;
+	poolSize = m_4C.size();
+	*xfer == poolSize;
+	unsigned int count;
+	count = m_10.size();
+	*xfer == count;
+	if (xfer->IsStoring()) {
+		Rva00506909Item **end = m_10.end();
+		for (Rva00506909Item **it = m_10.begin(); it != end; ++it) {
+			AsciiString name((*it)->m_name);
+			*xfer == name;
+			(*it)->xfer(xfer);
+		}
+	} else if (xfer->IsLoading()) {
+		for (unsigned int i = 0; i < count; ++i) {
+			AsciiString name;
+			*xfer == name;
+			Rva00506909Item *item = rva00505D91(name);
+			item->xfer(xfer);
+			m_10.push_back(item);
+		}
+	}
+	count = m_28.size();
+	*xfer == count;
+	if (xfer->IsStoring()) {
+		Rva00506909Item **end = m_28.end();
+		for (Rva00506909Item **it = m_28.begin(); it != end; ++it) {
+			AsciiString name((*it)->m_name);
+			*xfer == name;
+			(*it)->xfer(xfer);
+		}
+	} else if (xfer->IsLoading()) {
+		for (unsigned int i = 0; i < count; ++i) {
+			AsciiString name;
+			*xfer == name;
+			Rva00506909Item *item = rva00505DC4(name);
+			item->xfer(xfer);
+			m_28.push_back(item);
+		}
+	}
+	count = m_40.size();
+	*xfer == count;
+	if (xfer->IsStoring()) {
+		Rva00506909Item **end = m_40.end();
+		for (Rva00506909Item **it = m_40.begin(); it != end; ++it) {
+			AsciiString name((*it)->m_name);
+			*xfer == name;
+			(*it)->xfer(xfer);
+		}
+	} else if (xfer->IsLoading()) {
+		for (unsigned int i = 0; i < count; ++i) {
+			AsciiString name;
+			*xfer == name;
+			Rva00506909Item *item = rva00505DF7(name);
+			item->xfer(xfer);
+			m_40.push_back(item);
+		}
+	}
+	count = m_58.size();
+	*xfer == count;
+	if (xfer->IsStoring()) {
+		Rva00506909Item **end = m_58.end();
+		for (Rva00506909Item **it = m_58.begin(); it != end; ++it) {
+			AsciiString name((*it)->m_name);
+			*xfer == name;
+			(*it)->xfer(xfer);
+		}
+	} else if (xfer->IsLoading()) {
+		for (unsigned int i = 0; i < count; ++i) {
+			AsciiString name;
+			*xfer == name;
+			Rva00506909Item *item = rva00505E2A(name);
+			item->xfer(xfer);
+			m_58.push_back(item);
+		}
+	}
+}
+
+// 0x00505DC4 / 0x00505DF7 / 0x00505E2A: the item the +0x1C / +0x34 / +0x4C
+// generator of this name builds, else null (0x00505D91 is the +0x04 one,
+// rowed in Rva00505D91Find.cpp).
+Rva00506909Item *Rva00506909::rva00505DC4(const AsciiString &name)
+{
+	Rva00506909Gen **end = m_1C.end();
+	for (Rva00506909Gen **it = m_1C.begin(); it != end; ++it)
+		if ((*it)->m_name == name)
+			return (*it)->create();
+	return 0;
+}
+
+Rva00506909Item *Rva00506909::rva00505DF7(const AsciiString &name)
+{
+	Rva00506909Gen **end = m_34.end();
+	for (Rva00506909Gen **it = m_34.begin(); it != end; ++it)
+		if ((*it)->m_name == name)
+			return (*it)->create();
+	return 0;
+}
+
+Rva00506909Item *Rva00506909::rva00505E2A(const AsciiString &name)
+{
+	Rva00506909Gen **end = m_4C.end();
+	for (Rva00506909Gen **it = m_4C.begin(); it != end; ++it)
+		if ((*it)->m_name == name)
+			return (*it)->create();
+	return 0;
 }
