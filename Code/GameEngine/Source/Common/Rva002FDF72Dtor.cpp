@@ -1,5 +1,3 @@
-// ??1Rva002FDF72@@UAE@XZ
-// partial score=0.91 date=2026-09-30
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX
 // ??1Rva002FDF72@@UAE@XZ @0x002FDF72 201B: ModuleData-style dtor with vtable
 // 0x008071E4 then Snapshot base restore 0x00BBB554; three intrusive lists at
@@ -64,31 +62,30 @@ private:
 	NodeFC *m_FC;
 };
 
-// ??1Rva002FDF72@@UAE@XZ present-unmatched
 Rva002FDF72::~Rva002FDF72()
 {
 	NodeF4 *curF4 = m_F4;
 	m_F4 = 0;
 	while (curF4 != 0) {
-		NodeF4 *next = curF4->m_next;
-		void *tmp = curF4->deldtor(0);
+		NodeF4 *del = curF4;
+		curF4 = curF4->m_next;
+		void *tmp = del->deldtor(0);
 		::operator delete(tmp);
-		curF4 = next;
 	}
 	NodeFC *curFC = m_FC;
 	m_FC = 0;
 	while (curFC != 0) {
-		NodeFC *next = curFC->m_next;
-		void *tmp = curFC->deldtor(0);
+		NodeFC *del = curFC;
+		curFC = curFC->m_next;
+		void *tmp = del->deldtor(0);
 		::operator delete(tmp);
-		curFC = next;
 	}
 	NodeF8 *curF8 = m_F8;
 	m_F8 = 0;
 	while (curF8 != 0) {
-		NodeF8 *next = curF8->m_next;
-		void *tmp = curF8->deldtor(0);
+		NodeF8 *del = curF8;
+		curF8 = curF8->m_next;
+		void *tmp = del->deldtor(0);
 		::operator delete(tmp);
-		curF8 = next;
 	}
 }
