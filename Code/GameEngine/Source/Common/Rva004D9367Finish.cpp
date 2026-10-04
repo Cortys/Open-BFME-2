@@ -32,3 +32,12 @@ unsigned char __cdecl Rva004D9367Less(Rva004D9367Key const *a, Rva004D9367Key co
 		return 1;
 	return (unsigned char)(a->m10 < b->m10);
 }
+
+#pragma auto_inline(off)
+int __cdecl Rva004D93B5NotEqual(Rva004D9367Key const *a, Rva004D9367Key const *b)
+{
+	if (Rva004D9367Less(a, b) || Rva004D9367Less(b, a))
+		return 1;
+	return 0;
+}
+#pragma auto_inline(on)
