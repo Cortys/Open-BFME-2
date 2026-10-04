@@ -19,6 +19,8 @@ private:
 	char m_pad[0x14];
 };
 
+void operator delete[](void *p);
+
 class Rva005DA4DC
 {
 public:
