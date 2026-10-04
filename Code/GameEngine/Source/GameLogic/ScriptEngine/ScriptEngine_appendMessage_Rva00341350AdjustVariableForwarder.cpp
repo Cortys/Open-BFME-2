@@ -150,9 +150,11 @@ private:
 	Int m_frame;						// +0x3C
 };
 
-// The three-pointer vector living at GlobalData+0x11E0.  Only begin/end are
-// witnessed here, so the members keep offset-derived names.
-class GlobalData11E0StringVec
+// The three-pointer vector living at GlobalData+0x10F4 in BFME 2 (+0x11E0 in
+// the BFME 1 donor; both retail readers here, 0x002053FA and 0x002054FF, load
+// [TheWritableGlobalData+0x10F4]/[+0x10F8]).  Only begin/end are witnessed
+// here, so the members keep offset-derived names.
+class GlobalData10F4StringVec
 {
 public:
 	AsciiString *begin() const { return m_start; }
@@ -167,8 +169,8 @@ private:
 class GlobalData
 {
 public:
-	unsigned char m_unknown00[0x11e0];
-	GlobalData11E0StringVec m_stringVec11E0;		// +0x11E0
+	unsigned char m_unknown00[0x10f4];
+	GlobalData10F4StringVec m_stringVec10F4;		// +0x10F4
 };
 
 class Script;
@@ -401,9 +403,9 @@ static void _appendMessage(const AsciiString &str, Bool isTrueMessage,
 
 	// begin()/end() rather than the raw fields: retail materialises the end
 	// pointer into a register before the compare, which the direct field
-	// read folds into `cmp esi,[reg+0x11E4]` instead.
-	for (AsciiString *name = TheWritableGlobalData->m_stringVec11E0.begin();
-		 name != TheWritableGlobalData->m_stringVec11E0.end();
+	// read folds into `cmp esi,[reg+0x10F8]` instead.
+	for (AsciiString *name = TheWritableGlobalData->m_stringVec10F4.begin();
+		 name != TheWritableGlobalData->m_stringVec10F4.end();
 		 ++name)
 	{
 		if (str.startsWith(*name))
@@ -437,12 +439,18 @@ static void _appendMessage(const AsciiString &str, Bool isTrueMessage,
 	}
 }
 
-// Retail 0x0033EB70, 297 bytes: the Zero Hour twin at ScriptEngine.cpp:9389
+// Retail 0x002054FF, 224 bytes (BFME 1: 0x0033EB70, 297 bytes): the Zero Hour
+// twin at ScriptEngine.cpp:9389
 // (same "AdjustVariableAndPause"/"AdjustVariable" GetProcAddress pair and
 // "%d" formatting of the value).  BFME adds the same early-outs as
 // _appendMessage plus a TheScriptEngine->isTimeFast() guard, and a trailing
-// flag selecting "%d (%0.2f secs)" with the value scaled by 0.2.  Same private
+// flag selecting "%d (%0.2f secs)" with the value divided by the logic frame
+// rate.  Same private
 // convention: str live in EDI and no argument pop.
+// BFME 2 turns Zero Hour's LOGICFRAMES_PER_SECOND into this global int (5);
+// retail divides by it in memory (fidiv) rather than by a folded constant.
+extern const Int g_009BA4E4;					// 0x00DBA4E4
+
 static void _adjustVariable(const AsciiString &str, Int value,
 	Bool shouldPause, Bool showSeconds)
 {
@@ -453,8 +461,8 @@ static void _adjustVariable(const AsciiString &str, Int value,
 	if (!TheScriptDebugWindowDLL)
 		return;
 
-	for (AsciiString *name = TheWritableGlobalData->m_stringVec11E0.begin();
-		 name != TheWritableGlobalData->m_stringVec11E0.end();
+	for (AsciiString *name = TheWritableGlobalData->m_stringVec10F4.begin();
+		 name != TheWritableGlobalData->m_stringVec10F4.end();
 		 ++name)
 	{
 		if (str.startsWith(*name))
@@ -463,7 +471,7 @@ static void _adjustVariable(const AsciiString &str, Int value,
 
 	char buff[32];
 	if (showSeconds)
-		sprintf(buff, "%d (%0.2f secs)", value, value * 0.2f);
+		sprintf(buff, "%d (%0.2f secs)", value, (float)value / g_009BA4E4);
 	else
 		sprintf(buff, "%d ", value);
 
