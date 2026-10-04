@@ -52259,3 +52259,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?Rva003E92B2Check@@YG_NPAVParameter@@@Z,,0x003E92B2,45,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E92B2.cpp,matched,ret4 stdcall Parameter+0x10 ringheroes via rowed compareNoCase then TheGameInfo null or +0x68==1
 ?rva00106BC9@BfmeB996Range@@QAEHHPAH@Z,,0x00106BC9,176,Code/GameEngine/Source/Common/BfmeConv996RangeCheck.cpp,matched,counted scan via Go Advance invoke donor Rva007E3770 no callers
 ?rva00595685@Rva00595A9F@@QAE_NXZ,,0x00595685,183,Code/GameEngine/Source/Common/Rva00595A9F.cpp,matched,chain sibling same class dispatcher state 2 send timeout cleanup
+?rva007B763C@@YAXXZ,,0x007B763C,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx global dtor Open2Dtor40B830
