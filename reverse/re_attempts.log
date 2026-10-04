@@ -7422,3 +7422,6 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva005974CC@Rva0059734B@@UAEXPAVXfer@@PAX@Z	0x005974CC	244	partial	xor+cmp vs test lea hoist cmp ebx vs imm store branch inversion t=22 model=muse-04 score=0.93 stash=reverse/attempts/0x005974cc.cpp
 ?rva00597E30@Rva00597E30@@QAEXXZ	0x00597E30	377	blocked	complex EH 377B needs full C-string at 0x870C30 packet truncates plus BfmeFixedStorage link helpers no donor t=12 model=muse-04
 ??1Rva00574C1B@@UAE@XZ	0x00574C1B	83	blocked	dtor vtable scheduling wall lea late missing store t=12 model=muse-06
+?evaluateSkirmishPlayerHasDiscoveredPlayer@ScriptConditions@@IAE_NPAVParameter@@0@Z	0x003E79F5	263	blocked	chain evaluateSkirmishPlayerHasDiscoveredPlayer needs PlayerTeamList at +0x32c plus Team instance via +0x334 plus Rva005C4AF5 next plus TeamMemberList rows t=22 model=muse-09
+?rva0035A4A3@Rva0035A4A3@@QAE_NHHHH_NH@Z	0x0035A4A3	380	blocked	chain grid cell query with SSE worldpos plus PartitionManager shroud plus Object shroud plus BfmePod8 vector erase plus findObjectByID needs Cell 16B plus vector plus donor t=18 model=muse-09
+?Rva006C4FA0Get@@YAHPAPAXH@Z	0x006C4FA0	297	blocked	linkbody dbghelp stack capture needs CONTEXT 0x2CC plus BfmeStackFrame 0xA4 plus call-pop EIP plus StackWalk 9-arg plus Ebp-Esp direct stores t=25 model=muse-09
