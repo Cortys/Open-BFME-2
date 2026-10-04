@@ -51199,3 +51199,11 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??$swap_ranges@PAVAsciiString@@PAV1@@_STL@@YAPAVAsciiString@@PAV1@00@Z,,0x004F6FFC,38,Code/Libraries/Source/WWVegas/WWLib/stlport_stable_sort_asciistring_o1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?_M_initialize_buffer@?$_Temporary_buffer@PAVAsciiString@@V1@@_STL@@AAEXABVAsciiString@@ABU__false_type@2@@Z,,0x004F7193,21,Code/Libraries/Source/WWVegas/WWLib/stlport_stable_sort_asciistring_o1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??$__rotate_adaptive@PAVAsciiString@@PAV1@H@_STL@@YAPAVAsciiString@@PAV1@00HH0H@Z,,0x004F8062,135,Code/Libraries/Source/WWVegas/WWLib/stlport_stable_sort_asciistring_o1.cpp,matched,stable_sort<AsciiString*> chain at /O1; unique masked placement
+?Bind@UDP@@QAEHPBDG@Z,,0x00594C7F,94,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Read@UDP@@QAEHPAEIPAUsockaddr_in@@@Z,,0x005949AB,91,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?SetBlocking@UDP@@AAEHH@Z,,0x00594976,53,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?GetInputBuffer@UDP@@QAEHXZ,,0x00594AD0,47,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?GetOutputBuffer@UDP@@QAEHXZ,,0x00594AFF,47,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?SetInputBuffer@UDP@@QAEHI@Z,,0x00594A7C,42,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?SetOutputBuffer@UDP@@QAEHI@Z,,0x00594AA6,42,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?AllowBroadcasts@UDP@@QAEH_N@Z,,0x00594B2E,40,Code/GameEngine/Source/GameNetwork/udp.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
