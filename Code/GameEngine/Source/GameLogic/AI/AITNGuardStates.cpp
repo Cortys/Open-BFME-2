@@ -32,6 +32,11 @@
 //  - AITNGuardAttackAggressorState::onEnter, retail 0x0054675D (241 bytes):
 //    slot 4 of 0x00C6A298; Zero Hour's body (body module +0x254, vslot 15
 //    getLastDamageInfo, source id +8).
+//  - AITNGuardIdleState::onEnter, retail 0x00545CAF (72 bytes): slot 4 of
+//    0x00C6A038 (AITNGuardIdleState); Zero Hour's randomised first scan (AITNGuard.cpp
+//    line 586; TAiData m_guardEnemyScanRate +0x40, m_nextEnemyScanTime +0x20),
+//    then the AI's friend_setGoalObject(NULL) (rowed opaque
+//    AIUpdateInterface::rva00262B0F).
 // BFME2 layout (target evidence): the attack sub-state is deleted with a
 // global-scope delete (vslot 0 with flag 0, then ::operator delete); owner
 // team +0x304, object id +0x74, player tunnel tracker +0x2E8, guard machine
@@ -56,6 +61,7 @@ enum StateReturnType
 	STATE_FAILURE = -2
 };
 class Object;
+class AIUpdateInterface;
 struct TeamTemplateInfo
 {
 	unsigned char m_pad00[0x16];
@@ -119,6 +125,7 @@ public:
 class Object
 {
 public:
+	AIUpdateInterface *getAI() { return m_ai; }
 	BodyModuleInterface *getBodyModule() const { return m_body; }
 	ObjectID getID() const { return m_id; }
 	Team *getTeam() { return m_team; }
@@ -128,7 +135,8 @@ private:
 	ObjectID m_id; // +0x74
 	unsigned char m_pad78[0x254 - 0x78];
 	BodyModuleInterface *m_body; // +0x254
-	unsigned char m_pad258[0x304 - 0x258];
+	AIUpdateInterface *m_ai; // +0x258
+	unsigned char m_pad25C[0x304 - 0x25C];
 	Team *m_team; // +0x304
 };
 class GameLogic
@@ -144,6 +152,14 @@ struct TAiData
 {
 	unsigned char m_pad00[0x3C];
 	UnsignedInt m_guardChaseUnitFrames; // +0x3C
+	UnsignedInt m_guardEnemyScanRate; // +0x40
+};
+int GetGameLogicRandomValue(int low, int high, char *file, int line);
+#define AITNGUARD_FILE "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\AI\\AITNGuard.cpp"
+class AIUpdateInterface
+{
+public:
+	void rva00262B0F(int goal); // friend_setGoalObject
 };
 class AI
 {
@@ -280,6 +296,14 @@ public:
 	virtual StateReturnType update();
 private:
 	AITNGuardMachine *getGuardMachine() { return (AITNGuardMachine *)getMachine(); }
+};
+class AITNGuardIdleState : public State
+{
+public:
+	virtual StateReturnType onEnter();
+private:
+	unsigned char m_pad1C[0x20 - 0x1C];
+	UnsignedInt m_nextEnemyScanTime; // +0x20
 };
 class AITNGuardAttackAggressorState : public State
 {
@@ -490,4 +514,15 @@ StateReturnType AITNGuardAttackAggressorState::onEnter( void )
 
 	// if we had no one to attack, we were successful, so go to the next state.
 	return STATE_SUCCESS;
+}
+
+StateReturnType AITNGuardIdleState::onEnter( void )
+{
+	// first time thru, use a random amount so that everyone doesn't scan on the same frame,
+	// to avoid "spikes". 
+	UnsignedInt now = TheGameLogic->getFrame();
+	m_nextEnemyScanTime = now + GetGameLogicRandomValue(0, TheAI->getAiData()->m_guardEnemyScanRate, AITNGUARD_FILE, 586);
+
+	getMachineOwner()->getAI()->rva00262B0F(NULL); // friend_setGoalObject(NULL)
+	return STATE_CONTINUE;
 }
