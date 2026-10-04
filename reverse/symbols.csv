@@ -8081,3 +8081,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?resize@?$vector@UQ3SortElem4@@V?$allocator@UQ3SortElem4@@@_STL@@@_STL@@QAEXIUQ3SortElem4@@@Z,0x005EFDE9,donor_sweep: call target read from retail at a unique placement of a BFME 1 donor body compiled /O1
 ??0?$_Vector_base@PAVRva005DCE08@@V?$allocator@PAVRva005DCE08@@@_STL@@@_STL@@QAE@ABV?$allocator@PAVRva005DCE08@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor (same 29B as matched BfmeE16 row); REL32 at 0x005ADA0A in the Rva005ADA40 element ctor
 ?rva005DCC86@Rva005DCE08@@QAEPAVRva005AD9C0Hit@@PAX@Z,0x005DCC86,item hit test returning a polymorphic hit; REL32 at 0x005AD9D1 in Rva005ADA40::rva005AD9C0
+?rva005ADAB2@Rva005ADA40@@QAEXXZ,0x005ADAB2,Rva00506B74 element: start its +0x28 object when it has none; REL32 at 0x005ADCA4 in Rva005ADA40::rva005ADC63
+?rva005DCCFB@Rva005DCE08@@QAEXXZ,0x005DCCFB,per-item update; REL32 at 0x005ADCAF in Rva005ADA40::rva005ADC63

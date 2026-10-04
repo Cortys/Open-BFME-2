@@ -13,6 +13,8 @@
 //   0x005ADA40  dtor: delete every item, ::delete the +0x28 object, free
 //               the vector
 //   0x005AD9C0  the first item hit (0x005DCC86) by the argument
+//   0x005ADC63  update: retire the +0x28 object once done (0x004E9378), or
+//               start one (0x005ADAB2); then update every item
 #include <vector>
 
 struct Coord3DBase
@@ -34,6 +36,19 @@ class Rva005DCE08
 public:
 	~Rva005DCE08();
 	Rva005AD9C0Hit *rva005DCC86(void *arg);
+	void rva005DCCFB();
+};
+
+class Rva004E9378
+{
+public:
+	bool rva004E9378();
+};
+
+class Rva00506FE9Hit
+{
+public:
+	void rva0055ADBA(void *owner);
 };
 
 class Rva005ADA40Owned
@@ -48,6 +63,8 @@ public:
 	Rva005ADA40(unsigned int index, void *owner);
 	~Rva005ADA40();
 	Rva005AD9C0Hit *rva005AD9C0(void *arg);
+	void rva005ADAB2();
+	void rva005ADC63();
 private:
 	_STL::vector<Rva005DCE08 *> m_items;	// +0x00
 	unsigned int m_index;			// +0x0C
@@ -87,4 +104,20 @@ Rva005AD9C0Hit *Rva005ADA40::rva005AD9C0(void *arg)
 			break;
 	}
 	return hit;
+}
+
+void Rva005ADA40::rva005ADC63()
+{
+	Rva005ADA40Owned *owned = m_owned;
+	if (owned) {
+		if (((Rva004E9378 *)owned)->rva004E9378()) {
+			((Rva00506FE9Hit *)owned)->rva0055ADBA(m_owner);
+			::delete m_owned;
+			m_owned = 0;
+		}
+	} else {
+		rva005ADAB2();
+	}
+	for (Rva005DCE08 **it = m_items.begin(); it != m_items.end(); ++it)
+		(*it)->rva005DCCFB();
 }
