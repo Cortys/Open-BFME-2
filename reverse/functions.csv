@@ -50714,3 +50714,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva003F7EC7@@QAE@H@Z,,0x003F7E9D,42,Code/Libraries/Source/WWVegas/WW3D2/Rva003F7EC7Ctor.cpp,matched,ctor stores vtable arg at +4 zeroes rest caller 0x003F90A1
 ??0Rva002DAC58@@QAE@XZ,,0x002DAC34,36,Code/GameEngine/Source/Common/Rva002DAC58Ctor.cpp,matched,ctor via rowed baseConstruct plus lists plus global g_00DFF088 plus caller 0x0022E874
 ?Rva003AD6BEInit@@YAXXZ,,0x003AD6BE,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD6BEInit.cpp,matched,guarded init calling rowed TERRAIN_FIRE_EMISSION getInstance 0x003AB703 and atexit
+??0Rva0055BC8B@@QAE@ABV0@@Z,,0x003ADD9D,42,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055BC8BCopy.cpp,matched,copy ctor same vtable 0x0081D1A4 eight keys plus trailing float caller 0x003ADD52
