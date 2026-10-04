@@ -77,6 +77,14 @@ extern "C"
 	void __stdcall Rva0088E190TimerTick(RvaHandle, unsigned int, unsigned int, RvaDword);
 	void Rva0088E090ResumeOtherThreads(RvaOpenThreadFn openThread, RvaHandle snapshot,
 		RvaDword processId, RvaDword keepThreadId);
+
+	// Retail 0x0003D870: the 1 Hz dialog timer callback only bumps the tick
+	// counter the watchdog thread watches. Gap body between the watchdog
+	// thread (0x0003D7E0+139) and the dialog driver (0x0003D880).
+	void __stdcall Rva0088E190TimerTick(RvaHandle, unsigned int, unsigned int, RvaDword)
+	{
+		++g_Rva013373BCTimerTicks;
+	}
 }
 
 extern "C" int Rva0088E1A0ShowAssertCrashDialog(const char *windowText, const char *messageText)
