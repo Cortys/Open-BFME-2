@@ -3526,34 +3526,9 @@ Bool DozerPrimaryStateMachine::isFortifyMostImportant( State *thisState, void* u
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DozerAIUpdateModuleDataCtorThunk.cpp
-// ??0DozerAIUpdateModuleData@@QAE@XZ present-unmatched
-DozerAIUpdateModuleData::DozerAIUpdateModuleData( void )
-{
-
-	m_repairHealthPercentPerSecond = 0.0f;
-	m_boredTime = 0.0f;
-	m_boredRange = 0.0f;
-
-}  // end DozerAIUpdateModuleData
-
-// ------------------------------------------------------------------------------------------------
-// ?buildFieldParse@DozerAIUpdateModuleData@@ present-unmatched
-void DozerAIUpdateModuleData::buildFieldParse( MultiIniFieldParse& p)
-{
-  AIUpdateModuleData::buildFieldParse( p );
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "RepairHealthPercentPerSecond",	INI::parsePercentToReal,	NULL, offsetof( DozerAIUpdateModuleData, m_repairHealthPercentPerSecond ) },
-		{ "BoredTime",										INI::parseDurationReal,		NULL, offsetof( DozerAIUpdateModuleData, m_boredTime ) },
-		{ "BoredRange",										INI::parseReal,						NULL, offsetof( DozerAIUpdateModuleData, m_boredRange ) },
-		{ 0, 0, 0, 0 }
-	};
-
-  p.add( dataFieldParse );
-
-}  // end buildFieldParse
+// LINK-DUP: ??0DozerAIUpdateModuleData@@QAE@XZ and
+// ?buildFieldParse@DozerAIUpdateModuleData@@ owned by DozerAIUpdateModuleDataCtor.cpp;
+// this file merely declares them via GameLogic/Module/DozerAIUpdate.h.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -4207,7 +4182,6 @@ Bool DozerAIUpdate::isAnyTaskPending( void )
 	return FALSE;
 
 }  // end isAnyTaskPending
-
 //-------------------------------------------------------------------------------------------------
 /** Get the target object of a given task */
 //-------------------------------------------------------------------------------------------------
