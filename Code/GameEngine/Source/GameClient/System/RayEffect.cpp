@@ -64,3 +64,28 @@ void RayEffectSystem::deleteRayEffect( const Drawable *draw )
 	}  // end if
 
 }  // end deleteRayEffect
+
+//-------------------------------------------------------------------------------------------------
+/** given a drawable, if it is in the ray effect system list retrieve
+	*	the ray effect data for its entry */
+//-------------------------------------------------------------------------------------------------
+void RayEffectSystem::getRayEffectData( const Drawable *draw, 
+																			  RayEffectData *effectData )
+{
+	RayEffectData *entry = NULL;
+
+	// sanity
+	if( draw == NULL || effectData == NULL )
+		return;
+
+	// find the effect data entry
+	entry = findEntry( draw );
+	if( entry )
+	{
+
+		// data has been found, copy to parameter
+		*effectData = *entry;
+
+	}  // end effectData
+
+}  // end getRayEffectData
