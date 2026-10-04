@@ -24,15 +24,21 @@ class Rva00595A9F
 {
 public:
     bool rva00595A9F();
+    bool rva00595B97();
 private:
-    char m_pad0[0x54];
+    char m_pad0[4];
+    unsigned char m_04;
+    char m_pad05[0x0c - 0x05];
+    unsigned long m_0c;
+    char m_pad10[0x54 - 0x10];
     unsigned long m_54;
     char m_pad58[0x68 - 0x58];
     unsigned short m_68;
     unsigned short m_6a;
     char m_pad6c[0x78 - 0x6c];
     unsigned short m_78;
-    char m_pad7a[0x88 - 0x7a];
+    unsigned short m_7a;
+    char m_pad7c[0x88 - 0x7c];
     unsigned short m_88;
     char m_pad8a[0x17c - 0x8a];
     unsigned long m_17c;
@@ -65,4 +71,25 @@ bool Rva00595A9F::rva00595A9F()
         m_17c = 7;
         return false;
     }
+}
+
+bool Rva00595A9F::rva00595B97()
+{
+    unsigned short r = ((Rva00594E07 *)this)->rva00594E07(m_88, 0);
+    m_7a = r;
+    if (r == 0) {
+        unsigned long now = timeGetTime();
+        if (now - m_180 > m_184) {
+            ((Rva0059534A *)this)->rva0059534A(m_68);
+            ((Rva0059534A *)this)->rva0059534A(m_6a);
+        } else {
+            return false;
+        }
+    } else {
+        unsigned int combined = (unsigned int)m_78 + m_0c;
+        if ((unsigned int)r != combined)
+            m_04 |= 0x80;
+    }
+    m_17c = 9;
+    return true;
 }
