@@ -579,6 +579,19 @@ def offset_search(rva, budget=400):
     return result
 
 
+def _copy_of(name, address):
+    """True when the ledger already proves `name`'s code at `address`: a
+    matched row there whose object-symbol is `name` (a dup_ row: a second
+    retail copy of one template instance that each caller reaches nearby)."""
+    copies = getattr(_copy_of, "rows", None)
+    if copies is None:
+        copies = _copy_of.rows = collections.defaultdict(set)
+        for row in build.load_all_function_rows():
+            found = re.search(r"object-symbol=([^;]+)", row.get("notes") or "")
+            copies[int(row["target_rva"], 16)].add(found.group(1).strip() if found else row["name"])
+    return name in copies.get(address, ())
+
+
 def _same_body(a, b):
     """True when retail holds the same function at RVAs a and b: identical
     instructions over a's ledger size, call/jump targets compared as absolute
@@ -597,8 +610,13 @@ def _same_body(a, b):
         def local(match):  # a branch inside the body: compare as an offset
             value = int(match.group(0), 16)
             return f"L+{value - start:#x}" if start <= value < start + size else match.group(0)
-        return [(i.mnemonic, re.sub(r"0x[0-9a-f]+", local, i.op_str))
-                for i in md.disasm(build.read_target_bytes(start, size), start)]
+        out = []
+        for i in md.disasm(build.read_target_bytes(start, size), start):
+            op = re.sub(r"0x[0-9a-f]+", local, i.op_str)
+            if i.mnemonic in ("call", "jmp") and not op.startswith("L+"):
+                op = "<external>"  # each retail copy calls its own nearby copies
+            out.append((i.mnemonic, op))
+        return out
     try:
         one, two = listing(a), listing(b)
     except ValueError:  # an address outside the image is not a function
@@ -648,7 +666,8 @@ def pin_probe(rva):
             # Resolved, but retail calls another address: pin only an
             # identical copy (an ICF fold the linker kept twice), never a
             # different function under this name.
-            if not any(_same_body(known, address) for known in symbol_map.get(name, [])):
+            if not (_copy_of(name, address)
+                    or any(_same_body(known, address) for known in symbol_map.get(name, []))):
                 return {"rva": rva, "skip": f"{name}: retail calls 0x{address:08X}, a different body"}
         if pins.setdefault(name, address) != address:
             return {"rva": rva, "skip": f"{name} called at two different targets"}
