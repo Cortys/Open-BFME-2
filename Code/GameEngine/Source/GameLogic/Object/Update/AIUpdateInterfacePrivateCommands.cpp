@@ -101,6 +101,13 @@ enum KindOfType
 	KINDOF_PROJECTILE = 0x19
 };
 
+// Status bit 0x26 is tested by privateHunt and bfmePrivateCommand37; its
+// name is not evidenced.
+enum ObjectStatusTypes
+{
+	BFME_OBJECT_STATUS_26 = 0x26
+};
+
 enum GuardMode
 {
 	GUARDMODE_NORMAL = 0
@@ -213,15 +220,23 @@ public:
 class ThingTemplate : public Overridable
 {
 public:
-	unsigned char m_unmodelled_08[0xC8 - 8];
-	UnsignedInt m_kindof[3];
+	// BFME2 keeps the KindOf bitset at +0x108 (bit n in byte 0x108 + n/8):
+	// privateHunt tests KINDOF_PROJECTILE (0x19) as bit 1 of byte +0x10B, the
+	// same byte layout Rva00290EFEGetGhostObject.cpp and
+	// Object_isAbleToAttack.cpp read. Retail folds the whole Thing -> template
+	// -> bitset chain to that one byte test; at /O1 the stand-in needs
+	// __forceinline to do the same.
+	__forceinline Bool isKindOf(KindOfType t) const { return (m_kindof[t >> 3] & (1 << (t & 7))) != 0; }
+
+	unsigned char m_unmodelled_08[0x108 - 8];
+	unsigned char m_kindof[16];
 };
 
 // upstream layout: inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/Thing.h
 class Thing
 {
 public:
-	Bool isKindOf(KindOfType t) const;
+	__forceinline Bool isKindOf(KindOfType t) const { return m_template->isKindOf(t); }
 
 	virtual void slot00();
 	ThingTemplate *m_template;
@@ -319,6 +334,7 @@ class Object : public Thing
 {
 public:
 	Bool isMobile() const;
+	Bool testStatus(ObjectStatusTypes bit) const;	///< 0x0004E536
 	Coord3D getPosition() const;
 	const WeaponSetFlags &getWeaponSetFlags() const;
 	Weapon *getCurrentWeapon(WeaponSlotType *wslot);
@@ -448,6 +464,7 @@ protected:
 	// Declared last so no slot above moves; nothing in this TU dispatches it.
 	virtual void privateMoveToObject(Object *obj, CommandSourceType commandSource);
 	// BFME2 aiDoCommand handlers named by their command id (see the bodies).
+	virtual void bfmePrivateCommand37(Int value, CommandSourceType commandSource);
 	virtual void bfmePrivateCommand3D(Object *obj, CommandSourceType commandSource);
 	virtual void bfmePrivateCommand3E(Object *obj, CommandSourceType commandSource);
 	virtual void bfmePrivateCommand4A(Object *obj, const Coord3D *pos, CommandSourceType commandSource);
@@ -514,6 +531,8 @@ protected:
 	unsigned char m_isBlockedAndStuck;			// +0x326
 	unsigned char m_unmodelled_327[0x32B - 0x327];
 	unsigned char m_isAiDead;					// +0x32B
+	unsigned char m_unmodelled_32C[0x3B8 - 0x32C];
+	unsigned char m_bfmeByte3B8;				// +0x3B8, cleared by privateFaceObject
 };
 
 // Retail 0x00271630. BFME gates Zero Hour's move-to-object order on a
@@ -670,4 +689,52 @@ void AIUpdateInterface::bfmePrivateCommand54(Object *obj, const Coord3D *pos, Co
 	sm->setGoalPosition(pos);
 	m_lastCommandSource = commandSource;
 	sm->setState((StateID)0x4b);
+}
+
+// Command 0x12, slot 43, retail 0x002646E9. aiHunt (0x002AE657) issues
+// AICMD 0x12; BFME1's privateHunt (mobile, not a projectile, then AI_HUNT,
+// state 0x11) plus a BFME2 status-bit guard.
+void AIUpdateInterface::privateHunt(CommandSourceType commandSource)
+{
+	if (!getObject()->isMobile())
+		return;
+	if (getObject()->isKindOf(KINDOF_PROJECTILE))
+		return;
+	if (getObject()->testStatus(BFME_OBJECT_STATUS_26))
+		return;
+	m_stateMachine->clear();
+	m_lastCommandSource = commandSource;
+	m_stateMachine->setState(BFME_AI_HUNT);
+}
+
+// Command 0x26, slot 69, retail 0x002645B9. aiFaceObject (0x003C771D)
+// issues AICMD 0x26; BFME1's privateFaceObject shape, with BFME2's state 0x24
+// and one blocked byte at +0x3B8 instead of the two at +0x325.
+void AIUpdateInterface::privateFaceObject(Object *target, CommandSourceType commandSource)
+{
+	if (!getObject()->isMobile())
+		return;
+	m_stateMachine->clear();
+	m_stateMachine->setGoalObject(target);
+	m_blockedFrames = 0;
+	m_bfmeByte3B8 = 0;
+	m_lastCommandSource = commandSource;
+	m_stateMachine->setState((StateID)0x24);
+}
+
+// Command 0x37, slot 62, retail 0x00264CBB: AICommandParms::m_intValue (+0x34)
+// is stored at +0x4C before the state machine enters state 0x18.
+void AIUpdateInterface::bfmePrivateCommand37(Int value, CommandSourceType commandSource)
+{
+	Object *obj = getObject();
+	if (obj->testStatus(BFME_OBJECT_STATUS_26))
+		return;
+	if (!obj->isMobile())
+		return;
+	if (getObject()->isKindOf(KINDOF_PROJECTILE))
+		return;
+	m_guardMode = (GuardMode)value;
+	m_stateMachine->clear();
+	m_lastCommandSource = commandSource;
+	m_stateMachine->setState((StateID)0x18);
 }
