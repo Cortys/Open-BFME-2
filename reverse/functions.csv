@@ -51418,3 +51418,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0W3DRenderObjectSnapshot@@AAE@PAVRenderObjClass@@PAUDrawableInfo@@_N@Z,,0x00063861,65,Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp,matched,ZH W3DRenderObjectSnapshot ctor; installs vftable 0x00BC59F4 (W3DRenderObjectSnapshot name getter slot 2)
 ??_GRva0044ECCE@@UAEPAXI@Z,,0x0044EF42,28,Code/GameEngine/Source/Common/Rva0044ECCEDtor.cpp,matched,scalar deleting dtor in vftable slot 0 0x00C3F2A8; calls rowed dtor 0x0044ECCE
 ?parseEmotionNuggetCopyFrom@@YAXPAVINI@@PAX1PBX@Z,,0x004DCA34,158,Code/GameEngine/Source/Common/INI/INIEmotionCopyFrom.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Clear@?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAEXXZ,,0x000F1C0D,9,Code/Libraries/Source/WWVegas/WWMath/curve.cpp,matched,vftable slot 3 of ??_7DynamicVectorClass<Curve3DClass::KeyClass>; zero ActiveCount then tail-jump to the base Clear
+?Restart@ParticleEmitterClass@@UAEXXZ,,0x001A2660,5,Code/Libraries/Source/WWVegas/WW3D2/part_emt.cpp,matched,vftable slot 14 of ??_7ParticleEmitterClass; tail-jump to rowed Start
