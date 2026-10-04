@@ -8267,3 +8267,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?accept@T1Sink_005C8D40@@QAEPAXPAX0@Z,0x001F8A38,sink member callee of ?hand@T1Fwd_005C98A0@@QAEPAXPAXPAVT1Sink_005C8D40@@@Z at retail 0x001F948C read from its REL32 displacement; body unrowed
 ?hand@U4Target0060C2C0@@QAEXPAX@Z,0x003FC149,target member callee of ?u4Guarded0060C2C0@@YGXPAVU4Target0060C2C0@@PAX@Z at retail 0x003F935A read from its REL32 displacement; body unrowed
 ?add@U1Sink@@QAEXPBD@Z,0x001F5F65,sink member callee of ?u1Insert_005C6350@@YAPAVU1Sink@@PAV1@PBVU1Box@@@Z at retail 0x001F67FF read from its REL32 displacement; same body as the matched STLport narrow-ostream ?_M_put_nowiden@?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@QAEXPBD@Z
+?bfmeHash0002A473@@YAIII@Z,0x003F1D23,__cdecl hash helper callee of ?bfmeDiffers@Gen_00528EC0@@QBE_NABV1@@Z at retail 0x003F2330 read from its REL32 displacement; reads a global at 0x00DC34DC; body unrowed
+?bfmeHash00010AFA@@YAIII@Z,0x0043538F,__cdecl hash helper callee of ?bfmeDiffers@Gen_0056E190@@QBE_NABV1@@Z at retail 0x00435B4F read from its REL32 displacement; reads a global at 0x00DC51A8; body unrowed
+?bfmeHash0002BB70@@YAIII@Z,0x0056F52C,__cdecl hash helper callee of ?bfmeDiffers@Gen_0054EC50@@QBE_NABV1@@Z at retail 0x0056FA0C read from its REL32 displacement; reads a global at 0x00DC28BC; body unrowed
+?bfmeHash00013412@@YAIII@Z,0x0056F585,__cdecl hash helper callee of ?bfmeDiffers@Gen_0054EC80@@QBE_NABV1@@Z at retail 0x0056FA2E read from its REL32 displacement; reads a global at 0x00DC2D48; body unrowed

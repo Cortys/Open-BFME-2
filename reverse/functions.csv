@@ -52421,3 +52421,7 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?hand@T1Fwd_005C98A0@@QAEPAXPAXPAVT1Sink_005C8D40@@@Z,,0x001F948C,17,Code/GameEngine/Source/Common/T1ReceiverSwappingThunks.cpp,matched,BFME1 donor T1ReceiverSwappingThunks.cpp at /Os
 ?u4Guarded0060C2C0@@YGXPAVU4Target0060C2C0@@PAX@Z,,0x003F935A,20,Code/GameEngine/Source/Common/U4GlobalGuardedNotifies.cpp,matched,BFME1 donor U4GlobalGuardedNotifies.cpp at /Os
 ?u1Insert_005C6350@@YAPAVU1Sink@@PAV1@PBVU1Box@@@Z,,0x001F67FF,20,Code/GameEngine/Source/Common/U1SinkInserters.cpp,matched,BFME1 donor U1SinkInserters.cpp at /Os
+?bfmeDiffers@Gen_00528EC0@@QBE_NABV1@@Z,,0x003F2330,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
+?bfmeDiffers@Gen_0054EC50@@QBE_NABV1@@Z,,0x0056FA0C,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
+?bfmeDiffers@Gen_0054EC80@@QBE_NABV1@@Z,,0x0056FA2E,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
+?bfmeDiffers@Gen_0056E190@@QBE_NABV1@@Z,,0x00435B4F,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
