@@ -52092,3 +52092,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??$sort_heap@PAUTreeHintRef00217D4C@@URva004F9185Cmp@@@_STL@@YAXPAUTreeHintRef00217D4C@@0URva004F9185Cmp@@@Z,,0x004F8162,58,Code/Libraries/Source/WWVegas/WWLib/stlport_treehint_sort_heap.cpp,matched,chain via landed pop_heap calls rowed pop_heap then last
 ?subCounter@ScriptEngine@@IAEXPAVScriptAction@@@Z,,0x0020933D,69,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineEvaluateCounter.cpp,matched,ScriptEngine subCounter BFME1 donor getParameter inline
 ?addCounter@ScriptEngine@@IAEXPAVScriptAction@@@Z,,0x002092F8,69,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineEvaluateCounter.cpp,matched,BFME1 ScriptEngineFlagsAndCounters donor plus retail dispatcher call at 0x0020C689
+?Rva003C4003Apply@@YGXPAVParameter@@ABVAsciiString@@PAX@Z,,0x003C4003,109,Code/GameEngine/Source/Common/Rva003C4003Apply.cpp,matched,leaf sibling of 41BA via getUnitNamed find filtered virtual
