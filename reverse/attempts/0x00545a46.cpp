@@ -1,3 +1,5 @@
+// ?update@AIGuardRetaliateAttackAggressorState@@UAE?AW4StateReturnType@@XZ
+// partial score=0.8 date=2026-10-04
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // AIGuardRetaliate state bodies ported from Zero Hour's
@@ -21,9 +23,19 @@
 //    CMD_FROM_AI) allows it, redirecting through the rowed
 //    Object::rva002931F5 for status 0x26 as AIGuardRetaliateState::onEnter
 //    does, and storing it as the machine's nemesis (+0x48).
+//  - AIGuardRetaliateAttackAggressorState::update, retail 0x00545A46 (265
+//    bytes): slot 6 of 0x00C69FA0. Zero Hour only runs the attack sub-state;
+//    BFME 2 first drops a flagged (+0x438 bit 0) nemesis or machine goal, and
+//    with no goal takes the nemesis or else the helper's pick (below) as the
+//    AI's goal object (rowed AIUpdateInterface::rva00262B0F, pinned as
+//    friend_setGoalObject), the machine's nemesis and goal; it succeeds once
+//    its exit conditions (vslot 0, called through the interface) hold or
+//    there is no attack sub-state; while the owner has status 0x1C, or its
+//    +0x250 module's controller (vslot 31) reports the nemesis through
+//    vslots 88 or 138, it extends the give-up frame (+0x38) to four seconds
+//    out; then the attack sub-state's update.
 //  - AIGuardRetaliateAttackAggressorState::rva0054582A, retail 0x0054582A
-//    (80 bytes): a helper of the state's update (0x00545A46, banked) that
-//    picks a new nemesis when there is none. The object with id +0x40 (BFME 2 field), if it
+//    (80 bytes): that helper. The object with id +0x40 (BFME 2 field), if it
 //    exists and has a +0x250 controller, picks an object around the owner's
 //    position (controller vslot 18 with (0, &pos, 0.0f, 0, 0)).
 // Layout (target evidence): state goal +0x20, adjusts-destination +0x48,
@@ -463,6 +475,7 @@ public:
 class AIGuardRetaliateAttackAggressorState : public State
 {
 public:
+	virtual StateReturnType update();
 	Object *rva0054582A();
 private:
 	AIGuardRetaliateMachine *getGuardMachine() { return (AIGuardRetaliateMachine *)getMachine(); }
@@ -488,4 +501,53 @@ Object *AIGuardRetaliateAttackAggressorState::rva0054582A()
 	if (controller)
 		return controller->bfmePick(0, owner->getPosition(), 0.0f, 0, 0);
 	return NULL;
+}
+
+//--------------------------------------------------------------------------------------
+StateReturnType AIGuardRetaliateAttackAggressorState::update( void )
+{
+	AIGuardRetaliateMachine *machine = getGuardMachine();
+	Object *nemesis = TheGameLogic->findObjectByID(machine->getNemesisID());
+	if (nemesis && nemesis->testBfme438Bit0())
+		nemesis = NULL;
+	Object *goal = machine->getGoalObject();
+	if (goal && goal->testBfme438Bit0())
+		goal = NULL;
+	Object *owner = getMachineOwner();
+	if (goal == NULL)
+	{
+		if (nemesis == NULL)
+		{
+			nemesis = rva0054582A();
+			if (nemesis == NULL)
+				return STATE_SUCCESS;
+		}
+		owner->getAI()->friend_setGoalObject(nemesis);
+		getGuardMachine()->setNemesisID(nemesis->getID());
+		getMachine()->setGoalObject(nemesis);
+	}
+	AttackExitConditionsInterface *conditions = &m_exitConditions;
+	if (conditions->shouldExit(getMachine()) || m_attackState == NULL)
+		return STATE_SUCCESS;
+
+	Bool extend = owner->testStatus(OBJECT_STATUS_BFME_1C);
+	Rva00545355Module *module = owner->getBfme250();
+	if (module)
+	{
+		Rva00545355Target *controller = module->bfmeTarget();
+		if (controller && nemesis)
+		{
+			if (controller->bfmeIsTarget(nemesis))
+				extend = true;
+			if (nemesis->getID() == controller->bfmeTargetID(nemesis->getID()))
+				extend = true;
+		}
+	}
+	if (extend)
+	{
+		UnsignedInt giveUp = TheGameLogic->getFrame() + 4*LOGICFRAMES_PER_SECOND;
+		if (m_exitConditions.m_attackGiveUpFrame < giveUp)
+			m_exitConditions.m_attackGiveUpFrame = giveUp;
+	}
+	return m_attackState->update();
 }
