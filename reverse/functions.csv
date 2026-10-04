@@ -52164,3 +52164,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva00298C0B@Rva00298C0B@@QAEXPAVTeam@@@Z,,0x00298C0B,107,Code/GameEngine/Source/Common/Rva00298C0B.cpp,matched,team scan via 250 slot 0x118 plus recurse plus aiIdle row
 ?rva003A2CEB@Team@@QAEXHPAVObject@@@Z,,0x003A2CEB,104,Code/GameEngine/Source/Common/RTS/TeamRva003A2CEB.cpp,matched,team map register plus filtered member notify
 ?rva003A2D53@Team@@QAEXHPAVObject@@@Z,,0x003A2D53,104,Code/GameEngine/Source/Common/RTS/TeamRva003A2D53.cpp,matched,team map register plus filtered member notify
+?rva003C0983@ScriptActions@@IAEXABVAsciiString@@0PAVObject@@@Z,,0x003C0983,87,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0983.cpp,matched,two team lookups plus filtered map register

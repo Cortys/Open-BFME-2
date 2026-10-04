@@ -7369,3 +7369,4 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva00495183@Rva00495183@@QAEPAXXZ	0x00495183	136	blocked	BfmeWideResult hidden plus PartitionManager plus distSq plus EOF best min 159 vs 136 plus23 16 regions 13 reg wall t=15 model=muse-03
 ?Rva004388E3Get@@YAHXZ	0x004388E3	203	blocked	EH_prolog scopetable 0x007880F7 unclaimed same wall as 0x004C76AC 0x004C8095 plus BfmeC1050 plus TerrainLogic plus PartitionManager t=5 model=muse-03
 ?rva00298C0B@Rva00298C0B@@QAEXPAVTeam@@@Z	0x00298C0B	107	partial	push ebx vs push edi plus 108 vs 107 plus 5 regions t=18 model=muse-03 score=0.93 stash=reverse/attempts/0x00298c0b.cpp
+?rva003A2DBB@Team@@QAEXM@Z	0x003A2DBB	258	blocked	EH SSE plus 4 unnamed globals plus unknown link layout t=12 model=muse-03
