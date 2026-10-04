@@ -90,7 +90,11 @@ public:
 #include "string_base.h"
 
 // ??0?$StringBase@G@@AAE@ABV0@@Z at 0x00888400 -- private, which is what
-// mangles it AAE.
+// mangles it AAE.  Present-unmatched: this is donor scaffolding for a body at
+// a different retail address (0x00888400) that the sweep's own compile command
+// needs emitted, not a definition this TU claims.  writeArrayOfBytes below
+// does not touch it, and the real UnicodeString copy constructor is claimed at
+// 0x00006618 by Code/Libraries/Source/WWVegas/WWLib/unicode_string.cpp.
 inline UnicodeString::UnicodeString( const UnicodeString &stringSrc )
 {
 	((StringBase<WideChar> *)this)->StringBase<WideChar>::StringBase(
