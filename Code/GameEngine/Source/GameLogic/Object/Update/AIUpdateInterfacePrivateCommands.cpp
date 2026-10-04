@@ -504,38 +504,15 @@ protected:
 	unsigned char m_unmodelled_34[0x48 - 0x34];
 	CommandSourceType m_lastCommandSource;
 
-	// Merging the seven files exposed a collision none of them could see:
-	// privateGuardObject and privateGuardPosition write the guard mode to
-	// +0x4C, and privateGetRepaired writes its repair-depot pointer to the
-	// same word. Both stores are byte-verified against retail, so BFME really
-	// does reuse this slot; nothing in these bodies says which name it wore,
-	// and upstream's field order (m_guardMode here) covers only one of them.
-	union
-	{
-		GuardMode m_guardMode;					// +0x4C, the guard commands
-		Object *m_repairDepot;					// +0x4C, privateGetRepaired
-	};
-	GuardTargetType m_guardTargetType[2];		// +0x50
-
-	// privateGuardAreaFromPosition writes three floats here, which is what
-	// turns the guess that +0x58 is upstream's m_locationToGuard into
-	// something byte-verified. Note that privateGuardPosition does NOT write
-	// it: that body stores only the z word, and it stores it at +0x68, past
-	// the end of this member.
-	Coord3D m_locationToGuard;					// +0x58
-
+	// Upstream's guard fields, in upstream's order. The +0x4C word also
+	// carries bfmePrivateCommand37's value, and command 0x20 (banked) keeps a
+	// team word at +0x68.
+	GuardMode m_guardMode;						// +0x4C
+	GuardTargetType m_guardTargetType[2];		// +0x50, a two-deep stack
+	Coord3D m_locationToGuard;					// +0x58, privateGuardPosition
 	UnsignedInt m_objectToGuard;				// +0x64
 	UnsignedInt m_guardExtra;					// +0x68
-
-	// The second collision this TU exposes. privateFaceObject stores the
-	// object it is turning towards at +0x6C; privateGuardAreaFromPosition
-	// stores the polygon it is guarding at the same word. Both stores are
-	// byte-verified, so BFME reuses this slot the way it reuses +0x4C.
-	union
-	{
-		Object *m_faceObject;					// +0x6C, privateFaceObject
-		const PolygonTrigger *m_areaToGuard;	// +0x6C, the area guard
-	};
+	const PolygonTrigger *m_areaToGuard;		// +0x6C, privateAttackArea
 	unsigned char m_unmodelled_70[0x16C - 0x70];
 	int m_blockedFrames;						// +0x16C
 	unsigned char m_unmodelled_170[0x1CC - 0x170];
