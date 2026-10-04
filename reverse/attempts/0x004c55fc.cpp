@@ -1,4 +1,6 @@
 // ?rva004C55FC@GrabPassengerSpecialPower@@QAEHXZ
+// partial score=0.975 date=2026-10-04
+// ?rva004C55FC@GrabPassengerSpecialPower@@QAEHXZ
 // partial score=0.97 date=2026-10-04
 // ?rva004C55FC@GrabPassengerSpecialPower@@QAEHXZ
 // partial score=0.95 date=2026-10-02
@@ -91,10 +93,11 @@ int GrabPassengerSpecialPower::rva004C55FC()
 		if (*(unsigned char *)((char *)this + 0x2C) == 0)
 			return 1;
 		*(unsigned char *)((char *)this + 0x2C) = 0;
-		if (((*((Object **)((char *)this - 8)))->m_flags11C_byte[3] & 0x40) == 0)
+		Object *o = *(Object **)((char *)this - 8);
+		if (!(o->m_flags11C_byte[3] & 0x40))
 			return 0x3FFFFFFF;
-		(*((Object **)((char *)this - 8)))->m_flags11C_byte[3] &= (unsigned char)0xBF;
-		(*((Object **)((char *)this - 8)))->rva0028AE6D();
+		o->m_flags11C_byte[3] &= (unsigned char)0xBF;
+		o->rva0028AE6D();
 		return 0x3FFFFFFF;
 	}
 	if (*(unsigned char *)((char *)this + 0x2D) == 0)
