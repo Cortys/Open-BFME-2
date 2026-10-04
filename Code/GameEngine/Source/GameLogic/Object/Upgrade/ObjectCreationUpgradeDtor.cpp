@@ -28,7 +28,7 @@ private:
 class BehaviorModule
 {
 public:
-	virtual void behaviorAnchor();
+	virtual ~BehaviorModule();
 
 private:
 	unsigned char m_data[8];

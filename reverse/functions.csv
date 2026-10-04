@@ -51386,3 +51386,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_ERva0056B0BF@@W7AEPAXI@Z,,0x0056B11E,8,Code/GameEngine/Source/Common/Rva0056B0BFDtor.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056B0BF
 ??_ERva0056B218@@W7AEPAXI@Z,,0x0056B28E,8,Code/GameEngine/Source/Common/Rva0056B218Dtor.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056B218
 ??_ERva0056B2DD@@W7AEPAXI@Z,,0x0056B34E,8,Code/GameEngine/Source/Common/Rva0056B2DDDtor.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056B2DD
+??_EObjectCreationUpgrade@@O7AEPAXI@Z,,0x004B3FED,8,Code/GameEngine/Source/GameLogic/Object/Upgrade/ObjectCreationUpgradeDtor.cpp,matched,adjustor thunk (this-8) in slot 0 of the BehaviorModule-base vftable; jumps to rowed ??_GObjectCreationUpgrade
