@@ -1,4 +1,6 @@
 // ?Rva004E43F2Find@@YAHH@Z
+// partial score=0.91 date=2026-10-04
+// ?Rva004E43F2Find@@YAHH@Z
 // partial score=0.91 date=2026-09-29
 // ?Rva004E43F2Find@@YAHH@Z
 // partial score=0.91 date=2026-09-29
@@ -25,16 +27,22 @@ int Rva004E43F2Find(int skip)
 	Rva004266A1 *v = g->ptr;
 	if (!v)
 		return -1;
+	Rva004266A1 *vec = v;
 	int i = 0;
-	int count = (int)v->vec.size();
-	for (; i < count;)
+	int count = (int)vec->vec.size();
+	if (count <= 0)
+		return -1;
+	while (i < count)
 	{
-		int cur = i++;
-		if (!v->rva0042680D(cur))
-			continue;
-		if (skip <= 0)
-			return cur;
-		--skip;
+		int cur = i;
+		i++;
+		if (vec->rva0042680D(cur))
+		{
+			if (skip > 0)
+				--skip;
+			else
+				return cur;
+		}
 	}
 	return -1;
 }
