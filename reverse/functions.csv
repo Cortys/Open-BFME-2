@@ -51867,3 +51867,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0Rva0010EE67@@QAE@ABVRva0036CA00Str@@H@Z,,0x0010EE67,31,Code/GameEngine/Source/Common/Rva0010EE67Ctor.cpp,matched,Derived ctor via rowed base 0x001164D3 plus int and vtable sibling EECE
 ??0Rva0010EF42@@QAE@ABVRva0036CA00Str@@H@Z,,0x0010EF42,31,Code/GameEngine/Source/Common/Rva0010EF42Ctor.cpp,matched,Derived ctor via rowed base 0x001164D3 plus int and vtable sibling 0x0010EE67
 ??0Rva004D9539@@QAE@HHH@Z,,0x004D9539,77,Code/GameEngine/Source/Common/Rva004D9539Ctor.cpp,matched,EH ctor two rowed Upgrades plus three ints caller 0x004DADA9
+?rva006D7090@@YAPAXPBD@Z,,0x006D7090,285,Code/Libraries/Source/Apt/AptValue/Rva006D7090Factory.cpp,matched,pooled Apt string factory via free list and pool alloc
