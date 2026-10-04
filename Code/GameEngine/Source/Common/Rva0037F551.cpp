@@ -66,3 +66,23 @@ Rva0037F551 *Rva0037F731Copy(Rva0037F551 *first, Rva0037F551 *last, Rva0037F551 
 	}
 	return cur;
 }
+// ?rva0037F77C@Rva0037F77C@@QAEPAVRva0037F551@@IPAV2@0@Z retail 0x0037F77C 45B
+// Evidence: chain from 0x0037F731; allocate n via allocator at this+8 then copy range via that row; caller 0x0037FEDD
+struct BfmePod72 { int a[18]; };
+namespace _STL { template <typename T> struct allocator { T *allocate(unsigned int n, const void *hint) const; }; }
+class Rva0037F77C
+{
+public:
+	Rva0037F551 *rva0037F77C(unsigned int n, Rva0037F551 *first, Rva0037F551 *last);
+private:
+	char m_pad[8];
+	_STL::allocator<BfmePod72> m_alloc;
+};
+#pragma optimize("y", off)
+Rva0037F551 *Rva0037F77C::rva0037F77C(unsigned int n, Rva0037F551 *first, Rva0037F551 *last)
+{
+	BfmePod72 *buf = m_alloc.allocate(n, 0);
+	Rva0037F731Copy(first, last, (Rva0037F551 *)buf, (void *)((char *)&n + 3));
+	return (Rva0037F551 *)buf;
+}
+#pragma optimize("", on)

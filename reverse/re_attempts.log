@@ -6977,3 +6977,4 @@ BfmeNarrowRecord28Deque::__destroy_aux	0x0041A382	33	landed	Ghidra33-byte bounda
 ?rva005049C6@Rva005049C6@@QAEPAXM@Z	0x005049C6	34	blocked	same wall as 0x005049A4 retail prefix 6-insn branchless mask neg sbb and mov al for byte at this+13 vs movzx t=2 model=muse-03
 ?rva00504138@Rva00504138@@QAEPAVRva00064640Record@@H@Z	0x00504138	45	blocked	dec before header cmp and shared ret placement differ t=25 model=muse-03 (stash 0.93 kept)
 ?construct@DefaultModuleTemplate7CtorShim@FXParticleSystem@@QAEXXZ	0x001F448D	87	blocked	EH default ctor with 3 vtable data stores plus WindModuleInfo callee plus string literal needs sibling default pattern t=10 model=muse-03
+?rva0037FF20@Rva0037FF20@@QAEXPAVRva0037F551@@ABV2@PBXI_N@Z	0x0037FF20	189	blocked	vector insert overflow needs G7 imul plus 4th param lea 0x1b mystery t=20 model=muse-06
