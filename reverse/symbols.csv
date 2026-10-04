@@ -7817,3 +7817,11 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?gpGetInfo@@YAXPAVGPConnection@@HHHP6AX0PAX1@Z1@Z,0x0072C390,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?rva00505D91@Rva00506909@@AAEPAURva00506909Item@@ABVAsciiString@@@Z,0x00505D91,+0x04 pool finder by generator name (rowed as Rva00505D91::rva00505D91); REL32 at 0x00506651 in Rva00506909::xfer
 ?findFunction@FunctionLexicon@@IAEPAXW4NameKeyType@@W4TableIndex@1@@Z,0x002D225F,address read from the REL32 displacement at a placed body
+??0?$_Vector_base@PAURva0050542BOther@@V?$allocator@PAURva0050542BOther@@@_STL@@@_STL@@QAE@ABV?$allocator@PAURva0050542BOther@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor; REL32 at 0x0050545D for the +0x14 vector in the Rva0050542B ctor
+??0?$_Vector_base@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAE@ABV?$allocator@PAVRva002C589B@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor; REL32 at 0x0050544D for the +0x08 vector in the Rva0050542B ctor
+??1Rva005A9562@@QAE@XZ,0x000796BC,dtor of the 0x18-byte Rva005A9562 (folded vector-holder teardown); REL32 at 0x005054BD in the Rva0050542B dtor
+?erase@?$vector@PAURva0050542BOther@@V?$allocator@PAURva0050542BOther@@@_STL@@@_STL@@QAEPAPAURva0050542BOther@@PAPAU3@0@Z,0x0031BD55,pointer-vector range erase fold; REL32 at 0x0050550E in the Rva0050542B dtor
+?erase@?$vector@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAEPAPAVRva002C589B@@PAPAV3@0@Z,0x0031BD55,pointer-vector range erase fold; REL32 at 0x005054FD in the Rva0050542B dtor
+?rva002A8F24@Rva002A8F24@@QAEPAPAURva0050535AStore@@PAX@Z,0x002A8F24,TheSkirmishAIManager per-owner store lookup (rowed under the Player* spelling); REL32 at 0x0050537A
+?rva002C5AE6@Rva002C589B@@QAEMXZ,0x002C5AE6,entry value compared against the store threshold +0x54; REL32 at 0x00505383
+?rva0030F2C7@Rva002C589B@@QBEHXZ,0x0030F2C7,entry count getter (folded disp8 dword getter); REL32s at 0x005053BE and 0x005053EC

@@ -51344,3 +51344,8 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva00802680Base@@UAEPAXI@Z,,0x0066E690,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor
 ??_GRva00802CA0Base@@UAEPAXI@Z,,0x0066EBA0,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor
 ??_GRva00802EC0Base@@UAEPAXI@Z,,0x0066EF30,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor
+?rva0050535A@Rva0050542B@@AAE_NPAVRva002C589B@@@Z,,0x0050535A,66,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,entry usable: neither +0x19 nor +0x18 set and either kind 1 or the AI-manager store threshold +0x54 exceeds its value
+?rva005053A4@Rva0050542B@@QAEPAVRva002C589B@@XZ,,0x005053A4,100,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,first usable entry with zero count else first usable under its +0x20 limit; caller 0x002C679C
+?rva00505408@Rva0050542B@@QAEPAVRva002C589B@@H@Z,,0x00505408,35,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,entry with +0x38 id; tail-jumped from 0x002C5FC1
+??0Rva0050542B@@QAE@PAX@Z,,0x0050542B,111,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,ctor: owner plus two pointer vectors plus a new 0x18-byte Rva005A9562 for the owner; newed at 0x002C6144
+??1Rva0050542B@@QAE@XZ,,0x0050549A,170,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,dtor: delete the Rva005A9562 and every entry then clear both vectors; callers 0x002C5F91 and 0x002C61D5
