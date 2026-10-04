@@ -52014,3 +52014,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva003F255C@Rva003F255C@@QAEXPBVModuleData@@@Z,,0x003F255C,26,Code/GameEngine/Source/Common/System/Rva003F255C.cpp,matched,unlock lane rowed push_back caller 0x003F2576 prev dtor next Rva003F26AA
 ?Rva00148AC4Contains@@YAEPAURva00148AC4Range@@PAVCreateAHeroData@@@Z,,0x00148AC4,31,Code/GameEngine/Source/Common/Rva00148AC4Contains.cpp,matched,free contains via rowed find 0x0020E873 range +0/+4
 ?notifyScriptEngine@SpecialPowerCompletionDie@@QAEXXZ,,0x00486B01,55,Code/GameEngine/Source/GameLogic/Object/Die/SpecialPowerCompletionDieNotify.cpp,matched,pinned named caller onDie ZH donor offsets
+?rva004F77AD@Rva004F60AA@@QAEPAV1@PAD0@Z,,0x004F77AD,51,Code/GameEngine/Source/Common/Rva004F60AAInit.cpp,matched,unlock lane reserve row plus pinned fill_n returns this
