@@ -396,19 +396,7 @@ void W3DTerrainLogic::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@W3DTerrainLogic@@ present-unmatched
-void W3DTerrainLogic::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-	
-	// extend base class
-	TerrainLogic::xfer( xfer );
-		
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DTerrainLogicXfer.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

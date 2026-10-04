@@ -719,49 +719,7 @@ void ScriptGroup::crc( Xfer *xfer )
 */
 // ------------------------------------------------------------------------------------------------
 // Matched body: ScriptGroupXfer.cpp @ 0x350E90 (not this ZH list-walk; queue 0xAF9B24 was jmp-table).
-// ?xfer@ScriptGroup@@MAEXPAVXfer@@@Z present-unmatched
-void ScriptGroup::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 2;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	if( version >= 2 )
-		xfer->xferBool(&m_isGroupActive);
-
-	// count of scripts here
-	UnsignedShort scriptCount = 0;
-	Script *script;
-	for( script = getScript(); script; script = script->getNext() )
-		scriptCount++;
-	UnsignedShort countVerify = scriptCount;
-	xfer->xferUnsignedShort( &scriptCount );
-	if( countVerify != scriptCount )
-	{
-
-		DEBUG_CRASH(( "ScriptGroup::xfer - Script list count has changed, attempting to recover."));
-		// throw SC_INVALID_DATA; try to recover. jba.
-
-	}  // end if
-
-	// xfer script data
-	for( script = getScript(); script; script = script->getNext() )	{
-		xfer->xferSnapshot( script );
-		scriptCount--;
-		if (scriptCount==0) break;
-	}
-	if (scriptCount>0) {
-		DEBUG_CRASH(("Stripping out extra scripts - Bad..."));
-		if (s_mtScript==NULL) s_mtScript = newInstance(Script);	// Yes it leaks, but this is unusual recovery only. jba.
-		while (scriptCount) {
-			xfer->xferSnapshot(s_mtScript);
-			scriptCount--;
-		}
-	}
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptGroupXfer.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

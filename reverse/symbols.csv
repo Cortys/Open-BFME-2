@@ -7983,3 +7983,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?j_00045c7d@@YAXXZ,0x00396C43,callee read from the retail REL32 in placed BFME1-donor body ?Rva00372BA0ConditionalDispatcher@@YAXPAX0_N@Z (0x00397CEB)
 ?j_00041eca@@YAXXZ,0x00396E4A,callee read from the retail REL32 in placed BFME1-donor body ?Rva00372BA0ConditionalDispatcher@@YAXPAX0_N@Z (0x00397CEB)
 ?bfmeSetBSF@BfmeSubBSF@@QAEXPAX@Z,0x000365F0,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBSF@BfmeThingBSF@@QAEPAV1@PAGPAX@Z (0x004D04FF)
+?xfer@SiegeEngineContain@@MAEXPAVXfer@@@Z,0x0047C322,slot 3 of the vftable 0x00C470F8 whose slot-2 name getter returns SiegeEngineContain (464B body); RiderChangeContain::xfer (0x0047E357) calls it as its base
+?xfer@TerrainLogic@@MAEXPAVXfer@@@Z,0x00283845,slot 3 of the vftable 0x00BFB2C8 whose slot-2 name getter returns TerrainLogic (970B body); W3DTerrainLogic::xfer (0x00062E2F) calls it as its base
