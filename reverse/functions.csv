@@ -51318,3 +51318,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva005B253F@@UAEPAXI@Z,,0x005B2558,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
 ??_GRva005CBA04@@UAEPAXI@Z,,0x005CBA20,29,Code/GameEngine/Source/Common/Rva005CBA04Ctor.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
 ??_GRva005CF872@@UAEPAXI@Z,,0x005CF884,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+?rva005059A1@Rva00506909@@QAEXPAURva005059A1Unit@@@Z,,0x005059A1,181,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,unless the unit is its owner's own: hand it to the item of its team (+0x30 to +0x2D8 id) in any of the four item lists via 0x004ED6D2 else 0x0039E9E0
+?rva00505A56@Rva00506909@@QAEXPAURva005059A1Unit@@@Z,,0x00505A56,155,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,the item of the unit's team in any of the four item lists gets 0x004EDD4D

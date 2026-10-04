@@ -28,6 +28,10 @@ struct Rva00506909Item
 	void rva004ECE1C();
 	void rva004ED81D(Rva00506909Request *request, void *arg);
 	void rva004ED955(void *owner);
+	void rva004ED6D2(struct Rva005059A1Unit *unit);
+	void rva004EDD4D(struct Rva005059A1Unit *unit);
+	char m_pad00[0x30];
+	int m_id;	// +0x30
 };
 
 // The five objects 0x00505E5D seeds +0x04 with when empty, in order; the
@@ -80,9 +84,31 @@ struct Rva00506909Request
 	int m_kind;		// +0x04
 };
 
+struct Rva005059A1Team
+{
+	char m_pad00[0x2D8];
+	int m_id;	// +0x2D8
+};
+
+struct Rva005059A1Owner
+{
+	char m_pad00[0x2EC];
+	struct Rva005059A1Unit *m_unit;	// +0x2EC
+};
+
+struct Rva005059A1Unit
+{
+	Rva005059A1Owner *rva0039D7CF();
+	void rva0039E9E0();
+	char m_pad00[0x30];
+	Rva005059A1Team *m_team;	// +0x30
+};
+
 class Rva00506909
 {
 public:
+	void rva005059A1(Rva005059A1Unit *unit);
+	void rva00505A56(Rva005059A1Unit *unit);
 	Rva00506909(void *owner);
 	void rva005069B4();
 	bool rva005069CE(Rva00506909Request *request, void *arg);
@@ -301,4 +327,75 @@ bool Rva00506909::rva00506411(void *owner)
 		m_58.push_back(item);
 	}
 	return !chosen.empty();
+}
+
+// 0x005059A1 / 0x00505A56: hand the unit to the item, in any of the four
+// item lists, that belongs to its team.
+void Rva00506909::rva005059A1(Rva005059A1Unit *unit)
+{
+	if (unit == unit->rva0039D7CF()->m_unit)
+		return;
+	Rva00506909Item **it;
+	for (it = m_10.begin(); it != m_10.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004ED6D2(unit);
+			return;
+		}
+	}
+	for (it = m_28.begin(); it != m_28.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004ED6D2(unit);
+			return;
+		}
+	}
+	for (it = m_40.begin(); it != m_40.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004ED6D2(unit);
+			return;
+		}
+	}
+	for (it = m_58.begin(); it != m_58.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004ED6D2(unit);
+			return;
+		}
+	}
+	unit->rva0039E9E0();
+}
+
+void Rva00506909::rva00505A56(Rva005059A1Unit *unit)
+{
+	Rva00506909Item **it;
+	for (it = m_10.begin(); it != m_10.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004EDD4D(unit);
+			return;
+		}
+	}
+	for (it = m_28.begin(); it != m_28.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004EDD4D(unit);
+			return;
+		}
+	}
+	for (it = m_40.begin(); it != m_40.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004EDD4D(unit);
+			return;
+		}
+	}
+	for (it = m_58.begin(); it != m_58.end(); ++it) {
+		Rva00506909Item *item = *it;
+		if (item->m_id == unit->m_team->m_id) {
+			item->rva004EDD4D(unit);
+			return;
+		}
+	}
 }
