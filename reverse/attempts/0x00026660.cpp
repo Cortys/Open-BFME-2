@@ -1,4 +1,6 @@
 // ?erase@Rva0026660String@@QAEAAV1@II@Z
+// partial score=0.93 date=2026-10-04
+// ?erase@Rva0026660String@@QAEAAV1@II@Z
 // partial score=0.9 date=2026-10-03
 // cl: /Od /Ob1 /DNDEBUG /DWIN32 /D_WINDOWS /MD
 //
@@ -36,6 +38,19 @@ Rva0026660String &Rva0026660String::erase(unsigned int pos, unsigned int n)
 {
 	if (pos > size())
 		throwOutOfRange();
-	eraseRange(begin() + pos, begin() + pos + bfmeMinRef(n, size() - pos));
+
+	// Retail reads size() a second time after the guard, binds the
+	// reference-returning min() of n and (size() - pos) to a REFERENCE VARIABLE,
+	// and keeps two separate begin() copies in named locals: the erased start
+	// and the destination the min() offset is added to. Each of those is a
+	// distinct /Od frame slot (this at [ebp-0x1c], the second begin() at
+	// [ebp-0x10], the min() result at [ebp-0xc], the first begin() at [ebp-8],
+	// size() - pos at [ebp-4] and the lvalue-ternary path slot at [ebp-0x20]),
+	// and naming them is what reproduces the retail frame.
+	const unsigned int len1 = size() - pos;
+	char *toEnd = begin();
+	const unsigned int &m = bfmeMinRef(n, len1);
+	char *from = begin();
+	eraseRange(from + pos, toEnd + pos + m);
 	return *this;
 }
