@@ -52187,3 +52187,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?flip@Rva00160830@@QAEXXZ,,0x004F0456,35,Code/GameEngine/Source/Common/Rva00160830Flip.cpp,matched,BFME1 donor Rva00160830Flip.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?flip@Rva00160A00@@QAEXXZ,,0x004F04C0,35,Code/GameEngine/Source/Common/Rva00160A00Flip.cpp,matched,BFME1 donor Rva00160A00Flip.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?set@Rva00149E60@@QAEAAV1@HHH@Z,,0x00262387,36,Code/GameEngine/Source/Common/Rva00149E60Set.cpp,matched,BFME1 donor Rva00149E60Set.cpp recompiled /Os; unique masked placement on unclaimed .text
+?set@Rva00160CE0@@QAEAAV1@HHD@Z,,0x002C5EC5,36,Code/GameEngine/Source/Common/Rva00160CE0Set.cpp,matched,BFME1 donor Rva00160CE0Set.cpp recompiled /Os; unique masked placement on unclaimed .text
