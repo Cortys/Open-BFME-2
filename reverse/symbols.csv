@@ -7927,3 +7927,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0BfmeBaseVNH@@QAE@ID@Z,0x003FD199,address read from the REL32 displacement at a placed body
 ?rva0027893E@Drawable@@AAEXXZ,0x0027893E,Drawable thiscall member with no stack args (747B; identity open: walks the controlling player's objects and castle modules); Drawable::setFullyObscuredByShroud (0x00278C29) calls it when the drawable leaves the shroud
 ?xfer@HordeGarrisonContain@@MAEXPAVXfer@@@Z,0x00479D28,slot 3 of ??_7HordeGarrisonContain 0x00C46570 (64B body); TunnelContain::xfer (0x0047DBB0) calls it first as its base-class xfer
+?xfer@OpenContain@@MAEXPAVXfer@@@Z,0x00465EF1,slot 3 of ??_7OpenContain 0x00C435E8 (1191B body); the TransportContain and CaveContain xfers (0x00466DBC/0x00466577) call it as their base-class xfer
