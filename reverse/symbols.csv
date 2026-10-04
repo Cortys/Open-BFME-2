@@ -8112,3 +8112,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$__copy_backward@PAURva001D28F0Element@@PAU1@H@_STL@@YAPAURva001D28F0Element@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x001611B0,callee REL32 read by locate.py from a unique masked-byte placement emitted by Rva001D25F0VectorInsertOverflow.cpp
 ??1BfmeOpaqueOwnedRecord2148@@QAE@XZ,0x0041A200,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportOwnedRecordDeque.cpp
 ?_M_increment@?$_Deque_iterator_base@UBfmeOpaqueOwnedRecord2148@@@_STL@@QAEXXZ,0x00419DD2,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportOwnedRecordDeque.cpp
+??$_Construct@UBfmeAssignRecord28@@U1@@_STL@@YAXPAUBfmeAssignRecord28@@ABU1@@Z,0x000AD77B,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
+?_M_insert_overflow@?$vector@UBfmeAssignRecord28@@V?$allocator@UBfmeAssignRecord28@@@_STL@@@_STL@@IAEXPAUBfmeAssignRecord28@@ABU3@ABU__false_type@2@I_N@Z,0x000B059B,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
