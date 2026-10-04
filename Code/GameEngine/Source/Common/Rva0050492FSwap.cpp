@@ -1,8 +1,19 @@
 // cl: /O1 /Ob0 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
 // stlport
 // ?rva0050492F@Rva0050492F@@QAEXPAU1@@Z 0x0050492F 117B evidence: unlock swap via rowed vector BfmeE12 swap 0x00567ECD; caller 0x00504E52 unblocks 0x00504E38; siblings Rva005386B7Swap Rva0030B76FSwap same flags
-#include <vector>
 struct BfmeE12 { float x, y, z; };
+namespace _STL
+{
+template <class T> class allocator;
+template <class T, class A> class vector
+{
+public:
+	void *m_start;
+	void *m_finish;
+	void *m_end;
+	void swap(vector &);
+};
+}
 struct Rva0050492F
 {
 	void rva0050492F(Rva0050492F *other);
