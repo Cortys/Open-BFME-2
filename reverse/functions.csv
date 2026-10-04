@@ -51757,3 +51757,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?Rva0081AE10@@YAXXZ,,0x00686D10,5,Code/Libraries/Source/DirtySock/Rva00819630TapiTransport.cpp,matched,SERIAL op slot8 empty stub via retail ops table at 0x006855CD
 ?rva003F1044@Rva003F055A@@QAEXHH@Z,,0x003F1044,15,Code/GameEngine/Source/Common/System/Rva003F055AScan.cpp,matched,ecx pass-through to rowed 0x003F055A ret8 two args
 ?Rva003F1E87DeleteRange@@YA_NPAPAVRva003F0C6C@@0URva003F1E87Holder@@@Z,,0x003F1E87,33,Code/GameEngine/Source/Common/System/Rva003F1E87DeleteRange.cpp,matched,range delete via thiscall shim pin at 0x003F1A44 reproducing lea ecx flag address
+?getObjectExitInterface@Object@@QBEPAVExitInterface@@XZ,,0x0028B445,55,Code/GameEngine/Source/GameLogic/Object/ObjectGetExitInterface.cpp,matched,Object exit scan via +0x244 +0x250 BFME1 donor Object.cpp

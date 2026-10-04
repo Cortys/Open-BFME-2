@@ -1,8 +1,6 @@
 // ?getObjectExitInterface@Object@@QBEPAVExitInterface@@XZ
 // partial score=0.95 date=2026-09-27
-// ?getObjectExitInterface@Object@@QBEPAVExitInterface@@XZ
-// partial score=0.95 date=2026-09-27
-// cl: /O1 /G7 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ?getObjectExitInterface@Object@@QBEPAVExitInterface@@XZ, retail 0x0028B445, 55 bytes.
 // Object::getObjectExitInterface scans the BehaviorModule array at +0x244 via the +0x0C
@@ -88,21 +86,20 @@ public:
 	ExitInterface *getObjectExitInterface() const;
 };
 
-// ?getObjectExitInterface@Object@@QBEPAVExitInterface@@XZ present-unmatched
 ExitInterface *Object::getObjectExitInterface() const
 {
 	ExitInterface *exitInterface = 0;
 	for (BehaviorModule **m = m_modules244; *m; ++m)
 	{
 		char *adjusted = reinterpret_cast<char *>(*m) + 0xc;
-		exitInterface = reinterpret_cast<BehaviorExitInterface *>(adjusted)->getUpdateExitInterface();
-		if (exitInterface != 0)
+		if ((exitInterface = reinterpret_cast<BehaviorExitInterface *>(adjusted)->getUpdateExitInterface()) != 0)
 			break;
 	}
-	if (exitInterface != 0)
-		return exitInterface;
-	ContainModule *contain = m_contain250;
-	if (contain == 0)
-		return exitInterface;
-	return contain->getContainExitInterface();
+	if (exitInterface == 0)
+	{
+		ContainModule *contain = m_contain250;
+		if (contain != 0)
+			return contain->getContainExitInterface();
+	}
+	return exitInterface;
 }
