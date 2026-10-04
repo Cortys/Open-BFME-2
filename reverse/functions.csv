@@ -52157,3 +52157,7 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?set@Rva003826C0@@QAEXHH@Z,,0x0023C3E9,17,Code/GameEngine/Source/Common/Rva003826C0Set.cpp,matched,BFME1 donor at /Os
 ?set@Rva00478180@@QAEHHH@Z,,0x00313B0A,19,Code/GameEngine/Source/Common/Rva00478180Set.cpp,matched,BFME1 donor at /Os
 ?rva003504e0@@YAPAURva003504E0Node@@PAU1@@Z,,0x003B32CD,17,Code/GameEngine/Source/Common/Rva003504E0.cpp,matched,BFME1 donor at /Os
+?set@Rva004C14D0@@QAEAAV1@PAHH@Z,,0x0042C914,18,Code/GameEngine/Source/Common/Rva004C14D0Set.cpp,matched,BFME1 donor at /Os
+?invoke@Rva0044F320VirtualChain@@QAEXXZ,,0x002DB8A3,23,Code/GameEngine/Source/Common/Rva0044F320VirtualChain.cpp,matched,BFME1 donor at /Os
+?advance@Rva0048E390Object@@QAEXPAVRva0048E390Source@@@Z,,0x004E56B7,25,Code/GameEngine/Source/Common/Rva0048E390Advance.cpp,matched,BFME1 donor at /Os
+?set@Rva004738A0@@QAEPAV1@PBHPBQAURva004738A0Obj@@@Z,,0x00217607,29,Code/GameEngine/Source/Common/Rva004738A0Set.cpp,matched,BFME1 donor at /Os
