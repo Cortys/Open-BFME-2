@@ -12,6 +12,14 @@ struct BfmePod8
 
 #include <vector>
 
+namespace _STL
+{
+// ?erase@?$vector@UBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAEPAUBfmePod8@@PAU3@@Z
+// is owned by stlport_pod_vector_malloc_bodies.cpp: declare the explicit
+// specialization so this TU calls it without emitting a second definition.
+template <> BfmePod8 *vector<BfmePod8, allocator<BfmePod8> >::erase(BfmePod8 *);
+}
+
 struct VecInner
 {
 	char m_pad[0xb8];
