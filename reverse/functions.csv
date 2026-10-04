@@ -52161,3 +52161,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?invoke@Rva0044F320VirtualChain@@QAEXXZ,,0x002DB8A3,23,Code/GameEngine/Source/Common/Rva0044F320VirtualChain.cpp,matched,BFME1 donor at /Os
 ?advance@Rva0048E390Object@@QAEXPAVRva0048E390Source@@@Z,,0x004E56B7,25,Code/GameEngine/Source/Common/Rva0048E390Advance.cpp,matched,BFME1 donor at /Os
 ?set@Rva004738A0@@QAEPAV1@PBHPBQAURva004738A0Obj@@@Z,,0x00217607,29,Code/GameEngine/Source/Common/Rva004738A0Set.cpp,matched,BFME1 donor at /Os
+?rva00298C0B@Rva00298C0B@@QAEXPAVTeam@@@Z,,0x00298C0B,107,Code/GameEngine/Source/Common/Rva00298C0B.cpp,matched,team scan via 250 slot 0x118 plus recurse plus aiIdle row
