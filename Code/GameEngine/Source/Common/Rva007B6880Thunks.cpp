@@ -845,3 +845,27 @@ void __cdecl rva007B6EA4()
 	p->rva001EAF7B();
 }
 
+// ??1?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAE@XZ rowed target for next thunk (0x000F1D19).
+class Curve3DClass
+{
+public:
+	class KeyClass;
+};
+
+template<class T>
+class DynamicVectorClass
+{
+public:
+	virtual ~DynamicVectorClass();
+};
+
+extern unsigned g_00DEBE0C;
+// g_00DEBE0C: packet annotates VA 0x00DEBE0C (data RVA 0x009EBE0C), no name yet.
+
+// ?rva007B6E54@@YAXXZ @ 0x007B6E54 (10B). Global DynamicVectorClass dtor thunk: ecx=&g_00DEBE0C then tail-jmp to rowed ??1?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAE@XZ (0x000F1D19). No callers. Between 0x007B6E4A and 0x007B6E68. Honest address name.
+void __cdecl rva007B6E54()
+{
+	DynamicVectorClass<Curve3DClass::KeyClass> *p = (DynamicVectorClass<Curve3DClass::KeyClass> *)&g_00DEBE0C;
+	return p->DynamicVectorClass<Curve3DClass::KeyClass>::~DynamicVectorClass();
+}
+
