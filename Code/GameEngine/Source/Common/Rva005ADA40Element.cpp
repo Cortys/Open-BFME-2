@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii
+// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii /Ireference/shims/bfme2_vector3 /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWLib
 // stlport
 //
 // The 0x2C-byte elements the skirmish-AI object Rva00506B74 owns in its +0x0C
@@ -20,6 +20,9 @@
 //   0x005ADCBE  pick a base template for the current map (or the .bss name
 //               when the start is still open) that fits the owner's start
 //               position, at random when several do
+//   0x005ADE1D  lay out: copy each template order (copy ctor 0x00573EB8),
+//               grow the items up to its 1-based slot, rotate its offset by
+//               the angle about Z, then hand it to that item (0x005DCE62)
 //   0x005AE26A  place: pick a template for the owner's side (0x005ADCBE),
 //               take the point (and the angle when the template keeps it),
 //               then lay the base out (0x005ADE1D)
@@ -32,6 +35,9 @@
 #include <vector>
 #include "ascii_string.h"
 #include "unicode_string.h"
+// STLport already supplies the placement forms always.h would redefine.
+#define _OPERATOR_NEW_DEFINED_
+#include "matrix3d.h"
 #include <algorithm>
 
 struct Coord3DBase
@@ -137,6 +143,8 @@ public:
 };
 
 
+class Rva00573E7C;
+
 class Rva005DCE08
 {
 public:
@@ -144,6 +152,7 @@ public:
 	Rva005AD9C0Hit *rva005DCC86(void *arg);
 	void rva005DCCFB();
 	void rva005DCEAD(Xfer *xfer);
+	void rva005DCE62(Rva00573E7C *order);
 };
 
 class Rva005DCDD9
@@ -192,14 +201,25 @@ public:
 	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
 	virtual void v9(); virtual void v10(); virtual void v11();
 	virtual void xfer(Xfer *xfer, void *owner);	// slot 12
+	virtual Coord3D getOffset() const;		// slot 13
 };
 
 class Rva00573E7C : public Rva005ADA40Owned
 {
 public:
 	Rva00573E7C();
-private:
-	char m_data[0x60 - 4];
+	Rva00573E7C(const Rva00573E7C &that);
+	char m_pad04[0x40 - 4];
+	Coord3D m_point;	// +0x40
+	float m_angle;		// +0x4C
+	int m_50;		// +0x50, the 1-based item it goes to
+	char m_pad54[0x60 - 0x54];
+};
+
+class Rva00573A00
+{
+public:
+	void rva00573A00(const Coord3D *point);
 };
 
 enum NameKeyType
@@ -215,6 +235,8 @@ public:
 };
 extern NameKeyGenerator *TheNameKeyGenerator;
 
+class Rva00573E7C;
+
 // One base layout from TheBaseTemplateLibrary (+0x08 map name, +0x0C start
 // positions it fits).
 class Rva0041E912Template
@@ -224,6 +246,7 @@ public:
 	AsciiString m_name;			// +0x08
 	_STL::vector<int> m_starts;		// +0x0C
 	bool m_18;				// +0x18
+	_STL::vector<Rva00573E7C *> m_orders;	// +0x1C
 };
 
 class MapMetaData
@@ -427,5 +450,35 @@ void Rva005ADA40::rva005AE26A(Coord3D *point, float angle, int notFirst)
 			rva005ADE1D(&m_point, m_angle, chosen);
 			return;
 		}
+	}
+}
+
+// Coord3D from a WWMath vector (retail copies the returned temporary).
+static inline void copyVector(Coord3D *dst, const Vector3 &v)
+{
+	dst->x = v.X;
+	dst->y = v.Y;
+	dst->z = v.Z;
+}
+
+void Rva005ADA40::rva005ADE1D(const Coord3D *point, float angle, Rva0041E912Template *tmpl)
+{
+	Matrix3D rotation(true);
+	rotation.Rotate_Z(angle);
+	for (Rva00573E7C **it = tmpl->m_orders.begin(); it != tmpl->m_orders.end(); ++it) {
+		Rva00573E7C *order = new Rva00573E7C(**it);
+		int slot = order->m_50;
+		int missing = slot - m_items.size();
+		for (int i = 0; i < missing; ++i) {
+			int index = m_items.empty() ? 0 : m_items.size();
+			m_items.push_back((Rva005DCE08 *)new Rva005DCDD9(index, (int)m_owner));
+		}
+		Vector3 offset(order->getOffset().x, order->getOffset().y, order->getOffset().z);
+		Coord3D at;
+		copyVector(&at, rotation.Rotate_Vector(offset));
+		((Rva00573A00 *)order)->rva00573A00(&at);
+		order->m_point = *point;
+		order->m_angle = angle;
+		m_items[slot - 1]->rva005DCE62(order);
 	}
 }
