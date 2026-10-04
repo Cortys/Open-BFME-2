@@ -32,3 +32,18 @@ int Rva00513D8F::rva00513D8F(unsigned short *dst)
 	int second = ((const BFME2WideStringRef *)((const char *)this + 8))->copyPayloadTo(dst + first);
 	return first + second;
 }
+
+class Rva00513E25
+{
+public:
+	int rva00513E25(unsigned short *dst);
+private:
+	char m_pad00[12]; // +0..+B holds Rva00513D8F view; +0xC third pair view
+};
+
+int Rva00513E25::rva00513E25(unsigned short *dst)
+{
+	int first = ((Rva00513D8F *)this)->rva00513D8F(dst);
+	int second = ((Rva000B3F84Pair *)((char *)this + 12))->copyWchars(dst + first);
+	return first + second;
+}
