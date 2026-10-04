@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii
+// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii /Ireference/shims/bfme2_vector3 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // stlport
 //
 // The skirmish-AI object behind vtable 0x00863FAC, newed by 0x004EC430 in the
@@ -15,8 +15,10 @@
 //         dtor 0x005ADA40 plus operator delete, then erase 0x0031BD55
 //   +0x18 Coord3D, +0x24 flag, +0x28 Coord3D, both points seeded from the
 //         -1 triple at 0x00DD0870 (Gen00DD0870)
+#define __PLACEMENT_VEC_NEW_INLINE
 #include <vector>
 #include "ascii_string.h"
+#include "vector3.h"
 
 struct Coord3DBase
 {
@@ -132,6 +134,7 @@ public:
 	Rva005ADA40(unsigned int index, void *owner);
 	~Rva005ADA40();
 	void rva005AE0AD(Xfer *xfer);
+	void rva005AE26A(Coord3D *point, float angle, int more);
 	void rva005AD99C(const AsciiString &name, _STL::vector<Rva00506FE9Hit *> *hits);
 	void rva005ADC63();
 	Rva005AD9C0Hit *rva005AD9C0(void *arg);
@@ -392,7 +395,7 @@ class TerrainLogic
 public:
 	virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
 	virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
-	virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+	virtual void v08(); virtual void getExtent(Region3D *extent) const; virtual void v10(); virtual void v11();
 	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
 	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
 	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
@@ -411,4 +414,36 @@ Waypoint *Rva00506CC3FindWaypoint(const AsciiString &name)
 			return way;
 	}
 	return 0;
+}
+
+float ACos(float x);
+float normalizeAngle(float angle);
+
+struct Rva0050722AExtent
+{
+	Coord3DBase lo;
+	Coord3DBase hi;
+};
+
+// 0x0050722A: add an element facing from the point towards the map centre.
+void Rva00506B74::rva0050722A(Coord3D *point)
+{
+	Rva0050722AExtent extent;
+	TheTerrainLogic->getExtent((Region3D *)&extent);
+	Vector3 dir;
+	dir.Set((extent.hi.x - extent.lo.x) * 0.5f, (extent.hi.y - extent.lo.y) * 0.5f, 0.0f);
+	Vector3 pos;
+	pos.Set(point->x, point->y, 0.0f);
+	dir -= pos;
+	dir.Normalize();
+	Vector3 xAxis;
+	xAxis.Set(1.0f, 0.0f, 0.0f);
+	float angle = ACos(WWMath::Clamp(Vector3::Dot_Product(dir, xAxis), -1.0f, 1.0f));
+	if (Vector3::Cross_Product_Z(dir, xAxis) > 0.0f)
+		angle *= -1.0f;
+	angle = normalizeAngle(angle - 1.5707964f);
+	unsigned int index = m_0C.empty() ? 0 : m_0C.size();
+	Rva005ADA40 *element = new Rva005ADA40(index, m_08);
+	m_0C.push_back(element);
+	element->rva005AE26A(point, angle, index != 0);
 }
