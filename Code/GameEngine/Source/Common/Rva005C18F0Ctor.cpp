@@ -33,6 +33,7 @@ class Rva005C18F0 : public Rva005C18F0Base
 {
 public:
 	Rva005C18F0();
+	virtual ~Rva005C18F0();
 private:
 	StrategicStatsPreferences m_08;
 };
