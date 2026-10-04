@@ -1,4 +1,6 @@
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
+// partial score=0.96 date=2026-10-04
+// ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
 // partial score=0.95 date=2026-10-04
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
 // partial score=0.95 date=2026-10-04
@@ -72,17 +74,17 @@ private:
 Rva0034290D::Rva0034290D(StateMachine *machine, bool a, bool b, bool c)
 	: AIInternalMoveToState(machine, 0xCC44C7B1u)
 {
-	m_6C = a;
 	m_4C = 0.0f;
 	m_50 = 0.0f;
 	m_54 = 0.0f;
 	m_58 = 0.0f;
 	m_5C = 0.0f;
 	m_60 = 0.0f;
+	m_6C = a;
 	_ReadWriteBarrier();
-	m_6D = b;
 	m_64 = 0;
 	m_68 = 0;
+	m_6D = b;
 	m_6E = false;
 	m_71 = false;
 	m_6F = true;
