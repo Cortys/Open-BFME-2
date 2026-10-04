@@ -52360,3 +52360,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva0059781D@Rva0059781D@@QAEXXZ,,0x0059781D,208,Code/GameEngine/Source/GameLogic/Object/Die/Rva0059781D.cpp,matched,prune two vectors via findObjectByID and slot0 delete caller 0x00597FC5
 ?rva00091189@Rva00091189@@QAEXXZ,,0x00091189,109,Code/GameEngine/Source/Common/Rva00091189Update.cpp,matched,VP6 poll via Rva007E3410Object BfmeB996Range timeGetTime
 ?Rva005F02E0Get@@YAPBVImage@@PAX@Z,,0x005F02E0,56,Code/GameEngine/Source/Common/Rva005F02E0Get.cpp,matched,unlock lane free Image getter via ThingTemplate tail 3 callers
+?bfmeGo939G@BfmeThing939G@@QAEXPAX@Z,,0x0044BDC1,23,Code/GameEngine/Source/Common/BfmeConv939.cpp,matched,BFME1 donor game/GameEngine/Source/Common/BfmeConv939.cpp (6d943426) recompiled /Os; unique masked placement on unclaimed .text
