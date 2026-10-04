@@ -7838,3 +7838,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1Rva00382FA7@@UAE@XZ,0x00400A7F,dtor installs its own vftable 0x00C193C8 (bytes at +21) and is the REL32 callee of the slot-0 ??_G at 0x003830CE
 ??1Rva0023309A@@UAE@XZ,0x0023361E,dtor installs its own vftable 0x00BE82B8 (bytes at +19) and is the REL32 callee of the slot-0 ??_G at 0x00233A3E
 ??1Rva00577F77@@UAE@XZ,0x00577FA7,dtor installs its own vftable 0x00C6EA28 (bytes at +19) and is the REL32 callee of the slot-0 ??_G at 0x005783ED
+?rva005A910E@Rva005A9562@@QAEPAURva0050542BTarget@@XZ,0x005A910E,current target of the +0x04 Rva005A9562 (rowed under the Player* spelling); REL32 at 0x00505653
+?push_back@?$vector@PAURva0050542BOther@@V?$allocator@PAURva0050542BOther@@@_STL@@@_STL@@QAEXABQAURva0050542BOther@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32 at 0x0050568C
+?rva002A8AE4@Rva002A8F24@@QAEPAURva002A8AE4Record@@PAX@Z,0x002A8AE4,TheSkirmishAIManager per-owner record read at +0x15C; REL32 at 0x005056C7

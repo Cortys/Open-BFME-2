@@ -22,6 +22,7 @@ public:
 	~Rva005A9562();
 	void rva005A9693();
 	void rva005A9824();
+	struct Rva0050542BTarget *rva005A910E();
 private:
 	unsigned char m_data[0x18];
 };
@@ -61,6 +62,7 @@ public:
 	Rva0050535AStore **rva002A8F24(void *owner);
 	Rva002A8F24Record *rva002A8F24Record(void *owner);
 	Rva002A8AB1Record *rva002A8AB1(void *owner);
+	struct Rva002A8AE4Record *rva002A8AE4(void *owner);
 };
 
 class GameLogic;
@@ -74,6 +76,7 @@ struct Rva005052AEGameLogicView
 
 extern int g_Va00DBA4E4;
 float GetGameLogicRandomValueReal(float lo, float hi, char *file, int line);
+int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 
 extern Rva002A8F24 *g_00DFEEF8;
 
@@ -100,7 +103,22 @@ public:
 	int m_id;		// +0x38
 };
 
-struct Rva0050542BOther;
+// The +0x14 list's elements (filled from the global list by 0x005055DE):
+// matched to entries by their +0x04 kind; slot 1 acts on a picked entry.
+struct Rva0050542BTarget;
+
+struct Rva0050542BOther
+{
+	virtual void v0();
+	virtual void act(Rva002C589B *entry, int value, Rva0050542BTarget *target);
+	int m_04;		// +0x04
+};
+
+struct Rva002A8AE4Record
+{
+	char m_pad00[0x15C];
+	int m_15C;		// +0x15C
+};
 
 class Rva0050542B
 {
@@ -238,4 +256,35 @@ void Rva0050542B::rva00505911()
 {
 	m_04->rva005A9824();
 	rva00505606();
+}
+
+// Every entry that is done is either marked finished (it still has a count)
+// or, when the +0x04 object offers a target, handed to a random element of
+// the +0x14 list of its kind (AITargetChooser.cpp line 184).
+void Rva0050542B::rva00505606()
+{
+	for (Rva002C589B **it = m_08.begin(); it != m_08.end(); ++it) {
+		Rva002C589B *entry = *it;
+		if (!rva005052AE(entry))
+			continue;
+		if (entry->rva0030F2C7() > 0) {
+			entry->m_19 = true;
+			continue;
+		}
+		Rva0050542BTarget *target = m_04->rva005A910E();
+		if (!target)
+			continue;
+		_STL::vector<Rva0050542BOther *> matches;
+		for (Rva0050542BOther **it2 = m_14.begin(); it2 != m_14.end(); ++it2) {
+			Rva0050542BOther *other = *it2;
+			if (other->m_04 == entry->m_04)
+				matches.push_back(other);
+		}
+		if (matches.size() != 0) {
+			int pick = GetGameLogicRandomValue(0, matches.size() - 1, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITargetChooser\\AITargetChooser.cpp", 184);
+			Rva0050542BOther *chosen = matches[pick];
+			int value = g_00DFEEF8->rva002A8AE4(m_owner)->m_15C;
+			chosen->act(entry, value, target);
+		}
+	}
 }
