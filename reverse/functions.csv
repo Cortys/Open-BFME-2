@@ -52292,3 +52292,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva007B76DC@@YAXXZ,,0x007B76DC,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_00DFE358 to BasicStringCharDtor_dup no callers
 ?rva007B77B9@@YAXXZ,,0x007B77B9,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_00DFEA44 to BasicStringCharDtor_dup no callers
 ?rva007B7B82@@YAXXZ,,0x007B7B82,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_00E01CF4 to StringBase clear no callers
+?rva007B7B8C@@YAXXZ,,0x007B7B8C,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_00E01CF0 to StringBase clear no callers
