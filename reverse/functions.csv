@@ -51998,3 +51998,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0AnimationSoundTree@@QAE@XZ,,0x004CA6DA,25,Code/GameEngine/Source/Common/Rva004CA6DACtor.cpp,matched,ctor via rowed rva004CA13D; two disjoint-scope dummies give retail two leas on one reused slot
 ??0DynamicDecalFXNugget@@QAE@XZ,,0x001E0429,147,Code/GameEngine/Source/GameClient/DynamicDecalFXNuggetCtor.cpp,matched,ctor; binding the decalName slot to a pointer local declared before the barrier blocks cl hoisting setFromInt's call-setup pair above the first three stores
 ?rva005F9330@Rva005F9330@@QAEXXZ,,0x005F9330,52,Code/GameEngine/Source/Common/Rva005F9330FadeOut.cpp,matched,FadeOut AptCall with team fallback via rowed 0x00524EF4
+?rva005FD8C1@Rva005FD8C1@@QAEXXZ,,0x005FD8C1,8,Code/GameEngine/Source/Common/Rva005FD8C1Fwd.cpp,matched,forwarder to rowed 0x005F9330 via ptr plus 4 caller 0x005E95EC
