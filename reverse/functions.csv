@@ -51572,3 +51572,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva0020EE29@Rva0020EE29@@QAEXXZ,,0x0020EE29,51,Code/Libraries/Source/WWVegas/WWLib/Rva0020EE29Clear.cpp,matched,clears ptr-vector entries via rowed clear
 ?Rva003F325ACopy@@YAPAVRva003F2A11@@PAV1@00@Z,,0x003F325A,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003F325ACopy.cpp,matched,forwards ranges to rowed copy via 5-arg cast
 ?rva003F35B0@ConnectionVec@@QAEPAVLivingWorldRegionConnection@@PAV2@0@Z,,0x003F35B0,51,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003F35B0Finish.cpp,matched,copy-destroy tail via rowed copy and DestroyRange t=2
+?rva005FB872@Rva005FB770@@QAEXH@Z,,0x005FB872,66,Code/GameEngine/Source/GameClient/GUI/Rva005FB872Finish.cpp,matched,Apt SetPlayerColor setter colour cache at +2c via rowed Fire 0x0052519D default team constant VA 0xBBAC1C
