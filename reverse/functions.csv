@@ -50721,3 +50721,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva003ADEFB@@QAE@ABV0@@Z,,0x003ADEFB,38,Code/GameEngine/Source/Common/Rva003ADEFBCopy.cpp,matched,derived copy via rowed base 0x003ADF21 with three derived vptrs
 ??0Rva0055B32B@@QAE@ABV0@@Z,,0x003ADCC7,30,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B32BCopy.cpp,matched,copy via Block struct assign same vtable as default 0x0055B32B
 ?rva001F4696@ParticleSystem@@QAEXPAX0_N0@Z,,0x001F4696,354,Code/GameEngine/Source/GameClient/System/ParticleSystemRva001F4696.cpp,matched,ParticleSystem slave chain via destroy neighbour offsets burst vars via getValue rows virtual slot 9 barrier keeps lea cmp and Make call
+??_GRva001F4D22@@UAEPAXI@Z,,0x001F61E5,28,Code/GameEngine/Source/Common/Rva001F4D22Dtor.cpp,matched,deleting dtor emitted from own dtor TU vtable slot 0
