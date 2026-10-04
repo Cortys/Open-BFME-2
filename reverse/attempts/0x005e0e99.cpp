@@ -1,6 +1,6 @@
 // ?rva005E0E99@Rva005E0E99@@QAEX_N@Z
-// partial score=0.97 date=2026-10-04
-// ?rva005E0E99@Rva005E0E99@@QAEX_N@Z @0x005E0E99 72B.
+// partial score=0.98 date=2026-10-04
+// ?rva005E0E99@Rva005E0E99@@QAEX_N@Z
 // Chain via rowed Fire 0x005277D9 with level +0x08 prefix +0x0C from +8 else
 // g_Rva0107301CEmptyString plus flags +0x40 +0x41 and incoming bool param.
 // Same Fire shape as Rva005E1008Method.cpp; ret 4 bool.
@@ -9,8 +9,12 @@
 // opens `push ebx / mov bl,[esp+8]`, so the parameter is loaded after its own
 // save push and stays in bl across the call, with no reload in the tail. /O1
 // emits a push ebp frame because the addressable local needs a stable home.
-// The one remaining difference is a 4-byte `mov [esp+0xc],bl` materializing
-// the flag local that retail does not emit.
+//
+// The flag out-param is UNINITIALIZED, not `bool flag = b`: retail takes its
+// address (`lea ecx,[esp+0xc]`) without any store into the slot, which an
+// initialized local cannot produce because cl must materialize the value first
+// (`mov [esp+0xc],bl`, the 4-byte tail the banked body carried). That store
+// was the whole 77B-vs-72B gap; dropping the initializer gives 73B.
 // cl: /O2 /G7 /MD /arch:SSE
 class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
@@ -43,7 +47,7 @@ void Rva005E0E99::rva005E0E99(bool b)
 		return;
 	if (m_flag40 != 0)
 	{
-		bool flag = b;
+		bool flag;
 		const char *prefix = m_inner0C ? m_inner0C->m_name : g_Rva0107301CEmptyString;
 		Rva005277D9Fire(TheRva00222A8BTarget, m_level08, prefix, "Enable", &flag);
 	}
