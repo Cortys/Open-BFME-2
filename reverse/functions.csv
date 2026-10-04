@@ -51432,3 +51432,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??1ResourceGatheringManager@@UAE@XZ,,0x004F5BB0,148,Code/GameEngine/Source/Common/RTS/ResourceGatheringManagerDestructor.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?removeSupplyCenter@ResourceGatheringManager@@QAEXPAVObject@@@Z,,0x004F5AED,59,Code/GameEngine/Source/Common/RTS/ResourceGatheringManagerLists.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?removeSupplyWarehouse@ResourceGatheringManager@@QAEXPAVObject@@@Z,,0x004F5B28,59,Code/GameEngine/Source/Common/RTS/ResourceGatheringManagerLists.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?checkRange@BfmeB996Range@@QAEDHPAIPAD@Z,,0x00106715,108,Code/GameEngine/Source/Common/BfmeConv996RangeCheck.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
