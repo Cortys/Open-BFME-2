@@ -51941,3 +51941,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?Rva00600665Set@@YAXPAD@Z,,0x00600665,17,Code/GameEngine/Source/Common/Rva00600665Set.cpp,matched,free cdecl copy to g_00DD509C via _mbscpy sibling Rva00600777
 ?Rva00604289Construct@@YAXPAVRva0060426C@@ABV1@@Z,,0x00604289,45,Code/GameEngine/Source/Common/Rva00604289Construct.cpp,matched,placement-new copy via rowed 0x0060426C caller 0x00604374 implicit null check
 ?rva00604374@Rva00604374@@QAEPAXABVRva0060426C@@@Z,,0x00604374,34,Code/GameEngine/Source/Common/Rva00604374Create.cpp,matched,node alloc 0x20 via rowed 0x000307F0 then rowed Construct 0x00604289 at plus 0x10
+?Rva00077BF8Get@@YG_NABVAsciiString@@PBD@Z,,0x00077BF8,33,Code/GameEngine/Source/GameClient/GUI/FileSystemRva00077BF8.cpp,matched,FileSystem wrapper str empty fallback to 0x00600E3A
