@@ -1,5 +1,3 @@
-// ?rva001F4696@ParticleSystem@@QAEXPAX0_N0@Z
-// partial score=0.95 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ?rva001F4696@ParticleSystem@@QAEXPAX0_N0@Z, retail 0x001F4696, 354 bytes.
 // ParticleSystem slave-chain promotion: same slave slot +0x15C and factory pin as
@@ -10,6 +8,9 @@
 class ParticleSystem;
 
 ParticleSystem *Make001FCBD7(void);
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 class BfmeParticleSystemPtr
 {
@@ -100,7 +101,6 @@ public:
 	void rva001F4696(void *pos, void *arg, bool b, void *info);
 };
 
-// ?rva001F4696@ParticleSystem@@QAEXPAX0_N0@Z present-unmatched
 void ParticleSystem::rva001F4696(void *posArg, void *arg2, bool b, void *infoArg)
 {
 	ParticleView *self = (ParticleView *)this;
@@ -164,6 +164,7 @@ void ParticleSystem::rva001F4696(void *posArg, void *arg2, bool b, void *infoArg
 	BfmeParticleSystemPtr *slavePtr = &self->slave15C;
 	if (slavePtr->m_target == 0)
 		return;
+	_ReadWriteBarrier();
 	ParticleSystem *next = slavePtr->operator->();
 	next->rva001F4696(&self->pos144, arg2, b, info);
 }
