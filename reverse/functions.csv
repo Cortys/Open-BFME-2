@@ -52110,3 +52110,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva003F9DDA@Rva003F9DDA@@QAEXABUBfmeE8@@@Z,,0x003F9DDA,8,Code/GameEngine/Source/Common/Rva003F9DDAPushBack.cpp,matched,inline vector pushback forwarder via plus3c to rowed pushback
 ?onEnter@Rva0054482D@@UAE?AW4StateReturnType@@XZ,,0x00544364,137,Code/GameEngine/Source/Common/Rva00544364OnEnter.cpp,matched,vslot slot 4 ctor Rva0054482D sibling tri pattern
 ?rva007B760A@@YAXXZ,,0x007B760A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap dtor thunk g_00DFE1AC basic_string between 0x007B7600 0x007B7614
+?rva007B7632@@YAXXZ,,0x007B7632,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap dtor thunk g_00DFE280 Open2Dtor40B830 between 0x007B7628 0x007B7646

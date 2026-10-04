@@ -2061,3 +2061,19 @@ void __cdecl rva007B760A()
 	return p->_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> >::~basic_string();
 }
 
+class Open2Dtor40B830
+{
+public:
+	~Open2Dtor40B830();
+};
+
+extern unsigned g_00DFE280;
+// g_00DFE280: packet annotates VA 0x009FE280 (data), no name yet.
+
+// ?rva007B7632@@YAXXZ @ 0x007B7632 (10B). Global Open2Dtor40B830 dtor thunk: ecx=&g_00DFE280 then tail-jmp to rowed ??1Open2Dtor40B830@@QAE@XZ (0x00215101). No callers. Between 0x007B7628 and 0x007B7646. Honest address name.
+void __cdecl rva007B7632()
+{
+	Open2Dtor40B830 *p = (Open2Dtor40B830 *)&g_00DFE280;
+	return p->Open2Dtor40B830::~Open2Dtor40B830();
+}
+
