@@ -7281,3 +7281,4 @@ FUN_006f0bb5	0x002F0BB5	43	blocked	EH wrapper two rowed Rva002EB46E calls needs 
 ?rva002FED07@Rva002FED07@@QAEXPAUListNode@@00H@Z	0x002FED07	48	blocked	ours 43B vs retail 48B single insert at +0x11 retail mov ecx [ebp+8] / mov eax esp / mov [eax] ecx vs ours push [ebp+8] plus push ecx vs push mem register wall t=6 model=muse-04
 ?rva006042B6@Rva0060453B@@UAE_NPBD0H@Z	0x006042B6	149	partial	loop header lea vs mem cmp and result-init order t=30 model=muse-04 score=0.93 stash=reverse/attempts/0x006042b6.cpp
 ?rva006042B6@Rva0060453B@@UAE_NPBD0H@Z	0x006042B6	149	partial	set less ctor 0xD3A71 vs nocase tree dtor 0x2CC38 wall t=45 model=muse-04 score=0.99 stash=reverse/attempts/0x006042b6.cpp
+?Rva00604289Construct@@YAXPAVRva0060426C@@ABV1@@Z	0x00604289	45	partial	EH save state before null check vs after otherwise exact 45B t=20 model=muse-04 score=0.93 stash=reverse/attempts/0x00604289.cpp
