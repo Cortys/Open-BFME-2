@@ -7858,3 +7858,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??_ERva0056ACDF@@UAEPAXI@Z,0x0056AF78,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056ACF7 jumps here
 ??_ERva0056ACFF@@UAEPAXI@Z,0x0056AFB3,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056AD11 jumps here
 ??_ERva0056AE4A@@UAEPAXI@Z,0x0056AE2E,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056AE26 jumps here
+??_ERva0056B0BF@@UAEPAXI@Z,0x0056B356,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056B11E jumps here
+??_ERva0056B218@@UAEPAXI@Z,0x0056B47C,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056B28E jumps here
+??_ERva0056B2DD@@UAEPAXI@Z,0x0056B498,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056B34E jumps here

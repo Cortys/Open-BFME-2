@@ -18,9 +18,9 @@ public:
 private:
     char m_pad04[4];
 };
-class Rva0056B0BFB1 {
+class __declspec(novtable) Rva0056B0BFB1 {
 public:
-    virtual void b1Anchor();
+    virtual ~Rva0056B0BFB1() {}
     int m_a8;
     int m_bC;
 };
