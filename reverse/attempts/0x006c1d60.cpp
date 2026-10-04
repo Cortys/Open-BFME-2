@@ -1,6 +1,7 @@
 // ?rva006C1D60@Rva006C1D60@@QAE_NI_N@Z
-// partial score=0.95 date=2026-10-04
+// partial score=0.96 date=2026-10-04
 // cl: /EHsc /DNDEBUG /DWIN32 /MD
+//
 // ?rva006C1D60@Rva006C1D60@@QAE_NI_N@Z 0x006C1D60 (93B, chain from 0x006C18A0)
 // Enable-guarded hash-table find-then-remove wrapper around Rva006C1850.
 // Retail keeps the m_enabled test as a COLD forward branch to a shared tail
@@ -37,6 +38,7 @@ private:
 	unsigned char m_pad681[3];
 	Rva006C1850 m_table;
 };
+// ?rva006C1D60@Rva006C1D60@@QAE_NI_N@Z present-unmatched
 bool Rva006C1D60::rva006C1D60(unsigned int key, bool freeValue)
 {
 	if (m_enabled)
@@ -51,8 +53,9 @@ bool Rva006C1D60::rva006C1D60(unsigned int key, bool freeValue)
 				node = node->m_next;
 			if (node != 0)
 			{
+				bool result = t->m_table != 0;
 				t->rva006C18A0(key, freeValue);
-				return true;
+				return result;
 			}
 		}
 		return false;
