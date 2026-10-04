@@ -51640,3 +51640,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva0073F368@Rva0073F061@@QAEXXZ,,0x0073F368,23,Code/Libraries/Source/WWVegas/WWLib/stlport_target_list_73eee0.cpp,matched,chain lane clear plus sentinel free
 ??1Rva0073F4F3@@QAE@XZ,,0x0073F4F3,105,Code/GameEngine/Source/Common/Rva0073F4F3Dtor.cpp,matched,chain lane dtor via inline cleanup plus members
 ?rva003B8B85@Rva003B8BAA@@QAE_NXZ,,0x003B8B85,37,Code/GameEngine/Source/Common/Rva003B8BAALookup.cpp,matched,singleton guard bool chase sibling TU unblocks 0x002B254F
+?rva002B254F@Rva002B254F@@QAEHXZ,,0x002B254F,31,Code/GameEngine/Source/Common/Rva002B254FCheck.cpp,matched,guard B4 plus global chase returns 1/0 via rowed callee
