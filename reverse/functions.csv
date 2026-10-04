@@ -52047,3 +52047,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva0027F09F@Rva0027F09F@@QAEXHH@Z,,0x0027F09F,52,Code/GameEngine/Source/Common/Rva0027F09FSearch.cpp,matched,array search at +0x578 call rowed 0x0027D378
 ?rva0027F108@BfmeThingCME@@QAEHPAXMHH@Z,,0x0027F108,52,Code/GameEngine/Source/Common/BfmeConv624.cpp,matched,BfmeThingCME param forwarding to bfmeCallCME via tmp
 ?rva0027F2D6@Rva0027F2D6@@QAEXH@Z,,0x0027F2D6,52,Code/GameEngine/Source/Common/Rva0027F2D6Search.cpp,matched,array search +0x578 call rowed 0x0027D378 with +0x28
+?rva0027F5A6@Rva0027F5A6@@QAE?AVAsciiString@@XZ,,0x0027F5A6,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5A6Get.cpp,matched,AsciiString by-value getter member +0x50 via rowed StringBase copy
