@@ -1,5 +1,5 @@
 // ?rva0014DA92@Rva0014F699@@QAEXPBXV?$RefCountPtr@VTextureClass@@@@@Z
-// partial score=0.93 date=2026-10-03
+// partial score=0.94 date=2026-10-04
 // cl: /O1
 // ?rva0014DA92@Rva0014F699@@QAEXPBXV?$RefCountPtr@VTextureClass@@@@@Z @0x0014DA92 154B: setter copying 16 dwords to +8..+44 and RefCountPtr to +0x48 with param release. Evidence: same 0x4C element as Rva0014F699Assign with rowed RefCountPtr assign 0x000424D0 and Release_Ref 0x0061ED10; caller at 0x0014F7C2; ret 8 with two args.
 class TextureClass
@@ -65,5 +65,6 @@ void Rva0014F699::rva0014DA92(const void *src, RefCountPtr<TextureClass> tex)
 	m_3c = s[13];
 	m_40 = s[14];
 	m_44 = s[15];
-	m_48 = tex;
+	RefCountPtr<TextureClass> &dst = m_48;
+	dst = tex;
 }
