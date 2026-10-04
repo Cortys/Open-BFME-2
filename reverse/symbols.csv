@@ -7962,3 +7962,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?getRelationship@Object@@QBE?AW4Relationship@@PBV1@@Z,0x0028D156,callee read from the retail REL32 in placed BFME1-donor body ?iterRel001DCF20@@YAXPAVObject@@PAX@Z (0x002612AC)
 ?bfmeDoBPB@BfmeSubBPB0064C6C0@@QAEXPAX00@Z,0x0038BBF0,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBPB0064C6C0@@YAXPAX00HHPAVBfmeSubBPB0064C6C0@@@Z (0x0038D4AA)
 ?bfmeDoBOE@BfmeSinkBOE@@QAEXPAX0@Z,0x005B7454,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBOE@@YGXPAX000@Z (0x00514CEB)
+?xfer@AIInternalMoveToState@@MAEXPAVXfer@@@Z,0x0033FF76,slot 3 of the AIInternalMoveToState vftables (0x00C10DE8 0x00C11EB8 0x00C12490 0x00C69B10.. whose slot-2 name getters return AIInternalMoveToState); rowed under the placeholder Rva0033FF2B::xfer; ZH derived-state xfers call it as their base
+?xfer@AIIdleState@@MAEXPAVXfer@@@Z,0x0033FEA3,slot 3 of ??_7 0x00C11E08 whose slot-2 name getter returns AIIdleState; rowed under the placeholder Rva0033FE65::xfer; BFME 2 AIFaceState::xfer (0x0034236F) calls it first
