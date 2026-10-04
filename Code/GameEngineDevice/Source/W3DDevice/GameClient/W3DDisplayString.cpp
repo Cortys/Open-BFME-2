@@ -281,17 +281,7 @@ void W3DDisplayString::draw( Int x, Int y, Color color, Color dropColor, Int xDr
 /** Get the render size width and height of the string in this instance
 	* with the font associated with it */
 //=============================================================================
-// ?getSize@W3DDisplayString@@UAEXPAH0@Z present-unmatched
-void W3DDisplayString::getSize( Int *width, Int *height )
-{
-
-	// assign the width and height we have stored to parameters present
-	if( width )
-		*width = m_size.x;
-	if( height )
-		*height = m_size.y;		
-
-}  // end getSize
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringWordWrap.cpp
 
 // DisplayString::appendChar ==================================================
 /** Get text with up to charPos characters, -1 = all characters */
@@ -419,17 +409,7 @@ void W3DDisplayString::computeExtents( void )
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringWordWrap.cpp
 
-// ?setUseHotkey@W3DDisplayString@@UAEX_NH@Z present-unmatched
-void W3DDisplayString::setUseHotkey( Bool useHotkey, Color hotKeyColor )
-{
-	if( useHotkey == m_useHotKey && hotKeyColor == m_hotKeyColor )
-		return;
-
-	m_useHotKey = useHotkey;
-	m_hotKeyColor = hotKeyColor;
-	m_textRenderer.Set_Hot_Key_Parse(useHotkey);
-	notifyTextChanged();
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringWordWrap.cpp
 
 // W3DDisplayString::setWordWrapCentered ======================================
 /** Set the whether or not we want to center each new line in a text string */

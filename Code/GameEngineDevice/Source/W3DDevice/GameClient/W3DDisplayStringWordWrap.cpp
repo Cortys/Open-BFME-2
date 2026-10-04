@@ -33,6 +33,7 @@
 
 typedef bool Bool;
 typedef int Int;
+typedef int Color;
 #define TRUE true
 #define FALSE false
 
@@ -91,11 +92,13 @@ public:
 																										WrapWidth = width; 
 																										return true;	}
 	void Set_Use_Hard_Word_Wrap( bool onoff ) { UseHardWordWrap = onoff; }
+	void Set_Hot_Key_Parse( bool parseHotKey ) { ParseHotKey = parseHotKey; }
 	void Set_Font( FontCharsClass *font );
 private:
 	char m_unrecovered04[ 0x84 - 0x04 ];
 	float WrapWidth;																		///< 0x84
-	char m_unrecovered88[ 0xAE - 0x88 ];
+	char m_unrecovered88[ 0xAD - 0x88 ];
+	bool ParseHotKey;																		///< 0xAD
 	bool UseHardWordWrap;																///< 0xAE
 	char m_unrecoveredAF[ 0xC4 - 0xAF ];
 };
@@ -107,6 +110,8 @@ public:
 	virtual void notifyTextChanged();
 	virtual void setWordWrap( Int wordWrap );
 	virtual void setFont( GameFont *font );
+	virtual void getSize( Int *width, Int *height );
+	virtual void setUseHotkey( Bool useHotkey, Color hotKeyColor );
 protected:
 	void computeExtents();
 private:
@@ -115,6 +120,13 @@ private:
 	UnicodeString m_hotkey;															///< 0x19C
 	Bool m_textChanged;																	///< 0x1A0
 	Bool m_fontChanged;																	///< 0x1A1
+	Bool m_bfmeColorsChanged;														///< 0x1A2
+	Bool m_useHotKey;																		///< 0x1A3
+	char m_unrecovered1A4[ 0x1B4 - 0x1A4 ];
+	Color m_hotKeyColor;																///< 0x1B4
+	char m_unrecovered1B8[ 0x1DC - 0x1B8 ];
+	Int m_sizeX;																				///< 0x1DC
+	Int m_sizeY;																				///< 0x1E0
 };
 
 
@@ -191,3 +203,31 @@ void W3DDisplayString::setFont( GameFont *font )
 	m_fontChanged = TRUE;
 
 }  // end setFont
+
+//-------------------------------------------------------------------------------------------------
+/** Get the width and height of the rendered text */
+//-------------------------------------------------------------------------------------------------
+void W3DDisplayString::getSize( Int *width, Int *height )
+{
+
+	// assign the width and height we have stored to parameters present
+	if( width )
+		*width = m_sizeX;
+	if( height )
+		*height = m_sizeY;
+
+}  // end getSize
+
+//-------------------------------------------------------------------------------------------------
+/** Set whether or not we want to parse hotkeys, and the color to draw them in */
+//-------------------------------------------------------------------------------------------------
+void W3DDisplayString::setUseHotkey( Bool useHotkey, Color hotKeyColor )
+{
+	if( useHotkey == m_useHotKey && hotKeyColor == m_hotKeyColor )
+		return;
+
+	m_useHotKey = useHotkey;
+	m_hotKeyColor = hotKeyColor;
+	m_textRenderer.Set_Hot_Key_Parse(useHotkey);
+	notifyTextChanged();
+}
