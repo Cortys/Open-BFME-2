@@ -7827,3 +7827,11 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva0030F2C7@Rva002C589B@@QBEHXZ,0x0030F2C7,entry count getter (folded disp8 dword getter); REL32s at 0x005053BE and 0x005053EC
 ?setPosition@Mouse@@UAEXHH@Z,0x001EDE4C,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ??1FontLibrary@@UAE@XZ,0x00218415,dtor installs its own vftable 0x00BE5AD0 (bytes at +17) and is the REL32 callee of the slot-0 ??_G at 0x002189A9
+??0Rva002C589B@@QAE@HHPAX@Z,0x002C5C1F,AIThreatFinder entry ctor (value then kind then owner) after a 0x3C new; REL32s at 0x0050558D in Rva0050542B::rva00505544
+?push_back@?$vector@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAEXABQAVRva002C589B@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32 at 0x005055BE
+?rva002A8AB1@Rva002A8F24@@QAEPAURva002A8AB1Record@@PAX@Z,0x002A8AB1,TheSkirmishAIManager per-owner record lookup whose +0x160 is the target-chooser data; REL32 at 0x00505291
+?rva002A8F24Record@Rva002A8F24@@QAEPAURva002A8F24Record@@PAX@Z,0x002A8F24,record spelling of the per-owner store lookup read at +0x10; REL32 at 0x005052A5
+?rva005055DE@Rva0050542B@@AAEXXZ,0x005055DE,append the global +0x0C list to +0x14 (rowed under Rva005055DE); tail jmp at 0x0050590C
+?rva00505606@Rva0050542B@@AAEXXZ,0x00505606,second rebuild pass; tail jmp at 0x0050591F
+?rva005A9693@Rva005A9562@@QAEXXZ,0x005A9693,reset of the +0x04 Rva005A9562; REL32 at 0x005058FD
+?rva005A9824@Rva005A9562@@QAEXXZ,0x005A9824,update of the +0x04 Rva005A9562; REL32 at 0x00505917

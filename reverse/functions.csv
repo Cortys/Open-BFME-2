@@ -51356,3 +51356,9 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva0030D346@@UAEPAXI@Z,,0x0030D35A,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
 ?setPosition@DirectInputMouse@@UAEXHH@Z,,0x00041AD4,60,Code/GameEngineDevice/Source/Win32Device/GameClient/Win32DIMouse.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??_GFontLibrary@@UAEPAXI@Z,,0x002189A9,28,Code/GameEngine/Source/GameClient/GUI/FontLibraryCtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xBE5AD0; calls pinned dtor 0x00218415
+?rva00505289@Rva0050542B@@AAEPAURva00505289Data@@XZ,,0x00505289,20,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,AI-manager per-owner record +0x160 (target-chooser data)
+?rva0050529D@Rva0050542B@@AAEHXZ,,0x0050529D,17,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,AI-manager per-owner store +0x10
+?rva005052AE@Rva0050542B@@AAE_NPAVRva002C589B@@@Z,,0x005052AE,172,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,entry done test: finished/killed or object gone else after rethink seconds a GameLogicRandomValueReal (AITargetChooser.cpp line 129) keep roll or clock restart; caller 0x0050562F
+?rva00505544@Rva0050542B@@AAEXXZ,,0x00505544,154,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,one AIThreatFinder entry per data value with its kind (else kind 1); caller 0x00505904
+?rva005058F7@Rva0050542B@@QAEXXZ,,0x005058F7,26,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,reset: +0x04 reset then rebuild entries then append the global list; tail-jumped from 0x002C5F6C
+?rva00505911@Rva0050542B@@QAEXXZ,,0x00505911,19,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,update: +0x04 update then 0x00505606; caller 0x002C6788
