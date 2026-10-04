@@ -13,7 +13,7 @@ class Rva000AD6F4
 public:
 	void clear();
 
-private:
+public:
 	char m_pad[8];
 };
 
@@ -31,10 +31,17 @@ Rva00328A75::~Rva00328A75()
 	m_member04.clear();
 }
 
+class Rva005C65F1
+{
+public:
+	void rva005C65F1();
+};
+
 class Rva00577936
 {
 public:
 	virtual ~Rva00577936();
+	virtual void rva00577966();
 
 private:
 	Rva000AD6F4 m_member04;
@@ -43,6 +50,11 @@ private:
 Rva00577936::~Rva00577936()
 {
 	m_member04.clear();
+}
+
+void Rva00577936::rva00577966()
+{
+	return (*(Rva005C65F1 **)m_member04.m_pad)->rva005C65F1();
 }
 
 class Rva005F83DF
