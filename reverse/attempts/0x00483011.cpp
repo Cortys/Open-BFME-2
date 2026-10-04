@@ -1,4 +1,6 @@
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
+// partial score=0.96 date=2026-10-04
+// ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
 // partial score=0.93 date=2026-10-04
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
 // partial score=0.93 date=2026-10-04
@@ -132,9 +134,9 @@ private:
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z present-unmatched
 void PoisonedBehavior::rva00483011(DamageInfo *damageInfo)
 {
-	PoisonedBehaviorModuleData *data = (PoisonedBehaviorModuleData *)m_moduleData;
 	GameLogic *gl = TheGameLogic;
 	UnsignedInt now = gl->getFrame();
+	PoisonedBehaviorModuleData *data = (PoisonedBehaviorModuleData *)m_moduleData;
 	m_poisonDamageAmount = damageInfo->m_0070;
 	m_poisonOverallStopFrame = (UnsignedInt)data->m_poisonDuration + now;
 	UnsignedInt newDamageFrame = (UnsignedInt)data->m_poisonDamageInterval + now;
