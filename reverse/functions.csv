@@ -50668,3 +50668,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?onEnter@Rva00544884@@UAE?AW4StateReturnType@@XZ,,0x0054467A,141,Code/GameEngine/Source/Common/Rva0054467AFinish.cpp,matched,vslot 4; short-circuit guard respelled as bec=0 plus two ifs so the shared STATE_FAILURE block stays inline as retail
 ?update@Rva0054484A@@UAE?AW4StateReturnType@@XZ,,0x0054452A,72,Code/GameEngine/Source/Common/Rva0054452AFinish.cpp,matched,BEC tricall update shared-fail exit goto
 ?rva004AE5B8@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z,,0x004AE5B8,124,Code/GameEngine/Source/GameLogic/Object/Update/ToggleDeploySpecialAbilityUpdateSlot23.cpp,matched,vslot 23 of ToggleDeploy via audio event plus DeployStyle helper
+?rva003F7737@Rva003F7737@@QAEPAXPBX@Z,,0x003F7737,37,Code/GameEngine/Source/GameClient/Rva003F7737NewNode.cpp,matched,hashtable new-node via rowed allocator and dup
