@@ -51016,3 +51016,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva007B80AB@@YAXXZ,,0x007B80AB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,
 ?rva002E6F92@Rva002E6F92@@QAEHHPAUIn002E6F92@@HH@Z,,0x002E6F92,77,Code/GameEngine/Source/Common/Rva002E6F92Finish.cpp,matched,Float nibble select; temp aggregate keeps both cvtsi2ss in xmm0/xmm1; caller 0x002E840D
 ?createFileSystem@GameEngine@@MAEPAVFileSystem@@XZ,,0x00042004,50,Code/GameEngine/Source/Common/GameEngine_GameEngine_createFileSystem.cpp,matched,BFME1 donor game/GameEngine/Source/Common/GameEngine.cpp (6d943426) recompiled /O1; unique masked placement on unclaimed .text
+?update@ControlBarScheme@@QAEXXZ,,0x0031F872,44,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarScheme_ControlBarScheme_update.cpp,matched,BFME1 donor game/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarScheme.cpp (6d943426) recompiled /O1; unique masked placement on unclaimed .text
