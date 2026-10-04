@@ -25,8 +25,8 @@ extern DisplayStringManager *TheDisplayStringManager;
 struct ListEntryCell { int cellType; char unknown4[8]; void *data; char unknown16[12]; };
 struct ListEntryRow { char unknown0[8]; ListEntryCell *cell; char unknown12[4]; };
 void computeTotalHeight(GameWindow *);
-void GadgetListBoxRemoveMultiSelect(GameWindow *);
-void GadgetListBoxAddMultiSelect(GameWindow *);
+void Rva00326DE9Disable(GameWindow *);
+void Rva00325199Init(GameWindow *);
 struct Rva004BB8E0ListboxData
 {
 	Short listLength;
@@ -169,8 +169,8 @@ void GadgetListBoxSetListLength( GameWindow *listbox, Int newLength )
 	if( listboxData->multiSelect )
 	{
 		
-		GadgetListBoxRemoveMultiSelect( listbox );
-		GadgetListBoxAddMultiSelect( listbox );
+		Rva00326DE9Disable( listbox );
+		Rva00325199Init( listbox );
 
 	}  // end if
 
