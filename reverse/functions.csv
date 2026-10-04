@@ -50677,3 +50677,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003AD532Init@@YAXXZ,,0x003AD532,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD532Init.cpp,matched,guarded init calls rowed TERRAIN_COLLISION getInstance and rowed atexit
 ?Rva003AD553Init@@YAXXZ,,0x003AD553,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD553Init.cpp,matched,guarded init calls rowed Ortho getInstance and rowed atexit
 ?Rva003AD574Init@@YAXXZ,,0x003AD574,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD574Init.cpp,matched,guarded initializer spherical emission velocity via static holder
+?Rva003AD595Init@@YAXXZ,,0x003AD595,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD595Init.cpp,matched,guarded initializer hemispherical emission velocity via static holder
