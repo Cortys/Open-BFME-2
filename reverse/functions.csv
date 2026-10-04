@@ -50746,3 +50746,5 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6E54@@YAXXZ,,0x007B6E54,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk tail-jmp to rowed DynamicVectorClass dtor via g_00DEBE0C
 ??0Rva0055BCD2@@QAE@ABV0@@Z,,0x003ADDCD,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADDCDCopy.cpp,matched,copy via rowed base 0x003ADDEC same vptrs as ctor 0x0055BCD2
 ??0Rva003ADC75@@QAE@ABV0@@Z,,0x003ADC75,82,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADC75Copy.cpp,matched,MI copy via rowed 0x003ADDCD 0x003ADCC7 chain same shape as 0x003ADF21
+??0Rva003ADD31@@QAE@ABV0@@Z,,0x003ADD31,108,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADD31Copy.cpp,matched,copy via rowed 0x003ADDCD 0x003ADD9D MI shape caller 0x003ADD0B
+??0Rva003ADD0B@@QAE@ABV0@@Z,,0x003ADD0B,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADD0BCopy.cpp,matched,copy ctor via rowed base 0x003ADD31 with three derived stores
