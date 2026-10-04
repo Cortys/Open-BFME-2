@@ -52294,3 +52294,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva007B7B82@@YAXXZ,,0x007B7B82,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_00E01CF4 to StringBase clear no callers
 ?rva007B7B8C@@YAXXZ,,0x007B7B8C,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_00E01CF0 to StringBase clear no callers
 ?Rva007B70A0Set@@YAXXZ,,0x007B70A0,11,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap store g_00DB620C equals address g_00BD23B4 no callers
+?xfer@BezierProjectileBehavior@@MAEXPAVXfer@@@Z,,0x0045CA8E,483,Code/GameEngine/Source/GameLogic/Object/Behavior/BezierProjectileBehaviorXfer.cpp,matched,BezierProjectile xfer via UpdateModule IsLightCRC Version ObjectID Coord helpers

@@ -7400,3 +7400,9 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva00106A5C@BfmeB996Range@@QAEDXZ	0x00106A5C	109	partial	extra jmp over test-bl on second-Go-false path t=22 model=muse-08 score=0.95 stash=reverse/attempts/0x00106a5c.cpp
 ?rva004EDDD3@Rva00506909Item@@QAEXXZ	0x004EDDD3	276	partial	movss-addss load order for m_38.x only y-z match size-exact 276B t=22 model=muse-05 score=0.98 stash=reverse/attempts/0x004eddd3.cpp
 ?bfmeSkipUntil0035E800@@YAPBDPBDD@Z	0x542449	16	blocked	donor body emits 8b 44 24 04 (mov eax[esp+4]) as its first instruction so cl /Os can never place 16B here; retail eb 07 3a 4c 24 04 74 07 40 8a 08 84 c9 75 f3 c3 enters the loop already holding p in eax and compares against [esp+4] (char by-value arg) which is a different calling convention from the donor's dl; no .text caller of 0x542449 exists so the convention is unattested; bfme1 sweep placement at this RVA is not reproducible from a standalone definition. flags=/Os t=6 model=space-bunny-alpha
+?rva00208B2C@Rva00208B2C@@QAEXXZ	0x00208B2C	161	blocked	EH team insert needs scope-table and Opaque-vs-int pair modeling t=18 model=muse-06
+?rva00208968@Rva00208968@@QAEXXZ	0x00208968	161	blocked	twin of 0x00208B2C same EH Opaque-vs-int wall t=5 model=muse-06
+?rva00208CF0@Rva00208CF0@@QAEXXZ	0x00208CF0	200	blocked	same EH Opaque-vs-int team wall plus resolveName t=5 model=muse-06
+?rva00208E99@Rva00208E99@@QAEXXZ	0x00208E99	200	blocked	twin of 0x00208CF0 same wall t=3 model=muse-06
+?rva00208A09@Rva00208A09@@QAEXXZ	0x00208A09	291	blocked	same team wall larger find-plus-insert twin t=3 model=muse-06
+?rva00208BCD@Rva00208BCD@@QAEXXZ	0x00208BCD	291	blocked	same team wall twin t=3 model=muse-06
