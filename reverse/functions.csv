@@ -51137,3 +51137,7 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva005C33D2@@UAEPAXI@Z,,0x005C352D,28,Code/GameEngine/Source/Common/RvaDerivedDtorTails.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xC74434; calls rowed dtor 0x5C33D2
 ?rva003079ED@Rva003079ED@@QAEXXZ,,0x003079ED,63,Code/Libraries/Source/WWVegas/WWLib/Rva003079EDFinish.cpp,matched,finish from 0.93 bank BfmeE12 swap retails to ICF twin 0x3079C1
 ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z,,0x004D9367,78,Code/GameEngine/Source/Common/Rva004D9367Finish.cpp,matched,finish from 0.94 bank reversed m8 and m4 conditions to flip fall-through blocks
+?init@DisconnectManager@@QAEXXZ,,0x004D3822,163,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?sendPlayerDestruct@DisconnectManager@@IAEXHPAVConnectionManager@@@Z,,0x004D3AE2,129,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?turnOnScreen@DisconnectManager@@IAEXPAVConnectionManager@@@Z,,0x004D4176,61,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?playerHasAdvancedAFrame@DisconnectManager@@QAEXHI@Z,,0x004D3BB5,34,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
