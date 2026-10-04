@@ -332,6 +332,8 @@ public:
 	ContainModuleInterface *m_contain;			// +0x1FC
 	unsigned char m_unmodelled_200[0x214 - 0x200];
 	Object *m_containedBy;						// +0x214
+	unsigned char m_unmodelled_218[0x274 - 0x218];
+	Object *m_bfmeObject274;					// +0x274, bfmePrivateCommand3E's fallback target
 };
 
 // upstream layout: inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/StateMachine.h
@@ -354,6 +356,20 @@ public:
 	virtual void slot30();
 	virtual void slot34();
 	virtual void setGoalObject(const Object *object);
+	void setGoalPosition(const Coord3D *pos);	///< pinned 0x00262224
+};
+
+// The StateMachine member vector of positions at +0x3C (Zero Hour's
+// m_goalPath); its assignment forwarder 0x00351759 is address-named
+// (Rva0035149F.cpp), so the path commands reach it by a cast.
+class Rva0035149F
+{
+	Coord3D *m_start, *m_finish, *m_end;
+};
+class Rva00351759
+{
+public:
+	Rva0035149F &rva00351759(const Rva0035149F &other);
 };
 
 class Rva001B5CC0
@@ -431,6 +447,15 @@ protected:
 	virtual void privateGuardRetaliate(Object *victim, const Coord3D *position, Int maxShotsToFire, CommandSourceType commandSource);
 	// Declared last so no slot above moves; nothing in this TU dispatches it.
 	virtual void privateMoveToObject(Object *obj, CommandSourceType commandSource);
+	// BFME2 aiDoCommand handlers named by their command id (see the bodies).
+	virtual void bfmePrivateCommand3D(Object *obj, CommandSourceType commandSource);
+	virtual void bfmePrivateCommand3E(Object *obj, CommandSourceType commandSource);
+	virtual void bfmePrivateCommand4A(Object *obj, const Coord3D *pos, CommandSourceType commandSource);
+	virtual void bfmePrivateCommand4B(Object *obj, const Coord3D *pos, CommandSourceType commandSource);
+	virtual void bfmePrivateCommand4C(Object *obj, const Rva0035149F *path, CommandSourceType commandSource);
+	virtual void bfmePrivateCommand4D(Object *obj, const Rva0035149F *path, CommandSourceType commandSource);
+	virtual void bfmePrivateCommand53(CommandSourceType commandSource);
+	virtual void bfmePrivateCommand54(Object *obj, const Coord3D *pos, CommandSourceType commandSource);
 
 	// Zero Hour's ObjectModule accessor. privateMoveToObject reads the owner
 	// through it, and that is not cosmetic: see the body.
@@ -549,3 +574,100 @@ void AIUpdateInterface::bfmePrivateCommand39(Object *victim, CommandSourceType c
 }
 
 
+// BFME2 aiDoCommand (0x002673F6) switches on AICommandParms::m_cmd through the
+// jump table at VA 0x00667BA6 and calls one AIUpdateInterface vtable slot per
+// command, passing m_obj (+0x14), &m_pos (+0x08) or &m_coords (+0x20) and the
+// command source. The handlers below are named by that command id, the way
+// bfmePrivateCommand39 (command 0x39, slot 35) is; slot numbers are of the
+// AIUpdate vtable 0x00C47B98, whose other slots are this class's matched
+// privateDock / privateMoveToObject. The state ids are the target's constants.
+
+// Command 0x3D, slot 49, retail 0x002647EF.
+void AIUpdateInterface::bfmePrivateCommand3D(Object *obj, CommandSourceType commandSource)
+{
+	m_stateMachine->clear();
+	m_stateMachine->setGoalObject(obj);
+	m_lastCommandSource = commandSource;
+	m_stateMachine->setState((StateID)0x34);
+}
+
+// Command 0x3E, slot 56, retail 0x00264963: with no object given it falls back
+// to the owner's object at +0x274, and does nothing when that is null too.
+void AIUpdateInterface::bfmePrivateCommand3E(Object *obj, CommandSourceType commandSource)
+{
+	if (!obj)
+	{
+		obj = m_object->m_bfmeObject274;
+		if (!obj)
+			return;
+	}
+	m_stateMachine->clear();
+	m_stateMachine->setGoalObject(obj);
+	m_lastCommandSource = commandSource;
+	m_stateMachine->setState((StateID)0x35);
+}
+
+// Command 0x4A, slot 57, retail 0x002649A3.
+void AIUpdateInterface::bfmePrivateCommand4A(Object *obj, const Coord3D *pos, CommandSourceType commandSource)
+{
+	StateMachine *sm = m_stateMachine;
+	sm->clear();
+	sm->setGoalObject(obj);
+	sm->setGoalPosition(pos);
+	m_lastCommandSource = commandSource;
+	sm->setState((StateID)0x41);
+}
+
+// Command 0x4B, slot 54, retail 0x002648F1.
+void AIUpdateInterface::bfmePrivateCommand4B(Object *obj, const Coord3D *pos, CommandSourceType commandSource)
+{
+	StateMachine *sm = m_stateMachine;
+	sm->clear();
+	sm->setGoalObject(obj);
+	sm->setGoalPosition(pos);
+	m_lastCommandSource = commandSource;
+	sm->setState((StateID)0x42);
+}
+
+// Command 0x4C, slot 58, retail 0x002649DC.
+void AIUpdateInterface::bfmePrivateCommand4C(Object *obj, const Rva0035149F *path, CommandSourceType commandSource)
+{
+	StateMachine *sm = m_stateMachine;
+	sm->clear();
+	sm->setGoalObject(obj);
+	reinterpret_cast<Rva00351759 *>(sm)->rva00351759(*path);
+	m_lastCommandSource = commandSource;
+	sm->setState((StateID)0x45);
+}
+
+// Command 0x4D, slot 55, retail 0x0026492A.
+void AIUpdateInterface::bfmePrivateCommand4D(Object *obj, const Rva0035149F *path, CommandSourceType commandSource)
+{
+	StateMachine *sm = m_stateMachine;
+	sm->clear();
+	sm->setGoalObject(obj);
+	reinterpret_cast<Rva00351759 *>(sm)->rva00351759(*path);
+	m_lastCommandSource = commandSource;
+	sm->setState((StateID)0x44);
+}
+
+// Command 0x53, slot 77, retail 0x00264AB2.
+void AIUpdateInterface::bfmePrivateCommand53(CommandSourceType commandSource)
+{
+	if (!m_object->isMobile())
+		return;
+	m_stateMachine->clear();
+	m_lastCommandSource = commandSource;
+	m_stateMachine->setState((StateID)0x4a);
+}
+
+// Command 0x54, slot 59, retail 0x00264A15.
+void AIUpdateInterface::bfmePrivateCommand54(Object *obj, const Coord3D *pos, CommandSourceType commandSource)
+{
+	StateMachine *sm = m_stateMachine;
+	sm->clear();
+	sm->setGoalObject(obj);
+	sm->setGoalPosition(pos);
+	m_lastCommandSource = commandSource;
+	sm->setState((StateID)0x4b);
+}
