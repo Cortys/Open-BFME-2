@@ -52180,3 +52180,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?below@Rva000C8DE0@@QAE_NH@Z,,0x0006633D,18,Code/GameEngine/Source/Common/Rva000C8DE0Lt.cpp,matched,BFME1 donor Rva000C8DE0Lt.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?rva002DF980@@YAHPAPAE0@Z,,0x003316A7,19,Code/GameEngine/Source/Common/Rva002DF980Diff.cpp,matched,BFME1 donor Rva002DF980Diff.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?set@Rva000CBDA0@@QAEAAV1@H@Z,,0x002AA51B,22,Code/GameEngine/Source/Common/Rva000CBDA0Set.cpp,matched,BFME1 donor Rva000CBDA0Set.cpp recompiled /Os; unique masked placement on unclaimed .text
+?equals@Rva002857B0Object@@QAE_NH@Z,,0x00497969,22,Code/GameEngine/Source/Common/Rva002857B0VirtualCompare.cpp,matched,BFME1 donor Rva002857B0VirtualCompare.cpp recompiled /Os; unique masked placement on unclaimed .text
