@@ -38,3 +38,12 @@ ThingTemplateCountTree::insert_unique(ThingTemplateCountTree::iterator, const Th
 
 template _STL::pair<ThingTemplateCountTree::iterator, bool>
 ThingTemplateCountTree::insert_unique(const ThingTemplateCountPair &);
+
+// insert_equal (retail 0x00620ED0, 58 bytes): the multimap insert for the
+// same tree. Ported from Open-BFME-1 RvaTreeMInsertPair.cpp (6d943426), whose
+// body bfme1_sweep placed here byte-identically (T3: four BFME 1 trees fold
+// onto this one body). Identity is target evidence, not the donor's name: its
+// only call is this tree's rowed _M_insert at 0x00759BC0, and the key compare
+// is unsigned (jae), as for a pointer key.
+template ThingTemplateCountTree::iterator
+ThingTemplateCountTree::insert_equal(const ThingTemplateCountPair &);
