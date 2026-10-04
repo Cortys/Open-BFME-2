@@ -23,6 +23,7 @@ class Rva004E7C1C
 {
 public:
 	void rva004E7C1C();
+	void rva004E7C8A();
 private:
 	Rva004E7C1CNode *m_head;
 };
@@ -43,4 +44,12 @@ void Rva004E7C1C::rva004E7C1C()
 	}
 	m_head->m_next = m_head;
 	m_head->m_prev = m_head;
+}
+
+void Rva004E7C1C::rva004E7C8A()
+{
+	rva004E7C1C();
+	Rva004E7C1CNode *head = m_head;
+	if (head != 0)
+		free(head);
 }
