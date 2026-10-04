@@ -1,6 +1,8 @@
 // ?rva00118CC0@Render2DRawArray@@QAEPAXH@Z
+// partial score=0.92 date=2026-10-04
+// ?rva00118CC0@Render2DRawArray@@QAEPAXH@Z
 // partial score=0.9 date=2026-10-03
-// cl: /G7 /arch:SSE /Ireference/shims/bfmecamera /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2
+// cl: /O2 /G7 /arch:SSE /DNDEBUG /MD /EHsc
 // ?rva00118CC0@Render2DRawArray@@QAEPAXH@Z 0x00118CC0 121 unlock Render2DRawArray grow of 44-byte elements via realloc caller 0x0011BD80
 extern "C" __declspec(dllimport) void *__cdecl realloc(void *ptr, unsigned int size);
 
@@ -31,15 +33,13 @@ void *Render2DRawArray::rva00118CC0(int count)
 		unsigned int old = Count - (unsigned int)count;
 		return &data[old];
 	}
-	else
-	{
-		unsigned int newSize = Count + (unsigned int)GrowthStep;
-		Size = newSize;
-		void *newData = realloc(Data, newSize * sizeof(Raw44));
-		Data = (Raw44 *)newData;
-		if (!newData)
-			return 0;
-		unsigned int old = Count - (unsigned int)count;
-		return &((Raw44 *)newData)[old];
-	}
+	unsigned int newSize = Count + (unsigned int)GrowthStep;
+	Size = newSize;
+	Raw44 *oldData = Data;
+	void *newData = realloc(oldData, newSize * sizeof(Raw44));
+	Data = (Raw44 *)newData;
+	if (!newData)
+		return 0;
+	unsigned int old = Count - (unsigned int)count;
+	return &((Raw44 *)newData)[old];
 }
