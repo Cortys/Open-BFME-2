@@ -7973,3 +7973,13 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?Rva003F29D2_CopyRange@@YAPAVLivingWorldRegionConnection@@PAV1@00ABU__false_type@_STL@@@Z,0x003F29D2,4-arg tag-ignored twin of rowed 3-arg CopyRange same 38B loop via caller 0x003F2CD6
 ?xfer@StateMachine@@MAEXPAVXfer@@@Z,0x004D7744,slot 3 of ??_7 0x00C60740 whose slot-2 name getter returns StateMachine (535B body); the AIDockMachine/AITNGuardMachine/AIGuardRetaliateMachine xfers call it as their base
 ?xfer@AIEnterState@@MAEXPAVXfer@@@Z,0x00341930,slot 3 of ??_7 0x00C12E90 whose slot-2 name getter returns AIEnterState; rowed under the placeholder Rva00341930::xfer; AITNGuardReturnState::xfer (0x00545C1D) calls it first
+?bfmeDoBPC@@YGXPAVBfmeThingBPC@@PAX@Z,0x00478C2C,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBPC@@YGXPAVBfmeThingBPC@@PAX@Z (0x0047DB95)
+?bfmeSetBPC@BfmeThingBPC@@QAEXH@Z,0x00291C9B,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBPC@@YGXPAVBfmeThingBPC@@PAX@Z (0x0047DB95)
+?lookup@Rva007882F0PointerMap@@QAEPAURva007882F0Value@@I@Z,0x000AB0F5,callee read from the retail REL32 in placed BFME1-donor body ?Rva00788A00Assign@@YAXPAVRva007882F0PointerMap@@II@Z (0x000AB469)
+?bfmeDoBUC@BfmeSubBUC@@QAEXPAX000@Z,0x001F0878,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBUC@@YAXPAVBfmeSubBUC@@PAX111@Z (0x00456520)
+?bfmeStepBQA@BfmeThingBQA@@QAEXXZ,0x00459E05,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBQA@BfmeThingBQA@@QAEHXZ (0x0045A199)
+?d_0094d450@@YAXXZ,0x001711A6,callee read from the retail REL32 in placed BFME1-donor body ?reset@Rva0094D8B0@@QAE_NXZ (0x00171522)
+?bfmeCall939G@BfmeSub939G@@QAEXXZ,0x0044BD79,callee read from the retail REL32 in placed BFME1-donor body ?handle@Rva004C5EF0@@QAEXH@Z (0x0044BD5B)
+?j_00045c7d@@YAXXZ,0x00396C43,callee read from the retail REL32 in placed BFME1-donor body ?Rva00372BA0ConditionalDispatcher@@YAXPAX0_N@Z (0x00397CEB)
+?j_00041eca@@YAXXZ,0x00396E4A,callee read from the retail REL32 in placed BFME1-donor body ?Rva00372BA0ConditionalDispatcher@@YAXPAX0_N@Z (0x00397CEB)
+?bfmeSetBSF@BfmeSubBSF@@QAEXPAX@Z,0x000365F0,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBSF@BfmeThingBSF@@QAEPAV1@PAGPAX@Z (0x004D04FF)
