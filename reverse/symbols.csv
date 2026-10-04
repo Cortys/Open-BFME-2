@@ -7587,3 +7587,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0PointDefenseLaserUpdateModuleData@@QAE@XZ,0x00253510,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
 ??0SpyVisionUpdateModuleData@@QAE@XZ,0x004930A0,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
 ??1FXBoneInfo@@QAE@XZ,0x00495C43,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
+??4BfmeStringRecord002CF5B1@@QAEAAU0@ABU0@@Z,0x00564B1A,callee REL32 read by locate.py from a unique masked-byte placement emitted by ProductionPrerequisiteAssign.cpp
