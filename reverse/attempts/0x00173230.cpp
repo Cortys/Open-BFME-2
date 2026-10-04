@@ -1,4 +1,6 @@
 // ?Register_For_Rendering@MeshModelClass@@QAEXXZ
+// partial score=0.92 date=2026-10-04
+// ?Register_For_Rendering@MeshModelClass@@QAEXXZ
 // partial score=0.9 date=2026-09-23
 // cl: /G7 /DNDEBUG /MD
 // Scratch candidate for target RVA 0x00173230; opaque names are address-derived
@@ -23,9 +25,9 @@ public:
     unsigned char pad1[0x108 - 0xBC];
     unsigned *field_108;
 };
-class Rva00DF6F94Context { public: void Handle_Mesh(MeshModelClass *mesh); };
-class Rva00DF363CContext { public: void Handle_Mesh(MeshModelClass *mesh); };
-extern void __cdecl Rva00199FFBHelper(MeshMatDescClass *, MeshModelClass *);
+class Rva001735F9Context { public: void rva001735F9(MeshModelClass *mesh); };
+class Rva00145C30Context { public: void rva00145C30(MeshModelClass *mesh); };
+extern void __cdecl rva00199FFB(MeshMatDescClass *, MeshModelClass *);
 
 void MeshModelClass::Register_For_Rendering()
 {
@@ -41,16 +43,16 @@ void MeshModelClass::Register_For_Rendering()
     MeshMatDescClass *desc = cur_mat_desc;
     if (desc->field_b8 == 0 && desc->field_108 == 0) {
         if (*reinterpret_cast<volatile unsigned char *>(0x00DEC410) != 0 || (flags & 4) != 0) {
-            Rva00199FFBHelper(desc, this);
+            rva00199FFB(desc, this);
         }
     }
 
     desc = cur_mat_desc;
     if (desc->field_b8 == 0 && desc->field_108 == 0) {
-        Rva00DF363CContext *renderer = *reinterpret_cast<Rva00DF363CContext * volatile *>(0x00DF363C);
-        renderer->Handle_Mesh(this);
+        Rva00145C30Context *renderer = *reinterpret_cast<Rva00145C30Context * volatile *>(0x00DF363C);
+        renderer->rva00145C30(this);
     } else {
-        Rva00DF6F94Context *renderer = *reinterpret_cast<Rva00DF6F94Context * volatile *>(0x00DF6F94);
-        renderer->Handle_Mesh(this);
+        Rva001735F9Context *renderer = *reinterpret_cast<Rva001735F9Context * volatile *>(0x00DF6F94);
+        renderer->rva001735F9(this);
     }
 }
