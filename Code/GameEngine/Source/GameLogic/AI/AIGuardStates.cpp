@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /arch:SSE
+// cl: /O1 /DNDEBUG /MD /arch:SSE /EHsc
 //
 // AIGuard state bodies ported from Zero Hour's GameEngine/Source/GameLogic/AI/
 // AIGuard.cpp (GeneralsMD tree vendored under reference/open-bfme-1/inputs/
@@ -24,6 +24,15 @@
 //  - AIGuardIdleState::onEnter, retail 0x00542D88 (53 bytes): slot 4 of
 //    0x00C696D0; ZH's randomised first scan (GameLogicRandomValue at AIGuard.cpp
 //    line 1013 in BFME 2's tree).
+//  - AIGuardAttackAggressorState::onEnter, retail 0x00543F58 (227 bytes): slot
+//    4 of 0x00C69890. ZH's nemesis lookup (owner body module +0x254, vslot 15
+//    getLastDamageInfo, source id +8; guard machine nemesis id +0x68) and the
+//    new AIAttackState (rowed ctor 0x0034B0DD) over m_exitConditions; BFME 2
+//    drops ZH's guard centre and radius (only the give-up frame from
+//    TAiData +0x3C and conditions 6 = expired duration | no unit found), and
+//    first restarts itself through its own onEnter slot while the +0x40 flag
+//    is set (clearing it). Retail keeps TheGameLogic in a register across the
+//    nemesis lookup, so the body reads it once into a local.
 //  - AIGuardMachine::getStdGuardRange, retail 0x00542C2A (14 bytes): ZH's
 //    static over AI::getAdjustedVisionRangeForObject (pinned 0x002FDD0A, static
 //    as in ZH) with OWNERTYPE|MOOD|GUARDINNER.
@@ -78,16 +87,40 @@ public:
 	Team *findTeamByID(TeamID id);
 };
 extern TeamFactory *TheTeamFactory;
+struct DamageInfoInput
+{
+	unsigned char m_pad00[0x08];
+	ObjectID m_sourceID; // +0x08
+};
+struct DamageInfo
+{
+	DamageInfoInput in;
+};
+template <int N> class VSlots : public VSlots<N - 1>
+{
+public:
+	virtual void gap(char (*)[N]) = 0;
+};
+template <> class VSlots<0>
+{
+};
+class BodyModuleInterface : public VSlots<15>
+{
+public:
+	virtual const DamageInfo *getLastDamageInfo() const = 0;
+};
 class Object
 {
 public:
+	BodyModuleInterface *getBodyModule() const { return m_body; }
 	const Coord3D *getPosition() const { return &m_position; }
 	Team *getTeam() { return m_team; }
 	AIUpdateInterface *getAI() { return m_ai; }
 private:
 	unsigned char m_pad00[0x38];
 	Coord3D m_position; // +0x38
-	unsigned char m_pad44[0x258 - 0x44];
+	unsigned char m_pad44[0x254 - 0x44];
+	BodyModuleInterface *m_body; // +0x254
 	AIUpdateInterface *m_ai; // +0x258
 	unsigned char m_pad25C[0x304 - 0x25C];
 	Team *m_team; // +0x304
@@ -112,7 +145,8 @@ private:
 };
 struct TAiData
 {
-	unsigned char m_pad00[0x40];
+	unsigned char m_pad00[0x3C];
+	UnsignedInt m_guardChaseUnitFrames; // +0x3C
 	UnsignedInt m_guardEnemyScanRate; // +0x40
 	UnsignedInt m_guardEnemyReturnScanRate; // +0x44
 };
@@ -136,6 +170,9 @@ public:
 	virtual void slot04(); virtual void slot05(); virtual void slot06();
 	virtual void slot07();
 	virtual StateReturnType setState(StateID newStateID);
+	virtual void slot09(); virtual void slot10(); virtual void slot11();
+	virtual void slot12(); virtual void slot13();
+	virtual void setGoalObject(const Object *obj);
 	Object *getOwner() const { return m_owner; }
 private:
 	unsigned char m_pad04[0x14 - 0x04];
@@ -148,10 +185,14 @@ public:
 	Team *findTeamToGuardByID() { return TheTeamFactory->findTeamByID(m_teamToGuard); }
 	Bool lookForInnerTarget(void);
 	static Real getStdGuardRange(const Object *obj);
+	void setNemesisID(ObjectID id) { m_nemesisToAttack = id; }
+	ObjectID getNemesisID() const { return m_nemesisToAttack; }
 private:
 	unsigned char m_pad18[0x3C - 0x18];
 	ObjectID m_targetToGuard; // +0x3C
 	TeamID m_teamToGuard; // +0x40
+	unsigned char m_pad44[0x68 - 0x44];
+	ObjectID m_nemesisToAttack; // +0x68
 };
 class State
 {
@@ -163,31 +204,51 @@ public:
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
-protected:
 	StateMachine *getMachine() const { return m_machine; }
+protected:
 	Object *getMachineOwner() const { return m_machine->getOwner(); }
 	unsigned char m_pad04[0x18 - 0x04];
 	StateMachine *m_machine; // +0x18
 };
-struct ExitConditions
+class AttackExitConditionsInterface
 {
-	unsigned char m_pad00[0x04];
-	Coord3D m_center; // +0x04 (state +0x28)
+public:
+	virtual Bool shouldExit(const StateMachine *machine) const = 0;
+};
+class ExitConditions : public AttackExitConditionsInterface
+{
+public:
+	enum ExitConditionsEnum
+	{
+		ATTACK_ExitIfOutsideRadius = 0x01,
+		ATTACK_ExitIfExpiredDuration = 0x02,
+		ATTACK_ExitIfNoUnitFound = 0x04
+	};
+	virtual Bool shouldExit(const StateMachine *machine) const;
+	int m_conditionsToConsider; // +0x04 (state +0x24)
+	Coord3D m_center; // +0x08 (state +0x28)
+	Real m_radiusSqr; // +0x14
+	UnsignedInt m_attackGiveUpFrame; // +0x18 (state +0x38)
 };
 class AIAttackState : public State
 {
+public:
+	AIAttackState(StateMachine *machine, Bool follow, Bool attackingObject, Bool forceAttacking, AttackExitConditionsInterface *attackParameters);
+private:
+	unsigned char m_pad1C[0x50 - 0x1C]; // sizeof(AIAttackState) 0x50 (the operator new size)
 };
 class AIGuardAttackAggressorState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 private:
 	AIGuardMachine *getGuardMachine() { return (AIGuardMachine *)getMachine(); }
-	unsigned char m_pad1C[0x24 - 0x1C];
-	ExitConditions m_exitConditions; // +0x24
-	unsigned char m_pad34[0x3C - 0x34];
+	unsigned char m_pad1C[0x20 - 0x1C];
+	ExitConditions m_exitConditions; // +0x20
 	AIAttackState *m_attackState; // +0x3C
+	Bool m_bfmeRestart; // +0x40
 };
 class AIInternalMoveToState : public State
 {
@@ -231,6 +292,44 @@ private:
 	unsigned char m_pad1C[0x3C - 0x1C];
 	AIAttackState *m_attackState; // +0x3C
 };
+
+StateReturnType AIGuardAttackAggressorState::onEnter( void )
+{
+	if (m_bfmeRestart)
+	{
+		m_bfmeRestart = false;
+		return onEnter();
+	}
+	Object *obj = getMachineOwner();
+	ObjectID nemID = INVALID_ID;
+
+	if (obj->getBodyModule() && obj->getBodyModule()->getLastDamageInfo()->in.m_sourceID) {
+		nemID = obj->getBodyModule()->getLastDamageInfo()->in.m_sourceID;
+		getGuardMachine()->setNemesisID(nemID);
+	}
+
+	GameLogic *logic = TheGameLogic;
+	Object *nemesis = logic->findObjectByID(getGuardMachine()->getNemesisID());
+	if (nemesis == NULL) 
+	{
+		return STATE_SUCCESS;
+	}
+
+	m_exitConditions.m_attackGiveUpFrame = logic->getFrame() + TheAI->getAiData()->m_guardChaseUnitFrames;
+	m_exitConditions.m_conditionsToConsider = (ExitConditions::ATTACK_ExitIfExpiredDuration | 
+																						 ExitConditions::ATTACK_ExitIfNoUnitFound);
+
+	m_attackState = new AIAttackState(getMachine(), true, true, false, &m_exitConditions);
+	m_attackState->getMachine()->setGoalObject(nemesis);
+
+	StateReturnType returnVal = m_attackState->onEnter();
+	if (returnVal == STATE_CONTINUE) {
+		return STATE_CONTINUE;
+	}
+
+	// if we had no one to attack, we were successful, so go to the next state.
+	return STATE_SUCCESS;
+}
 
 StateReturnType AIGuardAttackAggressorState::update( void )
 {
