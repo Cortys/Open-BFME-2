@@ -1,4 +1,6 @@
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
+// partial score=0.95 date=2026-10-04
+// ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
 // partial score=0.95 date=2026-10-03
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z
 // partial score=0.94 date=2026-10-03
@@ -63,9 +65,12 @@ private:
 	bool m_71;
 };
 // ??0Rva0034290D@@QAE@PAVStateMachine@@_N11@Z present-unmatched
+// The m_6C store leads the body so cl issues the incoming byte load at +0x14,
+// where retail has it, rather than at the point of use.
 Rva0034290D::Rva0034290D(StateMachine *machine, bool a, bool b, bool c)
 	: AIInternalMoveToState(machine, 0xCC44C7B1u)
 {
+	m_6C = a;
 	m_4C = 0.0f;
 	m_50 = 0.0f;
 	m_54 = 0.0f;
@@ -73,7 +78,6 @@ Rva0034290D::Rva0034290D(StateMachine *machine, bool a, bool b, bool c)
 	m_5C = 0.0f;
 	m_60 = 0.0f;
 	_ReadWriteBarrier();
-	m_6C = a;
 	m_6D = b;
 	m_64 = 0;
 	m_68 = 0;
