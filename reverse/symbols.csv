@@ -7797,3 +7797,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeCounter@ScriptEngine@@IAEPAUScriptCounter@@VAsciiString@@@Z,0x0020874B,address read from the REL32 displacement at a placed body
 ?j_000142b3@@YAXXZ,0x002086C5,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?rva004ED955@Rva00506909Item@@QAEXPAX@Z,0x004ED955,new item setup for the owner; REL32 at 0x005064D8 in Rva00506909::rva00506411
+??1?$_List_base@PAVResizerWindow@@V?$allocator@PAVResizerWindow@@@_STL@@@_STL@@QAE@XZ,0x004EC395,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?clear@?$_List_base@PAVResizerWindow@@V?$allocator@PAVResizerWindow@@@_STL@@@_STL@@QAEXXZ,0x0023DAA5,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?erase@?$list@PAVResizerWindow@@V?$allocator@PAVResizerWindow@@@_STL@@@_STL@@QAE?AU?$_List_iterator@PAVResizerWindow@@U?$_Nonconst_traits@PAVResizerWindow@@@_STL@@@2@U32@@Z,0x00438539,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
