@@ -7985,3 +7985,9 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeSetBSF@BfmeSubBSF@@QAEXPAX@Z,0x000365F0,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBSF@BfmeThingBSF@@QAEPAV1@PAGPAX@Z (0x004D04FF)
 ?xfer@SiegeEngineContain@@MAEXPAVXfer@@@Z,0x0047C322,slot 3 of the vftable 0x00C470F8 whose slot-2 name getter returns SiegeEngineContain (464B body); RiderChangeContain::xfer (0x0047E357) calls it as its base
 ?xfer@TerrainLogic@@MAEXPAVXfer@@@Z,0x00283845,slot 3 of the vftable 0x00BFB2C8 whose slot-2 name getter returns TerrainLogic (970B body); W3DTerrainLogic::xfer (0x00062E2F) calls it as its base
+?rva005AB45B@Rva005AB309@@QAE_NXZ,0x005AB45B,ReturnTheRing ring-holder search (rowed under the address name Rva005AB45B); REL32 at 0x005AB6CA in the ReturnTheRing slot 1
+?rva0039E5B9@Team@@QAEXPAUCoord3D@@@Z,0x0039E5B9,Team centre into a Coord3D; REL32 at 0x005AB5EC in ReturnTheRing 0x005AB5B7
+?rva004ED2ED@Rva004ECECD@@QAEXHPAVObject@@@Z,0x004ED2ED,AITactic: order team n onto a target object; REL32 at 0x005AB699 in ReturnTheRing 0x005AB66A
+?rva004EBF4B@Rva004EBF4B@@QAE?AUCoord3D@@XZ,0x004EBF4B,the same body as the rowed void(Coord3D *) spelling: it returns the Coord3D by value through the hidden pointer (eax = out); REL32 at 0x005AB70C in ReturnTheRing 0x005AB6DC uses the returned pointer
+?rva004ED372@Rva004ECECD@@QAEXPBUCoord3D@@@Z,0x004ED372,const Coord3D spelling of the AITactic point member pinned as rva004ED372(void *); REL32 at 0x005AB714 in ReturnTheRing 0x005AB6DC
+?rva005AB4B9@Rva005AB309@@QAE_NXZ,0x005AB4B9,ReturnTheRing ring-team creation (Player_%d style team name via 0x003A2FD4); REL32 at 0x005AB789 in the ReturnTheRing slot 6
