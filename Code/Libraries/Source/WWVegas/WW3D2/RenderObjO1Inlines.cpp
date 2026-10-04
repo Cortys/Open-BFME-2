@@ -2,6 +2,9 @@
 //
 // RenderObjClass inline virtuals Set_Hidden / Set_Animation_Hidden / Set_Translucent / Is_Really_Visible:
 // retail holds one size-optimised (/O1) out-of-line copy of each header body (0x0006CF0C 0x0006CF2C 0x0006CF52 0x0006CECD).
+// The empty Set_Animation overloads (5-arg slot 44 RET 0x14 at 0x0025EF04, motion/frame/mode slot 45 RET 0xC
+// at 0x000D1407) and _bfme_ro_v50 (slot 53, MOV AL,1 / RET 4 at 0x005CB9FA) are header inline bodies that
+// retail folds with every other identical virtual; donor (BFME1) slot order and argument counts name them.
 // Is_Not_Hidden_At_All (0x0006CEEE, slot 97) and the slot-29 Get_Num_Sub_Objects tail dispatch
 // _bfme_ro_v28 (0x0006CE95) are the same kind of copy; RenderObjClass-derived vtables point at both.
 // The anchor below only makes this TU emit them out of line (qualified calls with inlining disabled); it is not retail code.
@@ -37,6 +40,9 @@ int _bfmeRenderObjInlineAnchor(RenderObjClass *r, int onoff)
 	r->RenderObjClass::Set_Hidden(onoff);
 	r->RenderObjClass::Set_Animation_Hidden(onoff);
 	r->RenderObjClass::Set_Translucent(onoff);
+	r->RenderObjClass::Set_Animation((HAnimClass *)0, 0.0f, (HAnimClass *)0, 0.0f, 0.0f);
+	r->RenderObjClass::Set_Animation((HAnimClass *)0, 0.0f, onoff);
+	onoff += r->RenderObjClass::_bfme_ro_v50(onoff);
 	onoff += r->RenderObjClass::Is_Not_Hidden_At_All();
 	onoff += r->RenderObjClass::_bfme_ro_v28();
 	return r->RenderObjClass::Is_Really_Visible() + onoff;
