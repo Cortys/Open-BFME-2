@@ -82,6 +82,12 @@ public:
 	virtual void slot20();
 };
 
+class R2Slots24 : public R2Slots20
+{
+public:
+	virtual void slot24();
+};
+
 #define R2_GUARDED_VIRTUAL_TAIL( NAME, OFF, BASE, TYPE )                   \
 	class NAME##Pointee : public BASE                                      \
 	{                                                                      \
@@ -111,3 +117,9 @@ public:
 // relocations are masked (unique hit on unclaimed .text). Only the placed body
 // is defined here; the donor's other definitions are omitted.
 R2_GUARDED_VIRTUAL_TAIL( Rva0027F310, 0x30, R2Slots20, int )
+
+// ?call@Rva0027F330@@QAEHXZ
+// retail 0x0026E999, 17 bytes. Sibling of ?call@Rva0027F310 above: same
+// pointer-at-0x30 layout and same int result, dispatching through vftable
+// slot 0x24 instead of 0x20.
+R2_GUARDED_VIRTUAL_TAIL( Rva0027F330, 0x30, R2Slots24, int )
