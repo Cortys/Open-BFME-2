@@ -35,3 +35,22 @@ void Rva003605AF::rva003605AF()
 		}
 	}
 }
+
+// ?rva003605D5@Rva003605D5@@QAEHHH@Z, retail 0x003605D5, 14 bytes.
+// Returns word at [this+0x0C+(index<<6)]; second arg unused (ret 8).
+// Evidence: sits between 0x003605AF and 0x003605E3; caller 0x004BEDCA.
+class Rva003605D5
+{
+public:
+	int rva003605D5(int index, int unused);
+
+private:
+	char m_pad[0x0C];
+	int m_items[1];
+};
+
+int Rva003605D5::rva003605D5(int index, int unused)
+{
+	(void)unused;
+	return *(int *)((char *)this + 0x0C + (index << 6));
+}

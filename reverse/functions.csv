@@ -51740,3 +51740,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva005AD964@Rva005ADA40@@QAE_NXZ,,0x005AD964,56,Code/GameEngine/Source/Common/Rva005ADA40Element.cpp,matched,Rva00506B74 element: true unless the owner slot start position (Rva00506C82Find +0x10 plus 1) is already in the TheSkirmishAIManager +0x864 int vector
 ?getPingValue@GameSpyInfo@@UAEHABVAsciiString@@@Z,,0x0038277F,194,Code/GameEngine/Source/GameNetwork/GameSpy/GameSpyInfo_getPingValue.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?grabHexInt@@YAHPBD@Z,,0x005B9024,49,Code/GameEngine/Source/GameNetwork/GameSpy/GameSpyInfo_getPingValue.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?rva003605D5@Rva003605D5@@QAEHHH@Z,,0x003605D5,14,Code/GameEngine/Source/Common/DamageFXRva003605AF.cpp,matched,sibling of 0x003605AF indexed word load ret 8
