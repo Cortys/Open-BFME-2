@@ -51570,3 +51570,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva003F2739@Rva003F2739@@QAEXW4ScienceType@@@Z,,0x003F2739,19,Code/GameEngine/Source/Common/System/Rva003F2739Push.cpp,matched,vector push_back via rowed 0x002E01C6
 ?rva003F209C@Rva003F209C@@QAEXXZ,,0x003F209C,20,Code/GameEngine/Source/Common/System/Rva003F209CClear.cpp,matched,ScienceType vector clear via rowed erase 0x00532803
 ?rva0020EE29@Rva0020EE29@@QAEXXZ,,0x0020EE29,51,Code/Libraries/Source/WWVegas/WWLib/Rva0020EE29Clear.cpp,matched,clears ptr-vector entries via rowed clear
+?Rva003F325ACopy@@YAPAVRva003F2A11@@PAV1@00@Z,,0x003F325A,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003F325ACopy.cpp,matched,forwards ranges to rowed copy via 5-arg cast
