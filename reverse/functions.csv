@@ -50744,3 +50744,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003BD003Forward@@YAXXZ,,0x003BD003,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BD003Forward.cpp,matched,script forwards to TheTacticalView slot 0x254
 ?rva003FBA58@Rva003FBA58@@QAEXXZ,,0x003FBA58,140,Code/GameEngine/Source/Common/Rva003FBA58.cpp,matched,vtable slot 10 of 0x008747B8 rowed callees BfmeZeroRange
 ?rva007B6E54@@YAXXZ,,0x007B6E54,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk tail-jmp to rowed DynamicVectorClass dtor via g_00DEBE0C
+??0Rva0055BCD2@@QAE@ABV0@@Z,,0x003ADDCD,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADDCDCopy.cpp,matched,copy via rowed base 0x003ADDEC same vptrs as ctor 0x0055BCD2
