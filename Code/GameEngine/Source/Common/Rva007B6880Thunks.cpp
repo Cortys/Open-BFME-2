@@ -2136,3 +2136,14 @@ void __cdecl Rva007B70A0Set()
 	g_00DB620C = &g_00BD23B4;
 }
 
+class ModuleData;
+// g_vec00200D38: packet annotates VA 0x00DDF580 (data RVA 0x009DF580) with extern name in use ?g_vec00200D38@@3V?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@A (vector<const ModuleData*> from Rva00200D38Ctor.cpp). Retail thunk calls BasicStringCharDtor_dup on it; cast preserves bytes.
+extern _STL::vector<const ModuleData *, _STL::allocator<const ModuleData *> > g_vec00200D38;
+
+// ?rva007B6A64@@YAXXZ @ 0x007B6A64 (10B). Global basic_string<char> dtor thunk on vector global address: ecx=&g_vec00200D38 then tail-jmp to rowed BasicStringCharDtor_dup (0x0007FAB3 object ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ). No callers. Between 0x007B6A40 and 0x007B6A5A. Honest address name.
+void __cdecl rva007B6A64()
+{
+	_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > *p = (_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > *)&g_vec00200D38;
+	return p->_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> >::~basic_string();
+}
+

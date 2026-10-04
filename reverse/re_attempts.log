@@ -7416,3 +7416,5 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ??1ImageCollection@@UAE@XZ	0x002D9283	115	partial	no-home unnamed frees via mem not eax; xor-cmp vs test; vtable edx vs eax; push-eax vs push-imm; esi-edi swap t=20 model=map-iterator score=0.95 stash=reverse/attempts/0x002d9283.cpp
 ?rva002D9C07@Rva002D9C07@@QAEEXZ	0x002D9C07	40	blocked	last branch je vs jne true-false placement; tried explicit ifs and DeMorgan and ternary; single-return closest t=15 model=muse-01 (stash 0.93 kept)
 ?rva003ECFBC@Rva003ECFBC@@QAEXXZ	0x003ECFBC	236	blocked	partition query with 6plus callees needs Forward ABI plus BitFlags layout plus array trailing members t=20 model=muse-01
+?rva004ED955@Rva00506909Item@@QAEXPAX@Z	0x004ED955	267	blocked	complex EH virtuals need full layout t=12 model=muse-05
+?rva007B6A50@@YAXXZ	0x007B6A50	10	blocked	static S_uninitialize cannot take ecx in clean CXX t=10 model=muse-05
