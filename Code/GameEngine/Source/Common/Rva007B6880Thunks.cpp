@@ -1065,4 +1065,39 @@ void __cdecl rva007B71A0()
 	return p->DynamicVectorClass<Curve3DClass::KeyClass>::~DynamicVectorClass();
 }
 
+class TextureClass;
+
+template <class T>
+class RefCountPtr
+{
+public:
+	~RefCountPtr();
+};
+
+extern unsigned g_Va00DEC008;
+extern unsigned g_Va00DF2974;
+extern unsigned g_Va00DF297C;
+
+// ?rva007B6E90@@YAXXZ @ 0x007B6E90 (10B). Global RefCountPtr<TextureClass> dtor thunk: ecx=&g_Va00DEC008 then tail-jmp to rowed ??1?$RefCountPtr@VTextureClass@@@@QAE@XZ (0x0017098D).
+void __cdecl rva007B6E90()
+{
+	RefCountPtr<TextureClass> *p = (RefCountPtr<TextureClass> *)&g_Va00DEC008;
+	return p->~RefCountPtr();
+}
+
+// ?rva007B70B5@@YAXXZ @ 0x007B70B5 (10B). Global RefCountPtr<TextureClass> dtor thunk: ecx=&g_Va00DF2974 then tail-jmp to rowed ??1?$RefCountPtr@VTextureClass@@@@QAE@XZ (0x0017098D).
+void __cdecl rva007B70B5()
+{
+	RefCountPtr<TextureClass> *p = (RefCountPtr<TextureClass> *)&g_Va00DF2974;
+	return p->~RefCountPtr();
+}
+
+// ?rva007B70BF@@YAXXZ @ 0x007B70BF (10B). Global RefCountPtr<TextureClass> dtor thunk: ecx=&g_Va00DF297C then tail-jmp to rowed ??1?$RefCountPtr@VTextureClass@@@@QAE@XZ (0x0017098D).
+void __cdecl rva007B70BF()
+{
+	RefCountPtr<TextureClass> *p = (RefCountPtr<TextureClass> *)&g_Va00DF297C;
+	return p->~RefCountPtr();
+}
+
+
 

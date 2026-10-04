@@ -50811,3 +50811,6 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6E5E@@YAXXZ,,0x007B6E5E,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global DynamicVectorClass dtor thunk at 0x007B6E5E
 ?rva007B7190@@YAXXZ,,0x007B7190,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global DynamicVectorClass dtor thunk at 0x007B7190
 ?rva007B71A0@@YAXXZ,,0x007B71A0,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global DynamicVectorClass dtor thunk at 0x007B71A0
+?rva007B6E90@@YAXXZ,,0x007B6E90,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global RefCountPtr<TextureClass> dtor thunk at 0x007B6E90
+?rva007B70B5@@YAXXZ,,0x007B70B5,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global RefCountPtr<TextureClass> dtor thunk at 0x007B70B5
+?rva007B70BF@@YAXXZ,,0x007B70BF,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global RefCountPtr<TextureClass> dtor thunk at 0x007B70BF
