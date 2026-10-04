@@ -51101,3 +51101,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva00414BDBElement@@QAEPAXI@Z,,0x001DE6C5,28,Code/Libraries/Source/WWVegas/WWLib/StlportVectorInsertOverflowRva00414BDB.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??$__destroy_aux@PAURva00414BDBElement@@@_STL@@YAXPAURva00414BDBElement@@0ABU__false_type@0@@Z,,0x001DEEE0,25,Code/Libraries/Source/WWVegas/WWLib/StlportVectorInsertOverflowRva00414BDB.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_G?$vector@URva002BB6BE20Rec@@V?$allocator@URva002BB6BE20Rec@@@_STL@@@_STL@@QAEPAXI@Z,,0x002BBD31,28,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_member20_2bb6be.cpp,matched,unique masked-byte placement (locate.py sweep)
+??_GRva0040AFF3@@QAEPAXI@Z,,0x0040B2E1,28,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B547.cpp,matched,unique masked-byte placement (locate.py sweep)
