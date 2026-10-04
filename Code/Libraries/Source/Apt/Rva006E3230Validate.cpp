@@ -57,6 +57,10 @@ struct Rva006E4B80Inner {
     char _pad[0x28];
     int m_val28;
 };
+class Rva006CFCD0 {
+public:
+    bool isSpriteInstBase() const;
+};
 class AptCIH {
 public:
     virtual void AddRef();
@@ -223,7 +227,7 @@ void Rva006E3230::rva006E4B80(void *pArg1, AptCIH *pCIH, int iArg3, int iArg4)
     rva006E3230(pNext);
     if (pNext != m_pCurrent) {
         ((Rva006E4B80Slot *)m_pEnd)->eActionType = 1;
-        if (!pCIH->rva006CFCD0()) {
+        if (!((const Rva006CFCD0 *)pCIH)->isSpriteInstBase()) {
             g_bfmeAptAssertAtE17734("isSpriteInstBase()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x7d);
             if (g_bfmeAptBreakOnAssertAtDDC01C)
                 __debugbreak();
