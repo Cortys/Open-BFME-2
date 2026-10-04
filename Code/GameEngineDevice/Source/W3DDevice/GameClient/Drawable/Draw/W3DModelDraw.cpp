@@ -2790,23 +2790,8 @@ void W3DModelDraw::setTerrainDecal(TerrainDecalType type)
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?setTerrainDecalSize@W3DModelDraw@@ present-unmatched
-void W3DModelDraw::setTerrainDecalSize(Real x, Real y)
-{
-	if (m_terrainDecal)
-	{
-		m_terrainDecal->setSize(x,y);
-	}
-}
-//-------------------------------------------------------------------------------------------------
-// ?setTerrainDecalOpacity@W3DModelDraw@@ present-unmatched
-void W3DModelDraw::setTerrainDecalOpacity(Real o)
-{
-	if (m_terrainDecal)
-	{
-		m_terrainDecal->setOpacity((Int)(255.0f * o));
-	}
-}
+// setTerrainDecalSize and setTerrainDecalOpacity live in W3DModelDrawTerrainDecal.cpp: retail
+// builds them size-optimised (/O1), which this unit's flags do not reproduce.
 
 
 //-------------------------------------------------------------------------------------------------
