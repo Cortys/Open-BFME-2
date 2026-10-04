@@ -24,10 +24,16 @@
 // Object::getVisionRange 0x0028DDE0, AI::findClosestRepulsor 0x002FDC9A,
 // AIFollowWaypointPathState::getNextWaypoint 0x00340F7C (Zero Hour's: random
 // link of m_currentWaypoint, m_priorWaypoint, goal position).
+// AIPanicState::onEnter, retail 0x0034F505 (293 bytes), and update, retail
+// 0x0034A38E (333 bytes): slots 4 and 6 of the vtable whose slot-2 name getter
+// returns AIPanicState; Zero Hour's bodies on the same layout, with
+// MODELCONDITION_PANICKING at bit 2*32+13 (Object +0x114 mask 0x2000) and
+// BFME 2's "CritterDesync: ComputePath40" log before computePath.
 typedef bool Bool;
 #define NULL 0
 enum ModelConditionFlagType
 {
+	MODELCONDITION_PANICKING = 2 * 32 + 13,
 	MODELCONDITION_BFME_130 = 4 * 32 + 2
 };
 class ModelConditionFlags
@@ -259,6 +265,17 @@ protected:
 	Int m_timer; // +0x6C
 };
 
+class AIPanicState : public AIFollowWaypointPathState
+{
+public:
+	virtual StateReturnType onEnter();
+	virtual StateReturnType update();
+protected:
+	unsigned char m_pad64[0x68 - 0x64];
+	Int m_waitFrames; // +0x68
+	Int m_timer; // +0x6C
+};
+
 //----------------------------------------------------------------------------------------------------------
 StateReturnType AIWanderState::onEnter()
 {
@@ -329,6 +346,91 @@ StateReturnType AIWanderState::update()
 			FprintfTarget *log = (FprintfTarget *)g_00DFEFF0;
 			if (log)
 				fprintf(log, "CritterDesync: ComputePath39");
+		}
+		computePath();
+		return STATE_CONTINUE;
+	}
+	// Never leave this state until told to.
+	return STATE_CONTINUE;
+}
+
+//----------------------------------------------------------------------------------------------------------
+StateReturnType AIPanicState::onEnter()
+{
+	m_currentWaypoint = ((AIStateMachine *)getMachine())->getGoalWaypoint();
+
+	Object *obj = getMachineOwner();
+	AIUpdateInterface *ai = obj->getAI();
+	if (m_currentWaypoint == NULL)
+		return STATE_FAILURE;
+	// set initial movement goal
+	Locomotor* curLoco = ai->getCurLocomotor();
+	if (curLoco && curLoco->getWanderWidthFactor() > 0.0f) {
+		Int delta = REAL_TO_INT_FLOOR(curLoco->getWanderWidthFactor()+0.5f);
+		if (delta<1) delta = 1;
+		m_groupOffset.x = GetGameLogicRandomValue(-delta, delta, AISTATES_FILE, 10797)*PATHFIND_CELL_SIZE;
+		m_groupOffset.y = GetGameLogicRandomValue(-delta, delta, AISTATES_FILE, 10798)*PATHFIND_CELL_SIZE;
+	}
+	computeGoal(false);
+	StateReturnType ret = AIInternalMoveToState::onEnter();
+
+	m_timer = 0;
+	m_waitFrames = 10 + (getMachineOwner()->getID() & 0x7);
+	// Update the extra path distance.   AIInternalMoveToState::onEnter resets it.
+	ai->setPathExtraDistance(calcExtraPathDistance());
+	if (obj)
+	{
+		obj->setModelConditionState(MODELCONDITION_PANICKING);
+	}
+
+	return ret;
+}
+
+//----------------------------------------------------------------------------------------------------------
+StateReturnType AIPanicState::update()
+{
+	// do movement
+	StateReturnType status = AIInternalMoveToState::update();
+
+	Object *obj = getMachineOwner();
+	if (obj->isKindOfCanBeRepulsed()) {
+		m_timer--;
+		if (m_timer<0) {
+			m_timer = m_waitFrames;
+			Object* enemy = TheAI->findClosestRepulsor(getMachineOwner(), obj->getVisionRange());
+			if (enemy) {
+				return STATE_FAILURE;
+			}
+		}
+	}
+
+	// if move to has finished, move to next point on waypoint path
+	if (status == STATE_SUCCESS)
+	{
+		Object *obj = getMachineOwner();
+		AIUpdateInterface *ai = obj->getAI();
+
+		m_currentWaypoint = getNextWaypoint();
+		// if there are no links from this waypoint, we're done
+		if (m_currentWaypoint == NULL)	{
+			/// Trigger "end of waypoint path" scripts (jba)
+			ai->setCompletedWaypoint(m_priorWaypoint);
+			
+			return STATE_SUCCESS;
+		}
+		Locomotor* curLoco = ai->getCurLocomotor();
+		if (curLoco && curLoco->getWanderWidthFactor() > 0.0f) {
+			Int delta = REAL_TO_INT_FLOOR(curLoco->getWanderWidthFactor()+0.5f);
+			if (delta<1) delta = 1;
+			m_groupOffset.x = GetGameLogicRandomValue(-delta, delta, AISTATES_FILE, 10851)*PATHFIND_CELL_SIZE;
+			m_groupOffset.y = GetGameLogicRandomValue(-delta, delta, AISTATES_FILE, 10852)*PATHFIND_CELL_SIZE;
+		}
+		computeGoal(false);
+		if (g_00E03745)
+		{
+			FprintfTarget *log = (FprintfTarget *)g_00DFEFF0;
+			if (log)
+				fprintf(log, "CritterDesync: ComputePath40");
 		}
 		computePath();
 		return STATE_CONTINUE;
