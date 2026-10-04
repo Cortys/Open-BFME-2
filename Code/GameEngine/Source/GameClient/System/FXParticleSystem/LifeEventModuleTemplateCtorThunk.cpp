@@ -54,6 +54,7 @@ class LifeEventModuleTemplate : public CategoryModuleTemplate<8>, public LifeEve
 {
 public:
     LifeEventModuleTemplate();
+    virtual ~LifeEventModuleTemplate();
 };
 
 // ??0LifeEventModuleTemplate@FXParticleSystem@@QAE@XZ @0x3A999C
