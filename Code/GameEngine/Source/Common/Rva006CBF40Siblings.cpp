@@ -31,7 +31,9 @@ public:
 };
 
 extern Rva006DB270 *g_pChainBlockAllocator;   // 0x00E176E8
-extern Rva006D2A60 *g_pChainBlockAllocatorF4; // 0x00E176F4
+// 0x00E176F4, zero-filled .bss (4 bytes); defined here, the first of its
+// referencing units in link order.
+Rva006D2A60 *g_pChainBlockAllocatorF4 = 0;
 
 
 class Rva006CBF40 : public Rva006DE350

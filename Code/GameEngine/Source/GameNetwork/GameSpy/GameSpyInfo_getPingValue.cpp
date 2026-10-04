@@ -49,7 +49,9 @@ public:
 	virtual Int getPingTimeoutInMs() = 0;
 };
 
-extern GameSpyConfigInterface *TheGameSpyConfig;
+// TheGameSpyConfig: matched references place it at VA 0x00E05FB4 (zero-filled
+// .bss, 4 bytes; data_xrefs: read/write by 35 functions, this unit among them).
+GameSpyConfigInterface *TheGameSpyConfig = 0;
 
 // upstream layout: inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork/GameSpy/PeerDefsImplementation.h
 class GameSpyInfo

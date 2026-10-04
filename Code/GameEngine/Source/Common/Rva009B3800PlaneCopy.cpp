@@ -65,8 +65,17 @@ int g_rva011428E8[142] = {
 	3, 3, 3, 3, 3, 0,
 };
 extern Rva009B3800Setup g_rva01356E64;
-extern Rva009B3800Filter g_rva01356E84;
-extern Rva009B3800Filter g_rva01356EC4;
+// The two filters are slots 9 (VA 0x00E22FA0) and 25 (VA 0x00E22FE0) of the
+// codec dispatch table at VA 0x00E22F7C that bfmeInstallCpuDispatchTable
+// (BfmeCodecCpuDispatch.cpp) defines and fills.
+typedef void (__cdecl *BfmeDispatchFn)();
+struct BfmeCodecDispatchTable
+{
+	BfmeDispatchFn slot[26];
+};
+extern BfmeCodecDispatchTable g_bfmeCodecDispatch;
+#define g_rva01356E84 (*(Rva009B3800Filter *)&g_bfmeCodecDispatch.slot[9])
+#define g_rva01356EC4 (*(Rva009B3800Filter *)&g_bfmeCodecDispatch.slot[25])
 
 void __cdecl Rva009B3800PlaneCopy(
 	Rva009B3800Context *ctx, int sourceOffset, int destinationOffset)

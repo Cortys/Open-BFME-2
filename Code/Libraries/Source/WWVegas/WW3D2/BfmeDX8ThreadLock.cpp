@@ -76,11 +76,13 @@ void * bfmeDX8DeviceMutex;
 unsigned char bfmeDX8DeviceSection[24] = { 0 };
 // Volatile like the count: the try-lock stores the owner before it reads the
 // count, where a plain store is scheduled after the volatile read.
-extern volatile unsigned long bfmeDX8DeviceOwner;		// 0x00DEDA88
+// Defined here (zero-filled .bss, 4 bytes); this unit's lock/unlock pair are
+// among its referencing functions (data_xrefs).
+volatile unsigned long bfmeDX8DeviceOwner = 0;		// 0x00DEDA88
 // Volatile: retail loads, adds and stores the count as three instructions
 // with the next push scheduled between them, where a plain int is a single
 // add to memory.
-extern volatile int bfmeDX8DeviceRecursion;			// 0x00DEDA8C
+volatile int bfmeDX8DeviceRecursion = 0;			// 0x00DEDA8C
 
 void BFME_DX8_Thread_Lock(void)
 {

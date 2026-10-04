@@ -29,6 +29,11 @@ private:
 	static Factory *resIf;
 };
 
+// Zero-filled .bss at 0x00E0C634 / 0x00E0C630; this function is their only
+// referencing code (data_xrefs).
+unsigned ProfileCmdInterface::numResIf;
+ProfileCmdInterface::Factory *ProfileCmdInterface::resIf;
+
 // ?AddResultFunction@ProfileCmdInterface@@SAXP6APAVProfileResultInterface@@HPBQBD@ZPBD2@Z
 void ProfileCmdInterface::AddResultFunction(ProfileResultInterface *(*func)(int, const char *const *),
 	const char *name, const char *arg)
