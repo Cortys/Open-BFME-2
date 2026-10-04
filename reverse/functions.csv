@@ -52418,3 +52418,6 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ??0Rva007B1380@@QAE@XZ,,0x00109D8C,26,Code/GameEngine/Source/Common/Rva007B1380Ctor.cpp,matched,BFME1 donor Rva007B1380Ctor.cpp at /Os
 ?Rva003B70F0@@YAXPAVRva003B70F0Owner@@PAVGenForwardedArg@@@Z,,0x004E148C,17,Code/GameEngine/Source/Common/S2SubobjectArgForwarders.cpp,matched,BFME1 donor S2SubobjectArgForwarders.cpp at /Os
 ?Rva003B7140@@YAXPAVRva003B7140Owner@@PAVGenForwardedArg@@@Z,,0x004E14BC,17,Code/GameEngine/Source/Common/S2SubobjectArgForwarders.cpp,matched,BFME1 donor S2SubobjectArgForwarders.cpp at /Os
+?hand@T1Fwd_005C98A0@@QAEPAXPAXPAVT1Sink_005C8D40@@@Z,,0x001F948C,17,Code/GameEngine/Source/Common/T1ReceiverSwappingThunks.cpp,matched,BFME1 donor T1ReceiverSwappingThunks.cpp at /Os
+?u4Guarded0060C2C0@@YGXPAVU4Target0060C2C0@@PAX@Z,,0x003F935A,20,Code/GameEngine/Source/Common/U4GlobalGuardedNotifies.cpp,matched,BFME1 donor U4GlobalGuardedNotifies.cpp at /Os
+?u1Insert_005C6350@@YAPAVU1Sink@@PAV1@PBVU1Box@@@Z,,0x001F67FF,20,Code/GameEngine/Source/Common/U1SinkInserters.cpp,matched,BFME1 donor U1SinkInserters.cpp at /Os

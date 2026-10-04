@@ -8264,3 +8264,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?j_00025cca@@YAXXZ,0x001F8437,thunk callee of ?find@Rva006AD590Entry@@QAEPATRva006AD590Slot@@H@Z at retail 0x00059238 read from its REL32 displacement; donor-carried name; ghidra FUN_005f8437 78B body unrowed
 ??0Rva007B12F0Base@@QAE@XZ,0x000EFA4E,base DEFAULT ctor callee of ??0Rva007B1380@@QAE@XZ at retail 0x00109D8C read from its REL32 displacement; body unrowed
 ?take@Rva005045C6@@QAEXPAVGenForwardedArg@@@Z,0x005045C6,sub-object member callee of the S2 arg forwarders at retail 0x004E148C and 0x004E14BC read from their REL32 displacements; same body as the matched ?rva005045C6@Rva005045C6@@QAEXABVRva00064640Record@@@Z
+?accept@T1Sink_005C8D40@@QAEPAXPAX0@Z,0x001F8A38,sink member callee of ?hand@T1Fwd_005C98A0@@QAEPAXPAXPAVT1Sink_005C8D40@@@Z at retail 0x001F948C read from its REL32 displacement; body unrowed
+?hand@U4Target0060C2C0@@QAEXPAX@Z,0x003FC149,target member callee of ?u4Guarded0060C2C0@@YGXPAVU4Target0060C2C0@@PAX@Z at retail 0x003F935A read from its REL32 displacement; body unrowed
+?add@U1Sink@@QAEXPBD@Z,0x001F5F65,sink member callee of ?u1Insert_005C6350@@YAPAVU1Sink@@PAV1@PBVU1Box@@@Z at retail 0x001F67FF read from its REL32 displacement; same body as the matched STLport narrow-ostream ?_M_put_nowiden@?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@QAEXPBD@Z
