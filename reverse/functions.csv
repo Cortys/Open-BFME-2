@@ -52256,3 +52256,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva00580182@Rva00580172@@QAEXH@Z,,0x00580182,62,Code/GameEngine/Source/GameNetwork/Rva00580172.cpp,matched,same class history or-compare flags inc18
 ?rva003C09DA@ScriptActions@@IAEXABVAsciiString@@0@Z,,0x003C09DA,84,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C09DA.cpp,matched,two team lookups plus armor map remove
 ?rva003C0A2E@ScriptActions@@IAEXABVAsciiString@@@Z,,0x003C0A2E,61,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0A2E.cpp,matched,single team lookup plus two armor removes
+?Rva003E92B2Check@@YG_NPAVParameter@@@Z,,0x003E92B2,45,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E92B2.cpp,matched,ret4 stdcall Parameter+0x10 ringheroes via rowed compareNoCase then TheGameInfo null or +0x68==1

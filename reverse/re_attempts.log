@@ -7386,3 +7386,12 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva00291837@Object@@QAE_NXZ	0x00291837	60	partial	esi-edi swap cmdSet vs loop index t=12 model=muse-10 score=0.9 stash=reverse/attempts/0x00291837.cpp
 ?rva004D3942@Rva004D3942@@QAEXPAVConnectionManager@@@Z	0x004D3942	156	partial	extra xor eax eax before mov al1 for mask plus import IAT t=25 model=muse-16 score=0.98 stash=reverse/attempts/0x004d3942.cpp
 ?rva003A2CA5@Rva003A2CA5@@QAEXPAVTeam@@@Z	0x003A2CA5	70	blocked	loop with hoisted indirect get plus lea base t=10 model=muse-03
+?rva002812BF@Rva0062AF7@@UAEPAXPBXABVAsciiString@@@Z	0x002812BF	299	blocked	frame allocator wall ours 331B vs 299B 16 regions temps at positive offsets flag dword vs byte prologue mismatch t=12 model=muse-12
+?rva002813EA@Rva0062AF7@@UAEPAXABVAsciiString@@@Z	0x002813EA	261	blocked	EH handler 0x0077396C unclaimed mov eax immediate cannot match until funclet rowed t=5 model=muse-12
+?rva00281AED@Rva00281AED@@QAE_NPBVObject@@@Z	0x00281AED	266	blocked	frame wall ebp holds arg yet ebp-relative scratch plus leave cannot reproduce with natural Cxx possible boundary issue t=12 model=muse-12
+?Rva003E992CGet@@YAEPAVParameter@@PAX@Z	0x003E992C	243	blocked	EH handler 0x007834D3 unclaimed mov eax immediate cannot match until funclet rowed t=5 model=muse-12
+?Rva003E9A1FGet@@YAEPAXPAX@Z	0x003E9A1F	331	blocked	EH handler 0x007834E5 unclaimed mov eax immediate cannot match until funclet rowed t=5 model=muse-12
+?Rva003E96F5Check@@YG_NPAVParameter@@0@Z	0x003E96F5	137	partial	two null-check branch directions swapped plus ScriptEngine reload missing plus push edi placement t=20 model=muse-12 score=0.93 stash=reverse/attempts/0x003e96f5.cpp
+?evaluateNamedUnitRankLevel@ScriptConditions@@IAE_NPAVParameter@@0@Z	0x003E92DF	148	partial	shared xor+epilogue sinks below rank-load so second null-check is jne-forward not je-backward t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x003e92df.cpp
+?Rva003E9B6ACheck@@YG_NPAUCond003E9B6A@@PAVParameter@@@Z	0x003E9B6A	209	blocked	no donor no name; GameEngine 0x58 plus InGameUI 0x120/0x124 plus Cond 0x44/0x48 cache plus list walk with dead-arg slot reuse for found; first shape 12 regions t=15 model=muse-spark
+?Rva003E92B2Check@@YG_NPAVParameter@@@Z	0x003E92B2	45	partial	size-exact 45B but early jne-to-end vs je-inline and cmp-vs-movdec for ==1 t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x003e92b2.cpp
