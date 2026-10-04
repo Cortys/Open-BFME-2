@@ -45,3 +45,31 @@ Rva00360474::~Rva00360474()
 	m_C = 0;
 	m_30 = 0;
 }
+
+// ??0Rva00360243@@QAE@XZ, retail 0x00360243, 57 bytes.
+// Sibling of 0x00360474 with vtable 0x00816778 and one more member +0x34.
+// Evidence: unlock lane, same base ctor 0x001DBAA4, caller 0x003602BA.
+class Rva00360243 : public Rva001DBAA4
+{
+public:
+	Rva00360243();
+
+private:
+	int m_10;
+	int m_14;
+	char m_pad[16];
+	float m_28;
+	int m_2c;
+	int m_30;
+	int m_34;
+};
+
+Rva00360243::Rva00360243() : m_10(0), m_14(30), m_2c(-1)
+{
+	m_4 = 30;
+	m_C = 0;
+	m_28 = 0.0f;
+	m_9 = true;
+	m_30 = 0;
+	m_34 = 0;
+}
