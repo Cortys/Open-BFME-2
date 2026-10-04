@@ -180,40 +180,7 @@ W3DDisplayString::~W3DDisplayString( void )
 	* class so that we can write our own code here to to appropriate things
 	* on the changing of string data */
 //=============================================================================
-// ?notifyTextChanged@W3DDisplayString@@UAEXXZ present-unmatched
-void W3DDisplayString::notifyTextChanged( void )
-{
-
-	// extend functionality
-	DisplayString::notifyTextChanged();
-	if(TheGlobalLanguageData)
-	{
-		if(reinterpret_cast<GlobalLanguageDataBFMERetail *>(TheGlobalLanguageData)->m_useHardWrap == TRUE)
-		{	
-			m_textRenderer.Set_Use_Hard_Word_Wrap(true);
-			m_textRendererHotKey.Set_Use_Hard_Word_Wrap(true);
-		}
-		else
-		{	
-			m_textRenderer.Set_Use_Hard_Word_Wrap(false);
-			m_textRendererHotKey.Set_Use_Hard_Word_Wrap(false);
-		}
-	}
-
-	// get our new text extents
-	computeExtents();
-
-	//
-	// set a flag so that if it comes that we need to render this string
-	// we know we must first build the sentence
-	//
-	m_textChanged = TRUE;
-
-	// reset data for our text renderer
-	m_textRenderer.Reset();
-	m_textRendererHotKey.Reset();
-
-}  // end notifyTextChanged
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringWordWrap.cpp
 
 // W3DDisplayString::Draw =====================================================
 /** Draw the text at the specified location in in the specified colors
@@ -450,13 +417,7 @@ void W3DDisplayString::computeExtents( void )
 // W3DDisplayString::setWordWrap ===========================================
 /** Set the wordwrap of the m_textRenderer */
 //=============================================================================
-// ?setWordWrap@W3DDisplayString@@UAEXH@Z present-unmatched
-void W3DDisplayString::setWordWrap( Int wordWrap )
-{
-	// set the Word Wrap
-	if(m_textRenderer.Set_Wrapping_Width(wordWrap))
-		notifyTextChanged();
-}// void setWordWrap( Int wordWrap )
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringWordWrap.cpp
 
 // ?setUseHotkey@W3DDisplayString@@UAEX_NH@Z present-unmatched
 void W3DDisplayString::setUseHotkey( Bool useHotkey, Color hotKeyColor )
