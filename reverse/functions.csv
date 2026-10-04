@@ -52358,3 +52358,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva004C2095@Rva004C2095@@QAE_NXZ,,0x004C2095,37,Code/GameEngine/Source/Common/Rva004C2095Method.cpp,matched,unlock lane honest thiscall bool chain 8-274-250 slot 7c 2 callers
 ?getShroudStatusForPlayer@Object@@QBE?AW4CellShroudStatus@@H@Z,,0x0028D2A2,35,Code/GameEngine/Source/GameLogic/Object/ObjectGetShroudStatusForPlayer.cpp,matched,pinned name packet layout from retail PartitionData tailcall
 ?rva0059781D@Rva0059781D@@QAEXXZ,,0x0059781D,208,Code/GameEngine/Source/GameLogic/Object/Die/Rva0059781D.cpp,matched,prune two vectors via findObjectByID and slot0 delete caller 0x00597FC5
+?rva00091189@Rva00091189@@QAEXXZ,,0x00091189,109,Code/GameEngine/Source/Common/Rva00091189Update.cpp,matched,VP6 poll via Rva007E3410Object BfmeB996Range timeGetTime
