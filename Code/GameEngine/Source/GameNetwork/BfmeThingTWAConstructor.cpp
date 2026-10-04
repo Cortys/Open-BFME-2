@@ -6,15 +6,16 @@
 // Rva00808CB0LanGameEntry view. Ordinary constructors explain the interleaved
 // vtable stores and ECX setup; no volatile fields or hand-written vptrs.
 // cl: /O2 /GX-
-class Rva007E86B0Base {
+class PrototypeClass {
 public:
- Rva007E86B0Base();
- virtual ~Rva007E86B0Base();
+ PrototypeClass();
+ virtual ~PrototypeClass();
  int field04;
 };
-class Rva00808CB0LanGameEntry : public Rva007E86B0Base {
+class Rva00808CB0LanGameEntry : public PrototypeClass {
 public:
   Rva00808CB0LanGameEntry() { field08=0; field0c=0; field04=0; }
+  ~Rva00808CB0LanGameEntry();
   int field08, field0c;
 };
 class Rva00803080 {
