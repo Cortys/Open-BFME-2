@@ -7385,3 +7385,4 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z	0x0039E303	197	blocked	cur in eax plus esi backup and mask in edi vs retail esi plus edx plus late push esi edi vs early push t=20 model=muse-17 (stash 0.98 kept)
 ?rva00291837@Object@@QAE_NXZ	0x00291837	60	partial	esi-edi swap cmdSet vs loop index t=12 model=muse-10 score=0.9 stash=reverse/attempts/0x00291837.cpp
 ?rva004D3942@Rva004D3942@@QAEXPAVConnectionManager@@@Z	0x004D3942	156	partial	extra xor eax eax before mov al1 for mask plus import IAT t=25 model=muse-16 score=0.98 stash=reverse/attempts/0x004d3942.cpp
+?rva003A2CA5@Rva003A2CA5@@QAEXPAVTeam@@@Z	0x003A2CA5	70	blocked	loop with hoisted indirect get plus lea base t=10 model=muse-03
