@@ -51141,3 +51141,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?sendPlayerDestruct@DisconnectManager@@IAEXHPAVConnectionManager@@@Z,,0x004D3AE2,129,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?turnOnScreen@DisconnectManager@@IAEXPAVConnectionManager@@@Z,,0x004D4176,61,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?playerHasAdvancedAFrame@DisconnectManager@@QAEXHI@Z,,0x004D3BB5,34,Code/GameEngine/Source/GameNetwork/DisconnectManagerO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?rva00507943@Made002CC5E1@@UAE_NPBXH@Z,,0x00507943,21,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Rva00507991.cpp,matched,slot 2 of vtable 0x00864048 and eleven more nugget vtables (ICF): base slot-2 test 0x0050774A as bool
+?rva0050797D@Made002CC5E1@@UAEXPAX0@Z,,0x0050797D,20,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Rva00507991.cpp,matched,slot 3 of vtables 0x00864048/0x00864C38/0x008650B8: slot 4 with second arg +0x38
