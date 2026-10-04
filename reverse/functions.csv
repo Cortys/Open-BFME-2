@@ -51146,3 +51146,18 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?readWrapperMessage@NetPacket@@KAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E0E2,299,Code/GameEngine/Source/GameNetwork/NetPacketO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Rva00334DDFObjectDescribe@@YAHPAUlua_State@@@Z,,0x00334DDF,114,Code/GameEngine/Source/GameLogic/ScriptEngine/LuaScriptBindingsLuaAO1.cpp,matched,BFME1 donor LuaScriptBindingsLuaA.cpp at /O1; unique masked placement
 ?ObjectDispatchEvent@@YAHPAUlua_State@@@Z,,0x0033594A,279,Code/GameEngine/Source/GameLogic/ScriptEngine/LuaScriptBindingsLuaAO1.cpp,matched,BFME1 donor LuaScriptBindingsLuaA.cpp at /O1; unique masked placement
+??_GRva0022E0E5@@UAEPAXI@Z,,0x001B4D63,28,Code/GameEngine/Source/Common/Rva0022E0E5Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BD7678; calls pinned dtor 0x001B4D16
+??_GAudioManager@@UAEPAXI@Z,,0x001DC7C5,28,Code/GameEngine/Source/GameLogic/Object/AudioManagerCtor001DCBC3.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BDBC30; calls pinned dtor 0x001DC6E4
+??_GRva001E2747@@UAEPAXI@Z,,0x001E2952,28,Code/GameEngine/Source/GameClient/FXListRva001E2747Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BDD970; calls pinned dtor 0x001E27C6
+??_GRva001E7087@@MAEPAXI@Z,,0x001E8F03,28,Code/GameEngine/Source/GameLogic/Object/Rva001E7087Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BDE950; calls pinned dtor 0x001E86D0
+??_GRva001F092A@@UAEPAXI@Z,,0x001F0BEF,28,Code/GameEngine/Source/GameLogic/Object/Rva001F092ACtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BE100C; calls pinned dtor 0x001F0996
+??_GRva0022CA74@@MAEPAXI@Z,,0x0020030F,28,Code/GameEngine/Source/Common/Rva0022CA74Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BE2704; calls pinned dtor 0x00200280
+??_GRva002048A2@@UAEPAXI@Z,,0x00204968,28,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002048A2Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BE3AB4; calls pinned dtor 0x002048EC
+??_GRva0022CA95@@MAEPAXI@Z,,0x00214A6E,28,Code/GameEngine/Source/Common/Rva0022CA95Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BE5348; calls pinned dtor 0x002149AA
+??_GRva00222061@@UAEPAXI@Z,,0x002220C0,28,Code/GameEngine/Source/Common/Rva00222061Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BE6C3C; calls pinned dtor 0x00221FFA
+??_GRva0022DE6B@@MAEPAXI@Z,,0x0022DE8C,28,Code/GameEngine/Source/GameClient/Rva0022DE6BCtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BE7698; calls pinned dtor 0x00414166
+??_GRva00289ABD@@UAEPAXI@Z,,0x00289E96,28,Code/GameEngine/Source/Common/Rva00289ABDCtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BFB8F4; calls pinned dtor 0x00289D7A
+??_GRva002B644A@@EAEPAXI@Z,,0x002B647C,28,Code/GameEngine/Source/Common/Rva002B644ACtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00BFE280; calls pinned dtor 0x004FC05C
+??_GRva002DAB18@@UAEPAXI@Z,,0x002DABBB,28,Code/GameEngine/Source/Common/Rva002DAB18Finish.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C03910; calls pinned dtor 0x002DAB6C
+??_GAIAttackState@@UAEPAXI@Z,,0x0034F73C,28,Code/GameEngine/Source/GameLogic/AI/Rva0034B0DDFinish.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C13B78; calls pinned dtor 0x0034B178
+??_GRva0035CAD6@@UAEPAXI@Z,,0x0035CBE2,28,Code/GameEngine/Source/Common/System/Rva0035CAD6Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C1635C; calls pinned dtor 0x0035CB07

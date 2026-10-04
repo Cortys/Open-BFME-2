@@ -7646,3 +7646,18 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?invoke@BfmeCallJ63@@QAEPAXPAX@Z,0x00333918,address read from the REL32 displacement at a placed body
 ?invoke@BfmeObjectEventDispatch@@QAEXPAX0PAUBfmeDelayedLuaEventList@@@Z,0x00334634,address read from the REL32 displacement at a placed body
 ??1BfmeDelayedLuaEventList@@QAE@XZ,0x000B6DD2,address read from the REL32 displacement at a placed body
+??1Rva0022E0E5@@UAE@XZ,0x001B4D16,dtor installs its own vftable 0x00BD7678 (bytes at ++20) and is the REL32 callee of the slot-0 ??_G at 0x001B4D63
+??1AudioManager@@UAE@XZ,0x001DC6E4,dtor installs its own vftable 0x00BDBC30 (bytes at ++23) and is the REL32 callee of the slot-0 ??_G at 0x001DC7C5
+??1Rva001E2747@@UAE@XZ,0x001E27C6,dtor installs its own vftable 0x00BDD970 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x001E2952
+??1Rva001E7087@@MAE@XZ,0x001E86D0,dtor installs its own vftable 0x00BDE950 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x001E8F03
+??1Rva001F092A@@UAE@XZ,0x001F0996,dtor installs its own vftable 0x00BE100C (bytes at ++23) and is the REL32 callee of the slot-0 ??_G at 0x001F0BEF
+??1Rva0022CA74@@MAE@XZ,0x00200280,dtor installs its own vftable 0x00BE2704 (bytes at ++21) and is the REL32 callee of the slot-0 ??_G at 0x0020030F
+??1Rva002048A2@@UAE@XZ,0x002048EC,dtor installs its own vftable 0x00BE3AB4 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x00204968
+??1Rva0022CA95@@MAE@XZ,0x002149AA,dtor installs its own vftable 0x00BE5348 (bytes at ++21) and is the REL32 callee of the slot-0 ??_G at 0x00214A6E
+??1Rva00222061@@UAE@XZ,0x00221FFA,dtor installs its own vftable 0x00BE6C3C (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x002220C0
+??1Rva0022DE6B@@MAE@XZ,0x00414166,dtor installs its own vftable 0x00BE7698 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x0022DE8C
+??1Rva00289ABD@@UAE@XZ,0x00289D7A,dtor installs its own vftable 0x00BFB8F4 (bytes at ++22) and is the REL32 callee of the slot-0 ??_G at 0x00289E96
+??1Rva002B644A@@EAE@XZ,0x004FC05C,dtor installs its own vftable 0x00BFE280 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x002B647C
+??1Rva002DAB18@@UAE@XZ,0x002DAB6C,dtor installs its own vftable 0x00C03910 (bytes at ++23) and is the REL32 callee of the slot-0 ??_G at 0x002DABBB
+??1AIAttackState@@UAE@XZ,0x0034B178,dtor installs its own vftable 0x00C13B78 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x0034F73C
+??1Rva0035CAD6@@UAE@XZ,0x0035CB07,dtor installs its own vftable 0x00C1635C (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x0035CBE2
