@@ -272,6 +272,26 @@ def check_object(obj, index, truth, source=None):
                                        common_names=common)}
 
 
+def new_variants(obj, index, truth):
+    """COMDAT copies `obj` adds that can only hurt the link: a body no census
+    object has yet that either splits a name every census object shares one
+    copy of, or is proven not retail's (the ledger owns that name elsewhere).
+    Copies proven retail's never count. A new file can be judged on this
+    without its link position; three donor ports each adding a wrong
+    AsciiString::compare(const AsciiString&) re-blocked 56 linking units."""
+    copies, _, _, _ = link_census.object_facts(obj, truth)
+    found = []
+    for name, digest, _, verdict in copies:
+        if verdict == "retail":
+            continue
+        existing = {d for i, d, _ in index["comdat"].get(name, ()) if index["objects"][i] != obj.name}
+        if digest in existing:
+            continue  # an identical copy is already linked: nothing new
+        if len(existing) == 1 or verdict == "wrong":
+            found.append(name)
+    return found
+
+
 def wrong_selected(obj, fact, own, position, index, *, common_names=()):
     """Names this object defines or references whose kept definition is proven
     not retail's, judged as the census judges them (link_census.judge_selected)
@@ -401,8 +421,25 @@ def main(argv=None):
                     help="first recompile every stale ledger object and replace its census definitions")
     ap.add_argument("--census-only", action="store_true",
                     help="check against the census's definitions of the given files, not their current objects")
+    ap.add_argument("--new-variants", action="store_true",
+                    help="with --staged or paths: refuse only a unit adding a second body for a COMDAT "
+                         "every census object agrees on (works for units the census has not seen)")
     args = ap.parse_args(argv)
     paths = staged() if args.staged else args.paths
+    if args.new_variants:
+        if not paths:
+            return 0
+        if not INDEX.exists():
+            print("link_check: no census index; --new-variants skipped", file=sys.stderr)
+            return 0
+        index, truth = load_index(), link_census.RetailTruth(link_census.ledger())
+        bad = 0
+        for source, obj in (resolve(path, index) for path in paths):
+            for name in new_variants(obj, index, truth):
+                print(f"  {source}: emits its own body for {name}, which every census object shares "
+                      "one copy of: include the shared header (or keep it out of line)", file=sys.stderr)
+                bad = 1
+        return bad
     if not paths:
         print("link_check: nothing to check")
         return 0
