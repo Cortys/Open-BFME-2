@@ -51569,3 +51569,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??$_M_allocate_and_copy@PAVLivingWorldRegionConnection@@@?$vector@UBfmeStringRecord000B9534@@V?$allocator@UBfmeStringRecord000B9534@@@_STL@@@_STL@@IAEPAUBfmeStringRecord000B9534@@IPAVLivingWorldRegionConnection@@0@Z,,0x003F2CD6,45,Code/GameEngine/Source/Common/System/Rva003F2CD6.cpp,matched,unlock lane 24B allocate-and-copy via rowed allocator and Living copy
 ?rva003F2739@Rva003F2739@@QAEXW4ScienceType@@@Z,,0x003F2739,19,Code/GameEngine/Source/Common/System/Rva003F2739Push.cpp,matched,vector push_back via rowed 0x002E01C6
 ?rva003F209C@Rva003F209C@@QAEXXZ,,0x003F209C,20,Code/GameEngine/Source/Common/System/Rva003F209CClear.cpp,matched,ScienceType vector clear via rowed erase 0x00532803
+?rva0020EE29@Rva0020EE29@@QAEXXZ,,0x0020EE29,51,Code/Libraries/Source/WWVegas/WWLib/Rva0020EE29Clear.cpp,matched,clears ptr-vector entries via rowed clear
