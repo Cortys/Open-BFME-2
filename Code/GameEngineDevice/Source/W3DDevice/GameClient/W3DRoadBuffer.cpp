@@ -3097,6 +3097,7 @@ void W3DRoadBuffer::updateLighting(void)
 //=============================================================================
 /** Sets the flag to reload the vertex buffer. */
 //=============================================================================
+// ?updateCenter@W3DRoadBuffer@@QAEXXZ present-unmatched
 void W3DRoadBuffer::updateCenter(void)
 {
 	m_updateBuffers = true;
