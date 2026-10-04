@@ -51557,3 +51557,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?xfer@AIExitState@@MAEXPAVXfer@@@Z,,0x00341ACD,68,Code/GameEngine/Source/GameLogic/AI/AIStatesXfer.cpp,matched,ZH AIStates.cpp AIExitState::xfer: Version(1 2); m_entryToClear +0x20; v2 Bool +0x24; identical body serves AIExitAndMoveToState and AIExitAndFollowPathState
 ?bfmeGo982C@@YAXPAVBfmeT982@@@Z,,0x000AA87E,48,Code/GameEngine/Source/Common/BfmeConv982.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?adjustPower@Energy@@QAEXH_N@Z,,0x004DF1D8,47,Code/GameEngine/Source/Common/RTS/EnergyAdjustPower.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Rva0010EF61@@QAE@ABVRva0036CA00Str@@MH@Z,,0x0010EF61,42,Code/GameEngine/Source/Common/Rva0010EF61Ctor.cpp,matched,float plus int ctor same base vtable 0xBCFA94 callers 0x0010FEB6 0x00110056
