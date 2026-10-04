@@ -1,5 +1,3 @@
-// ?rva000A8B79@Rva000A8B6D@@QAEXPAVRva000A8C2BObj@@@Z
-// partial score=0.97 date=2026-10-01
 // cl: /O1 /MD /arch:SSE
 // ?rva000A8B6D@Rva000A8B6D@@QAEXXZ @0x000A8B6D 12B.
 // ?rva000A8B79@Rva000A8B6D@@QAEXPAVRva000A8C2BObj@@@Z @0x000A8B79 178B chain.
@@ -19,6 +17,7 @@ class Rva0010F110
 {
 public:
     void rva0010F110();
+    HSTREAM volatile_stream08() { return *(HSTREAM volatile *)&m_stream08; }
 public:
     char m_pad0[8];
     HSTREAM m_stream08;
@@ -85,7 +84,6 @@ void Rva000A8B6D::rva000A8B6D()
         m_ptr->rva0010F110();
 }
 
-// ?rva000A8B79@Rva000A8B6D@@QAEXPAVRva000A8C2BObj@@@Z present-unmatched
 void Rva000A8B6D::rva000A8B79(Rva000A8C2BObj *obj)
 {
     TwoBytes t;
@@ -97,7 +95,7 @@ void Rva000A8B6D::rva000A8B79(Rva000A8C2BObj *obj)
     int loops;
     int field;
     if (m_ptr != 0 && m_ptr->m_stream08 != 0) {
-        HSTREAM stream = m_ptr->m_stream08;
+        HSTREAM stream = m_ptr->volatile_stream08();
         long total;
         long current;
         AIL_stream_ms_position(stream, &total, &current);
