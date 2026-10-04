@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
+// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii
 // stlport
 //
 // The 0x2C-byte elements the skirmish-AI object Rva00506B74 owns in its +0x0C
@@ -17,7 +17,14 @@
 //               TheSkirmishAIManager's +0x864 list
 //   0x005ADC63  update: retire the +0x28 object once done (0x004E9378), or
 //               start one (0x005ADAB2); then update every item
+//   0x005AE0AD  xfer: index, point, angle, the base template by name, the
+//               items, then the +0x28 order
+//
+// The assert path these bodies share with 0x005ADCBE names the retail file
+// GameLogic/SkirmishAI/AIBaseBuilder/AIBase.cpp; the templates come from
+// TheBaseTemplateLibrary (0x00A03124).
 #include <vector>
+#include "ascii_string.h"
 
 struct Coord3DBase
 {
@@ -33,12 +40,104 @@ struct Coord3D : public Coord3DBase
 
 class Rva005AD9C0Hit;
 
+// BFME2's Xfer: operator== overloads, grouped by cl at the first overload
+// slot in reverse declaration order (Rva004E0513Xfer.cpp has the same view).
+class AsciiString;
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class Coord2D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+class Snapshot;
+
+class Xfer
+{
+public:
+	class Version;
+
+	Xfer();
+	virtual ~Xfer();
+
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
+class Xfer::Version
+{
+public:
+	Version(unsigned char current, unsigned char minimum)
+		: m_current(current), m_minimum(minimum) {}
+
+	unsigned char m_current;
+	unsigned char m_minimum;
+};
+
+
 class Rva005DCE08
 {
 public:
 	~Rva005DCE08();
 	Rva005AD9C0Hit *rva005DCC86(void *arg);
 	void rva005DCCFB();
+	void rva005DCEAD(Xfer *xfer);
+};
+
+class Rva005DCDD9
+{
+public:
+	Rva005DCDD9(int index, int owner);
+private:
+	char m_data[0x18];
 };
 
 class Rva004E9378
@@ -75,7 +174,43 @@ class Rva005ADA40Owned
 {
 public:
 	virtual ~Rva005ADA40Owned();
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void xfer(Xfer *xfer, void *owner);	// slot 12
 };
+
+class Rva00573E7C : public Rva005ADA40Owned
+{
+public:
+	Rva00573E7C();
+private:
+	char m_data[0x60 - 4];
+};
+
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0
+};
+
+class NameKeyGenerator
+{
+public:
+	NameKeyType nameToKey(const AsciiString &name);
+	const AsciiString &keyToName(NameKeyType key);
+};
+extern NameKeyGenerator *TheNameKeyGenerator;
+
+class Rva0041E912Template;
+
+// TheBaseTemplateLibrary (registered at 0x0022F9C0, global 0x00A03124)
+class Rva0022BD9ASubsystem
+{
+public:
+	Rva0041E912Template *rva0041E764(NameKeyType key);
+	NameKeyType rva0041E971(Rva0041E912Template *tmpl);
+};
+extern Rva0022BD9ASubsystem *g_00E03124;
 
 class Rva005ADA40
 {
@@ -86,14 +221,15 @@ public:
 	bool rva005AD964();
 	void rva005ADAB2();
 	void rva005ADC63();
+	void rva005AE0AD(Xfer *xfer);
 private:
 	_STL::vector<Rva005DCE08 *> m_items;	// +0x00
-	unsigned int m_index;			// +0x0C
-	int m_10;				// +0x10
+	int m_index;				// +0x0C
+	Rva0041E912Template *m_10;		// +0x10
 	void *m_owner;				// +0x14
 	Coord3D m_point;			// +0x18
 	float m_angle;				// +0x24
-	Rva005ADA40Owned *m_owned;		// +0x28
+	Rva00573E7C *m_owned;			// +0x28
 };
 
 Rva005ADA40::Rva005ADA40(unsigned int index, void *owner)
@@ -129,7 +265,7 @@ Rva005AD9C0Hit *Rva005ADA40::rva005AD9C0(void *arg)
 
 void Rva005ADA40::rva005ADC63()
 {
-	Rva005ADA40Owned *owned = m_owned;
+	Rva00573E7C *owned = m_owned;
 	if (owned) {
 		if (((Rva004E9378 *)owned)->rva004E9378()) {
 			((Rva00506FE9Hit *)owned)->rva0055ADBA(m_owner);
@@ -156,4 +292,35 @@ bool Rva005ADA40::rva005AD964()
 		}
 	}
 	return true;
+}
+
+void Rva005ADA40::rva005AE0AD(Xfer *xfer)
+{
+	Xfer::Version version(1, 1);
+	*xfer == version;
+	*xfer == m_index;
+	*xfer == m_point;
+	*xfer == m_angle;
+	AsciiString name;
+	if (xfer->IsStoring() && m_10)
+		name = TheNameKeyGenerator->keyToName(g_00E03124->rva0041E971(m_10));
+	*xfer == name;
+	if (xfer->IsLoading() && name != AsciiString::TheEmptyString)
+		m_10 = g_00E03124->rva0041E764(TheNameKeyGenerator->nameToKey(name));
+	unsigned int count = m_items.size();
+	*xfer == count;
+	if (xfer->IsLoading()) {
+		for (unsigned int i = 0; i < count; ++i)
+			m_items.push_back((Rva005DCE08 *)new Rva005DCDD9(i, (int)m_owner));
+	}
+	Rva005DCE08 **end = m_items.end();
+	for (Rva005DCE08 **it = m_items.begin(); it != end; ++it)
+		(*it)->rva005DCEAD(xfer);
+	bool hasOwned = m_owned != 0;
+	*xfer == hasOwned;
+	if (hasOwned) {
+		if (xfer->IsLoading())
+			m_owned = new Rva00573E7C;
+		m_owned->xfer(xfer, m_owner);
+	}
 }
