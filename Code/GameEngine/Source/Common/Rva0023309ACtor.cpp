@@ -16,7 +16,7 @@ class __declspec(novtable) BFME2NativeNetworkBase
 {
 public:
 	__forceinline BFME2NativeNetworkBase() { ((BFME2NativeNetwork *)this)->baseConstruct(); }
-	virtual void unused();
+	virtual ~BFME2NativeNetworkBase();
 private:
 	char m_flag;
 	int m_value;
@@ -26,6 +26,7 @@ class Rva0023309A : public BFME2NativeNetworkBase
 {
 public:
 	Rva0023309A();
+	virtual ~Rva0023309A();
 private:
 	int m_0C;
 	int m_10;

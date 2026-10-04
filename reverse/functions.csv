@@ -51362,3 +51362,6 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva00505544@Rva0050542B@@AAEXXZ,,0x00505544,154,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,one AIThreatFinder entry per data value with its kind (else kind 1); caller 0x00505904
 ?rva005058F7@Rva0050542B@@QAEXXZ,,0x005058F7,26,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,reset: +0x04 reset then rebuild entries then append the global list; tail-jumped from 0x002C5F6C
 ?rva00505911@Rva0050542B@@QAEXXZ,,0x00505911,19,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,update: +0x04 update then 0x00505606; caller 0x002C6788
+??_GRva00382FA7@@UAEPAXI@Z,,0x003830CE,28,Code/GameEngine/Source/Common/System/ArchiveDirInfoO1Copy2.cpp,matched,scalar deleting dtor in vftable slot 0; class view gets its virtual dtor; calls pinned dtor 0x00400A7F
+??_GRva0023309A@@UAEPAXI@Z,,0x00233A3E,28,Code/GameEngine/Source/Common/Rva0023309ACtor.cpp,matched,scalar deleting dtor in vftable slot 0; class view gets its virtual dtor; calls pinned dtor 0x0023361E
+??_GRva00577F77@@UAEPAXI@Z,,0x005783ED,28,Code/GameEngine/Source/Common/Rva00577F77Ctor.cpp,matched,scalar deleting dtor in vftable slot 0; class view gets its virtual dtor; calls pinned dtor 0x00577FA7

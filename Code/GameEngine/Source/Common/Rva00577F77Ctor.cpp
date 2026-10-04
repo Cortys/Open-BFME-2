@@ -5,7 +5,7 @@
 class Rva005C6D4D
 {
 public:
-	virtual void d0();
+	virtual ~Rva005C6D4D();
 	Rva005C6D4D();
 };
 
@@ -20,7 +20,7 @@ class Rva00577F77 : public Rva005C6D4D
 {
 public:
 	Rva00577F77(void *p, int v);
-	virtual void d0();
+	virtual ~Rva00577F77();
 private:
 	char _pad[0x38];
 	void *m_3c;

@@ -42,7 +42,7 @@ public:
 
 struct Rva00382FA7 : public EmptyBase
 {
-	virtual void anchor() {}
+	virtual ~Rva00382FA7();
 	UnicodeString m_04;
 	int m_08;
 	int m_0c;

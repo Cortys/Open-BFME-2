@@ -7835,3 +7835,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva00505606@Rva0050542B@@AAEXXZ,0x00505606,second rebuild pass; tail jmp at 0x0050591F
 ?rva005A9693@Rva005A9562@@QAEXXZ,0x005A9693,reset of the +0x04 Rva005A9562; REL32 at 0x005058FD
 ?rva005A9824@Rva005A9562@@QAEXXZ,0x005A9824,update of the +0x04 Rva005A9562; REL32 at 0x00505917
+??1Rva00382FA7@@UAE@XZ,0x00400A7F,dtor installs its own vftable 0x00C193C8 (bytes at +21) and is the REL32 callee of the slot-0 ??_G at 0x003830CE
+??1Rva0023309A@@UAE@XZ,0x0023361E,dtor installs its own vftable 0x00BE82B8 (bytes at +19) and is the REL32 callee of the slot-0 ??_G at 0x00233A3E
+??1Rva00577F77@@UAE@XZ,0x00577FA7,dtor installs its own vftable 0x00C6EA28 (bytes at +19) and is the REL32 callee of the slot-0 ??_G at 0x005783ED
