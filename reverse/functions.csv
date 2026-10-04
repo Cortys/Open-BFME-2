@@ -52227,3 +52227,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva00580172@Rva00580172@@QAE_NXZ,,0x00580172,16,Code/GameEngine/Source/GameNetwork/Rva00580172.cpp,matched,test clear byte 14 callers 44650A 5A0D92
 ??0Rva0058062B@@QAE@PAXI@Z,,0x0058062B,27,Code/GameEngine/Source/GameNetwork/Rva0058062BCtor.cpp,matched,ctor stores arg plus vector word via 2339F3 caller 581171
 ?rva00580B40@Rva00580B40@@QAEXPBVModuleData@@@Z,,0x00580B40,28,Code/GameEngine/Source/GameNetwork/Rva00580B40.cpp,matched,push nonnull to vector plus15 clear callers 445E64 5A06CD
+?rva003A2897@Rva003A2897@@QAE_NW4NameKeyType@@@Z,,0x003A2897,86,Code/GameEngine/Source/GameLogic/Object/ArmorRva003A2897.cpp,matched,Armor map remover twin of 0x003A28ED
