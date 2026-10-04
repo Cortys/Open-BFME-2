@@ -52425,3 +52425,5 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?bfmeDiffers@Gen_0054EC50@@QBE_NABV1@@Z,,0x0056FA0C,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
 ?bfmeDiffers@Gen_0054EC80@@QBE_NABV1@@Z,,0x0056FA2E,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
 ?bfmeDiffers@Gen_0056E190@@QBE_NABV1@@Z,,0x00435B4F,34,Code/GameEngine/Source/Common/S5HandleHashCompares.cpp,matched,BFME1 donor S5HandleHashCompares.cpp at /Os
+?bfmeDispatch_0064C6A0@@YAXPAX00PAVGen_0064C6A0Target@@@Z,,0x0038D494,22,Code/GameEngine/Source/Common/S3GuardedDispatchers.cpp,matched,BFME1 donor S3GuardedDispatchers.cpp at /Os
+?u1Range_005C8320@@YAXPAX00HHPAPAX@Z,,0x001F8883,37,Code/GameEngine/Source/Common/U1SmallCallForwards.cpp,matched,BFME1 donor U1SmallCallForwards.cpp at /Os
