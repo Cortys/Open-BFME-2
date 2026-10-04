@@ -51454,3 +51454,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?init@W3DSnowManager@@UAEXXZ,,0x00094642,16,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DSnow.cpp,matched,vftable slot 1 of ??_7W3DSnowManager; ZH donor init; ReAcquireResources pinned
 ?parseInt@@YAXPAVINI@@PAX1PBX@Z,,0x001DCC45,46,Code/GameEngine/Source/Common/INI/INIDrawGroupInfo.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?parsePercentToReal@@YAXPAVINI@@PAX1PBX@Z,,0x001DCC73,44,Code/GameEngine/Source/Common/INI/INIDrawGroupInfo.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?rva0090e690RegisterSJThing@@YAXPBD@Z,,0x00132BD2,86,Code/GameEngine/Source/Common/BfmeThingSJRegistration.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

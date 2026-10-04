@@ -7896,3 +7896,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?getAllPoints@ProjectileStreamUpdate@@QAEXPAVVector3@@PAH@Z,0x0033F090,ZH ProjectileStreamUpdate::getAllPoints (143B body banked as a partial in re_attempts.log); W3DProjectileStreamDraw::doDrawModule (0x000D14F9) calls it with the 20-point stack array and &pointsUsed
 ?read@DataChunkTableOfContents@@QAEXAAVChunkInputStream@@@Z,0x003071E9,address read from the REL32 displacement at a placed body
 ?ReAcquireResources@W3DSnowManager@@QAE_NXZ,0x0009390F,init 0x00094642 tail-calls it after SnowManager::init as ZH W3DSnowManager::init does; its body opens with the device lock then the rowed ReleaseResources 0x000931D3 like ZH ReAcquireResources
+??0BfmeThingSJ@@QAE@H@Z,0x001320D0,address read from the REL32 displacement at a placed body
