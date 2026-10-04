@@ -50807,3 +50807,7 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B707A@@YAXXZ,,0x007B707A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global AsciiString dtor thunk at 0x007B707A
 ?rva007B6F8E@@YAXXZ,,0x007B6F8E,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global Rva00041004 dtor thunk at 0x007B6F8E
 ?rva007B70AB@@YAXXZ,,0x007B70AB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global Rva00041004 dtor thunk at 0x007B70AB
+?rva007B6B91@@YAXXZ,,0x007B6B91,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global Rva001EAF7B thunk at 0x007B6B91
+?rva007B6E5E@@YAXXZ,,0x007B6E5E,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global DynamicVectorClass dtor thunk at 0x007B6E5E
+?rva007B7190@@YAXXZ,,0x007B7190,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global DynamicVectorClass dtor thunk at 0x007B7190
+?rva007B71A0@@YAXXZ,,0x007B71A0,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global DynamicVectorClass dtor thunk at 0x007B71A0

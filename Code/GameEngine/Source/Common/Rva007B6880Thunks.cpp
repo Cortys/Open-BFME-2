@@ -1031,3 +1031,38 @@ void __cdecl rva007B70AB()
 	return p->Rva00041004::~Rva00041004();
 }
 
+extern unsigned g_Va00DB424C;
+
+// ?rva007B6B91@@YAXXZ @ 0x007B6B91 (10B). Global Rva001EAF7B thunk: ecx=&g_Va00DB424C then tail-jmp to rowed ?rva001EAF7B@Rva001EAF7B@@QAE_NXZ (0x001EAF7B).
+void __cdecl rva007B6B91()
+{
+	Rva001EAF7B *p = (Rva001EAF7B *)&g_Va00DB424C;
+	p->rva001EAF7B();
+}
+
+extern unsigned g_Va00DEBE24;
+extern unsigned g_Va00DF3648;
+extern unsigned g_Va00DF3660;
+
+// ?rva007B6E5E@@YAXXZ @ 0x007B6E5E (10B). Global DynamicVectorClass dtor thunk: ecx=&g_Va00DEBE24 then tail-jmp to rowed ??1?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAE@XZ (0x000F1D19).
+void __cdecl rva007B6E5E()
+{
+	DynamicVectorClass<Curve3DClass::KeyClass> *p = (DynamicVectorClass<Curve3DClass::KeyClass> *)&g_Va00DEBE24;
+	return p->DynamicVectorClass<Curve3DClass::KeyClass>::~DynamicVectorClass();
+}
+
+// ?rva007B7190@@YAXXZ @ 0x007B7190 (10B). Global DynamicVectorClass dtor thunk: ecx=&g_Va00DF3648 then tail-jmp to rowed ??1?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAE@XZ (0x000F1D19).
+void __cdecl rva007B7190()
+{
+	DynamicVectorClass<Curve3DClass::KeyClass> *p = (DynamicVectorClass<Curve3DClass::KeyClass> *)&g_Va00DF3648;
+	return p->DynamicVectorClass<Curve3DClass::KeyClass>::~DynamicVectorClass();
+}
+
+// ?rva007B71A0@@YAXXZ @ 0x007B71A0 (10B). Global DynamicVectorClass dtor thunk: ecx=&g_Va00DF3660 then tail-jmp to rowed ??1?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAE@XZ (0x000F1D19).
+void __cdecl rva007B71A0()
+{
+	DynamicVectorClass<Curve3DClass::KeyClass> *p = (DynamicVectorClass<Curve3DClass::KeyClass> *)&g_Va00DF3660;
+	return p->DynamicVectorClass<Curve3DClass::KeyClass>::~DynamicVectorClass();
+}
+
+
