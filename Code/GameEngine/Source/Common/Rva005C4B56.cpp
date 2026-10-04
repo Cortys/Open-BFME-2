@@ -17,6 +17,22 @@ public:
 	char m_pad[0x3C];
 	int m_val3C; // +0x3C
 	int m_val40; // +0x40
+	int m_val44; // +0x44
+	int m_val48; // +0x48
+	float m_val4C; // +0x4C
+};
+
+class Rva003FBA0E
+{
+public:
+	void rva003FBA0E(int a, int b, int c, int d, int e, float f);
+};
+
+class Rva003FB9C8
+{
+public:
+	void rva003FB9C8(int a, int b);
+	void rva003FB9EB(int a, int b);
 };
 
 class Rva005C4B56
@@ -33,8 +49,8 @@ public:
 	virtual void s08();
 	virtual void s09();
 	virtual void s10();
-	virtual void s11();
-	virtual void s12();
+	virtual void s11(bool a);
+	virtual void s12(bool a);
 	virtual void s13();
 	virtual void s14();
 	virtual void s15();
@@ -44,8 +60,11 @@ public:
 	void rva005C4B56(int setBits, int clearBits, int val);
 	void rva005C4CC1();
 	void rva005C4CD4();
+	void rva005C4BC8(bool a, bool b, int c);
 private:
-	char m_padAC[0xAC - 4];
+	char m_pad2C[0x2C - 4];
+	int m_2c; // +0x2C
+	char m_padAC[0xAC - 0x2C - 4];
 	Rva005C4CC1Sub *m_subAC; // +0xAC
 	char m_padB8[0xB8 - 0xAC - 4];
 	int m_flags; // +0xB8
@@ -69,4 +88,53 @@ void Rva005C4B56::rva005C4CC1()
 void Rva005C4B56::rva005C4CD4()
 {
 	rva005C4B56(0, 2, m_subAC->m_val40);
+}
+
+// ?rva005C4BC8@Rva005C4B56@@QAEX_N_NH@Z @0x005C4BC8 161B
+// Chain lane: calls 0x003FB9C8 just landed; vtable slot 18 of 0x008747B8
+// (class of ??1Rva005C4B1B). Prev/next Rva005C4B56. Switch on 3rd arg with
+// early-out when == +0x2C; cases call s11/s12 (slots 0x2C/0x30) and rowed
+// Rva003FBA0E/Rva003FB9C8/Rva003FB9EB helpers via +0xAC sub (+0x44/+0x48/+0x4C).
+// ?rva005C4BC8@Rva005C4B56@@QAEX_N_NH@Z present-unmatched
+void Rva005C4B56::rva005C4BC8(bool a, bool b, int c)
+{
+	bool flag = false;
+	if (c == m_2c)
+		goto final;
+	switch (c) {
+	case 1:
+		if (a)
+			goto final;
+		if (!b)
+			return;
+		((Rva003FB9C8 *)this)->rva003FB9EB(m_subAC->m_val44, 0);
+		goto final;
+	case 2:
+		((Rva003FB9C8 *)this)->rva003FB9C8(m_subAC->m_val48, 0);
+		if (a != true)
+			goto final;
+		flag = true;
+		goto final;
+	case 3: {
+		int v44 = m_subAC->m_val44;
+		int v48 = m_subAC->m_val48;
+		float vf = m_subAC->m_val4C;
+		((Rva003FBA0E *)this)->rva003FBA0E(0, v44, v44, v48 + v44, 0, vf);
+		if (a != true)
+			goto final;
+		flag = true;
+		goto final;
+	}
+	case 4:
+		s11(b);
+		goto final;
+	default:
+		goto final;
+	}
+final:
+	if (a == b)
+		return;
+	if (flag)
+		return;
+	s12(b);
 }
