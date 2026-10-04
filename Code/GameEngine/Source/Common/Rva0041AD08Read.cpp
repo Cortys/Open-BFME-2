@@ -70,7 +70,7 @@ struct BfmeFormattedText
 };
 
 extern "C" BfmeFormattedText *__cdecl bfmeFormatText(BfmeFormattedText *result, int tag, const char *format, ...);
-void __stdcall _CxxThrowException(void *a, void *b);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 void *__cdecl operator new[](unsigned int size);
 void __cdecl operator delete[](void *p);
 
@@ -83,7 +83,7 @@ static void __cdecl Rva0041AD08Read(AsciiString path, File *ctx)
 	{
 		BfmeFormattedText tmp;
 		bfmeFormatText(&tmp, 5, (const char *)0);
-		_CxxThrowException(&tmp, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&tmp, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo);
 		__assume(0);
 	}
 	int size = f->f_seek(0, 2);
@@ -93,7 +93,7 @@ static void __cdecl Rva0041AD08Read(AsciiString path, File *ctx)
 	{
 		BfmeFormattedText tmp;
 		bfmeFormatText(&tmp, 5, (const char *)0);
-		_CxxThrowException(&tmp, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&tmp, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo);
 		__assume(0);
 	}
 	int got = f->f_read(buf, size);
@@ -102,7 +102,7 @@ static void __cdecl Rva0041AD08Read(AsciiString path, File *ctx)
 		delete[] buf;
 		BfmeFormattedText tmp;
 		bfmeFormatText(&tmp, 5, (const char *)0);
-		_CxxThrowException(&tmp, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&tmp, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo);
 		__assume(0);
 	}
 	f->f_close();
