@@ -573,7 +573,7 @@ class Rva005D6FCC
 {
 public:
 	Rva005D6FCC(void *held);
-	virtual ~Rva005D6FCC();
+	virtual ~Rva005D6FCC() {}
 
 	void *m_field04;
 };

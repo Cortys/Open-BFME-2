@@ -51473,3 +51473,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?v7@Rva005A9ACD@@UAEXXZ,,0x005A9B82,112,Code/GameEngine/Source/Common/Rva005A9ACDTactic.cpp,matched,SiegeGates slot 7: while running stop without a team; before +0x5C move to the +0x20 record point once 0x005DC93B or attack on 0x005DCAF4/0x004ED169; afterwards stop (1 0) on 0x004ED169
 ?v3@Rva005A9ACD@@UAE_NPAURva005A9ACDUnit@@PAX@Z,,0x005A9CA3,16,Code/GameEngine/Source/Common/Rva005A9ACDTactic.cpp,matched,SiegeGates slot 3: set bit 5 of the unit +0x30C flags and answer true
 ?xfer@Rva005A9ACD@@UAEXPAVXfer@@@Z,,0x005A9BF2,44,Code/GameEngine/Source/Common/Rva005A9ACDTactic.cpp,matched,SiegeGates slot 5: xfer version 1 then the Rva005DC87B base xfer 0x005DC903
+??_GRva00104DB0Base@@UAEPAXI@Z,,0x00104D7A,29,Code/GameEngine/Source/Common/Rva00104DB0Dtor.cpp,matched,deleting dtor in ??_7Rva00104DB0Base slot 5 (after five pure slots); dtor inline (vptr reset only)
+??_GRva005D6FCC@@UAEPAXI@Z,,0x005D6FF4,29,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
