@@ -20,6 +20,9 @@
 //   0x005ADCBE  pick a base template for the current map (or the .bss name
 //               when the start is still open) that fits the owner's start
 //               position, at random when several do
+//   0x005AE26A  place: pick a template for the owner's side (0x005ADCBE),
+//               take the point (and the angle when the template keeps it),
+//               then lay the base out (0x005ADE1D)
 //   0x005AE0AD  xfer: index, point, angle, the base template by name, the
 //               items, then the +0x28 order
 //
@@ -36,6 +39,12 @@ struct Coord3DBase
 	float x;
 	float y;
 	float z;
+};
+
+struct Rva005AE26AOwner
+{
+	char m_pad00[0x58];
+	AsciiString m_58;	// +0x58
 };
 
 struct Coord3D : public Coord3DBase
@@ -214,6 +223,7 @@ public:
 	char m_pad00[0x08];
 	AsciiString m_name;			// +0x08
 	_STL::vector<int> m_starts;		// +0x0C
+	bool m_18;				// +0x18
 };
 
 class MapMetaData
@@ -246,6 +256,7 @@ int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 class Rva0022BD9ASubsystem
 {
 public:
+	bool rva0041E912(const AsciiString &side, _STL::vector<Rva0041E912Template *> &out);
 	Rva0041E912Template *rva0041E764(NameKeyType key);
 	NameKeyType rva0041E971(Rva0041E912Template *tmpl);
 };
@@ -262,6 +273,8 @@ public:
 	void rva005ADC63();
 	void rva005AE0AD(Xfer *xfer);
 	Rva0041E912Template *rva005ADCBE(int notFirst, const _STL::vector<Rva0041E912Template *> &list);
+	void rva005ADE1D(const Coord3D *point, float angle, Rva0041E912Template *tmpl);
+	void rva005AE26A(Coord3D *point, float angle, int notFirst);
 private:
 	_STL::vector<Rva005DCE08 *> m_items;	// +0x00
 	int m_index;				// +0x0C
@@ -399,4 +412,20 @@ Rva0041E912Template *Rva005ADA40::rva005ADCBE(int notFirst, const _STL::vector<R
 		}
 	}
 	return chosen;
+}
+
+void Rva005ADA40::rva005AE26A(Coord3D *point, float angle, int notFirst)
+{
+	_STL::vector<Rva0041E912Template *> templates;
+	if (g_00E03124->rva0041E912(((Rva005AE26AOwner *)m_owner)->m_58, templates)) {
+		Rva0041E912Template *chosen = rva005ADCBE(notFirst, templates);
+		if (chosen) {
+			m_10 = chosen;
+			m_point = *point;
+			if (chosen->m_18)
+				m_angle = angle;
+			rva005ADE1D(&m_point, m_angle, chosen);
+			return;
+		}
+	}
 }
