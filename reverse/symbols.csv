@@ -8245,3 +8245,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??RRva00450B90Predicate@@QBE_NPBURva00450B90Item@@@Z,0x00300021,predicate called twice by the placed STLport __partition at retail 0x003008A0 read from both REL32 displacements; body unrowed
 ?find@Rva00612430Owner@@QAEPAURva00612430Item@@ABVAsciiString@@@Z,0x002120C2,callee of ?Rva0060C1B0@@YGXPAXPBVAsciiString@@@Z at retail 0x003F92BB read from its REL32 displacement; body unrowed
 ?dispatchFactory@Rva0078F770Owner@@QAEPAVGameWindow@@PAURva0078F950Record@@PAURva0078F770Secondary@@HH@Z,0x002C1395,callee of ?selectFactory@Rva0078F770Owner@@QAEXPAURva0078F950Record@@PAURva0078F770Secondary@@HH@Z at retail 0x0008FDC6 read from its REL32 displacement; body unrowed
+??0Rva00045411BitSet@@QAE@HHH@Z,0x0006EE7A,ICF twin of Rva0006EE7A HHH proven by 0x004A045E 28B bitset for rva00362192
