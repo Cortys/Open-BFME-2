@@ -146,3 +146,9 @@ template _STL::vector<RvaPair001D9F62>::~vector();
 struct BfmeStringHeadRecord184 { public: ~BfmeStringHeadRecord184(); };
 template _STL::vector<BfmeStringHeadRecord184>::~vector();
 
+
+// ??1?$vector@URva005088CEDamageScalar@@V?$allocator@URva005088CEDamageScalar@@@_STL@@@_STL@@QAE@XZ @0x507bd0 (_Destroy at 0x507bb7)
+// DamageNugget "DamageScalar" entries (Rva005088CEDamageScalar.cpp); the
+// nugget dtor at 0x00508684 calls this for its +0x168 member.
+struct Rva005088CEDamageScalar { public: ~Rva005088CEDamageScalar(); };
+template _STL::vector<Rva005088CEDamageScalar>::~vector();
