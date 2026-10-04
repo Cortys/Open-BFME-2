@@ -7710,3 +7710,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?erase@?$vector@UHorzLine@@V?$allocator@UHorzLine@@@_STL@@@_STL@@QAEPAUHorzLine@@PAU3@@Z,0x0034C117,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?push_back@?$vector@UHorzLine@@V?$allocator@UHorzLine@@@_STL@@@_STL@@QAEXABUHorzLine@@@Z,0x002DF89B,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?reserve@?$vector@UHorzLine@@V?$allocator@UHorzLine@@@_STL@@@_STL@@QAEXI@Z,0x003B0224,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??0?$queue@VBuddyRequest@@V?$deque@VBuddyRequest@@V?$allocator@VBuddyRequest@@@_STL@@@_STL@@@_STL@@QAE@XZ,0x00551A06,address read from the REL32 displacement at a placed body
+??0?$queue@VBuddyResponse@@V?$deque@VBuddyResponse@@V?$allocator@VBuddyResponse@@@_STL@@@_STL@@@_STL@@QAE@XZ,0x00551A1B,address read from the REL32 displacement at a placed body
+?pop_front@?$deque@VBuddyResponse@@V?$allocator@VBuddyResponse@@@_STL@@@_STL@@QAEXXZ,0x00550B9F,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
