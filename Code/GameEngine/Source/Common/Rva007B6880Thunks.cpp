@@ -2051,3 +2051,13 @@ void __cdecl rva007B75F6()
 	return p->_STL::vector<AsciiString, _STL::allocator<AsciiString> >::~vector();
 }
 
+extern unsigned g_00DFE1AC;
+// g_00DFE1AC: packet annotates VA 0x009FE1AC (data), no name yet.
+
+// ?rva007B760A@@YAXXZ @ 0x007B760A (10B). Global basic_string<char> dtor thunk: ecx=&g_00DFE1AC then tail-jmp to rowed BasicStringCharDtor_dup (0x0007FAB3 object ??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ). No callers. Between 0x007B7600 and 0x007B7614. Honest address name.
+void __cdecl rva007B760A()
+{
+	_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > *p = (_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > *)&g_00DFE1AC;
+	return p->_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> >::~basic_string();
+}
+
