@@ -1,9 +1,5 @@
 // ?rva0053FE2A@Rva0053FE2A@@QAEAAV1@PAUS12@@PAUS16@@MH@Z
 // partial score=0.94 date=2026-10-04
-// ?rva0053FE2A@Rva0053FE2A@@QAEAAV1@PAUS12@@PAUS16@@MH@Z
-// partial score=0.94 date=2026-10-03
-// ?rva0053FE2A@Rva0053FE2A@@QAEAAV1@PAUS12@@PAUS16@@MH@Z
-// partial score=0.90 date=2026-09-30
 // cl: /O1 /arch:SSE /Ob0
 // ?rva0053FE2A@Rva0053FE2A@@QAEAAV1@PAUS12@@PAUS16@@MH@Z @0x0053FE2A 58B
 // Four-arg reference-returning setter: dword arg4 to +0, three dwords from arg1
@@ -11,6 +7,10 @@
 // Retail leaves `this` in eax at the return, so the function returns *this.
 // Evidence: ret 0x10 four stack args; movss xmm0 early plus movsd x4;
 // caller at 0x0053FF10; follows the rowed Rva0053FDE6 ctor (0x53FDE6+0x44).
+//
+// The three dword stores go through int* locals rather than member syntax:
+// that is what pushes the /O1 save-register pair (push esi / mov esi,[esp+0xc])
+// past the first store, where retail schedules it.
 struct S12
 {
 	int a;
@@ -35,13 +35,14 @@ public:
 	S16 m_10;
 	float m_20;
 };
-// ?rva0053FE2A@Rva0053FE2A@@QAEAAV1@PAUS12@@PAUS16@@MH@Z present-unmatched
 Rva0053FE2A &Rva0053FE2A::rva0053FE2A(S12 *a1, S16 *a2, float f, int d)
 {
 	m_00 = d;
-	m_04 = a1->a;
-	m_08 = a1->b;
-	m_0c = a1->c;
+	int *dst = &m_04;
+	const int *src = &a1->a;
+	dst[0] = src[0];
+	dst[1] = src[1];
+	dst[2] = src[2];
 	m_10 = *a2;
 	m_20 = f;
 	return *this;
