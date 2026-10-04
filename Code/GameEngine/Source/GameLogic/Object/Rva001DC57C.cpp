@@ -25,7 +25,7 @@ public:
 	{
 		EnterCriticalSection((CRITICAL_SECTION *)m_lock);
 	}
-	~CriticalSectionLock()
+	inline ~CriticalSectionLock()
 	{
 		LeaveCriticalSection((CRITICAL_SECTION *)m_lock);
 	}
