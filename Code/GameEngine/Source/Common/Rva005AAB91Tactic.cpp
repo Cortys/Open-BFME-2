@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /Ireference/shims/bfme2_ascii
+// cl: /O1 /G7 /MD /GX /DNDEBUG /Ireference/shims/bfme2_ascii
 //
 // The "AIRoamingDefenseTactic" skirmish-AI tactic (vtable 0x008720E8; ctor
 // 0x005AABC6 in Rva004ECECDTacticCtors.cpp, dtor 0x005AAB91 and ??_G, slot 9
@@ -8,7 +8,7 @@
 // keeps two keys: AIRoamingDefenseTactic_IsRunning and
 // AIRoamingDefenseTactic_NextLogicFrameRun.
 //
-//   0x005AAC35  slot 1 (not here yet): never for an owner that 0x002A9BF2 answers; the first
+//   0x005AAC35  slot 1: never for an owner that 0x002A9BF2 answers; the first
 //               time only schedule the next run 5 * g_Va00DBA4E4 frames on;
 //               then once not running and the frame is reached
 //   0x005AAD26  slot 2: clear both keys
@@ -242,6 +242,7 @@ class GameLogic
 {
 public:
 	Object *findObjectByID(ObjectID id);
+	unsigned int getFrame() const { return m_40; }
 	char m_pad000[0x40];
 	unsigned int m_40;		// +0x40, the frame
 };
@@ -343,6 +344,7 @@ class Rva005AAB91 : public Rva005DC73C
 {
 public:
 	virtual ~Rva005AAB91();
+	virtual bool appliesTo(void *request);
 	virtual void v2();
 	virtual bool v3(void *unit, int count);
 	virtual void xfer(Xfer *xfer);
@@ -350,6 +352,22 @@ public:
 private:
 	bool m_roaming;		// +0x58
 };
+
+bool Rva005AAB91::appliesTo(void *)
+{
+	if (!((Rva002A9BF2 *)m_owner)->rva002A9BF2()) {
+		Rva002A8AB1Record *record = g_00DFEEF8->rva002A8AB1(m_owner);
+		int running = record->rva002C7196(AsciiString("AIRoamingDefenseTactic_IsRunning"));
+		unsigned int next = record->rva002C7196(AsciiString("AIRoamingDefenseTactic_NextLogicFrameRun"));
+		if (!next) {
+			record->rva002C717E(AsciiString("AIRoamingDefenseTactic_NextLogicFrameRun"),
+				g_Va00DBA4E4 * 5 + TheGameLogic->getFrame());
+		} else if (!running && TheGameLogic->getFrame() >= next) {
+			return true;
+		}
+	}
+	return false;
+}
 
 void Rva005AAB91::v2()
 {
