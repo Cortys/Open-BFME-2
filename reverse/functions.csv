@@ -50617,3 +50617,18 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6CEB@@YAXXZ,,0x007B6CEB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6CEB
 ?rva007B6CF5@@YAXXZ,,0x007B6CF5,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6CF5
 ?Rva006C8A40Get@@YA?AV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@PBD@Z,,0x006C8A40,145,Code/GameEngine/Source/Common/Bfme/Rva006C8A40Finish.cpp,matched,registry path builder; 4-byte header word before the 512B sprintf target reproduces retail frame 0x208 plus the single zeroing store
+?rva007B6D13@@YAXXZ,,0x007B6D13,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D13
+?rva007B6D31@@YAXXZ,,0x007B6D31,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D31
+?rva007B6D3B@@YAXXZ,,0x007B6D3B,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D3B
+?rva007B6D45@@YAXXZ,,0x007B6D45,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D45
+?rva007B6D4F@@YAXXZ,,0x007B6D4F,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D4F
+?rva007B6D59@@YAXXZ,,0x007B6D59,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D59
+?rva007B6D63@@YAXXZ,,0x007B6D63,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D63
+?rva007B6D6D@@YAXXZ,,0x007B6D6D,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D6D
+?rva007B6D77@@YAXXZ,,0x007B6D77,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D77
+?rva007B6D81@@YAXXZ,,0x007B6D81,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D81
+?rva007B6D8B@@YAXXZ,,0x007B6D8B,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D8B
+?rva007B6D95@@YAXXZ,,0x007B6D95,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D95
+?rva007B6D9F@@YAXXZ,,0x007B6D9F,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6D9F
+?rva007B6DAA@@YAXXZ,,0x007B6DAA,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6DAA
+?rva007B6DB4@@YAXXZ,,0x007B6DB4,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6DB4
