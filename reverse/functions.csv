@@ -50851,3 +50851,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B779A@@YAXXZ,,0x007B779A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B779A
 ?rva007B77A4@@YAXXZ,,0x007B77A4,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B77A4
 ?rva007B77AE@@YAXXZ,,0x007B77AE,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B77AE
+?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z,,0x001E438B,54,Code/GameEngine/Source/Common/Rva001E438BRva001E438B.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt

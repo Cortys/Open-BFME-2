@@ -1,6 +1,7 @@
-// ?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z
-// partial score=0.93 date=2026-10-01
-// cl: /O2 /MD /arch:SSE
+// cl: /O1 /MD /arch:SSE /Op
+//
+// ?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z, retail 0x001e438b, 54 bytes. Banked partial (score 0.93) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 //
 // ?rva001E438B@Rva001E438B@@QAEXPAM0@Z @0x001E438B 54B
 // __thiscall void (float *, float *): dst[0..2] = src[0..2] minus the 3-float
@@ -16,14 +17,13 @@ public:
 	float m_3c;
 	float m_40;
 };
-// ?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z present-unmatched
 void Rva001E438B::rva001E438B(float *dst, const float *src)
 {
 	float x = src[0];
-	float y = src[1];
-	float z = src[2];
 	x -= m_38;
+	float y = src[1];
 	y -= m_3c;
+	float z = src[2];
 	z -= m_40;
 	dst[0] = x;
 	dst[1] = y;
