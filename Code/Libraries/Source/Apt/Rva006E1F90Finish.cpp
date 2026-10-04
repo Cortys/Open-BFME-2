@@ -1,4 +1,3 @@
-// ?rva006E1F90@AptCIH@@QAE_NH@Z
 // partial score=0.95 date=2026-10-03
 // cl: /O2 /MD
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
@@ -32,14 +31,7 @@ bool AptCIH::rva006E1F90(int flag)
 	}
 	int bits = *(int *)(*(int *)((char *)this + 0x4C) + 0x1C);
 	bits = (bits << 8) >> 8;
-	if (flag & bits)
-		return true;
-	void *a = vtableSlot3();
-	void *c = (*(AptCIH **)((char *)a + 8))->vtableSlot3();
-	if (*(int *)((char *)c + 0x10) & flag)
-		return true;
-	void *d = vtableSlot3();
-	if (*(int *)((char *)d + 0x10) & flag)
-		return true;
-	return false;
+	return (flag & bits) ||
+		(*(int *)((char *)(*(AptCIH **)((char *)vtableSlot3() + 8))->vtableSlot3() + 0x10) & flag) ||
+		(*(int *)((char *)vtableSlot3() + 0x10) & flag);
 }
