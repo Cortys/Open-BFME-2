@@ -1,7 +1,7 @@
-// ?Rva00324B39Add@@YAXPAVGameWindow@@F_N@Z
-// partial score=0.97 date=2026-10-02
-// cl: /O1 /DNDEBUG /MD
-// ?Rva00324B39Add@@YAXPAVGameWindow@@F_N@Z, retail 0x00324B39, 86 bytes.
+// cl: /O1 /DNDEBUG /MD /G7
+//
+// ?Rva00324B39Add@@YAXPAVGameWindow@@F_N@Z, retail 0x00324b39, 86 bytes. Banked partial (score 0.97) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Free listbox scroll add: adds delta word to displayPos at +0x44 via rowed
 // winGetUserData 0x005C4ACD, clamps with dword field at +0x28 against
 // displayHeight at +0x3C and displayPos at +0x44, then refreshes via pinned
@@ -31,7 +31,6 @@ struct ListboxData00324B39
 	short displayPos;
 };
 
-// ?Rva00324B39Add@@YAXPAVGameWindow@@F_N@Z present-unmatched
 void __cdecl Rva00324B39Add(GameWindow *window, short delta, bool update)
 {
 	void *userData = window->winGetUserData();

@@ -1,32 +1,14 @@
-// ?evaluateTeamCountCompare@ScriptConditions@@IAE_NPAVParameter@@00@Z
-// partial score=0.82 date=2026-09-26
-// cl: /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1
+//
+// ?evaluateTeamCountCompare@ScriptConditions@@IAE_NPAVParameter@@00@Z, retail 0x003e5e2f, 78 bytes. Banked partial (score 0.82) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Target adaptation of the BFME1 ScriptConditions::evaluateTeamCountCompare.
 // Target boundary 0x003E5E2F (78 bytes): getTeamNamed, then Team's three-arg
 // count helper, then a signed comparison of countParm against that result.
 
 typedef bool Bool;
 
-template <class T> class StringBase
-{
-    friend class AsciiString;
-private:
-    StringBase(const StringBase &);
-    ~StringBase();
-};
-
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 class Parameter
 {
