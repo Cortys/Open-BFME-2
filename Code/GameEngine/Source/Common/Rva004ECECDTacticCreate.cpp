@@ -56,3 +56,31 @@ TACTIC(Rva005AB125, 0x58)
 // 0x005AC8F2, ctor 0x005AC7EC (AIRingHeroTactic), 0x68 bytes
 TACTIC(Rva005AC7E1, 0x68)
 
+
+// The clones that also carry one setting over from the prototype.
+#define TACTIC_COPY(name, size, type, offset) \
+	class name : public Rva004ECECD \
+	{ \
+	public: \
+		name(); \
+		virtual Rva004ECECD *create(); \
+	private: \
+		unsigned char m_pad[offset - sizeof(Rva004ECECD)]; \
+		type m_copied; \
+		unsigned char m_tail[size - offset - sizeof(type)]; \
+	}; \
+	Rva004ECECD *name::create() \
+	{ \
+		name *tactic = new name; \
+		tactic->m_copied = m_copied; \
+		return tactic; \
+	}
+
+// 0x005AB41F, ctor 0x005AB3BE (ReturnTheRing), 0x68 bytes, copies +0x5C
+TACTIC_COPY(Rva005AB309, 0x68, int, 0x5C)
+
+// 0x005AB9AF, ctor 0x005AB91D (StructureCreep), 0x80 bytes, copies +0x68
+TACTIC_COPY(Rva005AB7E5, 0x80, int, 0x68)
+
+// 0x005ACFAB, ctor 0x005ACF38 (FarmKillSquad), 0x64 bytes, copies the +0x60 flag
+TACTIC_COPY(Rva005ACCE4, 0x64, bool, 0x60)

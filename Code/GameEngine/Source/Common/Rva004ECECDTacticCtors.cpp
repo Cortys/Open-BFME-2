@@ -190,3 +190,87 @@ Rva005AC7E1::Rva005AC7E1()
 	m_60 = false;
 	m_64 = 0;
 }
+
+// ReturnTheRing, 0x005AB3BE
+class Rva005AB309 : public Rva005DCC24
+{
+public:
+	Rva005AB309();
+private:
+	int m_58;
+	int m_5C;
+	int m_60;
+	bool m_64;
+	bool m_65;
+	unsigned char m_pad66[2];
+};
+
+Rva005AB309::Rva005AB309()
+	: Rva005DCC24(AsciiString("ReturnTheRing"))
+{
+	m_58 = 0;
+	m_5C = 0;
+	m_60 = 0;
+	m_64 = false;
+	m_65 = false;
+}
+
+// StructureCreep, 0x005AB91D (its destructor is 0x005AB7E5)
+class Rva005AB7E5 : public Rva005DCC24
+{
+public:
+	Rva005AB7E5();
+private:
+	int m_58;
+	int m_5C;
+	int m_60;
+	int m_64;
+	int m_68;
+	int m_6C;
+	int m_70;
+	int m_74;
+	bool m_78;
+	bool m_79;
+	unsigned char m_pad7A[2];
+	int m_7C;
+};
+
+Rva005AB7E5::Rva005AB7E5()
+	: Rva005DCC24(AsciiString("StructureCreep"))
+{
+	m_68 = -1;
+	m_6C = -1;
+	m_70 = -1;
+	m_74 = -1;
+	m_7C = -1;
+	m_58 = 0;
+	m_5C = 0;
+	m_60 = 0;
+	m_64 = 0;
+	m_78 = false;
+	m_79 = false;
+}
+
+// FarmKillSquad, 0x005ACF38: one squad in five farms (a d100 roll under 20)
+int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
+
+class Rva005ACCE4 : public Rva005DCC24
+{
+public:
+	Rva005ACCE4();
+private:
+	int m_58;
+	int m_5C;
+	bool m_60;
+	unsigned char m_pad61[3];
+};
+
+Rva005ACCE4::Rva005ACCE4()
+	: Rva005DCC24(AsciiString("FarmKillSquad"))
+{
+	m_58 = 0;
+	m_5C = 0;
+	m_60 = GetGameLogicRandomValue(1, 100,
+		"C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\TargetlessTactics\\AIFarmKillSquad.cpp",
+		53) < 20;
+}
