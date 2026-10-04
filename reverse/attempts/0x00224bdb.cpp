@@ -1,5 +1,14 @@
 // ?rva00224BDB@Rva00224BDBMap@@QAEAAVRva0022300F@@ABVAsciiString@@@Z
-// partial score=0.9 date=2026-10-01
+// partial score=0.987 date=2026-10-04
+// ?rva00224BDB@Rva00224BDBMap@@QAEAAVRva0022300F@@ABVAsciiString@@@Z
+// partial score=0.987 date=2026-10-04
+// The frame is now retail's `sub esp,0x28`: the default Rva0022300F temporary
+// shrinks from 16 to 12 bytes, which is what lets cl pack the three live
+// temporaries (find iterator, default item, key/value pair) into retail's
+// 0x28 frame instead of 0x30. 153 of 155 bytes identical. Sole residual: the
+// item temporary is at [ebp-0x24] where retail has [ebp-0x20] (two leas, 4
+// bytes). 0x28 and -0x20 are not jointly reachable by shrinking this field
+// further: every size from 0x0D up re-expands the frame to 0x30.
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva00224BDB@Rva00224BDBMap@@QAEAAVRva0022300F@@ABVAsciiString@@@Z @0x00224BDB 155B
 // Find-or-insert lookup keyed by AsciiString, the binding table at
@@ -19,7 +28,7 @@ public:
 	Rva0022300F();
 	~Rva0022300F();
 private:
-	char m_body[0x10];
+	char m_body[0x0C];
 };
 
 class Rva0022304A
