@@ -1,0 +1,84 @@
+// ?rva003FBA58@Rva003FBA58@@QAEXXZ
+// partial score=0.97 date=2026-10-04
+// cl: /O1 /DNDEBUG /MD /arch:SSE /Op
+// ?rva003FBA58@Rva003FBA58@@QAEXXZ @0x003FBA58 140B
+// Chain lane: calls 0x003FB9C8 just landed; vtable slot 10 of 0x008747B8
+// (class of ??1Rva005C4B1B). Prev 0x003FBA0E in Rva003FBA0ERva003FBA0E.cpp
+// same layout +0x2C +0x34 +0x3C +0x40 +0x44 +0x48 +0x50 +0x54 float.
+// Calls rowed Rva003FB9C8/Rva003FB9EB/Rva003FBA0E helpers and slot 0x30
+// with 0; float vs BfmeZeroRange; clears +0x2C via and in zero branch.
+extern const float BfmeZeroRange;
+
+class Rva003FBA0E
+{
+public:
+	void rva003FBA0E(int a, int b, int c, int d, int e, float f);
+};
+
+class Rva003FB9C8
+{
+public:
+	void rva003FB9C8(int a, int b);
+	void rva003FB9EB(int a, int b);
+};
+
+class Rva003FBA58
+{
+public:
+	virtual void s00();
+	virtual void s01();
+	virtual void s02();
+	virtual void s03();
+	virtual void s04();
+	virtual void s05();
+	virtual void s06();
+	virtual void s07();
+	virtual void s08();
+	virtual void s09();
+	virtual void s10();
+	virtual void s11();
+	virtual void s12(int a);
+	void rva003FBA58();
+private:
+	char m_pad04[4];
+	void *m_08; // +0x08
+	char m_pad0C[0x2C - 0x0C];
+	int m_2c; // +0x2C
+	char m_pad30[4];
+	int m_34; // +0x34
+	int m_38; // +0x38
+	int m_3c; // +0x3C
+	int m_40; // +0x40
+	int m_44; // +0x44
+	int m_48; // +0x48
+	int m_4c; // +0x4C
+	int m_50; // +0x50
+	float m_54; // +0x54
+};
+
+// ?rva003FBA58@Rva003FBA58@@QAEXXZ present-unmatched
+void Rva003FBA58::rva003FBA58()
+{
+	if (m_50 == 0) {
+		if (m_08 != 0) {
+			if (m_2c == 2) {
+				s12(0);
+			} else if (m_2c == 3) {
+				if (m_54 == BfmeZeroRange) {
+					s12(0);
+				}
+			}
+		}
+		m_2c = 0;
+	} else if (m_50 == 1) {
+		if (m_2c == 1) {
+			((Rva003FB9C8 *)this)->rva003FB9C8(m_34, 1);
+			return;
+		} else if (m_2c == 2) {
+			((Rva003FB9C8 *)this)->rva003FB9EB(m_34, 1);
+			return;
+		} else if (m_2c == 3) {
+			((Rva003FBA0E *)this)->rva003FBA0E(m_3c, m_40, m_44, m_48, 1, m_54);
+		}
+	}
+}
