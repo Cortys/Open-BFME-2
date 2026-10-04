@@ -1415,6 +1415,9 @@ def main(argv=None):
     ap.add_argument("--build", action="store_true",
                     help="first compile every matched source whose object is not current (build.compile_rows, "
                          "BUILD_POOL defaults to all cores but two); no byte verification")
+    ap.add_argument("--measure", action="store_true",
+                    help="after the link, run the selection link (in parallel when the unresolved names held) and "
+                         "write link_status.csv and the link index with LINKED figures, without recording history")
     ap.add_argument("--selected", action="store_true",
                     help="relink the last census's objects with /MAP and report which COMDAT copy link.exe selected "
                          "(selected.csv, aliased.csv); on the census's own commit, records nothing")
@@ -1511,7 +1514,20 @@ def main(argv=None):
     if args.history:
         # record() proves every object current again: the links take minutes.
         record(census, rows)
+    elif args.measure:
+        measure(census, rows, present, final_log(census))
     return 0
+
+
+def measure(census, rows, present, log):
+    """LINKED figures and the link index for this census, history untouched."""
+    started = time.time()
+    kept = selected_definitions(selection_link(present, log))
+    print(f"link_census: selection (/MAP) link {time.time() - started:.0f}s after the plain link", flush=True)
+    clean, files, blocking, clean_prev, _ = write_status(
+        log, rows, present, {"date": census["when"], "commit": census["commit"]}, kept, publish=True)
+    print(json.dumps({"files": files, "files_linked": len(clean), "files_linked_prev_rule": len(clean_prev),
+                      "blocking": blocking, **linked_figures(clean)}), flush=True)
 
 
 def selected_main():
