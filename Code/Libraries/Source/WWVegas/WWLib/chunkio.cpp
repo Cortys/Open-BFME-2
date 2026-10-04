@@ -123,42 +123,9 @@ uint32 ChunkLoadClass::Read(void *buffer, uint32 byte_count)
 }
 
 
-// Read's twin, skipping instead of copying. The bounds checks are the same; the
-// difference is how the skip is proven to have happened, since neither Seek
-// interface reports a byte count -- both branches take a position before and
-// after and require the delta to be exactly what was asked for.
-// ?ChunkLoadClass::Seek present-unmatched
-uint32 ChunkLoadClass::Seek(uint32 byte_count)
-{
-	BFMEChunkLoadLayout *layout = (BFMEChunkLoadLayout *)this;
-	if (layout->PositionStack[layout->StackIndex - 1] + byte_count >
-		(layout->HeaderStack[layout->StackIndex - 1].ChunkSize & 0x7FFFFFFF)) {
-		return 0;
-	}
-
-	if (layout->InMicroChunk && layout->MicroChunkPosition + byte_count > layout->MCHeader.ChunkSize) {
-		return 0;
-	}
-
-	if (layout->File) {
-		int before = layout->File->Tell();
-		if (layout->File->Seek(byte_count, SEEK_CUR) - before != (int)byte_count) {
-			return 0;
-		}
-	} else {
-		int before = layout->Input->Seek(0, SEEK_CUR);
-		if (layout->Input->Seek(byte_count, SEEK_CUR) - before != (int)byte_count) {
-			return 0;
-		}
-	}
-
-	layout->PositionStack[layout->StackIndex - 1] += byte_count;
-	if (layout->InMicroChunk) {
-		layout->MicroChunkPosition += byte_count;
-	}
-
-	return byte_count;
-}
+// Seek is declared in chunkio.h; the BFME2 body lives in its owning TU once
+// recovered. Defining it here emits a wrong COMDAT copy, so keep it
+// declaration-only in this file.
 
 
 uint32 ChunkLoadClass::Cur_Chunk_ID()
