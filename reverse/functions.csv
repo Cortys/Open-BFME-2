@@ -51661,3 +51661,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?bfmeVisitAll@Gen_0018BC70@@QAEXPAVBfmeVisitorBF@@@Z,,0x004D6E95,47,Code/GameEngine/Source/Common/Bfme5CompactVisitor.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?Rva00452FE0Same@@YAHABURva00452FE0Key@@0@Z,,0x00301B24,48,Code/GameEngine/Source/Common/Rva00452FE0Same.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?bfmeReset@Gen_00490F00@@QAEXXZ,,0x00355F75,48,Code/GameEngine/Source/Common/BfmeOneHundredSixteen.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?make@U4Maker005EA530@@QAEPAVU4Made005EA530@@XZ,,0x003ADCEB,32,Code/GameEngine/Source/Common/U4NewThenInit.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

@@ -8008,3 +8008,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeTestQP@@YADPAX0@Z,0x004D9367,callee read from the retail REL32 in placed BFME1-donor body ?bfmeEitherQP@@YAHPAX0@Z (0x004D93B5)
 ?bfmeCompact@Gen_0018BC70@@QAEPAVBfmeVecAK@@_N@Z,0x004D6D4F,callee read from the retail REL32 in placed BFME1-donor body ?bfmeVisitAll@Gen_0018BC70@@QAEXPAVBfmeVisitorBF@@@Z (0x004D6E95)
 ?bfmeSameUW@@YADPAXPAVBfmeItemUW@@0@Z,0x0030141B,callee read from the retail REL32 in placed BFME1-donor body ?Rva00452FE0Same@@YAHABURva00452FE0Key@@0@Z (0x00301B24)
+??0U4Made005EA530@@QAE@PAVU4Maker005EA530@@@Z,0x003ADD0B,address read from the REL32 displacement at a placed body
