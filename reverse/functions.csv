@@ -51634,3 +51634,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva003608DF@DamageFX@@QAE_NHMPBVObject@@0@Z,,0x003608DF,50,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,DamageFX doFX wrapper via rva003605E3 then doFXObj false on null
 ?getCDECount@BfmeOwnerCDE@@QAEHPAX@Z,,0x0073D090,939,Code/GameEngine/Source/Common/BfmeOwnerCDECount.cpp,matched,BFME1 donor BfmeOwnerCDECount plus rowed rva006BD9C0 and bfmeStepsEU via theDebug LINK BONUS name
 ?rva003605AF@Rva003605AF@@QAEXXZ,,0x003605AF,38,Code/GameEngine/Source/Common/DamageFXRva003605AF.cpp,matched,unlock lane neighbours DamageFX float-first zero loop
+?rva00538ADC@BfmeQuickMatchScreenBase@@UAEXXZ,,0x00538ADC,43,Code/GameEngine/Source/Common/Rva00538ADCFinish.cpp,matched,do/while keeps the top test and trailing jmp; for/while/goto all rotate to bottom test

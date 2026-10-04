@@ -1,13 +1,21 @@
 // ?rva00538ADC@BfmeQuickMatchScreenBase@@UAEXXZ
-// partial score=0.93 date=2026-09-26
-// ?rva00538ADC@BfmeQuickMatchScreenBase@@UAEXXZ
-// partial score=0.93 date=2026-09-26
 // cl: /O1 /DNDEBUG /MD /EHsc
-
+//
 // Slot 8 (offset 0x20) of vtable 0x00839608, retail 0x00538ADC 43B.
-// Layout from BfmeQuickMatchScreenBaseConstructor.cpp / Slot4.cpp (head at +0x08).
-// Calls slot7 (offset 0x1C) with head, then TheWindowManager (0x00DFEF1C) slot 0x8C.
-// Null-this guard gives push esi/mov esi,ecx/test esi,esi with correct esi=this edi=w allocation.
+// Drains the screen's window list: for each window it calls slot 7 (offset
+// 0x1C) with the window, then TheWindowManager (0x00DFEF1C) slot 0x8C with the
+// same window, and repeats from the head until the head is null.
+//
+// The do/while is load-bearing: it is what keeps VC7 top-testing the loop
+// (mov edi,[esi+8] / test edi,edi / je out at the top, with the trailing
+// `jmp 0x538AE4` back-edge), which is retail's shape. Every equivalent spelling
+// -- `for(;;)` with break, `while`, plain `goto`, and `for` with a reload
+// increment -- rotates to a bottom-tested loop with an initial jmp at
+// 0x00538AE4, which is the same 43 bytes and the same registers but the wrong
+// branch layout.
+//
+// Null-this guard gives push esi/mov esi,ecx/test esi,esi with esi=this and
+// edi=the window, matching retail.
 
 class GameWindow
 {
@@ -87,12 +95,13 @@ void BfmeQuickMatchScreenBase::rva00538ADC()
 {
 	if (this == 0)
 		return;
-	for (;;)
-	{
-		GameWindow *w = m_head;
+
+	GameWindow *w = m_head;
+	do {
 		if (w == 0)
 			break;
 		slot7(w);
 		TheWindowManager->managerSlot35(w);
-	}
+		w = m_head;
+	} while (w != 0);
 }
