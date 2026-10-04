@@ -52012,3 +52012,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?push_back@?$vector@VRva004BA1D0@@V?$allocator@VRva004BA1D0@@@_STL@@@_STL@@QAEXABVRva004BA1D0@@@Z,,0x004BA7E0,55,Code/Libraries/Source/WWVegas/WWLib/Rva004BA7E0PushBack.cpp,matched,vector push_back via explicit instantiation same element and flags as overflow 0x004BA4D3
 ?rva0049E368@ProductionUpdate@@QAEXXZ,,0x0049E368,77,Code/GameEngine/Source/GameLogic/Object/Update/ProductionUpdateRva0049E368.cpp,matched,ProductionUpdate queue clear via rowed rva002D06CA and erase
 ?rva003F255C@Rva003F255C@@QAEXPBVModuleData@@@Z,,0x003F255C,26,Code/GameEngine/Source/Common/System/Rva003F255C.cpp,matched,unlock lane rowed push_back caller 0x003F2576 prev dtor next Rva003F26AA
+?Rva00148AC4Contains@@YAEPAURva00148AC4Range@@PAVCreateAHeroData@@@Z,,0x00148AC4,31,Code/GameEngine/Source/Common/Rva00148AC4Contains.cpp,matched,free contains via rowed find 0x0020E873 range +0/+4
