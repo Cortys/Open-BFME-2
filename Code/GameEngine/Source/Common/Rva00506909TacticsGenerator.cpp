@@ -24,13 +24,14 @@ struct Rva00506909Request;
 
 struct Rva00506909Item
 {
+	virtual ~Rva00506909Item();
 	void rva004EDF03();
 	void rva004ECE1C();
 	void rva004ED81D(Rva00506909Request *request, void *arg);
 	void rva004ED955(void *owner);
 	void rva004ED6D2(struct Rva005059A1Unit *unit);
 	void rva004EDD4D(struct Rva005059A1Unit *unit);
-	char m_pad00[0x30];
+	char m_pad04[0x30 - 4];
 	int m_id;	// +0x30
 };
 
@@ -41,7 +42,7 @@ struct Rva00506909Item
 // item it stands for.
 struct Rva00506909Gen
 {
-	virtual void v0();
+	virtual ~Rva00506909Gen();
 	virtual bool appliesTo(Rva00506909Request *request);
 	virtual void v2(); virtual void v3(); virtual void v4();
 	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
@@ -110,6 +111,7 @@ public:
 	void rva005059A1(Rva005059A1Unit *unit);
 	void rva00505A56(Rva005059A1Unit *unit);
 	Rva00506909(void *owner);
+	~Rva00506909();
 	void rva005069B4();
 	bool rva005069CE(Rva00506909Request *request, void *arg);
 private:
@@ -398,4 +400,27 @@ void Rva00506909::rva00505A56(Rva005059A1Unit *unit)
 			return;
 		}
 	}
+}
+
+// 0x00505BBA: delete every generator, then every item, then the lists.
+Rva00506909::~Rva00506909()
+{
+	Rva00506909Gen **gen;
+	for (gen = m_04.begin(); gen != m_04.end(); ++gen)
+		::delete *gen;
+	for (gen = m_1C.begin(); gen != m_1C.end(); ++gen)
+		::delete *gen;
+	for (gen = m_34.begin(); gen != m_34.end(); ++gen)
+		::delete *gen;
+	for (gen = m_4C.begin(); gen != m_4C.end(); ++gen)
+		::delete *gen;
+	Rva00506909Item **item;
+	for (item = m_10.begin(); item != m_10.end(); ++item)
+		::delete *item;
+	for (item = m_28.begin(); item != m_28.end(); ++item)
+		::delete *item;
+	for (item = m_40.begin(); item != m_40.end(); ++item)
+		::delete *item;
+	for (item = m_58.begin(); item != m_58.end(); ++item)
+		::delete *item;
 }
