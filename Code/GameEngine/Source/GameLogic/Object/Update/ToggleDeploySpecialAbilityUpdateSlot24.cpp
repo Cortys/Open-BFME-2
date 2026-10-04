@@ -1,19 +1,7 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /ICode/GameEngine/Include /O1 /DNDEBUG /MD /EHsc
 // ?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z retail 0x004AE6D7 183B
 // Evidence: vslot 24 of vtable 0x00855370 for ToggleDeploySpecialAbilityUpdate; audio event via rowed BfmeAudioEventPrefix136 plus CondSetter plus TheAudio slot 0x64 plus DeployStyle helper; caller none. Row ?rva0028B7C8@Object@@QBEHXZ declares int but retail tests al so TU declares bool per-code-use.
-struct OpaqueRefElement4;
-class BfmeStringTailRecord144
-{
-public:
-	virtual ~BfmeStringTailRecord144();
-};
-class BfmeAudioEventPrefix136 : public BfmeStringTailRecord144
-{
-public:
-	BfmeAudioEventPrefix136(const OpaqueRefElement4 &o, int v);
-private:
-	char m_pad[136 - sizeof(BfmeStringTailRecord144)];
-};
+#include "Common/BfmeAudioEventPrefix136.h"
 class Rva002D9531
 {
 public:
@@ -167,9 +155,6 @@ public:
 	virtual void v109();
 	virtual void v110();
 	virtual bool v111();
-};
-struct OpaqueRefElement4 {
-	int m_dummy;
 };
 struct Thing {
 	char m_pad[0xCC];
