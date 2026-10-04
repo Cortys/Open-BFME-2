@@ -7498,3 +7498,8 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?push_back@?$vector@VBfmeThingUBB@@V?$allocator@VBfmeThingUBB@@@_STL@@@_STL@@QAEXABVBfmeThingUBB@@@Z,0x0032D2EA,TeamsInfoRec::addTeam (0x0032DA4E) grow path calls it at 0x0032DA84 with the BfmeThingUBB temporary; only caller; body unrowed
 ?rva0032D103@TeamsInfoRec@@QAEXH@Z,0x0032D103,TeamsInfoRec member taking a team index; called inside the try block of addTeam (0x0032DABF) and from 0x0032D26E; body unrowed
 ?m009EC960@Q1Receiver0134FAAC@@QAEXPAX@Z,0x00180FD0,empty Q1 receiver taking one argument (BFME1 0x009EC960 is a 3-byte ret 4); Rva0061F0F0 calls it at 0x0061F103 and retail folded it onto the shared ret-4 stub; ICF alias
+??0PristineBoneInfo@@QAE@XZ,0x000423C5,doSingleBoneName (0x000BD2BF) +0x1E builds its PristineBoneInfo local through this address; folded with the matched Matrix3D default ctor (ICF alias)
+?findSingleBone@@YA_NPAVRenderObjClass@@ABVAsciiString@@AAVMatrix3D@@AAH@Z,0x000B6B4F,static W3DModelDraw helper; doSingleBoneName (0x000BD2BF) calls it at +0x4F and +0xB8; body unrowed
+??A?$map@W4NameKeyType@@UPristineBoneInfo@@U?$less@W4NameKeyType@@@_STL@@V?$allocator@U?$pair@$$CBW4NameKeyType@@UPristineBoneInfo@@@_STL@@@4@@_STL@@QAEAAUPristineBoneInfo@@ABW4NameKeyType@@@Z,0x000BCF68,PristineBoneInfoMap operator[]; doSingleBoneName (0x000BD2BF) calls it four times; body unrowed
+??4PristineBoneInfo@@QAEAAU0@ABU0@@Z,0x000B2CE5,PristineBoneInfo copy-assign; doSingleBoneName (0x000BD2BF) calls it four times; folded with other 0x34-byte copy assigns (ICF alias)
+?findSingleSubObj@@YA_NPAVRenderObjClass@@ABVAsciiString@@AAVMatrix3D@@AAH@Z,0x000B6BF0,static W3DModelDraw helper; doSingleBoneName (0x000BD2BF) calls it at +0x10E and +0x175; body unrowed
