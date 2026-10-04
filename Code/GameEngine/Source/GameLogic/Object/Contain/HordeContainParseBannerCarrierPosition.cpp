@@ -46,7 +46,7 @@ template <> void vector<HordeBannerSlot>::push_back(const HordeBannerSlot &);
 }
 struct INIException { char *message; int code; };
 extern "C" void rva002f681_fill(void *, int, const char *, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *, void *);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct BannerThrowInfoAnchor { int a,b,c,d; };
 static const BannerThrowInfoAnchor bannerThrowInfoAnchor = {0,0,0,0};
 void parseBannerCarrierPosition(INI *ini, void *instance, void *store, const void *userData)
@@ -75,17 +75,13 @@ badUnit:
   {
     INIException e;
     rva002f681_fill(&e,3,"UnitType expected");
-    _CxxThrowException(&e,(void *)&bannerThrowInfoAnchor);
+    _CxxThrowException(&e, (const _s__ThrowInfo *)&bannerThrowInfoAnchor); __assume(0);
   }
 badPos:
   {
     INIException e;
     rva002f681_fill(&e,3,"'Pos' expected");
-    _CxxThrowException(&e,(void *)&bannerThrowInfoAnchor);
+    _CxxThrowException(&e, (const _s__ThrowInfo *)&bannerThrowInfoAnchor); __assume(0);
   }
 }
 
-// The (void *, void *) declaration above is a C++ overload, so calls spell
-// ?_CxxThrowException@@YGXPAX0@Z; retail calls the MSVC 7.1 throw helper
-// __CxxThrowException@8 (its import thunk at 0x00629094). Same ABI: bind the spelling.
-#pragma comment(linker, "/alternatename:?_CxxThrowException@@YGXPAX0@Z=__CxxThrowException@8")
