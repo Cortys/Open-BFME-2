@@ -53,16 +53,21 @@ public:
 	StateMachine *m_machine; // +0x18
 };
 
-// ?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z present-unmatched
 bool Rva005440F6Get(Rva00544884State *state)
 {
 	Object *goal = ((TurretStateMachine *)state->m_machine)->getGoalObject();
 	TurretMachine *machine = (TurretMachine *)state->m_machine;
-	if (goal == 0)
-		return false;
-	BfmeGotBEC *bec = ((BfmeSubBEC *)goal)->bfmeFindBEC();
-	if (bec == 0)
-		return false;
-	Object *owner = state->m_machine->m_owner;
-	return bec->v04(owner, machine->m_3C);
+	bool result;
+	if (goal == 0) {
+		result = false;
+	} else {
+		BfmeGotBEC *bec = ((BfmeSubBEC *)goal)->bfmeFindBEC();
+		if (bec == 0) {
+			result = false;
+		} else {
+			Object *owner = state->m_machine->m_owner;
+			result = bec->v04(owner, machine->m_3C) != 0;
+		}
+	}
+	return result;
 }
