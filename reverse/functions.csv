@@ -52006,3 +52006,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?ManTheWallsSpecialPowerParse_2526DF@@YAXAAVMultiIniFieldParse@@@Z,,0x004C856F,5,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SpecialPowerModuleDataBuildFieldParse.cpp,matched,LINK BONUS factory 0x002526DF base 0x493207
 ?HordeDispatchSpecialPowerParse_25287D@@YAXAAVMultiIniFieldParse@@@Z,,0x004C89CB,27,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SpecialPowerModuleDataBuildFieldParse.cpp,matched,LINK BONUS factory 0x0025287D base 0x493207 empty table
 ?seekoff@strstreambuf@_STL@@MAE?AV?$fpos@H@2@JHH@Z,,0x00602C30,440,Code/Libraries/Source/WWVegas/WWLib/stlport_strstreambuf_seekoff.cpp,matched,vslot 2 of 0x0087A878 donor STLport strstream.cpp
+?rva00093349@Rva00093349@@QAEXXZ,,0x00093349,100,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00093349.cpp,matched,caller 0x0009470A LINK 1 file via W3DSnowManager
