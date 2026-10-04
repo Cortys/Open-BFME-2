@@ -52438,3 +52438,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva002C67DC@Rva002C67DC@@QAE_NXZ,,0x002C67DC,105,Code/GameEngine/Source/Common/Rva002C67DCMethod.cpp,matched,unlock lane ThePlayerList g_00DFEEF8 getNthPlayer row DispByte row rva002A8AB1 pin
 ?rva002C68CE@Rva002C68CE@@QAEHXZ,,0x002C68CE,109,Code/GameEngine/Source/Common/Rva002C68CEMethod.cpp,matched,unlock lane sibling 002C67DC ThePlayerList g_00DFEEF8 getNthPlayer row rva002A8AB1 pin
 ?Rva005D2355Get@@YAPBVImage@@PAURva005D2355In@@@Z,,0x005D2355,102,Code/GameEngine/Source/Common/Rva005D2355ImageGet.cpp,matched,image lookup via rowed 0x002D06CA 0x0033BA46 LivingWorld find and findImageByName
+?Rva005D232DGet@@YAPBVImage@@PAURva005D232DIn@@@Z,,0x005D232D,40,Code/GameEngine/Source/Common/Rva005D232DImageGet.cpp,matched,image lookup sibling via rowed 0x002D06CA and 0x0033BA46
