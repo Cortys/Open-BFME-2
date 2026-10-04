@@ -50763,3 +50763,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva00091A80@@QAE@XZ,,0x00091A80,44,Code/GameEngine/Source/Common/Rva00091A80Ctor.cpp,matched,dual-vptr ctor over Rva002DAB18 base with ints and global W3DGCData00DE2000 caller 0x0004C5E7
 ?rva0004C5C6@Rva004C743@@UAEPAVRva00091A80@@XZ,,0x0004C5C6,50,Code/GameEngine/Source/Common/Rva004C5C6.cpp,matched,vtable slot 43 of 0x007C4738 new 0x24 ctor 0x00091A80
 ?rva0004C553@Rva004C743@@UAEPAVRva00090360@@XZ,,0x0004C553,50,Code/GameEngine/Source/Common/Rva004C5C6.cpp,matched,vtable slot 41 of 0x007C4738 new 0x40 ctor 0x00090360
+?Rva005D5648Fill@@YGXPAV?$vector@UBfmeStringRecord005D511F@@V?$allocator@UBfmeStringRecord005D511F@@@_STL@@@_STL@@PAVGameInfo@@@Z,,0x005D5648,136,Code/GameEngine/Source/Common/StringRecordVectorFill005D5648.cpp,matched,GameSlot layout plus 5-arg ctor and push_back rows callers 0x005D5715 0x005D579A
