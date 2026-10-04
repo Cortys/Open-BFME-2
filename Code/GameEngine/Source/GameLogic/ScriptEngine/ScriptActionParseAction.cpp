@@ -182,6 +182,7 @@ protected:
 	}
 
 	static ScriptAction *ParseAction(DataChunkInput &file, DataChunkInfo *info, void *userData);
+	friend void bfmeEmitScriptActionParseAction(void);
 
 	Int getActionType() const { return m_actionType; }
 	Int getNumParameters() const { return m_numParms; }
@@ -195,7 +196,7 @@ protected:
 };
 
 // ?ParseAction@ScriptAction@@ present-unmatched
-ScriptAction *ScriptAction::ParseAction(DataChunkInput &file, DataChunkInfo *info, void *userData)
+inline ScriptAction *ScriptAction::ParseAction(DataChunkInput &file, DataChunkInfo *info, void *userData)
 {
 	ScriptAction *pScriptAction = new ScriptAction;
 
@@ -395,3 +396,17 @@ ScriptAction *ScriptAction::ParseAction(DataChunkInput &file, DataChunkInfo *inf
 	}
 	return pScriptAction;
 }
+
+// This TU must not strongly define ParseAction (Scripts.cpp owns the kept
+// copy), but its body stages the future row and its Parameter uses emit the
+// ledger row below, so the body stays inline and this anchor forces the
+// select-any copy out.
+#pragma inline_depth(0)
+// ?bfmeEmitScriptActionParseAction@@YAXXZ present-unmatched
+void bfmeEmitScriptActionParseAction(void)
+{
+	DataChunkInput file;
+	DataChunkInfo info;
+	ScriptAction::ParseAction(file, &info, 0);
+}
+#pragma inline_depth()
