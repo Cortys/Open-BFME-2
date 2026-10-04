@@ -52043,3 +52043,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?Rva004E74E0Append@@YAXPAVUnicodeString@@PBV1@@Z,,0x004E74E0,38,Code/GameEngine/Source/Common/Rva004E74E0Append.cpp,matched,unicode join newline concat via shared header rowed callees 7 callers in 0x004E7506
 ?rva004E7C1C@Rva004E7C1C@@QAEXXZ,,0x004E7C1C,49,Code/GameEngine/Source/Common/Rva004E7C1CList.cpp,matched,list clear via rva004E7A76 and free reset sentinel callers 0x004E7C8A 0x004E7CEF
 ?rva004E7C8A@Rva004E7C1C@@QAEXXZ,,0x004E7C8A,23,Code/GameEngine/Source/Common/Rva004E7C1CList.cpp,matched,list dtor clear then free head callers 0x004E7DFB 0x004E7F10
+??4Payload@DeliverPayloadNugget@@QAEAAU01@ABU01@@Z,,0x0027F589,29,Code/GameEngine/Source/GameLogic/Map/DeliverPayloadNuggetPayloadAssign.cpp,matched,payload assign scalar plus TreeHintRef rowed callee STL copy caller
