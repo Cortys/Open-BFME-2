@@ -1,4 +1,6 @@
 // ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
+// partial score=0.96 date=2026-10-04
+// ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
 // partial score=0.95 date=2026-10-04
 // ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
 // ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
@@ -289,30 +291,34 @@ unsigned int GeneralAllocator::rva00032A20(const void *block)
 // 0x000305B8 and _GetBlockHeap at 0x00030658.
 bool GeneralAllocator::rva00032920(const void *block)
 {
-	// Seat-4 re-bank of the 0x00032920 partial. Three changes, all in this body's
-	// own locals, taking it from 26 differing bytes to 2:
-	//   - the lock pointer is read FIRST, before the block is touched;
-	//   - blk and p8 are const-qualified, so neither needs a callee-saved register;
-	//   - the header is read as *(p8 + 4), which is the same address as blk - 4 but
-	//     spelled through the alias, so cl keeps `block` live in a scratch register
-	//     instead of EBP.
-	// Together these reproduce retail's opening exactly -- push ebx / mov ebx,[esp+8]
-	// / mov eax,[ebx-4] / push ebp / push esi / push edi / mov edi,ecx -- where the
-	// bank opened push ebx / push ebp / mov ebp,[esp+0xc] / mov eax,[ebp-4].
-	// The bank recorded the residue as a callee-saved tie-break; it was the spelling.
+	// Seat-4 second pass on the 0x00032920 partial. The bank reached 2 differing
+	// bytes and recorded the residue as "the small-list scan's compare form" --
+	// retail keeps block-8 in EDX across the whole function where this build
+	// materialises the offset inside the scan. That reading was wrong. Both builds
+	// are byte-identical from +0x0 through the scan's compare, and the only residue
+	// is the DISPLACEMENT of the `test BYTE PTR [esp+0x14],2 / je` at +0x31: retail
+	// targets 0x329B7 (the intrusive-search block), this build targets 0x3299C.
 	//
-	// The two remaining bytes are the small-list scan's compare form. Retail keeps
-	// block-8 in EDX across the whole function (`mov edx,[edx-8]` on entry) and never
-	// has it live in the scan, where this build materialises the offset there instead
-	// (`mov edx,ecx / sub edx,eax`, compare against edx rather than ecx). EDX is
-	// caller-saved and only live in retail for the trailing lock-release block, so the
-	// allocator's release counter has to be addressed by something the allocator
-	// cannot see past. Swept and rejected: dropping the empty-list check (the bank
-	// showed the list is never empty on entry), folding the scan's two returns into
-	// one flag with a single release, the same for the intrusive branch, both, taking
-	// the scan compares off blk instead of p8, and declaring cur before sent are all
-	// 34 to 125 differing bytes, never better. This TU compiles 20+ allocator bodies,
-	// so it is left at the 2-byte form rather than re-risk all of them.
+	// Both compilers lay the intrusive block out first; the difference is only which
+	// copy of the two identical lock-release blocks that `je` lands on. Converting
+	// the scan's empty-list early return into the same `found` flag the loop already
+	// uses collapses the scan branch's three returns to two, which shortens the
+	// block the `je` can target and takes the residue from 2 differing bytes to 1.
+	//
+	// The byte that remains is the block-selection decision itself, not a register
+	// or an addressing form. Swept and byte-identical at 1 differing byte, or worse:
+	//   - inverting the test to `if ((header & 2) == 0) { intrusive } else { scan }`
+	//     so the compiler treats the intrusive path as the fall-through (q3) is
+	//     215B and 22 differing bytes;
+	//   - folding BOTH branches onto one `owns` flag with a single shared release
+	//     (q1) drops to 158B and 6 differing bytes -- the shared release is emitted
+	//     but the scan's loop-invariant compare is hoisted out of the loop;
+	//   - folding only the scan onto `owns` while leaving the intrusive branch's
+	//     two explicit returns (q2) is byte-identical to this body.
+	// MSVC 7.1 always sinks the loop-containing block ahead of the call-containing
+	// one here, so no spelling of the two branches reaches retail's `je` target.
+	// The same allocator tie-break is recorded unresolved at 0x0045FE4A and
+	// 0x00483011, so there is no sibling to copy the schedule from.
 	Lock *lock = m_4E4;
 	const char *const blk = (const char *)block;
 	const char *const p8 = blk - 8;
@@ -324,34 +330,34 @@ bool GeneralAllocator::rva00032920(const void *block)
 	}
 	if ((header & 2) != 0)
 	{
+		bool found = false;
 		SmallNode *cur = m_49C.m_next;
 		SmallNode *sent = &m_49C;
-		if (cur == sent)
+		if (cur != sent)
+		{
+			unsigned int v = *(const unsigned int *)p8;
+			unsigned int off = (unsigned int)p8 - v;
+			do
+			{
+				unsigned int nv = cur->m_0;
+				unsigned int sz = (unsigned int)cur - nv;
+				if (sz == off)
+				{
+					found = true;
+					break;
+				}
+				cur = cur->m_next;
+			} while (cur != sent);
+		}
+		if (found)
 		{
 			if (lock != 0)
 			{
 				--lock->m_count;
 				LeaveCriticalSection(lock);
 			}
-			return false;
+			return true;
 		}
-		unsigned int v = *(const unsigned int *)p8;
-		unsigned int off = (unsigned int)p8 - v;
-		do
-		{
-			unsigned int nv = cur->m_0;
-			unsigned int sz = (unsigned int)cur - nv;
-			if (sz == off)
-			{
-				if (lock != 0)
-				{
-					--lock->m_count;
-					LeaveCriticalSection(lock);
-				}
-				return true;
-			}
-			cur = cur->m_next;
-		} while (cur != sent);
 		if (lock != 0)
 		{
 			--lock->m_count;
@@ -376,7 +382,6 @@ bool GeneralAllocator::rva00032920(const void *block)
 	}
 	return true;
 }
-
 // ?rva006C1D10@GeneralAllocator@Allocator@EA@@QAEIPBX@Z @0x006C1D10 59B
 // Fast usable-size: header at block-4, sign check tail-calls 0x32A20,
 // bit1 selects masked size else masked+4, then short at [size+block-0xA]
