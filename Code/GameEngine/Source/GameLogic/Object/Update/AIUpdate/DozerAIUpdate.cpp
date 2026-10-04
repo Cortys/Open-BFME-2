@@ -3609,7 +3609,6 @@ void DozerAIUpdate::createMachines( void )
 // ------------------------------------------------------------------------------------------------
 /** Create the bridge scaffolding if necessary for the bridge that is attached to this tower */
 // ------------------------------------------------------------------------------------------------
-// ?createBridgeScaffolding@DozerAIUpdate@@UAEXPAVObject@@@Z present-unmatched
 void DozerAIUpdate::createBridgeScaffolding( Object *bridgeTower )
 {
 
@@ -3636,7 +3635,6 @@ void DozerAIUpdate::createBridgeScaffolding( Object *bridgeTower )
 // ------------------------------------------------------------------------------------------------
 /** Remove the bridge scaffolding from the bridge object that is attached to this tower */
 // ------------------------------------------------------------------------------------------------
-// ?removeBridgeScaffolding@DozerAIUpdate@@UAEXPAVObject@@@Z present-unmatched
 void DozerAIUpdate::removeBridgeScaffolding( Object *bridgeTower )
 {
 
