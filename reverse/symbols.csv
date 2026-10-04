@@ -8257,3 +8257,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeTailDDB@BfmeSubDDB@@QAEHXZ,0x00271898,callee of ?bfmeGoDDB@BfmeThingDDB@@QAEHXZ at retail 0x00272C89 read from its REL32 displacement; body unrowed
 ?bfmeMakeEYF@@YAPAUBfmeNodeEYF@@PAX0@Z,0x0030DC85,callee of ?bfmeGoEYF@BfmeThingEYF@@QAE_NPAX0@Z at retail 0x0030DE61 read from its REL32 displacement; donor-carried name; body unrowed
 ?bfmeCallFBC@BfmeObjFBC@@QAEDPAX0H0@Z,0x0035B2C3,callee of ?bfmeGoFBC@BfmeThingFBC@@QAE_NPAX@Z at retail 0x002614BC read from its REL32 displacement; donor-carried name; same address as the address-derived ?rva0035B2C3 pin (AoE target picker 0x005EE816), same (source count position template) shape
+?bfmeTailFHG@@YGXPAX0HH@Z,0x001E19E8,callee of ?bfmeGoFHG@@YGXPAX000@Z at retail 0x001E19CE read from its REL32 displacement; donor-carried name; body unrowed
+?j_0003eebe@@YAXXZ,0x00290B24,callee of ?bfmeGoFCD@@YAXPAVBfmeObjFCD@@PAUBfmePairFCD@@@Z at retail 0x0046258C read from its REL32 displacement; donor-carried name for the member-function thunk it targets; body unrowed
