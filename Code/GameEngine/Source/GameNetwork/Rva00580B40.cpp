@@ -1,0 +1,27 @@
+// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ?rva00580B40@Rva00580B40@@QAEXPBVModuleData@@@Z @0x00580B40 28B.
+// Pushes non-null arg into vector<const ModuleData*> at +0x00 via rowed push_back
+// then clears byte at +0x15. Evidence: callers 0x00445E64 0x005A06CD.
+#include <vector>
+
+class ModuleData;
+
+class Rva00580B40
+{
+public:
+    void rva00580B40(const ModuleData *p);
+
+private:
+    _STL::vector<const ModuleData *> m_vec;
+    char m_pad[0x15 - 0x0C];
+    unsigned char m_15;
+};
+
+void Rva00580B40::rva00580B40(const ModuleData *p)
+{
+    if (p != 0) {
+        m_vec.push_back(p);
+        m_15 = 0;
+    }
+}
