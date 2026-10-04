@@ -50616,3 +50616,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6CD7@@YAXXZ,,0x007B6CD7,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6CD7
 ?rva007B6CEB@@YAXXZ,,0x007B6CEB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6CEB
 ?rva007B6CF5@@YAXXZ,,0x007B6CF5,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6CF5
+?Rva006C8A40Get@@YA?AV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@PBD@Z,,0x006C8A40,145,Code/GameEngine/Source/Common/Bfme/Rva006C8A40Finish.cpp,matched,registry path builder; 4-byte header word before the 512B sprintf target reproduces retail frame 0x208 plus the single zeroing store
