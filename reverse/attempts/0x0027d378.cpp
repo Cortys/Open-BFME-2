@@ -1,6 +1,8 @@
 // ?rva0027D378@Rva0027D378@@QAEHPAXH@Z
+// partial score=0.95 date=2026-10-04
+// ?rva0027D378@Rva0027D378@@QAEHPAXH@Z
 // partial score=0.9 date=2026-10-02
-// cl: /O2 /G7 /MD
+// cl: /O1 /G7 /MD /Oy-
 // ?rva0027D378@Rva0027D378@@QAEHPAXH@Z, retail 0x0027D378, 83 bytes.
 // Countdown on target struct: take = min(amount, target+0x28), subtract,
 // if depleted call manager slot31 with target+0xC, reset via rowed
@@ -88,7 +90,9 @@ int Rva0027D378::rva0027D378(void *p, int amount)
 	if (amount >= old)
 		pick = &old;
 	int take = *pick;
-	if ((s->m_field28 -= take) > 0)
+	int &cur = s->m_field28;
+	cur -= take;
+	if (cur > 0)
 		return take;
 	TheRva009FF080Manager0027D378->_slot31(s->m_field0C);
 	((Rva0027D098 *)s)->rva0027D098();
