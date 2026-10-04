@@ -7755,3 +7755,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$__uninitialized_copy@PBUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PBU1@0PAU1@ABU__false_type@0@@Z,0x001D9B3C,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_uninitialized_copy.cpp
 ??0?$_Vector_base@UTreeKey00242F5E@@V?$allocator@UTreeKey00242F5E@@@_STL@@@_STL@@QAE@IABV?$allocator@UTreeKey00242F5E@@@1@@Z,0x000B6378,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_uninitialized_copy.cpp
 ?get_allocator@?$vector@UTreeKey00242F5E@@V?$allocator@UTreeKey00242F5E@@@_STL@@@_STL@@QBE?AV?$allocator@UTreeKey00242F5E@@@2@XZ,0x0021983A,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_uninitialized_copy.cpp
+??1BfmeNarrowRecord000BFDC7@@QAE@XZ,0x0021F8F3,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_vector_narrowrecord_bfdc7_fill.cpp
