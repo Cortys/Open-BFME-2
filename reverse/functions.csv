@@ -50757,3 +50757,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva004E5344@Rva004E5344@@QAEXMM@Z,,0x004E5344,46,Code/Libraries/Source/WWVegas/WWLib/Rva004E5344.cpp,matched,conditional timer insert plus38 via rowed 357DF8 when altb
 ?rva002ED7B6@Rva002ED7B6@@QAEPAV1@HPAXHHHH@Z,,0x002ED7B6,65,Code/GameEngine/Source/Common/Rva002ED7B6Finish.cpp,matched,unlock init via Split 0x002EBCA7; member store source order matches retail register/load schedule; caller 0x002F3BE8
 ?rva00289180@Rva00289ABD@@UAEXXZ,,0x00289180,91,Code/GameEngine/Source/Common/Rva00289180Finish.cpp,matched,slot 9 cleanup walks WindowVideoMap at +0x0C then clears map at +0x28 via rowed Rva002889BB
+?rva0046383F@Rva00463782@@QAEPAU_Rb_tree_node_base@_STL@@PAURva0046383FOut@@PBVRva0046267A@@@Z,,0x0046383F,134,Code/Libraries/Source/WWVegas/WWLib/Rva0046383FFinish.cpp,matched,_Rb_tree insert_unique for Rva0046267A tree via rowed _M_insert plus _M_decrement
