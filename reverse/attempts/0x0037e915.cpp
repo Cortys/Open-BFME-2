@@ -1,3 +1,5 @@
+// ?rva0037E915@Rva0037E421@@QAEPAXH@Z
+// partial score=0.93 date=2026-10-04
 // cl: /O1 /MD /arch:SSE
 // ?rva0037E421@Rva0037E421@@QAEPAXH@Z @0x0037E421 48B
 // Bounds-checked accessor for the 216-byte (0xD8) element vector at +0x04/+0x08.
@@ -19,7 +21,7 @@ public:
     unsigned char rva0037E7BC(int index);
     void *rva0037E451(int key);
     unsigned char rva0037E7DA(int key);
-    void *rva0037E7A5(int index);
+    void *rva0037E915(int index);
 };
 void *Rva0037E421::rva0037E421(int index)
 {
@@ -70,13 +72,19 @@ unsigned char Rva0037E421::rva0037E7DA(int key)
     }
     return 0;
 }
-// ?rva0037E7A5@Rva0037E421@@QAEPAXH@Z @0x0037E7A5 23B
-// Chain of rva0037E421 then rowed Rva0037E270::rva0037E270; null if element missing.
-// Proven by 5 callers and rowed callees 0x0037E421 and 0x0037E270; same class and flags.
-void *Rva0037E421::rva0037E7A5(int index)
+// ?rva0037E915@Rva0037E421@@QAEPAXH@Z @0x0037E915 53B
+// Bounds-checked accessor chaining to rowed Rva0037E270::rva0037E270.
+// Same +4/+8 vector with 0xD8 stride as siblings; null when index < 0 or
+// index >= (finish-start)/216 via signed idiv, else element lookup.
+// Proven by caller at 0x0049CD14 and rowed callee 0x0037E270.
+// ?rva0037E915@Rva0037E421@@QAEPAXH@Z present-unmatched
+void *Rva0037E421::rva0037E915(int index)
 {
-    void *p = rva0037E421(index);
-    if (!p)
-        return 0;
-    return ((Rva0037E270 *)p)->rva0037E270();
+    unsigned int count = VecSize(&m_vec);
+    if ((unsigned int)index < count && index >= 0) {
+        Elem216 *base = m_vec.m_start;
+        Rva0037E270 *p = (Rva0037E270 *)(base + index);
+        return p->rva0037E270();
+    }
+    return 0;
 }
