@@ -7863,3 +7863,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??_ERva0056B2DD@@UAEPAXI@Z,0x0056B498,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056B34E jumps here
 ??_EObjectCreationUpgrade@@MAEPAXI@Z,0x004B40EA,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x004B3FED jumps here
 ??_ERva0053ED1A@@UAEPAXI@Z,0x0053EF12,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0053ED70 jumps here
+??0Rva005DC73C@@QAE@ABVAsciiString@@@Z,0x005DC722,tactic base ctor taking the tactic name (AITactic ctor 0x004ED3D1 with 1 then vtable 0x00C767DC); REL32 at 0x005AA6DD in the SimpleAttack ctor
+?rva004ED342@Rva004ECECD@@QAEXPAX@Z,0x004ED342,AITactic member taking a point; REL32 at 0x005AA66A in the SimpleAttack slot 6
+?rva004ED748@Rva004ECECD@@QAEXHH@Z,0x004ED748,AITactic stop/finish member (two ints); REL32 at 0x005AA691 in the SimpleAttack slot 7
+?rva005DC763@Rva005DC73C@@QAEEPAX@Z,0x005DC763,tactic base applicability test; REL32 at 0x005AA656 in the SimpleAttack slot 1

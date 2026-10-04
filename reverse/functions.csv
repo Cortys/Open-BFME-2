@@ -51388,3 +51388,8 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_ERva0056B2DD@@W7AEPAXI@Z,,0x0056B34E,8,Code/GameEngine/Source/Common/Rva0056B2DDDtor.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056B2DD
 ??_EObjectCreationUpgrade@@O7AEPAXI@Z,,0x004B3FED,8,Code/GameEngine/Source/GameLogic/Object/Upgrade/ObjectCreationUpgradeDtor.cpp,matched,adjustor thunk (this-8) in slot 0 of the BehaviorModule-base vftable; jumps to rowed ??_GObjectCreationUpgrade
 ??_ERva0053ED1A@@WM@AEPAXI@Z,,0x0053ED70,8,Code/GameEngine/Source/Common/Rva0053ED1ACtor.cpp,matched,adjustor thunk (this-12) in slot 0 of the +0xC base vftable 0x00C6944C; jumps to rowed ??_GRva0053ED1A
+?appliesTo@Rva005AA647@@UAE_NPAX@Z,,0x005AA652,17,Code/GameEngine/Source/Common/Rva005AA647Tactic.cpp,matched,SimpleAttack slot 1: base applicability 0x005DC763 as bool
+?v6@Rva005AA647@@UAEXXZ,,0x005AA663,13,Code/GameEngine/Source/Common/Rva005AA647Tactic.cpp,matched,SimpleAttack slot 6: AITactic 0x004ED342 on the +0x20 record point +0x0C (also slot 6 of vtable 0x00871FBC)
+?v7@Rva005AA647@@UAEXXZ,,0x005AA670,40,Code/GameEngine/Source/Common/Rva005AA647Tactic.cpp,matched,SimpleAttack slot 7: while running stop via 0x004ED748(1 0) when 0x004ED169 or the record flag +0x18 (also vtable 0x00871FBC)
+??0Rva005AA647@@QAE@XZ,,0x005AA6B4,79,Code/GameEngine/Source/Common/Rva005AA647Tactic.cpp,matched,SimpleAttack tactic ctor: base 0x005DC722 with the SimpleAttack name then vtable 0x00871F80
+?create@Rva005AA647@@UAEPAVRva004ECECD@@XZ,,0x005AA703,50,Code/GameEngine/Source/Common/Rva005AA647Tactic.cpp,matched,SimpleAttack slot 9: new 0x58-byte SimpleAttack tactic
