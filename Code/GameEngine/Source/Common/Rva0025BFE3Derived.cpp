@@ -45,11 +45,19 @@ public:
 	virtual ~Rva00596389();
 	int rva00596394() const;
 	void rva0059640C(void *holder);
+	void rva005963C8(int amount);
 private:
 	char m_pad08[8];
 	int m_arg10;
 	int m_zero14;
 	int m_minusOne18;
+};
+
+class Rva0039B7AD;
+class Rva003B0D7C
+{
+public:
+	void rva003B0D7C(int amount, Rva0039B7AD *arg2, bool flag);
 };
 
 // ??0Rva00596389@@QAE@H@Z, retail 0x00596366, 35 bytes. Derived ctor taking int:
@@ -137,4 +145,20 @@ void Rva00596389::rva0059640C(void *holder)
 	h->v10(&t);
 	h->v30(&m_zero14);
 	h->v31(&m_minusOne18);
+}
+
+// ?rva005963C8@Rva00596389@@QAEXH@Z @0x005963C8 40B
+// __thiscall spend-if-available: if (amount <= m_zero14 unsigned) route
+// (amount,0,true) into Money at Player+0x90 via rowed Rva003B0D7C and deduct.
+// Evidence: neighbours prove Rva00596389 owner (+0x10 Player ptr +0x14 balance
+// per rowed ctor 0x00596366 and getter 0x00596394); callee row
+// Rva003B0D7C 0x003B0D7C takes (int,ptr,bool); caller 0x0055ADE2 passes
+// this=[result+0xC] with unsigned avail check; chain lane from 0x003B0D7C.
+void Rva00596389::rva005963C8(int amount)
+{
+	if ((unsigned int)amount <= (unsigned int)m_zero14) {
+		Rva003B0D7C *money = (Rva003B0D7C *)((char *)m_arg10 + 0x90);
+		money->rva003B0D7C(amount, 0, true);
+		m_zero14 -= amount;
+	}
 }

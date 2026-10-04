@@ -51560,3 +51560,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0Rva0010EF61@@QAE@ABVRva0036CA00Str@@MH@Z,,0x0010EF61,42,Code/GameEngine/Source/Common/Rva0010EF61Ctor.cpp,matched,float plus int ctor same base vtable 0xBCFA94 callers 0x0010FEB6 0x00110056
 ??0Rva0010EF14@@QAE@ABVRva0036CA00Str@@MM@Z,,0x0010EF14,46,Code/GameEngine/Source/Common/Rva0010EF14Ctor.cpp,matched,same base 0x001164D3 as siblings 0x0010EEF1 0x0010EF61 caller 0x0010FDAC vtable 0x00BCFA84
 ??1Rva004D99FF@@QAE@XZ,,0x004D99FF,54,Code/GameEngine/Source/Common/Rva004D99FFDtor.cpp,matched,dtor releases AsciiStrings at 0x18 and 0x1C via releaseBuffer
+?rva005963C8@Rva00596389@@QAEXH@Z,,0x005963C8,40,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,chain from 0x003B0D7C via caller 0x0055ADE2 neighbours prove Rva00596389 owner
