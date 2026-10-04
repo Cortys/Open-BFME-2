@@ -7897,3 +7897,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?read@DataChunkTableOfContents@@QAEXAAVChunkInputStream@@@Z,0x003071E9,address read from the REL32 displacement at a placed body
 ?ReAcquireResources@W3DSnowManager@@QAE_NXZ,0x0009390F,init 0x00094642 tail-calls it after SnowManager::init as ZH W3DSnowManager::init does; its body opens with the device lock then the rowed ReleaseResources 0x000931D3 like ZH ReAcquireResources
 ??0BfmeThingSJ@@QAE@H@Z,0x001320D0,address read from the REL32 displacement at a placed body
+?rva002C717E@Rva002A8AB1Record@@QAEXABVAsciiString@@H@Z,0x002C717E,TheSkirmishAIManager per-owner record: store an int under an AsciiString key in the +0x17C map; REL32 at 0x005A9967 in the AIBasePenetrationTroopsTactic slot 2
+?rva002C7196@Rva002A8AB1Record@@QAEHABVAsciiString@@@Z,0x002C7196,TheSkirmishAIManager per-owner record: int under an AsciiString key in the +0x17C map (0 when absent); REL32 at 0x005A99F0 in the AIBasePenetrationTroopsTactic slot 1
+?rva004ED372@Rva004ECECD@@QAEXPAX@Z,0x004ED372,AITactic member taking a point (sibling of 0x004ED342); REL32 at 0x005A991E in the AIBasePenetrationTroopsTactic slot 6
