@@ -163,6 +163,13 @@ template<> void _Construct<RvaSmartPtr12, RvaSmartPtr12>(RvaSmartPtr12 *, const 
 template<> void _Construct<BfmeStringRecord005EC43C, BfmeStringRecord005EC43C>(BfmeStringRecord005EC43C *, const BfmeStringRecord005EC43C &);
 template<> void _Construct<BfmeStringRecord002199C8, BfmeStringRecord002199C8>(BfmeStringRecord002199C8 *, const BfmeStringRecord002199C8 &);
 template<> void _Construct<BfmeStringRecord00219A68, BfmeStringRecord00219A68>(BfmeStringRecord00219A68 *, const BfmeStringRecord00219A68 &);
+// LINK-COMDAT: retail allocate copies for these records are kept by the G7
+// growth TU (StringRecordVectorGrowthG7.cpp) and CreateAHeroBlingFindOrAdd.cpp;
+// declare them so this /O1 TU does not emit the lea+shl copies.
+template<> BfmeStringRecord0022074B *allocator<BfmeStringRecord0022074B>::allocate(unsigned int, const void *) const;
+template<> BfmeStringRecord005EC43C *allocator<BfmeStringRecord005EC43C>::allocate(unsigned int, const void *) const;
+template<> BfmeStringRecord005F93E3 *allocator<BfmeStringRecord005F93E3>::allocate(unsigned int, const void *) const;
+template<> BfmeStringRecord00219A68 *allocator<BfmeStringRecord00219A68>::allocate(unsigned int, const void *) const;
 }
 
 template _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> >::vector(const _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> > &);
