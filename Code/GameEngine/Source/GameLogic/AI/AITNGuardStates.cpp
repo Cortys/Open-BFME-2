@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /EHsc
 //
 // AITNGuard (tunnel-network guard) state bodies ported from Zero Hour's
 // GameEngine/Source/GameLogic/AI/AITNGuard.cpp (GeneralsMD tree vendored under
@@ -18,6 +18,12 @@
 //    tunnel tracker gets updateNemesis (pinned 0x004F5935, Zero Hour's body:
 //    take the target when there is no nemesis, refresh the timestamp when it
 //    is the nemesis).
+//  - AITNGuardInnerState::onEnter, retail 0x0054632D (156 bytes), and
+//    AITNGuardOuterState::onEnter, retail 0x005464CE (169 bytes): slots 4 of
+//    0x00C6A140 and 0x00C6A198; Zero Hour's bodies (exit conditions +0x20 with
+//    the give-up frame at +0x24 from TAiData +0x3C, new AIAttackState through
+//    the rowed ctor; guard mode at machine +0x4C). Retail keeps TheGameLogic
+//    in a register across the nemesis lookup, so it is read once into a local.
 // BFME2 layout (target evidence): the attack sub-state is deleted with a
 // global-scope delete (vslot 0 with flag 0, then ::operator delete); owner
 // team +0x304, object id +0x74, player tunnel tracker +0x2E8, guard machine
@@ -79,7 +85,25 @@ class GameLogic
 {
 public:
 	Object *findObjectByID(ObjectID id);
+	UnsignedInt getFrame() const { return m_frame; }
+private:
+	unsigned char m_pad00[0x40];
+	UnsignedInt m_frame; // +0x40
 };
+struct TAiData
+{
+	unsigned char m_pad00[0x3C];
+	UnsignedInt m_guardChaseUnitFrames; // +0x3C
+};
+class AI
+{
+public:
+	const TAiData *getAiData() const { return m_aiData; }
+private:
+	unsigned char m_pad00[0x18];
+	TAiData *m_aiData; // +0x18
+};
+extern AI *TheAI;
 extern GameLogic *TheGameLogic;
 typedef UnsignedInt StateID;
 enum
@@ -90,10 +114,16 @@ class State;
 class StateMachine
 {
 public:
+	virtual ~StateMachine();
+	virtual void slot01(); virtual void slot02(); virtual void slot03();
+	virtual void slot04(); virtual void slot05(); virtual void slot06();
+	virtual void slot07(); virtual void slot08(); virtual void slot09();
+	virtual void slot10(); virtual void slot11(); virtual void slot12();
+	virtual void slot13();
+	virtual void setGoalObject(const Object *obj);
 	Object *getOwner() const { return m_owner; }
 	inline StateID getCurrentStateID() const;
 private:
-	unsigned char m_pad00[0x04];
 	State *m_currentState; // +0x04
 	unsigned char m_pad08[0x14 - 0x08];
 	Object *m_owner; // +0x14
@@ -111,9 +141,16 @@ class AITNGuardMachine : public StateMachine
 public:
 	void setNemesisID(ObjectID id) { m_nemesisToAttack = id; }
 	ObjectID getNemesisID() const { return m_nemesisToAttack; }
+	int getGuardMode() const { return m_guardMode; }
 private:
 	unsigned char m_pad18[0x48 - 0x18];
 	ObjectID m_nemesisToAttack; // +0x48
+	int m_guardMode; // +0x4C
+};
+enum
+{
+	GUARDMODE_NORMAL = 0,
+	GUARDMODE_GUARD_WITHOUT_PURSUIT = 1
 };
 class State
 {
@@ -138,8 +175,23 @@ inline StateID StateMachine::getCurrentStateID() const
 {
 	return m_currentState ? m_currentState->getID() : (StateID)INVALID_STATE_ID;
 }
+class AttackExitConditionsInterface
+{
+public:
+	virtual Bool shouldExit(const StateMachine *machine) const = 0;
+};
+class TunnelNetworkExitConditions : public AttackExitConditionsInterface
+{
+public:
+	UnsignedInt m_attackGiveUpFrame; // +0x04 (state +0x24)
+	virtual Bool shouldExit(const StateMachine *machine) const;
+};
 class AIAttackState : public State
 {
+public:
+	AIAttackState(StateMachine *machine, Bool follow, Bool attackingObject, Bool forceAttacking, AttackExitConditionsInterface *attackParameters);
+private:
+	unsigned char m_pad1C[0x50 - 0x1C]; // sizeof(AIAttackState) 0x50 (the operator new size)
 };
 class AIEnterState : public State
 {
@@ -149,17 +201,24 @@ public:
 class AITNGuardInnerState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 private:
-	unsigned char m_pad1C[0x2C - 0x1C];
+	AITNGuardMachine *getGuardMachine() { return (AITNGuardMachine *)getMachine(); }
+	unsigned char m_pad1C[0x20 - 0x1C];
+	TunnelNetworkExitConditions m_exitConditions; // +0x20
+	Bool m_scanForEnemy; // +0x28
 	AIAttackState *m_attackState; // +0x2C
 };
 class AITNGuardOuterState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 private:
-	unsigned char m_pad1C[0x28 - 0x1C];
+	AITNGuardMachine *getGuardMachine() { return (AITNGuardMachine *)getMachine(); }
+	unsigned char m_pad1C[0x20 - 0x1C];
+	TunnelNetworkExitConditions m_exitConditions; // +0x20
 	AIAttackState *m_attackState; // +0x28
 };
 class AITNGuardReturnState : public AIEnterState
@@ -259,4 +318,55 @@ StateReturnType AITNGuardAttackAggressorState::update( void )
 		if (tunnels) tunnels->updateNemesis(nemesis);
 	}
 	return m_attackState->update();
+}
+
+StateReturnType AITNGuardInnerState::onEnter( void )
+{
+	GameLogic *logic = TheGameLogic;
+	Object* nemesis = logic->findObjectByID(getGuardMachine()->getNemesisID()) ;
+	if (nemesis == NULL) 
+	{
+		return STATE_SUCCESS;
+	}
+	m_exitConditions.m_attackGiveUpFrame = logic->getFrame() + TheAI->getAiData()->m_guardChaseUnitFrames;
+
+	m_attackState = new AIAttackState(getMachine(), false, true, false, &m_exitConditions);
+
+	m_attackState->getMachine()->setGoalObject(nemesis);
+
+	StateReturnType returnVal = m_attackState->onEnter();
+	if (returnVal == STATE_CONTINUE) {
+		return STATE_CONTINUE;
+	}
+
+	// if we had no one to attack, we were successful, so go to the next state.
+	return STATE_SUCCESS;
+}
+
+StateReturnType AITNGuardOuterState::onEnter( void )
+{
+	if (getGuardMachine()->getGuardMode() == GUARDMODE_GUARD_WITHOUT_PURSUIT)
+	{
+		// "patrol" mode does not follow targets outside the guard area.
+		return STATE_SUCCESS;
+	}
+
+	GameLogic *logic = TheGameLogic;
+	Object* nemesis = logic->findObjectByID(getGuardMachine()->getNemesisID()) ;
+	if (nemesis == NULL) 
+	{
+		return STATE_SUCCESS;
+	}
+
+	m_exitConditions.m_attackGiveUpFrame = logic->getFrame() + TheAI->getAiData()->m_guardChaseUnitFrames;
+	m_attackState = new AIAttackState(getMachine(), false, true, false, &m_exitConditions);
+	m_attackState->getMachine()->setGoalObject(nemesis);
+
+	StateReturnType returnVal = m_attackState->onEnter();
+	if (returnVal == STATE_CONTINUE) {
+		return STATE_CONTINUE;
+	}
+
+	// if we had no one to attack, we were successful, so go to the next state.
+	return STATE_SUCCESS;
 }
