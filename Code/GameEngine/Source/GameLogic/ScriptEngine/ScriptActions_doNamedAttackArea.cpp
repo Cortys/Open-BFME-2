@@ -46,10 +46,7 @@ public:
 class Object
 {
 public:
-    AIUpdateInterface *getAIUpdateInterface()
-    {
-        return *(AIUpdateInterface **)((char *)this + 0x258);
-    }
+    AIUpdateInterface *getAIUpdateInterface();
     void leaveGroup();
 };
 
@@ -69,7 +66,7 @@ void ScriptActions::doNamedAttackArea(const AsciiString &unitName, const AsciiSt
     if (!trigger) {
         return;
     }
-    AIUpdateInterface *aiUpdate = theSrcUnit->getAIUpdateInterface();
+    AIUpdateInterface *aiUpdate = *(AIUpdateInterface **)((char *)theSrcUnit + 0x258);
     if (!aiUpdate) {
         return;
     }
