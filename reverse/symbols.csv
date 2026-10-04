@@ -8236,3 +8236,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeAskRJ@BfmeAskerRJ@@QAE_NPAX0@Z,0x00362437,callee of ?bfmeCheckRJ@BfmeThingRJ@@QAE_NPAX@Z at retail 0x002614EC read from its REL32 displacement; address already carries the bfmeHas1026 and Rva2225E0Filter pins
 ?filterSetup@W3DShaderManager@@SA_NW4FilterTypes@@W4FilterModes@@@Z,0x00075725,callee of ?setValue@BfmeValidatedHandle@@QAE_NPAX@Z at retail 0x00085F2C read from its REL32 displacement; address already carries the matched ?Rva00075725Check@@YA_NHH@Z row
 ?bfmeCall940G@BfmeB940G@@QAEXPAXH@Z,0x00290B24,callee of ?bfmeGo940G@BfmeThing940G@@QAEXXZ at retail 0x004B8CC9 read from its REL32 displacement; address already carries the matched Object::setWeaponLock row
+??1Rva005C9D30@@QAE@XZ,0x001F9025,tail-jump target of ??1Sub005CD540Outer@@QAE@XZ at retail 0x001FA95A read from its jmp displacement; body unrowed
+?getType@Dict@@QBE?AW4DataType@1@W4NameKeyType@@@Z,0x0031317C,callee of ?known@Dict@@QBE_NW4NameKeyType@@W4DataType@1@@Z at retail 0x002A9880 read from its REL32 displacement; address already carries the matched ?getType@Dict@@QBE?AW4DataType@1@H@Z row
+?Rva00077140@@YAHHH@Z,0x0022CB03,callee of ??9Rva00077710Value@@QBE_NABV0@@Z at retail 0x0022CF4C read from its REL32 displacement; body unrowed
