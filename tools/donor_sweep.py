@@ -15,6 +15,7 @@ build/donor_sweep/results.jsonl, and a rerun skips files already there.
 
   python3 tools/donor_sweep.py [--jobs N] [--limit N]     # sweep (resumes)
   python3 tools/donor_sweep.py --report [--min 20]        # placements as leads
+  python3 tools/donor_sweep.py --pins [--apply]           # callee pins from placements
 """
 import argparse
 import collections
@@ -93,7 +94,15 @@ def sweep_one(path, minimum=20):
             pattern = b"".join(re.escape(bytes([b])) if fixed[i] else b"." for i, b in enumerate(body))
             hits = [m.start() + text_rva for m in re.finditer(pattern, blob, re.DOTALL)]
             if len(hits) == 1:
-                placements.append({"name": name, "rva": f"0x{hits[0]:08X}", "size": len(body)})
+                # each REL32 in a placed body is a byte-true call site: retail's
+                # displacement there is the callee's address
+                calls = {}
+                for offset, kind, callee in relocs:
+                    if kind == 0x0014 and offset + 4 <= len(body):
+                        at = hits[0] - text_rva + offset
+                        displacement = int.from_bytes(blob[at:at + 4], "little", signed=True)
+                        calls[callee] = f"0x{(hits[0] + offset + 4 + displacement) & 0xFFFFFFFF:08X}"
+                placements.append({"name": name, "rva": f"0x{hits[0]:08X}", "size": len(body), "calls": calls})
         return {"file": rel, "status": "ok", "placements": placements}
     except Exception as error:  # a sweep over 20k files must not stop on one
         return {"file": rel, "status": f"error: {str(error)[:120]}"}
@@ -161,14 +170,80 @@ def report(minimum):
     print(f"donor_sweep: {len(leads):,} leads, {sum(l[0] for l in leads):,} bytes", file=sys.stderr)
 
 
+def pins(apply):
+    """Callee addresses read from unique placements: a name every placement
+    calls at one address, not a ledger name and not already pinned. With
+    apply, append them to reverse/symbols.csv, keeping only what
+    pin_consistency accepts."""
+    import csv as _csv
+    rows = build.load_all_function_rows()
+    names = {r["name"] for r in rows}
+    symbols = build.ROOT / "reverse" / "symbols.csv"
+    with symbols.open(encoding="utf-8", newline="") as handle:
+        pinned = {r["name"] for r in _csv.DictReader(handle)}
+    by_address = collections.defaultdict(set)
+    seen = collections.defaultdict(set)
+    for line in RESULTS.read_text().splitlines():
+        for p in json.loads(line).get("placements", []):
+            by_address[p["rva"]].add(p["name"])
+    for line in RESULTS.read_text().splitlines():
+        for p in json.loads(line).get("placements", []):
+            if len(by_address[p["rva"]]) != 1:
+                continue  # a folded placement proves no single caller
+            for callee, address in p.get("calls", {}).items():
+                seen[callee].add(address)
+    found = {c: next(iter(a)) for c, a in seen.items()
+             if len(a) == 1 and c not in names and c not in pinned and not c.startswith("__imp_")}
+    for callee, address in sorted(found.items(), key=lambda kv: kv[1]):
+        print(f"{address}\t{callee}")
+    print(f"donor_sweep: {len(found):,} candidate pins", file=sys.stderr)
+    if not apply or not found:
+        return
+    import io as _io
+
+    def check():
+        return subprocess.run(["python3", "tools/pin_consistency.py", "--check"], cwd=build.ROOT,
+                              capture_output=True, text=True).returncode == 0
+
+    def append(items):
+        out = _io.StringIO()
+        writer = _csv.writer(out, lineterminator="\n")
+        for callee, address in items:
+            writer.writerow([callee, address, "donor_sweep: call target read from retail at a unique "
+                                              "placement of a BFME 1 donor body compiled /O1"])
+        text = symbols.read_text(encoding="utf-8")
+        symbols.write_text(text + ("" if text.endswith("\n") else "\n") + out.getvalue(), encoding="utf-8")
+
+    original = symbols.read_text(encoding="utf-8")
+    append(found.items())
+    if check():
+        print(f"donor_sweep: {len(found):,} pins added", file=sys.stderr)
+        return
+    symbols.write_text(original, encoding="utf-8")
+    kept = 0
+    for item in sorted(found.items()):
+        before = symbols.read_text(encoding="utf-8")
+        append([item])
+        if check():
+            kept += 1
+        else:
+            symbols.write_text(before, encoding="utf-8")
+    print(f"donor_sweep: {kept:,} of {len(found):,} pins added (pin_consistency refused the rest)",
+          file=sys.stderr)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--jobs", type=int, default=int(os.environ.get("BUILD_POOL", "4") or 4))
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--min", type=int, default=20)
+    ap.add_argument("--pins", action="store_true", help="list callee pins read from unique placements")
+    ap.add_argument("--apply", action="store_true", help="with --pins: add them (pin_consistency-checked)")
     args = ap.parse_args(argv)
-    if args.report:
+    if args.pins:
+        pins(args.apply)
+    elif args.report:
         report(args.min)
     else:
         sweep(args.jobs, args.limit)
