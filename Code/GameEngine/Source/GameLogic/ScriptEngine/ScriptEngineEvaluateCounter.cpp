@@ -48,6 +48,22 @@ private:
 	Parameter *m_parms[12];
 };
 
+class ScriptAction
+{
+public:
+	Parameter *getParameter(int ndx)
+	{
+		if (ndx >= 0 && ndx < m_numParms)
+			return m_parms[ndx];
+		return 0;
+	}
+
+private:
+	char m_unknown[8];
+	int m_numParms;
+	Parameter *m_parms[12];
+};
+
 struct ScriptCounter
 {
 	int m_value;
@@ -60,6 +76,7 @@ class ScriptEngine
 protected:
 	ScriptCounter *bfmeCounter(AsciiString name);
 	bool evaluateCounter(Condition *condition);
+	void subCounter(ScriptAction *action);
 };
 
 bool ScriptEngine::evaluateCounter(Condition *condition)
@@ -83,4 +100,10 @@ bool ScriptEngine::evaluateCounter(Condition *condition)
 		return counter->m_value != value;
 	}
 	return false;
+}
+
+void ScriptEngine::subCounter(ScriptAction *action)
+{
+	int value = action->getParameter(0)->getInt();
+	bfmeCounter(action->getParameter(1)->getString())->m_value -= value;
 }
