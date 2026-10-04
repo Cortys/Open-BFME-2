@@ -8,7 +8,7 @@
 // (1089B) by masked whole-.text search, and ./build.sh reproduces it byte for
 // byte. Its scanUnsignedInt callee is ICF-folded with the rowed scanInt at
 // 0x00314E96, so it is declared here and pinned rather than defined.
-// BFME window draw-data parser, RVA 0x00485EE0, 1221 bytes.
+// BFME window draw-data parser (BFME 1 0x00485EE0, 1221 bytes; BFME 2 0x00315DB1, 1089 bytes).
 // Upstream: GeneralsMD GameWindowManagerScript.cpp; string-base ABI shims
 // preserve the retail AsciiString temporary construction and destruction.
 /*
