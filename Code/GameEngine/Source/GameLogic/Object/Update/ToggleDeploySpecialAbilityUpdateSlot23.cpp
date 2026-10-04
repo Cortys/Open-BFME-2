@@ -1,19 +1,7 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /ICode/GameEngine/Include /O1 /DNDEBUG /MD /EHsc
 // ?rva004AE5B8@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z retail 0x004AE5B8 124B
 // Evidence: vslot 23 of vtable 0x00855370 for ToggleDeploySpecialAbilityUpdate; audio event via rowed BfmeAudioEventPrefix136 plus CondSetter plus TheAudio slot 0x64 plus DeployStyle helper; caller none
-struct OpaqueRefElement4;
-class BfmeStringTailRecord144
-{
-public:
-	virtual ~BfmeStringTailRecord144();
-};
-class BfmeAudioEventPrefix136 : public BfmeStringTailRecord144
-{
-public:
-	BfmeAudioEventPrefix136(const OpaqueRefElement4 &o, int v);
-private:
-	char m_pad[136 - sizeof(BfmeStringTailRecord144)];
-};
+#include "Common/BfmeAudioEventPrefix136.h"
 class Rva002D9531
 {
 public:
@@ -54,9 +42,6 @@ class DeployStyleAIUpdate
 {
 public:
 	void rva0048E6D2();
-};
-struct OpaqueRefElement4 {
-	int m_dummy;
 };
 struct Thing {
 	char m_pad[0xCC];
