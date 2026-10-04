@@ -19,8 +19,10 @@ private:
 struct OpaqueRefElement4
 {
     OpaqueRefCounted *referent;
-    ~OpaqueRefElement4() { if (referent) referent->Release_Ref(); }
+    inline ~OpaqueRefElement4();
     OpaqueRefElement4 &operator=(const OpaqueRefElement4 &);
 };
+// ??1OpaqueRefElement4@@QAE@XZ present-unmatched
+inline OpaqueRefElement4::~OpaqueRefElement4() { if (referent) referent->Release_Ref(); }
 
 template void _STL::vector<OpaqueRefElement4>::_M_clear();
