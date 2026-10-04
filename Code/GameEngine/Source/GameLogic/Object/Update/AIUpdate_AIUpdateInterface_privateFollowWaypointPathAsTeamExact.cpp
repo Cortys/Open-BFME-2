@@ -5,8 +5,9 @@
 // donor game/GameEngine/Source/GameLogic/Object/Update/AIUpdate.cpp (reference/open-bfme-1 @ 6d943426).
 // The donor body does not place at BFME 1's flags; compiled /O1 it is
 // byte-identical to retail once relocations are masked (unique hit on
-// unclaimed .text). Only the placed body is defined here; the donor's
-// other definitions are omitted.
+// unclaimed .text). Only placed bodies are defined here (this one and
+// privateFollowWaypointPathExact, retail 0x0026B987); the donor's other
+// definitions are omitted.
 // stlport
 #define Matrix4x4 Matrix4  // BFME renamed it
 #define __PLACEMENT_VEC_NEW_INLINE  // always.h/GameMemory.h define array placement-new themselves
@@ -1035,8 +1036,8 @@ struct BFMEObjectFormationField
 {
 	void setFormationID( FormationID id ) { m_formationID = id; }
 
-	char m_unreconstructed_000[0x31C];
-	FormationID m_formationID;				///< retail this+0x31c
+	char m_unreconstructed_000[0x410];
+	FormationID m_formationID;				///< BFME2 Object+0x410 (BFME1 +0x31C); privateFollowWaypointPathExact clears it
 };
 
 // The voice lines the movement and attack commands answer with. The vendored
@@ -1294,6 +1295,31 @@ destinations, and this routine identifies non-ground units that should unstack. 
 //-------------------------------------------------------------------------------------------------
 // AI Command Interface implementation for AIUpdateInterface
 //
+
+//----------------------------------------------------------------------------------------
+/**
+ * Start following the path from the given point
+ */
+// BFME2 aiDoCommand (0x002673F6) command 0x32, AIUpdate vtable 0x00C47B98
+// slot 28, retail 0x0026B987: the donor body, with the formation id at BFME2's
+// Object+0x410.
+void AIUpdateInterface::privateFollowWaypointPathExact( const Waypoint *way, CommandSourceType cmdSource )
+{
+	BFMEAIUpdateFields *fields = reinterpret_cast<BFMEAIUpdateFields *>(this);
+
+	if (!fields->getObject()->isMobile())
+		return;
+
+	reinterpret_cast<BFMEObjectFormationField *>( fields->getObject() )->setFormationID( NO_FORMATION_ID );
+
+	fields->getGoalObjectMachine()->clear();
+	reinterpret_cast<AIStateMachine *>( fields->m_stateMachine )->setGoalWaypoint( way );
+	fields->m_lastCommandSource = cmdSource;
+	fields->getGoalObjectMachine()->setState( (StateID)BFME_AI_FOLLOW_WAYPOINT_PATH_AS_INDIVIDUALS_EXACT );
+
+	if (cmdSource == (CommandSourceType)0 || cmdSource == (CommandSourceType)1)
+		reinterpret_cast<BFMEMoveVoiceAI *>(this)->playMoveVoiceResponse( way->getLocation() );
+}
 
 //----------------------------------------------------------------------------------------
 /**
