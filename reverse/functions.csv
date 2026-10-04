@@ -50725,3 +50725,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva004EA124Find@@YAPAXPAX@Z,,0x004EA124,37,Code/GameEngine/Source/Common/Rva004EA124Find.cpp,matched,linear search table g_00E04494 to g_00E04498 field plus 0x70 matches key
 ?rva004EAC8C@Rva004EAC8C@@QAEXM@Z,,0x004EAC8C,39,Code/Libraries/Source/WWVegas/WWLib/Rva004EAC8CSetFloat.cpp,matched,sets float plus 4 on single and array range
 ?rva004EABB9@Rva004EABB9@@QAE_NXZ,,0x004EABB9,14,Code/Libraries/Source/WWVegas/WWLib/Rva004EABB9Check.cpp,matched,both plus 0x34 and plus 0x3C zero predicate
+?rva00357DF8@Rva00357DF8@@QAEXABUBfmeSpecialPowerTimer8@@@Z,,0x00357DF8,28,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357DF8.cpp,matched,begin-insert shape as sibling 0x00357E14 via rowed insert 0x0036E30E
