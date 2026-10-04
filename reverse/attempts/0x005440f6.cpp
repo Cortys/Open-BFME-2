@@ -1,4 +1,6 @@
 // ?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z
+// partial score=0.98 date=2026-10-04
+// ?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z
 // partial score=0.93 date=2026-10-03
 // cl: /O1 /MD
 // ?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z, retail 0x005440F6, 61 bytes.
@@ -27,7 +29,7 @@ public:
 	virtual void v01();
 	virtual void v02();
 	virtual void v03();
-	virtual bool v04(Object *owner, int v);
+	virtual unsigned char v04(Object *owner, int v);
 };
 
 class StateMachine
@@ -54,14 +56,13 @@ public:
 // ?Rva005440F6Get@@YA_NPAVRva00544884State@@@Z present-unmatched
 bool Rva005440F6Get(Rva00544884State *state)
 {
-	Rva00544884State *s = state;
-	TurretMachine *machine = (TurretMachine *)(s->m_machine);
-	Object *goal = ((TurretStateMachine *)machine)->getGoalObject();
+	Object *goal = ((TurretStateMachine *)state->m_machine)->getGoalObject();
+	TurretMachine *machine = (TurretMachine *)state->m_machine;
 	if (goal == 0)
 		return false;
 	BfmeGotBEC *bec = ((BfmeSubBEC *)goal)->bfmeFindBEC();
 	if (bec == 0)
 		return false;
-	unsigned char ok = bec->v04(s->m_machine->m_owner, machine->m_3C);
-	return ok != 0;
+	Object *owner = state->m_machine->m_owner;
+	return bec->v04(owner, machine->m_3C);
 }
