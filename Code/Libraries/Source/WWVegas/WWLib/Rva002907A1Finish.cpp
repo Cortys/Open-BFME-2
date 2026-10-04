@@ -1,5 +1,13 @@
 // ?rva002907A1@Object@@QAE_NXZ
-// partial score=0.92 date=2026-10-01
+// Landed from banked partial (score 0.92). Two changes close it.
+// The bit8 test reads the mask as a volatile unsigned and takes the second
+// byte through a named local: retail loads all four bytes and shifts
+// (mov eax,[esi] / shr eax,0x8 / test al,0x1), and without volatile MSVC
+// narrows straight to a DWORD test against 0x100.
+// The branch is written the other way round -- the popcount check as the taken
+// arm and the bit8-clear return as the else -- because retail's je at +0x2D
+// falls THROUGH into the popcount call. Both prior banks read the polarity as
+// a separate defect; it is the same edit as the load form.
 // cl: /O1 /DNDEBUG /MD
 // ?rva002907A1@Object@@QAE_NXZ @ 0x002907A1 107B: chain from 0x0028F528 popcount;
 // Object disabled-mask gate over +0x1C8 BitFlags<11>::any via rowed 0x0023C58B
@@ -50,7 +58,6 @@ private:
 	BitFlags<11> m_disabled;
 };
 
-// ?rva002907A1@Object@@QAE_NXZ present-unmatched
 bool Object::rva002907A1()
 {
 	ThingTemplate907A1 *t = m_template;
@@ -59,10 +66,16 @@ bool Object::rva002907A1()
 	BitFlags<11> *mask = &m_disabled;
 	if (mask->any())
 	{
-		if ((((*(const unsigned *)mask >> 8) & 1u) == 0))
+		unsigned char byte2 = (unsigned char)(*(const volatile unsigned *)mask >> 8);
+		if ((byte2 & 1u) != 0)
+		{
+			if (((Rva0028F528 *)mask)->rva0028F528() != 1)
+				return false;
+		}
+		else
+		{
 			return false;
-		if (((Rva0028F528 *)mask)->rva0028F528() != 1)
-			return false;
+		}
 	}
 	if (isKindOf((KindOfType)0x81))
 		return false;
