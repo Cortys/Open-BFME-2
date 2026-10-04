@@ -522,37 +522,7 @@ void AssaultTransportAIUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 //-------------------------------------------------------------------------------------------------
-// ?xfer@AssaultTransportAIUpdate@@ present-unmatched
-void AssaultTransportAIUpdate::xfer( Xfer *xfer )
-{
-  // version
-  XferVersion currentVersion = 1;
-  XferVersion version = currentVersion;
-  xfer->xferVersion( &version, currentVersion );
- 
- // extend base class
-	AIUpdateInterface::xfer(xfer);
-
-	xfer->xferInt( &m_currentMembers );
-
-	for( int i = 0; i < m_currentMembers; i++ )
-	{
-		xfer->xferObjectID( &(m_memberIDs[ i ]) );
-		xfer->xferBool( &(m_memberHealing[ i ]) );
-	}
-
-	xfer->xferCoord3D( &m_attackMoveGoalPos );
-	xfer->xferObjectID( &m_designatedTarget );
-	
-	Int state = (Int)m_state;
-	xfer->xferInt( &state );
-	m_state = (AssaultStateTypes)state;
-	
-	xfer->xferUnsignedInt( &m_framesRemaining );
-	xfer->xferBool( &m_isAttackMove );
-	xfer->xferBool( &m_isAttackObject );
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/AssaultTransportAIUpdateXfer.cpp
 
 //-------------------------------------------------------------------------------------------------
 /** Load post process */
