@@ -1,5 +1,3 @@
-// ?rva003F20B0@Rva003F20B0@@QAEXXZ
-// partial score=0.99 date=2026-10-04
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ?rva003F20B0@Rva003F20B0@@QAEXXZ retail 0x003F20B0 53B
@@ -31,6 +29,7 @@ private:
 	bool m_1A1;
 };
 
+// ?rva003F20B0@Rva003F20B0@@QAEXXZ
 void Rva003F20B0::rva003F20B0()
 {
 	m_vec158.clear();
