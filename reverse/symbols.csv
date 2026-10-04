@@ -7624,3 +7624,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0?$_STLP_alloc_proxy@PAVRva0054103E@@V1@V?$allocator@VRva0054103E@@@_STL@@@_STL@@QAE@ABV?$allocator@VRva0054103E@@@1@PAVRva0054103E@@@Z,0x0014F3C4,callee REL32 read by locate.py from a unique masked-byte placement emitted by Rva0054103EVectorInsertOverflow.cpp
 ?Rva00361CA5Parse@@YAXPAVINI@@PAX1PBX@Z,0x00361CA5,cdecl filter field parser (ini instance store 0) read from the REL32 at 0x0050889D in the DamageNugget DamageScalar parser 0x00508862
 ?findSpecialPowerTemplatePrivate@SpecialPowerStore@@IAEPAVSpecialPowerTemplate@@VAsciiString@@@Z,0x003B11D2,address read from the REL32 displacement at a placed body
+?swap@?$vector@UBfmeE12@@V?$allocator@UBfmeE12@@@_STL@@@_STL@@QAEXAAV12@@Z,0x003079C1,"ICF twin of void* swap gen-alias ?dup_003079c1; same 44-byte swap-3-pointers body; retail calls 0x3079C1 for a BfmeE12 vector swap at 0x3079ED"
