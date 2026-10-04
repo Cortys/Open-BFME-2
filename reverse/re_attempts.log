@@ -7433,3 +7433,8 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?update@Rva00544C03@@UAE?AW4StateReturnType@@XZ	0x00544FC6	239	blocked	compile error m_20 not member of Object, Object layout unproven t=5 model=muse-07
 ?rva004ED81D@Rva00506909Item@@QAEXPAURva00506909Request@@PAX@Z	0x004ED81D	312	blocked	complex Item setup needs TeamFactory ModuleData vector plus NetWrapper getData plus EH t=15 model=muse-05
 ?rva002C61AF@Rva002C61AF@@QAEXXZ	0x002C61AF	133	partial	and-mem-zero before pop-ecx vs after pop plus next load t=22 model=muse-spark score=0.97 stash=reverse/attempts/0x002c61af.cpp
+?bfmeSameUW@@YADPAXPAVBfmeItemUW@@0@Z	0x0030141B	65	blocked	rb set equality esi edi mirror plus shared cmp 61vs65 loop shape wall t=25 model=muse-17
+?rva0010F2E5@Rva0010EE67@@UAEXXZ	0x0010F2E5	87	partial	pop esi hoisted before final je instead of after unlock call t=25 model=muse-17 score=0.97 stash=reverse/attempts/0x0010f2e5.cpp
+?rva0010F28D@Rva0010EE4F@@UAEXXZ	0x0010F28D	88	partial	O1 emits and mem0 not mov mem0 for stream nulling (3B) plus consequent pop shift t=20 model=muse-17 score=0.94 stash=reverse/attempts/0x0010f28d.cpp
+?rva0010F4FA@Rva0010EF14@@UAEXXZ	0x0010F4FA	93	partial	pop esi hoisted before final je instead of after unlock call t=10 model=muse-17 score=0.97 stash=reverse/attempts/0x0010f4fa.cpp
+?rva0010F49A@Rva0010EEF1@@UAEXXZ	0x0010F49A	96	partial	pop esi hoisted before final je instead of after unlock call t=10 model=muse-17 score=0.97 stash=reverse/attempts/0x0010f49a.cpp
