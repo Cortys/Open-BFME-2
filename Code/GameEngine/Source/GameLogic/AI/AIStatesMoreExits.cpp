@@ -21,6 +21,12 @@
 //    (both unnamed). Layout: m_commandSrc +0x50, attack-move machine +0x54
 //    (clear vslot 5, setState vslot 8), m_frameToSleepUntil +0x58,
 //    m_retryCount +0x5C; getLastCommandSource is AI vslot 143.
+//  - AIMoveAndDeleteState::onEnter, retail 0x0034ECDB (160 bytes): slot 4 of
+//    0x00C12C88. ZH body (setAdjustsDestination(false) with the CritterDesync
+//    log, lock, goal object or goal position, m_appendGoalPosition +0x4C);
+//    BFME 2 then sets owner model conditions 1*32+29 and 7*32+28 (the
+//    Object+0x10C condition words, as in AIAttackStateOnExit.cpp), each
+//    followed by the rowed notifier Object::rva0028AE6D when it changes.
 // The sub-machines are deleted with a global-scope delete (vslot 0 with flag
 // 0, then ::operator delete).
 typedef bool Bool;
@@ -62,18 +68,53 @@ public:
 template <> class VSlots<0>
 {
 };
+struct FprintfTarget
+{
+	char m_pad[4];
+};
+extern "C" void fprintf(FprintfTarget *target, const char *format, ...);
+extern unsigned char g_00E03745;
+extern void *g_00DFEFF0;
 class AIUpdateInterface : public VSlots<143>
 {
 public:
 	virtual CommandSourceType getLastCommandSource() const = 0;
 };
+class ModelConditionFlags
+{
+public:
+	unsigned int test(unsigned int bit) const
+	{
+		return m_words[bit >> 5] & (1U << (bit & 0x1f));
+	}
+	void set(unsigned int bit)
+	{
+		m_words[bit >> 5] |= (1U << (bit & 0x1f));
+	}
+private:
+	unsigned int m_words[19];
+};
 class Object
 {
 public:
+	const Coord3D *getPosition() const { return &m_position; }
 	AIUpdateInterface *getAI() { return m_ai; }
 	void releaseWeaponLock(WeaponLockType lockType);
+	void rva0028AE6D();
+	__forceinline void setModelConditionState(unsigned int mc)
+	{
+		if (m_modelConditionFlags.test(mc) == 0)
+		{
+			m_modelConditionFlags.set(mc);
+			rva0028AE6D();
+		}
+	}
 private:
-	unsigned char m_pad00[0x258];
+	unsigned char m_pad00[0x38];
+	Coord3D m_position; // +0x38
+	unsigned char m_pad44[0x10C - 0x44];
+	ModelConditionFlags m_modelConditionFlags; // +0x10C
+	unsigned char m_pad158[0x258 - 0x158];
 	AIUpdateInterface *m_ai; // +0x258
 };
 class StateMachine
@@ -86,6 +127,9 @@ public:
 	virtual void slot06(); virtual void slot07();
 	virtual StateReturnType setState(StateID newStateID);
 	Object *getOwner() const { return m_owner; }
+	Object *getGoalObject();
+	const Coord3D *getGoalPosition() const { return &m_goalPosition; }
+	void lock(const char *msg) { m_locked = true; }
 	void unlock() { m_locked = false; }
 	UnsignedInt m_pad04[4];
 	Object *m_owner; // +0x14
@@ -114,7 +158,23 @@ protected:
 class AIInternalMoveToState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
+protected:
+	__forceinline void setAdjustsDestinationFalse50()
+	{
+		if (g_00E03745)
+		{
+			FprintfTarget *log = (FprintfTarget *)g_00DFEFF0;
+			if (log)
+				fprintf(log, "CritterDesync: setAdjustDestination(FALSE) 50");
+		}
+		m_adjustsDestination = false;
+	}
+	unsigned char m_pad1C[0x20 - 0x1C];
+	Coord3D m_goalPosition; // +0x20
+	unsigned char m_pad2C[0x48 - 0x2C];
+	Bool m_adjustsDestination; // +0x48
 };
 class AIMoveToState : public AIInternalMoveToState
 {
@@ -124,7 +184,10 @@ public:
 class AIMoveAndDeleteState : public AIInternalMoveToState
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
+private:
+	Bool m_appendGoalPosition; // +0x4C
 };
 class AIAttackAreaState : public State
 {
@@ -147,7 +210,7 @@ class AIAttackPursueTargetState : public AIInternalMoveToState
 public:
 	virtual void onExit(StateExitType status);
 private:
-	unsigned char m_pad1C[0x5F - 0x1C];
+	unsigned char m_pad4C[0x5F - 0x4C];
 	Bool m_isInitialApproach; // +0x5F
 };
 class AIAttackMoveToState : public AIMoveToState
@@ -155,7 +218,7 @@ class AIAttackMoveToState : public AIMoveToState
 public:
 	virtual StateReturnType onEnter();
 private:
-	unsigned char m_pad1C[0x50 - 0x1C];
+	unsigned char m_pad4C[0x50 - 0x4C];
 	CommandSourceType m_commandSrc; // +0x50
 	StateMachine *m_attackMoveMachine; // +0x54
 	UnsignedInt m_frameToSleepUntil; // +0x58
@@ -163,6 +226,25 @@ private:
 	Coord3D m_bfmeGoalPosition60; // +0x60
 	UnsignedInt m_bfmeGoalObjectID6C; // +0x6C
 };
+
+StateReturnType AIMoveAndDeleteState::onEnter()
+{
+	setAdjustsDestinationFalse50();
+	getMachine()->lock("AIMoveAndDeleteState::onEnter");
+	// if we have a goal object, move to it, otherwise move to goal position
+	if (getMachine()->getGoalObject())
+		m_goalPosition = *getMachine()->getGoalObject()->getPosition();
+	else
+		m_goalPosition = *getMachine()->getGoalPosition();
+	m_appendGoalPosition = true; // We may be moving off the map.
+	Object *owner = getMachineOwner();
+	if (owner)
+	{
+		owner->setModelConditionState(1 * 32 + 29);
+		owner->setModelConditionState(7 * 32 + 28);
+	}
+	return AIInternalMoveToState::onEnter();
+}
 
 void AIMoveAndDeleteState::onExit( StateExitType status )
 {
