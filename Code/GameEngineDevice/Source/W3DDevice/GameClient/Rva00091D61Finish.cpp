@@ -1,8 +1,6 @@
 // ?rva00091D61@Rva00091D61@@QAEXPAHH@Z
-// partial score=0.96 date=2026-09-28
 // ?rva00091D61@Rva00091D61@@QAEXPAHH@Z
-// partial score=0.96 date=2026-09-28
-// cl: /O1 /MD
+// cl: /O1 /Oa /MD
 
 // ?rva00091D61@Rva00091D61@@QAEXPAHH@Z @ 0x00091D61 (81B). Clamp twin of
 // BoundedShortGrid load/store: if grid null return else load (x+off y+off)
@@ -179,7 +177,6 @@ private:
 	BoundedShortGrid *m_grid;
 };
 
-// ?rva00091D61@Rva00091D61@@QAEXPAHH@Z present-unmatched
 void Rva00091D61::rva00091D61(int *p, int v)
 {
 	if (m_grid == 0)
