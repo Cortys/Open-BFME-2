@@ -18,3 +18,4 @@ Rva00086761CameraMove,Code/GameEngine/Include/GameClient/Rva0008990CArrayOwner.h
 BfmeAudioEventPrefix136,Code/GameEngine/Include/Common/BfmeAudioEventPrefix136.h,native136-byte event prefix distinct from144-byte vector wrapper
 BfmeNarrowRecord0041A617,Code/GameEngine/Source/Common/BfmeNarrowRecord0041A617.h,native copy41A617 and assignment41A820 establish string12 plus16-bit field at12 and byte14; native iterator419DF6 proves16-byte stride; original identity and scalar meaning unknown; existing unsigned spellings retained
 BfmeNarrowRecord0041A5D2,Code/GameEngine/Source/Common/BfmeNarrowRecord0041A5D2.h,target28-byte string/scalar/string record; copy assignment destructor and deque4-element nodes; original semantic identity unknown
+BfmeSpecialPowerTimer8,Code/GameEngine/Source/Common/BfmeSpecialPowerTimer8.h,two-word target timer; donor field semantics supported separately by template-ID and game-frame reads; original type name unknown
