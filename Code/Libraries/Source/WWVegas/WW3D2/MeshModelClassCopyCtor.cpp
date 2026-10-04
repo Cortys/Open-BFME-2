@@ -75,6 +75,7 @@ private:
 	MultiListNodeClass *ListNode;
 };
 
+#pragma optimize("s", on)
 class GenericMultiListClass
 {
 public:
@@ -83,6 +84,7 @@ public:
 
 	MultiListNodeClass Head;
 };
+#pragma optimize("", on)
 
 class Rva00144690 : public GenericMultiListClass
 {
