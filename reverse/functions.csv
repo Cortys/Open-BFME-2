@@ -51330,3 +51330,11 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva00505DF7@Rva00506909@@AAEPAURva00506909Item@@ABVAsciiString@@@Z,,0x00505DF7,51,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,item built by the +0x34 generator whose +0x2C name matches else null; caller xfer 0x0050652D
 ?rva00505E2A@Rva00506909@@AAEPAURva00506909Item@@ABVAsciiString@@@Z,,0x00505E2A,51,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,item built by the +0x4C generator whose +0x2C name matches else null; caller xfer 0x0050652D
 ?xfer@Rva00506909@@QAEXPAVXfer@@@Z,,0x0050652D,988,Code/GameEngine/Source/Common/Rva00506909TacticsGenerator.cpp,matched,xfer Version(1 1): four generator-pool sizes then each item list as count plus name and item (store) or name lookup via the per-pool finders then item xfer and push (load)
+??_GDrawableLocoInfo@@UAEPAXI@Z,,0x00272349,29,Code/GameEngine/Source/Common/DrawableLocoInfoCtor.cpp,matched,deleting dtor in vftable slot 0 0x00BFAD38; dtor inline (vptr reset only)
+??_GOutputChunk@@UAEPAXI@Z,,0x00306C6B,29,Code/GameEngine/Source/GameLogic/ScriptEngine/ConditionWriteDataChunk.cpp,matched,deleting dtor in vftable slot 0 0x00C07E80; dtor inline (vptr reset only)
+??_GRva004F5FD8@@UAEPAXI@Z,,0x002A9844,29,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva00575383@@UAEPAXI@Z,,0x005753B4,29,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva005DBCD1@@UAEPAXI@Z,,0x005DB832,29,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva005E67FE@@UAEPAXI@Z,,0x005E6846,29,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva001DBAA4@@UAEPAXI@Z,,0x001DBC10,29,Code/GameEngine/Source/Common/Rva001DBAA4Ctor.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva00CE1E14Base@@UAEPAXI@Z,,0x0065D190,31,Code/GameEngine/Source/Common/Rva00CE1E14BaseCtor.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)

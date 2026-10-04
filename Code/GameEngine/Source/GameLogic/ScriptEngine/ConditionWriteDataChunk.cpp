@@ -67,7 +67,7 @@ class OutputStream;
 class OutputChunk
 {
 public:
-	virtual ~OutputChunk();
+	virtual ~OutputChunk() {}
 	OutputChunk *next;
 	unsigned int id;
 	int filepos;

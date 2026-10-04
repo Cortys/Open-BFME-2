@@ -23,7 +23,7 @@ struct TWheelInfo
 class DrawableLocoInfo
 {
 public:
-	virtual ~DrawableLocoInfo();
+	virtual ~DrawableLocoInfo() {}
 	DrawableLocoInfo() throw();
 	Real m_pitch;
 	Real m_pitchRate;

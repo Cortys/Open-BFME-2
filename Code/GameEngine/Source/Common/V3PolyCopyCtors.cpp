@@ -260,7 +260,7 @@ class Rva004F5FD8
 {
 public:
 	Rva004F5FD8(const Rva004F5FD8 &other);
-	virtual ~Rva004F5FD8();
+	virtual ~Rva004F5FD8() {}
 
 	Int m_field04;
 	Int m_field08;
@@ -343,7 +343,7 @@ class Rva005DBCD1
 {
 public:
 	Rva005DBCD1(const Rva005DBCD1 &other);
-	virtual ~Rva005DBCD1();
+	virtual ~Rva005DBCD1() {}
 
 	Short m_field04;
 	Short m_field06;
@@ -556,7 +556,7 @@ class Rva00575383
 {
 public:
 	Rva00575383(void *held);
-	virtual ~Rva00575383();
+	virtual ~Rva00575383() {}
 
 	void *m_field04;
 };
@@ -607,7 +607,7 @@ class Rva005E67FE
 {
 public:
 	Rva005E67FE(void *held);
-	virtual ~Rva005E67FE();
+	virtual ~Rva005E67FE() {}
 
 	void *m_field04;
 };

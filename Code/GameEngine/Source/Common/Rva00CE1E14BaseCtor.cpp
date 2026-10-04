@@ -5,7 +5,7 @@
 class Rva00CE1E14Base {
 public:
     Rva00CE1E14Base();
-    virtual ~Rva00CE1E14Base();
+    virtual ~Rva00CE1E14Base() {}
     virtual void sleep(unsigned long) = 0;
     virtual unsigned long ticks() = 0;
     virtual void wait() = 0;

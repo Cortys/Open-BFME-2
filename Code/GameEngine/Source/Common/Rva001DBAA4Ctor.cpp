@@ -6,7 +6,7 @@
 class Rva001DBAA4
 {
 public:
-    virtual ~Rva001DBAA4();
+    virtual ~Rva001DBAA4() {}
     Rva001DBAA4();
     int m_4;
     bool m_8;
