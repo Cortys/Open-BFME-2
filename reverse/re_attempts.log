@@ -7095,3 +7095,4 @@ BfmeNarrowRecord28Deque::__destroy_aux	0x0041A382	33	landed	Ghidra33-byte bounda
 ?rva00150E54@Rva00150E54@@QAEXPBD0PAVRva0015354E@@@Z	0x00150E54	197	blocked	COM Parse StarBracket dispatch with vector stride 8 needs layout t=12 model=muse-09
 ?rva00150FCC@Rva00150FCC@@QAEXPBD0PAVRva0015354E@@@Z	0x00150FCC	218	blocked	sibling of 0x150E54 same COM Parse StarBracket wall stride 0x4C t=5 model=muse-09
 ?rva002DFA43@Rva002DFA43@@QAE_NPAVCreateAHeroData@@@Z	0x002DFA43	55	blocked	vector empty plus find needs value spill mov eax ebp8 mov ebp8 eax t=20 model=muse-09
+?rva00091D61@Rva00091D61@@QAEXPAHH@Z	0x00091D61	81	blocked	register allocation grid base ebx vs ecx, missing mov ecx ebx size -2 t=2 model=muse-09 (stash 0.96 kept)
