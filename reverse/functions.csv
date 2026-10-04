@@ -51934,3 +51934,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0?$queue@VBuddyRequest@@V?$deque@VBuddyRequest@@V?$allocator@VBuddyRequest@@@_STL@@@_STL@@@_STL@@QAE@XZ,,0x00551A06,21,Code/Libraries/Source/WWVegas/WWLib/stlport_queue_buddyrequest_ctor.cpp,matched,STLport queue BuddyRequest default ctor caller GameSpyBuddyMessageQueue
 ?Rva003C45D4Apply@@YGXPAVParameter@@ABVAsciiString@@@Z,,0x003C45D4,81,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C45D4Unit.cpp,matched,chain via 0x0039B24F rowed callees globals g_Va009FE16C TheNameKeyGenerator g_00DFECC4 caller 0x003CDBDB ret 8
 ??1Rva002FDF72@@UAE@XZ,,0x002FDF72,201,Code/GameEngine/Source/Common/Rva002FDF72Dtor.cpp,matched,ModuleData dtor vtable C071E4 Snapshot BBB554 three lists del-before-update
+??_GRva002FDF72@@UAEPAXI@Z,,0x002FE041,28,Code/GameEngine/Source/Common/Rva002FDF72Dtor.cpp,matched,deleting dtor from own dtor TU vtable 8071E4 slot0
