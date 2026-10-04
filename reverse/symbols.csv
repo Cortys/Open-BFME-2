@@ -8171,3 +8171,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?next@BfmeWideResult@@QAEPAVObject@@XZ,0x00045623,"range-query handle: the payload's next hit (+0x0C cursor over 8-byte entries up to +0x04) or 0; REL32 in StructureCreep slot 7 0x005AC549; the body is the matched ?bfmeGoEOF@BfmeThingEOF row"
 ?rva005AC294@Rva005AB7E5@@QAE_NXZ,0x005AC294,"StructureCreep: pick a creep structure name and start its build order at a free spot; REL32 in StructureCreep slot 7 0x005AC549 (body banked 0.85)"
 ?rva005AC40C@Rva005AB7E5@@QAEXXZ,0x005AC40C,"StructureCreep: send the built structure's unit away from the owner's base; REL32 in StructureCreep slot 7 0x005AC549 (body banked 0.7)"
+?xfer@HordeContain@@MAEXPAVXfer@@@Z,0x00474EA8,slot 3 of ??_7HordeContain 0x00C45050 whose slot-2 name getter returns HordeContain (EH body; TransportContain xfer then Version(1;13)); HorseHordeContain and AODHordeContain xfers call it as their base
