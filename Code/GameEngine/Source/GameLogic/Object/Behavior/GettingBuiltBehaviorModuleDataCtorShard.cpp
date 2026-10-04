@@ -45,10 +45,7 @@ class Rva003623E5Member
 {
 public:
 	Rva003623E5Member();
-	~Rva003623E5Member()
-	{
-		InterlockedDecrement(&m_val);
-	}
+	~Rva003623E5Member();
 private:
 	long m_val;
 };
