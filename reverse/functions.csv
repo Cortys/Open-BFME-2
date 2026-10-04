@@ -52416,3 +52416,5 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?getCurNemesis@TunnelTracker@@QAEPAVObject@@XZ,,0x004F5684,97,Code/GameEngine/Source/Common/RTS/TunnelTrackerGetCurNemesis.cpp,matched,BFME1 TunnelTracker donor with global frames plus 0x438 dead flag
 ??0Rva003FAFB9@@QAE@ABV0@@Z,,0x003FAF13,166,Code/GameEngine/Source/Common/Rva003FAF13Copy.cpp,matched,copy ctor via StringBase Rva0036CA00Str FixedStorage Region2D rows plus rva003FAB93 gate
 ??0Rva007B1380@@QAE@XZ,,0x00109D8C,26,Code/GameEngine/Source/Common/Rva007B1380Ctor.cpp,matched,BFME1 donor Rva007B1380Ctor.cpp at /Os
+?Rva003B70F0@@YAXPAVRva003B70F0Owner@@PAVGenForwardedArg@@@Z,,0x004E148C,17,Code/GameEngine/Source/Common/S2SubobjectArgForwarders.cpp,matched,BFME1 donor S2SubobjectArgForwarders.cpp at /Os
+?Rva003B7140@@YAXPAVRva003B7140Owner@@PAVGenForwardedArg@@@Z,,0x004E14BC,17,Code/GameEngine/Source/Common/S2SubobjectArgForwarders.cpp,matched,BFME1 donor S2SubobjectArgForwarders.cpp at /Os

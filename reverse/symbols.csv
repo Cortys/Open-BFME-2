@@ -8263,3 +8263,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeDoKA@BfmeItemKA@@QAEXXZ,0x00260787,callee of ?bfmeGoKA@@YAXXZ at retail 0x00260805 read from its REL32 displacement; donor-carried name; ghidra FUN_00660787 126B body unrowed
 ?j_00025cca@@YAXXZ,0x001F8437,thunk callee of ?find@Rva006AD590Entry@@QAEPATRva006AD590Slot@@H@Z at retail 0x00059238 read from its REL32 displacement; donor-carried name; ghidra FUN_005f8437 78B body unrowed
 ??0Rva007B12F0Base@@QAE@XZ,0x000EFA4E,base DEFAULT ctor callee of ??0Rva007B1380@@QAE@XZ at retail 0x00109D8C read from its REL32 displacement; body unrowed
+?take@Rva005045C6@@QAEXPAVGenForwardedArg@@@Z,0x005045C6,sub-object member callee of the S2 arg forwarders at retail 0x004E148C and 0x004E14BC read from their REL32 displacements; same body as the matched ?rva005045C6@Rva005045C6@@QAEXABVRva00064640Record@@@Z
