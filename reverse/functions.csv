@@ -51521,3 +51521,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?xfer@Rva005AA860@@UAEXPAVXfer@@@Z,,0x005AA90D,206,Code/GameEngine/Source/Common/Rva005AA860Tactic.cpp,matched,SimpleExpansion slot 5: version 1 then the AITactic xfer then the has-order flag and the order (newed on load) then the stage
 ?rva005AAA34@Rva005AA860@@QAEXXZ,,0x005AAA34,162,Code/GameEngine/Source/Common/Rva005AA860Tactic.cpp,matched,SimpleExpansion stage 0 step: new a MenFortress build order at the record point with radius 3000 and start it for the owner
 ?v7@Rva005AA860@@UAEXXZ,,0x005AAB08,137,Code/GameEngine/Source/Common/Rva005AA860Tactic.cpp,matched,SimpleExpansion slot 7: stage machine over the build order status (3 stops) through 0x005AAA34 / 0x005AA663 / 0x004ED169 / 0x005AA86B to finish
+?bfmeGoCTA@BfmeThingCTA@@QAEXPAX0@Z,,0x00264853,56,Code/GameEngine/Source/Common/BfmeConv644.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

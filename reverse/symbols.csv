@@ -7945,3 +7945,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?isMobile@ObjectIsMobileBody@@QBE_NXZ,0x002907A1,address read from the REL32 displacement at a placed body
 ?xfer@W3DScriptedModelDraw@@MAEXPAVXfer@@@Z,0x000C5C04,slot 3 of ??_7W3DScriptedModelDraw 0x00BCA090 (its slot 0 is the W3DScriptedModelDraw scalar deleting dtor and slot 4 its pool key; 2503B body); W3DTankDraw::xfer (0x000CE03C) calls it as its base-class xfer
 ?rva005AA663@Rva005AA860@@QAEXXZ,0x005AA663,SimpleExpansion stage 1 step: head for the +0x20 record point (0x004ED342); folded with the byte-identical SimpleAttack slot 6 at this address; REL32 at 0x005AAB74 in the SimpleExpansion slot 7
+?setGoalPosition@StateMachine@@QAEXPBUCoord3D@@@Z,0x00262224,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
