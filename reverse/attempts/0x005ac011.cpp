@@ -1,4 +1,6 @@
-// cl: /O1 /G7 /MD /GX /DNDEBUG /arch:SSE /Ireference/shims/bfme2_ascii
+// ?appliesTo@Rva005AB7E5@@UAE_NPAX@Z
+// partial score=0.95 date=2026-10-04
+// cl: /O1 /G7 /MD /GX /DNDEBUG /Ireference/shims/bfme2_ascii
 //
 // The "StructureCreep" skirmish-AI tactic (vtable 0x008722EC; ctor 0x005AB91D
 // in Rva004ECECDTacticCtors.cpp, slot 9 0x005AB9AF in
@@ -10,9 +12,6 @@
 //
 //   0x005AB7E5  dtor: abandon (0x0055ADBA) and ::delete the build order
 //   0x005AB993  scalar deleting dtor (slot 0)
-//   0x005ABC81  slot 2: clear the running key and schedule the next run
-//               5 * frames on; hand the built structure (+0x58) to the
-//               controller's default team and the owner's list
 //   0x005AB843  slot 5: xfer: the AITactic's, the id, the counters, whether
 //               there is an order and the order itself (restarted on load
 //               when it had not begun)
@@ -256,6 +255,7 @@ class Rva004ECECD
 {
 public:
 	virtual ~Rva004ECECD();
+	virtual bool appliesTo(void *request);
 	virtual void v2();
 	virtual void v3();
 	virtual void v4();
@@ -285,6 +285,7 @@ class Rva005AB7E5 : public Rva005DCC24
 {
 public:
 	virtual ~Rva005AB7E5();
+	virtual bool appliesTo(void *request);
 	virtual void v2();
 	virtual void xfer(Xfer *xfer);
 	bool rva005ABEA2();
@@ -344,6 +345,20 @@ AsciiString Rva005AB7E5::rva005ABA59()
 		m_next = 0;
 	}
 	return record->m_160->m_names[m_next];
+}
+
+bool Rva005AB7E5::appliesTo(void *)
+{
+	if (m_nextRun == (unsigned int)-1 || m_nextRun <= TheGameLogic->getFrame()) {
+		Rva002A8AB1Record *record = g_00DFEEF8->rva002A8AB1(m_owner);
+		if (!record->rva002C7196(AIStructureCreep_IsRunning)
+			&& !record->m_160->m_names.empty()
+			&& record->m_140.rva00599870(((Rva004EBF4B *)record)->rva004EBF4B(), 0)
+			&& ((Rva005AB7E5Objects *)g_00DFEEF8->rva002A8F24(m_owner))->m_0C->rva00596394() >= 700u
+			&& rva005ABEA2())
+			return true;
+	}
+	return false;
 }
 
 void Rva005AB7E5::v2()

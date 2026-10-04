@@ -8030,3 +8030,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?doXfer@Rva0026AFDAMember@@QAEXPAVXfer@@@Z,0x003533BF,"""non-virtual xfer of the 0xC4 DeployStyle +0x3E4 member (Version(1,2) via Xfer +0x28); DeployStyleAIUpdate::xfer calls it last, where Generals calls m_lastOutsideCommand.doXfer (AICommandParmsStorage, donor-carried lead); callers 0x2684A5 0x36ACAF 0x48E81E"""
 ?bfmeCallEBL@BfmeObjEBL@@QAEXPAX0@Z,0x00361624,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?push_back@BridgeBehaviorObjectIDList@@QAEXABW4ObjectID@@@Z,0x002A1B6F,"""4-byte-element list push_back (insert(end) via Rva002A1316Store), ICF-shared by many callers; viewed here as BridgeBehavior's scaffold ObjectID list at +0x100, called by its xfer load loop (0x00457FC4)"""
+?rva00599870@Rva00599825@@QAEPAXABUCoord3D@@H@Z,0x00599870,owner-record +0x140 object list: entry near a point; REL32 at 0x005AC079 in the StructureCreep slot 1
+?rva005ABEA2@Rva005AB7E5@@QAE_NXZ,0x005ABEA2,StructureCreep placement test; REL32 at 0x005AC0A1 in the StructureCreep slot 1
+?rva00298AE4@Object@@QAEXPAVTeam@@@Z,0x00298AE4,Object member taking a Team (reads team->getControllingPlayer); REL32 at 0x005ABCE8 in the StructureCreep slot 2 with the controller's +0x2EC team
