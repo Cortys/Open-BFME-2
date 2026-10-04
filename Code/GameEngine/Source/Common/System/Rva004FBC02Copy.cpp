@@ -25,3 +25,50 @@ void Rva004FBC02::rva004FBC02(const Rva004FBC02Src *src)
 	m_18 = *src;
 	m_24 = 1;
 }
+
+// ?rva004FBDB0@Rva004FBDB0@@QAEXH@Z 0x004FBDB0 28: forwards int arg to slot-12
+// virtual on the object looked up by this+0x18 key in the global map at 0x009FE1C8
+// via rowed Rva002120A4::rva002120A4; returns on miss. Evidence: callers 0x004FBFF4
+// 0x004FC0E2 0x004FC0AD pass 0/1 int; callees rowed; global name in use.
+
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0,
+	FORCE_NAMEKEYTYPE_LONG = 0x7fffffff
+};
+
+class Rva002120A4
+{
+public:
+	int rva002120A4(NameKeyType key);
+};
+
+class Rva0021294A;
+extern Rva0021294A *g_009FE1C8;
+
+// Slot-12 target is unidentified; dummies pad the vtable so slot12 lands at +0x30.
+class Rva004FBDB0Target
+{
+public:
+	virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
+	virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
+	virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+	virtual void slot12(int arg);
+};
+
+class Rva004FBDB0
+{
+private:
+	char m_pad[0x18];
+	NameKeyType m_key;
+public:
+	void rva004FBDB0(int arg);
+};
+
+void Rva004FBDB0::rva004FBDB0(int arg)
+{
+	int found = ((Rva002120A4 *)g_009FE1C8)->rva002120A4(m_key);
+	if (found == 0)
+		return;
+	((Rva004FBDB0Target *)found)->slot12(arg);
+}
