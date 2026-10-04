@@ -50574,3 +50574,7 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6C2A@@YAXXZ,,0x007B6C2A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Rva0090088 dtor thunk at 0x007B6C2A
 ?rva007B6C3E@@YAXXZ,,0x007B6C3E,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Rva00090771DwordImmSetter thunk at 0x007B6C3E
 ?rva007B6CFF@@YAXXZ,,0x007B6CFF,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,AsciiString dtor thunk at 0x007B6CFF
+?rva007B6850@@YAXXZ,,0x007B6850,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6850
+?rva007B6AAA@@YAXXZ,,0x007B6AAA,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6AAA
+?rva007B6AB4@@YAXXZ,,0x007B6AB4,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6AB4
+?rva007B6ABE@@YAXXZ,,0x007B6ABE,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6ABE
