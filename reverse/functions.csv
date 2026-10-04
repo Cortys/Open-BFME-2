@@ -50717,3 +50717,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva0055BC8B@@QAE@ABV0@@Z,,0x003ADD9D,42,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055BC8BCopy.cpp,matched,copy ctor same vtable 0x0081D1A4 eight keys plus trailing float caller 0x003ADD52
 ??0Rva003ADE58@@QAE@ABV0@@Z,,0x003ADE58,64,Code/GameEngine/Source/Common/Rva003ADE58Copy.cpp,matched,MI copy via rowed 0x003ADEBF and 0x003ADE98 caller 0x003ADE39
 ??0Rva003ADE32@@QAE@ABV0@@Z,,0x003ADE32,38,Code/GameEngine/Source/Common/Rva003ADE32Copy.cpp,matched,derived copy via rowed 0x003ADE58 caller 0x003ADE27
+??0Rva003ADF21@@QAE@ABV0@@Z,,0x003ADF21,64,Code/GameEngine/Source/Common/Rva003ADF21Copy.cpp,matched,MI copy via rowed 0x003ADFDB and 0x003ADF61 caller 0x003ADF02
