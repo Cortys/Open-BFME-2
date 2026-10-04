@@ -156,8 +156,9 @@ LEAD = re.compile(r"(?:[ \t]*//[^\n]*\n|[ \t]*\r?\n)*")
 NON_CODE = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*.*?\*/', re.S)
 
 
-def rewrite(text, index):
-    """(new text, {name: declaration}) for one source."""
+def rewrite(text, index, only=None):
+    """(new text, {name: declaration}) for one source; with `only`, rewrite
+    just the literals that name those globals (one edit per global)."""
     need = {}
 
     def unique(literal):
@@ -165,7 +166,9 @@ def rewrite(text, index):
         if address < 0x400000:
             address += 0x400000
         found = [d for d in (declare(s) for s in index.get(address, ())) if d]
-        return found[0] if len(found) == 1 else None
+        if len(found) != 1 or (only is not None and found[0][0] not in only):
+            return None
+        return found[0]
 
     def key_ok(decl):
         name, kind, key, cls, line = decl
@@ -197,6 +200,8 @@ def rewrite(text, index):
         if not tables or any(not s.startswith("??_7") for s in index.get(address, ())):
             return match.group(0)
         name = f"vtbl_{address:08X}"
+        if only is not None and name not in only:
+            return match.group(0)
         # A folded table (several ??_7 at one address) is one retail table the
         # linker merged because every slot is identical; the address-named
         # alias claims no class, and any member gives the same bytes and slots.
@@ -245,28 +250,23 @@ def main(argv=None):
                  and not s.startswith(("Code/gen_asm/", "Code/gen_small/"))
                  and (ROOT / s).exists()
                  and link_debt.addresses((ROOT / s).read_text(encoding="utf-8", errors="replace"))]
-    changed = 0
+    import bulk_pass
+    plan = {}
     for source in files:
         path = ROOT / source
         with path.open(encoding="latin-1", newline="") as handle:
             before = handle.read()
-        after, need = rewrite(before, index)
+        _after, need = rewrite(before, index)
         if not need:
             continue
         if args.dry_run:
             print("WOULD", source, sorted(need))
             continue
-        with path.open("w", encoding="latin-1", newline="") as handle:
-            handle.write(after)
-        result = subprocess.run(["./build.sh", source], cwd=ROOT, capture_output=True, text=True)
-        if result.returncode == 0 and "Functions: OK" in result.stdout:
-            changed += 1
-            print("OK", source, sorted(need), flush=True)
-        else:
-            with path.open("w", encoding="latin-1", newline="") as handle:
-                handle.write(before)
-            print("REVERTED", source, sorted(need), flush=True)
-    print(f"name_globals: {changed} file(s) rewritten")
+        # one edit per global: a rewrite that breaks the bytes no longer
+        # costs the file its other, good rewrites
+        plan[source] = [(name, lambda text, name=name: rewrite(text, index, {name})[0]) for name in sorted(need)]
+    changed = bulk_pass.run(plan, label="name_globals", log=lambda line: print(line, flush=True))
+    print(f"name_globals: {len(changed)} file(s) rewritten")
     return 0
 
 
