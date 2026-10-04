@@ -7925,3 +7925,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?startsWith@AsciiString@@QBE_NABV1@@Z,0x00035FB0,AsciiString view of StringBase<char>::startsWith; call at 0x00205543 in _adjustVariable
 ??0BfmeBaseVNI@@QAE@ID@Z,0x003FD199,address read from the REL32 displacement at a placed body
 ??0BfmeVNITree@@QAE@XZ,0x005011C1,address read from the REL32 displacement at a placed body
+??0BfmeBaseVNH@@QAE@ID@Z,0x003FD199,address read from the REL32 displacement at a placed body
