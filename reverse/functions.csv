@@ -51131,7 +51131,7 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?update@ReverseSoundTransition@@UAEXH@Z,,0x0035D4E6,44,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?update@ControlBarArrowTransition@@UAEXH@Z,,0x0035D75D,36,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?reverse@CountUpTransition@@UAEXXZ,,0x0035F618,35,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
-??_GRva001F4C67@@UAEPAXI@Z,,0x001F61C9,28,Code/GameEngine/Source/Common/Rva001F4C67Finish.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xBE173C; calls rowed dtor 0x1F4C67
+??_GRva001F4C67@@UAEPAXI@Z,,0x001F61C9,28,Code/GameEngine/Source/Common/Rva001F4C67Finish.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GRva00161220@@UAEPAXI@Z,,0x004EF606,28,Code/GameEngine/Source/Common/Rva004F05F0Finish.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xC62B78; calls rowed dtor 0x4F05F0
 ??_GRva00575E4E@@UAEPAXI@Z,,0x00576041,28,Code/GameEngine/Source/Common/Rva00575E4EDtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xC6E688; calls rowed dtor 0x575E4E
 ??_GRva005C33D2@@UAEPAXI@Z,,0x005C352D,28,Code/GameEngine/Source/Common/RvaDerivedDtorTails.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xC74434; calls rowed dtor 0x5C33D2
