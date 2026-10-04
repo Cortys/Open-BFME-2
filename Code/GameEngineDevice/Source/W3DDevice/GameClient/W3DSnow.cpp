@@ -106,3 +106,11 @@ void W3DSnowManager::ReleaseResources()
         m_indexBuffer = 0;
     }
 }
+
+// ?init@W3DSnowManager@@UAEXXZ @0x00094642 16B, vftable slot 1 (ZH donor):
+// base init, then (re)build the device resources, result ignored.
+void W3DSnowManager::init()
+{
+    SnowManager::init();
+    ReAcquireResources();
+}
