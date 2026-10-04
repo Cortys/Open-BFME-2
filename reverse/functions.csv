@@ -51239,3 +51239,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0Rva006ED2A0Base@@QAE@XZ,,0x006EB6B0,27,Code/GameEngine/Source/Common/Rva006ED1E0Cluster.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??0Video@@QAE@XZ,,0x0075A4B9,35,Code/GameEngine/Source/Common/Rva0075A4DCCluster.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GNugget@ModuleInfo@@QAEPAXI@Z,,0x002CF981,28,Code/GameEngine/Source/Common/Thing/ModuleInfoNuggetErase.cpp,matched,unique masked-byte placement (locate.py sweep)
+??4LadderPref@@QAEAAV0@ABV0@@Z,,0x005DFB48,47,Code/GameEngine/Source/Common/UserPreferences_LadderPreferences_addRecentLadder.cpp,matched,unique masked-byte placement (locate.py sweep)
