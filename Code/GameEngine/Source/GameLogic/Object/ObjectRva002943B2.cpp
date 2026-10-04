@@ -1,10 +1,20 @@
-// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z
-// partial score=0.97 date=2026-10-04
-// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z
-// partial score=0.97 date=2026-10-01
-// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z
-// partial score=0.97 date=2026-10-01
 // cl: /O1 /G7
+// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z @0x002943B2 191B.
+// Object gate: scan dword-field array at +0x84 via the rowed get for the
+// slot-60 veto, chain via rva002933CD/testStatus 0x11/rva0028F518/testStatus
+// 0x0F, Player +0x5C gate via rva0028C1CC, template +0x113 flag, then
+// Rva00373EC6 +0x38/+0x3C via ThePlayerList getNthPlayer and Player
+// getRelationship. Evidence: thiscall ret 4 bool al; callees rowed 0x2B224B
+// 0x2933CD 0x4E536 0x28F518 0x28C1CC 0x28F4BC 0x2A7A29 0x2AC3E0; ThePlayerList
+// 0x009FEEE8; chain from 0x28F4BC.
+// LEVER over the 0.97 bank: inverting the four head-guard polarities, so each
+// guard's TRUE edge falls through and only its FALSE edge jumps to the high
+// result block, is what puts retail's `mov al,1` at the LOW address. The bank
+// concluded that block order was unreachable from source after collapsing the
+// guards with ||, an explicit veto bool, and nesting; none of those invert the
+// JUMP polarity of each guard, which is the lever that matters. rva002933CD is
+// rowed returning int (QAEHXZ), so the (unsigned char) cast is what produces the
+// `test al,al` retail has instead of a full `test eax,eax`.
 // ?rva002931F5@Object@@QAEPAV1@_N@Z, retail 0x002931F5, 84 bytes.
 // Object helper: if own template dword +0x114 carries 0x2000 return this;
 // else if containedBy (+0x274) template carries it return containedBy;
@@ -186,70 +196,6 @@ private:
 	Object *m_containedBy;
 };
 
-Object *Object::rva002931F5(Bool checkProducer)
-{
-	if ((m_template->m_flags114 & 0x2000) != 0)
-		return this;
-	Object *contained = m_containedBy;
-	if (contained != 0 && (contained->m_template->m_flags114 & 0x2000) != 0)
-		return contained;
-	if (checkProducer)
-	{
-		Object *producer = TheGameLogic->findObjectByID(m_producerID);
-		if (producer != 0 && (producer->m_template->m_flags114 & 0x2000) != 0)
-			return producer;
-	}
-	return 0;
-}
-
-Bool Object::rva00293926(KindOfType kind)
-{
-	if (isKindOf(kind))
-		return true;
-	Object *related = rva002931F5(false);
-	if (related != 0)
-		return related->isKindOf(kind);
-	return false;
-}
-
-int Object::rva002933CD()
-{
-	Object *cur = this;
-	for (;;)
-	{
-		Object *next = cur->rva002931F5(false);
-		if (next == 0)
-			break;
-		if (next == cur)
-			break;
-		cur = next;
-	}
-	if (cur->testStatus(STATUS_60) || cur->testStatus(STATUS_5F))
-		return 1;
-	return 0;
-}
-
-// ?rva0029439D@Object@@QAEPAXXZ, retail 0x0029439D, 21 bytes.
-// Object helper: related via rva002931F5(false); if non-null tail to
-// rva0028C197 else null. Evidence: thiscall with no args proven by callers
-// 0x002946AB (mov esi ecx then call) and 0x002957FC (mov ecx esi then call);
-// callees rowed 0x002931F5 and 0x0028C197; sits after 0x00293926 in this TU.
-void *Object::rva0029439D()
-{
-	Object *related = rva002931F5(false);
-	if (related != 0)
-		return related->rva0028C197();
-	return 0;
-}
-
-// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z, retail 0x002943B2, 191 bytes.
-// Object gate: scan dword-field array at +0x84 via rowed get for slot-60 veto,
-// chain via rva002933CD/testStatus 0x11/rva0028F518/testStatus 0x0F, Player
-// +0x5C gate via rva0028C1CC, template +0x113 flag, then Rva00373EC6 +0x38/+0x3C
-// via ThePlayerList getNthPlayer and Player getRelationship. Evidence: thiscall
-// ret 4 bool al, callees rowed 0x2B224B 0x2933CD 0x4E536 0x28F518 0x28C1CC
-// 0x28F4BC 0x2A7A29 0x2AC3E0, ThePlayerList 0x009FEEE8, chain from 0x28F4BC.
-// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z present-unmatched
 bool Object::rva002943B2(const Player *other)
 {
 	Rva002B224BDwordField *field = m_field84;
@@ -261,29 +207,40 @@ bool Object::rva002943B2(const Player *other)
 			Rva002943B2Elem *e = *pp;
 			if (e == 0)
 				break;
-			if (!e->v60())
-				return false;
-			++pp;
+			if (e->v60())
+			{
+				++pp;
+				continue;
+			}
+			return false;
 		}
 	}
-	if ((unsigned char)rva002933CD() != 0)
-		return false;
-	if (testStatus(STATUS_11))
-		return false;
-	if (!rva0028F518())
+	if ((unsigned char)rva002933CD() == 0)
 	{
-		if (!testStatus(STATUS_0F))
+		if (testStatus(STATUS_11) == 0)
+		{
+			if (rva0028F518())
+				goto player_gate;
+			if (!testStatus(STATUS_0F))
+				return false;
+		player_gate:
+			if (other == 0 || other->m_val5C != 1)
+				goto template_gate;
+			if (rva0028C1CC())
+				return false;
+		}
+		else
 			return false;
 	}
-	if (other != 0 && other->m_val5C == 1)
-	{
-		if (rva0028C1CC())
-			return false;
-	}
+	else
+		return false;
+template_gate:
 	if ((m_template->m_pad[0x113] & 1) == 0)
 		return true;
 	Rva00373EC6 *r = rva0028F4BC();
-	if (r == 0 || r->m_flag3C == 0)
+	if (r == 0)
+		return true;
+	if (r->m_flag3C == 0)
 		return true;
 	Player *pl = ThePlayerList->getNthPlayer(r->m_nth);
 	if (pl == 0)
