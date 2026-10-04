@@ -6,8 +6,9 @@
 // GameEngineDeletingBase ctor 0x001B4E63 (state 0), the secondary base at +0xC
 // through 0x005C6D4D, installs vtables 0x00C69464 at +0 and 0x00C6944C at
 // +0xC, builds the vector at +0x48 through the pinned _Vector_base ctor
-// 0x00211E58 with an allocator temporary, then zeroes +0x54 and +0x58. No
-// unwind state follows the secondary base, so it is declared without a dtor.
+// 0x00211E58 with an allocator temporary, then zeroes +0x54 and +0x58. Slot 0
+// of the +0xC vftable is a this-12 thunk to ??_G, so the secondary base leads
+// with a virtual dtor; it is inline and empty, so no unwind state follows it.
 // Names are generated; the vector's element type and the secondary base's
 // contents are not established.
 #include <vector>
@@ -25,7 +26,7 @@ class Rva005C6D4D
 {
 public:
 	Rva005C6D4D();
-	virtual void slot0();
+	virtual ~Rva005C6D4D() {}
 private:
 	char m_pad04[0x38];
 };
