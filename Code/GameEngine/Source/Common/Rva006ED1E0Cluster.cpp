@@ -37,7 +37,6 @@ protected:
     unsigned char m_14;
     char m_pad15[3];
 };
-// ??0Rva006ED2A0Base@@QAE@XZ present-unmatched
 inline Rva006ED2A0Base::Rva006ED2A0Base()
 {
     m_14 = 0;
