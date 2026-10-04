@@ -7382,3 +7382,4 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva00295844@Object@@QAEXM@Z	0x00295844	227	blocked	EH SSE link-list Forward GoEOF sum needs handler and exact list layout t=12 model=muse-09
 ?Rva003C0425Do@@YGXHHHHHH@Z	0x003C0425	269	blocked	audio plus weapon plus string layouts plus 6 args t=8 model=muse-03
 ?Rva00548C59Show@@YAXXZ	0x00548C59	126	blocked	push 0x00548B08 unclaimed callback plus wide EH needs donor t=8 model=muse-04
+?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z	0x0039E303	197	blocked	cur in eax plus esi backup and mask in edi vs retail esi plus edx plus late push esi edi vs early push t=20 model=muse-17 (stash 0.98 kept)
