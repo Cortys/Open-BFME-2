@@ -52428,3 +52428,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?bfmeDispatch_0064C6A0@@YAXPAX00PAVGen_0064C6A0Target@@@Z,,0x0038D494,22,Code/GameEngine/Source/Common/S3GuardedDispatchers.cpp,matched,BFME1 donor S3GuardedDispatchers.cpp at /Os
 ?u1Range_005C8320@@YAXPAX00HHPAPAX@Z,,0x001F8883,37,Code/GameEngine/Source/Common/U1SmallCallForwards.cpp,matched,BFME1 donor U1SmallCallForwards.cpp at /Os
 ?getID@DataChunkTableOfContents@@QAEIABVAsciiString@@@Z,,0x00307A53,23,Code/GameEngine/Source/Common/System/DataChunk_ID_DataChunkTableOfContents_QAEIABVAsciiString_Z.cpp,matched,BFME1 donor DataChunk.cpp at /Os; findMapping is the matched 0x00307A2C list search
+?movePair@BfmeB996@@QAEDPAH0PAII@Z,,0x00106812,98,Code/GameEngine/Source/Common/Rva007E3080MovePair.cpp,matched,BFME1 donor Rva007E3080MovePair.cpp at /Os; the guard is the matched checkRange 0x00106715
