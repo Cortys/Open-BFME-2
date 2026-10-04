@@ -7923,3 +7923,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva004ED1FD@Rva004ECECD@@QAEXHPBUCoord3D@@@Z,0x004ED1FD,AITactic member taking an int and a point (move the team there); REL32 at 0x005A9F32 in the SimpleSiege slot 7
 ?isTimeFast@ScriptEngine@@QAE_NXZ,0x00203B47,TheScriptEngine->isTimeFast() call at 0x00205518 in _adjustVariable (ecx = [TheScriptEngine]); body rowed as Rva00203B47Host::rva00203B47
 ?startsWith@AsciiString@@QBE_NABV1@@Z,0x00035FB0,AsciiString view of StringBase<char>::startsWith; call at 0x00205543 in _adjustVariable
+??0BfmeBaseVNI@@QAE@ID@Z,0x003FD199,address read from the REL32 displacement at a placed body
+??0BfmeVNITree@@QAE@XZ,0x005011C1,address read from the REL32 displacement at a placed body
