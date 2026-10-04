@@ -51493,3 +51493,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?bfmeSetupAPB@@YAHXZ,,0x003B9BE0,64,Code/GameEngine/Source/Common/BfmeSetupAPB.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?xfer@TunnelContain@@MAEXPAVXfer@@@Z,,0x0047DBB0,71,Code/GameEngine/Source/GameLogic/Object/Contain/TunnelContainXfer.cpp,matched,ZH TunnelContain::xfer over the BFME2 HordeGarrisonContain base; bools +0x9E4/+0x9E5; vftable 0x00C47740 slot 3
 ?xfer@TransportContain@@MAEXPAVXfer@@@Z,,0x00466DBC,73,Code/GameEngine/Source/GameLogic/Object/Contain/TransportContainXfer.cpp,matched,ZH TransportContain::xfer; BFME2 version before OpenContain base xfer; int +0x100 uint +0x104 bool +0x10C
+?bfmeAddBH@BfmeApplierBH@@QAEXPAXABVAsciiStringBH@@PAVBfmeTargetBH@@@Z,,0x003C420A,59,Code/GameEngine/Source/Common/BfmeNamedApplyBH.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
