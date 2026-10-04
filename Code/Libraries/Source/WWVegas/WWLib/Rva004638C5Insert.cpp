@@ -1,5 +1,3 @@
-// ?rva00463F73@Rva004638C5@@QAEPAPAU_Rb_tree_node_base@_STL@@PAPAU23@PAU23@1PBUTreeKey00242F5E@@H@Z
-// partial score=0.9 date=2026-10-02
 // cl: /O1 /EHs /MD /D_STLP_USE_STATIC_LIB /D_CRTIMP=
 // stlport
 // ?rva00463F73@Rva004638C5@@QAEPAPAU_Rb_tree_node_base@_STL@@PAPAU23@PAU23@1PBUTreeKey00242F5E@@H@Z 0x00463F73 136B
@@ -30,38 +28,28 @@ public:
 	_STL::_Rb_tree_node_base **rva00463F73(_STL::_Rb_tree_node_base **out, _STL::_Rb_tree_node_base *x, _STL::_Rb_tree_node_base *pos, const struct TreeKey00242F5E *val, int flag);
 };
 
-// ?rva00463F73@Rva004638C5@@QAEPAPAU_Rb_tree_node_base@_STL@@PAPAU23@PAU23@1PBUTreeKey00242F5E@@H@Z present-unmatched
 _STL::_Rb_tree_node_base **Rva004638C5::rva00463F73(_STL::_Rb_tree_node_base **out, _STL::_Rb_tree_node_base *x, _STL::_Rb_tree_node_base *pos, const struct TreeKey00242F5E *val, int flag)
 {
 	_STL::_Rb_tree_node_base *node;
-	if (pos == m_header)
-		goto left_insert;
-	if (flag != 0)
-		goto right_insert;
-	if (x != 0)
-		goto left_insert;
-	if (*(const int *)val < *(const int *)((const char *)pos + 0x10))
-		goto left_insert;
-right_insert:
-	node = (_STL::_Rb_tree_node_base *)rva004638C5(*val);
-	pos->_M_right = node;
-	if (pos != m_header->_M_right)
-		goto link;
-set_rightmost:
-	m_header->_M_right = node;
-	goto link;
-left_insert:
-	node = (_STL::_Rb_tree_node_base *)rva004638C5(*val);
-	pos->_M_left = node;
-	if (pos != m_header)
-		goto check_leftmost;
-	m_header->_M_parent = node;
-	goto set_rightmost;
-check_leftmost:
-	if (pos != m_header->_M_left)
-		goto link;
-	m_header->_M_left = node;
-link:
+	if (pos == m_header || (flag == 0 && (x != 0 || *(const int *)val < *(const int *)((const char *)pos + 0x10))))
+	{
+		node = (_STL::_Rb_tree_node_base *)rva004638C5(*val);
+		pos->_M_left = node;
+		if (pos == m_header)
+		{
+			m_header->_M_parent = node;
+			m_header->_M_right = node;
+		}
+		else if (pos == m_header->_M_left)
+			m_header->_M_left = node;
+	}
+	else
+	{
+		node = (_STL::_Rb_tree_node_base *)rva004638C5(*val);
+		pos->_M_right = node;
+		if (pos == m_header->_M_right)
+			m_header->_M_right = node;
+	}
 	node->_M_left = 0;
 	node->_M_right = 0;
 	node->_M_parent = pos;
