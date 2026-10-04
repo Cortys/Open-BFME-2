@@ -2,6 +2,8 @@
 //
 // RenderObjClass inline virtuals Set_Hidden / Set_Animation_Hidden / Set_Translucent / Is_Really_Visible:
 // retail holds one size-optimised (/O1) out-of-line copy of each header body (0x0006CF0C 0x0006CF2C 0x0006CF52 0x0006CECD).
+// Is_Not_Hidden_At_All (0x0006CEEE, slot 97) is the same kind of copy; MeshClass vtable 0xBD35A8
+// points at it.
 // The anchor below only makes this TU emit them out of line (qualified calls with inlining disabled); it is not retail code.
 //
 
@@ -35,6 +37,7 @@ int _bfmeRenderObjInlineAnchor(RenderObjClass *r, int onoff)
 	r->RenderObjClass::Set_Hidden(onoff);
 	r->RenderObjClass::Set_Animation_Hidden(onoff);
 	r->RenderObjClass::Set_Translucent(onoff);
-	return r->RenderObjClass::Is_Really_Visible();
+	onoff += r->RenderObjClass::Is_Not_Hidden_At_All();
+	return r->RenderObjClass::Is_Really_Visible() + onoff;
 }
 #pragma inline_depth()
