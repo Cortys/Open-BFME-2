@@ -7201,6 +7201,7 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?TheNullChr@?1??str@?$StringBase@D@@QBEPBDXZ@4DB,0x007BAC1C,retail export ordinal 1424 (.rdata data): the function-local null character StringBase<char>::str returns; str 0x000023EE loads this address
 ?allocate@?$allocator@VRva004E194E@@@_STL@@QBEPAVRva004E194E@@IPBX@Z,0x00395960,ICF 20-byte allocator fold identical 28B imul-0x14 call site 0x00565E85 via rowed BfmeStringRecord002CF4C6
 ??$__uninitialized_copy@PAVRva004E194E@@PAV1@@_STL@@YAPAVRva004E194E@@PAV1@00ABU__false_type@0@@Z,0x0052C987,ICF twin of rowed honest copy identical 38B stride-0x14 call sites 0x00565E97 0x00565EE2 via rowed Construct 0x0052C3D7
+??$__uninitialized_copy@PAVSaveMapPreview@@PAV1@@_STL@@YAPAVSaveMapPreview@@PAV1@00ABU__false_type@0@@Z,0x0052C987,SaveMapPreview vector copy ctor callee at 0x52CDC4; 20-byte stride ICF twin of the Rva004E194E pin
 ?_M_clear@?$vector@VRva004E194E@@V?$allocator@VRva004E194E@@@_STL@@@_STL@@IAEXXZ,0x00565A42,vector Rva004E194E clear is rowed tidy call site 0x00565EEF identical 30B shape
 ?peerGetPlayerInfoNoWait@@YAHPAXPBDPAIPAH@Z,0x00699090,GameSpy peerGetPlayerInfoNoWait called by getPlayerInfo at 0x38C4B4
 ?peerGetPlayerFlags@@YAHPAXPBDW4RoomType@@PAH@Z,0x006991B0,GameSpy peerGetPlayerFlags called by getPlayerInfo at 0x38C5A4
