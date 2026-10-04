@@ -52446,3 +52446,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?Rva00337655Partition@@YAPAUS4SortElem20@@PAU1@0VRva003371B1@@@Z,,0x00337655,101,Code/GameEngine/Source/Common/Rva00337655Partition.cpp,matched,caller 0x00337D6D unguarded partition donor Intro
 ?erase@?$vector@UBfmeObject476@@V?$allocator@UBfmeObject476@@@_STL@@@_STL@@QAEPAUBfmeObject476@@PAU3@0@Z,,0x001FEFB9,51,Code/Libraries/Source/WWVegas/WWLib/StlportObject476Erase.cpp,matched,STLport range erase via rowed copy and Destroy sibling 0x001EBDFA 51B
 ?rva005F8388@Rva005F8388@@QAEXXZ,,0x005F8388,33,Code/GameEngine/Source/Common/Rva005F8388.cpp,matched,chain tail to rowed 0x00577966 via qualified call
+?rva004EDDD3@Rva00506909Item@@QAEXXZ,,0x004EDDD3,276,Code/GameEngine/Source/Common/Rva004EDDD3.cpp,matched,Item average via TeamFactory and Coord3D vector sibling finish

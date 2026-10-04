@@ -1,5 +1,3 @@
-// ?rva004EDDD3@Rva00506909Item@@QAEXXZ
-// partial score=0.98 date=2026-10-04
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHs /arch:SSE /D_STLP_USE_STATIC_LIB /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
 // ?rva004EDDD3@Rva00506909Item@@QAEXXZ at 0x004EDDD3 (276B).
@@ -57,7 +55,6 @@ private:
 	Coord3D m_38;
 };
 
-// ?rva004EDDD3@Rva00506909Item@@QAEXXZ present-unmatched
 void Rva00506909Item::rva004EDDD3()
 {
 	if (v4() <= 0)
@@ -79,7 +76,8 @@ void Rva00506909Item::rva004EDDD3()
 	m_38.z = 0.0f;
 	for (Coord3D *p = tmp.begin(); p != tmp.end(); ++p)
 	{
-		m_38.x += p->x;
+		float *dx = &m_38.x;
+		*dx += p->x;
 		m_38.y += p->y;
 		m_38.z += p->z;
 	}
