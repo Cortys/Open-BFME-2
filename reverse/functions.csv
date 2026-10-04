@@ -52001,3 +52001,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva005FD8C1@Rva005FD8C1@@QAEXXZ,,0x005FD8C1,8,Code/GameEngine/Source/Common/Rva005FD8C1Fwd.cpp,matched,forwarder to rowed 0x005F9330 via ptr plus 4 caller 0x005E95EC
 ?rva005E95E9@Rva005E957C@@QAEXXZ,,0x005E95E9,24,Code/GameEngine/Source/Common/Rva005E957CInit.cpp,matched,chain from 0x005FD8C1 plus virtual slot1 via plus8 wrapper plus byte clear plus10
 ?rva004B2A60@Rva004B2A60@@QAEXPAVObject@@@Z,,0x004B2A60,61,Code/GameEngine/Source/GameLogic/Object/Update/Rva004B2A60.cpp,matched,unlock helper via rowed DamageInfo ctor plus pinned attemptDamage plus rowed destroyObject
+?rva0026c90@@YAPADPAD000D@Z,,0x00026C90,365,Code/GameEngine/Source/Common/BfmeSearch26C90.cpp,matched,via caller 0x00027540 bfmeDoPF LINK BONUS search worker
