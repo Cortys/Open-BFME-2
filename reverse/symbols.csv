@@ -7503,3 +7503,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??A?$map@W4NameKeyType@@UPristineBoneInfo@@U?$less@W4NameKeyType@@@_STL@@V?$allocator@U?$pair@$$CBW4NameKeyType@@UPristineBoneInfo@@@_STL@@@4@@_STL@@QAEAAUPristineBoneInfo@@ABW4NameKeyType@@@Z,0x000BCF68,PristineBoneInfoMap operator[]; doSingleBoneName (0x000BD2BF) calls it four times; body unrowed
 ??4PristineBoneInfo@@QAEAAU0@ABU0@@Z,0x000B2CE5,PristineBoneInfo copy-assign; doSingleBoneName (0x000BD2BF) calls it four times; folded with other 0x34-byte copy assigns (ICF alias)
 ?findSingleSubObj@@YA_NPAVRenderObjClass@@ABVAsciiString@@AAVMatrix3D@@AAH@Z,0x000B6BF0,static W3DModelDraw helper; doSingleBoneName (0x000BD2BF) calls it at +0x10E and +0x175; body unrowed
+?rva0089E2B0@Rva0089EFE0@@QAEHPBD0@Z,0x006D47F0,REL32 target of the call in the BFME1-identical wrapper at 0x006D5580 (BFME 1 0x0089E2B0); body unrowed
