@@ -8282,3 +8282,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0BfmeTmpACH@@QAE@PAX@Z,0x0032D9A4,callee of ?bfmeMakeCH@BfmeOwnCH@@QAEPAV1@PAX@Z at retail 0x0032DDC2 read from its REL32 displacement; body unrowed
 ?bfmeUseCH@BfmeTmpACH@@QAEXPAX@Z,0x0032B651,callee of ?bfmeMakeCH@BfmeOwnCH@@QAEPAV1@PAX@Z at retail 0x0032DDCA read from its REL32 displacement; ICF alias onto ?swap@TeamsInfoRec@@QAEXPAV1@@Z (matched)
 ??1BfmeTmpACH@@QAE@XZ,0x0032C632,callee of ?bfmeMakeCH@BfmeOwnCH@@QAEPAV1@PAX@Z at retail 0x0032DDD2 read from its REL32 displacement; body unrowed
+?bfmeReady986C@BfmeC986@@QAEDXZ,0x0036E357,callee of ?bfmeGo986C@BfmeC986@@QAEXHHHH@Z at retail 0x00372544 read from its REL32 displacement; body unrowed
+?bfmePrep986C@BfmeC986@@QAEXXZ,0x0036D6B4,callee of ?bfmeGo986C@BfmeC986@@QAEXHHHH@Z at retail 0x0037254F read from its REL32 displacement; body unrowed
+?bfmeSend986C@BfmeC986@@QAEXHHHHH@Z,0x00371166,callee of ?bfmeGo986C@BfmeC986@@QAEXHHHH@Z at retail 0x00372568 read from its REL32 displacement; body unrowed
