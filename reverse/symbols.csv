@@ -7682,3 +7682,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1ModelConditionSpecialAbilityUpdateModuleData@@UAE@XZ,0x00490E7B,sole REL32 callee of the slot-0 ??_G at 0x00490E5F in vftable 0x00C4D828; body starts right after that ??_G
 ??1Rva005747DA@@UAE@XZ,0x00574BA0,sole REL32 callee of the slot-0 ??_G at 0x00574B84 in vftable 0x00C6E3CC; body starts right after that ??_G
 ??1Rva005E9FC1@@UAE@XZ,0x005EA224,sole REL32 callee of the slot-0 ??_G at 0x005EA208 in vftable 0x00C78114; body starts right after that ??_G
+?scanUnsignedInt@@YAHPBDAAI@Z,0x00314E96,address read from the REL32 displacement at a placed body

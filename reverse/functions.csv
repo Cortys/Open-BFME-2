@@ -51182,3 +51182,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GModelConditionSpecialAbilityUpdateModuleData@@UAEPAXI@Z,,0x00490E5F,28,Code/GameEngine/Source/GameLogic/Object/Update/ModelConditionSpecialAbilityUpdateModuleDataCtor2.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C4D828; calls pinned dtor 0x00490E7B
 ??_GRva005747DA@@UAEPAXI@Z,,0x00574B84,28,Code/GameEngine/Source/Common/Rva005747DACtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C6E3CC; calls pinned dtor 0x00574BA0
 ??_GRva005E9FC1@@UAEPAXI@Z,,0x005EA208,28,Code/GameEngine/Source/Common/Rva005E9FC1Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C78114; calls pinned dtor 0x005EA224
+?parseDrawData@@YA_NPADPAVWinInstanceData@@0PAX@Z,,0x00315DB1,1089,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerScriptDrawData.cpp,matched,BFME1 donor GameWindowManagerScriptDrawData.cpp at /O1; unique masked placement
