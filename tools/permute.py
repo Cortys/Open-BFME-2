@@ -519,6 +519,54 @@ def offset_search(rva, budget=400):
     return result
 
 
+def pin_probe(rva):
+    """Pins that would make a banked body exact: when its compiled bytes match
+    retail everywhere except REL32 calls to names the symbol map cannot
+    resolve, each such call's retail target (site + 4 + retail displacement)
+    is that name's address. Every site of one name must agree. Returns
+    {"pins": {name: rva}} or a reason it does not apply."""
+    import struct
+    rva = rva.lower()
+    try:
+        text = (ATTEMPTS / f"{rva}.cpp").read_text(encoding="latin-1", errors="replace")
+    except FileNotFoundError:
+        return {"rva": rva, "skip": "closed elsewhere"}
+    found = re.match(r"//\s*(\S+)", text)
+    symbol = found.group(1) if found else ""
+    size = attempt_sizes().get((symbol, rva))
+    if not size:
+        return {"rva": rva, "skip": "no size"}
+    workdir = OUT / rva
+    workdir.mkdir(parents=True, exist_ok=True)
+    source = workdir / "pins.cpp"
+    output = source.with_suffix(".obj")
+    source.write_text(text, encoding="latin-1", errors="replace")
+    try:
+        ok, _, _ = build.try_compile_source(source, output)
+        if not ok:
+            return {"rva": rva, "skip": "does not compile"}
+        row = {"name": symbol, "target_rva": rva, "target_size": str(size),
+               "source": source.relative_to(ROOT).as_posix(), "notes": ""}
+        got = build.compile_function(row, build.load_symbol_map(), output)
+    except (SystemExit, Exception) as error:
+        return {"rva": rva, "skip": f"compile_function: {str(error)[:80]}"}
+    if not got["unresolved"]:
+        return {"rva": rva, "skip": "no unresolved calls"}
+    compiled, target, base = bytearray(got["bytes"]), got["target"], int(rva, 16)
+    pins = {}
+    for offset, rtype, name in got["relocs"]:
+        if rtype != 0x0014 or name not in got["unresolved"] or offset + 4 > len(target):
+            continue
+        address = (base + offset + 4 + struct.unpack_from("<i", target, offset)[0]) & 0xFFFFFFFF
+        if pins.setdefault(name, address) != address:
+            return {"rva": rva, "skip": f"{name} called at two different targets"}
+        compiled[offset:offset + 4] = target[offset:offset + 4]
+    if bytes(compiled) != bytes(target) or set(pins) != set(got["unresolved"]):
+        return {"rva": rva, "skip": "differs beyond the unresolved calls"}
+    (workdir / "win.cpp").write_text(text, encoding="latin-1", errors="replace")
+    return {"rva": rva, "symbol": symbol, "pins": {name: f"0x{address:08X}" for name, address in pins.items()}}
+
+
 def home_dir(symbol):
     """Where a win's unit goes: the directory most of its class's ledger units
     live in, else Code/GameEngine/Source/Common."""
@@ -619,6 +667,8 @@ def main(argv=None):
     parser.add_argument("--jobs", type=int, default=int(os.environ.get("BUILD_POOL", "1") or 1))
     parser.add_argument("--land", action="store_true",
                         help="land every build/permute/<rva>/win.cpp via add_match (no commit)")
+    parser.add_argument("--pins", action="store_true",
+                        help="find banked bodies exact but for unresolved calls; pin those calls from retail")
     parser.add_argument("--offsets", action="store_true",
                         help="offset search on bodies the triage found differ only in numbers (or the RVAs given)")
     parser.add_argument("--all", action="store_true",
@@ -626,6 +676,31 @@ def main(argv=None):
     parser.add_argument("--recheck", action="store_true",
                         help="compile every banked attempt (any score) unchanged once; exact ones become wins")
     args = parser.parse_args(argv)
+    if args.pins:
+        rvas = args.rvas or [rva for _, _, rva, _ in queue(0.0)]
+        found = []
+        with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
+            for result in pool.map(pin_probe, rvas):
+                if "pins" in result:
+                    found.append(result)
+                    print(json.dumps(result), flush=True)
+        if found:
+            import csv as _csv
+            have = set()
+            with (ROOT / "reverse" / "symbols.csv").open(encoding="utf-8", newline="") as handle:
+                have = {(r["name"], r["address"].upper()) for r in _csv.DictReader(handle)}
+            with (ROOT / "reverse" / "symbols.csv").open("a", encoding="utf-8", newline="") as handle:
+                writer = _csv.writer(handle, lineterminator="\n")
+                for result in found:
+                    for name, address in result["pins"].items():
+                        if (name, address.upper()) not in have:
+                            writer.writerow([name, address,
+                                             f"auto-pin (permute --pins): REL32 call target read from retail in "
+                                             f"{result['rva']}, whose banked body is byte-exact once this call resolves"])
+                            have.add((name, address.upper()))
+        print(f"permute: {len(found)} banked body(ies) close with pins; run tools/pin_consistency.py --check, "
+              "then --land")
+        return 0
     if args.offsets:
         # bodies the triage marked as a layout fact, or the RVAs given
         rvas = args.rvas
