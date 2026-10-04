@@ -52084,3 +52084,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??1Rva004482FB@@QAE@XZ,,0x004482FB,87,Code/GameEngine/Source/Common/Rva004482FBDtor.cpp,matched,unlock lane caller 0x004482DF deleting dtor prev array shape wide release
 ?rva0031FA8E@Rva0031FA8E@@QAEXXZ,,0x0031FA8E,12,Code/GameEngine/Source/Common/Rva0031FA8E.cpp,matched,null-checked forward to rowed ControlBarScheme update
 ?rva004E98DE@Rva004E98DE@@QAEEXZ,,0x004E98DE,25,Code/GameEngine/Source/GameLogic/SkirmishAI/AIWallBuilder/Rva004E98DEMethod.cpp,matched,thiscall owner at +8 via g_00DFEEF8 pin rva002A8AB1 tests +0x16c signed gt caller 0x004E9DB8
+??1Rva004EDCE9@@UAE@XZ,,0x004EDCE9,100,Code/GameEngine/Source/Common/Rva004EDCE9Dtor.cpp,matched,vtable 0x008629E4 stop 0x004ED748 AsciiString+0x2C frees+0x14+0x4 tail-called by 4 derived
