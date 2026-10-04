@@ -52229,3 +52229,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva00580B40@Rva00580B40@@QAEXPBVModuleData@@@Z,,0x00580B40,28,Code/GameEngine/Source/GameNetwork/Rva00580B40.cpp,matched,push nonnull to vector plus15 clear callers 445E64 5A06CD
 ?rva003A2897@Rva003A2897@@QAE_NW4NameKeyType@@@Z,,0x003A2897,86,Code/GameEngine/Source/GameLogic/Object/ArmorRva003A2897.cpp,matched,Armor map remover twin of 0x003A28ED
 ?rva0041F2A8@Rva0041F28C@@QAEMPAX@Z,,0x0041F2A8,104,Code/GameEngine/Source/Common/Rva0041F2A8Method.cpp,matched,lerp via 0x002A8AB1 caller 0x00598A9B same layout as 0x0041F28C
+?rva0010690D@BfmeB996Range@@QAEXXZ,,0x0010690D,62,Code/GameEngine/Source/Common/BfmeConv996RangeCheck.cpp,matched,advance step via rva001068D1 and v5 donor bfmeAdvance996 callers 0x911B2 0x91914
