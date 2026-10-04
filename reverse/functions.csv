@@ -51104,3 +51104,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva0040AFF3@@QAEPAXI@Z,,0x0040B2E1,28,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B547.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??$sort@PAHU?$greater@H@_STL@@@_STL@@YAXPAH0U?$greater@H@0@@Z,,0x005E52BA,67,Code/Libraries/Source/WWVegas/WWLib/stlport_int_algorithm_bodies.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GBuddyMessage@@QAEPAXI@Z,,0x00382B63,28,Code/Libraries/Source/WWVegas/WWLib/stlport_list_buddymessage_erase.cpp,matched,unique masked-byte placement (locate.py sweep)
+??0?$list@FV?$allocator@F@_STL@@@_STL@@QAE@ABV01@@Z,,0x00594689,88,Code/Libraries/Source/WWVegas/WWLib/stlport_list_s_o1.cpp,matched,unique masked-byte placement (locate.py sweep)
