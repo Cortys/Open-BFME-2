@@ -52054,3 +52054,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva003C41BA@BfmeApplierBH@@QAEXPAXABVAsciiString@@0@Z,,0x003C41BA,80,Code/GameEngine/Source/Common/BfmeApplierBHRva003C41BA.cpp,matched,leaf via TerrainLogic v34 plus rowed find pin bfmeApplyBH
 ?rva0032DE04@SidesList@@QAEHABVAsciiString@@@Z,,0x0032DE04,527,Code/GameEngine/Source/GameLogic/Map/SidesListAddPlayerByTemplate.cpp,matched,SidesList addPlayerByTemplate ZH donor team-then-side
 ?rva004C7F5C@Rva004C7F5C@@QAEXPAVObject@@@Z,,0x004C7F5C,222,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva004C7F5C.cpp,matched,heal guard via Thing KindOf plus relationship plus float range plus body mult plus attemptHealing plus doFXObj
+?dump@Rva000C2A30Owner@@QAEXXZ,,0x00200A01,100,Code/GameEngine/Source/Common/Rva000C2A30Dump.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
