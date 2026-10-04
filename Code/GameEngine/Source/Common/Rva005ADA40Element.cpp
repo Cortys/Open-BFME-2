@@ -17,6 +17,9 @@
 //               TheSkirmishAIManager's +0x864 list
 //   0x005ADC63  update: retire the +0x28 object once done (0x004E9378), or
 //               start one (0x005ADAB2); then update every item
+//   0x005ADCBE  pick a base template for the current map (or the .bss name
+//               when the start is still open) that fits the owner's start
+//               position, at random when several do
 //   0x005AE0AD  xfer: index, point, angle, the base template by name, the
 //               items, then the +0x28 order
 //
@@ -25,6 +28,8 @@
 // TheBaseTemplateLibrary (0x00A03124).
 #include <vector>
 #include "ascii_string.h"
+#include "unicode_string.h"
+#include <algorithm>
 
 struct Coord3DBase
 {
@@ -201,7 +206,41 @@ public:
 };
 extern NameKeyGenerator *TheNameKeyGenerator;
 
-class Rva0041E912Template;
+// One base layout from TheBaseTemplateLibrary (+0x08 map name, +0x0C start
+// positions it fits).
+class Rva0041E912Template
+{
+public:
+	char m_pad00[0x08];
+	AsciiString m_name;			// +0x08
+	_STL::vector<int> m_starts;		// +0x0C
+};
+
+class MapMetaData
+{
+public:
+	UnicodeString rva00300D0E();
+};
+
+class MapCache
+{
+public:
+	const MapMetaData *findMap(AsciiString mapName);
+};
+extern MapCache *TheMapCache;
+
+class GlobalData
+{
+public:
+	char m_pad00[0x0C];
+	AsciiString m_mapName;	// +0x0C
+};
+extern GlobalData *TheGlobalData;
+
+// A file-level AsciiString in .bss that a template name may also match.
+extern const AsciiString g_00E06448;
+
+int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 
 // TheBaseTemplateLibrary (registered at 0x0022F9C0, global 0x00A03124)
 class Rva0022BD9ASubsystem
@@ -222,6 +261,7 @@ public:
 	void rva005ADAB2();
 	void rva005ADC63();
 	void rva005AE0AD(Xfer *xfer);
+	Rva0041E912Template *rva005ADCBE(int notFirst, const _STL::vector<Rva0041E912Template *> &list);
 private:
 	_STL::vector<Rva005DCE08 *> m_items;	// +0x00
 	int m_index;				// +0x0C
@@ -323,4 +363,40 @@ void Rva005ADA40::rva005AE0AD(Xfer *xfer)
 			m_owned = new Rva00573E7C;
 		m_owned->xfer(xfer, m_owner);
 	}
+}
+
+Rva0041E912Template *Rva005ADA40::rva005ADCBE(int notFirst, const _STL::vector<Rva0041E912Template *> &list)
+{
+	Rva0041E912Template *chosen = 0;
+	const MapMetaData *map = TheMapCache->findMap(TheGlobalData->m_mapName);
+	if (map) {
+		bool open = rva005AD964();
+		_STL::vector<Rva0041E912Template *> candidates;
+		AsciiString mapName = ((MapMetaData *)map)->rva00300D0E();
+		for (Rva0041E912Template *const *it = list.begin(); it != list.end(); ++it) {
+			Rva0041E912Template *tmpl = *it;
+			if (tmpl->m_name.compare(mapName) != 0) {
+				if (!open || tmpl->m_name.compare(g_00E06448) != 0)
+					continue;
+			}
+			if (tmpl->m_starts.begin() == tmpl->m_starts.end()) {
+				candidates.push_back(tmpl);
+			} else {
+				int start = Rva00506C82Find((const Rva00506C82Arg *)m_owner)->m_10 + 1;
+				int *end = tmpl->m_starts.end();
+				if (_STL::find(tmpl->m_starts.begin(), end, start) != end)
+					candidates.push_back(tmpl);
+			}
+		}
+		if (!candidates.empty()) {
+			unsigned int count = candidates.size();
+			if (count > 1)
+				chosen = candidates[GetGameLogicRandomValue(0, count - 1,
+					"C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AIBaseBuilder\\AIBase.cpp",
+					211)];
+			else
+				chosen = candidates[0];
+		}
+	}
+	return chosen;
 }
