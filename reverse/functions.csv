@@ -52050,3 +52050,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva0027F5A6@Rva0027F5A6@@QAE?AVAsciiString@@XZ,,0x0027F5A6,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5A6Get.cpp,matched,AsciiString by-value getter member +0x50 via rowed StringBase copy
 ?rva0027F5C1@Rva0027F5C1@@QAE?AVAsciiString@@XZ,,0x0027F5C1,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5C1Get.cpp,matched,AsciiString by-value getter member +0x54 via rowed StringBase copy
 ?rva0027F5DC@Rva0027F5DC@@QAE?AVAsciiString@@XZ,,0x0027F5DC,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5DCGet.cpp,matched,AsciiString by-value getter member +0x58 via rowed StringBase copy
+?read@DataChunkTableOfContents@@QAEXAAVChunkInputStream@@@Z,,0x003071E9,301,Code/GameEngine/Source/Common/System/DataChunkTableOfContentsRead.cpp,matched,pinned name caller DataChunkInput ctor donor BFME1 DataChunkTableOfContents inlined CkMp Mapping new StringBase getBufferForRead

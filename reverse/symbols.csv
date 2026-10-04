@@ -8204,3 +8204,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0Rva0027231F@@QAE@ABVBfmeFixedStorage0004543D@@@Z,0x0027231F,"one-mask partition filter ctor: +0x04 link cleared, vftable 0x00BFAF94, the mask copied to +0x08 through 0x0004543D, ret 4; REL32 in 0x00599AE3"
 ?rva0049083C@ArrowStormUpdate@@AAE_NXZ,0x0049083C,bool no-argument ArrowStormUpdate member the slot-17 override 0x00490A74 calls up to module-data +0xD4 times until it succeeds; identity not recovered
 ?rva00490AC5@ArrowStormUpdate@@AAEXXZ,0x00490AC5,no-argument ArrowStormUpdate member (EH) the slot-15 override 0x00490D0A tail-calls after clearing its state; identity not recovered
+??_7Mapping@@6B@,0x00807EAC,vtable store in read 0x003071E9 new Mapping size 0x10 next at +4 name at +8 id at +0x0C matches GetName and DataChunk layouts
