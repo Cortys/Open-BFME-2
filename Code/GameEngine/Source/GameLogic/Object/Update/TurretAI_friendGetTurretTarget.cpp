@@ -124,3 +124,7 @@ Object *TurretStateMachine::getGoalObject()
 {
 	return TheGameLogic->findObjectByID(m_goalObjectID);
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:?getGoalObject@StateMachine@@QAEPAVObject@@XZ=?getGoalObject@TurretStateMachine@@QAEPAVObject@@XZ")

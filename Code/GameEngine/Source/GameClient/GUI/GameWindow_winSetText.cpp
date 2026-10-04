@@ -93,3 +93,7 @@ unsigned char GameWindow::rva003147F6(int x, int y)
 		return 0;
 	return 1;
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:?winSetText@GameWindow@@QAEHVUnicodeString@@@Z=?winSetText@GameWindow@@UAEHVUnicodeString@@@Z")

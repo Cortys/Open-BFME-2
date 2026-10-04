@@ -22,3 +22,7 @@ int Rva00431978::rva00431978(ICoord2D *p)
 		return 1;
 	return 0;
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:?rva00431978@Rva00431978@@QAE_NPAUICoord2D@@@Z=?rva00431978@Rva00431978@@QAEHPAUICoord2D@@@Z")

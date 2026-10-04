@@ -39,3 +39,7 @@ private:
 Rva00229811::Rva00229811()
 {
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:??0TreeHintOpaque0043671B@@QAE@XZ=??0Rva00229811@@QAE@XZ")

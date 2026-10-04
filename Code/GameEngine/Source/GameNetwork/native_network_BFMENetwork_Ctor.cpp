@@ -424,3 +424,6 @@ BFMENetwork::BFMENetwork() :
 	m_unknown68 = 0;
 }
 
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:??0Pinger@@QAE@XZ=??0BFMENetwork@@QAE@XZ")

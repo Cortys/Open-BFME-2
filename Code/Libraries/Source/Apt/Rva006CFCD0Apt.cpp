@@ -38,3 +38,7 @@ bool Rva006CFCD0::isSpriteInstBase() const
     return reinterpret_cast<const Rva006DBB30SarDwordField *>(this)->get() == 0xD
         || reinterpret_cast<const Rva006DBB30SarDwordField *>(this)->get() == 0x12;
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:?rva006CFCD0@AptCIH@@QBE_NXZ=?isSpriteInstBase@Rva006CFCD0@@QBE_NXZ")

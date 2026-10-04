@@ -110,3 +110,8 @@ void WW3D::_Invalidate_Textures()
 			break;
 	}
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:?Rva001171B0@@YAXXZ=?_Invalidate_Textures@WW3D@@SAXXZ")
+#pragma comment(linker, "/alternatename:?rva001171B0Notify@@YAXXZ=?_Invalidate_Textures@WW3D@@SAXXZ")

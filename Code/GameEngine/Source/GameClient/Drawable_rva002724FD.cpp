@@ -245,3 +245,7 @@ void Drawable::rva002723ED()
 			di->rva002723EDTarget();
 	}
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:?rva002724FD@Drawable@@QAEXABVAsciiString@@EHMM@Z=?rva002724FD@Drawable@@QAEXABVAsciiString@@HHMM@Z")

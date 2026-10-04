@@ -47,3 +47,7 @@ Rva000C3380::Rva000C3380(const Rva000C3380 &other)
 	m_14 = other.m_14;
 	m_18 = other.m_18;
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:??4Video@@QAEAAV0@ABV0@@Z=??0Rva000C3380@@QAE@ABV0@@Z")

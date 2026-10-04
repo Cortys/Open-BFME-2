@@ -32,3 +32,7 @@ Rva0054103E::Rva0054103E(const Rva0054103E &that)
 	, m_04(that.m_04)
 {
 }
+
+// Other units call this body (pinned at its address) under the spelling(s)
+// below, with the same calling convention and stack arguments; bind them.
+#pragma comment(linker, "/alternatename:??4Rva0054103E@@QAEAAV0@ABV0@@Z=??0Rva0054103E@@QAE@ABV0@@Z")
