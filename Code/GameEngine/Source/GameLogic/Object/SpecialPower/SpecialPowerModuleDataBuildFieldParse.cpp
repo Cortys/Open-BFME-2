@@ -390,6 +390,25 @@ void CombineHordeSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse &par
 	parse.add(reinterpret_cast<const FieldParse *>(0x00C5E6E4), 0);
 }
 
+// ?ManTheWallsSpecialPowerParse_2526DF@@YAXAAVMultiIniFieldParse@@@Z
+// retail 0x004C856F 5B: forwards to SpecialPower base 0x00493207.
+// Owning factory 0x002526DF pushes VA; ModuleFactory registers ManTheWalls.
+// LINK BONUS for ModuleDataFriendNewFactories.
+void ManTheWallsSpecialPowerParse_2526DF(MultiIniFieldParse &parse)
+{
+	SpecialPowerModuleData::buildFieldParse(parse);
+}
+
+// ?HordeDispatchSpecialPowerParse_25287D@@YAXAAVMultiIniFieldParse@@@Z
+// retail 0x004C89CB 27B: base-table call plus empty table at 0x00C6BB18.
+// Owning factory 0x0025287D pushes VA; ModuleFactory registers HordeDispatch.
+// Same bytes as UntamedAllegiance and Repair; LINK BONUS for ModuleDataFriendNewFactories.
+void HordeDispatchSpecialPowerParse_25287D(MultiIniFieldParse &parse)
+{
+	SpecialPowerModuleData::buildFieldParse(parse);
+	parse.add(reinterpret_cast<const FieldParse *>(g_emptyFieldParseTable), 0);
+}
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?RepairSpecialPowerParse_252768@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@RepairSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
