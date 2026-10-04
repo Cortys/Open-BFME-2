@@ -7606,3 +7606,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1BfmeNarrowRecord00427F75@@QAE@XZ,0x0022CCEF,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportVectorGrowthFootprints.cpp
 ??1BfmeStringRecord002CF4C6@@QAE@XZ,0x00214ADC,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportVectorGrowthFootprints.cpp
 ??1BfmeVectorRecord002AF478@@QAE@XZ,0x005EA85F,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportVectorGrowthFootprints.cpp
+??1Rva00414BDBElement@@QAE@XZ,0x001DDEC3,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportVectorInsertOverflowRva00414BDB.cpp
