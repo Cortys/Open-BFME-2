@@ -51083,3 +51083,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??E?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@_STL@@QAE?AU01@H@Z,,0x0051C063,26,Code/GameEngine/Source/GameLogic/ScriptEngine/XferVectorBool.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GBfmeMsgVJH@@UAEPAXI@Z,,0x00663430,30,Code/GameEngine/Source/GameNetwork/BfmeMsgVJH_ctor.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_G?$pair@$$CBVAsciiString@@VPlayerInfo@@@_STL@@QAEPAXI@Z,,0x00382B23,28,Code/GameEngine/Source/GameNetwork/GameSpy/PeerDefs.cpp,matched,unique masked-byte placement (locate.py sweep)
+??$uninitialized_copy@U?$_Deque_iterator@UOpaqueRefElement4@@U?$_Nonconst_traits@UOpaqueRefElement4@@@_STL@@@_STL@@U12@@_STL@@YA?AU?$_Deque_iterator@UOpaqueRefElement4@@U?$_Nonconst_traits@UOpaqueRefElement4@@@_STL@@@0@U10@00@Z,,0x00056E14,63,Code/Libraries/Source/WWVegas/WWLib/Rva00056da2Finish.cpp,matched,unique masked-byte placement (locate.py sweep)
