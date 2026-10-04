@@ -30,3 +30,30 @@ void Rva003F8090::rva003F8090()
 		++p;
 	}
 }
+
+// ?rva003F8076@Rva003F8076@@QAEXXZ @0x003F8076 13B.
+// Null-checked tail forward to rowed 0x003F7E83 via +0x14 member.
+// Evidence: unlock lane; retail mov ecx,[ecx+0x14]; test ecx,ecx; je ret;
+// jmp 0x003F7E83; caller jmp at 0x003F837F in unclaimed 0x003F8374.
+class Rva003F7E83
+{
+public:
+	void rva003F7E83();
+};
+
+class Rva003F8076
+{
+public:
+	void rva003F8076();
+private:
+	char m_00[0x14];
+	Rva003F7E83 *m_14;
+};
+
+void Rva003F8076::rva003F8076()
+{
+	Rva003F7E83 *p = m_14;
+	if (p == 0)
+		return;
+	p->rva003F7E83();
+}
