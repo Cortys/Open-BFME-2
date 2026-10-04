@@ -1,0 +1,37 @@
+// cl: /O1 /DNDEBUG /MD /GX-
+// ?rva003F055A@Rva003F055A@@QAEXXZ 0x003F055A 46B
+// Scan pointer range at +0x170/+0x174 calling rowed 0x4E0845 on entry+0x20 when nonzero and byte at entry+0x34 is zero.
+// Evidence: callee 0x4E0845 rowed; caller at 0x3F104B; same +0x170/+0x20/+0x34 shape as LivingWorldRegionConnection 0x3F287F vector.
+class Rva004E0809
+{
+public:
+	void rva004E0845(); // rowed 0x004E0845, declared only
+};
+
+struct Rva003F055AEntry
+{
+	char _pad0[0x20];
+	class Rva004E0809 *m_item; // +0x20
+	char _pad1[0x34 - 0x24];
+	unsigned char m_flag; // +0x34
+};
+
+class Rva003F055A
+{
+public:
+	void rva003F055A();
+private:
+	unsigned char m_pad[0x170];
+	struct Rva003F055AEntry **m_begin; // +0x170
+	struct Rva003F055AEntry **m_end; // +0x174
+};
+
+void Rva003F055A::rva003F055A()
+{
+	for (struct Rva003F055AEntry **p = m_begin; p != m_end; ++p) {
+		struct Rva003F055AEntry *e = *p;
+		class Rva004E0809 *item = e->m_item;
+		if (item != 0 && e->m_flag == 0)
+			item->rva004E0845();
+	}
+}
