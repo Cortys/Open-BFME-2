@@ -170,6 +170,7 @@ public:
 	virtual void postProcessLoad( void );
 	virtual void update( void );
 	virtual DisplayString *newDisplayString( void );
+	virtual DisplayString *getGroupNumeralString( Int numeral );
 protected:
 	DisplayString *m_groupNumeralStrings[ MAX_GROUPS ];		///< 0x14
 	DisplayString *m_formationLetterDisplayString;				///< 0x3C
@@ -296,3 +297,13 @@ DisplayString *W3DDisplayStringManager::newDisplayString( void )
 	return newString;
 
 }  // end newDisplayString
+
+//-------------------------------------------------------------------------------------------------
+DisplayString *W3DDisplayStringManager::getGroupNumeralString( Int numeral )
+{
+	// BFME 2 falls back to the first numeral where ZH crashed in debug
+	if (numeral < 0 || numeral > MAX_GROUPS - 1 )
+		return m_groupNumeralStrings[0];
+
+	return m_groupNumeralStrings[numeral];
+}
