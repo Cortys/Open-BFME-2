@@ -51866,3 +51866,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??_GResourceGatheringManager@@UAEPAXI@Z,,0x004F5F2E,28,Code/GameEngine/Source/Common/RTS/ResourceGatheringManagerDeleter.cpp,matched,slot 0 of vtable 0x00C6327C (unique ResourceGatheringManager name getter); calls rowed dtor 0x004F5BB0 then global delete; ZH pool operator delete dropped for the 28B form
 ??0Rva0010EE67@@QAE@ABVRva0036CA00Str@@H@Z,,0x0010EE67,31,Code/GameEngine/Source/Common/Rva0010EE67Ctor.cpp,matched,Derived ctor via rowed base 0x001164D3 plus int and vtable sibling EECE
 ??0Rva0010EF42@@QAE@ABVRva0036CA00Str@@H@Z,,0x0010EF42,31,Code/GameEngine/Source/Common/Rva0010EF42Ctor.cpp,matched,Derived ctor via rowed base 0x001164D3 plus int and vtable sibling 0x0010EE67
+??0Rva004D9539@@QAE@HHH@Z,,0x004D9539,77,Code/GameEngine/Source/Common/Rva004D9539Ctor.cpp,matched,EH ctor two rowed Upgrades plus three ints caller 0x004DADA9
