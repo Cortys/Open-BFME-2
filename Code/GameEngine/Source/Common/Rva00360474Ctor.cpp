@@ -20,6 +20,7 @@ class Rva00360474 : public Rva001DBAA4
 {
 public:
 	Rva00360474();
+	virtual ~Rva00360474();
 
 private:
 	int m_10;
@@ -36,5 +37,11 @@ Rva00360474::Rva00360474() : m_10(0), m_14(30), m_2c(-1)
 	m_C = 0;
 	m_28 = 0.0f;
 	m_9 = true;
+	m_30 = 0;
+}
+
+Rva00360474::~Rva00360474()
+{
+	m_C = 0;
 	m_30 = 0;
 }

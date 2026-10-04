@@ -51741,3 +51741,5 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?getPingValue@GameSpyInfo@@UAEHABVAsciiString@@@Z,,0x0038277F,194,Code/GameEngine/Source/GameNetwork/GameSpy/GameSpyInfo_getPingValue.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?grabHexInt@@YAHPBD@Z,,0x005B9024,49,Code/GameEngine/Source/GameNetwork/GameSpy/GameSpyInfo_getPingValue.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?rva003605D5@Rva003605D5@@QAEHHH@Z,,0x003605D5,14,Code/GameEngine/Source/Common/DamageFXRva003605AF.cpp,matched,sibling of 0x003605AF indexed word load ret 8
+??1Rva00360474@@UAE@XZ,,0x003603D4,19,Code/GameEngine/Source/Common/Rva00360474Ctor.cpp,matched,dtor clears m_C m_30 stores vtable tail base pin
+??_GRva00360474@@UAEPAXI@Z,,0x003604AA,28,Code/GameEngine/Source/Common/Rva00360474Ctor.cpp,matched,deleting dtor via landed dtor same TU
