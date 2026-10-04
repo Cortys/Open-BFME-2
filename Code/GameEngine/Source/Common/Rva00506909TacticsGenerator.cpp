@@ -47,6 +47,14 @@ RVA00506909_GEN(Rva005A9D33, 0x60)
 RVA00506909_GEN(Rva005A9C1E, 0x60)
 RVA00506909_GEN(Rva005A9988, 0x58)
 
+// ... and the six 0x00506020 seeds +0x4C with.
+RVA00506909_GEN(Rva005ACF38, 0x64)
+RVA00506909_GEN(Rva005AC7EC, 0x68)
+RVA00506909_GEN(Rva005AB91D, 0x80)
+RVA00506909_GEN(Rva005AB3BE, 0x68)
+RVA00506909_GEN(Rva005AB1B4, 0x58)
+RVA00506909_GEN(Rva005AABC6, 0x5C)
+
 // What 0x00505F80 and 0x00505FD0 seed +0x1C and +0x34 with when empty.
 class Rva005AA7DF
 {
@@ -95,7 +103,7 @@ private:
 	_STL::vector<Rva00506909Item *> m_28;
 	_STL::vector<Rva005AA9DB *> m_34;
 	_STL::vector<Rva00506909Item *> m_40;
-	_STL::vector<Rva00506909Item *> m_4C;
+	_STL::vector<Rva00506909Gen *> m_4C;
 	_STL::vector<Rva00506909Item *> m_58;
 };
 
@@ -174,5 +182,17 @@ void Rva00506909::rva00505E5D()
 		m_04.push_back(new Rva005A9D33);
 		m_04.push_back(new Rva005A9C1E);
 		m_04.push_back(new Rva005A9988);
+	}
+}
+
+void Rva00506909::rva00506020()
+{
+	if (m_4C.empty()) {
+		m_4C.push_back(new Rva005ACF38);
+		m_4C.push_back(new Rva005AC7EC);
+		m_4C.push_back(new Rva005AB91D);
+		m_4C.push_back(new Rva005AB3BE);
+		m_4C.push_back(new Rva005AB1B4);
+		m_4C.push_back(new Rva005AABC6);
 	}
 }
