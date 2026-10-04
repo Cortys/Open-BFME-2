@@ -15,6 +15,94 @@
 //   +0x14 a second pointer vector, cleared with the first
 #include <vector>
 
+class AsciiString;
+struct Coord3DBase;
+// BFME2's Xfer: operator== overloads, grouped by cl at the first overload
+// slot in reverse declaration order (Rva004E0513Xfer.cpp has the same view).
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class Coord2D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+class Snapshot;
+
+class Xfer
+{
+public:
+	class Version;
+
+	Xfer();
+	virtual ~Xfer();
+
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
+class Xfer::Version
+{
+public:
+	Version(unsigned char current, unsigned char minimum)
+		: m_current(current), m_minimum(minimum) {}
+
+	unsigned char m_current;
+	unsigned char m_minimum;
+};
+
+
+// Elements of the four vectors at +0x10/+0x28/+0x40/+0x58: each gets
+// 0x004EDF03 then 0x004ECE1C from the 0x00505924 pass (both in the
+// AITactic.cpp range).
+
 class Rva005A9562
 {
 public:
@@ -22,6 +110,7 @@ public:
 	~Rva005A9562();
 	void rva005A9693();
 	void rva005A9824();
+	void rva005A91BE(Xfer *xfer);
 	struct Rva0050542BTarget *rva005A910E();
 private:
 	unsigned char m_data[0x18];
@@ -88,6 +177,7 @@ public:
 	Rva002C589B(int value, int kind, void *owner);
 	~Rva002C589B();
 	Object *rva002C5DA6();
+	void rva002C5B46(Xfer *xfer);
 	int rva0030F2C7() const;
 	float rva002C5AE6();
 	char m_pad00[4];
@@ -129,6 +219,7 @@ public:
 	~Rva0050542B();
 	Rva002C589B *rva00505408(int id);
 	Rva002C589B *rva005053A4();
+	void xfer(Xfer *xfer);
 private:
 	bool rva0050535A(Rva002C589B *entry);
 	Rva00505289Data *rva00505289();
@@ -287,4 +378,51 @@ void Rva0050542B::rva00505606()
 			chosen->act(entry, value, target);
 		}
 	}
+}
+
+// 0x00505710: Version(1, 2) then the entries (count, then each entry);
+// loading trims surplus entries and makes any missing ones. Version 1 saves
+// carried an extra list of entries that go in front. Then the +0x04 object
+// and the +0x14 list's size.
+void Rva0050542B::xfer(Xfer *xfer)
+{
+	Xfer::Version version(1, 2);
+	*xfer == version;
+	unsigned int count = m_08.size();
+	*xfer == count;
+	if (xfer->IsStoring()) {
+		Rva002C589B **end = m_08.end();
+		for (Rva002C589B **it = m_08.begin(); it != end; ++it)
+			(*it)->rva002C5B46(xfer);
+	} else if (xfer->IsLoading()) {
+		if (m_08.size() > count) {
+			Rva002C589B **it = m_08.begin() + count;
+			while (it != m_08.end()) {
+				delete *it;
+				it = m_08.erase(it);
+			}
+		}
+		for (unsigned int i = 0; i < count; ++i) {
+			Rva002C589B *entry = m_08[i];
+			if (entry) {
+				entry->rva002C5B46(xfer);
+			} else {
+				entry = new Rva002C589B(-1, 1, m_owner);
+				entry->rva002C5B46(xfer);
+				m_08.push_back(entry);
+			}
+		}
+	}
+	if (version.m_minimum < 2 && xfer->IsLoading()) {
+		unsigned int extra = 0;
+		*xfer == extra;
+		for (unsigned int i = 0; i < extra; ++i) {
+			Rva002C589B *entry = new Rva002C589B(-1, 1, m_owner);
+			entry->rva002C5B46(xfer);
+			m_08.insert(m_08.begin(), entry);
+		}
+	}
+	m_04->rva005A91BE(xfer);
+	unsigned int others = m_14.size();
+	*xfer == others;
 }

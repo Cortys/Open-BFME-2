@@ -7841,3 +7841,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva005A910E@Rva005A9562@@QAEPAURva0050542BTarget@@XZ,0x005A910E,current target of the +0x04 Rva005A9562 (rowed under the Player* spelling); REL32 at 0x00505653
 ?push_back@?$vector@PAURva0050542BOther@@V?$allocator@PAURva0050542BOther@@@_STL@@@_STL@@QAEXABQAURva0050542BOther@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32 at 0x0050568C
 ?rva002A8AE4@Rva002A8F24@@QAEPAURva002A8AE4Record@@PAX@Z,0x002A8AE4,TheSkirmishAIManager per-owner record read at +0x15C; REL32 at 0x005056C7
+?erase@?$vector@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAEPAPAVRva002C589B@@PAPAV3@@Z,0x001FF51F,pointer-vector single erase fold (vector<void*> row); REL32 at 0x005057DA in Rva0050542B::xfer
+?insert@?$vector@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAEPAPAVRva002C589B@@PAPAV3@ABQAV3@@Z,0x003B67B3,pointer-vector insert fold; REL32 at 0x005058B6 in Rva0050542B::xfer
+?rva005A91BE@Rva005A9562@@QAEXPAVXfer@@@Z,0x005A91BE,xfer of the +0x04 Rva005A9562; REL32 at 0x005058CA in Rva0050542B::xfer
