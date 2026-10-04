@@ -8294,3 +8294,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0Gen_00920A20@@QAE@H@Z,0x0013EA00,callee of ?getFilter@ShroudTexture@@QAEPAVShroudFilter@@XZ at retail 0x00132888 read from its REL32 displacement; body unrowed
 ??0AsciiStringVX@@QAE@ABV0@@Z,0x000365F0,callee of ??0Gen_00491580@@QAE@ABVAsciiStringVX@@0@Z at retail 0x003560C8 and 0x003560D7 read from its REL32 displacements; ICF alias onto StringBase narrow copy ctor rowed at 0x000365F0
 ??0Rva00490470@@QAE@XZ,0x00355D4E,callee of ??0Gen_00491580@@QAE@ABVAsciiStringVX@@0@Z at retail 0x003560B3 read from its REL32 displacement; body unrowed
+?findSomething@BfmeMgrF07@@QAEHPAXH@Z,0x00357475,callee of ?bfmeLinkObjectsA70@@YGXPAX0@Z at retail 0x003BB675 and 0x003BB688 read from its REL32 displacements; ICF alias onto ?rva00357475@ScriptEngine@@QAEHABVAsciiString@@PA_N@Z (matched)
+?findObj@BfmeMgrD74_Linked@@QAEPAVBfmeLinkedObj@@H@Z,0x002A7B91,callee of ?bfmeLinkObjectsA70@@YGXPAX0@Z at retail 0x003BB696 and 0x003BB6A4 read from its REL32 displacements; ICF alias onto ?getPlayerFromMask@PlayerList@@QAEPAVPlayer@@H@Z (matched)
+?link@BfmeLinkedObj@@QAEXPAV1@H@Z,0x002AEA9F,callee of ?bfmeLinkObjectsA70@@YGXPAX0@Z at retail 0x003BB6B6 read from its REL32 displacement; body unrowed
