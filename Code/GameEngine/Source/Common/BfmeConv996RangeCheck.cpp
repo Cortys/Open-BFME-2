@@ -14,7 +14,7 @@ class BfmeDev996Range
 public:
 	virtual void v0(); virtual void v1(); virtual void v2();
 	virtual int classify( int value, int width );
-	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v4(); virtual void v5( int a, int b ); virtual void v6(); virtual void v7();
 	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
 	virtual int cursor();
 };
@@ -23,6 +23,7 @@ class BfmeB996Range
 {
 public:
 	char checkRange( int first, unsigned int *second, char *stop );
+	bool rva001068D1( int first, unsigned int *second, char *third );
 private:
 	char m_pad[ 4 ];
 	BfmeDev996Range *m_dev;
@@ -48,4 +49,17 @@ char BfmeB996Range::checkRange( int first, unsigned int *second, char *stop )
 	}
 	*stop = 1;
 	return 0;
+}
+
+bool BfmeB996Range::rva001068D1( int first, unsigned int *second, char *third )
+{
+	if ( m_kind == 6 ) {
+		if ( checkRange( first, second, third ) != 0 ) {
+			if ( *third == 0 ) {
+				m_dev->v5( -8, 1 );
+				return true;
+			}
+		}
+	}
+	return false;
 }
