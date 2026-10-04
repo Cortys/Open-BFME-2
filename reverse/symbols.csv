@@ -7931,3 +7931,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0StringBaseNarrowBH@@IAE@ABV0@@Z,0x000365F0,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?bfmeApplyBH@BfmeApplierBH@@QAEXPAX0PAVBfmeSubBH@@@Z,0x003C069B,address read from the REL32 displacement at a placed body
 ?bfmeFindBH@BfmeRegistryBH@@QAEPAXVAsciiStringBH@@@Z,0x0029B6EB,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?evaluateBezSegmentAtT@BezierSegment@@QBEXMPAUCoord3D@@@Z,0x0010FE6D,callee read from the retail REL32 in placed BFME1-donor body ?forward@Rva000059EDBezierSegmentThunk@@QBEXMPAUCoord3D@@@Z (0x000A8B37)
+?handle@Gen00024B7C@@QAEEH@Z,0x00449969,callee read from the retail REL32 in placed BFME1-donor body ?wrap@Rva005169E0@@QAEEH@Z (0x00444208)
