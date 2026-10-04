@@ -50745,3 +50745,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003FBA58@Rva003FBA58@@QAEXXZ,,0x003FBA58,140,Code/GameEngine/Source/Common/Rva003FBA58.cpp,matched,vtable slot 10 of 0x008747B8 rowed callees BfmeZeroRange
 ?rva007B6E54@@YAXXZ,,0x007B6E54,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk tail-jmp to rowed DynamicVectorClass dtor via g_00DEBE0C
 ??0Rva0055BCD2@@QAE@ABV0@@Z,,0x003ADDCD,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADDCDCopy.cpp,matched,copy via rowed base 0x003ADDEC same vptrs as ctor 0x0055BCD2
+??0Rva003ADC75@@QAE@ABV0@@Z,,0x003ADC75,82,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADC75Copy.cpp,matched,MI copy via rowed 0x003ADDCD 0x003ADCC7 chain same shape as 0x003ADF21
