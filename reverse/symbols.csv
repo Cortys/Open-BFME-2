@@ -7690,3 +7690,12 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva0050722A@Rva00506B74@@QAEXPAUCoord3D@@@Z,0x0050722A,thiscall on the +0x28 point; REL32 at 0x0050753C in Rva00506B74::rva00507522 (also called from 0x005AA886)
 ?rva005AD9C0@Rva005ADA40@@QAEPAVRva005AD9C0Hit@@PAX@Z,0x005AD9C0,element lookup returning a polymorphic hit; REL32s at 0x00506C0F and 0x00506C49 in Rva00506B74 searches
 ?rva005ADC63@Rva005ADA40@@QAEXXZ,0x005ADC63,per-element update; REL32 at 0x00506BE8 in Rva00506B74 slot 1
+??$__merge_backward@PAVAsciiString@@PAV1@PAV1@U?$less@VAsciiString@@@_STL@@@_STL@@YAPAVAsciiString@@PAV1@0000U?$less@VAsciiString@@@0@@Z,0x004F792B,address read from the REL32 displacement at a placed body
+??$copy@PAVAsciiString@@PAV1@@_STL@@YAPAVAsciiString@@PAV1@00@Z,0x004F6E47,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??$lower_bound@PAVAsciiString@@V1@U?$less@VAsciiString@@@_STL@@@_STL@@YAPAVAsciiString@@PAV1@0ABV1@U?$less@VAsciiString@@@0@@Z,0x004F6D4B,address read from the REL32 displacement at a placed body
+??$merge@PAVAsciiString@@PAV1@PAV1@U?$less@VAsciiString@@@_STL@@@_STL@@YAPAVAsciiString@@PAV1@0000U?$less@VAsciiString@@@0@@Z,0x004F7308,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??$swap@VAsciiString@@@_STL@@YAXAAVAsciiString@@0@Z,0x004F6542,address read from the REL32 displacement at a placed body
+??$uninitialized_fill_n@PAVAsciiString@@HV1@@_STL@@YAPAVAsciiString@@PAV1@HABV1@@Z,0x004F6CDD,address read from the REL32 displacement at a placed body
+??$upper_bound@PAVAsciiString@@V1@U?$less@VAsciiString@@@_STL@@@_STL@@YAPAVAsciiString@@PAV1@0ABV1@U?$less@VAsciiString@@@0@@Z,0x004F6D66,address read from the REL32 displacement at a placed body
+??$rotate@PAVAsciiString@@@_STL@@YAPAVAsciiString@@PAV1@00@Z,0x004F8049,address read from the REL32 displacement at a placed body
+??$copy_backward@PAVAsciiString@@PAV1@@_STL@@YAPAVAsciiString@@PAV1@00@Z,0x004F6FE1,address read from the REL32 displacement at a placed body
