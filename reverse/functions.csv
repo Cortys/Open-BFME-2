@@ -51869,3 +51869,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0Rva004D9539@@QAE@HHH@Z,,0x004D9539,77,Code/GameEngine/Source/Common/Rva004D9539Ctor.cpp,matched,EH ctor two rowed Upgrades plus three ints caller 0x004DADA9
 ?rva006D7090@@YAPAXPBD@Z,,0x006D7090,285,Code/Libraries/Source/Apt/AptValue/Rva006D7090Factory.cpp,matched,pooled Apt string factory via free list and pool alloc
 ?rva00456774@Rva00456774@@QAE?AVAsciiString@@HH@Z,,0x00456774,39,Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeBehaviorRva00456774.cpp,matched,sibling 0x45674D UDT return EHsc O1 G7 caller 0x456B99 rowed 0x365F0
+?rva00456725@Rva00456725@@QAE?AVAsciiString@@HH@Z,,0x00456725,40,Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeBehaviorRva00456725.cpp,matched,sibling 0x456774 UDT return O1 G7 EHsc caller 0x456B0C rowed 0x365F0
