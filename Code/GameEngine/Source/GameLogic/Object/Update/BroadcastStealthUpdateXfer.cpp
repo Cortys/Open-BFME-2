@@ -1,13 +1,19 @@
-// ?xfer@DynamicPortalBehaviour@@MAEXPAVXfer@@@Z
-// partial score=0.95 date=2026-09-27
-// ?xfer@DynamicPortalBehaviour@@MAEXPAVXfer@@@Z
-// partial score=0.95 date=2026-09-27
-// cl: /O1 /DNDEBUG /MD /Oi
+// cl: /O1 /DNDEBUG /MD
+//
+// ?xfer@BroadcastStealthUpdate@@MAEXPAVXfer@@@Z, retail 0x004A3752, 202 bytes.
+// Slot 3 of ??_7BroadcastStealthUpdate 0x00C52364 (slot-2 name getter
+// returns "BroadcastStealthUpdate"; the rowed dtor 0x004A3555 installs it).
+// The rowed UpdateModule::xfer 0x0044DF9F first, then the light-CRC out,
+// Version(1,2), from version 2 the upgrade mux on the +0x20 subobject (rowed
+// upgradeMuxXfer 0x004CE397), then the object-ID list at +0x28: count and
+// ids when storing, count then XferObjectID plus the rowed list push_back
+// 0x002A1B6F when loading (BridgeBehaviorXfer's list view).
+
 class AsciiString;
 class UnicodeString;
 class PooledString;
 struct XferUnknown11;
-struct Coord3DBase { float x; float y; float z; };
+class Coord3DBase;
 class ICoord3D;
 class Region3D;
 class IRegion3D;
@@ -20,21 +26,29 @@ class RGBColor;
 class RGBAColorReal;
 class RGBAColorInt;
 class Snapshot;
+class Thing;
+class ModuleData;
+class Object;
 
 class Xfer
 {
 public:
 	class Version;
+
 	Xfer();
 	virtual ~Xfer();
+
 	void Version1();
+
 	virtual bool IsLoading() const;
 	virtual bool IsStoring() const;
 	virtual bool IsCRC() const;
 	virtual bool IsLightCRC() const;
+
 	virtual void v5() = 0;
 	virtual void v6() = 0;
 	virtual void v7() = 0;
+
 	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
 	virtual Xfer &XferRawBytes(void *data, unsigned int size);
 	virtual Xfer &operator==(bool &value);
@@ -64,7 +78,9 @@ public:
 	virtual Xfer &operator==(Snapshot &value);
 	virtual Xfer &operator==(XferUnknown11 &value) = 0;
 	virtual Xfer &operator==(Version &value);
+
 	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
 protected:
 	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
 };
@@ -74,78 +90,104 @@ class Xfer::Version
 public:
 	Version(unsigned char current, unsigned char minimum)
 		: m_current(current), m_minimum(minimum) {}
+
 	unsigned char m_current;
 	unsigned char m_minimum;
 };
 
-class Waypoint
+typedef unsigned int UnsignedInt;
+
+enum ObjectID
+{
+	INVALID_ID = 0
+};
+
+void XferObjectID(Xfer *xfer, ObjectID *id);
+
+struct BridgeBehaviorObjectIDNode
+{
+	BridgeBehaviorObjectIDNode *m_next;
+	BridgeBehaviorObjectIDNode *m_previous;
+	ObjectID m_value;
+};
+
+class BridgeBehaviorObjectIDList
 {
 public:
-	int getID() const { return m_id; }
+	UnsignedInt size() const
+	{
+		UnsignedInt n = 0;
+		for (BridgeBehaviorObjectIDNode *p = m_node->m_next; p != m_node; p = p->m_next)
+			++n;
+		return n;
+	}
+	void push_back(const ObjectID &value);
+	BridgeBehaviorObjectIDNode *m_node;
+};
+
+class UpdateModule
+{
+public:
+	virtual ~UpdateModule();
+	void xfer(Xfer *xfer);
 private:
-	void *m_vtable;
-	int m_id;
+	char m_unrecovered04[0x20 - 0x04];
 };
 
-class TerrainLogic
+class BroadcastStealthUpdate;
+
+class UpgradeMux
 {
-public:
-	virtual void s00(); virtual void s01(); virtual void s02(); virtual void s03();
-	virtual void s04(); virtual void s05(); virtual void s06(); virtual void s07();
-	virtual void s08(); virtual void s09(); virtual void s10(); virtual void s11();
-	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
-	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
-	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
-	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
-	virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31();
-	virtual void s32(); virtual void s33(); virtual void s34();
-	virtual Waypoint *getWaypointByID(int id);
+	friend class BroadcastStealthUpdate;
+protected:
+	virtual void upgradeMuxXfer(Xfer *xfer);
+private:
+	bool m_upgradeExecuted;
 };
 
-#define TheTerrainLogic (*(TerrainLogic **)0x00DFEC50)
-
-void XferWaypointID(Xfer *xfer, int *value);
-
-class UpgradeModule
+class BroadcastStealthUpdate : public UpdateModule
 {
 protected:
 	virtual void xfer(Xfer *xfer);
+
 private:
-	unsigned char m_pad[0x1C - 4];
+	UpgradeMux m_20;
+	BridgeBehaviorObjectIDList m_28;
 };
 
-class DynamicPortalBehaviour : public UpgradeModule
+// ?xfer@BroadcastStealthUpdate@@MAEXPAVXfer@@@Z @0x004A3752
+void BroadcastStealthUpdate::xfer(Xfer *xfer)
 {
-protected:
-	virtual void xfer(Xfer *xfer);
-private:
-	int m_1C;
-	int m_20;
-	Waypoint *m_waypoints[6];
-	bool m_3C;
-	bool m_3D;
-	unsigned char m_pad3E[2];
-};
+	UpdateModule::xfer(xfer);
 
-// ?xfer@DynamicPortalBehaviour@@MAEXPAVXfer@@@Z present-unmatched
-void DynamicPortalBehaviour::xfer(Xfer *xfer)
-{
-	UpgradeModule::xfer(xfer);
 	if (xfer->IsLightCRC())
 		return;
+
 	Xfer::Version version(1, 2);
 	*xfer == version;
-	for (int i = 0; i < 6; ++i) {
-		if (xfer->IsLoading()) {
-			int id;
-			XferWaypointID(xfer, &id);
-			m_waypoints[i] = (id == 0x7fffffff) ? (Waypoint *)0 : TheTerrainLogic->getWaypointByID(id);
-		} else {
-			int id = m_waypoints[i] ? m_waypoints[i]->getID() : 0x7fffffff;
-			XferWaypointID(xfer, &id);
+
+	if (version.m_minimum >= 2)
+		m_20.UpgradeMux::upgradeMuxXfer(xfer);
+
+	ObjectID id;
+	if (xfer->IsStoring())
+	{
+		UnsignedInt count = m_28.size();
+		*xfer == count;
+		for (BridgeBehaviorObjectIDNode *it = m_28.m_node->m_next; it != m_28.m_node; it = it->m_next)
+		{
+			id = it->m_value;
+			XferObjectID(xfer, &id);
 		}
 	}
-	*xfer == m_3C;
-	if (version.m_minimum >= 2)
-		*xfer == m_3D;
+	else
+	{
+		UnsignedInt count;
+		*xfer == count;
+		for (UnsignedInt i = 0; i < count; ++i)
+		{
+			XferObjectID(xfer, &id);
+			m_28.push_back(id);
+		}
+	}
 }
