@@ -50780,3 +50780,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00463FFB@Rva004638C5@@QAEPAU_Rb_tree_node_base@_STL@@PAURva00463FFBOut@@PBUTreeKey00242F5E@@@Z,,0x00463FFB,134,Code/Libraries/Source/WWVegas/WWLib/Rva00463FFBFinish.cpp,matched,insert_unique via decrement 0x242C0 and _M_insert 0x463F73 signed TreeKey
 ?rva003F055A@Rva003F055A@@QAEXXZ,,0x003F055A,46,Code/GameEngine/Source/Common/System/Rva003F055AScan.cpp,matched,scan range calling 0x4E0845 on entry+0x20 when flag+0x34 zero caller 0x3F104B
 ?onExit@Rva0054484A@@UAEXW4StateExitType@@@Z,,0x00544572,98,Code/GameEngine/Source/Common/Rva0054484AOnExit.cpp,matched,vslot slot5 of 0x00869BA0 sibling update and onEnter via barrier
+?Rva00559EDCCompare@@YAHPAH0@Z,,0x00559EDC,34,Code/GameEngine/Source/Common/Rva00559EDCCompare.cpp,matched,10-dword mismatch count via callers 0x0040104D 0x0057EA64 0x0059F76C __cdecl 2 args
