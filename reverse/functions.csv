@@ -51248,3 +51248,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?removeBridgeScaffolding@DozerAIUpdate@@UAEXPAVObject@@@Z,,0x004897BF,65,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DozerAIUpdate.cpp,matched,unique masked-byte placement (locate.py sweep)
 ?createBridgeScaffolding@DozerAIUpdate@@UAEXPAVObject@@@Z,,0x004AAB73,65,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DozerAIUpdate.cpp,matched,unique masked-byte placement (locate.py sweep)
 ?pop_front@?$deque@VPingRequest@@V?$allocator@VPingRequest@@@_STL@@@_STL@@QAEXXZ,,0x0054FEA7,33,Code/GameEngine/Source/GameNetwork/GameSpy/Thread/PingThread_Pinger_getRequest.cpp,matched,unique masked-byte placement (locate.py sweep)
+?Get_Element@?$BfmeBuffer@VVertexMaterialClass@@@@QAEPAVVertexMaterialClass@@H@Z,,0x0015A0B0,36,Code/Libraries/Source/WWVegas/WW3D2/MeshMatDescComputeRamSize.cpp,matched,unique masked-byte placement (locate.py sweep)
