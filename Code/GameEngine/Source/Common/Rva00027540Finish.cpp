@@ -1,5 +1,3 @@
-// ?bfmeDoPF@Rva00028B90Thing@@QAEHPADHH@Z
-// partial score=0.9 date=2026-10-03
 // cl: /Od
 //
 // Rva00028B90Thing::bfmeDoPF(char*, int, int) at 0x00027540, 117 bytes.
@@ -28,13 +26,8 @@ int Rva00028B90Thing::bfmeDoPF(char *s, int pos, int n)
 {
 	char *found;
 	char tag;
-	int result;
 	if ((unsigned int)(pos + n) > (unsigned int)(m_end - m_begin))
 		return -1;
 	found = rva0026c90(m_begin + pos, m_end, s, s + n, tag);
-	if (found == m_end)
-		result = -1;
-	else
-		result = (int)(found - m_begin);
-	return result;
+	return found != m_end ? (int)(found - m_begin) : -1;
 }
