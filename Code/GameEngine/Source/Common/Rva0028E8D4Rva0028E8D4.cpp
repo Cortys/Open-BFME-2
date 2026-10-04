@@ -1,10 +1,8 @@
-// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z
-// partial score=0.9 date=2026-09-27
-// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z
-// partial score=0.90 date=2026-09-27
-// cl: /O2 /arch:SSE /MD /G7
+// cl: /O2 /arch:SSE /MD /G7 /Op
 //
-// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z, retail 0x0028E8D4, 41 bytes.
+// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z, retail 0x0028e8d4, 41 bytes. Banked partial (score 0.9) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
+//
 // Chain from just-landed ?get@Rva002722AA@@QBEPAXXZ: calls the branched
 // matrix getter then copies its translation floats at +0xC/+0x1C/+0x2C to
 // the 3-float out pointer. Evidence: caller 0x0028E8FD passes a 12-byte
@@ -27,14 +25,13 @@ public:
 	void rva0028E8D4(float *out) const;
 };
 
-// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z present-unmatched
 void Rva0028E8D4::rva0028E8D4(float *out) const
 {
 	const Rva0028E8D4Matrix *m =
 		(const Rva0028E8D4Matrix *)((const Rva002722AA *)this)->get();
-	float x = m->m[3];
-	float y = m->m[7];
-	float z = m->m[11];
+	const float x = m->m[3];
+	const float y = m->m[7];
+	const float z = m->m[11];
 	out[0] = x;
 	out[1] = y;
 	out[2] = z;

@@ -51121,3 +51121,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??$fill@PAUBfmeStringRecord000331962@@U1@@_STL@@YAXPAUBfmeStringRecord000331962@@0ABU1@@Z,,0x003F1ECE,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_331962_allocate_copy.cpp,matched,unique masked-byte placement (locate.py sweep)
 ?Resize@?$SimpleDynVecClass@UBfmePod4@@@@UAE_NH@Z,,0x00090125,37,Code/Libraries/Source/WWVegas/WWLib/wwlib_pod_container_bodies.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??0?$_Vector_base@VRva0054103E@@V?$allocator@VRva0054103E@@@_STL@@@_STL@@QAE@IABV?$allocator@VRva0054103E@@@1@@Z,,0x004FF36C,60,Code/Libraries/Source/WWVegas/WWLib/Rva0054103EVectorInsertOverflow.cpp,matched,unique masked-byte placement (locate.py sweep)
+?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z,,0x0028E8D4,41,Code/GameEngine/Source/Common/Rva0028E8D4Rva0028E8D4.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
