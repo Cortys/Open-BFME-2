@@ -1,13 +1,5 @@
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
-// partial score=0.96 date=2026-10-04
-// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
-// partial score=0.96 date=2026-10-04
-// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
-// partial score=0.94 date=2026-10-03
-// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
-// partial score=0.94 date=2026-10-03
-// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
-// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
+// partial score=0.97 date=2026-10-04
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
 // cl: /O1 /arch:SSE /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS
 // stlport
@@ -24,11 +16,22 @@
 // ctor resets it through the rowed bitset<128>::reset at 0x0024CA24 (plus
 // a redundant 16-byte memset in the body, AttachUpdate precedent) with an
 // opaque TU-local dtor for the second EH state; the six 8-byte Query
-// entries at +0x2C (int state plus filter member, twin init at 0x45A1D9)
-// build through the rowed ehvec helper at 0x00629512; StartsActive,
+// entries at +0x2C build through the rowed ehvec helper at 0x00629512 with
+// the rowed element ctor 0x0045A1D9 and dtor 0x0045A226; StartsActive,
 // BaseMaxRangeFromStartPos and AdjustAttackMeleePosition null while
 // AllowSelf at +0x5F is true. Size 0x60 matches the ModuleData factory at
 // 0x0024AFE5 news. Row supersedes the ctor pin.
+//
+// THE MEMSET MUST BE CALLED AS ?ji_006291ae@@YAXXZ. The rowed 0x006291AE is
+// not a memset body but the 6-byte import thunk `jmp ds:[0xBBA6C0]`, so it is
+// only reachable through that mangled name. A TU-local `void
+// Rva006291AEMemset(void*,int,unsigned)` -- what the banked attempt declared
+// -- leaves the call site UNRESOLVED: the resolver has no row or pin for that
+// name, so the call target stays a self-relative placeholder (the disassembly
+// reads `call 0x45a35a`, the next instruction) and the whole tail
+// desynchronises. With the ji_ spelling plus the alternatename pragma the
+// relocation binds to 0x006291AE and everything from `xor ebx,ebx` through
+// the epilogue matches retail byte for byte.
 //
 // ORDER LAW (proven by three failed shapes): retail calls the
 // ForbiddenStatus reset BEFORE the Query ehvec, but a member array always
@@ -37,16 +40,27 @@
 // inline ctor, emitted transparently between the SpecialAbility init and
 // the array ehvec. The Query element ctor and dtor stay declared-only:
 // twin's init at 0x45A1D9 is the element ctor under its construction name
-// (an explicit function pointer cannot reach ehvec any other way) and the
-// 0x45A226 thunk is its dtor, so the TU references both through the pins
-// and the elements stay opaque exactly like the original TU saw them;
-// defining them locally over-tracks the array into a third EH state.
-// Array placement new is NOT a substitute: this toolchain
-// emits a count cookie plus a null-check guard plus a third EH state for
-// it. The empty-dtor mask is NOT a substitute either: only members with
-// real (non-empty) dtors earn EH states, and the funclet table proves the
-// two tracked entries are SpecialAbility and ForbiddenStatus with the
-// array unwinding inside ehvec.
+// and the 0x45A226 thunk is its dtor, so the TU references both through the
+// ledger rows and the elements stay opaque exactly like the original TU saw
+// them; defining them locally over-tracks the array into a third EH state.
+// Array placement new is NOT a substitute: this toolchain emits a count
+// cookie plus a null-check guard plus a third EH state for it. The empty-dtor
+// mask is NOT a substitute either: only members with real (non-empty) dtors
+// earn EH states, and the funclet table proves the two tracked entries are
+// SpecialAbility and ForbiddenStatus with the array unwinding inside ehvec.
+//
+// The four null floats belong in the BODY, not the init list: in the init
+// list MSVC6 hoists their `xorps xmm0,xmm0` above the register pushes and the
+// first diff moves from +0x0F to +0x0B (58/135 exact). As body assignments
+// they land after `mov esi,ecx` where retail has them (62/135).
+//
+// ORDER LAW (proved by eleven bodies): retail's memset argument pushes
+// (`push 0x10; push ebx; push edi`) are emitted BEFORE the three byte stores
+// at +0x5C/+0x5D/+0x5E and the `mov BYTE PTR [esi+0x5F],0x1`, with the four
+// float stores interleaved between the second and third pushes. MSVC6
+// schedules those seven scalar stores plus the four movss as ONE unsplittable
+// block, so no statement order, no volatile-qualified write and no flag set
+// reproduces that interleave.
 
 #include <bitset>
 #include <cstring>
@@ -55,8 +69,8 @@ namespace _STL {
 template<> bitset<128> &bitset<128>::reset();
 }
 
-
-void Rva006291AEMemset(void *dst, int value, unsigned int count);
+void *__cdecl ji_006291ae(void *dest, int val, unsigned int count);
+#pragma comment(linker, "/alternatename:?ji_006291ae@@YAPAXPAXHI@Z=?ji_006291ae@@YAXXZ")
 
 class AsciiString
 {
@@ -80,24 +94,25 @@ private:
 	unsigned long m_words[4];
 };
 
-
-
-class QueryFilter
+class Rva003623E5Member
 {
 public:
-	QueryFilter();
+	void construct();
+};
+
+// The Query element must be the ROWED AutoAbilityQueryEntry so that the ehvec
+// constructor/destructor arguments resolve to the ledger's real addresses
+// 0x0045A1D9 and 0x0045A226; a private `struct` with the same layout leaves
+// both pointers as unresolved garbage immediates.
+class AutoAbilityQueryEntry
+{
+public:
+	AutoAbilityQueryEntry();
+	~AutoAbilityQueryEntry();
 
 private:
 	int m_state;
-};
-
-struct AutoAbilityQueryEntry
-{
-	int m_state;
-	QueryFilter m_filter;
-
-	AutoAbilityQueryEntry();
-	~AutoAbilityQueryEntry();
+	Rva003623E5Member m_filter;
 };
 
 class AutoAbilityBehaviorModuleData
@@ -127,11 +142,6 @@ AutoAbilityBehaviorModuleData::AutoAbilityBehaviorModuleData()
 	, m_specialAbility()
 	, m_forbiddenStatus()
 {
-	// The four null floats belong in the BODY, not the init list. In the init
-	// list MSVC6 hoists their `xorps xmm0,xmm0` above the register pushes at
-	// +0x0F; as body assignments it lands after `mov esi,ecx` where retail has
-	// it. (Out of line: the memset below is a real call to 0x6291AE, so the
-	// four stores cannot be folded into it.)
 	m_maxScanRange = 0.0f;
 	m_minScanRange = 0.0f;
 	m_workingRadius = 0.0f;
@@ -145,5 +155,5 @@ AutoAbilityBehaviorModuleData::AutoAbilityBehaviorModuleData()
 	// before the call is what widens its live range across the whole tail;
 	// left implicit the register dies inside memset's arguments.
 	ForbiddenStatusMask *mask = &m_forbiddenStatus;
-	Rva006291AEMemset(mask, 0, sizeof(ForbiddenStatusMask));
+	ji_006291ae(mask, 0, sizeof(ForbiddenStatusMask));
 }
