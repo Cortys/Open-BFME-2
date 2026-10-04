@@ -76,6 +76,7 @@ class ScriptEngine
 protected:
 	ScriptCounter *bfmeCounter(AsciiString name);
 	bool evaluateCounter(Condition *condition);
+	void addCounter(ScriptAction *action);
 	void subCounter(ScriptAction *action);
 };
 
@@ -100,6 +101,12 @@ bool ScriptEngine::evaluateCounter(Condition *condition)
 		return counter->m_value != value;
 	}
 	return false;
+}
+
+void ScriptEngine::addCounter(ScriptAction *action)
+{
+	int value = action->getParameter(0)->getInt();
+	bfmeCounter(action->getParameter(1)->getString())->m_value += value;
 }
 
 void ScriptEngine::subCounter(ScriptAction *action)
