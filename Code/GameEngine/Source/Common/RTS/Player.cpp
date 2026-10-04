@@ -115,35 +115,6 @@
 //Grey for neutral.  
 #define NEUTRAL_PLAYER_COLOR 0xffffffff
 
-namespace {
-
-// BFME's AIPlayer query slots precede their recovered Zero Hour positions by one entry.
-class BFMEAIPlayerVirtuals
-{
-public:
-	virtual void slot00() = 0;
-	virtual void slot04() = 0;
-	virtual void slot08() = 0;
-	virtual void slot0c() = 0;
-	virtual void slot10() = 0;
-	virtual void slot14() = 0;
-	virtual void slot18() = 0;
-	virtual void slot1c() = 0;
-	virtual void slot20() = 0;
-	virtual void slot24() = 0;
-	virtual void slot28() = 0;
-	virtual Bool isSkirmishAI() = 0;
-	virtual Player *getAiEnemy() = 0;
-	virtual Bool checkBridges(Object *unit, Waypoint *way) = 0;
-};
-
-struct BFMEPlayerAIView
-{
-	char data[0x220];
-	BFMEAIPlayerVirtuals *ai;
-};
-
-} // namespace
 
 // ------------------------------------------------------------------------------------------------
 class ClosestKindOfData
@@ -1321,15 +1292,7 @@ Bool Player::isSkirmishAIPlayer( void )
 /**
  * Find a good spot to fire a superweapon.
  */
-// ?computeSuperweaponTarget@Player@@UAE_NPBVSpecialPowerTemplate@@PAUCoord3D@@HM@Z present-unmatched
-Bool Player::computeSuperweaponTarget(const SpecialPowerTemplate *power, Coord3D *retPos, Int playerNdx, Real weaponRadius)
-{
-	if (m_ai) {
-		return m_ai->computeSuperweaponTarget(power, retPos, playerNdx, weaponRadius);
-	}
-
-  return FALSE;
-}
+// Defined in PlayerAIDelegates.cpp (BFME 2 layout: m_ai at +0x2DC).
 
 //-------------------------------------------------------------------------------------------------
 /** Get this player's current enemy. NOTE - Can be NULL. */
@@ -1690,48 +1653,17 @@ GameDifficulty Player::getPlayerDifficulty(void) const
 //-------------------------------------------------------------------------------------------------
 /** Do any bridges need repair, and if so repair them. */
 //-------------------------------------------------------------------------------------------------
-// ?Player::checkBridges present-unmatched
-Bool Player::checkBridges(Object *unit, Waypoint *way)
-{
-	BFMEPlayerAIView *player = reinterpret_cast<BFMEPlayerAIView *>(this);
-	return player->ai ? player->ai->checkBridges(unit, way) : false;
-}
+// Defined in PlayerAIDelegates.cpp (BFME 2 layout: m_ai at +0x2DC).
 
 //-------------------------------------------------------------------------------------------------
 /** Do any bridges need repair, and if so repair them. */
 //-------------------------------------------------------------------------------------------------
-// ?Player::getAiBaseCenter present-unmatched
-Bool Player::getAiBaseCenter(Coord3D *pos)
-{
-	// BFME places the AI pointer and base-center pair earlier than the Zero Hour declarations.
-	AIPlayer *ai = *reinterpret_cast<AIPlayer **>(reinterpret_cast<char *>(this) + 0x220);
-	if (ai)
-	{
-		*pos = *reinterpret_cast<Coord3D *>(reinterpret_cast<char *>(ai) + 0x34);
-		return *reinterpret_cast<Bool *>(reinterpret_cast<char *>(ai) + 0x40);
-	}
-	return false;
-}
+// Defined in PlayerAIDelegates.cpp (BFME 2 layout: m_ai at +0x2DC).
 
 //-------------------------------------------------------------------------------------------------
 /** Repair bridge or structure. */
 //-------------------------------------------------------------------------------------------------
-// BFME keeps the AI player at +0x220; the vendored header lands it at +0x150.
-struct BfmePlayerAiField
-{
-	UnsignedByte m_unreconstructed_00[0x220];
-	AIPlayer *m_ai;						///< retail this+0x220
-};
-
-// ?repairStructure@Player@@UAEXW4ObjectID@@@Z
-// ?Player::repairStructure present-unmatched
-void Player::repairStructure(ObjectID structureID)
-{
-	if (((BfmePlayerAiField *)this)->m_ai) 
-	{
-		((BfmePlayerAiField *)this)->m_ai->repairStructure(structureID); 
-	}
-}
+// Defined in PlayerAIDelegates.cpp (BFME 2 layout: m_ai at +0x2DC).
 
 //-------------------------------------------------------------------------------------------------
 /** A unit was just created and is ready to control */
