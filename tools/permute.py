@@ -118,6 +118,11 @@ class Scorer:
         return result
 
 
+# Bumped when the search changes enough that bodies it already failed on are
+# worth another run (--next --retry). 2: instruction fitness, target-only
+# mutations, triage and early stops.
+VERSION = 2
+
 _DISASM = None
 
 
@@ -416,7 +421,7 @@ def permute(rva, minutes=10.0, seed=None):
         (workdir / "win.cpp").write_text(best_text, encoding="latin-1", errors="replace")
     result = {"rva": rva, "symbol": symbol, "size": size, "start": round(start_score, 4),
               "best": round(best, 4), "exact": exact, "trials": scorer.trials,
-              "stop": "exact" if exact else stop}
+              "stop": "exact" if exact else stop, "v": VERSION}
     with (OUT / "results.jsonl").open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(result) + "\n")
     return result
@@ -746,6 +751,8 @@ def main(argv=None):
     parser.add_argument("rvas", nargs="*")
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--top", type=int, default=0)
+    parser.add_argument("--retry", action="store_true",
+                        help="with --next: re-run bodies an older search version failed on, best measured score first")
     parser.add_argument("--next", type=int, default=0,
                         help="run the next N untried banked bodies no other agent has claimed, claiming them")
     parser.add_argument("--min-score", type=float, default=0.9)
@@ -844,16 +851,28 @@ def main(argv=None):
         # Several agents may run the closer on this fork: take the next
         # untried bodies nobody holds, and claim them before starting.
         import claims
-        tried = set()
+        tried, last = set(), {}
         if (OUT / "results.jsonl").exists():
             for line in (OUT / "results.jsonl").read_text().splitlines():
                 try:
-                    tried.add(json.loads(line)["rva"].lower())
+                    entry = json.loads(line)
+                    tried.add(entry["rva"].lower())
+                    last[entry["rva"].lower()] = entry
                 except (ValueError, KeyError):
                     pass
         busy = claims.busy_rvas()
-        wanted = [rva for _, _, rva, _ in items
-                  if rva not in tried and int(rva, 16) not in busy][:args.next]
+        if args.retry:
+            # Bodies an older search failed on, best measured score first:
+            # the measured start ranks them better than the banked score.
+            live = {rva for _, _, rva, _ in items}
+            again = [e for rva, e in last.items()
+                     if rva in live and not e.get("exact") and e.get("v", 1) < VERSION
+                     and "best" in e and not str(e.get("stop", "")).startswith(("only constants", "unresolved"))]
+            again.sort(key=lambda e: -e["best"] * (e.get("size") or 0))
+            wanted = [e["rva"] for e in again if int(e["rva"], 16) not in busy][:args.next]
+        else:
+            wanted = [rva for _, _, rva, _ in items
+                      if rva not in tried and int(rva, 16) not in busy][:args.next]
         got, _refused = claims.claim([int(rva, 16) for rva in wanted], note="permute")
         claimed = [f"0x{rva:08x}" for rva in got]
         rvas = claimed if got or not wanted else wanted  # no network: run unclaimed
