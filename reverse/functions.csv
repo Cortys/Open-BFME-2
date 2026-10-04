@@ -51080,3 +51080,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva004D9586@Rva004D9596@@QAEHXZ,,0x004D9586,16,Code/GameEngine/Source/Common/Rva004D9596Check.cpp,matched,sibling bool predicate same offsets m00 -1 m04 0 caller 0x004DBBE9
 ??0Rva0010EEF1@@QAE@ABVRva0036CA00Str@@M@Z,,0x0010EEF1,35,Code/GameEngine/Source/Common/Rva0010EEF1Ctor.cpp,matched,derived float ctor same base 0x001164D3 vtable 0xBCFA7C caller 0x0010FD21
 ??0Rva0010EECE@@QAE@ABVRva0036CA00Str@@M@Z,,0x0010EECE,35,Code/GameEngine/Source/Common/Rva0010EECECtor.cpp,matched,twin of 0x0010EEF1 same base float at 0xC vtable 0xBCFA74 caller 0x0010FC9E
+??E?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@_STL@@QAE?AU01@H@Z,,0x0051C063,26,Code/GameEngine/Source/GameLogic/ScriptEngine/XferVectorBool.cpp,matched,unique masked-byte placement (locate.py sweep)
