@@ -7715,3 +7715,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?pop_front@?$deque@VBuddyResponse@@V?$allocator@VBuddyResponse@@@_STL@@@_STL@@QAEXXZ,0x00550B9F,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?MessageBoxOk@@YAPAVGameWindow@@VUnicodeString@@0P6AXXZ@Z,0x0044C0A8,callee of ?showError@BfmeAptScreenSkirmish@@QAEXABVUnicodeString@@H@Z at retail 0x00521AC8 read from its REL32 displacement; body unrowed
 ?bfmeSetWakeBJ@BfmeWakeBJ@@QAEXPAXH@Z,0x0044DF71,callee of ?bfmeSleepBJ@BfmeOwnBJ@@QAEXHHHHH@Z at retail 0x004C5551 read from its REL32 displacement; body unrowed
+??0BfmeA1140@@QAE@XZ,0x0035D789,callee of ?parse@Rva0059B8F0Nugget@@SAXPAVINI@@PAX1PBX@Z at retail 0x0035D7ED read from its REL32 displacement; body unrowed
+?m@Gen_00489270@@QAEXH@Z,0x005F69CE,callee of ?parse@Rva0059B8F0Nugget@@SAXPAVINI@@PAX1PBX@Z at retail 0x0035D7ED read from its REL32 displacement; body unrowed
