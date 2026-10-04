@@ -1,5 +1,3 @@
-// ?Rva00207F91XferList@@YAPAVXfer@@PAV1@PAV?$list@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@V?$allocator@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@2@@_STL@@@Z
-// partial score=0.92 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /ICode/Libraries/Source/WWVegas/WWLib
 // stlport
 //
@@ -55,18 +53,17 @@ public:
 	virtual Xfer &xferUnsignedShort(UnsignedInt *value);
 };
 
-class XferException
+struct XferException
 {
-public:
-	XferException(int tag, const char *format, ...);
-	XferException(const XferException &that);
-	~XferException();
-
 	char *text;
 	int tag;
 };
 
-struct NoCaseTreeValue4 { unsigned char m_data[4]; };
+extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
+extern int g_guardTargetTypeThrowInfo;
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
+
+struct NoCaseTreeValue4 { unsigned int m_value; NoCaseTreeValue4() : m_value(0) {} };
 
 typedef _STL::pair<const AsciiString, NoCaseTreeValue4> PairNocase4;
 typedef _STL::list<PairNocase4, _STL::allocator<PairNocase4> > ListNocase4;
@@ -81,7 +78,6 @@ public:
 	void rva00207B90(const PairNocase4 &x);
 };
 
-// ?Rva00207F91XferList@@YAPAVXfer@@PAV1@PAV?$list@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@V?$allocator@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@2@@_STL@@@Z present-unmatched
 Xfer *Rva00207F91XferList(Xfer *xfer, ListNocase4 *list)
 {
 	XferVersion version;
@@ -89,12 +85,12 @@ Xfer *Rva00207F91XferList(Xfer *xfer, ListNocase4 *list)
 	version.m_currentVersion = 1;
 	xfer->xferVersion(&version);
 
-	UnsignedInt count = list->size();
+	UnsignedInt count = (UnsignedInt)list->size();
 	xfer->xferTypeName("std::list").xferUnsignedShort(&count);
 
 	if (xfer->isSaving())
 	{
-		ListNocase4::_Node *sentinel = list->_M_node._M_data;
+		ListNocase4::_Node *sentinel = (ListNocase4::_Node *)list->_M_node._M_data;
 		ListNocase4::_Node *node = (ListNocase4::_Node *)sentinel->_M_next;
 		while (node != sentinel)
 		{
@@ -106,7 +102,9 @@ Xfer *Rva00207F91XferList(Xfer *xfer, ListNocase4 *list)
 	{
 		if (!list->empty())
 		{
-			throw XferException(4, "List must be empty on load");
+			XferException error;
+			bfmeFormatText(&error, 4, "List must be empty on load");
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 
 		PairNocase4 value;
