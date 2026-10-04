@@ -7381,3 +7381,4 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva001FFD6B@Rva001FFD6B@@QAEAAV01@ABV01@@Z	0x001FFD6B	206	blocked	vector assign 12B elem via StreakDrawModuleTemplate+0x1c caller 0x1FFEE9; tried DynamicPortalLink operator= with G7 fixes imul but extra push 0 remains 208vs206 plus mixed ScienceVec allocate-copy vs DynamicPortalLink Destroy identity unclear t=18 model=muse-01
 ?rva00295844@Object@@QAEXM@Z	0x00295844	227	blocked	EH SSE link-list Forward GoEOF sum needs handler and exact list layout t=12 model=muse-09
 ?Rva003C0425Do@@YGXHHHHHH@Z	0x003C0425	269	blocked	audio plus weapon plus string layouts plus 6 args t=8 model=muse-03
+?Rva00548C59Show@@YAXXZ	0x00548C59	126	blocked	push 0x00548B08 unclaimed callback plus wide EH needs donor t=8 model=muse-04
