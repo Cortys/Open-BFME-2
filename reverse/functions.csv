@@ -52167,3 +52167,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva003C0983@ScriptActions@@IAEXABVAsciiString@@0PAVObject@@@Z,,0x003C0983,87,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0983.cpp,matched,two team lookups plus filtered map register
 ??0Rva004E3CD0@@QAE@XZ,,0x004E3C8F,65,Code/GameEngine/Source/Common/Rva004E3CD0Ctor.cpp,matched,vtable 0x00862054 callers 0x004E3D1B 0x004E3D38 0x004E3F8B vector base 0x00211E58
 ??0Rva004E3D2A@@QAE@XZ,,0x004E3D18,18,Code/GameEngine/Source/Common/Rva004E3D2ACtor.cpp,matched,base 0x004E3C8F vtable 0x00862070 chain
+??0Rva004E3D47@@QAE@XZ,,0x004E3D35,18,Code/GameEngine/Source/Common/Rva004E3D47Ctor.cpp,matched,base 0x004E3C8F vtable 0x0086208C chain
