@@ -7953,3 +7953,12 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@VMapMetaData@@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@VMapMetaData@@@_STL@@@3@U?$less@VAsciiString@@@3@V?$allocator@U?$pair@$$CBVAsciiString@@VMapMetaData@@@_STL@@@3@@_STL@@QAE@XZ,0x0022E1F1,REL32 callee decoded at the retail call site in 0x0022E22E (drift-placed exact body)
 ?_M_insert_overflow@?$vector@UBfmeStringRecord00111ACF@@V?$allocator@UBfmeStringRecord00111ACF@@@_STL@@@_STL@@IAEXPAUBfmeStringRecord00111ACF@@ABU3@ABU__false_type@2@I_N@Z,0x003F6B24,REL32 callee decoded at the retail call site in 0x003F6CF9 (drift-placed exact body)
 ?bfmeMoveZK@BfmeOwnerZK@@QAEXPAVBfmeKeyZK@@PAPAUBfmeNodeZK@@1@Z,0x003B847B,address read from the REL32 displacement at a placed body
+?bfmeDoBLA@@YGXH@Z,0x002C94F5,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBLA@BfmeThingBLA@@QAEXPAX_N@Z (0x0028AA55)
+?bfmeDoBLD@BfmeSinkBLD@@QAEXPAXH@Z,0x002D4341,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBLD@@YGXPAX@Z (0x0029ACE3)
+?setSize@Shadow@@QAEXMM@Z,0x0010FD5E,callee read from the retail REL32 in placed BFME1-donor body ?bfmeForward@Gen_001D5EE0Target@@QAEXPAX0@Z (0x000A8B0A)
+?bfmeDoBPB@BfmeSubBPB@@QAEXPAX00@Z,0x001F08D3,callee read from the retail REL32 in placed BFME1-donor body ?update@Rva002D6EB0@@QAEXXZ (0x004B4204)
+?bfmeCallFCB@BfmeSubFCB@@QAEXPAXH@Z,0x0028FCD9,callee read from the retail REL32 in placed BFME1-donor body ?forwardAndFinish@Rva0020E100Owner@@QAEXXZ (0x004BDC03)
+?rva000190ABTransform@@YGHH@Z,0x00090FE0,callee read from the retail REL32 in placed BFME1-donor body ?isBelowTransformed@Rva007E4AA0Threshold@@QBE_NH@Z (0x0009116F)
+?getRelationship@Object@@QBE?AW4Relationship@@PBV1@@Z,0x0028D156,callee read from the retail REL32 in placed BFME1-donor body ?iterRel001DCF20@@YAXPAVObject@@PAX@Z (0x002612AC)
+?bfmeDoBPB@BfmeSubBPB0064C6C0@@QAEXPAX00@Z,0x0038BBF0,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBPB0064C6C0@@YAXPAX00HHPAVBfmeSubBPB0064C6C0@@@Z (0x0038D4AA)
+?bfmeDoBOE@BfmeSinkBOE@@QAEXPAX0@Z,0x005B7454,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoBOE@@YGXPAX000@Z (0x00514CEB)
