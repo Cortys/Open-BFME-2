@@ -201,3 +201,11 @@ extern "C" void *Rva00819630( int first, int second, int third )
 	CloseHandle( result );
 	return comm;
 }
+
+void Rva0081B000( void )
+{
+}
+
+void Rva0081AE10( void )
+{
+}
