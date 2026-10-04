@@ -14,6 +14,10 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include "rendobj.h"
 #include "sharebuf.h"
 
+// This specialization is rowed in its canonical defining unit. Keep this TU
+// a client so it does not emit a conflicting inline destructor copy.
+template <> ShareBufferClass<unsigned long>::~ShareBufferClass(void);
+
 // MeshGeometryClass's BFME2 VertexShadeIdx slot is at +0x4C.  The vendored
 // header's helper still uses its BFME1 +0x54 spelling, so keep this accessor's
 // proven retail offsets local while leaving the shared mesh header untouched.
