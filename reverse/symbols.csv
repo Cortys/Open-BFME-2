@@ -8110,3 +8110,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?getLocomotorDistanceToGoal@AIUpdateInterface@@QAEMXZ,0x0026435E,ZH getLocomotorDistanceToGoal shape (switch on locomotor goal type +0x1FC then Coord3D::length of goal minus position); REL32 from AIGuardReturnState::update 0x00543E09
 ?lookForInnerTarget@AIGuardMachine@@QAE_NXZ,0x005433FA,ZH AIGuardMachine::lookForInnerTarget role; REL32 from AIGuardReturnState::update 0x00543E44 with ECX the state machine
 ??$__copy_backward@PAURva001D28F0Element@@PAU1@H@_STL@@YAPAURva001D28F0Element@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x001611B0,callee REL32 read by locate.py from a unique masked-byte placement emitted by Rva001D25F0VectorInsertOverflow.cpp
+??1BfmeOpaqueOwnedRecord2148@@QAE@XZ,0x0041A200,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportOwnedRecordDeque.cpp
+?_M_increment@?$_Deque_iterator_base@UBfmeOpaqueOwnedRecord2148@@@_STL@@QAEXXZ,0x00419DD2,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportOwnedRecordDeque.cpp
