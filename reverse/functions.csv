@@ -51452,3 +51452,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?attemptUpgrade@UpgradeMux@@UAE_NABV?$BitFlags@$0IA@@@@Z,,0x004CE27C,33,Code/GameEngine/Source/GameLogic/Object/Update/UpgradeMuxAttemptUpgrade.cpp,matched,UpgradeMux vftable 0x00C5FF10 slot 1 (shared by 17 behavior tables); ZH donor; mask by reference (ret 4)
 ??0DataChunkInput@@QAE@PAVChunkInputStream@@@Z,,0x00307316,91,Code/GameEngine/Source/Common/System/DataChunkInputCtorThunk.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?init@W3DSnowManager@@UAEXXZ,,0x00094642,16,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DSnow.cpp,matched,vftable slot 1 of ??_7W3DSnowManager; ZH donor init; ReAcquireResources pinned
+?parseInt@@YAXPAVINI@@PAX1PBX@Z,,0x001DCC45,46,Code/GameEngine/Source/Common/INI/INIDrawGroupInfo.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?parsePercentToReal@@YAXPAVINI@@PAX1PBX@Z,,0x001DCC73,44,Code/GameEngine/Source/Common/INI/INIDrawGroupInfo.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
