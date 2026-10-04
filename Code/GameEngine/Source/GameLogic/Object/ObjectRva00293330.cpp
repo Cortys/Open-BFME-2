@@ -7,6 +7,15 @@
 // 0x00393858 0x00393942; jbe plus leftmost shape; unblocks 0x00392DC0.
 #include <map>
 
+// LINK-COMDAT: _STL::less<unsigned> is kept as the speed copy from DamageFX.cpp;
+// this TU is /O1 for its row, so its own copy differs. Specialize only the member
+// under "t" so our emitted copy matches the kept body, while the row keeps /O1.
+#pragma optimize("t", on)
+namespace _STL {
+template<> bool less<unsigned int>::operator()(const unsigned int &a, const unsigned int &b) const { return a < b; }
+}
+#pragma optimize("", on)
+
 class Rva00293330
 {
 public:
