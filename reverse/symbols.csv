@@ -8225,3 +8225,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva000B4542@Object@@QBEMPBUCoord3D@@@Z,0x000B4542,opaque relative-angle helper (x87 atan2 of the target minus the object's +0x38 position, less its orientation); REL32 callee of AIFaceState::update 0x003548B7 with ECX the owner, in place of Zero Hour's ThePartitionManager->getRelativeAngle2D
 ??$__copy_ptrs@PAVRva00297360Element@@PAV1@@_STL@@YAPAVRva00297360Element@@PAV1@00ABU__false_type@0@@Z,0x002915EB,tag-temp range-copy forwarder for stride-0x10 Rva00297360Element; ICF twin of rowed Rva002915EBCopyRange at this address; REL32 target of the placed erase 0x0040370D
 ?bfmeAskBIC@BfmeSubBIC@@QAEHXZ,0x00290FC9,member call target of the placed ?bfmeGoBIC 0x00468F9F; REL32 read off retail at 0x00468FA6
+?bfmeTailDDA@BfmeSubDDA@@QAEHXZ,0x00271898,tail-jump target of the placed ?bfmeGoDDA 0x00272C74; REL32 read off retail at 0x00272C81
