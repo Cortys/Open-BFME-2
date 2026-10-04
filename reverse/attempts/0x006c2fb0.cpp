@@ -1,5 +1,7 @@
 // ?rva006C2FB0@Rva006C2D20Sink@@QAEXPBD0@Z
 // partial score=0.97 date=2026-10-04
+// ?rva006C2FB0@Rva006C2D20Sink@@QAEXPBD0@Z
+// partial score=0.97 date=2026-10-04
 // cl: /O2 /DNDEBUG /MD
 // Retail body 0x006C2FB0, 100 bytes. Log/chat line formatter: it copies the
 // second stack argument into a 0x300-byte stack buffer, appends a newline after
