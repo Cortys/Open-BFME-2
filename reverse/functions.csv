@@ -51373,3 +51373,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_ERadar@@W3AEPAXI@Z,,0x002D7D4F,8,Code/GameEngine/Source/Common/System/RadarDtor.cpp,matched,adjustor thunk (this-4) in slot 0 of Radar's Snapshot-base vftable 0x00C03604; jumps to rowed ??_GRadar
 ??_ERva00567960@@W7AEPAXI@Z,,0x0056799C,8,Code/GameEngine/Source/Common/Rva00567960Dtor.cpp,matched,adjustor thunk (this-8) in a secondary vftable slot 0; jumps to rowed ??_GRva00567960
 ??_ERva00576C4B@@W3AEPAXI@Z,,0x00576D05,8,Code/GameEngine/Source/Common/Rva00576C4BDtor.cpp,matched,adjustor thunk (this-4) in a secondary vftable slot 0; jumps to rowed ??_GRva00576C4B
+?parseRGBColorKeyframe@ParticleSystemTemplate@@SAXPAVINI@@PAX1PBX@Z,,0x0055B913,44,Code/GameEngine/Source/GameClient/System/ParticleSysO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
