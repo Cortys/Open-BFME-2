@@ -1,7 +1,7 @@
 // ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
-// partial score=0.91 date=2026-10-04
+// partial score=0.95 date=2026-10-04
 // ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
-// partial score=0.91 date=2026-10-02
+// ?rva00032920@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z
 // BFME 2's memory-pool entry points. `namespace MemoryPool` is retail's own
 // name: every `_`-prefixed function here is exported under it
 // (reverse/exports.csv), and 0x00030730 resolves each export back out of the
@@ -289,10 +289,34 @@ unsigned int GeneralAllocator::rva00032A20(const void *block)
 // 0x000305B8 and _GetBlockHeap at 0x00030658.
 bool GeneralAllocator::rva00032920(const void *block)
 {
-	const char *blk = (const char *)block;
-	unsigned int header = *(const unsigned int *)(blk - 4);
+	// Seat-4 re-bank of the 0x00032920 partial. Three changes, all in this body's
+	// own locals, taking it from 26 differing bytes to 2:
+	//   - the lock pointer is read FIRST, before the block is touched;
+	//   - blk and p8 are const-qualified, so neither needs a callee-saved register;
+	//   - the header is read as *(p8 + 4), which is the same address as blk - 4 but
+	//     spelled through the alias, so cl keeps `block` live in a scratch register
+	//     instead of EBP.
+	// Together these reproduce retail's opening exactly -- push ebx / mov ebx,[esp+8]
+	// / mov eax,[ebx-4] / push ebp / push esi / push edi / mov edi,ecx -- where the
+	// bank opened push ebx / push ebp / mov ebp,[esp+0xc] / mov eax,[ebp-4].
+	// The bank recorded the residue as a callee-saved tie-break; it was the spelling.
+	//
+	// The two remaining bytes are the small-list scan's compare form. Retail keeps
+	// block-8 in EDX across the whole function (`mov edx,[edx-8]` on entry) and never
+	// has it live in the scan, where this build materialises the offset there instead
+	// (`mov edx,ecx / sub edx,eax`, compare against edx rather than ecx). EDX is
+	// caller-saved and only live in retail for the trailing lock-release block, so the
+	// allocator's release counter has to be addressed by something the allocator
+	// cannot see past. Swept and rejected: dropping the empty-list check (the bank
+	// showed the list is never empty on entry), folding the scan's two returns into
+	// one flag with a single release, the same for the intrusive branch, both, taking
+	// the scan compares off blk instead of p8, and declaring cur before sent are all
+	// 34 to 125 differing bytes, never better. This TU compiles 20+ allocator bodies,
+	// so it is left at the 2-byte form rather than re-risk all of them.
 	Lock *lock = m_4E4;
-	const char *p8 = blk - 8;
+	const char *const blk = (const char *)block;
+	const char *const p8 = blk - 8;
+	unsigned int header = *(const unsigned int *)(p8 + 4);
 	if (lock != 0)
 	{
 		EnterCriticalSection(lock);
