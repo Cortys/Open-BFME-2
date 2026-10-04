@@ -131,9 +131,44 @@ enum ObjectID
 };
 void XferObjectID(Xfer *xfer, ObjectID *id);
 
+struct Rva005ACCE4Template
+{
+	char m_pad000[0x108];
+	unsigned char m_108;
+};
+
+class Object
+{
+public:
+	char m_pad000[4];
+	Rva005ACCE4Template *m_04;	// +0x04
+	char m_pad008[0x438 - 8];
+	unsigned char m_438;		// +0x438
+};
+
+template <class OBJCLASS>
+class DLINK_ITERATOR
+{
+private:
+	OBJCLASS *m_cur;
+	unsigned char m_targetAbiState[20];
+
+public:
+	void advance();
+	bool done() const { return m_cur == 0; }
+	OBJCLASS *cur() const { return m_cur; }
+};
+
+class Team
+{
+public:
+	DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
+};
+
 class GameLogic
 {
 public:
+	Object *findObjectByID(ObjectID id);
 	unsigned int getFrame() const { return m_40; }
 	char m_pad000[0x40];
 	unsigned int m_40;		// +0x40
@@ -158,18 +193,39 @@ public:
 };
 extern Rva002A8F24 *g_00DFEEF8;
 
+struct Rva005ACCE4Flags
+{
+	unsigned int m_00;
+	unsigned int m_04;
+	unsigned int m_08;
+	unsigned int m_0C;
+	unsigned int m_10;
+};
+
+struct Rva005ACCE4Team
+{
+	char m_pad000[0x21C];
+	int m_21C;			// +0x21C
+	char m_pad220[0x2D0 - 0x220];
+	int m_2D0;			// +0x2D0
+	int m_2D4;			// +0x2D4
+	char m_pad2D8[0x2FC - 0x2D8];
+	Rva005ACCE4Flags m_flags;	// +0x2FC
+};
+
 class Rva004ECECD
 {
 public:
 	virtual ~Rva004ECECD();
 	virtual void v2();
-	virtual void v3();
+	virtual bool v3(void *unit, int count);
 	virtual void v4();
 	virtual void xfer(Xfer *xfer);
 	virtual void v6();
 	virtual void v7();
 	virtual void v8();
 	virtual Rva004ECECD *create();
+	Team *rva004ECECD(int index);
 };
 
 class Rva005DC73C : public Rva004ECECD
@@ -186,8 +242,10 @@ class Rva005ACCE4 : public Rva005DC73C
 public:
 	virtual ~Rva005ACCE4();
 	virtual void v2();
+	virtual bool v3(void *unit, int count);
 	virtual void xfer(Xfer *xfer);
 	float rva005ACDD2(const Coord3D *a, const Coord3D *b);
+	Object *rva005AD0E6();
 private:
 	ObjectID m_58;		// +0x58
 	ObjectID m_5C;		// +0x5C
@@ -223,4 +281,43 @@ void Rva005ACCE4::xfer(Xfer *xfer)
 	Rva004ECECD::xfer(xfer);
 	XferObjectID(xfer, &m_58);
 	XferObjectID(xfer, &m_5C);
+}
+
+bool Rva005ACCE4::v3(void *unit, int count)
+{
+	Rva005ACCE4Team *team = (Rva005ACCE4Team *)unit;
+	Rva004ECECD::v3(unit, count);
+	Rva005ACCE4Flags *flags = &team->m_flags;
+	flags->m_08 |= 0x04000000;
+	flags->m_10 |= 0x20;
+	flags->m_00 |= 0x800;
+	team->m_21C = 30;
+	if (g_00DFEEF8->rva002A8AB1(m_owner)->m_16C == 0)
+		team->m_2D4 = 1;
+	else
+		team->m_2D4 = 2;
+	team->m_2D0 = GetGameLogicRandomValue(team->m_2D4, 3,
+		"C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\TargetlessTactics\\AIFarmKillSquad.cpp",
+		371);
+	Rva002A8AB1Record *record = g_00DFEEF8->rva002A8AB1(m_owner);
+	record->rva002C717E(AIFarmKillSquad_IsRunning, 1);
+	return true;
+}
+
+Object *Rva005ACCE4::rva005AD0E6()
+{
+	Object *target = TheGameLogic->findObjectByID(m_5C);
+	if (!target) {
+		Team *team = rva004ECECD(0);
+		if (team) {
+			for (DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+				if (target)
+					break;
+				Object *member = iter.cur();
+				if (!(member->m_438 & 1) && (member->m_04->m_108 & 8))
+					target = member;
+			}
+		}
+	}
+	return target;
 }
