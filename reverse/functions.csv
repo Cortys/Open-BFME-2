@@ -51662,3 +51662,7 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?Rva00452FE0Same@@YAHABURva00452FE0Key@@0@Z,,0x00301B24,48,Code/GameEngine/Source/Common/Rva00452FE0Same.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?bfmeReset@Gen_00490F00@@QAEXXZ,,0x00355F75,48,Code/GameEngine/Source/Common/BfmeOneHundredSixteen.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?make@U4Maker005EA530@@QAEPAVU4Made005EA530@@XZ,,0x003ADCEB,32,Code/GameEngine/Source/Common/U4NewThenInit.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?v2@Rva005AAB91@@UAEXXZ,,0x005AAD26,129,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 2: clear the owner record AIRoamingDefenseTactic_IsRunning and _NextLogicFrameRun keys
+?v3@Rva005AAB91@@UAE_NPAXH@Z,,0x005AADD9,102,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 3: set the IsRunning key then the AITactic slot 3 0x004ECE61
+?xfer@Rva005AAB91@@UAEXPAVXfer@@@Z,,0x005AABA5,33,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 5: the AITactic xfer then the +0x58 roaming flag
+?v6@Rva005AAB91@@UAEXXZ,,0x005AAB9C,9,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 6: set the running flag +0x10 and the roaming flag +0x58
