@@ -52439,3 +52439,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva002C68CE@Rva002C68CE@@QAEHXZ,,0x002C68CE,109,Code/GameEngine/Source/Common/Rva002C68CEMethod.cpp,matched,unlock lane sibling 002C67DC ThePlayerList g_00DFEEF8 getNthPlayer row rva002A8AB1 pin
 ?Rva005D2355Get@@YAPBVImage@@PAURva005D2355In@@@Z,,0x005D2355,102,Code/GameEngine/Source/Common/Rva005D2355ImageGet.cpp,matched,image lookup via rowed 0x002D06CA 0x0033BA46 LivingWorld find and findImageByName
 ?Rva005D232DGet@@YAPBVImage@@PAURva005D232DIn@@@Z,,0x005D232D,40,Code/GameEngine/Source/Common/Rva005D232DImageGet.cpp,matched,image lookup sibling via rowed 0x002D06CA and 0x0033BA46
+??$_Construct@UBfmePod216@@U1@@_STL@@YAXPAUBfmePod216@@ABU1@@Z,,0x0021EF66,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod216.cpp,matched,placement copy via rowed Rva0021E85A callers pod bodies
