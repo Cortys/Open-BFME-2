@@ -8292,3 +8292,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?processAckCommand@BFMEConnectionManager@@QAEXPAX@Z,0x004D0815,callee of ?processAck@BFMEConnectionManager@@QAEXPAVNetCommandMsg@@@Z at retail 0x004D097A read from its REL32 displacement; body unrowed
 ?accepts@Rva001DB720Predicate@@QAE_NPAVThingTemplate@@@Z,0x002ABEF1,callee of ?anyTemplateAcceptedBy@Rva001DB720NameList@@QAE_NPAVRva001DB720Predicate@@@Z at retail 0x003769A6 read from its REL32 displacement; body unrowed
 ??0Gen_00920A20@@QAE@H@Z,0x0013EA00,callee of ?getFilter@ShroudTexture@@QAEPAVShroudFilter@@XZ at retail 0x00132888 read from its REL32 displacement; body unrowed
+??0AsciiStringVX@@QAE@ABV0@@Z,0x000365F0,callee of ??0Gen_00491580@@QAE@ABVAsciiStringVX@@0@Z at retail 0x003560C8 and 0x003560D7 read from its REL32 displacements; ICF alias onto StringBase narrow copy ctor rowed at 0x000365F0
+??0Rva00490470@@QAE@XZ,0x00355D4E,callee of ??0Gen_00491580@@QAE@ABVAsciiStringVX@@0@Z at retail 0x003560B3 read from its REL32 displacement; body unrowed
