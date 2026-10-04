@@ -7703,3 +7703,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva005AD99C@Rva005ADA40@@QAEXABVAsciiString@@PAV?$vector@PAVRva00506FE9Hit@@V?$allocator@PAVRva00506FE9Hit@@@_STL@@@_STL@@@Z,0x005AD99C,element collect-by-name (rowed under Rva005AD99C); REL32 at 0x0050704B in Rva00506B74::rva00506FE9
 ?rva002A8B59@Rva002A8F24@@QAEPAURva002A8B59Data@@PAX@Z,0x002A8B59,TheSkirmishAIManager (g_00DFEEF8) per-owner data lookup; REL32 at 0x00507068 in Rva00506B74::rva00506FE9
 ?rva0055ADBA@Rva00506FE9Hit@@QAEXPAX@Z,0x0055ADBA,hit update with the owner; REL32 at 0x00507087 in Rva00506B74::rva00506FE9
+??0Rva005ADA40@@QAE@IPAX@Z,0x005AD9FF,element ctor (index and owner) after a 0x2C operator new; REL32 at 0x005074B9 in Rva00506B74::rva005073D6
+?push_back@?$vector@PAVRva005ADA40@@V?$allocator@PAVRva005ADA40@@@_STL@@@_STL@@QAEXABQAVRva005ADA40@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32 at 0x005074CF in Rva00506B74::rva005073D6
+?rva005AE0AD@Rva005ADA40@@QAEXPAVXfer@@@Z,0x005AE0AD,element xfer; REL32 at 0x005074E9 in Rva00506B74::rva005073D6

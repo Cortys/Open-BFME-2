@@ -42,15 +42,101 @@ public:
 	virtual void v3(void *arg);
 };
 
+// BFME2's Xfer: operator== overloads, grouped by cl at the first overload
+// slot in reverse declaration order (Rva004E0513Xfer.cpp has the same view).
+class AsciiString;
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class Coord2D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+class Snapshot;
+
+class Xfer
+{
+public:
+	class Version;
+
+	Xfer();
+	virtual ~Xfer();
+
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
+class Xfer::Version
+{
+public:
+	Version(unsigned char current, unsigned char minimum)
+		: m_current(current), m_minimum(minimum) {}
+
+	unsigned char m_current;
+	unsigned char m_minimum;
+};
+
 class Rva00506FE9Hit;
 
 class Rva005ADA40
 {
 public:
+	Rva005ADA40(unsigned int index, void *owner);
 	~Rva005ADA40();
+	void rva005AE0AD(Xfer *xfer);
 	void rva005AD99C(const AsciiString &name, _STL::vector<Rva00506FE9Hit *> *hits);
 	void rva005ADC63();
 	Rva005AD9C0Hit *rva005AD9C0(void *arg);
+private:
+	unsigned char m_data[0x2C];	// new'd at 0x2C by 0x005073D6
 };
 
 class Rva00506B1B
@@ -141,6 +227,7 @@ public:
 	Rva005ADA40 *rva00506C64(unsigned int index);
 	void rva00507522();
 	void rva00506FE9(Object *obj);
+	void rva005073D6(Xfer *xfer);
 private:
 	void *m_08;
 	_STL::vector<Rva005ADA40 *> m_0C;
@@ -251,6 +338,35 @@ void Rva00506B74::rva00506FE9(Object *obj)
 			}
 		}
 	}
+}
+
+// 0x005073D6: save/load. Version 2 added the +0x28 point; on load the owned
+// elements are rebuilt (0x2C bytes each, ctor 0x005AD9FF) before each one
+// transfers itself (0x005AE0AD).
+void Rva00506B74::rva005073D6(Xfer *xfer)
+{
+	Xfer::Version version(1, 2);
+	*xfer == version;
+	*xfer == m_18;
+	*xfer == m_24;
+	if (version.m_minimum >= 2)
+		*xfer == m_28;
+	unsigned int count = m_0C.size();
+	*xfer == count;
+	if (xfer->IsLoading()) {
+		if (!m_0C.empty()) {
+			for (Rva005ADA40 **it = m_0C.begin(), **end = m_0C.end(); it != end; ++it)
+				delete *it;
+			m_0C.clear();
+		}
+		for (unsigned int i = 0; i < count; ++i) {
+			Rva005ADA40 *element = new Rva005ADA40(i, m_08);
+			m_0C.push_back(element);
+		}
+	}
+	Rva005ADA40 **end = m_0C.end();
+	for (Rva005ADA40 **it = m_0C.begin(); it != end; ++it)
+		(*it)->rva005AE0AD(xfer);
 }
 
 // 0x00506CC3: the waypoint with this name, walking TheTerrainLogic's list from
