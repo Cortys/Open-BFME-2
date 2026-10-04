@@ -1,5 +1,4 @@
 // ?erase@?$vector@VRva00297360Element@@V?$allocator@VRva00297360Element@@@_STL@@@_STL@@QAEPAVRva00297360Element@@PAV3@@Z
-// partial score=0.93 date=2026-10-03
 // cl: /Ireference/shims/bfme2_ascii /O1
 // ?erase@?$vector@VRva00297360Element@@V?$allocator@VRva00297360Element@@@_STL@@@_STL@@QAEPAVRva00297360Element@@PAV3@@Z @0x0040370D 55B single erase.
 // Evidence: unlock lane; stride-0x10 Rva element with AsciiString at +4 via Rva00297360ElementCopy;
@@ -18,9 +17,13 @@ public:
   int m_0C;
 };
 
-Rva00297360Element *Rva002915EBCopyRange(Rva00297360Element *first, Rva00297360Element *last, Rva00297360Element *result, int dummy);
+Rva00297360Element *Rva002915EBCopyRange(Rva00297360Element *first, Rva00297360Element *last, Rva00297360Element *result, const int *tag);
 
 namespace _STL {
+
+struct __false_type
+{
+};
 
 template <class Type>
 class allocator {
@@ -40,6 +43,22 @@ private:
   iterator m_endOfStorage;
 };
 
+template <class InputIter, class OutputIter>
+OutputIter __copy_ptrs(InputIter first, InputIter last, OutputIter result,
+	const __false_type &tag);
+
+template <class InputIter, class OutputIter>
+OutputIter __copy_ptrs(InputIter first, InputIter last, OutputIter result,
+	const __false_type *tag, int extra);
+
+template <class InputIter, class OutputIter>
+OutputIter __copy_ptrs(InputIter first, InputIter last, OutputIter result,
+	const __false_type &tag)
+{
+	__false_type local;
+	return __copy_ptrs(first, last, result, &local, 0);
+}
+
 }
 
 inline _STL::vector<Rva00297360Element, _STL::allocator<Rva00297360Element> >::iterator
@@ -47,7 +66,7 @@ _STL::vector<Rva00297360Element, _STL::allocator<Rva00297360Element> >::erase(
   iterator position)
 {
   if (position + 1 != end()) {
-    Rva002915EBCopyRange(position + 1, m_finish, position, (int)((char *)&position + 3));
+    __copy_ptrs(position + 1, m_finish, position, __false_type());
   }
   --m_finish;
   m_finish->~Rva00297360Element();
