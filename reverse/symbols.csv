@@ -8285,3 +8285,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeReady986C@BfmeC986@@QAEDXZ,0x0036E357,callee of ?bfmeGo986C@BfmeC986@@QAEXHHHH@Z at retail 0x00372544 read from its REL32 displacement; body unrowed
 ?bfmePrep986C@BfmeC986@@QAEXXZ,0x0036D6B4,callee of ?bfmeGo986C@BfmeC986@@QAEXHHHH@Z at retail 0x0037254F read from its REL32 displacement; body unrowed
 ?bfmeSend986C@BfmeC986@@QAEXHHHHH@Z,0x00371166,callee of ?bfmeGo986C@BfmeC986@@QAEXHHHH@Z at retail 0x00372568 read from its REL32 displacement; body unrowed
+??0BfmeMade_009CB5F0@@QAE@PAX@Z,0x00602316,callee of ?bfmeMake_009CB5F0@@YAPAVBfmeMade_009CB5F0@@PAX@Z at retail 0x006023E5 read from its REL32 displacement; body unrowed
