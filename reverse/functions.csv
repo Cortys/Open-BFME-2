@@ -51466,3 +51466,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva005DAA36@@UAEPAXI@Z,,0x005970C9,29,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,deleting dtor in vftable 0x00C70B80 slot 1 (slot 0 is __purecall); dtor inline (vptr reset only)
 ??_GRva0013107A@@UAEPAXI@Z,,0x00131E52,28,Code/GameEngine/Source/Common/Rva0013107ACtor.cpp,matched,scalar deleting dtor in ??_7Rva0013107A slot 1; calls pinned dtor 0x001310CF
 ?playerHasRootPrereqsForScience@ScienceStore@@QBE_NPBVPlayer@@W4ScienceType@@@Z,,0x001FFC55,78,Code/GameEngine/Source/Common/RTS/ScienceStoreRootPrereqs.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?bfmeLoadSJA@@YAXPAX0PAD@Z,,0x00411B07,75,Code/GameEngine/Source/Common/BfmeConv1292.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
