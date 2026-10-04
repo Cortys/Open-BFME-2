@@ -52449,3 +52449,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva004EDDD3@Rva00506909Item@@QAEXXZ,,0x004EDDD3,276,Code/GameEngine/Source/Common/Rva004EDDD3.cpp,matched,Item average via TeamFactory and Coord3D vector sibling finish
 ??0Rva002C60E4@@QAE@PAX_N@Z,,0x002C60E4,203,Code/GameEngine/Source/Common/Rva002C60E4Ctor.cpp,matched,unlock ctor base Rva00506B1B vector BfmeE16 three news vtable g_00C004E4
 ?rva002A8AE4@Rva002A8F24@@QAEPAURva002A8AE4Record@@PAX@Z,,0x002A8AE4,64,Code/GameEngine/Source/Common/Rva002A8AE4.cpp,matched,caller 0x005056C7 with rowed get and getNthPlayer via ThePlayerList
+??0Rva000AEFAA@@QAE@PAXPAVBfmeParserRegistryVE@@PBVAsciiString@@@Z,,0x000AEFAA,104,Code/GameEngine/Source/Common/Rva000AEFAA.cpp,matched,unlock BlendTileData binding ctor via base pin
