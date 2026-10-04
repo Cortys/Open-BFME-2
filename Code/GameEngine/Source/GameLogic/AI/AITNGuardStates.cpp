@@ -12,6 +12,12 @@
 //    0x00C6A1F0, over the pinned AIEnterState::update 0x0035455A.
 //  - AITNGuardAttackAggressorState::onExit, retail 0x00545CF7 (76 bytes):
 //    slot 5 of 0x00C6A298; attack sub-state +0x28.
+//  - AITNGuardAttackAggressorState::update, retail 0x0054684E (93 bytes):
+//    slot 6 of 0x00C6A298; while the attack machine is in FIRE_WEAPON (state
+//    id 103; INVALID_STATE_ID 999999 when it has no state) the player's
+//    tunnel tracker gets updateNemesis (pinned 0x004F5935, Zero Hour's body:
+//    take the target when there is no nemesis, refresh the timestamp when it
+//    is the nemesis).
 // BFME2 layout (target evidence): the attack sub-state is deleted with a
 // global-scope delete (vslot 0 with flag 0, then ::operator delete); owner
 // team +0x304, object id +0x74, player tunnel tracker +0x2E8, guard machine
@@ -47,6 +53,7 @@ class TunnelTracker
 {
 public:
 	Object *getCurNemesis();
+	void updateNemesis(const Object *target);
 };
 class Player
 {
@@ -68,18 +75,42 @@ private:
 	unsigned char m_pad78[0x304 - 0x78];
 	Team *m_team; // +0x304
 };
+class GameLogic
+{
+public:
+	Object *findObjectByID(ObjectID id);
+};
+extern GameLogic *TheGameLogic;
+typedef UnsignedInt StateID;
+enum
+{
+	INVALID_STATE_ID = 999999
+};
+class State;
 class StateMachine
 {
 public:
 	Object *getOwner() const { return m_owner; }
+	inline StateID getCurrentStateID() const;
 private:
-	unsigned char m_pad00[0x14];
+	unsigned char m_pad00[0x04];
+	State *m_currentState; // +0x04
+	unsigned char m_pad08[0x14 - 0x08];
 	Object *m_owner; // +0x14
+};
+class AttackStateMachine : public StateMachine
+{
+public:
+	enum
+	{
+		FIRE_WEAPON = 103
+	};
 };
 class AITNGuardMachine : public StateMachine
 {
 public:
 	void setNemesisID(ObjectID id) { m_nemesisToAttack = id; }
+	ObjectID getNemesisID() const { return m_nemesisToAttack; }
 private:
 	unsigned char m_pad18[0x48 - 0x18];
 	ObjectID m_nemesisToAttack; // +0x48
@@ -94,12 +125,19 @@ public:
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
-protected:
+	StateID getID() const { return m_ID; }
 	StateMachine *getMachine() const { return m_machine; }
+protected:
 	Object *getMachineOwner() const { return m_machine->getOwner(); }
-	unsigned char m_pad04[0x18 - 0x04];
+	StateID m_ID; // +0x04
+	unsigned char m_pad08[0x18 - 0x08];
 	StateMachine *m_machine; // +0x18
 };
+// ?StateMachine::getCurrentStateID absent-from-retail
+inline StateID StateMachine::getCurrentStateID() const
+{
+	return m_currentState ? m_currentState->getID() : (StateID)INVALID_STATE_ID;
+}
 class AIAttackState : public State
 {
 };
@@ -135,7 +173,9 @@ class AITNGuardAttackAggressorState : public State
 {
 public:
 	virtual void onExit(StateExitType status);
+	virtual StateReturnType update();
 private:
+	AITNGuardMachine *getGuardMachine() { return (AITNGuardMachine *)getMachine(); }
 	unsigned char m_pad1C[0x28 - 0x1C];
 	AIAttackState *m_attackState; // +0x28
 };
@@ -204,4 +244,19 @@ void AITNGuardAttackAggressorState::onExit( StateExitType status )
 	{
 		obj->getTeam()->setTeamTargetObject(NULL); // clear the target.
 	}
+}
+
+StateReturnType AITNGuardAttackAggressorState::update( void )
+{	
+	if (m_attackState->getMachine()->getCurrentStateID() == AttackStateMachine::FIRE_WEAPON) {
+		AITNGuardMachine *machine = getGuardMachine();
+		Object *nemesis = TheGameLogic->findObjectByID(machine->getNemesisID());
+		Player *ownerPlayer = machine->getOwner()->getControllingPlayer();
+		TunnelTracker *tunnels = NULL;
+		if (ownerPlayer) {
+			tunnels = ownerPlayer->getTunnelSystem();
+		}
+		if (tunnels) tunnels->updateNemesis(nemesis);
+	}
+	return m_attackState->update();
 }
