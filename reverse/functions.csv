@@ -51429,3 +51429,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0Rva005AAB91@@QAE@XZ,,0x005AABC6,83,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIRoamingDefenseTactic tactic ctor: base ctor with the AIRoamingDefenseTactic name then own fields cleared
 ??0Rva005AB125@@QAE@XZ,,0x005AB1B4,79,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIStartWoTRBattleTactic tactic ctor: base ctor with the AIStartWoTRBattleTactic name then own fields cleared
 ??0Rva005AC7E1@@QAE@XZ,,0x005AC7EC,94,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIRingHeroTactic tactic ctor: base ctor with the AIRingHeroTactic name then own fields cleared
+??1ResourceGatheringManager@@UAE@XZ,,0x004F5BB0,148,Code/GameEngine/Source/Common/RTS/ResourceGatheringManagerDestructor.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
