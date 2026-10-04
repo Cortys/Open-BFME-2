@@ -27,6 +27,7 @@ struct Rva00506909Item
 	void rva004EDF03();
 	void rva004ECE1C();
 	void rva004ED81D(Rva00506909Request *request, void *arg);
+	void rva004ED955(void *owner);
 };
 
 // The five objects 0x00505E5D seeds +0x04 with when empty, in order; the
@@ -41,6 +42,7 @@ struct Rva00506909Gen
 	virtual void v2(); virtual void v3(); virtual void v4();
 	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
 	virtual Rva00506909Item *create();
+	virtual bool isRequired();	// slot 10
 	unsigned char m_pad04[0x24 - 4];
 	void *m_arg;	// +0x24
 };
@@ -91,7 +93,7 @@ private:
 	void rva00505924();
 	void rva00506020();
 	void rva00505AF1();
-	void rva00506411(void *owner);
+	bool rva00506411(void *owner);
 	bool rva00506178(Rva00506909Request *request, void *arg);
 	bool rva00506265(Rva00506909Request *request, void *arg);
 	bool rva0050633B(Rva00506909Request *request, void *arg);
@@ -270,4 +272,33 @@ bool Rva00506909::rva0050633B(Rva00506909Request *request, void *arg)
 		return true;
 	}
 	return false;
+}
+
+// 0x00506411: every +0x4C generator that applies to the owner either must run
+// (slot 10) or joins the optional pool, one of which is drawn at random
+// (line 426); each chosen generator's new item is set up for the owner and
+// pushed to +0x58. True when anything was chosen.
+bool Rva00506909::rva00506411(void *owner)
+{
+	_STL::vector<Rva00506909Gen *> optional;
+	_STL::vector<Rva00506909Gen *> chosen;
+	for (Rva00506909Gen **it = m_4C.begin(); it != m_4C.end(); ++it) {
+		Rva00506909Gen *gen = *it;
+		gen->m_arg = owner;
+		if (gen->appliesTo(0)) {
+			if (gen->isRequired())
+				chosen.push_back(gen);
+			else
+				optional.push_back(gen);
+		}
+		gen->m_arg = 0;
+	}
+	if (!optional.empty())
+		chosen.push_back(optional[GetGameLogicRandomValue(0, optional.size() - 1, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\AITacticsGenerator.cpp", 426)]);
+	for (Rva00506909Gen **c = chosen.begin(); c != chosen.end(); ++c) {
+		Rva00506909Item *item = (*c)->create();
+		item->rva004ED955(owner);
+		m_58.push_back(item);
+	}
+	return !chosen.empty();
 }

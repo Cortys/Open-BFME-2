@@ -7733,7 +7733,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva00506178@Rva00506909@@AAE_NPAURva00506909Request@@PAX@Z,0x00506178,kind 0 and 2 handler of Rva00506909::rva005069CE (REL32 at 0x00506A04)
 ?rva00506265@Rva00506909@@AAE_NPAURva00506909Request@@PAX@Z,0x00506265,kind 1 handler of Rva00506909::rva005069CE (REL32 at 0x005069F8)
 ?rva0050633B@Rva00506909@@AAE_NPAURva00506909Request@@PAX@Z,0x0050633B,kind 3 handler of Rva00506909::rva005069CE (REL32 at 0x005069EC)
-?rva00506411@Rva00506909@@AAEXPAX@Z,0x00506411,owner pass of Rva00506909::rva005069B4 (REL32 at 0x005069C7)
 ??$?MVAsciiString@@V0@@_STL@@YA_NABU?$pair@VAsciiString@@V1@@0@0@Z,0x00206BCF,callee REL32 read by locate.py from a unique masked-byte placement emitted by Rva0019B850TeamRecUpdate_Rva0019BE80TeamRec_updateTeam.cpp
 ?_M_create_node@?$_Rb_tree@U?$pair@VAsciiString@@V1@@_STL@@U?$pair@$$CBU?$pair@VAsciiString@@V1@@_STL@@H@2@U?$_Select1st@U?$pair@$$CBU?$pair@VAsciiString@@V1@@_STL@@H@_STL@@@2@UTeamLess0019B850@@V?$allocator@U?$pair@$$CBU?$pair@VAsciiString@@V1@@_STL@@H@_STL@@@2@@_STL@@IAEPAU?$_Rb_tree_node@U?$pair@$$CBU?$pair@VAsciiString@@V1@@_STL@@H@_STL@@@2@ABU?$pair@$$CBU?$pair@VAsciiString@@V1@@_STL@@H@2@@Z,0x00206C54,callee REL32 read by locate.py from a unique masked-byte placement emitted by Rva0019B850TeamRecUpdate_Rva0019BE80TeamRec_updateTeam.cpp
 ??1PingRequest@@QAE@XZ,0x0007FAB3,callee REL32 read by locate.py from a unique masked-byte placement emitted by PingThread_Pinger_getRequest.cpp
@@ -7797,3 +7796,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?push_back@?$vector@PAURva00506909Item@@V?$allocator@PAURva00506909Item@@@_STL@@@_STL@@QAEXABQAURva00506909Item@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32s in the three Rva00506909 pickers (first at 0x0050622C)
 ?bfmeCounter@ScriptEngine@@IAEPAUScriptCounter@@VAsciiString@@@Z,0x0020874B,address read from the REL32 displacement at a placed body
 ?j_000142b3@@YAXXZ,0x002086C5,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?rva004ED955@Rva00506909Item@@QAEXPAX@Z,0x004ED955,new item setup for the owner; REL32 at 0x005064D8 in Rva00506909::rva00506411
