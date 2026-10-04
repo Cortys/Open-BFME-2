@@ -52378,3 +52378,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva003FAB93@Rva003FAB93@@QAEXXZ,,0x003FAB93,172,Code/GameEngine/Source/Common/Rva003FAB93.cpp,matched,chain via ctor 0x002D982A and TheAudio slots 0x8c 0x64 with bit6 gate
 ?rva007B6A64@@YAXXZ,,0x007B6A64,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap thunk ecx g_vec00200D38 to BasicStringCharDtor_dup no callers
 ?bfmeQueryRallyOverride@@YAPAVObject@@PAV1@PBUCoord3D@@@Z,,0x004A0403,280,Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/QueueProductionExitUpdateQueryRallyOverride.cpp,matched,BFME1 donor QueryRallyOverride via caller setRallyPoint plus 0x250 contain slot 0x34
+?Rva0026E1DEDestroy@@YAXPAVRva00268B04@@0@Z,,0x0026E1DE,25,Code/GameEngine/Source/Common/Rva0026E1DEDestroy.cpp,matched,array destroy loop via rowed forwarder 0x00268B04 plus caller 0x0026E5B9
