@@ -50950,3 +50950,19 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0Rva003F877E@@QAE@HH@Z,,0x003F877E,43,Code/GameEngine/Source/Common/Rva003F877ECtor.cpp,matched,leaf vtable 0x00837318 vector base rowed
 ?rva003F83D9@Rva003F83D9@@QAENH@Z,,0x003F83D9,37,Code/GameEngine/Source/Common/Rva003F83D9.cpp,matched,AsciiString array at +0xC via member str IAT atof caller 0x003F8CF2
 ?rva004D977D@Rva004D977D@@QAEXABURva002C99FB@@0@Z,,0x004D977D,51,Code/GameEngine/Source/Common/Rva004D977D.cpp,matched,conditional assign via rowed 0x002C99FB prev same flags
+?rva007B7AAF@@YAXXZ,,0x007B7AAF,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7AAF
+?rva007B7AB9@@YAXXZ,,0x007B7AB9,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7AB9
+?rva007B7AC3@@YAXXZ,,0x007B7AC3,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7AC3
+?rva007B7AEB@@YAXXZ,,0x007B7AEB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7AEB
+?rva007B7B1E@@YAXXZ,,0x007B7B1E,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7B1E
+?rva007B7B32@@YAXXZ,,0x007B7B32,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7B32
+?rva007B7B3C@@YAXXZ,,0x007B7B3C,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7B3C
+?rva007B7B46@@YAXXZ,,0x007B7B46,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7B46
+?rva007B7B78@@YAXXZ,,0x007B7B78,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7B78
+?rva007B7B96@@YAXXZ,,0x007B7B96,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7B96
+?rva007B7BA0@@YAXXZ,,0x007B7BA0,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7BA0
+?rva007B7BAA@@YAXXZ,,0x007B7BAA,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7BAA
+?rva007B7BB4@@YAXXZ,,0x007B7BB4,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7BB4
+?rva007B7BD2@@YAXXZ,,0x007B7BD2,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7BD2
+?rva007B7BDC@@YAXXZ,,0x007B7BDC,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7BDC
+?rva007B7BE6@@YAXXZ,,0x007B7BE6,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B7BE6
