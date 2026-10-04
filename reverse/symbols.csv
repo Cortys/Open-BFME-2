@@ -7903,3 +7903,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?findTemplate@BfmeThingFactory@@QAEPBVThingTemplate@@ABVAsciiString@@@Z,0x002D06CA,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ??1TileData@@UAE@XZ,0x0011172A,dtor installs ??_7TileData 0x00BCFAC0 (bytes at +18) then releases the +0x2AB4 ref and restores the RefCountClass vptr; REL32 callee of the slot-1 ??_G at 0x00111867
 ??1Rva0013107A@@UAE@XZ,0x001310CF,dtor installs ??_7Rva0013107A 0x00BD25C8 at +0 (body rowed under its BFME1 donor name releaseResource0090C2D0); REL32 callee of the slot-1 ??_G at 0x00131E52
+??0?$map@W4ScienceType@@_NU?$less@W4ScienceType@@@_STL@@V?$allocator@U?$pair@$$CBW4ScienceType@@_N@_STL@@@3@@_STL@@QAE@XZ,0x001FFA00,address read from the REL32 displacement at a placed body
+??1?$_Rb_tree@W4ScienceType@@U?$pair@$$CBW4ScienceType@@_N@_STL@@U?$_Select1st@U?$pair@$$CBW4ScienceType@@_N@_STL@@@3@U?$less@W4ScienceType@@@3@V?$allocator@U?$pair@$$CBW4ScienceType@@_N@_STL@@@3@@_STL@@QAE@XZ,0x001FF743,address read from the REL32 displacement at a placed body
+?rva000E7C20SciencePrereqMemo@ScienceStore@@ABE_NPBVPlayer@@W4ScienceType@@PAX@Z,0x001FFAA1,address read from the REL32 displacement at a placed body
