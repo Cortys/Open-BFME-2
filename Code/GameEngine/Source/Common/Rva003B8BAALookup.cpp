@@ -20,6 +20,7 @@ class Rva003B8BAA
 	Rva003B8BAAElem **m_array14;
 public:
 	void *rva003B8BAA();
+	bool rva003B8B85();
 	void *rva003B8BF9(int index);
 };
 
@@ -36,6 +37,18 @@ void *Rva003B8BAA::rva003B8BAA()
 		return 0;
 	Rva003B8BAAElem *elem = m_array14[m_index10];
 	return elem->m_ptr20;
+}
+
+// ?rva003B8B85@Rva003B8BAA@@QAE_NXZ @0x003B8B85 37B.
+// Bool guard sibling of rva003B8BAA on the same +0x10/+0x14/+0x20 chase: same singleton +0xB4 guard then elem->m_ptr20 != 0.
+// Evidence: retail mov eax,[0xDFEF10]; cmp [eax+0xB4],0; jne; xor al,al; ret; else mov eax,[ecx+0x10];
+// mov ecx,[ecx+0x14]; mov eax,[ecx+eax*4]; cmp [eax+0x20],0; setne; unblocks 0x002B254F caller.
+bool Rva003B8BAA::rva003B8B85()
+{
+	if (TheRva00DFEF10->m_flagB4 == 0)
+		return false;
+	Rva003B8BAAElem *elem = m_array14[m_index10];
+	return elem->m_ptr20 != 0;
 }
 
 // ?rva003B8BF9@Rva003B8BAA@@QAEPAXH@Z @0x003B8BF9 13B.
