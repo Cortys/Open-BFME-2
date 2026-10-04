@@ -2107,3 +2107,13 @@ void __cdecl rva007B77B9()
 	return p->_STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> >::~basic_string();
 }
 
+extern unsigned g_00E01CF4;
+// g_00E01CF4: packet annotates VA 0x00E01CF4 (data RVA 0x00A01CF4), no name yet.
+
+// ?rva007B7B82@@YAXXZ @ 0x007B7B82 (10B). Global StringBase<char> clear thunk: ecx=&g_00E01CF4 then tail-jmp to rowed ?clear@?$StringBase@D@@QAEXXZ (0x0048BA39). No callers. Between 0x007B7B78 and 0x007B7B96. Honest address name.
+void __cdecl rva007B7B82()
+{
+	StringBase<char> *p = (StringBase<char> *)&g_00E01CF4;
+	return p->clear();
+}
+
