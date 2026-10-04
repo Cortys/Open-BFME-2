@@ -51645,3 +51645,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva002B280C@Rva002B280C@@QAE_NPAUArg54@@@Z,,0x002B280C,40,Code/GameEngine/Source/Common/Rva002B280CCheck.cpp,matched,chain 0x002B254F virtual+0x14 via g_00E02D6C
 ?rva002B2646@Rva002B2646@@QAE_NPAUArg54@@0@Z,,0x002B2646,44,Code/GameEngine/Source/Common/Rva002B2646Check.cpp,matched,chain 0x002B254F virtual+0x28 via g_00E02D6C
 ?rva002B2672@Rva002B2672@@QAE_NPAUArg54@@0@Z,,0x002B2672,44,Code/GameEngine/Source/Common/Rva002B2672Check.cpp,matched,chain on 0x002B254F via sibling pattern virtual 0x2C
+??0Rva00360474@@QAE@XZ,,0x00360474,54,Code/GameEngine/Source/Common/Rva00360474Ctor.cpp,matched,unlock lane ctor base Rva001DBAA4 vtable 0x816808
