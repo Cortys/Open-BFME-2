@@ -169,7 +169,6 @@ HRESULT DownloadManager::OnQueryResume()
 	return DOWNLOADEVENT_RESUME;
 }
 
-// ?OnProgressUpdate@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::OnProgressUpdate( Int bytesread, Int totalsize, Int timetaken, Int timeleft )
 {
 	DEBUG_LOG(("DownloadManager::OnProgressUpdate(): %d/%d %d/%d\n", bytesread, totalsize, timetaken, timeleft));
