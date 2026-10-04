@@ -7413,3 +7413,6 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?Rva005F0383Get@@YAPBVImage@@PAXH@Z	0x005F0383	240	blocked	EH and-state late plus missing mov-byte-1-0 around findImage plus branch-vs-cmove plus esi-edi swap ours 232B vs 240B 7 regions t=15 model=muse-02
 ??0Rva0041F56F@@QAE@XZ	0x0041F56F	427	blocked	EH prolog vs vector allocator lea tradeoff 6 variants EHs gives prolog EHsc- loses lea NO_EXCEPTIONS no change needs shared delta t=25 model=muse-04
 ?rva0026D478@AIUpdateInterface@@UAEXXZ	0x0026D478	244	blocked	compile fails private Object members m_304 m_258 m_1C8 need public accessors t=5 model=muse-15
+??1ImageCollection@@UAE@XZ	0x002D9283	115	partial	no-home unnamed frees via mem not eax; xor-cmp vs test; vtable edx vs eax; push-eax vs push-imm; esi-edi swap t=20 model=map-iterator score=0.95 stash=reverse/attempts/0x002d9283.cpp
+?rva002D9C07@Rva002D9C07@@QAEEXZ	0x002D9C07	40	blocked	last branch je vs jne true-false placement; tried explicit ifs and DeMorgan and ternary; single-return closest t=15 model=muse-01 (stash 0.93 kept)
+?rva003ECFBC@Rva003ECFBC@@QAEXXZ	0x003ECFBC	236	blocked	partition query with 6plus callees needs Forward ABI plus BitFlags layout plus array trailing members t=20 model=muse-01
