@@ -7723,3 +7723,14 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1GameSpyGroupRoom@@QAE@XZ,0x0038240F,callee of ??A?$map@HVGameSpyGroupRoom@@ at retail 0x00385EA0 read from its REL32 displacement; body unrowed
 ?rva005AE26A@Rva005ADA40@@QAEXPAUCoord3D@@MH@Z,0x005AE26A,element placement (point then facing angle then int flag for not-first); REL32 at 0x005073C0 in Rva00506B74::rva0050722A
 ??0W3DDisplayString@@QAE@XZ,0x00106088,W3DDisplayString ctor (ghidra 203B: base DisplayString ctor 0x0035897D then vtable 0x00BCF900 and two Render2DSentenceClass ctors at +0x14/+0xD8); address read from the REL32 in W3DDisplayStringManager::newDisplayString at 0x00090619 after operator new(0x1F8)
+??0?$_Vector_base@PAURva00506909Item@@V?$allocator@PAURva00506909Item@@@_STL@@@_STL@@QAE@ABV?$allocator@PAURva00506909Item@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor; eight REL32s in the Rva00506909 ctor 0x00506909
+?rva00505924@Rva00506909@@AAEXXZ,0x00505924,second pass of Rva00506909::rva005069B4 (REL32 at 0x005069BE)
+?rva00505AF1@Rva00506909@@AAEXXZ,0x00505AF1,first pass of Rva00506909::rva005069B4 (REL32 at 0x005069B7); rowed under Rva00505AF1
+?rva00505E5D@Rva00506909@@AAEXXZ,0x00505E5D,first setup member called by the Rva00506909 ctor (REL32 at 0x00506989)
+?rva00505F80@Rva00506909@@AAEXXZ,0x00505F80,second setup member called by the Rva00506909 ctor (REL32 at 0x00506990)
+?rva00505FD0@Rva00506909@@AAEXXZ,0x00505FD0,third setup member called by the Rva00506909 ctor (REL32 at 0x00506997)
+?rva00506020@Rva00506909@@AAEXXZ,0x00506020,fourth setup member called by the Rva00506909 ctor (REL32 at 0x0050699E)
+?rva00506178@Rva00506909@@AAE_NPAURva00506909Request@@PAX@Z,0x00506178,kind 0 and 2 handler of Rva00506909::rva005069CE (REL32 at 0x00506A04)
+?rva00506265@Rva00506909@@AAE_NPAURva00506909Request@@PAX@Z,0x00506265,kind 1 handler of Rva00506909::rva005069CE (REL32 at 0x005069F8)
+?rva0050633B@Rva00506909@@AAE_NPAURva00506909Request@@PAX@Z,0x0050633B,kind 3 handler of Rva00506909::rva005069CE (REL32 at 0x005069EC)
+?rva00506411@Rva00506909@@AAEXPAX@Z,0x00506411,owner pass of Rva00506909::rva005069B4 (REL32 at 0x005069C7)
