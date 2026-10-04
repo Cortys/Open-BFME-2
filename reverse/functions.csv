@@ -51349,3 +51349,8 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva00505408@Rva0050542B@@QAEPAVRva002C589B@@H@Z,,0x00505408,35,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,entry with +0x38 id; tail-jumped from 0x002C5FC1
 ??0Rva0050542B@@QAE@PAX@Z,,0x0050542B,111,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,ctor: owner plus two pointer vectors plus a new 0x18-byte Rva005A9562 for the owner; newed at 0x002C6144
 ??1Rva0050542B@@QAE@XZ,,0x0050549A,170,Code/GameEngine/Source/Common/Rva0050542BTacticalSet.cpp,matched,dtor: delete the Rva005A9562 and every entry then clear both vectors; callers 0x002C5F91 and 0x002C61D5
+??_GRva003A538E@@UAEPAXI@Z,,0x003A53A7,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva005C1860@@UAEPAXI@Z,,0x005C1879,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva000421C8@@UAEPAXI@Z,,0x000421D5,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva0007DF07@@UAEPAXI@Z,,0x0007E5EE,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
+??_GRva0030D346@@UAEPAXI@Z,,0x0030D35A,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)

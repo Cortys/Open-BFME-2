@@ -12,7 +12,6 @@
 
 struct RvaSmallVtableZeroBase
 {
-	virtual ~RvaSmallVtableZeroBase() {}
 	void *m_04;
 	RvaSmallVtableZeroBase() : m_04(0) {}
 };
