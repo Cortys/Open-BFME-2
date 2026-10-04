@@ -7321,3 +7321,10 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva0073A9B0@BfmeThingCDE@@QAE_NMMM@Z	0x0073A9B0	266	blocked	x87 floor-ceil-fistp ordering mismatch plus 12-vs-16B BfmeArgXO push shape t=18 model=muse-spark
 ?rva0073A4A0@BfmeThingCDE@@QAE_NMMMMM@Z	0x0073A4A0	421	blocked	rotated-ellipse shroud add with Cos Sin ceil elementAtByCoord plus 4 globals needs full x87 recon t=12 model=muse-spark
 ?getShroudedStatus@PartitionData@@QAE?AW4ObjectShroudStatus@@H@Z	0x0073A6D0	392	partial	switch-kind dec-chain matches push-mov order remains t=12 model=muse-spark score=0.95 stash=reverse/attempts/0x0073a6d0.cpp
+?rva003B84C9@BfmeOwnerZK@@QAEXPAXPAXPAX@Z	0x003B84C9	141	blocked	STL deque EH mix BfmeWordValue4 ctor with voidptr push plus OpaqueRef back plus unclear 3-arg types t=12 model=muse-03
+?rva002B3484@Rva002B3484@@QAE_NPAUArg24@@@Z	0x002B3484	97	partial	esi-edi swapped throughout early je-vs-jne layout q in esi-vs-edx sete-vs-mov-al-1 t=20 model=muse-03 score=0.9 stash=reverse/attempts/0x002b3484.cpp
+?Rva002B3E7ECheck@@YIEPAX@Z	0x002B3E7E	88	partial	mov esi eax vs mov esi ecx plus and al vs and eax plus return-block layout t=18 model=muse-03 score=0.93 stash=reverse/attempts/0x002b3e7e.cpp
+?rva002B3416@Rva002B3416@@QAEEPAX@Z	0x002B3416	110	partial	ecx vs edx for plus0x1C load plus jne vs je head layout plus 108 vs 110 t=22 model=muse-03 score=0.95 stash=reverse/attempts/0x002b3416.cpp
+?rva005EC1A4@Rva005EC1A4@@QAE_NXZ	0x005EC1A4	121	blocked	state dispatch layout inverted with missing esi reload and wrong state constants 1-vs-2 t=5 model=muse-03
+?rva002B3484@Rva002B3484@@QAE_NPAUArg24@@@Z	0x002B3484	97	partial	esi-edi fixed via direct-arg locals early je-vs-jne layout q in mem-vs-edx sete-vs-mov-al-1 t=25 model=muse-03 score=0.92 stash=reverse/attempts/0x002b3484.cpp
+?rva002B3416@Rva002B3416@@QAEEPAX@Z	0x002B3416	110	partial	ecx vs edx for plus0x1C load plus 108 vs 110 t=25 model=muse-03 score=0.97 stash=reverse/attempts/0x002b3416.cpp
