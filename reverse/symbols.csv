@@ -7537,3 +7537,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0BFMENetworkQueue1@@QAE@XZ,0x00558D56,callee of ??0BFMENetwork@@QAE@XZ at retail 0x00558EC1 read from its REL32 displacement; ICF alias onto ??0Rva00558D56@@QAE@XZ (matched)
 ??0BFMENetworkState@@QAE@XZ,0x00007850,callee of ??0BFMENetwork@@QAE@XZ at retail 0x00558EC1 read from its REL32 displacement; ICF alias onto ??0?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ (matched)
 ??0BFMENetworkPayloadList@@QAE@XZ,0x00558D6B,callee of ??0BFMENetwork@@QAE@XZ at retail 0x00558EC1 read from its REL32 displacement; body unrowed
+?loadDockPositions@DockUpdate@@IAEXXZ,0x005897FB,callee of ?advanceApproachPosition@DockUpdate@@UAE_NPAVObject@@PAUCoor at retail 0x00589D3E read from its REL32 displacement; body unrowed
+?computeApproachPosition@DockUpdate@@IAE?AUCoord3D@@HPAVObject@@@Z,0x00589B7D,callee of ?advanceApproachPosition@DockUpdate@@UAE_NPAVObject@@PAUCoor at retail 0x00589D3E read from its REL32 displacement; body unrowed
