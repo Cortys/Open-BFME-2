@@ -18,8 +18,8 @@ extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 
-extern unsigned char g_bfmeAptGCAllocModeAtE177E0;
-// g_bfmeAptGCAllocModeAtE177E0: the mode byte read at VA 0xe177e0 (zero-filled .bss).
+unsigned char g_00E177E0;
+// g_00E177E0: the mode byte read at VA 0xe177e0 (zero-filled .bss).
 
 class Rva006DB160
 {
@@ -114,13 +114,13 @@ void Rva006D2A60::rva006D28D0(int mode, bool value)
 void *Rva006D2A60::allocBlock(int nBytes)
 {
 	Rva006D2A60 *p = (Rva006D2A60 *)Rva006DB160::allocBlock(nBytes);
-	p->rva006D28D0(g_bfmeAptGCAllocModeAtE177E0, false);
+	p->rva006D28D0(g_00E177E0, false);
 	if (!(p->mValueBitfield.mbIsAllocated == false)) {
 		g_bfmeAptAssertAtE17734("pValue->mValueBitfield.mbIsAllocated == false",
 			"C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptValueGCAllocator.cpp", 0x6F);
 		if (g_bfmeAptBreakOnAssertAtDDC01C) { __asm int 3 }
 	}
-	p->rva006D28D0(g_bfmeAptGCAllocModeAtE177E0, true);
+	p->rva006D28D0(g_00E177E0, true);
 	if (!(p->mValueBitfield.mbIsAllocated == true)) {
 		g_bfmeAptAssertAtE17734("pValue->mValueBitfield.mbIsAllocated == true",
 			"C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptValueGCAllocator.cpp", 0x73);
