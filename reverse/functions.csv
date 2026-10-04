@@ -52087,3 +52087,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??1Rva004EDCE9@@UAE@XZ,,0x004EDCE9,100,Code/GameEngine/Source/Common/Rva004EDCE9Dtor.cpp,matched,vtable 0x008629E4 stop 0x004ED748 AsciiString+0x2C frees+0x14+0x4 tail-called by 4 derived
 ??_GRva004EDCE9@@UAEPAXI@Z,,0x004EDEE7,28,Code/GameEngine/Source/Common/Rva004EDCE9Dtor.cpp,matched,deleting dtor tail of 0x004EDCE9 via same TU
 ?rva004EDA60@Rva004ECECD@@QAEXXZ,,0x004EDA60,44,Code/GameEngine/Source/Common/Rva004EDA60Method.cpp,matched,AITactic guard m50 m20 rva004ED372 rva004ED748 caller 0x004EDDCC
+?rva004ED69B@Rva004ED471@@QAEXPBVModelNodeClass@HLodClass@@@Z,,0x004ED69B,55,Code/Libraries/Source/WWVegas/WW3D2/Rva004ED69BPushBack.cpp,matched,HLod push_back Assign Finish callers 0x004ED6F8 0x004EDBD2
