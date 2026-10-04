@@ -20,16 +20,29 @@
 // Elements of the four vectors at +0x10/+0x28/+0x40/+0x58: each gets
 // 0x004EDF03 then 0x004ECE1C from the 0x00505924 pass (both in the
 // AITactic.cpp range).
+struct Rva00506909Request;
+
 struct Rva00506909Item
 {
 	void rva004EDF03();
 	void rva004ECE1C();
+	void rva004ED81D(Rva00506909Request *request, void *arg);
 };
 
 // The five objects 0x00505E5D seeds +0x04 with when empty, in order; the
 // vector holds them through one base pointer.
+// Generators: slot 1 asks whether one applies to a request (with the
+// request's argument parked at +0x24 for the call) and slot 9 builds the
+// item it stands for.
 struct Rva00506909Gen
 {
+	virtual void v0();
+	virtual bool appliesTo(Rva00506909Request *request);
+	virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual Rva00506909Item *create();
+	unsigned char m_pad04[0x24 - 4];
+	void *m_arg;	// +0x24
 };
 
 #define RVA00506909_GEN(name, size) \
@@ -38,7 +51,7 @@ struct Rva00506909Gen
 	public: \
 		name(); \
 	private: \
-		unsigned char m_data[size]; \
+		unsigned char m_data[size - sizeof(Rva00506909Gen)]; \
 	};
 
 RVA00506909_GEN(Rva005AA6B4, 0x58)
@@ -56,21 +69,8 @@ RVA00506909_GEN(Rva005AB1B4, 0x58)
 RVA00506909_GEN(Rva005AABC6, 0x5C)
 
 // What 0x00505F80 and 0x00505FD0 seed +0x1C and +0x34 with when empty.
-class Rva005AA7DF
-{
-public:
-	Rva005AA7DF();
-private:
-	unsigned char m_data[0x58];
-};
-
-class Rva005AA9DB
-{
-public:
-	Rva005AA9DB();
-private:
-	unsigned char m_data[0x60];
-};
+RVA00506909_GEN(Rva005AA7DF, 0x58)
+RVA00506909_GEN(Rva005AA9DB, 0x60)
 
 struct Rva00506909Request
 {
@@ -99,9 +99,9 @@ private:
 	void *m_owner;					// +0x00
 	_STL::vector<Rva00506909Gen *> m_04;
 	_STL::vector<Rva00506909Item *> m_10;
-	_STL::vector<Rva005AA7DF *> m_1C;
+	_STL::vector<Rva00506909Gen *> m_1C;
 	_STL::vector<Rva00506909Item *> m_28;
-	_STL::vector<Rva005AA9DB *> m_34;
+	_STL::vector<Rva00506909Gen *> m_34;
 	_STL::vector<Rva00506909Item *> m_40;
 	_STL::vector<Rva00506909Gen *> m_4C;
 	_STL::vector<Rva00506909Item *> m_58;
@@ -195,4 +195,79 @@ void Rva00506909::rva00506020()
 		m_4C.push_back(new Rva005AB1B4);
 		m_4C.push_back(new Rva005AABC6);
 	}
+}
+
+// 0x00506178 / 0x00506265 / 0x0050633B: let one applicable generator of the
+// pool at +0x04 / +0x1C / +0x34, chosen at random, add its item to
+// +0x10 / +0x28 / +0x40. The first also needs the 0x0058AEB6 object to
+// accept the argument.
+int Rva0058AEB6Get();
+int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
+
+class Rva0058AFB3
+{
+public:
+	bool rva0058AFB3(void *arg);
+};
+
+bool Rva00506909::rva00506178(Rva00506909Request *request, void *arg)
+{
+	if (((Rva0058AFB3 *)Rva0058AEB6Get())->rva0058AFB3(arg)) {
+		_STL::vector<Rva00506909Gen *> candidates;
+		for (Rva00506909Gen **it = m_04.begin(); it != m_04.end(); ++it) {
+			Rva00506909Gen *gen = *it;
+			gen->m_arg = arg;
+			if (gen->appliesTo(request))
+				candidates.push_back(gen);
+			gen->m_arg = 0;
+		}
+		if (!candidates.empty()) {
+			int pick = GetGameLogicRandomValue(0, candidates.size() - 1, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\AITacticsGenerator.cpp", 326);
+			Rva00506909Item *item = candidates[pick]->create();
+			item->rva004ED81D(request, arg);
+			m_10.push_back(item);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Rva00506909::rva00506265(Rva00506909Request *request, void *arg)
+{
+	_STL::vector<Rva00506909Gen *> candidates;
+	for (Rva00506909Gen **it = m_1C.begin(); it != m_1C.end(); ++it) {
+		Rva00506909Gen *gen = *it;
+		gen->m_arg = arg;
+		if (gen->appliesTo(request))
+			candidates.push_back(gen);
+		gen->m_arg = 0;
+	}
+	if (!candidates.empty()) {
+		int pick = GetGameLogicRandomValue(0, candidates.size() - 1, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\AITacticsGenerator.cpp", 357);
+		Rva00506909Item *item = candidates[pick]->create();
+		item->rva004ED81D(request, arg);
+		m_28.push_back(item);
+		return true;
+	}
+	return false;
+}
+
+bool Rva00506909::rva0050633B(Rva00506909Request *request, void *arg)
+{
+	_STL::vector<Rva00506909Gen *> candidates;
+	for (Rva00506909Gen **it = m_34.begin(); it != m_34.end(); ++it) {
+		Rva00506909Gen *gen = *it;
+		gen->m_arg = arg;
+		if (gen->appliesTo(request))
+			candidates.push_back(gen);
+		gen->m_arg = 0;
+	}
+	if (!candidates.empty()) {
+		int pick = GetGameLogicRandomValue(0, candidates.size() - 1, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\AITacticsGenerator.cpp", 388);
+		Rva00506909Item *item = candidates[pick]->create();
+		item->rva004ED81D(request, arg);
+		m_40.push_back(item);
+		return true;
+	}
+	return false;
 }
