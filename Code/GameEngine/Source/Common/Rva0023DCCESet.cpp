@@ -3,13 +3,14 @@
 // Conditional copy-or-clear: if arg string empty or global flag [0x009FE758]+0x9AD set,
 // release AsciiString member +0x84 and clear two OpaqueRef members +0x88/+0x8c, flag +0x72=0;
 // else copy all three args and set flag=1.
-// Evidence: retail branch bytes; callees rowed/pinned (isEmpty 0x1E2F, AsciiString::op= 0x366F0,
+// Evidence: retail branch bytes; callees rowed (isEmpty 0x1E2F, StringBase set 0x366F0,
 // OpaqueRef op= 0x239099, releaseBuffer 0x36410, clear 0xA8C9B); callers at 0x1EB5A3 0x21258A 0x242953 0x2B3739 0x515598.
 
 template <typename T> class StringBase
 {
 public:
 	bool isEmpty() const;
+	void set(const StringBase<T> &other);
 private:
 	void releaseBuffer();
 	T *m_data;
@@ -18,8 +19,6 @@ private:
 
 class AsciiString : public StringBase<char>
 {
-public:
-	AsciiString &operator=(const AsciiString &other);
 };
 
 struct OpaqueRefElement4
@@ -34,12 +33,13 @@ struct Rva000A8C9B
 	void clear();
 };
 
-struct Rva0023DCCEGlobal
+class GlobalData
 {
-	char m_00[0x9AD];
-	unsigned char m_flag;
+public:
+	char m_pad[0x9AD];
+	unsigned char m_flag9AD;
 };
-extern Rva0023DCCEGlobal *g_Rva0023DCCEGlobal;
+extern GlobalData *TheWritableGlobalData;
 
 class Rva0023DCCE
 {
@@ -55,7 +55,7 @@ public:
 
 void Rva0023DCCE::rva0023DCCE(const AsciiString &a, const OpaqueRefElement4 &b, const OpaqueRefElement4 &c)
 {
-	if (a.isEmpty() || g_Rva0023DCCEGlobal->m_flag)
+	if (a.isEmpty() || TheWritableGlobalData->m_flag9AD)
 	{
 		m_flag = 0;
 		((StringBase<char> *)&m_str)->releaseBuffer();
@@ -65,10 +65,9 @@ void Rva0023DCCE::rva0023DCCE(const AsciiString &a, const OpaqueRefElement4 &b, 
 	else
 	{
 		m_flag = 1;
-		m_str = a;
+		((StringBase<char> *)&m_str)->set(a);
 		m_a = b;
 		m_b = c;
 	}
 }
-// ?g_Rva0023DCCEGlobal@@3PAURva0023DCCEGlobal@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
-#pragma comment(linker, "/alternatename:?g_Rva0023DCCEGlobal@@3PAURva0023DCCEGlobal@@A=?TheGlobalData@@3PAVGlobalData@@A")
+// ?TheWritableGlobalData@@3PAVGlobalData@@A: the global at VA 0xdfe758.
