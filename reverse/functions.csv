@@ -51990,3 +51990,6 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?bfmeBitA@Gen_0074BB30@@QBE_NHH@Z,,0x000AE1DC,88,Code/GameEngine/Source/Common/BfmeBitPlaneQueries.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?bfmeBitA@Gen_0074B410@@QBE_NHH@Z,,0x000ADF41,79,Code/GameEngine/Source/Common/BfmeBitPlaneQueries.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?bfmeBitA@Gen_0074BA50@@QBE_NHH@Z,,0x000AE13E,79,Code/GameEngine/Source/Common/BfmeBitPlaneQueries.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?rva004848E6@PassiveAreaEffectBehavior@@UAEXPAVObject@@@Z,,0x004848E6,40,Code/GameEngine/Source/GameLogic/Object/Behavior/PassiveAreaEffectBehaviorPulse.cpp,matched,PassiveAreaEffectBehavior primary vtable 0x00C4A448 pulse slot
+?rva0048491F@PassiveAreaEffectBehavior@@UAEXPAVObject@@@Z,,0x0048491F,233,Code/GameEngine/Source/GameLogic/Object/Behavior/PassiveAreaEffectBehaviorPulse.cpp,matched,PassiveAreaEffectBehavior primary vtable 0x00C4A448 pulse slot
+?rva00484A08@PassiveAreaEffectBehavior@@UAEXPAVObject@@@Z,,0x00484A08,95,Code/GameEngine/Source/GameLogic/Object/Behavior/PassiveAreaEffectBehaviorPulse.cpp,matched,PassiveAreaEffectBehavior primary vtable 0x00C4A448 pulse slot

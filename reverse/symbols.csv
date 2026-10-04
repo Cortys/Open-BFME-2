@@ -8194,3 +8194,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva004ED6D2@Rva004ECECD@@QAEXPAVTeam@@@Z,0x004ED6D2,"AITactic: take the team; REL32 in StructureCreep slot 6 0x005ABAF6 (same address the Rva00506909Item spelling pins)"
 ?rva005996FF@Rva00599825@@QAEXPAVObject@@_N@Z,0x005996FF,"owner-record +0x140 object list: drop the object (the matched ?rva005996FF@Rva005996FF row); REL32 in StructureCreep slot 6 0x005ABAF6"
 ?g_00DBC1B8TacticTypeNames@@3PAPBDA,0x00DBC1B8,"skirmish-AI tactic type name table (TARGETLESS, EXPANSION, OPPORTUN...); StructureCreep slot 6 0x005ABAF6 pushes entry 0 into its team name"
+?rva0028EA91@Object@@QAE_NABVAsciiString@@H@Z,0x0028EA91,thiscall on Object taking a pointer to a one-pointer element (its buffer word at +4 tested against 1) plus an int; PassiveAreaEffectBehavior 0x00484A08 calls it with -1 for each entry of the module data's AsciiString vector at +0x14; bool in al; identity not recovered
