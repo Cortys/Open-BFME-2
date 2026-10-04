@@ -1,5 +1,3 @@
-// ?onEnter@Rva00544884@@UAE?AW4StateReturnType@@XZ
-// partial score=0.93 date=2026-10-03
 // cl: /O1 /MD
 // ?onEnter@Rva00544884@@UAE?AW4StateReturnType@@XZ, retail 0x0054467A, 141 bytes.
 // Virtual slot 4 (offset 0x10, onEnter) of vtable 0x00869C30, class of ??0Rva00544884@@QAE@PAVStateMachine@@@Z.
@@ -126,12 +124,13 @@ extern unsigned char g_00E03745;
 extern "C" void *theLogicRandomLogFile;
 extern "C" int __cdecl fprintf(void *stream, const char *format, ...);
 
-// ?onEnter@Rva00544884@@UAE?AW4StateReturnType@@XZ present-unmatched
 StateReturnType Rva00544884::onEnter()
 {
 	Object *goal = ((TurretStateMachine *)m_machine)->getGoalObject();
-	BfmeGotBEC *bec;
-	if (goal == 0 || (bec = ((BfmeSubBEC *)goal)->bfmeFindBEC()) == 0)
+	BfmeGotBEC *bec = 0;
+	if (goal != 0)
+		bec = ((BfmeSubBEC *)goal)->bfmeFindBEC();
+	if (bec == 0)
 		return STATE_FAILURE;
 	bec->v07(m_machine->getOwner(), &m_goalPosition);
 	AIUpdateInterface *ai = m_machine->getOwner()->m_ai;
