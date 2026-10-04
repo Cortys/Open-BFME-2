@@ -51562,3 +51562,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??1Rva004D99FF@@QAE@XZ,,0x004D99FF,54,Code/GameEngine/Source/Common/Rva004D99FFDtor.cpp,matched,dtor releases AsciiStrings at 0x18 and 0x1C via releaseBuffer
 ?rva005963C8@Rva00596389@@QAEXH@Z,,0x005963C8,40,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,chain from 0x003B0D7C via caller 0x0055ADE2 neighbours prove Rva00596389 owner
 ?rva004A8DDE@DelayedLuaEventList@@QAEAAV1@ABV1@@Z,,0x004A8DDE,44,Code/GameEngine/Source/GameLogic/ScriptEngine/DelayedLuaEventListCopy.cpp,matched,unlock lane copy 3x0x18 via rowed Rva0028BC20 copy ctor explicit call check-free
+?rva004A8F0B@DelayedLuaEventUpdate@@QAEXIABVDelayedLuaEventList@@W4UpdateSleepTime@@M_N2@Z,,0x004A8F0B,71,Code/GameEngine/Source/GameLogic/Object/Update/DelayedLuaEventUpdateInit.cpp,matched,chain lane init 6 args via landed copy and setWakeFrame clamp
