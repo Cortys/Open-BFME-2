@@ -51938,3 +51938,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0Rva0060453B@@QAE@XZ,,0x0060453B,55,Code/GameEngine/Source/Common/Rva0060453BCtor.cpp,matched,caller 0x00600723 new 0x10 stores to G00A06E54 base init and map rowed
 ??0Rva0060426C@@QAE@ABV0@@Z,,0x0060426C,29,Code/GameEngine/Source/Common/Rva0060426CCopy.cpp,matched,copy ctor dword plus map via rowed Rb_tree copy callers 0x00604289 0x006045A2
 ?Rva00600E3AGet@@YG_NPBD0@Z,,0x00600E3A,289,Code/GameEngine/Source/GameClient/GUI/FileSystemRva00600E3A.cpp,matched,FileSystem 2-arg existence via gate archive lang English local
+?Rva00600665Set@@YAXPAD@Z,,0x00600665,17,Code/GameEngine/Source/Common/Rva00600665Set.cpp,matched,free cdecl copy to g_00DD509C via _mbscpy sibling Rva00600777
