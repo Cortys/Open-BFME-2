@@ -25,6 +25,12 @@
 
 AsciiString AIReturnTheRingTactic_IsRunning("AIReturnTheRingTactic_IsRunning");
 
+extern int g_009BA4E8;
+
+// Half of g_009BA4E8, computed at startup (0x007B457D); no retail code reads
+// it back.
+int g_00E06414 = g_009BA4E8 / 2;
+
 struct Coord3DBase
 {
 	float x;

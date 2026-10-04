@@ -23,6 +23,30 @@
 
 AsciiString AIBasePenetrationTroopsTactic_IsRunning("AIBasePenetrationTroopsTactic_IsRunning");
 
+// The engine's float helpers (fast_float_floor / fast_float2long_round).
+extern "C" __declspec(dllimport) double __cdecl floor(double);
+
+static __forceinline float fast_floor(float f)
+{
+	return (float)floor((double)f);
+}
+
+static __forceinline int fast_round(float f)
+{
+	int i;
+	__asm {
+		fld [f]
+		fistp [i]
+	}
+	return i;
+}
+
+extern float g_secondsPerLogicFrame;
+
+// A frame count this unit computes at startup (0x007B44AE); no retail code
+// reads it back.
+int g_00E06408 = fast_round(fast_floor(g_secondsPerLogicFrame * 20.0f));
+
 struct Rva005A990BRecord
 {
 	char m_pad00[0x0C];

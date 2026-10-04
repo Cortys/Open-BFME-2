@@ -51703,3 +51703,5 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??__Eg_00E0641C@@YAXXZ,,0x007B45A8,25,Code/GameEngine/Source/Common/Rva005AB7E5Tactic.cpp,matched,object-symbol=_$E4;TU-local dynamic initializer: 0x00E0641C = g_Va00DBA4E4 * 30.0f (/arch:SSE cvtsi2ss)
 ??__Eg_00E06420@@YAXXZ,,0x007B45C1,13,Code/GameEngine/Source/Common/Rva005AB7E5Tactic.cpp,matched,object-symbol=_$E6;TU-local dynamic initializer: 0x00E06420 = g_Va00DBA4E4 * 2
 ??__Eg_00E06428@@YAXXZ,,0x007B45D9,14,Code/GameEngine/Source/Common/Rva005AB7E5Tactic.cpp,matched,object-symbol=_$E10;TU-local dynamic initializer: 0x00E06428 = g_Va00DBA4E4 * 5 (/G7 imul)
+??__Eg_00E06408@@YAXXZ,,0x007B44AE,49,Code/GameEngine/Source/Common/Rva005A990BTactic.cpp,matched,object-symbol=_$E4;TU-local dynamic initializer: 0x00E06408 = fast_float2long_round(fast_float_floor(g_secondsPerLogicFrame * 20.0f)) via the msvcr71 floor import
+??__Eg_00E06414@@YAXXZ,,0x007B457D,16,Code/GameEngine/Source/Common/Rva005AB309Tactic.cpp,matched,object-symbol=_$E4;TU-local dynamic initializer: 0x00E06414 = g_009BA4E8 / 2
