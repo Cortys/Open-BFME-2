@@ -51506,3 +51506,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?copyValue@Rva0035EFC0Owner@@QAE?AURva0035EFC0Value@@XZ,,0x0054293F,20,Code/GameEngine/Source/Common/Bfme/Rva0035EFC0ValueCopy.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?eq@Rva0026A910@@QBE_NH@Z,,0x0058911A,20,Code/GameEngine/Source/Common/Rva0026A910Eq.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?bfmeGoDAB@@YAXXZ,,0x007B7ACD,20,Code/GameEngine/Source/Common/BfmeConv667.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?xfer@CommandButtonHuntUpdate@@MAEXPAVXfer@@@Z,,0x004953EE,155,Code/GameEngine/Source/GameLogic/Object/Update/CommandButtonHuntUpdateXfer.cpp,matched,ZH CommandButtonHuntUpdate::xfer in BFME2 Xfer spelling; name +0x20 button +0x24; 32 buttons per command set
