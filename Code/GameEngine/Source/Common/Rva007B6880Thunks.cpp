@@ -2031,3 +2031,23 @@ void __cdecl rva007B75E2()
 	return p->BfmeDualVtableReleaseDtor::~BfmeDualVtableReleaseDtor();
 }
 
+namespace _STL
+{
+template <typename T, typename A>
+class vector
+{
+public:
+	~vector();
+};
+}
+
+extern unsigned g_00DFE174;
+// g_00DFE174: packet annotates VA 0x009FE174 (data), no name yet.
+
+// ?rva007B75F6@@YAXXZ @ 0x007B75F6 (10B). Global vector<AsciiString> dtor thunk: ecx=&g_00DFE174 then tail-jmp to rowed ??1?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAE@XZ (0x0002CC70). No callers. Between 0x007B75EC and 0x007B7600. Honest address name.
+void __cdecl rva007B75F6()
+{
+	_STL::vector<AsciiString, _STL::allocator<AsciiString> > *p = (_STL::vector<AsciiString, _STL::allocator<AsciiString> > *)&g_00DFE174;
+	return p->_STL::vector<AsciiString, _STL::allocator<AsciiString> >::~vector();
+}
+
