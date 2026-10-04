@@ -1,5 +1,5 @@
 // ?rva003FAAA1@Rva003FAAA1@@QAE_NPAX@Z
-// partial score=0.95 date=2026-10-03
+// partial score=0.97 date=2026-10-04
 // cl: /O1 /arch:SSE /MD
 // ?rva003FAAA1@Rva003FAAA1@@QAE_NPAX@Z @0x003FAAA1, 236B.
 // Overlap test via rowed Region3D copy 0x0009AC04 LineSeg ctor 0x000927F9 and Overlap_Test 0x00723870.
@@ -122,5 +122,7 @@ bool Rva003FAAA1::rva003FAAA1(void *arg)
 	p1.Y = v1.Y;
 	p1.Z = v1.Z;
 	LineSegClass seg(p0, p1);
-	return CollisionMath::Overlap_Test(box, seg) != 1;
+	if (CollisionMath::Overlap_Test(box, seg) == 1)
+		return false;
+	return true;
 }
