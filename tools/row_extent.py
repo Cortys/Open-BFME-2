@@ -12,8 +12,9 @@ trailing int3 padding) and refuses a row shorter than that.
     row_extent.py --staged   rows the staged functions.csv adds or changes
     row_extent.py --audit    every matched row whose object is already built
 Objects come from the build cache; run after the byte verification that
-built them. A row whose object or symbol is unavailable is skipped, since
-verification already fails it.
+built them. A row whose object is missing or not current for its source, or
+whose symbol is unavailable, is skipped (an --audit over stale objects once
+flagged two rows whose source had since changed).
 """
 import argparse
 import csv
@@ -71,6 +72,9 @@ def checked(row):
     output = build.row_object(row)
     if not output.exists():
         return None
+    import link_census
+    if not link_census.object_current(ROOT / source, output):
+        return None  # a cached object from older source: its length is not this row's
     length = natural_length(output, symbol)
     if length is None:
         return None
