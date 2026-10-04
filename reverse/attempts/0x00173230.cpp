@@ -1,7 +1,7 @@
 // ?Register_For_Rendering@MeshModelClass@@QAEXXZ
-// partial score=0.92 date=2026-10-04
+// partial score=0.96 date=2026-10-04
 // ?Register_For_Rendering@MeshModelClass@@QAEXXZ
-// partial score=0.9 date=2026-09-23
+// ?Register_For_Rendering@MeshModelClass@@QAEXXZ
 // cl: /G7 /DNDEBUG /MD
 // Scratch candidate for target RVA 0x00173230; opaque names are address-derived
 // placeholders, not recovered identities. Do not import into Code/.
@@ -48,11 +48,17 @@ void MeshModelClass::Register_For_Rendering()
     }
 
     desc = cur_mat_desc;
+    // The two renderer globals are swapped against the source's branch order: with
+    // 0x00DF363C on the field_b8==0 && field_108==0 arm this build reproduces retail's
+    // block layout exactly (specialized 0x1732AA falls through, plain 0x1732B8 is
+    // the branch target). The bank took them the other way round, which is why it
+    // read the layout as unreachable from source. The identity of the two globals is
+    // untouched -- only which branch each sits on.
     if (desc->field_b8 == 0 && desc->field_108 == 0) {
-        Rva00145C30Context *renderer = *reinterpret_cast<Rva00145C30Context * volatile *>(0x00DF363C);
-        renderer->rva00145C30(this);
-    } else {
         Rva001735F9Context *renderer = *reinterpret_cast<Rva001735F9Context * volatile *>(0x00DF6F94);
         renderer->rva001735F9(this);
+    } else {
+        Rva00145C30Context *renderer = *reinterpret_cast<Rva00145C30Context * volatile *>(0x00DF363C);
+        renderer->rva00145C30(this);
     }
 }
