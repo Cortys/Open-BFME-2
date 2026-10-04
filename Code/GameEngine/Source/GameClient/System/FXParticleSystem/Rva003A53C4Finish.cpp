@@ -1,8 +1,13 @@
 // cl: /O1 /GX- /arch:SSE2 /DNDEBUG /MD /Ireference/shims/moduledata
 // ??0WindModuleInfo@FXParticleSystem@@QAE@XZ @0x003A53C4 186B: WindModuleInfo
 // default ctor. Vtable 0x00BE15A4; +0x04 int 1; the ten float slots and the
-// +0x3C bool and the two trailing zero floats are all constants, read from
-// .rdata globals rather than materialised.
+// +0x3C bool and the two trailing zero floats are initialized in retail order.
+// Float loads use .rdata constants and two distinct writable .data globals.
+// Target .data: 0x00E02904 starts at 0.0f; 0x00DC0A9C starts at 5.4977874756f.
+// Each has only this constructor as a direct code reference. Names below are
+// address-derived; their original identities remain unknown. The readable
+// floats and initial values come from movss loads and the loaded PE data,
+// not from the earlier kG7 initializer (which incorrectly merged three sites).
 //
 // The recovered shape, and why it is this shape: retail is a strictly
 // alternating load/store sequence -- every `movss xmm,[global]` is immediately
@@ -21,6 +26,9 @@
 // One `xorps xmm0,xmm0` supplies all four zeros (+0x14, +0x28, +0x40, +0x44);
 // xmm0 carries the first three globals and xmm1 the rest. That split falls out
 // of the assignment order rather than being requested.
+extern "C" const void *const vtbl_00BE15A4[];  // ??_7WindModuleInfo@FXParticleSystem@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BE15A4=??_7WindModuleInfo@FXParticleSystem@@6B@")
+
 #include "Common/Snapshot.h"
 
 namespace FXParticleSystem {
@@ -39,14 +47,16 @@ extern "C" const float kG3; const float kG3 = 200.0;
 extern "C" const float kG4; const float kG4 = 0.15;
 extern "C" const float kG5; const float kG5 = 0.45;
 extern "C" const float kG6; const float kG6 = 0.78539818525314331;
-extern "C" const float kG7; const float kG7 = 5.4977874755859375;
+extern "C" float windDefault_00E02904;
+float windDefault_00E02904 = 0.0f;
 extern "C" const float kG8; const float kG8 = 5.4977874755859375;
 extern "C" const float kG9; const float kG9 = 6.2831854820251465;
-extern "C" const float kGA; const float kGA = 5.4977874755859375;
+extern "C" float windDefault_00DC0A9C;
+float windDefault_00DC0A9C = 5.4977874755859375f;
 
 WindModuleInfo::WindModuleInfo()
 {
-	*(unsigned int *)this = 0x00BE15A4;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BE15A4);
 	m04 = 1;
 	m08 = kG1;
 	m0C = kG2;
@@ -57,10 +67,10 @@ WindModuleInfo::WindModuleInfo()
 	m20 = kG5;
 	m28 = 0.0f;
 	m2C = kG6;
-	m24 = kG7;
+	m24 = windDefault_00E02904;
 	m34 = kG8;
 	m38 = kG9;
-	m30 = kGA;
+	m30 = windDefault_00DC0A9C;
 	m3C = true;
 	m40 = 0.0f;
 	m44 = 0.0f;
