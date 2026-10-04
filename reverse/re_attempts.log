@@ -7419,3 +7419,5 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva004ED955@Rva00506909Item@@QAEXPAX@Z	0x004ED955	267	blocked	complex EH virtuals need full layout t=12 model=muse-05
 ?rva007B6A50@@YAXXZ	0x007B6A50	10	blocked	static S_uninitialize cannot take ecx in clean CXX t=10 model=muse-05
 ??1Rva0026E1A6@@QAE@XZ	0x0026E1A6	56	blocked	duplicate Rb_tree dtor rowed at 0x004FF5F3 with different clear callee plus wrapper POD lacks EH t=20 model=muse-10
+?rva005974CC@Rva0059734B@@UAEXPAVXfer@@PAX@Z	0x005974CC	244	partial	xor+cmp vs test lea hoist cmp ebx vs imm store branch inversion t=22 model=muse-04 score=0.93 stash=reverse/attempts/0x005974cc.cpp
+?rva00597E30@Rva00597E30@@QAEXXZ	0x00597E30	377	blocked	complex EH 377B needs full C-string at 0x870C30 packet truncates plus BfmeFixedStorage link helpers no donor t=12 model=muse-04
