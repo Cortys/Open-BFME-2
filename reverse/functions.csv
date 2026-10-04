@@ -52100,3 +52100,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva00577966@Rva00577936@@UAEXXZ,,0x00577966,8,Code/GameEngine/Source/Common/Rva000AD6F4Members.cpp,matched,leaf vslot2 wrapper readjusts this via plus4 forwards to rowed rva005C65F1
 ?Rva007B7090Set@@YAXXZ,,0x007B7090,11,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,gap global store g_00DB6200 g_00BD23B4 between 0x007B707A 0x007B70AB
 _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva0088E1A0ShowAssertCrashDialog.cpp,matched,gap body between watchdog 0x3D7E0 and dialog 0x3D880; inc timer global; stdcall ret16; b1 donor 0x0088E190
+?rva0049575A@Rva0049575A@@QAEXPBVAsciiString@@@Z,,0x0049575A,167,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049575A.cpp,matched,hunt update via ascii plus world lookup plus command buttons plus wake

@@ -7354,3 +7354,6 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?Rva00307EDCGet@@YA_NABVAsciiString@@AAV?$vector@DV?$allocator@D@_STL@@@_STL@@@Z	0x00307EDC	372	blocked	EH STL FileSystem openFile vector resize compression no donor File vtable 12 slots needs layout work t=12 model=muse-spark
 ?parse@DataChunkInput@@QAE_NPAX@Z	0x00307AC0	387	partial	retail cmove vs branch jne+mov for userData ternary t=20 model=muse-spark score=0.99 stash=reverse/attempts/0x00307ac0.cpp
 ?rva004ED6D2@Rva004ECECD@@QAEXPAVTeam@@@Z	0x004ED6D2	118	blocked	ebx-edi swap plus edx end-cache unproven duplicate Team-Unit pins t=20 model=muse-05
+?rva004C76AC@Rva004C76AC@@QAEHPAVVectorE8Range@@PBVPos@@@Z	0x004C76AC	136	blocked	EH_prolog scopetable 0x00790276 unclaimed plus Vector_base E16 vs Collect E8 type mismatch plus dead mov ecx esi for stdcall plus nested 10x loops t=12 model=muse-03
+?rva004C8095@Rva004C8095@@QAEXH@Z	0x004C8095	192	blocked	EH_prolog scopetable 0x007903AC unclaimed same wall as 0x004C76AC plus BfmeWideResult pin-only dtor plus 5-int forward plus OCL plus PartitionManager t=12 model=muse-03
+?rva000577E3@Rva000577E3@@QAEXIIE@Z	0x000577E3	208	blocked	STL hashtable begin plus Ht_iterator next need exact 200char GameWindow WindowVideo hash template args beyond 4-lookup budget plus second list loop plus pin-only soundclass t=10 model=muse-03
