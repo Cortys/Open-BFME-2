@@ -8228,3 +8228,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeTailDDA@BfmeSubDDA@@QAEHXZ,0x00271898,tail-jump target of the placed ?bfmeGoDDA 0x00272C74; REL32 read off retail at 0x00272C81
 ?bfmeAfterEOC@BfmeThingEOC@@QAEXXZ,0x0030D65B,member call target of the placed ?bfmeGoBTA 0x0030D6B1; REL32 read off retail at 0x0030D6BD
 ?bfmeSameSX@@YA_NABUBfmeInnerSX@@0@Z,0x00301B24,inner-compare helper called by the placed ?bfmeEqualSX 0x00301E3B; returns bool so the caller tests al; REL32 read off retail at 0x00301E69
+?bfmeErase@BfmeVecAG@@QAEXPAH@Z,0x001FF51F,inlined-vector erase called by the placed ?bfmeRemove@Gen_0039BE00 0x00421176; REL32 read off retail at 0x0042119D
+?bfmeCopyUVKE@BfmeUniVKE@@QAEXABV1@@Z,0x000365F0,element copy helper called by the placed ?bfmeInitVKE 0x000B6D4B; REL32 read off retail at 0x000B6D55
