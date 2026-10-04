@@ -8012,3 +8012,18 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?v3@Rva004ECECD@@UAE_NPAXH@Z,0x004ECE61,AITactic slot 3 (the default the tactic vtables share; rowed under the address name Rva004ECE61); REL32 at 0x005AAE2B in the AIRoamingDefenseTactic slot 3 qualified base call
 ?bfmeFind1038@@YGPAVBfmeY1038@@H@Z,0x0040D008,address read from the REL32 displacement at a placed body
 ?bfmeVal1038@BfmeY1038@@QAEHXZ,0x0040CF91,address read from the REL32 displacement at a placed body
+?unlink@Gen0035B3A0@@QAEXPAX@Z,0x003B4982,callee read from the retail REL32 in placed BFME1-donor body ?cleanup@Gen0035B3A0@@QAEXXZ (0x003B7362)
+?cleanup@NestedAt0C@@QAEXXZ,0x003B70CA,callee read from the retail REL32 in placed BFME1-donor body ?cleanup@Gen0035B3A0@@QAEXXZ (0x003B7362)
+?cleanup@NestedAt2C@@QAEXXZ,0x003B71E8,callee read from the retail REL32 in placed BFME1-donor body ?cleanup@Gen0035B3A0@@QAEXXZ (0x003B7362)
+?accepts@Rva2225E0Filter@@QAE_NPAVObject@@PAVPlayer@@@Z,0x00362437,callee read from the retail REL32 in placed BFME1-donor body ?check@Rva002CDBF0@@QAE_NPAVObject@@@Z (0x004A1475)
+?bfmeCloseFY@BfmeSlotFY@@QAEXH@Z,0x0058BB5C,callee read from the retail REL32 in placed BFME1-donor body ?bfmeShutdownFY@BfmeOwnerFY@@QAEXXZ (0x004CF8D5)
+?bfmeFinishFY@BfmeExtraFY@@QAEXXZ,0x004D4BA7,callee read from the retail REL32 in placed BFME1-donor body ?bfmeShutdownFY@BfmeOwnerFY@@QAEXXZ (0x004CF8D5)
+??0BfmeThingVTD@@QAE@XZ,0x00600611,callee read from the retail REL32 in placed BFME1-donor body ?bfmeCreateVTD@@YAPAVBfmeThingVTD@@XZ (0x00225F44)
+?b_00042a50@@YAXXZ,0x0044BA2A,callee read from the retail REL32 in placed BFME1-donor body ?rva00627A50Clear@@YAXXZ (0x00548B3C)
+??0BfmeTempCME@@QAE@XZ,0x0027D1C6,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoCME@BfmeThingCME@@QAEHPAX@Z (0x0027F0D3)
+?bfmeCallCME@BfmeThingCME@@QAEXPAXMPAUBfmeTempCME@@HH@Z,0x0027DCF2,callee read from the retail REL32 in placed BFME1-donor body ?bfmeGoCME@BfmeThingCME@@QAEHPAX@Z (0x0027F0D3)
+?lookup@Rva0020AA00Registry@@QAEPAURva0020AA00Target@@ABH@Z,0x002D06CA,callee read from the retail REL32 in placed BFME1-donor body ?notifyLookedUp@@YAXPAURva0020AA00Owner@@HH@Z (0x0045F48D)
+?notify@Rva0020AA00Target@@QAEXHH@Z,0x0033CF34,callee read from the retail REL32 in placed BFME1-donor body ?notifyLookedUp@@YAXPAURva0020AA00Owner@@HH@Z (0x0045F48D)
+?j_00003df0@@YAXXZ,0x00314596,callee read from the retail REL32 in placed BFME1-donor body ?input@Rva004BE120Input@@QAEHIII@Z (0x003206A4)
+?bfmeCur1094@BfmeK1094@@QAEPAVBfmeR1094@@XZ,0x0028AFA9,callee read from the retail REL32 in placed BFME1-donor body ?bfmeVisitABG@BfmeHostABG@@QAEXPAX0@Z (0x0036E22F)
+?bfmeApplyABG@BfmeK1094@@QAEXPAX0@Z,0x0029725B,callee read from the retail REL32 in placed BFME1-donor body ?bfmeVisitABG@BfmeHostABG@@QAEXPAX0@Z (0x0036E22F)
