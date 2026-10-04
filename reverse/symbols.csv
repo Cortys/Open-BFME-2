@@ -7676,3 +7676,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1Rva005970ED@@UAE@XZ,0x00597147,dtor installs its own vftable 0x00C70B88 (bytes at ++19) and is the REL32 callee of the slot-0 ??_G at 0x00597315
 ??1Rva0059A85C@@UAE@XZ,0x0059A40D,dtor installs its own vftable 0x00C70DE4 (bytes at ++20) and is the REL32 callee of the slot-0 ??_G at 0x0059A47D
 ??1Rva005C9B76@@UAE@XZ,0x005C9B9C,dtor installs its own vftable 0x00C74B9C (bytes at ++17) and is the REL32 callee of the slot-0 ??_G at 0x005C9CC2
+?getCounter@ScriptEngine@@QAEPAUScriptCounter@@VAsciiString@@@Z,0x002086C5,address read from the REL32 displacement at a placed body

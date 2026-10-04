@@ -51176,3 +51176,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva005970ED@@UAEPAXI@Z,,0x00597315,28,Code/GameEngine/Source/Common/Rva005970EDCtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C70B88; calls pinned dtor 0x00597147
 ??_GRva0059A85C@@UAEPAXI@Z,,0x0059A47D,28,Code/GameEngine/Source/Common/Rva0059A85CCtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C70DE4; calls pinned dtor 0x0059A40D
 ??_GRva005C9B76@@UAEPAXI@Z,,0x005C9CC2,28,Code/GameEngine/Source/GameLogic/Object/Rva005C9B76Ctor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0x00C74B9C; calls pinned dtor 0x005C9B9C
+?evaluateCounterCompareRva003E7CBA@ScriptConditions@@IAE_NPAVCondition@@@Z,,0x003E7CBA,201,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditionsCounterCompare.cpp,matched,BFME1 donor ScriptConditionsCounterCompareRva00325BC0.cpp at /O1; unique masked placement
