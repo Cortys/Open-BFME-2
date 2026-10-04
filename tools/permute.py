@@ -346,7 +346,11 @@ def mutate(text, rng, focus=None):
 def permute(rva, minutes=10.0, seed=None):
     rva = rva.lower()
     path = ATTEMPTS / f"{rva}.cpp"
-    text = path.read_text(encoding="latin-1", errors="replace")
+    try:
+        text = path.read_text(encoding="latin-1", errors="replace")
+    except FileNotFoundError:
+        # landed elsewhere (an upstream merge or another agent) mid-batch
+        return {"rva": rva, "error": "banked attempt gone: closed elsewhere"}
     symbol = re.match(r"//\s*(\S+)", text).group(1)
     size = attempt_sizes().get((symbol, rva))
     if not size:
@@ -588,17 +592,20 @@ def main(argv=None):
     if not rvas:
         parser.error("give RVAs, --top N or --next N (nothing untried and unclaimed left)")
     OUT.mkdir(parents=True, exist_ok=True)
-    wins, misses = 0, []
-    with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
-        for result in pool.map(permute, rvas, [args.minutes] * len(rvas)):
-            wins += bool(result.get("exact"))
-            if not result.get("exact"):
-                misses.append(result["rva"])
-            print(json.dumps(result), flush=True)
-    if claimed:
-        import claims
-        # wins stay claimed until --land; add_match releases them on landing
-        claims.release([int(rva, 16) for rva in misses if rva in claimed])
+    wins, won = 0, set()
+    try:
+        with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
+            for result in pool.map(permute, rvas, [args.minutes] * len(rvas)):
+                wins += bool(result.get("exact"))
+                if result.get("exact"):
+                    won.add(result["rva"])
+                print(json.dumps(result), flush=True)
+    finally:
+        if claimed:
+            import claims
+            # Every claim but a win's is released, even if the batch died;
+            # wins stay claimed until --land, where add_match releases them.
+            claims.release([int(rva, 16) for rva in claimed if rva not in won])
     print(f"permute: {wins} of {len(rvas)} closed exactly")
     return 0
 
