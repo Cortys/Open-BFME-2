@@ -409,107 +409,16 @@ void W3DGhostObject::snapShot(int playerIndex)
 // ------------------------------------------------------------------------------------------------
 /** Remove the original object from our 3D scene*/
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObject::removeParentObject present-unmatched
-void W3DGhostObject::removeParentObject(void)
-{
-
-	// sanity
-	if( m_parentObject == NULL )
-		return;
-
-	Drawable *draw=m_parentObject->getDrawable();
-
-	//After we remove the unfogged object, we also disable
-	//anything that should be hidden inside fog - shadow, particles, etc.
-	draw->setFullyObscuredByShroud(true);
-
-	//walk through all W3D render objects used by this object
-	for (DrawModule ** dm = draw->getDrawModules(); *dm; ++dm)
-	{
-		const ObjectDrawInterface* di = (*dm)->getObjectDrawInterface();
-		if (di)
-		{
-			W3DModelDraw *w3dDraw= (W3DModelDraw *)di;
-			RenderObjClass *robj=NULL;
-
-			robj=w3dDraw->getRenderObject();
-			if (robj)
-			{
-				DEBUG_ASSERTCRASH(robj->Peek_Scene() != NULL, ("Removing GhostObject parent not in scene "));
-				robj->Remove();
-			}
-		}
-	}
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Reinsert the original object into our 3D scene*/
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObject::restoreParentObject present-unmatched
-void W3DGhostObject::restoreParentObject(void)
-{
-	Drawable *draw=m_parentObject->getDrawable();
-	if (!draw)
-		return;
-
-	//Notify drawable that it's okay to render its render objects again.
-	draw->setFullyObscuredByShroud(false);
-
-	//walk through all W3D render objects used by this object
-	for (DrawModule ** dm = draw->getDrawModules(); *dm; ++dm)
-	{
-		const ObjectDrawInterface* di = (*dm)->getObjectDrawInterface();
-		if (di)
-		{
-			W3DModelDraw *w3dDraw= (W3DModelDraw *)di;
-			RenderObjClass *robj=NULL;
-
-			robj=w3dDraw->getRenderObject();
-			//robj may be null for modules which have no render objects such
-			//as for build-ups that are currently disabled.
-			if (robj)
-			{	//if we have a render object that's not in the scene, it must have been
-				//removed by the ghost object manager, so restore it.  If we have a render
-				//object that is in the scene, then it was probably added because the model
-				//changed while the object was ghosted (for damage states, garrison, etc.).
-				if (robj->Peek_Scene() == NULL)
-					((SimpleSceneClass *)W3DDisplay::m_3DScene)->Add_Render_Object(robj);
-			}
-		}
-	}
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObject::freeAllSnapShots present-unmatched
-void W3DGhostObject::freeAllSnapShots(void)
-{
-	Int playerIndex;
-
-#ifdef DEBUG_FOG_MEMORY
-	for (playerIndex=0; playerIndex<MAX_PLAYER_COUNT; playerIndex++)
-#else
-	playerIndex = TheGhostObjectManager->getLocalPlayerIndex();
-#endif
-		if (m_parentSnapshots[playerIndex])
-		{	//if we have a snapshot for this object, remove it from
-			//scene.
-			removeFromScene(playerIndex);
-
-			//Restore actual objects assuming they are still alive.
-			if (m_parentObject)
-				restoreParentObject();
-
-			W3DRenderObjectSnapshot *snap=m_parentSnapshots[playerIndex];
-			W3DRenderObjectSnapshot *nextSnap;
-			while (snap)
-			{	nextSnap = snap->m_next;
-				delete snap;
-				snap = nextSnap;
-			}
-			m_parentSnapshots[playerIndex]=NULL;
-		}
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Player has unfogged the object so he no longer needs the snapshot*/
@@ -561,32 +470,12 @@ void W3DGhostObject::updateParentObject(Object *object, PartitionData *mod)
 // ------------------------------------------------------------------------------------------------
 /**Remove the dummy render objects from scene that belong to given player*/
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObject::removeFromScene present-unmatched
-void W3DGhostObject::removeFromScene(int playerIndex)
-{
-	W3DRenderObjectSnapshot *snap=m_parentSnapshots[playerIndex];
-
-	while (snap)
-	{
-		snap->m_robj->Remove();
-		snap=snap->m_next;
-	}
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 /**Add the dummy render objects to scene so player sees the correct version within the fog*/
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObject::addToScene present-unmatched
-void W3DGhostObject::addToScene(int playerIndex)
-{
-	W3DRenderObjectSnapshot *snap=m_parentSnapshots[playerIndex];
-
-	while (snap)
-	{
-		((SimpleSceneClass *)W3DDisplay::m_3DScene)->Add_Render_Object(snap->m_robj);
-		snap=snap->m_next;
-	}
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -609,11 +498,7 @@ void W3DGhostObject::release(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObject::getShroudStatus present-unmatched
-void W3DGhostObject::getShroudStatus(int playerIndex)
-{
-	m_partitionData->getShroudedStatus(playerIndex); 
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** CRC */
@@ -1013,38 +898,7 @@ GhostObject *W3DGhostObjectManager::addGhostObject(Object *object, PartitionData
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ?W3DGhostObjectManager::setLocalPlayerIndex present-unmatched
-void W3DGhostObjectManager::setLocalPlayerIndex(int index)
-{
-	//Whenever we switch local players, we need to remove all ghost objects belonging
-	//to another player from the map.  We then insert the current local player's
-	//ghost objects into the map.
-
-	W3DGhostObject *mod = m_usedModules;
-
-	while (mod)
-	{
-		mod->removeFromScene(m_localPlayer);
-		if (mod->m_parentSnapshots[index])
-		{	//new player has his own snapshot
-			if (!mod->m_parentSnapshots[m_localPlayer] && mod->m_parentObject)
-			{	//previous player didn't have a snapshot so real object must
-				//have been in the scene.  Replace it with our snapshot.
-				mod->removeParentObject();
-			}
-			mod->addToScene(index);
-		}
-		//new player doesn't have a snapshot which means restore original object
-		//if it was replaced by a snapshot by the previous player.
-		else
-		if (mod->m_parentSnapshots[m_localPlayer] && mod->m_parentObject)
-			mod->restoreParentObject();
-	
-		mod=mod->m_nextSystem;
-	}
-
-	m_localPlayer = index;
-}
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObjectScene.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** When a game object/drawable dies, it is removed from the rest of the engine.  It leaves behind
