@@ -51641,3 +51641,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??1Rva0073F4F3@@QAE@XZ,,0x0073F4F3,105,Code/GameEngine/Source/Common/Rva0073F4F3Dtor.cpp,matched,chain lane dtor via inline cleanup plus members
 ?rva003B8B85@Rva003B8BAA@@QAE_NXZ,,0x003B8B85,37,Code/GameEngine/Source/Common/Rva003B8BAALookup.cpp,matched,singleton guard bool chase sibling TU unblocks 0x002B254F
 ?rva002B254F@Rva002B254F@@QAEHXZ,,0x002B254F,31,Code/GameEngine/Source/Common/Rva002B254FCheck.cpp,matched,guard B4 plus global chase returns 1/0 via rowed callee
+?rva002B2C40@Rva002B2C40@@QAE_NPAUArg54@@0@Z,,0x002B2C40,75,Code/GameEngine/Source/Common/Rva002B2C40Check.cpp,matched,chain on 0x002B254F via shared true plus virtual
