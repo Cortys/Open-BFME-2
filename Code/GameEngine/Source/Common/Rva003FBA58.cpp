@@ -1,5 +1,3 @@
-// ?rva003FBA58@Rva003FBA58@@QAEXXZ
-// partial score=0.97 date=2026-10-04
 // cl: /O1 /DNDEBUG /MD /arch:SSE /Op
 // ?rva003FBA58@Rva003FBA58@@QAEXXZ @0x003FBA58 140B
 // Chain lane: calls 0x003FB9C8 just landed; vtable slot 10 of 0x008747B8
@@ -56,17 +54,12 @@ private:
 	float m_54; // +0x54
 };
 
-// ?rva003FBA58@Rva003FBA58@@QAEXXZ present-unmatched
 void Rva003FBA58::rva003FBA58()
 {
 	if (m_50 == 0) {
 		if (m_08 != 0) {
-			if (m_2c == 2) {
-				s12(0);
-			} else if (m_2c == 3) {
-				if (m_54 == BfmeZeroRange) {
-					s12(0);
-				}
+			if (m_2c == 2 || (m_2c == 3 && m_54 == BfmeZeroRange)) {
+				this->s12(0);
 			}
 		}
 		m_2c = 0;

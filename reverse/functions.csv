@@ -50742,3 +50742,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?_M_insert_overflow@?$vector@VDynamicPortalLink@@V?$allocator@VDynamicPortalLink@@@_STL@@@_STL@@IAEXPAVDynamicPortalLink@@ABV3@ABU__false_type@2@I_N@Z,,0x0046152F,183,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0046152FFinish.cpp,matched,stlport vector<DynamicPortalLink>::_M_insert_overflow false_type; real vendor template explicit instantiation
 ?rva00513E6F@Rva00513E6F@@QAE?AVUnicodeString@@XZ,,0x00513E6F,98,Code/GameEngine/Source/Common/System/Rva00513E6F.cpp,matched,chain wide materializer via length plus fill
 ?Rva003BD003Forward@@YAXXZ,,0x003BD003,14,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BD003Forward.cpp,matched,script forwards to TheTacticalView slot 0x254
+?rva003FBA58@Rva003FBA58@@QAEXXZ,,0x003FBA58,140,Code/GameEngine/Source/Common/Rva003FBA58.cpp,matched,vtable slot 10 of 0x008747B8 rowed callees BfmeZeroRange
