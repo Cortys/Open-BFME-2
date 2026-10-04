@@ -51374,3 +51374,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_ERva00567960@@W7AEPAXI@Z,,0x0056799C,8,Code/GameEngine/Source/Common/Rva00567960Dtor.cpp,matched,adjustor thunk (this-8) in a secondary vftable slot 0; jumps to rowed ??_GRva00567960
 ??_ERva00576C4B@@W3AEPAXI@Z,,0x00576D05,8,Code/GameEngine/Source/Common/Rva00576C4BDtor.cpp,matched,adjustor thunk (this-4) in a secondary vftable slot 0; jumps to rowed ??_GRva00576C4B
 ?parseRGBColorKeyframe@ParticleSystemTemplate@@SAXPAVINI@@PAX1PBX@Z,,0x0055B913,44,Code/GameEngine/Source/GameClient/System/ParticleSysO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?addKey@Rva00504F09FunctionCurve@@QAEXMMPBM0@Z,,0x00504F09,307,Code/GameEngine/Source/Common/System/Rva00504F09FunctionCurveAddKey.cpp,matched,BFME2 port of the BFME1 function-curve key accumulator (donor Rva0006AB90FunctionCurveAddKey.cpp); SSE math and float-tangent curve set 0x00504EAD
