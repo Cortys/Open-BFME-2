@@ -1,9 +1,7 @@
 // ?rva0027D378@Rva0027D378@@QAEHPAXH@Z
-// partial score=0.95 date=2026-10-04
-// ?rva0027D378@Rva0027D378@@QAEHPAXH@Z
-// partial score=0.9 date=2026-10-02
+// partial score=0.97 date=2026-10-04
 // cl: /O1 /G7 /MD /Oy-
-// ?rva0027D378@Rva0027D378@@QAEHPAXH@Z, retail 0x0027D378, 83 bytes.
+// cl: /O1 /G7 /MD /Oy-
 // Countdown on target struct: take = min(amount, target+0x28), subtract,
 // if depleted call manager slot31 with target+0xC, reset via rowed
 // ?rva0027D098@Rva0027D098@@QAEXXZ, then this+0x1910 = TheGameLogic+0x40.
@@ -87,8 +85,10 @@ int Rva0027D378::rva0027D378(void *p, int amount)
 	Rva0027D378Target *s = (Rva0027D378Target *)p;
 	int old = s->m_field28;
 	int *pick = &amount;
-	if (amount >= old)
+	if (amount < old)
 		pick = &old;
+	else
+		pick = &amount;
 	int take = *pick;
 	int &cur = s->m_field28;
 	cur -= take;
