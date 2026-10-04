@@ -50695,3 +50695,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00513D8F@Rva00513D8F@@QAEHPAG@Z,,0x00513D8F,37,Code/GameEngine/Source/Common/System/Rva00513D8F.cpp,matched,unlock pair copyWchars plus ref copyPayloadTo returns sum
 ?rva00513E25@Rva00513E25@@QAEHPAG@Z,,0x00513E25,37,Code/GameEngine/Source/Common/System/Rva00513D8F.cpp,matched,chain triple calls pair plus copyWchars returns sum
 ?rva00202790@Rva00202790@@QAEXH@Z,,0x00202790,33,Code/GameEngine/Source/Common/Rva00202790Set.cpp,matched,range-checked setter at +0x1770 with audio refresh via rowed Rva002026B4Audio
+?rva002DAFAC@Rva002DAFAC@@QAEXHHVAsciiString@@@Z,,0x002DAFAC,64,Code/GameEngine/Source/Common/Rva002DAFACSet.cpp,matched,biased imul-3 setter twin plus callers plus EH data
