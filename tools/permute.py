@@ -440,6 +440,85 @@ def recheck(rva):
     return {"rva": rva, "symbol": symbol, "recheck": round(fitness, 4), "exact": exact}
 
 
+LITERAL = re.compile(r"(?<![\w.])(0[xX][0-9A-Fa-f]+|\d+)(?![\w.])")
+COMMENT_OR_STRING = re.compile(r'//[^\n]*|/\*.*?\*/|"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'', re.S)
+
+
+def _offset_deltas(compiled, target):
+    """Retail number minus ours, for each number that differs between two
+    instruction streams of the same shape (the `unreachable` case)."""
+    deltas = set()
+    for (_, ours), (_, theirs) in zip(_instructions(compiled), _instructions(target)):
+        if ours == theirs:
+            continue
+        a = re.findall(r"0x[0-9a-f]+|\b\d+\b", ours)
+        b = re.findall(r"0x[0-9a-f]+|\b\d+\b", theirs)
+        for x, y in zip(a, b):
+            d = int(y, 0) - int(x, 0)
+            if d and abs(d) < 0x10000:
+                deltas.add(d)
+    return sorted(deltas, key=abs)
+
+
+def _literal_sites(text):
+    """(start, end, value, is_hex) of integer literals outside comments and strings."""
+    masked = list(text)
+    for found in COMMENT_OR_STRING.finditer(text):
+        masked[found.start():found.end()] = " " * (found.end() - found.start())
+    masked = "".join(masked)
+    return [(m.start(), m.end(), int(m.group(1), 0), m.group(1).lower().startswith("0x"))
+            for m in LITERAL.finditer(masked)]
+
+
+def offset_search(rva, budget=400):
+    """Close a body whose only gap is numbers (offsets, pads, constants): apply
+    each retail-minus-ours delta to each integer literal in the source, keep
+    what scores better, repeat until exact or the budget is spent. The
+    compiler, not the search, decides: only a byte-exact compile is a win."""
+    rva = rva.lower()
+    try:
+        text = (ATTEMPTS / f"{rva}.cpp").read_text(encoding="latin-1", errors="replace")
+    except FileNotFoundError:
+        return {"rva": rva, "error": "banked attempt gone: closed elsewhere"}
+    found = re.match(r"//\s*(\S+)", text)
+    symbol = found.group(1) if found else ""
+    size = attempt_sizes().get((symbol, rva))
+    if not size:
+        return {"rva": rva, "error": "no size in re_attempts.log"}
+    workdir = OUT / rva
+    workdir.mkdir(parents=True, exist_ok=True)
+    scorer = Scorer(rva, symbol, size, workdir)
+    best, exact = scorer.score(text)
+    start = best
+    if best < 0:
+        return {"rva": rva, "symbol": symbol, "error": "banked body does not compile here"}
+    if not exact and not (scorer.last and unreachable(*scorer.last)):
+        return {"rva": rva, "symbol": symbol, "skip": "not an offset-only gap", "start": round(start, 4)}
+    improved = True
+    while not exact and improved and scorer.trials < budget and scorer.last:
+        improved = False
+        deltas = _offset_deltas(*scorer.last)
+        for begin, end, value, is_hex in _literal_sites(text):
+            for delta in deltas:
+                if value + delta < 0 or scorer.trials >= budget:
+                    continue
+                new = value + delta
+                candidate = text[:begin] + (hex(new).upper().replace("0X", "0x") if is_hex else str(new)) + text[end:]
+                fitness, exact = scorer.score(candidate)
+                if exact or fitness > best:
+                    text, best, improved = candidate, fitness, True
+                    break
+            if improved or exact:
+                break
+    if exact:
+        (workdir / "win.cpp").write_text(text, encoding="latin-1", errors="replace")
+    result = {"rva": rva, "symbol": symbol, "size": size, "start": round(start, 4), "best": round(best, 4),
+              "exact": exact, "trials": scorer.trials, "mode": "offsets"}
+    with (OUT / "offsets.jsonl").open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(result) + "\n")
+    return result
+
+
 def home_dir(symbol):
     """Where a win's unit goes: the directory most of its class's ledger units
     live in, else Code/GameEngine/Source/Common."""
@@ -540,9 +619,39 @@ def main(argv=None):
     parser.add_argument("--jobs", type=int, default=int(os.environ.get("BUILD_POOL", "1") or 1))
     parser.add_argument("--land", action="store_true",
                         help="land every build/permute/<rva>/win.cpp via add_match (no commit)")
+    parser.add_argument("--offsets", action="store_true",
+                        help="offset search on bodies the triage found differ only in numbers (or the RVAs given)")
+    parser.add_argument("--all", action="store_true",
+                        help="with --offsets: every banked attempt (one compile each to find the offset-only ones)")
     parser.add_argument("--recheck", action="store_true",
                         help="compile every banked attempt (any score) unchanged once; exact ones become wins")
     args = parser.parse_args(argv)
+    if args.offsets:
+        # bodies the triage marked as a layout fact, or the RVAs given
+        rvas = args.rvas
+        if not rvas and args.all:
+            rvas = [rva for _, _, rva, _ in queue(0.0)]
+        elif not rvas and (OUT / "results.jsonl").exists():
+            seen = set()
+            for line in (OUT / "results.jsonl").read_text().splitlines():
+                try:
+                    entry = json.loads(line)
+                except ValueError:
+                    continue
+                if str(entry.get("stop", "")).startswith("only constants or offsets differ"):
+                    seen.add(entry["rva"])
+            done = set()
+            if (OUT / "offsets.jsonl").exists():
+                done = {json.loads(l)["rva"] for l in (OUT / "offsets.jsonl").read_text().splitlines() if l.strip()}
+            rvas = sorted(seen - done)
+        wins = 0
+        with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
+            for result in pool.map(offset_search, rvas):
+                wins += bool(result.get("exact"))
+                if "skip" not in result:
+                    print(json.dumps(result), flush=True)
+        print(f"permute: offset search closed {wins} of {len(rvas)}")
+        return 0
     if args.recheck:
         rvas = [rva for _, _, rva, _ in queue(0.0)]
         hits = 0
