@@ -51042,3 +51042,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GPodPayload20@@QAEPAXI@Z,,0x0040B2C5,28,Code/GameEngine/Source/Common/Rva0054FD83Destroy.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GRva0056B0BF@@UAEPAXI@Z,,0x0056B356,28,Code/GameEngine/Source/Common/Rva0056B0BFDtor.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??0Rva0057BC63FunctorWrapper@@QAE@ABUFunctorBinding@@@Z,,0x005185BA,30,Code/GameEngine/Source/Common/Rva0057BC63FunctorHolder.cpp,matched,unique masked-byte placement (locate.py sweep)
+??_GRva005F6AB0@@UAEPAXI@Z,,0x005F6B58,28,Code/GameEngine/Source/Common/Rva005F6AB0Dtor.cpp,matched,unique masked-byte placement (locate.py sweep)
