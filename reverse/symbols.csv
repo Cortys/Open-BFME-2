@@ -7881,3 +7881,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0Rva005AC7E1@@QAE@XZ,0x005AC7EC,AIRingHeroTactic tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AC8F2
 ?Resize@?$VectorClassWide@UTextureStatisticsStructWide@@@@UAE_NHPBUTextureStatisticsStructWide@@@Z,0x00155490,slot 2 of ??_7VectorClassWide<TextureStatisticsStructWide> 0x00BD3BB0 is this ICF-folded Resize (rowed as VectorClassBfmeThingFT::Resize); DynamicVectorClassWide::Resize at 0x001566E0 calls it
 ?Resize@?$VectorClass@UAddInfoStruct@MixFileFactoryClass@@@@UAE_NHPBUAddInfoStruct@MixFileFactoryClass@@@Z,0x00155690,slot 2 of ??_7VectorClass<AddInfoStruct> 0x00BD3BC8; DynamicVectorClass<AddInfoStruct>::Resize at 0x001567D0 calls it
+??0BfmeStringLiteralBase@@AAE@PBD@Z,0x00037BA0,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??1BfmeEmotionName@@QAE@XZ,0x00036410,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?bfmeCopyVKC@BfmeThingVKC@@QAEXABV1@@Z,0x004DC788,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?findNugget@EmotionSystem@@QAEPAVEmotionNugget@@ABVBfmeEmotionName@@@Z,0x004264F4,address read from the REL32 displacement at a placed body
