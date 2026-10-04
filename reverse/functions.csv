@@ -52009,3 +52009,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva00093349@Rva00093349@@QAEXXZ,,0x00093349,100,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00093349.cpp,matched,caller 0x0009470A LINK 1 file via W3DSnowManager
 ?reset@W3DSnowManager@@UAEXXZ,,0x00093B3F,28,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00093B3F.cpp,matched,vslot 9 of 0x007C8144 base reset plus copy helper
 ?rva0032D223@Rva0019BE80TeamRec@@QAEXHABVAsciiString@@0@Z,,0x0032D223,86,Code/GameEngine/Source/GameLogic/Map/Rva0019BE80TeamRecRva0032D223.cpp,matched,TeamRec vector Dict updateTeam bfmePrepareRelease layout
+?push_back@?$vector@VRva004BA1D0@@V?$allocator@VRva004BA1D0@@@_STL@@@_STL@@QAEXABVRva004BA1D0@@@Z,,0x004BA7E0,55,Code/Libraries/Source/WWVegas/WWLib/Rva004BA7E0PushBack.cpp,matched,vector push_back via explicit instantiation same element and flags as overflow 0x004BA4D3
