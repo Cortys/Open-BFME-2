@@ -7555,3 +7555,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?pop_front@?$deque@VPingRequest@@V?$allocator@VPingRequest@@@_STL@@@_STL@@QAEXXZ,0x0054FEA7,callee of ?getRequest@Pinger@@UAE_NAAVPingRequest@@@Z at retail 0x005503E6 read from its REL32 displacement; body unrowed
 ??0Smudge@@QAE@XZ,0x002D28C0,callee of ?addSmudgeToSet@SmudgeSet@@QAEPAUSmudge@@XZ at retail 0x002D2996 read from its REL32 displacement; body unrowed
 ?Add_Tail@?$DLListClass@USmudge@@@@QAEXPAV?$DLNodeClass@USmudge@@@@@Z,0x002D2634,callee of ?addSmudgeToSet@SmudgeSet@@QAEPAUSmudge@@XZ at retail 0x002D2996 read from its REL32 displacement; ICF alias onto ?Add_Tail@?$DLListClass@USmudgeSet@@@@QAEXPAV?$DLNodeClass@USmudgeSet@@@@@Z (matched)
+?isMobile@Object@@QBE_NXZ,0x002907A1,callee of ?privateFollowWaypointPathAsTeamExact@AIUpdateInterface@@MAE at retail 0x0026BA33 read from its REL32 displacement; body unrowed
+?setGoalWaypoint@AIStateMachine@@QAEXPBVWaypoint@@@Z,0x003E3BFB,callee of ?privateFollowWaypointPathAsTeamExact@AIUpdateInterface@@MAE at retail 0x0026BA33 read from its REL32 displacement; ICF alias onto ?dup_003e3bfb@@YAXXZ (matched)
+?playMoveVoiceResponse@BFMEMoveVoiceAI@@QAEXPBUCoord3D@@@Z,0x0026B403,callee of ?privateFollowWaypointPathAsTeamExact@AIUpdateInterface@@MAE at retail 0x0026BA33 read from its REL32 displacement; body unrowed
