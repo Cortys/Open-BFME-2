@@ -1,4 +1,6 @@
 // ?rva006D7350@@YAPAXPAVRva006DCE50Opaque@@@Z
+// partial score=0.94 date=2026-10-04
+// ?rva006D7350@@YAPAXPAVRva006DCE50Opaque@@@Z
 // partial score=0.9 date=2026-10-03
 // cl: /O2 /MD /EHsc
 // ?rva006D7350@@YAPAXPAVRva006DCE50Opaque@@@Z @0x006D7350 177B (cdecl).
@@ -36,7 +38,9 @@ public:
 class Rva006D5E70String
 {
 public:
-	void *rva006d5e70(int count);
+	void *rva006d5e70ptr(int count);
+private:
+	char *m_pData;
 };
 
 class EAStringC
@@ -64,10 +68,8 @@ void *rva006D7350(Rva006DCE50Opaque *source)
 	int index = ((AptBasePtrStack *)0x00E182E0)->At(0)->toInteger();
 	void *data = source->rva006DCE50();
 	Rva006D5E70String *str = (Rva006D5E70String *)((char *)data + 8);
-	if (index < 0)
-		return g_bfmeAptDefaultValueAtE18078;
-	void *looked = str->rva006d5e70(index);
-	if (looked == 0)
+	void *looked = str->rva006d5e70ptr(index);
+	if (index < 0 || looked == 0)
 		return g_bfmeAptDefaultValueAtE18078;
 	EAStringC temp;
 	temp.rva006D5FE0(looked, 1);
