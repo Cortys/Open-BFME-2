@@ -21,6 +21,9 @@
 // It can also change how later array constructions here compile; checked to
 // change nothing else in this unit, but if a function added later that builds
 // an array will not match, try it without this block.
+extern "C" const void *const vtbl_00C1C780[];  // folded, 49 classes; via ??_7?$CategoryModuleInfo@$00@FXParticleSystem@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C1C780=??_7?$CategoryModuleInfo@$00@FXParticleSystem@@6B@")
+
 extern "C" const void *const vtbl_00C6FFFC[];  // folded, 10 classes; via ??_7?$CategoryModuleClass@$00@FXParticleSystem@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00C6FFFC=??_7?$CategoryModuleClass@$00@FXParticleSystem@@6B@")
 
@@ -94,7 +97,7 @@ public:
 	Rva007F8090Root()
 	{
 		// BFME2 vtable VAs measured from retail (BFME1 donor holds 0x01118e58/0x0112b680).
-		*(volatile unsigned *)&m_v4 = 0x00c1c780;
+		*(volatile unsigned *)&m_v4 = ((unsigned int)vtbl_00C1C780);
 		*(volatile unsigned *)&m_v8 = ((unsigned int)vtbl_00C6FFFC);
 	}
 
