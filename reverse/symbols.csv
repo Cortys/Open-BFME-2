@@ -8261,3 +8261,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?j_0003eebe@@YAXXZ,0x00290B24,callee of ?bfmeGoFCD@@YAXPAVBfmeObjFCD@@PAUBfmePairFCD@@@Z at retail 0x0046258C read from its REL32 displacement; donor-carried name for the member-function thunk it targets; body unrowed
 ??0Rva001320D0@@QAE@PAX@Z,0x001320D0,base-initialiser of ??0BfmeThingJC@@QAE@PAX@Z at retail 0x002DB882 read from its REL32 displacement; ghidra FUN_005320d0 89B unrowed; address-derived because the donor declares the base ctor without defining it
 ?bfmeDoKA@BfmeItemKA@@QAEXXZ,0x00260787,callee of ?bfmeGoKA@@YAXXZ at retail 0x00260805 read from its REL32 displacement; donor-carried name; ghidra FUN_00660787 126B body unrowed
+?j_00025cca@@YAXXZ,0x001F8437,thunk callee of ?find@Rva006AD590Entry@@QAEPATRva006AD590Slot@@H@Z at retail 0x00059238 read from its REL32 displacement; donor-carried name; ghidra FUN_005f8437 78B body unrowed
