@@ -52209,3 +52209,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva005497c0@@YG_NHH@Z,,0x0056DD64,16,Code/GameEngine/Source/Common/Rva005497C0Ge.cpp,matched,BFME1 donor game/GameEngine/Source/Common/Rva005497C0Ge.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?reset@Rva005A6560@@QAEPAV1@XZ,,0x00432976,17,Code/GameEngine/Source/Common/Rva005A6560Reset.cpp,matched,BFME1 donor game/GameEngine/Source/Common/Rva005A6560Reset.cpp recompiled /Os; unique masked placement on unclaimed .text
 ?apply@Rva006BC6C0@@QAEXXZ,,0x000633D5,16,Code/GameEngine/Source/Common/Rva006BC6C0Apply.cpp,matched,BFME1 donor game/GameEngine/Source/Common/Rva006BC6C0Apply.cpp recompiled /Os; unique masked placement on unclaimed .text
+?get@Rva006DF5E0@@QAEMXZ,,0x00101CA0,16,Code/GameEngine/Source/Common/Rva006DF5E0Cast.cpp,matched,BFME1 donor game/GameEngine/Source/Common/Rva006DF5E0Cast.cpp recompiled /Os; unique masked placement on unclaimed .text
