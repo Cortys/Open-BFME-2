@@ -1,7 +1,6 @@
 // ?rva0040A7F1@Rva0040A7F1@@QBEHH@Z
-// partial score=0.9 date=2026-10-02
+// partial score=0.9 date=2026-10-04
 // cl: /Os
-// ?rva0040A7F1@Rva0040A7F1@@QBEHH@Z @0x0040A7F1 30B
 // Evidence: unlock lane; same unsigned bounds-checked index as sibling
 // Rva0040A7D5 (begin-end count sar 2 returns 0 else element) but begin-end at
 // +4-+8; callers 0x00409B73 0x0040BD91 unclaimed.
@@ -15,7 +14,6 @@ private:
     const int *m_end;
 };
 
-// ?rva0040A7F1@Rva0040A7F1@@QBEHH@Z present-unmatched
 int Rva0040A7F1::rva0040A7F1(int index) const
 {
     unsigned int count = (unsigned int)(m_end - m_begin);
