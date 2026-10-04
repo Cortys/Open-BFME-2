@@ -51620,3 +51620,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?Clone@MeshClass@@UBEPAVRenderObjClass@@XZ,,0x001498E0,96,Code/Libraries/Source/WWVegas/WW3D2/MeshClassLifetime.cpp,matched,MeshClass vtable BD35A8 slot2: new(0x324)+copy ctor
 ?_bfme_get_factor_product@MeshClass@@UBEMXZ,,0x00149670,16,Code/Libraries/Source/WWVegas/WW3D2/MeshClassLifetime.cpp,matched,MeshClass vtable BD35A8 slot25 override: base factor product 13BC60 times AlphaOverride +2F4
 ??1MeshClass@@UAE@XZ,,0x0014A5B0,127,Code/Libraries/Source/WWVegas/WW3D2/MeshClassLifetime.cpp,matched,BFME2 MeshClass dtor; BFME1 MeshClassBaseDestructor.cpp donor 0x0092D990; Model +C4 release then LightEnvironment +CC empty dtor 69E440 then ~RenderObjClass 13BE20
+?bfmeContainedAttackVisitor@@YAXPAVObject@@PAX@Z,,0x0041B925,37,Code/GameEngine/Source/Common/RTS/ActionManagerGetCanAttackObject.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
