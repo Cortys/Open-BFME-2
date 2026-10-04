@@ -17,22 +17,13 @@ extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(
 	CRITICAL_SECTION *lock);
 
-#pragma optimize("t", on)
 class CriticalSectionLock
 {
 public:
-	explicit CriticalSectionLock(int lock) : m_lock(lock)
-	{
-		EnterCriticalSection((CRITICAL_SECTION *)m_lock);
-	}
-	inline ~CriticalSectionLock()
-	{
-		LeaveCriticalSection((CRITICAL_SECTION *)m_lock);
-	}
-
-	int m_lock;
+	CRITICAL_SECTION *m_cs;
+	CriticalSectionLock(CRITICAL_SECTION *cs) : m_cs(cs) { EnterCriticalSection(m_cs); }
+	~CriticalSectionLock() { LeaveCriticalSection(m_cs); }
 };
-#pragma optimize("", on)
 
 class Rva001DC0EC
 {
@@ -56,7 +47,7 @@ private:
 
 void Rva001DC57C::rva001DC57C(_STL::list<int, _STL::allocator<int> > *dest)
 {
-	CriticalSectionLock lock((int)&m_cs);
+	CriticalSectionLock lock(&m_cs);
 	if (m_24 != 0)
 		m_24->rva001DC1B3(dest);
 	if (m_28 != 0)
