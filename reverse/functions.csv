@@ -52257,3 +52257,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva003C09DA@ScriptActions@@IAEXABVAsciiString@@0@Z,,0x003C09DA,84,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C09DA.cpp,matched,two team lookups plus armor map remove
 ?rva003C0A2E@ScriptActions@@IAEXABVAsciiString@@@Z,,0x003C0A2E,61,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0A2E.cpp,matched,single team lookup plus two armor removes
 ?Rva003E92B2Check@@YG_NPAVParameter@@@Z,,0x003E92B2,45,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E92B2.cpp,matched,ret4 stdcall Parameter+0x10 ringheroes via rowed compareNoCase then TheGameInfo null or +0x68==1
+?rva00106BC9@BfmeB996Range@@QAEHHPAH@Z,,0x00106BC9,176,Code/GameEngine/Source/Common/BfmeConv996RangeCheck.cpp,matched,counted scan via Go Advance invoke donor Rva007E3770 no callers
