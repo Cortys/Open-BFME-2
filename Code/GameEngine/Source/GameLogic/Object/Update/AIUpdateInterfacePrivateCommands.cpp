@@ -325,9 +325,22 @@ public:
 	// three-argument object/object/source test distinct from the five-argument
 	// canEnterObject above; its name is not evidenced, so it keeps the address.
 	Bool rva000C4080(const Object *, const Object *, CommandSourceType);
+	Bool canGetHealedAt(const Object *, const Object *, CommandSourceType);	///< 0x0041BE93
+	Bool canGetRepairedAt(const Object *, const Object *, CommandSourceType);	///< 0x0041BBE4
 };
 
 extern BFMEActionManager *TheActionManager;
+
+// ZH's AIUpdateInterface derives from AICommandInterface at +0x20. The two
+// order issuers here are matched under address names: 0x0026C347 builds
+// AICMD 0x17 (the enter order, aiEnter) and 0x0026C3AC AICMD 0x18 (the dock
+// order, aiDock; command 0x18 dispatches to the matched privateDock).
+class AICommandInterface
+{
+public:
+	void rva0026C347(Object *obj, CommandSourceType commandSource);
+	void rva0026C3AC(Object *obj, CommandSourceType commandSource);
+};
 
 // upstream layout: inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameLogic/Object.h
 class Object : public Thing
@@ -464,6 +477,7 @@ protected:
 	// Declared last so no slot above moves; nothing in this TU dispatches it.
 	virtual void privateMoveToObject(Object *obj, CommandSourceType commandSource);
 	// BFME2 aiDoCommand handlers named by their command id (see the bodies).
+	virtual void privateGetHealed(Object *healDepot, CommandSourceType commandSource);
 	virtual void bfmePrivateCommand37(Int value, CommandSourceType commandSource);
 	virtual void bfmePrivateCommand3D(Object *obj, CommandSourceType commandSource);
 	virtual void bfmePrivateCommand3E(Object *obj, CommandSourceType commandSource);
@@ -737,4 +751,23 @@ void AIUpdateInterface::bfmePrivateCommand37(Int value, CommandSourceType comman
 	m_stateMachine->clear();
 	m_lastCommandSource = commandSource;
 	m_stateMachine->setState((StateID)0x18);
+}
+
+// Command 0x15 (ZH AICMD_GET_HEALED, one below ZH's numbering as HUNT 0x12
+// and DOCK 0x18 are), slot 46, retail 0x0026DD89: the donor body, ending in
+// aiEnter.
+void AIUpdateInterface::privateGetHealed(Object *healDepot, CommandSourceType commandSource)
+{
+	if (TheActionManager->canGetHealedAt(getObject(), healDepot, commandSource) == false)
+		return;
+	reinterpret_cast<AICommandInterface *>(reinterpret_cast<char *>(this) + 0x20)->rva0026C347(healDepot, commandSource);
+}
+
+// Command 0x16 (AICMD_GET_REPAIRED), slot 47, retail 0x0026DDBB: BFME1's
+// privateGetRepaired, ending in aiDock.
+void AIUpdateInterface::privateGetRepaired(Object *repairDepot, CommandSourceType commandSource)
+{
+	if (TheActionManager->canGetRepairedAt(getObject(), repairDepot, commandSource) == false)
+		return;
+	reinterpret_cast<AICommandInterface *>(reinterpret_cast<char *>(this) + 0x20)->rva0026C3AC(repairDepot, commandSource);
 }
