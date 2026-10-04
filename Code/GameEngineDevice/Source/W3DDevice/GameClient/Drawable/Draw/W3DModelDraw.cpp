@@ -1861,13 +1861,7 @@ void W3DModelDraw::setHidden(Bool hidden)
 }
 
 /**Free all data used by this model's shadow.  This is used to dynamically enable/disable shadows by the options screen*/
-// ?releaseShadows@W3DModelDraw@@ present-unmatched
-void W3DModelDraw::releaseShadows(void)	///< frees all shadow resources used by this module - used by Options screen.
-{
-	if (m_shadow)
-		m_shadow->release();
-	m_shadow = NULL;
-}
+// releaseShadows lives in W3DModelDrawShadows.cpp (retail builds it /O1 on the BFME 2 layout).
 
 /** Create shadow resources if not already present. This is used to dynamically enable/disable shadows by the options screen*/
 // ?allocateShadows@W3DModelDraw@@ present-unmatched
@@ -1898,13 +1892,7 @@ void W3DModelDraw::allocateShadows(void)
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?setShadowsEnabled@W3DModelDraw@@ present-unmatched
-void W3DModelDraw::setShadowsEnabled(Bool enable)
-{
-	if (m_shadow)
-		m_shadow->enableShadowRender(enable);
-	m_shadowEnabled = enable;
-}
+// setShadowsEnabled lives in W3DModelDrawShadows.cpp (retail builds it /O1 on the BFME 2 layout).
 
 /**collect some stats about the rendering cost of this draw module */
 #if defined(_DEBUG) || defined(_INTERNAL)	
