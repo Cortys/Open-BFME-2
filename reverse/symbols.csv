@@ -7943,3 +7943,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?_M_insert_overflow@?$vector@UElem003AF7A0@@V?$allocator@UElem003AF7A0@@@_STL@@@_STL@@IAEXPAUElem003AF7A0@@ABU3@ABU__false_type@2@I_N@Z,0x005DC499,address read from the REL32 displacement at a placed body
 ?xfer@AIUpdateInterface@@UAEXPAVXfer@@@Z,0x00267EDD,slot 3 of AIUpdateInterface's vftable 0x00BFA480 (its slot 4 is the AIUpdateInterface pool-key getter; 1990B body); SupplyTruckAIUpdate::xfer (0x004A6B3A) calls it as its base-class xfer
 ?isMobile@ObjectIsMobileBody@@QBE_NXZ,0x002907A1,address read from the REL32 displacement at a placed body
+?xfer@W3DScriptedModelDraw@@MAEXPAVXfer@@@Z,0x000C5C04,slot 3 of ??_7W3DScriptedModelDraw 0x00BCA090 (its slot 0 is the W3DScriptedModelDraw scalar deleting dtor and slot 4 its pool key; 2503B body); W3DTankDraw::xfer (0x000CE03C) calls it as its base-class xfer
