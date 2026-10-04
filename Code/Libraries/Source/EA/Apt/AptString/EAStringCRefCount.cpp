@@ -603,3 +603,7 @@ void bfmeEmitEAStringCRefCount(EAStringC *p)
 #pragma comment(linker, "/alternatename:??1S4Mem005864A0@@QAE@XZ=??1EAStringC@@QAE@XZ")
 #pragma comment(linker, "/alternatename:??1S4Mem005879C0@@QAE@XZ=??1EAStringC@@QAE@XZ")
 #pragma comment(linker, "/alternatename:_bfmeDtorDAE=??1EAStringC@@QAE@XZ")
+
+// Other units name this global (at the same address) with the spelling(s)
+// below; bind them to this definition.
+#pragma comment(linker, "/alternatename:?g_pChainBlockAllocator@@3PAVRva006DB160@@A=?g_aptPoolAllocator@@3PAVRva006DB160@@A")

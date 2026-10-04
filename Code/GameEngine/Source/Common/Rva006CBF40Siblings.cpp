@@ -643,3 +643,8 @@ void deleteRva00711350(Rva00711350 *p)
 {
 	delete p;
 }
+
+// Other units name this global (at the same address) with the spelling(s)
+// below; bind them to this definition.
+#pragma comment(linker, "/alternatename:?g_poolAtE176F4@@3PAVAptValueGC_PoolManager@@A=?g_pChainBlockAllocatorF4@@3PAVRva006D2A60@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeChainBlockAllocatorAtE176F4@@3PAVRva006D2A60@@A=?g_pChainBlockAllocatorF4@@3PAVRva006D2A60@@A")
