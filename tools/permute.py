@@ -23,6 +23,7 @@ Usage:
   python3 tools/permute.py --land        land every win via add_match, then commit
 """
 import argparse
+import collections
 import concurrent.futures
 import difflib
 import hashlib
