@@ -14,8 +14,6 @@
 // ElementStrideWalks.cpp; the member split (dword + 16-byte block + three
 // dwords + byte) follows the retail construct helper 0x001610F0 which copies
 // +0x04..+0x13 as one block then +0x14/+0x18/+0x1C and the byte at +0x20.
-#include <vector>
-
 struct Elem36Block16
 {
 	int m_words[4];
@@ -40,6 +38,12 @@ struct Elem36
 	{
 	}
 };
+
+#include <memory>
+namespace _STL {
+template<> void _Construct<Elem36, Elem36>(Elem36 *, const Elem36 &);
+}
+#include <vector>
 
 typedef _STL::vector<Elem36, _STL::allocator<Elem36> > Elem36Vector;
 
