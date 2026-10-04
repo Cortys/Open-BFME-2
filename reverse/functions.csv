@@ -50730,3 +50730,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva003F7F30@Rva003F7F30@@QAEXXZ,,0x003F7F30,27,Code/Libraries/Source/WWVegas/WW3D2/WaterRenderObjRva003F7F30.cpp,matched,unlock caller 0x003F8090 callee clear rowed offsets 0xc 0x14 0x18
 ?rva003F7BE9@Rva003F7BE9@@QAEXPBVModuleData@@@Z,,0x003F7BE9,35,Code/GameEngine/Source/Common/Rva003F7BE9Setter.cpp,matched,leaf caller 0x003F9291 slot0 with 0 then delete same as 0x003F7C0C
 ?rva0037F77C@Rva0037F77C@@QAEPAVRva0037F551@@IPAV2@0@Z,,0x0037F77C,45,Code/GameEngine/Source/Common/Rva0037F551.cpp,matched,chain from 0x0037F731 allocate via allocator at this+8 then copy range caller 0x0037FEDD
+?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z,,0x004AE6D7,183,Code/GameEngine/Source/GameLogic/Object/Update/ToggleDeploySpecialAbilityUpdateSlot24.cpp,matched,vslot 24 of ToggleDeploy via audio event plus DeployStyle helper

@@ -7020,3 +7020,4 @@ BfmeNarrowRecord28Deque::__destroy_aux	0x0041A382	33	landed	Ghidra33-byte bounda
 ?rva004EA93F@Rva004EA93F@@QAEXPAX@Z	0x004EA93F	268	blocked	complex factory 10 plus virtuals plus vector needs full INI interface t=10 model=muse-03
 ?rva004EAF18@Rva004EAF18@@QAEXM@Z	0x004EAF18	165	blocked	needs 32-slot virtual interface plus EH plus STL register flow unclear t=12 model=muse-03
 ?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z	0x004AE6D7	183	partial	bool-exact body calls bool QBE_NXZ but row is int QBEHXZ so gate unresolved; int spelling gives test eax vs retail test al t=20 model=muse-06 score=0.98 stash=reverse/attempts/0x004ae6d7.cpp
+?rva0037FEA3@Rva0037FEA3@@QAEXI@Z	0x0037FEA3	125	blocked	ebx edi swap for n and size persists through store reorder and explicit byte scale plus imul vs lea for final multiply t=15 model=muse-06 (stash 0.93 kept)

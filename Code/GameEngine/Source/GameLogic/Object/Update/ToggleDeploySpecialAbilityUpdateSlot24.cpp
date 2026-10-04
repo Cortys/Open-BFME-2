@@ -1,8 +1,6 @@
-// ?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z
-// partial score=0.98 date=2026-10-04
 // cl: /O1 /DNDEBUG /MD /EHsc
-// ?rva004AE5B8@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z retail 0x004AE5B8 124B
-// Evidence: vslot 23 of vtable 0x00855370 for ToggleDeploySpecialAbilityUpdate; audio event via rowed BfmeAudioEventPrefix136 plus CondSetter plus TheAudio slot 0x64 plus DeployStyle helper; caller none
+// ?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z retail 0x004AE6D7 183B
+// Evidence: vslot 24 of vtable 0x00855370 for ToggleDeploySpecialAbilityUpdate; audio event via rowed BfmeAudioEventPrefix136 plus CondSetter plus TheAudio slot 0x64 plus DeployStyle helper; caller none. Row ?rva0028B7C8@Object@@QBEHXZ declares int but retail tests al so TU declares bool per-code-use.
 struct OpaqueRefElement4;
 class BfmeStringTailRecord144
 {
@@ -209,7 +207,7 @@ public:
 class Object
 {
 public:
-	bool rva0028B7C8() const;
+	int rva0028B7C8() const;
 };
 enum CommandSourceType {
 	kCommandSourceInvalid = 0,
@@ -224,7 +222,6 @@ public:
 class ToggleDeploySpecialAbilityUpdate : public Rva0044EF5E
 {
 public:
-	void rva004AE5B8(void *arg);
 	void rva004AE6D7(void *arg);
 private:
 	Rva004AE6D7P20 m_p20;
@@ -233,18 +230,8 @@ struct Rva004AE5B8Arg {
 	char m_pad[0x258];
 	DeployStyleAIUpdate *m_258;
 };
-void ToggleDeploySpecialAbilityUpdate::rva004AE5B8(void *argVoid)
-{
-	Rva004AE5B8Arg *arg = (Rva004AE5B8Arg *)argVoid;
-	BfmeAudioEventPrefix136 tmp(*(OpaqueRefElement4 *)((char *)m_owner + 0xCC), 0);
-	Rva004AE5B8Data08 *p08 = m_p08;
-	((Rva002D9531 *)&tmp)->rva002D9531(p08->m_74);
-	TheAudio->v25(&tmp);
-	arg->m_258->rva0048E6D2();
-}
 // ?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z retail 0x004AE6D7 183B
 // Evidence: vslot 24 of same vtable via first gate plus Object gate plus DeployStyle virtual plus aiIdle plus same audio tail with plus 0xC8 plus final helper
-// ?rva004AE6D7@ToggleDeploySpecialAbilityUpdate@@QAEXPAX@Z present-unmatched
 void ToggleDeploySpecialAbilityUpdate::rva004AE6D7(void *argVoid)
 {
 	if (!m_p20.v08(0))
@@ -253,7 +240,7 @@ void ToggleDeploySpecialAbilityUpdate::rva004AE6D7(void *argVoid)
 	DeployStyleAIUpdate *ds = arg->m_258;
 	if (!ds)
 		return;
-	if (((Object *)arg)->rva0028B7C8() || ds->v111()) {
+	if ((unsigned char)((Object *)arg)->rva0028B7C8() || ds->v111()) {
 		((AICommandInterface *)((char *)ds + 0x20))->aiIdle(kCommandSourceAI);
 	}
 	BfmeAudioEventPrefix136 tmp(*(OpaqueRefElement4 *)((char *)m_owner + 0xC8), 0);
