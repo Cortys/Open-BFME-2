@@ -51242,3 +51242,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??4LadderPref@@QAEAAV0@ABV0@@Z,,0x005DFB48,47,Code/GameEngine/Source/Common/UserPreferences_LadderPreferences_addRecentLadder.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GRva0022304A@@QAEPAXI@Z,,0x002231CB,28,Code/GameEngine/Source/GameClient/Rva00223898Free.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??_GRva002827F3@@QAEPAXI@Z,,0x00283C97,28,Code/GameEngine/Source/GameClient/Rva002827F3Clear.cpp,matched,unique masked-byte placement (locate.py sweep)
+??0Smudge@@QAE@XZ,,0x002D28C0,63,Code/GameEngine/Source/GameClient/System/Smudge_SmudgeSet_addSmudgeToSet.cpp,matched,unique masked-byte placement (locate.py sweep)
