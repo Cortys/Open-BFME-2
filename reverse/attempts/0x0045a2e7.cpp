@@ -1,6 +1,8 @@
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
 // partial score=0.96 date=2026-10-04
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
+// partial score=0.96 date=2026-10-04
+// ??0AutoAbilityBehaviorModuleData@@QAE@XZ
 // partial score=0.94 date=2026-10-03
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ
 // partial score=0.94 date=2026-10-03
@@ -122,16 +124,26 @@ private:
 // ??0AutoAbilityBehaviorModuleData@@QAE@XZ @0x0045A2E7
 AutoAbilityBehaviorModuleData::AutoAbilityBehaviorModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00C41568))
-	, m_maxScanRange(0.0f)
-	, m_minScanRange(0.0f)
-	, m_workingRadius(0.0f)
-	, m_idleTimeSeconds(0.0f)
 	, m_specialAbility()
 	, m_forbiddenStatus()
 {
+	// The four null floats belong in the BODY, not the init list. In the init
+	// list MSVC6 hoists their `xorps xmm0,xmm0` above the register pushes at
+	// +0x0F; as body assignments it lands after `mov esi,ecx` where retail has
+	// it. (Out of line: the memset below is a real call to 0x6291AE, so the
+	// four stores cannot be folded into it.)
+	m_maxScanRange = 0.0f;
+	m_minScanRange = 0.0f;
+	m_workingRadius = 0.0f;
+	m_idleTimeSeconds = 0.0f;
 	m_startsActive = false;
 	m_baseMaxRangeFromStartPos = false;
 	m_adjustAttackMeleePosition = false;
 	m_allowSelf = true;
-	Rva006291AEMemset(&m_forbiddenStatus, 0, 0x10);
+	// Retail keeps &mask live in EDI from its birth at +0x4F to the second
+	// ehvec call at +0x6A, so it saves EDI in the prolog. Naming the address
+	// before the call is what widens its live range across the whole tail;
+	// left implicit the register dies inside memset's arguments.
+	ForbiddenStatusMask *mask = &m_forbiddenStatus;
+	Rva006291AEMemset(mask, 0, sizeof(ForbiddenStatusMask));
 }
