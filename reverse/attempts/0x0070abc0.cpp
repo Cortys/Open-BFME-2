@@ -1,5 +1,5 @@
 // ?rva0070ABC0@AptNativeHash@@QAEXXZ
-// partial score=0.92 date=2026-10-04
+// partial score=0.95 date=2026-10-04
 // cl: /O2 /MD
 // Reconstructed from BFME2 and APT 0.19.03 Xbox final donor evidence, matching
 // the layout and flags of Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp.
@@ -35,6 +35,9 @@ extern "C" void *__cdecl memset(void *, int, unsigned int);
 #pragma intrinsic(memset)
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
+// class-gate: allow AsciiString the shared bfme2_ascii shim spells the accessor
+// isEmpty(), while the Apt donor spells it hasData(); both spellings have to
+// coexist across the AptNativeHash bodies and only hasData() is called here.
 class EAStringC {
 public:
 	bool IsEmpty() const;
@@ -68,20 +71,19 @@ public:
 	void rva0070ABC0();
 };
 
+
 void AptNativeHash::rva0070ABC0()
 {
 	AptNativeHash newTable(mnTotalSize * 2);
 	newTable.rva0070AB30();
-	int i = 0;
-	while (i < mnTotalSize)
+	for (int i = 0; i < mnTotalSize; ++i)
 	{
 		Entry *e = mpData + i;
 		if (e->key.hasData())
 		{
 			if (!((const EAStringC *)&e->key)->IsEmpty())
-				newTable.rva0070AC90(e, e->value);
+				newTable.rva0070AC90(e, mpData[i].value);
 		}
-		++i;
 	}
 	Entry *oldData = mpData;
 	int oldSize = mnTotalSize;
