@@ -52434,3 +52434,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva00347AE8@Rva00342843@@UAEXXZ,,0x00347AE8,85,Code/GameEngine/Source/GameLogic/AI/Rva00347AE8.cpp,matched,vtable slot6 of Rva00342843 with CritterDesync log and tailjmp to bfmeTail932E
 ??0Rva0021E85A@@QAE@ABV0@@Z,,0x0021E85A,250,Code/GameEngine/Source/Common/Rva0021E85ACopy.cpp,matched,copy ctor five AsciiString plus maps via throw FixedStorage caller 0x0021EF82
 ?Rva003C43F3Do@@YGXABVAsciiString@@0PAVObject@@@Z,,0x003C43F3,86,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C43F3Do.cpp,matched,leaf via sibling Rva003C4449Do shape plus ScriptEngine globals plus Team register
+??$__copy_ptrs@PAUBfmeObject476@@PAU1@@_STL@@YAPAUBfmeObject476@@PAU1@00ABU__false_type@0@@Z,,0x001FEF62,29,Code/Libraries/Source/WWVegas/WWLib/StlportObject476CopyPtrs.cpp,matched,STLport copy_ptrs wrapper via rowed copy caller 0x001FEFB9 erase
