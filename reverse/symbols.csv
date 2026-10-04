@@ -8010,3 +8010,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeSameUW@@YADPAXPAVBfmeItemUW@@0@Z,0x0030141B,callee read from the retail REL32 in placed BFME1-donor body ?Rva00452FE0Same@@YAHABURva00452FE0Key@@0@Z (0x00301B24)
 ??0U4Made005EA530@@QAE@PAVU4Maker005EA530@@@Z,0x003ADD0B,address read from the REL32 displacement at a placed body
 ?v3@Rva004ECECD@@UAE_NPAXH@Z,0x004ECE61,AITactic slot 3 (the default the tactic vtables share; rowed under the address name Rva004ECE61); REL32 at 0x005AAE2B in the AIRoamingDefenseTactic slot 3 qualified base call
+?bfmeFind1038@@YGPAVBfmeY1038@@H@Z,0x0040D008,address read from the REL32 displacement at a placed body
+?bfmeVal1038@BfmeY1038@@QAEHXZ,0x0040CF91,address read from the REL32 displacement at a placed body
