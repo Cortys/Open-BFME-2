@@ -7302,3 +7302,4 @@ FUN_006f0bb5	0x002F0BB5	43	blocked	EH wrapper two rowed Rva002EB46E calls needs 
 ?rva00093B5B@Rva00093B5B@@QAEXXZ	0x00093B5B	360	blocked	SSE blend 3 walks register wall donor needs work t=12 model=muse-06
 ??0Rva0026F419@@QAE@XZ	0x0026F419	44	partial	single vtable immediate retail mov [esi] 0xbfabb8 vs ours 0 with dir32 vtable; 44B exact-size 16of17 insns 2 reloc not defects t=5 model=muse-01 score=0.93 stash=reverse/attempts/0x0026f419.cpp
 ?rva0026F8D6@Rva0026F8D6@@QAEXXZ	0x0026F8D6	102	blocked	104B vs 102B esi-edi mirror plus reserve-push scheduling and spill choice t=12 model=muse-01 (stash 0.93 kept)
+?rva0028B8A6@Object@@QAEX_N@Z	0x0028B8A6	185	blocked	EH prolog plus state stores missing under EHsc t=18 model=muse-07
