@@ -981,3 +981,53 @@ void __cdecl rva007B6FAC()
 	p->rva001EAF7B();
 }
 
+extern unsigned g_Va00DEAF20;
+extern unsigned g_Va00DEC290;
+extern unsigned g_Va00DEC3B8;
+extern unsigned g_Va00DEE93C;
+
+// ?rva007B6D09@@YAXXZ @ 0x007B6D09 (10B). Global AsciiString dtor thunk: ecx=&g_Va00DEAF20 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39).
+void __cdecl rva007B6D09()
+{
+	AsciiString *p = (AsciiString *)&g_Va00DEAF20;
+	return p->~AsciiString();
+}
+
+// ?rva007B6F5C@@YAXXZ @ 0x007B6F5C (10B). Global AsciiString dtor thunk: ecx=&g_Va00DEC290 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39).
+void __cdecl rva007B6F5C()
+{
+	AsciiString *p = (AsciiString *)&g_Va00DEC290;
+	return p->~AsciiString();
+}
+
+// ?rva007B6F98@@YAXXZ @ 0x007B6F98 (10B). Global AsciiString dtor thunk: ecx=&g_Va00DEC3B8 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39).
+void __cdecl rva007B6F98()
+{
+	AsciiString *p = (AsciiString *)&g_Va00DEC3B8;
+	return p->~AsciiString();
+}
+
+// ?rva007B707A@@YAXXZ @ 0x007B707A (10B). Global AsciiString dtor thunk: ecx=&g_Va00DEE93C then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39).
+void __cdecl rva007B707A()
+{
+	AsciiString *p = (AsciiString *)&g_Va00DEE93C;
+	return p->~AsciiString();
+}
+
+extern unsigned g_Va00DEC390;
+extern unsigned g_Va00DF2984;
+
+// ?rva007B6F8E@@YAXXZ @ 0x007B6F8E (10B). Global Rva00041004 dtor thunk: ecx=&g_Va00DEC390 then tail-jmp to rowed ??1Rva00041004@@UAE@XZ (0x00040FE5).
+void __cdecl rva007B6F8E()
+{
+	Rva00041004 *p = (Rva00041004 *)&g_Va00DEC390;
+	return p->Rva00041004::~Rva00041004();
+}
+
+// ?rva007B70AB@@YAXXZ @ 0x007B70AB (10B). Global Rva00041004 dtor thunk: ecx=&g_Va00DF2984 then tail-jmp to rowed ??1Rva00041004@@UAE@XZ (0x00040FE5).
+void __cdecl rva007B70AB()
+{
+	Rva00041004 *p = (Rva00041004 *)&g_Va00DF2984;
+	return p->Rva00041004::~Rva00041004();
+}
+

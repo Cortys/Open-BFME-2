@@ -50801,3 +50801,9 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6F84@@YAXXZ,,0x007B6F84,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6F84
 ?rva007B6FA2@@YAXXZ,,0x007B6FA2,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6FA2
 ?rva007B6FAC@@YAXXZ,,0x007B6FAC,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6FAC
+?rva007B6D09@@YAXXZ,,0x007B6D09,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global AsciiString dtor thunk at 0x007B6D09
+?rva007B6F5C@@YAXXZ,,0x007B6F5C,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global AsciiString dtor thunk at 0x007B6F5C
+?rva007B6F98@@YAXXZ,,0x007B6F98,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global AsciiString dtor thunk at 0x007B6F98
+?rva007B707A@@YAXXZ,,0x007B707A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global AsciiString dtor thunk at 0x007B707A
+?rva007B6F8E@@YAXXZ,,0x007B6F8E,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global Rva00041004 dtor thunk at 0x007B6F8E
+?rva007B70AB@@YAXXZ,,0x007B70AB,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Global Rva00041004 dtor thunk at 0x007B70AB
