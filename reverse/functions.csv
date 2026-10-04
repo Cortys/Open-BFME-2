@@ -51763,3 +51763,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva003F3F83@Rva003F3F83@@QAEHXZ,,0x003F3F83,20,Code/GameEngine/Source/Common/System/Rva003F3F83Pred.cpp,matched,predicate over plus2c for 1 or 4 t=5
 ??0Rva003F610FElement@@QAE@XZ,,0x003F5322,57,Code/Libraries/Source/WWVegas/WWLib/StlportRva003F610FDefaultCtor.cpp,matched,adjacent dtor 0x003F535B and copy ctor 0x003F54DC prove layout
 ??0Rva003F610FElement@@QAE@H@Z,,0x003F55D6,113,Code/Libraries/Source/WWVegas/WWLib/StlportRva003F610FIntCtor.cpp,matched,same 48B layout as default copy dtor; base 0x00211E58 reserves rowed
+??0MemoryReadFile@@QAE@PADH@Z,,0x00602255,89,Code/GameEngine/Source/Common/System/File_MemoryReadFileCtor.cpp,matched,pinned name donor File.cpp:536 base ModuleData row vtable 0087A748 caller createMemoryReadFile
