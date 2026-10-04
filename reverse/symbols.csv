@@ -7699,3 +7699,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$upper_bound@PAVAsciiString@@V1@U?$less@VAsciiString@@@_STL@@@_STL@@YAPAVAsciiString@@PAV1@0ABV1@U?$less@VAsciiString@@@0@@Z,0x004F6D66,address read from the REL32 displacement at a placed body
 ??$rotate@PAVAsciiString@@@_STL@@YAPAVAsciiString@@PAV1@00@Z,0x004F8049,address read from the REL32 displacement at a placed body
 ??$copy_backward@PAVAsciiString@@PAV1@@_STL@@YAPAVAsciiString@@PAV1@00@Z,0x004F6FE1,address read from the REL32 displacement at a placed body
+??0?$_Vector_base@PAVRva00506FE9Hit@@V?$allocator@PAVRva00506FE9Hit@@@_STL@@@_STL@@QAE@ABV?$allocator@PAVRva00506FE9Hit@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor; REL32 at 0x00507002 for the local hit vector in Rva00506B74::rva00506FE9
+?rva005AD99C@Rva005ADA40@@QAEXABVAsciiString@@PAV?$vector@PAVRva00506FE9Hit@@V?$allocator@PAVRva00506FE9Hit@@@_STL@@@_STL@@@Z,0x005AD99C,element collect-by-name (rowed under Rva005AD99C); REL32 at 0x0050704B in Rva00506B74::rva00506FE9
+?rva002A8B59@Rva002A8F24@@QAEPAURva002A8B59Data@@PAX@Z,0x002A8B59,TheSkirmishAIManager (g_00DFEEF8) per-owner data lookup; REL32 at 0x00507068 in Rva00506B74::rva00506FE9
+?rva0055ADBA@Rva00506FE9Hit@@QAEXPAX@Z,0x0055ADBA,hit update with the owner; REL32 at 0x00507087 in Rva00506B74::rva00506FE9

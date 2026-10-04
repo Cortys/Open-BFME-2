@@ -42,10 +42,13 @@ public:
 	virtual void v3(void *arg);
 };
 
+class Rva00506FE9Hit;
+
 class Rva005ADA40
 {
 public:
 	~Rva005ADA40();
+	void rva005AD99C(const AsciiString &name, _STL::vector<Rva00506FE9Hit *> *hits);
 	void rva005ADC63();
 	Rva005AD9C0Hit *rva005AD9C0(void *arg);
 };
@@ -60,6 +63,66 @@ public:
 private:
 	bool m_04;
 };
+
+// 0x00506FE9's collaborators. Object and RebuildHoleBehaviorInterface stay
+// opaque; the views below carry only what that body reads.
+class Object;
+class RebuildHoleBehaviorInterface;
+
+class RebuildHoleBehavior
+{
+public:
+	static RebuildHoleBehaviorInterface *getRebuildHoleBehaviorInterfaceFromObject(Object *obj);
+};
+
+struct Rva00506FE9Template
+{
+	char m_pad00[0x64];
+	AsciiString m_name;		// +0x64
+};
+
+class Rva00506FE9RebuildView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual const Rva00506FE9Template *getRebuildTemplate();	// slot 3
+};
+
+struct Rva00506FE9ObjectView
+{
+	void *m_vptr;
+	const Rva00506FE9Template *m_template;	// +0x04
+	char m_pad08[0x74 - 8];
+	int m_id;				// +0x74
+};
+
+class Rva00506FE9Hit
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(void *owner, int flag);	// +0x18
+	void rva0055ADBA(void *owner);
+	float m_04;
+	char m_pad08[0x24 - 8];
+	int m_24;
+};
+
+struct Rva002A8B59Data
+{
+	char m_pad00[0x88];
+	float m_88;
+};
+
+class Rva002A8F24
+{
+public:
+	Rva002A8B59Data *rva002A8B59(void *owner);
+};
+
+extern Rva002A8F24 *g_00DFEEF8;
 
 Coord3D __cdecl Rva00506CF5(void *owner, Coord3D *point);
 
@@ -77,6 +140,7 @@ public:
 	bool rva00506C39(void *arg);
 	Rva005ADA40 *rva00506C64(unsigned int index);
 	void rva00507522();
+	void rva00506FE9(Object *obj);
 private:
 	void *m_08;
 	_STL::vector<Rva005ADA40 *> m_0C;
@@ -158,6 +222,35 @@ void Rva00506B74::rva00507522()
 			rva0050722A(&m_28);
 	}
 	m_24 = true;
+}
+
+// 0x00506FE9: collect the owned elements' hits for the object's template name
+// (its rebuild template when it is a rebuild hole), then rescale and re-run
+// every hit that belongs to this object.
+void Rva00506B74::rva00506FE9(Object *obj)
+{
+	_STL::vector<Rva00506FE9Hit *> hits;
+	AsciiString name;
+	RebuildHoleBehaviorInterface *rebuild = RebuildHoleBehavior::getRebuildHoleBehaviorInterfaceFromObject(obj);
+	if (rebuild)
+		name = ((Rva00506FE9RebuildView *)rebuild)->getRebuildTemplate()->m_name;
+	else
+		name = ((Rva00506FE9ObjectView *)obj)->m_template->m_name;
+	Rva005ADA40 **end = m_0C.end();
+	for (Rva005ADA40 **it = m_0C.begin(); it != end; ++it)
+		(*it)->rva005AD99C(name, &hits);
+	if (!hits.empty()) {
+		Rva002A8B59Data *data = g_00DFEEF8->rva002A8B59(m_08);
+		for (Rva00506FE9Hit **h = hits.begin(); h != hits.end(); ++h) {
+			Rva00506FE9Hit *hit = *h;
+			if (hit->m_24 == ((Rva00506FE9ObjectView *)obj)->m_id) {
+				hit->rva0055ADBA(m_08);
+				float v = hit->m_04;
+				hit->m_04 = data->m_88 * v;
+				hit->v6(m_08, 0);
+			}
+		}
+	}
 }
 
 // 0x00506CC3: the waypoint with this name, walking TheTerrainLogic's list from
