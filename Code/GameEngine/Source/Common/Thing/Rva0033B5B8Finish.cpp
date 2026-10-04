@@ -16,6 +16,8 @@ private: void releaseBuffer(); void *m_data; };
 #pragma comment(linker, "/alternatename:??1?$StringBase@D@@QAE@XZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
 class BFMERetailAsciiString : public StringBase<char>
 {
+public:
+	~BFMERetailAsciiString();
 };
 class ModuleData;
 enum ModuleType
