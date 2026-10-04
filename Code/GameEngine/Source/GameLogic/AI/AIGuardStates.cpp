@@ -17,6 +17,13 @@
 //    the locomotor distance to goal (pinned
 //    AIUpdateInterface::getLocomotorDistanceToGoal 0x0026435E, the ZH
 //    goal-type switch) is inside the standard guard range.
+//  - AIGuardIdleState::update, retail 0x00543E5D (251 bytes): slot 6 of
+//    0x00C696D0 (AIGuardIdleState); BFME 2 also checks a guarded team's
+//    centre. AI crate id +0x238, AI_GUARD_GET_CRATE 5004 through the machine's
+//    setState (vslot 8), m_nextEnemyScanTime +0x20, m_guardeePos +0x24.
+//  - AIGuardIdleState::onEnter, retail 0x00542D88 (53 bytes): slot 4 of
+//    0x00C696D0; ZH's randomised first scan (GameLogicRandomValue at AIGuard.cpp
+//    line 1013 in BFME 2's tree).
 //  - AIGuardMachine::getStdGuardRange, retail 0x00542C2A (14 bytes): ZH's
 //    static over AI::getAdjustedVisionRangeForObject (pinned 0x002FDD0A, static
 //    as in ZH) with OWNERTYPE|MOOD|GUARDINNER.
@@ -98,10 +105,15 @@ class AIUpdateInterface
 {
 public:
 	Real getLocomotorDistanceToGoal();
+	ObjectID getCrateID() const { return m_crateCreated; }
+private:
+	unsigned char m_pad00[0x238];
+	ObjectID m_crateCreated; // +0x238
 };
 struct TAiData
 {
-	unsigned char m_pad00[0x44];
+	unsigned char m_pad00[0x40];
+	UnsignedInt m_guardEnemyScanRate; // +0x40
 	UnsignedInt m_guardEnemyReturnScanRate; // +0x44
 };
 class AI
@@ -115,12 +127,18 @@ private:
 };
 extern AI *TheAI;
 extern GameLogic *TheGameLogic;
+typedef UnsignedInt StateID;
 class StateMachine
 {
 public:
+	virtual ~StateMachine();
+	virtual void slot01(); virtual void slot02(); virtual void slot03();
+	virtual void slot04(); virtual void slot05(); virtual void slot06();
+	virtual void slot07();
+	virtual StateReturnType setState(StateID newStateID);
 	Object *getOwner() const { return m_owner; }
 private:
-	unsigned char m_pad00[0x14];
+	unsigned char m_pad04[0x14 - 0x04];
 	Object *m_owner; // +0x14
 };
 class AIGuardMachine : public StateMachine
@@ -185,6 +203,25 @@ public:
 private:
 	AIGuardMachine *getGuardMachine() { return (AIGuardMachine *)getMachine(); }
 	UnsignedInt m_nextReturnScanTime; // +0x4C
+};
+enum
+{
+	AI_GUARD_GET_CRATE = 5004
+};
+#define PATHFIND_CELL_SIZE_F 10.0f
+#define STATE_SLEEP(n) ((StateReturnType)(n))
+int GetGameLogicRandomValue(int low, int high, char *file, int line);
+#define AIGUARD_FILE "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\AI\\AIGuard.cpp"
+class AIGuardIdleState : public State
+{
+public:
+	virtual StateReturnType onEnter();
+	virtual StateReturnType update();
+private:
+	AIGuardMachine *getGuardMachine() { return (AIGuardMachine *)getMachine(); }
+	unsigned char m_pad1C[0x20 - 0x1C];
+	UnsignedInt m_nextEnemyScanTime; // +0x20
+	Coord3D m_guardeePos; // +0x24
 };
 class AIGuardOuterState : public State
 {
@@ -265,4 +302,62 @@ StateReturnType AIGuardReturnState::update( void )
 
 	// Just let the return movement finish.
 	return AIInternalMoveToState::update();
+}
+
+StateReturnType AIGuardIdleState::onEnter( void )
+{
+	// first time thru, use a random amount so that everyone doesn't scan on the same frame,
+	// to avoid "spikes".
+	UnsignedInt now = TheGameLogic->getFrame();
+	m_nextEnemyScanTime = now + GetGameLogicRandomValue(0, TheAI->getAiData()->m_guardEnemyScanRate, AIGUARD_FILE, 1013);
+
+	return STATE_CONTINUE;
+}
+
+StateReturnType AIGuardIdleState::update( void )
+{
+	UnsignedInt now = TheGameLogic->getFrame();
+	if (now < m_nextEnemyScanTime)
+		return STATE_SLEEP(m_nextEnemyScanTime - now);
+
+	m_nextEnemyScanTime = now + TheAI->getAiData()->m_guardEnemyScanRate;
+
+	AIGuardMachine *guard = getGuardMachine();
+	Object *owner = guard->getOwner();
+	AIUpdateInterface *ai = owner->getAI();
+	// Check to see if we have created a crate we need to pick up.
+	if (ai->getCrateID() != INVALID_ID)
+	{
+		guard->setState(AI_GUARD_GET_CRATE);
+		return STATE_SLEEP(m_nextEnemyScanTime - now);
+	}
+
+	// if anyone is in the inner area, return success.
+	if (guard->lookForInnerTarget())
+	{
+		return STATE_SUCCESS;	// Transitions to AIGuardInnerState.
+	}
+
+	// See if the object (or team) we are guarding moved.
+	Object* targetToGuard = guard->findTargetToGuardByID();
+	Team* teamToGuard = guard->findTeamToGuardByID();
+	if (targetToGuard || teamToGuard)
+	{
+		Coord3D pos;
+		if (targetToGuard)
+			pos = *targetToGuard->getPosition();
+		else
+			teamToGuard->rva0039E5B9(&pos);
+		Real delta = m_guardeePos.x-pos.x;
+		if (delta*delta > 4*PATHFIND_CELL_SIZE_F*PATHFIND_CELL_SIZE_F) {
+			m_guardeePos = pos;
+			return STATE_FAILURE; // goes to AIGuardReturnState.
+		}
+		delta = m_guardeePos.y-pos.y;
+		if (delta*delta > 4*PATHFIND_CELL_SIZE_F*PATHFIND_CELL_SIZE_F) {
+			m_guardeePos = pos;
+			return STATE_FAILURE; // goes to AIGuardReturnState.
+		}
+	}
+	return STATE_SLEEP(m_nextEnemyScanTime - now);
 }
