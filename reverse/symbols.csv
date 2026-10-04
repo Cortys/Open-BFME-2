@@ -7578,3 +7578,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?Rva00903060Get@@YAHXZ,0x0011F1B0,callee of ?createVideoBuffer@W3DDisplay@@UAEPAVVideoBuffer@@_N@Z at retail 0x00044D7F read from its REL32 displacement; ICF alias onto ?Rva0011F1B0Get@@YAHXZ (matched)
 ?Rva00739D20@@YAHH_N@Z,0x0007243D,callee of ?createVideoBuffer@W3DDisplay@@UAEPAVVideoBuffer@@_N@Z at retail 0x00044D7F read from its REL32 displacement; body unrowed
 ?bfmeUnlock1179@@YADXZ,0x00120F50,callee of ?createVideoBuffer@W3DDisplay@@UAEPAVVideoBuffer@@_N@Z at retail 0x00044D7F read from its REL32 displacement; ICF alias onto ?BFME_DX8_Thread_Assert@@YA_NXZ (matched)
+?Open_W3D_File@@YAPAXPAX0PBD@Z,0x0007882F,callee of ?Load_HLOD@Rva00970880Proto@@UAEXXZ at retail 0x0018012A read from its REL32 displacement; ICF alias onto ?Rva0007882FGet@@YAPAVFile@@PBDHH@Z (matched)
