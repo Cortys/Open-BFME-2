@@ -28,6 +28,7 @@
 // Render2DSentenceClass the wrap width sits at +0x84 and the hard-wrap flag at
 // +0xAE; GlobalLanguage::m_useHardWrap is at +0x24.
 
+#include "ascii_string.h"
 #include "unicode_string.h"
 
 typedef bool Bool;
@@ -35,7 +36,26 @@ typedef int Int;
 #define TRUE true
 #define FALSE false
 
-class GameFont;
+class FontCharsClass;
+
+// BFME 2 GameFont: name at +0x08, point size (a Real here) at +0x0C and the
+// renderer font data at +0x14.
+class GameFont
+{
+public:
+	char m_unrecovered00[ 0x08 ];
+	AsciiString nameString;															///< 0x08
+	float pointSize;																		///< 0x0C
+	char m_unrecovered10[ 0x04 ];
+	void *fontData;																			///< 0x14
+};
+
+class FontLibrary
+{
+public:
+	GameFont *getFont( const AsciiString *name, float pointSize, Bool bold );
+};
+extern FontLibrary *TheFontLibrary;
 
 struct GlobalLanguage
 {
@@ -53,6 +73,7 @@ public:
 	virtual Int getTextLength();
 	virtual void notifyTextChanged();
 	virtual void reset();
+	virtual void setFont( GameFont *font ) { m_font = font; }
 protected:
 	UnicodeString m_textString;
 	GameFont *m_font;
@@ -70,6 +91,7 @@ public:
 																										WrapWidth = width; 
 																										return true;	}
 	void Set_Use_Hard_Word_Wrap( bool onoff ) { UseHardWordWrap = onoff; }
+	void Set_Font( FontCharsClass *font );
 private:
 	char m_unrecovered04[ 0x84 - 0x04 ];
 	float WrapWidth;																		///< 0x84
@@ -84,6 +106,7 @@ public:
 	virtual ~W3DDisplayString();
 	virtual void notifyTextChanged();
 	virtual void setWordWrap( Int wordWrap );
+	virtual void setFont( GameFont *font );
 protected:
 	void computeExtents();
 private:
@@ -91,7 +114,9 @@ private:
 	Render2DSentenceClass m_textRendererHotKey;					///< 0xD8
 	UnicodeString m_hotkey;															///< 0x19C
 	Bool m_textChanged;																	///< 0x1A0
+	Bool m_fontChanged;																	///< 0x1A1
 };
+
 
 //-------------------------------------------------------------------------------------------------
 /** Text, font, or other attributes have changed, mark data as dirty */
@@ -137,3 +162,32 @@ void W3DDisplayString::setWordWrap( Int wordWrap )
 	if(m_textRenderer.Set_Wrapping_Width(wordWrap))
 		notifyTextChanged();
 }// void setWordWrap( Int wordWrap )
+
+//-------------------------------------------------------------------------------------------------
+/** Set the font for this particular display string */
+//-------------------------------------------------------------------------------------------------
+void W3DDisplayString::setFont( GameFont *font )
+{
+
+	// sanity
+	if( font == 0 )
+		return;
+
+	// if the new font is the same as our existing font do nothing
+	if( m_font == font )
+		return;
+
+	// extending functionality
+	DisplayString::setFont( font );
+
+	// set the font in our renderer
+	m_textRenderer.Set_Font( static_cast<FontCharsClass *>(m_font->fontData) );
+	
+	m_textRendererHotKey.Set_Font( static_cast<FontCharsClass *>(TheFontLibrary->getFont(&font->nameString,font->pointSize, TRUE)->fontData) );
+	// recompute extents for text with new font
+	computeExtents();
+
+	// set flag telling us the font has changed since last render
+	m_fontChanged = TRUE;
+
+}  // end setFont
