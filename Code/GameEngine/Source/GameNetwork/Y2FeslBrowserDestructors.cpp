@@ -33,9 +33,10 @@
 // here only as the evidence for "two classes", not as names.
 
 // The base class exists only to produce the SECOND vptr store; its destructor
-// is empty and inline, so retail has no separate body for it and none for the
-// deleting wrapper MSVC emits beside it.  The labels below are copied out of
-// this file's own object symbol table, not written by hand.
+// is empty and inline, so retail has no separate body for it.  Its deleting
+// wrapper does exist: it is slot 0 of each base vftable, rowed from here.
+// The labels below are copied out of this file's own object symbol table,
+// not written by hand.
 //
 // ??1Rva00802EC0Base@@UAE@XZ absent-from-retail
 // ??1Rva00802CA0Base@@UAE@XZ absent-from-retail
