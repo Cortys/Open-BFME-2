@@ -7746,3 +7746,9 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$__unguarded_partition@PAUTreeHintRef00217D4C@@U1@URva004F9185Cmp@@@_STL@@YAPAUTreeHintRef00217D4C@@PAU1@0U1@URva004F9185Cmp@@@Z,0x004F71A8,callee REL32 read by locate.py from a unique masked-byte placement emitted by PAUTreeHintRef00217D4CRva004F9565.cpp
 ??$partial_sort@PAUTreeHintRef00217D4C@@URva004F9185Cmp@@@_STL@@YAXPAUTreeHintRef00217D4C@@00URva004F9185Cmp@@@Z,0x004F8D02,callee REL32 read by locate.py from a unique masked-byte placement emitted by PAUTreeHintRef00217D4CRva004F9565.cpp
 ??4BfmeObject476@@QAEAAU0@ABU0@@Z,0x001FE78E,callee REL32 read by locate.py from a unique masked-byte placement emitted by StlportObject476Vector.cpp
+??$_Construct@UBfmeStringTailRecord156@@U1@@_STL@@YAXPAUBfmeStringTailRecord156@@ABU1@@Z,0x004CC095,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
+??1BfmeAssignRecord28@@QAE@XZ,0x00111B25,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
+??1BfmeAssignRecord52@@QAE@XZ,0x002B707E,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
+??4BfmeAssignRecord44@@QAEAAU0@ABU0@@Z,0x0055AC1F,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
+??4BfmeStringTailRecord144@@QAEAAU0@ABU0@@Z,0x00051C3F,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
+?_M_insert_overflow@?$vector@UBfmeStringTailRecord156@@V?$allocator@UBfmeStringTailRecord156@@@_STL@@@_STL@@IAEXPAUBfmeStringTailRecord156@@ABU3@ABU__false_type@2@I_N@Z,0x004CC25C,callee REL32 read by locate.py from a unique masked-byte placement emitted by stlport_asciistring_record_bodies.cpp
