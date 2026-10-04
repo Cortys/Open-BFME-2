@@ -25,10 +25,15 @@ class Rva00595A9F
 public:
     bool rva00595A9F();
     bool rva00595B97();
+    bool rva0059573C();
 private:
     char m_pad0[4];
-    unsigned char m_04;
-    char m_pad05[0x0c - 0x05];
+    union
+    {
+        unsigned char m_04;
+        unsigned long m_04d;
+    };
+    char m_pad08[0x0c - 0x08];
     unsigned long m_0c;
     char m_pad10[0x54 - 0x10];
     unsigned long m_54;
@@ -44,6 +49,8 @@ private:
     unsigned long m_17c;
     unsigned long m_180;
     unsigned long m_184;
+    char m_pad188[0x18c - 0x188];
+    unsigned long m_18c;
 };
 
 bool Rva00595A9F::rva00595A9F()
@@ -92,4 +99,35 @@ bool Rva00595A9F::rva00595B97()
     }
     m_17c = 9;
     return true;
+}
+
+bool Rva00595A9F::rva0059573C()
+{
+    unsigned short r = ((Rva00594E07 *)this)->rva00594E07((unsigned short)(m_88 + 1), 0);
+    m_7a = r;
+    if (r == 0) {
+        unsigned long now = timeGetTime();
+        if (now - m_180 > m_184) {
+            m_17c = 9;
+            return true;
+        }
+        return false;
+    }
+    ((Rva0059534A *)this)->rva0059534A(m_68);
+    if (m_7a == m_68) {
+        m_04d |= 1;
+        m_17c = 9;
+        return true;
+    }
+    m_04d &= ~1u;
+    unsigned long f = m_04d;
+    if (m_78 == m_7a)
+        f |= 2;
+    else
+        f |= 4;
+    m_18c = 0;
+    m_88 += 10;
+    m_04d = f;
+    m_17c = 4;
+    return false;
 }
