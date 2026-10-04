@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /G7 /DNDEBUG /MD
 //
 // AIDock state bodies ported from Zero Hour's GameEngine/Source/GameLogic/AI/
 // AIDock.cpp (GeneralsMD tree vendored under reference/open-bfme-1/inputs/
@@ -12,10 +12,22 @@
 //  - AIDockProcessDockState::setNextDockActionFrame, retail 0x005445FF
 //    (71 bytes), and findMyDrone, retail 0x00544B41 (85 bytes): the two
 //    helpers those slots call.
+//  - AIDockApproachState::onExit, retail 0x005441AF (91 bytes): slot 5 of
+//    0x00C69AB0, over the rowed base AIInternalMoveToState::onExit.
+//  - AIDockWaitForClearanceState::onEnter, update and onExit, retail
+//    0x0054420A (14 bytes), 0x00544218 (115 bytes) and 0x0054428B (65 bytes):
+//    slots 4-6 of 0x00C69940 (AIDockWaitForClearanceState); m_enterFrame
+//    +0x20, and the timeout's LOGICFRAMES_PER_SECOND is the rowed int global
+//    g_009BA4E4. The update's flag-to-result 'and al, 0xFE' needs /G7, which
+//    the unit's other bodies accept unchanged.
+//  - AIDockProcessDockState::onExit, retail 0x00544670 (10 bytes): slot 5 of
+//    0x00C69A20; the inline StateMachine::unlock clears +0x38.
 // BFME2 layout (target evidence): m_nextDockActionFrame +0x20, m_droneID
 // +0x24; AI +0x258 with getSupplyTruckAIInterface at AI vslot 95 (+0x17C) and
-// getActionDelayForDock at its vslot 19 (+0x4C); DockUpdateInterface action at
-// vslot 12 (+0x30) and isDockOpen at vslot 14 (+0x38). BFME 2's DroneInfo has
+// getActionDelayForDock at its vslot 19 (+0x4C); DockUpdateInterface
+// isClearToEnter at vslot 3 (+0x0C), onApproachReached at vslot 8 (+0x20),
+// action at vslot 12 (+0x30), cancelDock at vslot 13 (+0x34) and isDockOpen at
+// vslot 14 (+0x38). BFME 2's DroneInfo has
 // no found flag (owner, drone); its findDrone callback is the rowed
 // Rva00544B13Callback.
 typedef bool Bool;
@@ -27,7 +39,8 @@ enum ObjectID
 };
 enum StateExitType
 {
-	EXIT_NORMAL = 0
+	EXIT_NORMAL = 0,
+	EXIT_RESET
 };
 enum StateReturnType
 {
@@ -54,11 +67,20 @@ class AIUpdateInterface : public VSlots<95>
 public:
 	virtual SupplyTruckAIInterface *getSupplyTruckAIInterface() = 0;
 };
-class DockUpdateInterface : public VSlots<12>
+class DockUpdateInterface : public VSlots<3>
 {
 public:
+	virtual Bool isClearToEnter(const Object *docker) const = 0;
+	virtual void slot04() = 0;
+	virtual void slot05() = 0;
+	virtual void slot06() = 0;
+	virtual void slot07() = 0;
+	virtual void onApproachReached(Object *docker) = 0;
+	virtual void slot09() = 0;
+	virtual void slot10() = 0;
+	virtual void slot11() = 0;
 	virtual Bool action(Object *docker, Object *drone) = 0;
-	virtual void slot13() = 0;
+	virtual void cancelDock(Object *docker) = 0;
 	virtual Bool isDockOpen() = 0;
 };
 class Player
@@ -89,14 +111,19 @@ private:
 	UnsignedInt m_frame; // +0x40
 };
 extern GameLogic *TheGameLogic;
+extern const int g_009BA4E4;
+#define LOGICFRAMES_PER_SECOND g_009BA4E4
 class StateMachine
 {
 public:
 	Object *getOwner() const { return m_owner; }
 	Object *getGoalObject();
+	void unlock() { m_locked = false; }
 private:
 	unsigned char m_pad00[0x14];
 	Object *m_owner; // +0x14
+	unsigned char m_pad18[0x38 - 0x18];
+	Bool m_locked; // +0x38
 };
 class State
 {
@@ -118,17 +145,30 @@ protected:
 class AIInternalMoveToState : public State
 {
 public:
+	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 };
 class AIDockApproachState : public AIInternalMoveToState
 {
 public:
+	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
+};
+class AIDockWaitForClearanceState : public State
+{
+public:
+	virtual StateReturnType onEnter();
+	virtual void onExit(StateExitType status);
+	virtual StateReturnType update();
+private:
+	unsigned char m_pad1C[0x20 - 0x1C];
+	UnsignedInt m_enterFrame; // +0x20
 };
 class AIDockProcessDockState : public State
 {
 public:
 	virtual StateReturnType onEnter();
+	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 	void setNextDockActionFrame();
 	unsigned char m_pad1C[0x20 - 0x1C];
@@ -239,4 +279,82 @@ Object* AIDockProcessDockState::findMyDrone()
 		}
 	}
 	return dInfo.drone;
+}
+
+void AIDockApproachState::onExit( StateExitType status )
+{
+	Object *goalObject = getMachineGoalObject();
+
+	DockUpdateInterface *dock = NULL;
+	if( goalObject )
+		dock = goalObject->getDockUpdateInterface();
+
+	// tell the dock we have approached
+	if (dock)
+	{
+		// if we were interrupted, let the dock know we're not coming
+		if (status == EXIT_RESET || dock->isDockOpen() == false)
+			dock->cancelDock( getMachineOwner() );
+		else
+			dock->onApproachReached( getMachineOwner() );
+	}
+
+	// this behavior is an extention of basic MoveTo
+	AIInternalMoveToState::onExit( status );
+}
+
+StateReturnType AIDockWaitForClearanceState::onEnter( void )
+{
+	m_enterFrame = TheGameLogic->getFrame();
+	return STATE_CONTINUE;
+}
+
+StateReturnType AIDockWaitForClearanceState::update( void )
+{
+	Object *goalObject = getMachineGoalObject();
+
+	if( goalObject == NULL )
+		return STATE_FAILURE;
+
+	DockUpdateInterface *dock = goalObject->getDockUpdateInterface();
+
+	// if we have nothing to dock with, fail
+	if (dock == NULL)
+		return STATE_FAILURE;
+
+	// fail if the dock is closed
+	if( dock->isDockOpen() == false )
+	{
+		dock->cancelDock( getMachineOwner() );
+		return STATE_FAILURE;
+	}
+
+	// if the dock says we can enter, our wait is over
+	if (dock->isClearToEnter( getMachineOwner() ))
+		return STATE_SUCCESS;
+
+	if (m_enterFrame + 30*LOGICFRAMES_PER_SECOND < TheGameLogic->getFrame()) {
+		return STATE_FAILURE;
+	}
+	// continue to wait
+	return STATE_CONTINUE;
+}
+
+void AIDockWaitForClearanceState::onExit( StateExitType status )
+{
+	Object *goalObject = getMachineGoalObject();
+
+	DockUpdateInterface *dock = NULL;
+	if( goalObject )
+		dock = goalObject->getDockUpdateInterface();
+
+	// if we were interrupted, let the dock know we're not coming
+	if (dock && (dock->isDockOpen() == false || status == EXIT_RESET))
+		dock->cancelDock( getMachineOwner() );
+}
+
+void AIDockProcessDockState::onExit( StateExitType status )
+{
+	// unlock the machine
+	getMachine()->unlock();
 }
