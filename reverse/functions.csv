@@ -51305,3 +51305,16 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?evaluateTimer@ScriptEngine@@QAE_NPAVCondition@@@Z,,0x00209486,69,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?restartTimer@ScriptEngine@@IAEXPAVScriptAction@@@Z,,0x002095FF,58,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?pauseTimer@ScriptEngine@@IAEXPAVScriptAction@@@Z,,0x002095CA,53,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??_GObjectCreationNugget@@UAEPAXI@Z,,0x001F010B,29,Code/GameEngine/Source/GameLogic/Object/GenericObjectCreationNuggetDtor.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva002768AC@@UAEPAXI@Z,,0x002788AA,29,Code/GameEngine/Source/GameClient/Rva002768AC.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_G?$DLListClass@USmudge@@@@UAEPAXI@Z,,0x002D250E,29,Code/GameEngine/Source/GameClient/System/Smudge.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GBfmeNetGameMessageArgument@@UAEPAXI@Z,,0x0030F545,29,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GGameSpyPeerMessageQueueInterface@@UAEPAXI@Z,,0x0038884C,29,Code/GameEngine/Source/GameNetwork/GameSpy/Thread/PeerThread.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva0045EF90Base@@UAEPAXI@Z,,0x004102AB,29,Code/GameEngine/Source/Common/Rva0045EF90Dtor.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva004318C6@@UAEPAXI@Z,,0x004318DF,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva0054D593@@UAEPAXI@Z,,0x0054D630,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva0058AD7A@@UAEPAXI@Z,,0x0058AE36,29,Code/GameEngine/Source/Common/Rva0058AD7ABase.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva0059675ABase@@UAEPAXI@Z,,0x005966C0,29,Code/GameEngine/Source/Common/Rva0059675ADtor.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva005B253F@@UAEPAXI@Z,,0x005B2558,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva005CBA04@@UAEPAXI@Z,,0x005CBA20,29,Code/GameEngine/Source/Common/Rva005CBA04Ctor.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
+??_GRva005CF872@@UAEPAXI@Z,,0x005CF884,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; class from the table's own installer
