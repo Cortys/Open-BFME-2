@@ -50943,3 +50943,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva003F8090@Rva003F8090@@QAEXXZ,,0x003F8090,31,Code/Libraries/Source/WWVegas/WW3D2/WaterRenderObjRva003F8090.cpp,matched,chain lane calls rowed 0x003F7F30 offsets verified
 ?rva003F8101@Rva003F8101@@QAEPAXXZ,,0x003F8101,38,Code/GameEngine/Source/Common/Rva003F8101.cpp,matched,loop ptr array plus0xC to plus0x10 cmp plus8 vs g plus0xF4 caller 0x003F8FF3
 ?rva003F802B@Rva003F802B@@QAE_NXZ,,0x003F802B,39,Code/Libraries/Source/WWVegas/WW3D2/WaterRenderObjRva003F802B.cpp,matched,pred plus8 plus0xC ge5 via TheAudio slot 0xD0 callers 0x003F847B 0x003F8F97
+??0Rva003F8ED6@@QAE@H@Z,,0x003F8EA2,52,Code/GameEngine/Source/Common/Rva003F8ED6Ctor.cpp,matched,unlock lane ctor vtable 0x00837358 caller 0x003F8F2B Vector_base 0x00211E58
