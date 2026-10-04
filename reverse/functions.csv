@@ -50751,3 +50751,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0Rva003ADC4F@@QAE@ABV0@@Z,,0x003ADC4F,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ADC4FCopy.cpp,matched,copy ctor via rowed base 0x003ADC75 with three derived stores
 ?rva0002E03D@INI@@QAEPBDPBDPA_N@Z,,0x0002E03D,46,Code/GameEngine/Source/Common/System/INI_getNextToken.cpp,matched,INI this via OrNull 0x0002DEED plus static preprocessMacro 0x0002D0A9 with substituted out-param ret8 unblocks 0x0026F28B
 ?Rva004EAB9FCmp@@YA_NPBX0@Z,,0x004EAB9F,26,Code/Libraries/Source/WWVegas/WWLib/Rva004EAB9FCmp.cpp,matched,null-checked dword compare at +0x48 via 7 callers in FUN_008e98f7
+?rva00202058@Rva00202058@@QAEXPAVOptionPreferences@@@Z,,0x00202058,492,Code/GameEngine/Source/Common/Rva00202058.cpp,matched,reads OptionPreferences forwarders into defs array via rowed dispatch
