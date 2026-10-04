@@ -1,8 +1,8 @@
 // cl: /Ireference/shims/bfme2_ascii /O2 /Ob0 /G6
 // ?Rva006BE2E0Copy@@YAPAUBfmeElem60@@PAU1@00@Z @0x006BE2E0 129B
 // Forward copy of 0x24-byte BfmeElem60 elements, same layout and flags as
-// sibling Rva0087EAA0Fill/Copy TUs. AsciiString at +0x1C via rowed op=
-// 0x000366F0 plus trailing bytes at +0x20/+0x21. Called by BfmeVec60::erase
+// sibling Rva0087EAA0Fill/Copy TUs. AsciiString at +0x1C via rowed
+// StringBase<char>::set 0x000366F0 plus trailing bytes at +0x20/+0x21. Called by BfmeVec60::erase
 // 0x006BF5AB. Returns dest+n.
 #include "ascii_string.h"
 
@@ -39,7 +39,7 @@ BfmeElem60 *Rva006BE2E0Copy(BfmeElem60 *first, BfmeElem60 *last, BfmeElem60 *des
 			dest->m_08 = first->m_08;
 			dest->m_0C = first->m_0C;
 			dest->m_10 = first->m_10;
-			dest->m_1C = first->m_1C;
+			((StringBase<char> &)dest->m_1C).set((const StringBase<char> &)first->m_1C);
 			dest->m_20 = first->m_20;
 			dest->m_21 = first->m_21;
 			++first;
