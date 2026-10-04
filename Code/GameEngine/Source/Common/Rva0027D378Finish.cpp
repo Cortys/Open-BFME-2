@@ -1,7 +1,4 @@
 // ?rva0027D378@Rva0027D378@@QAEHPAXH@Z
-// partial score=0.98 date=2026-10-04
-// ?rva0027D378@Rva0027D378@@QAEHPAXH@Z
-// partial score=0.98 date=2026-10-04
 // cl: /O1 /G7 /MD /Oy-
 // Countdown on target struct: take = min(amount, target+0x28), subtract,
 // if depleted call manager slot31 with target+0xC, reset via rowed
@@ -80,14 +77,17 @@ private:
 	int m_1910;
 };
 
-// ?rva0027D378@Rva0027D378@@QAEHPAXH@Z present-unmatched
 int Rva0027D378::rva0027D378(void *p, int amount)
 {
 	Rva0027D378Target *s = (Rva0027D378Target *)p;
-	int b = s->m_field28;
+	// volatile forces the read-modify-write of the countdown field to go
+	// through memory (retail: sub [esi+0x28],edi + cmp [esi+0x28],0) rather
+	// than through a register copy, and puts the old value's spill first.
+	volatile int *f = &s->m_field28;
+	int b = *f;
 	int take = *(amount < b ? &amount : &b);
-	s->m_field28 -= take;
-	if (s->m_field28 > 0)
+	*f -= take;
+	if (*f > 0)
 		return take;
 	TheRva009FF080Manager0027D378->_slot31(s->m_field0C);
 	((Rva0027D098 *)s)->rva0027D098();
