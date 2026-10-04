@@ -39,10 +39,7 @@ public:
 class Object
 {
 public:
-	AIUpdateInterface *getAIUpdateInterface()
-	{
-		return *(AIUpdateInterface **)((char *)this + 0x258);
-	}
+	AIUpdateInterface *getAIUpdateInterface();
 	void leaveGroup();
 	bool testStatus(ObjectStatusTypes bit) const;
 private:
@@ -108,7 +105,7 @@ void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int fr
 	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
-	AIUpdateInterface *ai = object->getAIUpdateInterface();
+	AIUpdateInterface *ai = *(AIUpdateInterface **)((char *)object + 0x258);
 	if (!ai)
 		return;
 	Coord3D position;
@@ -133,7 +130,7 @@ void ScriptActions::doUnitGuardPosition(const AsciiString &unitName, const Ascii
 	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
-	AIUpdateInterface *ai = object->getAIUpdateInterface();
+	AIUpdateInterface *ai = *(AIUpdateInterface **)((char *)object + 0x258);
 	if (!ai)
 		return;
 	if (!way)
@@ -155,7 +152,7 @@ void ScriptActions::doNamedGuard(const AsciiString &unitName)
 	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
-	AIUpdateInterface *ai = object->getAIUpdateInterface();
+	AIUpdateInterface *ai = *(AIUpdateInterface **)((char *)object + 0x258);
 	if (!ai)
 		return;
 	object->leaveGroup();
@@ -177,7 +174,7 @@ void ScriptActions::doTeamGuard(const AsciiString &teamName)
 			continue;
 		if (obj->testStatus((ObjectStatusTypes)2))
 			continue;
-		AIUpdateInterface *ai = obj->getAIUpdateInterface();
+		AIUpdateInterface *ai = *(AIUpdateInterface **)((char *)obj + 0x258);
 		if (!ai)
 			continue;
 		Coord3D pos;
