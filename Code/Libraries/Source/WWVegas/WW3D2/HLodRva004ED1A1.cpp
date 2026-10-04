@@ -47,6 +47,8 @@ class Rva004ECECD
 public:
 	Rva004ECECDNode *rva004ECF05(int id);
 	void rva004ED1A1(int id, Object *victim);
+	void rva004ED1FD(int id, const struct Coord3D *p);
+	void rva004ED342(void *p);
 private:
 	char m_pad00[0x14];
 	Rva004ECECDNode *m_begin;
@@ -64,6 +66,14 @@ void Rva004ECECD::rva004ED1A1(int id, Object *victim)
 		g_Va009FF0F8->rva002FE712(group);
 		node->m_10 = 0;
 	}
+}
+
+// ?rva004ED342@Rva004ECECD@@QAEXPAX@Z @ 0x004ED342 (48B). Loop over Rva004ECECDNode range calling rowed rva004ED1A1-style helper rva004ED1FD. Count is (m_end-m_begin)/0x14 via idiv. No donor. Callers 0x005A9BB4 0x005AA66A. Honest pin name.
+void Rva004ECECD::rva004ED342(void *p)
+{
+	unsigned int count = (unsigned int)(m_end - m_begin);
+	for (unsigned int i = 0; i < count; ++i)
+		rva004ED1FD((int)i, (const struct Coord3D *)p);
 }
 
 // Retail's data references in this unit's matched rows land on globals defined
