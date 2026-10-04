@@ -51705,3 +51705,5 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??__Eg_00E06428@@YAXXZ,,0x007B45D9,14,Code/GameEngine/Source/Common/Rva005AB7E5Tactic.cpp,matched,object-symbol=_$E10;TU-local dynamic initializer: 0x00E06428 = g_Va00DBA4E4 * 5 (/G7 imul)
 ??__Eg_00E06408@@YAXXZ,,0x007B44AE,49,Code/GameEngine/Source/Common/Rva005A990BTactic.cpp,matched,object-symbol=_$E4;TU-local dynamic initializer: 0x00E06408 = fast_float2long_round(fast_float_floor(g_secondsPerLogicFrame * 20.0f)) via the msvcr71 floor import
 ??__Eg_00E06414@@YAXXZ,,0x007B457D,16,Code/GameEngine/Source/Common/Rva005AB309Tactic.cpp,matched,object-symbol=_$E4;TU-local dynamic initializer: 0x00E06414 = g_009BA4E8 / 2
+?xfer@Anim2D@@MAEXPAVXfer@@@Z,,0x002D71BD,142,Code/GameEngine/Source/GameClient/System/Anim2DXfer.cpp,matched,ZH Anim2D::xfer fields; BFME2 Version(1;2) adds ICoord2D +0x2C
+?xfer@PhysicsBehavior@@MAEXPAVXfer@@@Z,,0x00390D50,230,Code/GameEngine/Source/GameLogic/Object/Update/PhysicsBehaviorXfer.cpp,matched,ZH PhysicsBehavior::xfer shape; BFME2 field set neutral; Version(1;2) adds Coord3D vector +0x20 via erase 0x2A133B and 0x390911

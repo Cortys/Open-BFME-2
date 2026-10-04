@@ -536,37 +536,7 @@ void Anim2D::draw( Int x, Int y, Int width, Int height )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@Anim2D@@MAEXPAVXfer@@@Z present-unmatched
-void Anim2D::xfer( Xfer *xfer )
-{
-	
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// current frame
-	xfer->xferUnsignedShort( &m_currentFrame );
-
-	// last update frame
-	xfer->xferUnsignedInt( &m_lastUpdateFrame );
-
-	// status
-	xfer->xferUnsignedByte( &m_status );
-
-	// min frame
-	xfer->xferUnsignedShort( &m_minFrame );
-
-	// max frame
-	xfer->xferUnsignedShort( &m_maxFrame );
-
-	// frames between updates
-	xfer->xferUnsignedInt( &m_framesBetweenUpdates );
-
-	// alpha
-	xfer->xferReal( &m_alpha );
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameClient/System/Anim2DXfer.cpp
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -8033,3 +8033,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva00599870@Rva00599825@@QAEPAXABUCoord3D@@H@Z,0x00599870,owner-record +0x140 object list: entry near a point; REL32 at 0x005AC079 in the StructureCreep slot 1
 ?rva005ABEA2@Rva005AB7E5@@QAE_NXZ,0x005ABEA2,StructureCreep placement test; REL32 at 0x005AC0A1 in the StructureCreep slot 1
 ?rva00298AE4@Object@@QAEXPAVTeam@@@Z,0x00298AE4,Object member taking a Team (reads team->getControllingPlayer); REL32 at 0x005ABCE8 in the StructureCreep slot 2 with the controller's +0x2EC team
+?Rva00390911XferCoordVector@@YAXPAVXfer@@PAUAICommandCoordVector@@@Z,0x00390911,"""cdecl Coord3D-vector transfer: Version(1;1); count (size/12) via Xfer +0x2C chain; save loop Coord3D via +0x60; load reserve then push; XferException(4) when loading into a non-empty vector; callers 0x390E29 (PhysicsBehavior::xfer) 0x45CB3A 0x48E57C 0x48E5CF"""
