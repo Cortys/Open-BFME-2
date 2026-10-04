@@ -1,6 +1,4 @@
 // ??0DynamicDecalFXNugget@@QAE@XZ
-// partial score=0.98 date=2026-10-04
-// ??0DynamicDecalFXNugget@@QAE@XZ
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // ??0DynamicDecalFXNugget@@QAE@XZ 147B @0x1E0429: no-arg ctor called by
@@ -16,17 +14,27 @@
 // ctor; pinned opaquely, do not name.
 //
 // Recovered from the banked attempt reverse/attempts/0x001e0429.cpp (score
-// 0.98), which was correct in every instruction but one: the placement of the
-// float zero. This pass moves the _ReadWriteBarrier to the top of the body,
-// which lets cl hoist the `xorps xmm0,xmm0` to its retail slot immediately
-// after the base-ctor call, instead of emitting it two instructions late.
+// 0.98). Two things were already settled by that pass and are kept: the
+// _ReadWriteBarrier at the top of the body, which lets cl hoist the
+// `xorps xmm0,xmm0` to its retail slot immediately after the base-ctor call,
+// and the fact that the `push edi` / `lea ecx,[esi+0x154]` pair is setFromInt's
+// own argument push and receiver load rather than a barrier argument pair --
+// retail contains no barrier argument pair.
 //
-// The bank also mis-attributed the `push edi` / `lea ecx,[esi+0x154]` pair at
-// +0x1A/+0x1F to the barrier's call setup. Those are setFromInt's own argument
-// push and receiver load; retail contains no barrier argument pair. The
-// remaining residue is that this toolchain still hoists that pair above the
-// `m_decalName` store while retail keeps it below. See the re_log row for the
-// orderings tried.
+// The remaining residue was that this toolchain hoists that call-setup pair
+// above the vtable / decalName / nuggetType stores, while retail keeps it
+// below. Binding the decalName slot to a pointer local declared BEFORE the
+// barrier blocks the hoist: the store through `nameSlot` is no longer a direct
+// write cl can sink past the call setup, so the pair settles at retail's +0x14
+// and the following three stores emit in order. 147 bytes, exact match.
+//
+// Spelling matters here and the reason is not obvious, so it is worth
+// recording: routing the OTHER three stores through pointers instead (the
+// vtable word, m_nuggetType, m_shader) does not reproduce retail -- each leaves
+// the same +0x0E first-diff. Only the decalName store, bound through a
+// pointer local in scope across the barrier, moves the pair. A
+// read-then-write spelling (`const char *nameSlot = m_decalName;`) collapses
+// the whole body to 141 bytes.
 
 class Rva001DFEAABase
 {
@@ -76,12 +84,12 @@ private:
 	float m_lifetime; // +0x188
 };
 
-// ??0DynamicDecalFXNugget@@QAE@XZ present-unmatched
 DynamicDecalFXNugget::DynamicDecalFXNugget()
 {
+	const char **nameSlot = &m_decalName;
 	_ReadWriteBarrier();
 	*(unsigned int *)this = 0x00BDD7A4;
-	m_decalName = 0;
+	*nameSlot = 0;
 	m_nuggetType = 13;
 	m_shader = 0;
 	m_size = 0.0f;
