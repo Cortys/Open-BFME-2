@@ -7853,3 +7853,8 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??_EW3DShadowGeometry@@UAEPAXI@Z,0x000F1EE4,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x000F1EBA jumps here
 ??_ERva002D3573@@UAEPAXI@Z,0x002D40D8,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x002D35BF jumps here
 ?doCommandButton@Object@@QAEXPBVCommandButton@@HH@Z,0x00296749,address read from the REL32 displacement at a placed body
+??_ERva0056AC82@@UAEPAXI@Z,0x0056AEAA,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056AC94 jumps here
+??_ERva0056ACC5@@UAEPAXI@Z,0x0056AF2F,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056ACD7 jumps here
+??_ERva0056ACDF@@UAEPAXI@Z,0x0056AF78,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056ACF7 jumps here
+??_ERva0056ACFF@@UAEPAXI@Z,0x0056AFB3,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056AD11 jumps here
+??_ERva0056AE4A@@UAEPAXI@Z,0x0056AE2E,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x0056AE26 jumps here

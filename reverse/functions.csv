@@ -51378,3 +51378,8 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_EW3DShadowGeometry@@W7AEPAXI@Z,,0x000F1EBA,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DShadowGeometryDtor.cpp,matched,adjustor thunk (this-8) in a secondary vftable slot 0; jumps to rowed ??_GW3DShadowGeometry
 ??_ERva002D3573@@WM@AEPAXI@Z,,0x002D35BF,8,Code/GameEngine/Source/Common/System/Rva002D3573Dtor.cpp,matched,adjustor thunk (this-12) in a secondary vftable slot 0; jumps to rowed ??_GRva002D3573
 ?groupDoCommandButton@AIGroup@@QAEXPBVCommandButton@@W4CommandSourceType@@@Z,,0x0036DC8D,43,Code/GameEngine/Source/GameLogic/AI/AIGroupBroadcastOrders.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??_ERva0056AC82@@W7AEPAXI@Z,,0x0056AC94,8,Code/GameEngine/Source/Common/Rva0056AC26Derived.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056AC82
+??_ERva0056ACC5@@W7AEPAXI@Z,,0x0056ACD7,8,Code/GameEngine/Source/Common/Rva0056AC26Derived.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056ACC5
+??_ERva0056ACDF@@W7AEPAXI@Z,,0x0056ACF7,8,Code/GameEngine/Source/Common/Rva0056AC26Derived.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056ACDF
+??_ERva0056ACFF@@W7AEPAXI@Z,,0x0056AD11,8,Code/GameEngine/Source/Common/Rva0056AC26Derived.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056ACFF
+??_ERva0056AE4A@@W7AEPAXI@Z,,0x0056AE26,8,Code/GameEngine/Source/Common/Rva0056AC26Derived.cpp,matched,adjustor thunk (this-8) in slot 0 of the second-base vftable; jumps to rowed ??_GRva0056AE4A
