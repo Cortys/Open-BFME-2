@@ -2127,3 +2127,12 @@ void __cdecl rva007B7B8C()
 	return p->clear();
 }
 
+extern void *g_00DB620C;
+// g_00DB620C: packet annotates VA 0x009B620C (data), no name yet. Value is &g_00BD23B4 (VA 0x007D23B4, already extern above).
+
+// ?Rva007B70A0Set@@YAXXZ @ 0x007B70A0 (11B). Global pointer store: g_00DB620C = &g_00BD23B4 (mov [0xDB620C],0xBD23B4; ret). No callers. Between 0x007B7090 and 0x007B70AB. Honest address name.
+void __cdecl Rva007B70A0Set()
+{
+	g_00DB620C = &g_00BD23B4;
+}
+
