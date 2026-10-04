@@ -26,11 +26,7 @@ class HierarchyPrototypeRef
 {
 public:
 	HierarchyPrototypeRef() : m_object(0) {}
-	~HierarchyPrototypeRef()
-	{
-		if (m_object != 0)
-			m_object->Release_Ref();
-	}
+	~HierarchyPrototypeRef();
 	HierarchyPrototype *m_object;
 };
 
