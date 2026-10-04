@@ -119,6 +119,7 @@ void __cdecl rva007B7060()
 
 extern unsigned g_Va00DE0878;
 extern unsigned g_Va00DDF5B4;
+extern unsigned g_Va00DEAF18;
 
 // ?rva007B6A5A@@YAXXZ @ 0x007B6A5A (10B). Global AsciiString dtor thunk: ecx=&g_Va00DDF5B4 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39). No callers. Honest address name.
 void __cdecl rva007B6A5A()
@@ -131,6 +132,13 @@ void __cdecl rva007B6A5A()
 void __cdecl rva007B6AA0()
 {
 	AsciiString *p = (AsciiString *)&g_Va00DE0878;
+	return p->~AsciiString();
+}
+
+// ?rva007B6CFF@@YAXXZ @ 0x007B6CFF (10B). Global AsciiString dtor thunk: ecx=&g_Va00DEAF18 then tail-jmp to rowed ??1AsciiString@@QAE@XZ (0x0048BA39).
+void __cdecl rva007B6CFF()
+{
+	AsciiString *p = (AsciiString *)&g_Va00DEAF18;
 	return p->~AsciiString();
 }
 
@@ -279,3 +287,91 @@ void __cdecl rva007B71C0()
 	return p->~SegLineRendererClass();
 }
 #pragma optimize("", on)
+
+class EvacuateDamage
+{
+public:
+	virtual ~EvacuateDamage();
+};
+
+extern unsigned g_Va00DDF58C;
+
+// ?rva007B6A6E@@YAXXZ @ 0x007B6A6E (10B). Global EvacuateDamage dtor thunk: ecx=&g_Va00DDF58C then tail-jmp to rowed ??1EvacuateDamage@@UAE@XZ (0x0002CD7B).
+void __cdecl rva007B6A6E()
+{
+	EvacuateDamage *p = (EvacuateDamage *)&g_Va00DDF58C;
+	return p->EvacuateDamage::~EvacuateDamage();
+}
+
+#include "../../Include/Common/Rva00041004Lock.h"
+
+extern unsigned g_Va00DE0850;
+extern unsigned g_Va00DE0828;
+
+// ?rva007B6A80@@YAXXZ @ 0x007B6A80 (10B). Global Rva00041004 dtor thunk: ecx=&g_Va00DE0850 then tail-jmp to rowed ??1Rva00041004@@UAE@XZ (0x00040FE5).
+void __cdecl rva007B6A80()
+{
+	Rva00041004 *p = (Rva00041004 *)&g_Va00DE0850;
+	return p->Rva00041004::~Rva00041004();
+}
+
+// ?rva007B6A90@@YAXXZ @ 0x007B6A90 (10B). Global Rva00041004 dtor thunk: ecx=&g_Va00DE0828 then tail-jmp to rowed ??1Rva00041004@@UAE@XZ (0x00040FE5).
+void __cdecl rva007B6A90()
+{
+	Rva00041004 *p = (Rva00041004 *)&g_Va00DE0828;
+	return p->Rva00041004::~Rva00041004();
+}
+
+class GeometryInfo
+{
+public:
+	virtual ~GeometryInfo();
+};
+
+extern unsigned g_Va00DE1D00;
+extern unsigned g_Va00DE1D60;
+
+// ?rva007B6B19@@YAXXZ @ 0x007B6B19 (10B). Global GeometryInfo dtor thunk: ecx=&g_Va00DE1D00 then tail-jmp to rowed ??1GeometryInfo@@UAE@XZ (0x00050B2A).
+void __cdecl rva007B6B19()
+{
+	GeometryInfo *p = (GeometryInfo *)&g_Va00DE1D00;
+	return p->GeometryInfo::~GeometryInfo();
+}
+
+// ?rva007B6B23@@YAXXZ @ 0x007B6B23 (10B). Global GeometryInfo dtor thunk: ecx=&g_Va00DE1D60 then tail-jmp to rowed ??1GeometryInfo@@UAE@XZ (0x00050B2A).
+void __cdecl rva007B6B23()
+{
+	GeometryInfo *p = (GeometryInfo *)&g_Va00DE1D60;
+	return p->GeometryInfo::~GeometryInfo();
+}
+
+class Rva0090088
+{
+public:
+	virtual ~Rva0090088();
+};
+
+extern unsigned g_Va00DE2084;
+
+// ?rva007B6C2A@@YAXXZ @ 0x007B6C2A (10B). Global Rva0090088 dtor thunk: ecx=&g_Va00DE2084 then tail-jmp to rowed ??1Rva0090088@@UAE@XZ (0x00090088).
+void __cdecl rva007B6C2A()
+{
+	Rva0090088 *p = (Rva0090088 *)&g_Va00DE2084;
+	return p->Rva0090088::~Rva0090088();
+}
+
+class Rva00090771DwordImmSetter
+{
+public:
+	void apply();
+};
+
+extern unsigned g_Va00DE4878;
+
+// ?rva007B6C3E@@YAXXZ @ 0x007B6C3E (10B). Global Rva00090771DwordImmSetter thunk: ecx=&g_Va00DE4878 then tail-jmp to rowed ?apply@Rva00090771DwordImmSetter@@QAEXXZ (0x00090771).
+void __cdecl rva007B6C3E()
+{
+	Rva00090771DwordImmSetter *p = (Rva00090771DwordImmSetter *)&g_Va00DE4878;
+	return p->apply();
+}
+
