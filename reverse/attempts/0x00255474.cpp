@@ -1,11 +1,21 @@
 // ??0InvisibilityUpdateModuleData@@QAE@XZ
-// partial score=0.96 date=2026-10-04
+// partial score=0.97 date=2026-10-04
 // ??0InvisibilityUpdateModuleData@@QAE@XZ
-// partial score=0.96 date=2026-10-03
-// ??0InvisibilityUpdateModuleData@@QAE@XZ
-// partial score=0.96 date=2026-09-24
-// ??0InvisibilityUpdateModuleData@@QAE@XZ
-// partial score=0.96 date=2026-09-24
+// partial score=0.97 date=2026-10-04
+// NEW vs the 0.96 bank: m_updatePeriod is NOT init-listed. It is assigned in the
+// ctor body between the two clear80() calls, which is the only shape that emits
+// retail's `lea ecx,[esi+0xc4]` (the clear80 argument setup) ahead of the
+// period store. Moving it into the init list in ANY position loses it: with it
+// directly after m_nugget the store leads at +0x27; after m_requiredUpgrades/
+// m_forbiddenUpgrades it also leads at +0x27. The body form moves the first
+// diff from +0x27 to +0x2D (six bytes later) and keeps size at 198.
+// RESIDUAL (unchanged wall): at +0x2D retail has `mov [esi+0xc0],0xa` between
+// the lea and the call, while this build emits the EH state-3 store
+// `mov BYTE PTR [ebp-4],3` in that slot and sinks the period store past the
+// call. The state-3 store therefore consumes the one free slot the period
+// store needs; suppressing it (non-throwing member dtors, or dropping m_filter
+// from the init list) does NOT free the slot -- both re-test at +0x2D with the
+// period store still late. t=22 model=space-bunny-alpha score=0.97
 // cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0InvisibilityUpdateModuleData@@QAE@XZ, retail 0x00255474, 198 bytes.
@@ -132,12 +142,12 @@ private:
 InvisibilityUpdateModuleData::InvisibilityUpdateModuleData()
 	: m_vtable((void *)0x00BF3640)
 	, m_nugget()
-	, m_updatePeriod(10)
 	, m_requiredUpgrades()
 	, m_forbiddenUpgrades()
 	, m_filter()
 {
 	m_requiredUpgrades.clear80();
+	m_updatePeriod = 10;
 	m_forbiddenUpgrades.clear80();
 	m_broadcast = false;
 	m_filter.construct();
