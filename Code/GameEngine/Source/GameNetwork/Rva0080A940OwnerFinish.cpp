@@ -109,6 +109,7 @@ public:
 		m_field0c = 0;
 		m_field04 = 0;
 	}
+	virtual ~Rva00808CB0LanGameEntry();
 
 	int m_field08;
 	int m_field0c;
