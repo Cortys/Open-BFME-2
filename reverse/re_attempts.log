@@ -7279,3 +7279,5 @@ FUN_006f0bb5	0x002F0BB5	43	blocked	EH wrapper two rowed Rva002EB46E calls needs 
 ?Rva009A86F0Allocate@@YAHPAX@Z	0x001B9140	396	partial	ecx-vs-edx round-robin at second halved size plus lea-after-store scheduling at tail t=20 model=muse-19 score=0.93 stash=reverse/attempts/0x001b9140.cpp
 ?rva002FD766@Rva002FD766@@QAEXPAURva002FD766Node@@@Z	0x002FD766	43	blocked	wine prefix broken disk full cannot verify t=40 model=muse-04
 ?rva002FED07@Rva002FED07@@QAEXPAUListNode@@00H@Z	0x002FED07	48	blocked	ours 43B vs retail 48B single insert at +0x11 retail mov ecx [ebp+8] / mov eax esp / mov [eax] ecx vs ours push [ebp+8] plus push ecx vs push mem register wall t=6 model=muse-04
+?rva006042B6@Rva0060453B@@UAE_NPBD0H@Z	0x006042B6	149	partial	loop header lea vs mem cmp and result-init order t=30 model=muse-04 score=0.93 stash=reverse/attempts/0x006042b6.cpp
+?rva006042B6@Rva0060453B@@UAE_NPBD0H@Z	0x006042B6	149	partial	set less ctor 0xD3A71 vs nocase tree dtor 0x2CC38 wall t=45 model=muse-04 score=0.99 stash=reverse/attempts/0x006042b6.cpp
