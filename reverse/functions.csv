@@ -52381,3 +52381,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?Rva0026E1DEDestroy@@YAXPAVRva00268B04@@0@Z,,0x0026E1DE,25,Code/GameEngine/Source/Common/Rva0026E1DEDestroy.cpp,matched,array destroy loop via rowed forwarder 0x00268B04 plus caller 0x0026E5B9
 ?rva00426580@EmotionSystem@@QAEXPAVMultiplayerColorDefinition@@@Z,,0x00426580,89,Code/GameEngine/Source/Common/Rva00426580Emotion.cpp,matched,unlock via rowed tooltip pinned findNugget releaseBuffer pushback vector plus0xC caller 0x004DCBCD
 ?rva00597476@Rva0059734B@@UAEMPAX@Z,,0x00597476,86,Code/GameEngine/Source/Common/Rva00597476.cpp,matched,slot8 cost ratio via UpgradeTemplate vtable 0x00870BD0
+?rva005748B7@Rva005748B7@@QAEXPAURva002BED91@@@Z,,0x005748B7,59,Code/GameEngine/Source/Common/Rva005748B7Method.cpp,matched,callers 0x005749AF 0x00574A82 0x00574D2F 0x00574D4F via pin rva005CB265
