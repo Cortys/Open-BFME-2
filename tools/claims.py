@@ -127,13 +127,13 @@ def fetch():
     return got.returncode == 0
 
 
-def _read_local():
+def _read_local(seen=SEEN):
     """{key: (sha, info)} from the local mirror: int RVAs and scope strings."""
-    out = _git("for-each-ref", "--format=%(refname)%09%(objectname)%09%(contents:subject)", SEEN).stdout
+    out = _git("for-each-ref", "--format=%(refname)%09%(objectname)%09%(contents:subject)", seen).stdout
     claims = {}
     for line in out.splitlines():
         name, sha, subject = (line.split("\t") + ["", ""])[:3]
-        rest = name[len(SEEN):]
+        rest = name[len(seen):]
         try:
             info = json.loads(subject)
             key = rest if rest.startswith(("file/", "class/")) else int(rest, 16)
@@ -159,11 +159,34 @@ def active():
     return {rva: info for rva, (_, info) in live(_read_local()).items()}
 
 
+# A fork can also honour another repository's claims, read-only: with
+# `git config bfme.claimMirror upstream`, bodies upstream's workers hold are
+# skipped here too (their result arrives through the merge). Nothing is ever
+# written to that remote.
+MIRROR_SEEN = "refs/claims-mirror-seen/"
+
+
+@lru_cache(maxsize=1)
+def mirrored():
+    """{rva: info} of live claims on the mirrored remote; {} if none is set."""
+    remote = _git("config", "--get", "bfme.claimMirror").stdout.strip()
+    if not remote:
+        return {}
+    try:
+        got = _git("fetch", "-q", "--prune", "--no-tags", remote,
+                   f"+refs/claims/*:{MIRROR_SEEN}*", timeout=15)
+    except (OSError, subprocess.TimeoutExpired):
+        return {}
+    if got.returncode:
+        return {}
+    return {rva: info for rva, (_, info) in live(_read_local(MIRROR_SEEN)).items() if isinstance(rva, int)}
+
+
 def busy_rvas():
     """Addresses a picker should skip; one fetch is cached per process."""
     if os.environ.get("BFME_CLAIMS", "on") == "off":
         return set()
-    return {key for key in active() if isinstance(key, int)}
+    return {key for key in active() if isinstance(key, int)} | set(mirrored())
 
 
 def claim(rvas, who=None, ttl_hours=TTL_HOURS, note=""):
@@ -185,6 +208,7 @@ def claim(rvas, who=None, ttl_hours=TTL_HOURS, note=""):
     now = time.time()
     held = {r for r in rvas if r in current and current[r][1].get("expires", 0) > now
             and current[r][1].get("owner") != who}
+    held |= {r for r in rvas if isinstance(r, int) and r in mirrored()}  # upstream is on it
     wanted = [r for r in rvas if r not in held]
     if not wanted:
         return [], sorted(held, key=str)
