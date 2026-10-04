@@ -7713,3 +7713,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0?$queue@VBuddyRequest@@V?$deque@VBuddyRequest@@V?$allocator@VBuddyRequest@@@_STL@@@_STL@@@_STL@@QAE@XZ,0x00551A06,address read from the REL32 displacement at a placed body
 ??0?$queue@VBuddyResponse@@V?$deque@VBuddyResponse@@V?$allocator@VBuddyResponse@@@_STL@@@_STL@@@_STL@@QAE@XZ,0x00551A1B,address read from the REL32 displacement at a placed body
 ?pop_front@?$deque@VBuddyResponse@@V?$allocator@VBuddyResponse@@@_STL@@@_STL@@QAEXXZ,0x00550B9F,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?MessageBoxOk@@YAPAVGameWindow@@VUnicodeString@@0P6AXXZ@Z,0x0044C0A8,callee of ?showError@BfmeAptScreenSkirmish@@QAEXABVUnicodeString@@H@Z at retail 0x00521AC8 read from its REL32 displacement; body unrowed

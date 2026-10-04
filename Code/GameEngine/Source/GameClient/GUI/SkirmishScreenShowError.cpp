@@ -1,0 +1,46 @@
+// cl: -DNDEBUG -MD -EHsc /O1 /Ob1 -Ireference/open-bfme-1/game/GameEngine/Source/GameClient/GUI
+// class-gate: allow UnicodeString donor private view is what emits the retail 78B body at 0x00521AC8; the shared header changes the StringBase ctor calls
+// Retail 0x00579690: show a supplied skirmish-screen message only when the
+// callback flag is set.  The title is the retail empty wide literal.
+
+template <typename T> class StringBase
+{
+	friend class UnicodeString;
+
+private:
+	StringBase() : m_data(0) {}
+	StringBase(const T *text);
+	StringBase(const StringBase<T> &other);
+	~StringBase();
+
+	void *m_data;
+};
+
+class UnicodeString : private StringBase<unsigned short>
+{
+public:
+	UnicodeString() : StringBase<unsigned short>() {}
+	UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
+	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
+	~UnicodeString() {}
+};
+
+extern const unsigned short g_Rva01088AF4EmptyWideString[];
+
+class GameWindow;
+GameWindow *MessageBoxOk(UnicodeString title, UnicodeString body,
+	void (*callback)(void));
+
+class BfmeAptScreenSkirmish
+{
+public:
+	void showError(const UnicodeString &message, int show);
+};
+
+// ?showError@BfmeAptScreenSkirmish@@QAEXABVUnicodeString@@H@Z
+void BfmeAptScreenSkirmish::showError(const UnicodeString &message, int show)
+{
+	if(--show == 0)
+		MessageBoxOk(UnicodeString(g_Rva01088AF4EmptyWideString),
+			message, 0);
+}
