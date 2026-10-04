@@ -51874,3 +51874,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva00560ABA@Rva00560ABA@@QAE?AVAsciiString@@XZ,,0x00560ABA,39,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00560ABAGetter.cpp,matched,vtable slot 5 of 8 ModuleInfo vtables via copy ctor classes and rowed Make001FCBD7 and StringBase copy
 ?xfer@HordeTransportContain@@MAEXPAVXfer@@@Z,,0x0047714A,59,Code/GameEngine/Source/GameLogic/Object/Contain/HordeTransportContainXfer.cpp,matched,slot 3 of 0x00845EB8 via Version1 and TransportContain xfer and int at 0x120 and bool at 0x124
 ??0Rva003F9258Data@@QAE@XZ,,0x003F8DF8,40,Code/GameEngine/Source/Common/Rva003F9258DataCtor.cpp,matched,default ctor via rowed member 0x330757 and Vector_base 0x211E58 and vptr 0x83731C
+?rva003F83B5@Rva003F83B5@@QAE?AVUnicodeString@@XZ,,0x003F83B5,36,Code/GameEngine/Source/Common/Rva003F83B5.cpp,matched,TheGameText slot 0x38 AsciiString at plus 0x18
