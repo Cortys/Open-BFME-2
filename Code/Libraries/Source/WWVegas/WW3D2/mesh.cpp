@@ -143,7 +143,6 @@ class CameraClass;
 #include <stdio.h>
 #include "wwprofile.h"
 
-static unsigned MeshDebugIdCount;
 
 bool MeshClass::Legacy_Meshes_Fogged = true;
 static SimpleDynVecClass<uint32> temp_apt;
@@ -179,20 +178,8 @@ static DynamicVectorClass<Vector3>	_TempVertexBuffer;
  * HISTORY:                                                                                    *
  *   1/6/98     GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?MeshClass::MeshClass present-unmatched
-MeshClass::MeshClass(void) :
-	Model(NULL),
-	DecalMesh(NULL),
-	LightEnvironment(NULL),
-	BaseVertexOffset(0),
-	NextVisibleSkin(NULL),
-	IsDisabledByDebugger(false),
-	MeshDebugId(MeshDebugIdCount++),
-	m_alphaOverride(1.0f),
-	m_materialPassAlphaOverride(1.0f),
-	m_materialPassEmissiveOverride(1.0f)
-{
-}
+// BFME2's body is in MeshClassLifetime.cpp (retail 0x001495A0); it needs the BFME2
+// MeshClass layout, which the shared header used here does not carry.
 
 
 /***********************************************************************************************
@@ -208,22 +195,8 @@ MeshClass::MeshClass(void) :
  *                                                                                             *
  * HISTORY:                                                                                    *
  *=============================================================================================*/
-// ?MeshClass::MeshClass present-unmatched
-MeshClass::MeshClass(const MeshClass & that) :
-	RenderObjClass(that),
-	Model(NULL),
-	DecalMesh(NULL),
-	LightEnvironment(NULL),
-	BaseVertexOffset(that.BaseVertexOffset),
-	NextVisibleSkin(NULL),
-	IsDisabledByDebugger(false),
-	MeshDebugId(MeshDebugIdCount++),
-	m_alphaOverride(1.0f),
-	m_materialPassAlphaOverride(1.0f),
-	m_materialPassEmissiveOverride(1.0f)
-{
-	REF_PTR_SET(Model,that.Model);					// mesh instances share models by default
-}
+// BFME2's body is in MeshClassLifetime.cpp (retail 0x00149680); it needs the BFME2
+// MeshClass layout, which the shared header used here does not carry.
 
 
 /***********************************************************************************************
@@ -268,11 +241,8 @@ MeshClass & MeshClass::operator = (const MeshClass & that)
  * HISTORY:                                                                                    *
  *   1/6/98     GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?MeshClass::~MeshClass present-unmatched
-MeshClass::~MeshClass(void) 
-{
-	Free();
-}
+// BFME2's body is in MeshClassLifetime.cpp (retail 0x0014A5B0); it needs the BFME2
+// MeshClass layout, which the shared header used here does not carry.
 
 
 /***********************************************************************************************
@@ -330,11 +300,8 @@ void MeshClass::Free(void)
  * HISTORY:                                                                                    *
  *   1/6/98     GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?MeshClass::Clone present-unmatched
-RenderObjClass * MeshClass::Clone(void) const
-{
-	return NEW_REF( MeshClass, (*this));
-}
+// BFME2's body is in MeshClassLifetime.cpp (retail 0x001498E0); it needs the BFME2
+// MeshClass layout, which the shared header used here does not carry.
 
 
 /***********************************************************************************************

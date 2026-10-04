@@ -7991,3 +7991,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva004EBF4B@Rva004EBF4B@@QAE?AUCoord3D@@XZ,0x004EBF4B,the same body as the rowed void(Coord3D *) spelling: it returns the Coord3D by value through the hidden pointer (eax = out); REL32 at 0x005AB70C in ReturnTheRing 0x005AB6DC uses the returned pointer
 ?rva004ED372@Rva004ECECD@@QAEXPBUCoord3D@@@Z,0x004ED372,const Coord3D spelling of the AITactic point member pinned as rva004ED372(void *); REL32 at 0x005AB714 in ReturnTheRing 0x005AB6DC
 ?rva005AB4B9@Rva005AB309@@QAE_NXZ,0x005AB4B9,ReturnTheRing ring-team creation (Player_%d style team name via 0x003A2FD4); REL32 at 0x005AB789 in the ReturnTheRing slot 6
+??1LightEnvironmentClass@@QAE@XZ,0x0069E440,empty LightEnvironmentClass destructor called on MeshClass+0xCC by the MeshClass destructor 0x0014A5B0 (BFME1 donor names the same call 0x0094A880); ICF-folded empty body
