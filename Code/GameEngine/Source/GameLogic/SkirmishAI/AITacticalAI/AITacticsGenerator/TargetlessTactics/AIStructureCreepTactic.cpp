@@ -8,6 +8,7 @@
 // counters, +0x60 the owned build order (Rva00573B23, 0x40 bytes), +0x6C the
 // index of the structure name last picked from the owner's list.
 //
+//   0x005AB7C4  the owner record's site with the given id
 //   0x005AB7E5  dtor: abandon (0x0055ADBA) and ::delete the build order
 //   0x005AB993  scalar deleting dtor (slot 0)
 //   0x005ABC81  slot 2: clear the running key and schedule the next run
@@ -134,6 +135,26 @@ struct Rva005AB7E5Template
 class Player;
 class Team;
 
+struct Coord3D;
+
+enum CommandSourceType
+{
+	CMD_FROM_PLAYER = 0
+};
+
+class AICommandInterface
+{
+public:
+	void aiIdle(CommandSourceType source);			// 0x001E8A38
+	void rva0026C26D(const Coord3D *point, int source);	// move to the point
+};
+
+struct Rva005AB7E5AI
+{
+	char m_pad00[0x20];
+	AICommandInterface m_commands;	// +0x20
+};
+
 class Object
 {
 public:
@@ -141,7 +162,11 @@ public:
 	void rva00298AE4(Team *team);
 	char m_pad000[4];
 	Rva005AB7E5Template *m_04;	// +0x04
-	char m_pad008[0x438 - 8];
+	char m_pad008[0x38 - 8];
+	float m_pos[3];			// +0x38
+	char m_pad044[0x258 - 0x44];
+	Rva005AB7E5AI *m_ai;		// +0x258
+	char m_pad25C[0x438 - 0x25C];
 	unsigned char m_438;		// +0x438
 };
 
@@ -315,6 +340,7 @@ struct Rva005ABEA2Payload
 
 struct BfmeWideResult
 {
+	Object *next() throw();	// 0x00045623
 	Rva005ABEA2Payload *m_value;
 	~BfmeWideResult();	// 0x0004AA28
 };
@@ -335,8 +361,12 @@ struct Rva005ABEA2Site
 	float m_radius;		// +0x14
 };
 
-struct Rva005ABEA2Sites
+// The owner record's +0x164 list of candidate sites.
+class Rva002C5FE8
 {
+public:
+	void *rva002C5FE8(int id);		// the site with this id
+	void rva002C60A9(unsigned int id);	// drop and free the site with this id
 	char m_pad00[0x20];
 	Rva005ABEA2Site **m_begin;	// +0x20
 	Rva005ABEA2Site **m_end;	// +0x24
@@ -350,7 +380,7 @@ struct Rva002A8AB1Record
 	Rva00599825 m_140;		// +0x140
 	char m_pad141[0x160 - 0x141];
 	Rva005AB7E5Names *m_160;	// +0x160
-	Rva005ABEA2Sites *m_164;	// +0x164
+	Rva002C5FE8 *m_164;	// +0x164
 };
 
 class Rva002A8F24
@@ -367,6 +397,12 @@ class Rva00506FE9Hit
 {
 public:
 	void rva0055ADBA(void *owner);
+};
+
+class Rva004E9378
+{
+public:
+	bool rva004E9378();	// the order has finished
 };
 
 class Rva00573B23
@@ -406,9 +442,9 @@ public:
 	virtual void v4();
 	virtual void xfer(Xfer *xfer);
 	virtual void v6();
-	virtual void v7();
 	virtual void v8();
 	virtual Rva004ECECD *create();
+	void rva004ED748(int a, int b);
 };
 
 class Rva005DC73C : public Rva004ECECD
@@ -437,6 +473,8 @@ public:
 	bool rva005ABCFE(Coord3DBase *out, const AsciiString &name);
 	bool rva005AC0B5(const AsciiString &name);
 	bool rva005AC294();
+	void rva005AC40C();
+	virtual void v7();
 private:
 	ObjectID m_58;		// +0x58
 	unsigned int m_5C;	// +0x5C
@@ -444,9 +482,9 @@ private:
 	unsigned int m_64;	// +0x64
 	unsigned int m_68;	// +0x68
 	int m_next;		// +0x6C
-	int m_70;
-	int m_74;
-	bool m_78;
+	unsigned int m_70;	// +0x70 frame of the next site scan
+	unsigned int m_74;	// +0x74 frame of the next move order
+	bool m_78;		// +0x78 done
 	bool m_running;		// +0x79
 	unsigned int m_nextRun;	// +0x7C
 };
@@ -510,25 +548,26 @@ void Rva005AB7E5::v2()
 
 bool Rva005AB7E5::rva005ABEA2()
 {
-	Rva005ABEA2Sites *sites = g_00DFEEF8->rva002A8AB1(m_owner)->m_164;
+	Rva002C5FE8 *sites = g_00DFEEF8->rva002A8AB1(m_owner)->m_164;
 	if (sites->m_begin != sites->m_end) {
-	for (int i = (int)(sites->m_end - sites->m_begin) - 1; i >= 0; --i) {
-		Rva005ABEA2Site *site = sites->m_begin[i];
-		if (site->m_10 >= 2)
-			continue;
-		Rva005ABEA2Mask mask;
-		mask.set(3);
-		mask.set(90);
-		BfmeWideResult hits = ThePartitionManager->iterateObjectsInRange(&site->m_pos, site->m_radius, 0,
-			Rva0026119DFilter().link(&Rva00261409Filter(m_owner, true, 2))
-				->link(&Rva003959FA(*(BfmeFixedStorage0004543D *)&mask))
-				->link(&Rva00395A35(*(BfmeFixedStorage0004543D *)&Rva00045411BitSet(0, 7),
-					*(BfmeFixedStorage0004543D *)g_00DFEFA4StoragePrototype)), 0);
-		if ((unsigned int)(hits.m_value->m_end - hits.m_value->m_begin) > 15) {
-			m_68 = site->m_id;
-			return true;
+		for (int i = (int)(sites->m_end - sites->m_begin) - 1; i >= 0; --i) {
+			Rva005ABEA2Site *site = sites->m_begin[i];
+			if (site->m_10 >= 2)
+				continue;
+			Rva005ABEA2Mask mask;
+			mask.set(3);
+			mask.set(90);
+			BfmeWideResult hits = ThePartitionManager->iterateObjectsInRange(&site->m_pos,
+				site->m_radius, 0,
+				Rva0026119DFilter().link(&Rva00261409Filter(m_owner, true, 2))
+					->link(&Rva003959FA(*(BfmeFixedStorage0004543D *)&mask))
+					->link(&Rva00395A35(*(BfmeFixedStorage0004543D *)&Rva00045411BitSet(0, 7),
+						*(BfmeFixedStorage0004543D *)g_00DFEFA4StoragePrototype)), 0);
+			if ((unsigned int)(hits.m_value->m_end - hits.m_value->m_begin) > 15) {
+				m_68 = site->m_id;
+				return true;
+			}
 		}
-	}
 	}
 	return false;
 }
@@ -536,3 +575,9 @@ bool Rva005AB7E5::rva005ABEA2()
 // The base filter's slot 2 is the trivial virtual retail shares across 68
 // vftable slots (0x0036CC7A); bind the declaration to that row.
 #pragma comment(linker, "/alternatename:?getPlayerMask@Rva000421C8@@UAEHXZ=?Get_File_Handle@FileClass@@UAEPAXXZ")
+
+Rva005ABEA2Site *rva005AB7C4(Player *owner, int id)
+{
+	Rva002C5FE8 *sites = g_00DFEEF8->rva002A8AB1(owner)->m_164;
+	return (Rva005ABEA2Site *)sites->rva002C5FE8(id);
+}

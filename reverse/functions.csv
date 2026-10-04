@@ -51956,3 +51956,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?update@AIDockWaitForClearanceState@@UAE?AW4StateReturnType@@XZ,,0x00544218,115,Code/GameEngine/Source/GameLogic/AI/AIDockStates.cpp,matched,ZH AIDock.cpp body; slot 6 of vtable 0x00C69940
 ?onExit@AIDockWaitForClearanceState@@UAEXW4StateExitType@@@Z,,0x0054428B,65,Code/GameEngine/Source/GameLogic/AI/AIDockStates.cpp,matched,ZH AIDock.cpp body; slot 5 of vtable 0x00C69940
 ?onExit@AIDockProcessDockState@@UAEXW4StateExitType@@@Z,,0x00544670,10,Code/GameEngine/Source/GameLogic/AI/AIDockStates.cpp,matched,ZH AIDock.cpp body; slot 5 of vtable 0x00C69A20
+?rva005AB7C4@@YAPAURva005ABEA2Site@@PAVPlayer@@H@Z,,0x005AB7C4,33,Code/GameEngine/Source/GameLogic/SkirmishAI/AITacticalAI/AITacticsGenerator/TargetlessTactics/AIStructureCreepTactic.cpp,matched,StructureCreep: the owner record's +0x164 site with the given id (0x002C5FE8); called by slot 7 and the placement helpers
