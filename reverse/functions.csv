@@ -51630,3 +51630,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva002000A4@Rva0022CA74@@QAEXXZ,,0x002000A4,51,Code/GameEngine/Source/Common/Rva0022CA74Slot9.cpp,matched,vtable slot 9 of Rva0022CA74; calls rowed deleteOverrides and vector erase
 ?Rva0045628CDraw@@YGXPAX0H@Z,,0x0045628C,52,Code/GameEngine/Source/Common/Rva0045628CDraw.cpp,matched,loops AsciiString range calls rowed Drawable rva002724FD ret 0xC 5 callers in 0x004562F8
 ?rva001B5140@Rva001B5140@@QAE_NXZ,,0x001B5140,128,Code/GameEngine/Source/Common/Rva001B5140Collect.cpp,matched,chain packet rowed erase and push_back thiscall bool
+?rva003605E3@DamageFX@@QAEPAXHMPBVObject@@@Z,,0x003605E3,48,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,DamageFX major-minor threshold via m_dfx dt0 with zero-range null and 64B stride

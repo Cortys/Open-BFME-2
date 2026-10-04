@@ -82,6 +82,8 @@ struct DamageDFX
 	UnsignedInt m_damageFXThrottleTime;
 };
 
+class Object;
+extern const float BfmeZeroRange;
 class DamageFX
 {
 public:
@@ -89,6 +91,7 @@ public:
 	static void parseMajorFXList(INI *ini, void *instance, void *store, const void *userData);
 	static void parseMinorFXList(INI *ini, void *instance, void *store, const void *userData);
 	static void parseTime(INI *ini, void *instance, void *store, const void *userData);
+	void *rva003605E3(int damageType, float amount, const Object *unused);
 	DamageDFX m_dfx[DAMAGE_NUM_TYPES][4];
 };
 
@@ -183,4 +186,16 @@ void DamageFX::parseTime(INI *ini, void *instance, void *store, const void *user
 			self->m_dfx[dt][v].m_damageFXThrottleTime = t;
 		}
 	}
+}
+
+// ?rva003605E3@DamageFX@@QAEPAXHMPBVObject@@@Z @0x003605E3 48B: DamageFX major/minor selector
+// via m_dfx[damageType][0] threshold (64B stride from 30x4x16 layout); null on BfmeZeroRange
+// equality; caller 0x003608DF passes (index amount Object) and forwards to doFXObj.
+void *DamageFX::rva003605E3(int damageType, float amount, const Object *unused)
+{
+	if (amount == BfmeZeroRange)
+		return 0;
+	if (amount >= m_dfx[damageType][0].m_amountForMajorFX)
+		return m_dfx[damageType][0].m_majorDamageFXList;
+	return m_dfx[damageType][0].m_minorDamageFXList;
 }
