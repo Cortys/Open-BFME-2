@@ -1,10 +1,6 @@
-// ?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z
-// partial score=0.95 date=2026-09-30
-// ?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z
-// partial score=0.95 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD
 //
-// ?Rva0007894EGet@@YG_NPAX@Z @0x0007894E 61B probe v1
+// ?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z @0x0007894E 61B probe v1
 // Free stdcall bool tester: Outer+8 Rva with flags 0x440/0x441 plus rowed
 // rva bool plus Outer vslot 0xC4 int to bool.
 
@@ -76,15 +72,16 @@ public:
 	Rva00270260 *m_08;
 };
 
-// ?Rva0007894EGet@@YG_NPAX@Z present-unmatched
 bool __stdcall Rva0007894EGet(Rva0007894EOuter *p)
 {
 	Rva00270260 *s = p->m_08;
-	if (s->m_441 == 0)
+	if (!s->m_441)
 		return false;
-	if (s->rva00270260())
-		return false;
-	if (s->m_440 != 0)
-		return false;
-	return p->v49() != 0;
+	else {
+		if (s->rva00270260())
+			return false;
+		if (s->m_440)
+			return false;
+		return p->v49();
+	}
 }

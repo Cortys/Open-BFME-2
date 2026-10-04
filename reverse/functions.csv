@@ -50659,3 +50659,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003AD4AEInit@@YAXXZ,,0x003AD4AE,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4AEInit.cpp,matched,guarded init calls rowed DefaultModuleTag2 getInstance and rowed atexit
 ?Rva003AD4CFInit@@YAXXZ,,0x003AD4CF,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4CFInit.cpp,matched,guarded init calls rowed DefaultModuleTag7 getInstance and rowed atexit
 ?Rva003AD4F0Init@@YAXXZ,,0x003AD4F0,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD4F0Init.cpp,matched,guarded init calls rowed LIFE_EVENT getInstance and rowed atexit
+?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z,,0x0007894E,61,Code/GameEngine/Source/Common/Rva0007894EGet.cpp,matched,free stdcall bool tester Outer+8 flags 0x440/0x441 rowed rva vslot 0xC4
