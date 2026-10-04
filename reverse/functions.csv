@@ -51565,3 +51565,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva004A8F0B@DelayedLuaEventUpdate@@QAEXIABVDelayedLuaEventList@@W4UpdateSleepTime@@M_N2@Z,,0x004A8F0B,71,Code/GameEngine/Source/GameLogic/Object/Update/DelayedLuaEventUpdateInit.cpp,matched,chain lane init 6 args via landed copy and setWakeFrame clamp
 ?Rva004A82BAAttemptDamage@@YAXPAVObject@@@Z,,0x004A82BA,59,Code/GameEngine/Source/Common/Rva004A82BADamage.cpp,matched,leaf free damageinfo via rowed ctor and pinned attemptDamage
 ?rva003F2A11@Rva003F2A11@@QAEAAV1@ABV1@@Z,,0x003F2A11,45,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003F2A11Assign.cpp,matched,unlock copy-assign via rowed StringBase set and vector op
+?Rva003F2A3E@@YAPAVRva003F2A11@@PAV1@00@Z,,0x003F2A3E,50,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003F2A11Assign.cpp,matched,chain array copy via landed element assign
