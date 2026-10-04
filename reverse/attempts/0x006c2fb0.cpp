@@ -1,4 +1,6 @@
 // ?rva006C2FB0@Rva006C2D20Sink@@QAEXPBD0@Z
+// partial score=0.93 date=2026-10-04
+// ?rva006C2FB0@Rva006C2D20Sink@@QAEXPBD0@Z
 // partial score=0.9 date=2026-10-04
 // cl: /O2 /DNDEBUG /MD
 // Retail body 0x006C2FB0, 100 bytes. Log/chat line formatter: it copies the
@@ -37,18 +39,23 @@ public:
 void Rva006C2D20Sink::rva006C2FB0(const char *text, const char *extra)
 {
 	char buffer[0x300];
-	const char *p = text;
-	const char *base = text + 1;
-	while (*p)
+	const char *base;
+	const char *p = extra;
+	char c;
+	base = p + 1;
+	do
+	{
+		c = *p;
 		++p;
+	} while (c);
 	int len = (int)(p - base);
 	if (len + 1 < 0x2ff)
 	{
-		const char *src = text;
+		const char *src = extra;
 		char *dst = buffer;
 		while (*src)
 			*dst++ = *src++;
 		buffer[len] = '\n';
-		rva006C2D20(buffer + len + 1, extra, 0x2fe - len);
+		rva006C2D20(buffer + len + 1, text, 0x2fe - len);
 	}
 }
