@@ -145,7 +145,21 @@ def unreachable(compiled, target):
         ours, theirs = _instructions(compiled), _instructions(target)
     except Exception:
         return None
-    if not ours or len(ours) != len(theirs) or [m for m, _ in ours] != [m for m, _ in theirs]:
+    if not ours:
+        return None
+    if len(ours) != len(theirs) or [m for m, _ in ours] != [m for m, _ in theirs]:
+        # Many instructions present on one side only: the source does
+        # something else (a type, a check, an inlined helper), which moving
+        # statements cannot supply. The bound is set from history: the
+        # loosest past win started with 9 of 42 differing; this skips 8 of
+        # 120 failed bodies.
+        matcher = difflib.SequenceMatcher(None, [m for m, _ in ours], [m for m, _ in theirs],
+                                          autojunk=False)
+        differ = sum(max(i2 - i1, j2 - j1) for tag, i1, i2, j1, j2 in matcher.get_opcodes()
+                     if tag != "equal")
+        if differ > max(10, len(theirs) // 4):
+            return (f"structural: {differ} of {len(theirs)} instruction(s) differ; "
+                    "needs reconstruction, not reordering")
         return None
     strip = lambda op: re.sub(r"0x[0-9a-f]+|\b\d+\b", "#", op)
     differing = [(a, b) for (_, a), (_, b) in zip(ours, theirs) if a != b]
