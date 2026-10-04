@@ -103,7 +103,7 @@ void __stdcall EraseTargetListNode0073EFFC(void **ppNext, ListNode0073EFFC *pNod
 // rowed _free (0x00030830), then resets the sentinel links. Caller
 // 0x0073F368 frees the sentinel afterwards. Node layout reuses
 // ListNode0073EFFC (value at +8, same as retail lea ecx,[ebx+8]).
-struct Rva0073F061 { ListNode0073EFFC *m_head; void rva0073F061(); };
+struct Rva0073F061 { ListNode0073EFFC *m_head; void rva0073F061(); void rva0073F368(); };
 void Rva0073F061::rva0073F061() {
     ListNode0073EFFC *cur = m_head->m_next;
     if (cur != m_head) {
@@ -117,4 +117,11 @@ void Rva0073F061::rva0073F061() {
     }
     m_head->m_next = m_head;
     m_head->m_prev = m_head;
+}
+void Rva0073F061::rva0073F368()
+{
+    rva0073F061();
+    ListNode0073EFFC *sentinel = m_head;
+    if (sentinel)
+        free(sentinel);
 }
