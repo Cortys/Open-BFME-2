@@ -7097,3 +7097,6 @@ BfmeNarrowRecord28Deque::__destroy_aux	0x0041A382	33	landed	Ghidra33-byte bounda
 ?rva002DFA43@Rva002DFA43@@QAE_NPAVCreateAHeroData@@@Z	0x002DFA43	55	blocked	vector empty plus find needs value spill mov eax ebp8 mov ebp8 eax t=20 model=muse-09
 ?rva00091D61@Rva00091D61@@QAEXPAHH@Z	0x00091D61	81	blocked	register allocation grid base ebx vs ecx, missing mov ecx ebx size -2 t=2 model=muse-09 (stash 0.96 kept)
 FUN_006069f0	0x002069F0	206	blocked	empty file no stash 5 sessions fleet-wide t=2 model=muse-09
+?rva004D5C2B@Rva004CEEC3@@QAE?AVAsciiString@@XZ	0x004D5C2B	147	blocked	str in edx not eax and total client in eax ecx not ecx edx 148B vs 147B t=8 model=muse-04 (stash 0.93 kept)
+?rva00496BD2@Rva00496B48@@QAE_NPAX@Z	0x00496BD2	214	blocked	complex banner bridge virtual layout 13 regions t=15 model=muse-04
+?rva00496DA3@Rva00496DA3@@QAEPAXPAXABVAsciiString@@@Z	0x00496DA3	98	partial	missing push ecx plus mov ebp-4 edi dead store 94B vs 98B 0 reg defects t=18 model=muse-04 score=0.94 stash=reverse/attempts/0x00496da3.cpp
