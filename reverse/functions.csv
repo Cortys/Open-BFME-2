@@ -52049,3 +52049,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva0027F2D6@Rva0027F2D6@@QAEXH@Z,,0x0027F2D6,52,Code/GameEngine/Source/Common/Rva0027F2D6Search.cpp,matched,array search +0x578 call rowed 0x0027D378 with +0x28
 ?rva0027F5A6@Rva0027F5A6@@QAE?AVAsciiString@@XZ,,0x0027F5A6,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5A6Get.cpp,matched,AsciiString by-value getter member +0x50 via rowed StringBase copy
 ?rva0027F5C1@Rva0027F5C1@@QAE?AVAsciiString@@XZ,,0x0027F5C1,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5C1Get.cpp,matched,AsciiString by-value getter member +0x54 via rowed StringBase copy
+?rva0027F5DC@Rva0027F5DC@@QAE?AVAsciiString@@XZ,,0x0027F5DC,27,Code/GameEngine/Source/GameLogic/Map/Rva0027F5DCGet.cpp,matched,AsciiString by-value getter member +0x58 via rowed StringBase copy
