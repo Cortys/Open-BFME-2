@@ -51132,3 +51132,9 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?findSpecialPowerTemplate@SpecialPowerStore@@QAEPBVSpecialPowerTemplate@@VAsciiString@@@Z,,0x0029B6EB,71,Code/GameEngine/Source/Common/INI/INIO1Bodies.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?isValidINIFilename@INI@@KA_NPBD@Z,,0x0002BB7F,68,Code/GameEngine/Source/Common/INI/INIO1Bodies.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0BlockParse@@QAE@PBDP6AXPAVINI@@@Z@Z,,0x0004147D,32,Code/GameEngine/Source/Common/INI/INIO1Bodies.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?update@TextTypeTransition@@UAEXH@Z,,0x0035FE72,171,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?update@MainMenuSmallScaleDownTransition@@UAEXH@Z,,0x0035DA10,143,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?update@FadeTransition@@UAEXH@Z,,0x0035F43D,97,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?update@ReverseSoundTransition@@UAEXH@Z,,0x0035D4E6,44,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?update@ControlBarArrowTransition@@UAEXH@Z,,0x0035D75D,36,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?reverse@CountUpTransition@@UAEXXZ,,0x0035F618,35,Code/GameEngine/Source/GameClient/GUI/GameWindowTransitionsStylesO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
