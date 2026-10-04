@@ -8148,3 +8148,6 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1WorkerAIUpdate@@MAE@XZ,0x004A9A12,destructor called by the scalar deleting destructor 0x004A9EB9 (slot 0 of vtable 0x00C54190 whose unique slot-2 name getter returns WorkerAIUpdate); the body re-stores vtable 0x00C54190
 ??1TurretAI@@MAE@XZ,0x004D86C1,destructor called by the scalar deleting destructor 0x004D8974 (slot 0 of vtable 0x00C60D78 whose unique slot-2 name getter returns TurretAI); the body re-stores vtable 0x00C60D78
 ??1TunnelTracker@@MAE@XZ,0x004F561D,destructor called by the scalar deleting destructor 0x004F5919 (slot 0 of vtable 0x00C63234 whose unique slot-2 name getter returns TunnelTracker); the body re-stores vtable 0x00C63234
+?rva004ACADA@PartTheHeavensUpdate@@AAEXXZ,0x004ACADA,no-argument member tail-called by the slot-1 loadPostProcess at 0x004ACBE8 after the base UpdateModule::loadPostProcess; identity not recovered
+?rva00461257@DynamicPortalBehaviour@@AAEXXZ,0x00461257,no-argument member (plain ret) tail-called by the slot-1 loadPostProcess at 0x00461274 after the base UpdateModule::loadPostProcess; identity not recovered
+?rva00459E05@SiegeDockingBehavior@@AAEXXZ,0x00459E05,no-argument member called by the slot-1 loadPostProcess at 0x0045A16D before the base UpdateModule::loadPostProcess; identity not recovered
