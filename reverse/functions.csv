@@ -51549,3 +51549,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?find@Rva001DB130@@QAEPAURva001DB130Node@@H@Z,,0x004DE549,26,Code/GameEngine/Source/Common/Rva001DB130Find.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?bfmeGoBOE@@YGXPAX000@Z,,0x00514CEB,26,Code/GameEngine/Source/Common/BfmeConv503.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?get@Rva00642AB0@@QAEHH@Z,,0x003888A8,27,Code/GameEngine/Source/Common/Rva00642AB0Get.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+_Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matched,empty /Od operation-table slot 3 stored by Rva008140D0 at 0x0067FFD0 (mov [ecx+0xc] 0xA802F0); BFME1 counterpart 0x008143F0

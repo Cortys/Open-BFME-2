@@ -977,7 +977,8 @@ void Rva00815FA0( struct Rva00815DA0Comm *comm,
 	struct Rva00815DA0Record *record );
 int Rva00816280( struct Rva00815DA0Comm *comm,
 	struct Rva00815DA0Record *record );
-extern char Rva012C4C24[];
+/* Receive-error diagnostic format: retail .data 0x009D937C. */
+char Rva012C4C24[] = "_CommSRPProcessRecvQueue: Error %d - closing connection\n";
 
 void Rva00815DA0( struct Rva00815DA0Comm *comm )
 {
@@ -1120,9 +1121,14 @@ struct Rva008140D0Comm
 void *Rva007F0000( int size );
 void Rva007FEA20( void *lock );
 void CommTCPResolve( void );
-void Rva008143F0( void );
+/* Operation-table slot 3: an empty /Od body (retail 0x006802F0, 5 bytes). */
+void Rva008143F0( void )
+{
+}
+
 void Rva00814520( void );
-extern char Rva012C4AAC[];
+/* The transport name copied into m_name: retail .data 0x009D9204, "TCP". */
+char Rva012C4AAC[] = "TCP";
 void *memset( void *dest, int value, unsigned int size );
 int Rva00814EA0( struct Rva00814700Comm *comm, void *buffer, int size,
 	unsigned int *when );
