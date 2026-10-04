@@ -1436,6 +1436,8 @@ void BridgeBehavior::crc( Xfer *xfer )
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeBehaviorOnHealing.cpp
+// Matched body: BridgeBehaviorXfer.cpp @ 0x457E72 (BFME 2 order). This ZH copy
+// stays because it emits the Bridge::setBridgeObjectID/setTowerObjectID rows.
 // ?xfer@BridgeBehavior@@MAEXPAVXfer@@@Z present-unmatched
 void BridgeBehavior::xfer( Xfer *xfer )
 {
