@@ -7206,3 +7206,4 @@ FUN_008616b1	0x004616B1	252	blocked	INI parse 252B with EH 12 callees strings Vi
 ?rva0055ADE2@Rva0055ADE2@@QAEXPAVPlayer@@@Z	0x0055ADE2	147	partial	fcomi vs fcom float compare plus float const addrs t=22 model=muse-06 score=0.93 stash=reverse/attempts/0x0055ade2.cpp
 ?rva0055ADE2@Rva0055ADE2@@QAEXPAVPlayer@@@Z	0x0055ADE2	147	blocked	fcompi vs fcom plus float const addrs remain; double-locals attempt scored lower at 165B t=10 model=muse-06 (stash 0.93 kept)
 ?rva003F20B0@Rva003F20B0@@QAEXXZ	0x003F20B0	53	partial	exact 53B 0 structural regions but commit hook reports unmatched despite staged row t=18 model=muse-06 score=0.99 stash=reverse/attempts/0x003f20b0.cpp
+?rva003F318C@ConnectionVec@@QAEAAU1@ABU1@@Z	0x003F318C	206	blocked	vector assign 8 regions -7 size 11 register wall t=15 model=muse-06
