@@ -51479,3 +51479,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??$__final_insertion_sort@PAUS4SortElem20@@US4Cmp002EB8E0@@@_STL@@YAXPAUS4SortElem20@@0US4Cmp002EB8E0@@@Z,,0x00337C0E,71,Code/GameEngine/Source/Common/S4StlSortHelpers.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?UnInstall_Materials@W3DShroudMaterialPassClass@@UBEXXZ,,0x000729EB,9,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DShroudMaterialPass.cpp,matched,vftable 0x00BC6244 slot 3; ZH donor resetShader(ST_SHROUD_TEXTURE) via rowed 0x00075695
 ?Install_Materials@W3DShroudMaterialPassClass@@UBEXXZ,,0x00072EEB,94,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DShroudMaterialPass.cpp,matched,vftable 0x00BC6244 slot 2; ZH donor; double getShroud read
+?bfmeGoELHb@@YAXPAX@Z,,0x0006E1A7,25,Code/GameEngine/Source/Common/BfmeConv816O1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?bfmeGoELB@@YGXH@Z,,0x00572871,20,Code/GameEngine/Source/Common/BfmeConv816O1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

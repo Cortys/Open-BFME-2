@@ -7919,3 +7919,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0Emotion@@QAE@PAVObject@@PAVEmotionTrackerUpdateEntry@@@Z,0x004DD206,address read from the REL32 displacement at a placed body
 ??$__insertion_sort@PAUS4SortElem20@@US4Cmp002EB8E0@@@_STL@@YAXPAUS4SortElem20@@0US4Cmp002EB8E0@@@Z,0x00337960,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ??$__unguarded_insertion_sort@PAUS4SortElem20@@US4Cmp002EB8E0@@@_STL@@YAXPAUS4SortElem20@@0US4Cmp002EB8E0@@@Z,0x003376BA,address read from the REL32 displacement at a placed body
+?bfmeTailELB@BfmeObjELB@@QAEXH@Z,0x0057179D,address read from the REL32 displacement at a placed body
