@@ -51410,3 +51410,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?create@Rva005AAB91@@UAEPAVRva004ECECD@@XZ,,0x005AADA7,50,Code/GameEngine/Source/Common/Rva004ECECDTacticCreate.cpp,matched,AIRoamingDefenseTactic tactic slot 9: new tactic of its kind via ctor 0x005AABC6
 ?create@Rva005AB125@@UAEPAVRva004ECECD@@XZ,,0x005AB203,50,Code/GameEngine/Source/Common/Rva004ECECDTacticCreate.cpp,matched,AIStartWoTRBattleTactic tactic slot 9: new tactic of its kind via ctor 0x005AB1B4
 ?create@Rva005AC7E1@@UAEPAVRva004ECECD@@XZ,,0x005AC8F2,50,Code/GameEngine/Source/Common/Rva004ECECDTacticCreate.cpp,matched,AIRingHeroTactic tactic slot 9: new tactic of its kind via ctor 0x005AC7EC
+?bfmeAppendAudioAffect@@YAPAVBfmeTextOutput@@PAV1@I@Z,,0x002258B7,285,Code/GameEngine/Source/Common/Audio/AudioAffectToString.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
