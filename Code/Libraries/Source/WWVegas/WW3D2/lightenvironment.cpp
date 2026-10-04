@@ -115,7 +115,13 @@ void LightEnvironmentClass::InputLightStruct::Init_From_Point_Or_Spot_Light
 	*/
 	float atten = 1.0f;
 	double atten_start,atten_end;
-	light.Get_Far_Attenuation_Range(atten_start,atten_end);
+	// LINK-COMDAT: this TU's Get_Far_Attenuation_Range(double&,double&) copy
+	// differs from the /O1 kept copy (W3DRoadBuffer.cpp owns the row). The
+	// callers inline it, so read the members directly to suppress emission.
+	// FarAttenStart/End sit at +0x100/+0x104 in this TU's LightClass view
+	// (see disassembly); the fld/fstp pair is unchanged.
+	atten_start = *reinterpret_cast<const float*>(reinterpret_cast<const char*>(&light) + 0x100);
+	atten_end = *reinterpret_cast<const float*>(reinterpret_cast<const char*>(&light) + 0x104);
 
 	if (light.Get_Flag(LightClass::FAR_ATTENUATION)) {
 		
