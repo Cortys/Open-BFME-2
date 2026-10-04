@@ -7476,3 +7476,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva006d5e70ptr@Rva006D5E70String@@QAEPAXH@Z,0x006D5E90,"pointer-returning EAStringC lookup called by rva006D7350 0x006D7350; jl index guard then 0x006D4D40 payload call, returns -1 or the 0x006D3E40 result; distinct from the void 0x006D5E70 sibling; 0x2E bytes"
 ?g_bfmeAptDefaultValueAtE18078,0x00E18078,"default Apt value returned by rva006D7350 on a negative index or a null lookup; global read directly by retail"
 ?rva006D5FE0@EAStringC@@QAEXPAXH@Z,0x006D5FE0,"EAStringC append worker called by rva006D7350 0x006D7350 with the looked-up object and count 1; loops 0x006D4280 per element then copies; unpinned callee"
+?allocate@LinkAlloc@@QBEPAULink12@@IPBX@Z,0x00395928,"end-storage allocator for 12-byte Link12 records called by rva0046152F 0x0046152F; null hint returns 0, else imul 0xc then 0x00307F0; returns the pointer"
+?_CdeclUninitCopy@@YAPAULink12@@PAU1@00ABUFalseTag@@@Z,0x00460F45,"__uninitialized_copy for 12-byte Link12 called twice by rva0046152F 0x0046152F; loop copies via _CdeclConstruct 0x00460F18, returns dest end"
+?_CdeclConstruct@@YAXPAULink12@@ABU1@@Z,0x00460F18,"single-element __construct for 12-byte Link12 called by rva0046152F 0x0046152F and by the copy/fill loops 0x00460F45 0x00460F6B"
+?_CdeclFillN@@YAPAULink12@@PAU1@IABU1@ABUFalseTag@@@Z,0x00460F6B,"__fill_n for 12-byte Link12 called by rva0046152F 0x0046152F on the fill_len != 1 path; loops _CdeclConstruct 0x00460F18"

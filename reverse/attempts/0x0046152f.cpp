@@ -1,4 +1,6 @@
 // ?rva0046152F@Rva0046152F@@QAEXPAULink12@@ABU2@ABUFalseTag@@I_N@Z
+// partial score=0.93 date=2026-10-04
+// ?rva0046152F@Rva0046152F@@QAEXPAULink12@@ABU2@ABUFalseTag@@I_N@Z
 // partial score=0.9 date=2026-09-30
 // ?rva0046152F@Rva0046152F@@QAEXPAULink12@@ABU2@ABUFalseTag@@I_N@Z
 // partial score=0.90 date=2026-09-30
@@ -65,16 +67,16 @@ void Rva0046152F::rva0046152F(Link12 *pos, const Link12 &val, const FalseTag &ta
 	unsigned len = oldSize + my_max(oldSize, n);
 	Link12 *newStart = ((LinkAlloc *)&m_end)->allocate(len, 0);
 	Link12 *newFinish = newStart;
-	newFinish = _CdeclUninitCopy(m_start, pos, newStart, FalseTag());
+	newFinish = _CdeclUninitCopy(m_start, pos, newStart, tag);
 	if (n == 1)
 	{
 		_CdeclConstruct(newFinish, val);
 		++newFinish;
 	}
 	else
-		newFinish = _CdeclFillN(newFinish, n, val, FalseTag());
+		newFinish = _CdeclFillN(newFinish, n, val, tag);
 	if (!atend)
-		newFinish = _CdeclUninitCopy(pos, m_finish, newFinish, FalseTag());
+		newFinish = _CdeclUninitCopy(pos, m_finish, newFinish, tag);
 	((Rva0032E7E2 *)this)->rva0032E7E2();
 	m_start = newStart;
 	m_finish = newFinish;
