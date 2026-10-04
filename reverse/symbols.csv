@@ -7683,3 +7683,10 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1Rva005747DA@@UAE@XZ,0x00574BA0,sole REL32 callee of the slot-0 ??_G at 0x00574B84 in vftable 0x00C6E3CC; body starts right after that ??_G
 ??1Rva005E9FC1@@UAE@XZ,0x005EA224,sole REL32 callee of the slot-0 ??_G at 0x005EA208 in vftable 0x00C78114; body starts right after that ??_G
 ?scanUnsignedInt@@YAHPBDAAI@Z,0x00314E96,address read from the REL32 displacement at a placed body
+??0?$_Vector_base@PAVRva005ADA40@@V?$allocator@PAVRva005ADA40@@@_STL@@@_STL@@QAE@ABV?$allocator@PAVRva005ADA40@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor (same 29B as matched BfmeE16 row); REL32 at 0x0050711A in the Rva00506B74 ctor for its +0x0C vector
+??1Rva005ADA40@@QAE@XZ,0x005ADA40,EH-framed dtor of the elements Rva00506B74 owns; REL32 at 0x005071B9 in its slot-2 clear followed by operator delete
+?Rva00506CF5@@YA?AUCoord3D@@PAXPAU1@@Z,0x00506CF5,cdecl Coord3D-by-value helper (hidden return then owner and the +0x18 point); REL32 at 0x00507181 in the Rva00506B74 ctor
+?erase@?$vector@PAVRva005ADA40@@V?$allocator@PAVRva005ADA40@@@_STL@@@_STL@@QAEPAPAVRva005ADA40@@PAPAV3@0@Z,0x0031BD55,pointer-vector range erase fold (vector<void*> row); REL32 at 0x005071D4 in Rva00506B74 slot 2
+?rva0050722A@Rva00506B74@@QAEXPAUCoord3D@@@Z,0x0050722A,thiscall on the +0x28 point; REL32 at 0x0050753C in Rva00506B74::rva00507522 (also called from 0x005AA886)
+?rva005AD9C0@Rva005ADA40@@QAEPAVRva005AD9C0Hit@@PAX@Z,0x005AD9C0,element lookup returning a polymorphic hit; REL32s at 0x00506C0F and 0x00506C49 in Rva00506B74 searches
+?rva005ADC63@Rva005ADA40@@QAEXXZ,0x005ADC63,per-element update; REL32 at 0x00506BE8 in Rva00506B74 slot 1
