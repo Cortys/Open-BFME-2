@@ -189,25 +189,7 @@ void DefaultProductionExitUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@DefaultProductionExitUpdate@@ present-unmatched
-void DefaultProductionExitUpdate::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// rally point
-	xfer->xferCoord3D( &m_rallyPoint );
-
-	// rally point exists
-	xfer->xferBool( &m_rallyPointExists );
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/DefaultProductionExitUpdateXfer.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

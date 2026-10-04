@@ -973,6 +973,8 @@ void Script::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// Matched body: ScriptXfer.cpp @ 0x3B2540 (BFME 2 layout). This ZH copy stays
+// because its setActive call emits the 0x0006EDE3 alias row.
 // ?xfer@Script@@MAEXPAVXfer@@@Z present-unmatched
 void Script::xfer( Xfer *xfer )
 {
