@@ -1,0 +1,199 @@
+// cl: /O1 /DNDEBUG /MD /EHsc
+//
+// Bodies ported from Open-BFME-1's
+// GameEngine/Source/GameNetwork/GameSpy/Thread/BuddyThreadCallbacks.cpp (donor
+// revision 6d9434269164392c5ba62aaa7c15a86b5b020d76, donor flags plus /O1).
+// Compiled that way each body below places uniquely on unclaimed game.dat
+// .text by masked whole-.text search, and ./build.sh reproduces it byte for
+// byte: BuddyThreadClass::statusCallback 0x00550691 (143B). Callee addresses
+// are read off retail's call sites (reverse/symbols.csv). Only the placed
+// bodies are carried; the donor's other definitions are omitted.
+
+#include <string.h>
+#include <wchar.h>
+
+namespace _STL
+{
+template <class T> struct char_traits {};
+template <class T> class allocator {};
+
+// The node allocator's pool entry points are private STLport members
+// (_STL::__node_alloc<true, 0>::_M_allocate at 0x0082E540, _M_deallocate at
+// 0x0082E5F0); these TU-local helpers reach them under their real names.
+template <bool __threads, int __inst> class __node_alloc;
+static void nodePoolDeallocate(void *block, unsigned int bytes);
+template <bool __threads, int __inst>
+class __node_alloc
+{
+	friend void nodePoolDeallocate(void *, unsigned int);
+	static void *__cdecl _M_allocate(unsigned int __n);
+	static void __cdecl _M_deallocate(void *__p, unsigned int __n);
+};
+static inline void nodePoolDeallocate(void *block, unsigned int bytes) { __node_alloc<true, 0>::_M_deallocate(block, bytes); }
+
+template <class Character, class Traits, class Allocator> class basic_string
+{
+public:
+	~basic_string()
+	{
+		if (m_start)
+		{
+			const unsigned int bytes =
+				(unsigned int)(m_storageEnd - m_start) * sizeof(Character);
+			if (bytes > 128)
+				::operator delete(m_start);
+			else
+				_STL::nodePoolDeallocate(m_start, bytes);
+		}
+	}
+
+	const Character *c_str() const { return m_start; }
+
+private:
+	Character *m_start;
+	Character *m_end;
+	Character *m_storageEnd;
+};
+
+typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t> > wstring;
+}
+
+typedef int GPProfile;
+typedef int GPEnum;
+
+class GPConnection;
+
+struct GPRecvBuddyRequestArg
+{
+	GPProfile profile;
+	int date;
+	char reason[1];
+};
+
+struct GPRecvBuddyMessageArg
+{
+	GPProfile profile;
+	unsigned int date;
+	char *message;
+};
+
+struct GPRecvBuddyStatusArg
+{
+	GPProfile profile;
+	int reserved;
+	int index;
+};
+
+struct GPBuddyStatus
+{
+	GPProfile profile;
+	int status;
+	char statusString[256];
+	char locationString[256];
+	char reservedTail[8];
+};
+
+struct GPGetInfoResponseArg
+{
+	GPProfile profile;
+	char *nick;
+	char *email;
+	char *countrycode;
+};
+
+typedef void (*GPCallback)(GPConnection *, void *, void *);
+
+void gpGetInfo(GPConnection *connection, GPProfile profile, GPEnum checkCache,
+	GPEnum blocking, GPCallback callback, void *param);
+void gpGetBuddyStatus(GPConnection *connection, int index, GPBuddyStatus *status);
+_STL::wstring MultiByteToWideCharSingleLine(const char *text);
+
+void getInfoResponseForRequest(GPConnection *, GPGetInfoResponseArg *, void *);
+void getNickForMessage(GPConnection *, GPGetInfoResponseArg *, void *);
+void getInfoResponseForStatus(GPConnection *, GPGetInfoResponseArg *, void *);
+
+// upstream layout: inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork/GameSpy/BuddyThread.h
+struct BuddyResponse
+{
+	enum ResponseType
+	{
+		BUDDYRESPONSE_LOGIN,
+		BUDDYRESPONSE_DISCONNECT,
+		BUDDYRESPONSE_MESSAGE,
+		BUDDYRESPONSE_REQUEST
+	};
+
+	ResponseType buddyResponseType;
+	GPProfile profile;
+	int result;
+	union
+	{
+		struct
+		{
+			unsigned int date;
+			char nick[32];
+			wchar_t text[128];
+		} message;
+
+		struct
+		{
+			char identity[0x56];
+			wchar_t text[1025];
+		} request;
+
+		struct
+		{
+			char nick[31];
+			char email[51];
+			char countrycode[3];
+			char location[256];
+			int status;
+			char statusString[256];
+		} status;
+	} arg;
+};
+
+// upstream layout: inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork/GameSpy/BuddyThread.h
+class GameSpyBuddyMessageQueueInterface
+{
+public:
+	virtual ~GameSpyBuddyMessageQueueInterface();
+	virtual void slot04() = 0;
+	virtual void slot08() = 0;
+	virtual void slot0c() = 0;
+	virtual void slot10() = 0;
+	virtual void slot14() = 0;
+	virtual void slot18() = 0;
+	virtual void slot1c() = 0;
+	virtual void addResponse(const BuddyResponse &response) = 0;
+};
+
+extern GameSpyBuddyMessageQueueInterface *TheGameSpyBuddyMessageQueue;
+
+class BuddyThreadClass
+{
+public:
+	void messageCallback(GPConnection *connection, GPRecvBuddyMessageArg *arg);
+	void requestCallback(GPConnection *connection, GPRecvBuddyRequestArg *arg);
+	void statusCallback(GPConnection *connection, GPRecvBuddyStatusArg *arg);
+};
+
+void BuddyThreadClass::statusCallback(GPConnection *connection,
+	GPRecvBuddyStatusArg *arg)
+{
+	BuddyResponse response;
+	response.buddyResponseType = (BuddyResponse::ResponseType)4;
+
+	gpGetInfo(connection, arg->profile, 1, 1,
+		(GPCallback)getInfoResponseForStatus, &response);
+
+	GPBuddyStatus status;
+	gpGetBuddyStatus(connection, arg->index, &status);
+	strcpy(response.arg.status.location, status.locationString);
+	strcpy(response.arg.status.statusString, status.statusString);
+	response.arg.status.status = status.status;
+
+	TheGameSpyBuddyMessageQueue->addResponse(response);
+}
+
+
