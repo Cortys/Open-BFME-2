@@ -52231,3 +52231,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva0041F2A8@Rva0041F28C@@QAEMPAX@Z,,0x0041F2A8,104,Code/GameEngine/Source/Common/Rva0041F2A8Method.cpp,matched,lerp via 0x002A8AB1 caller 0x00598A9B same layout as 0x0041F28C
 ?rva0010690D@BfmeB996Range@@QAEXXZ,,0x0010690D,62,Code/GameEngine/Source/Common/BfmeConv996RangeCheck.cpp,matched,advance step via rva001068D1 and v5 donor bfmeAdvance996 callers 0x911B2 0x91914
 ?update@Rva0054482D@@UAE?AW4StateReturnType@@XZ,,0x005443ED,56,Code/GameEngine/Source/Common/Rva00544364OnEnter.cpp,matched,vslot slot 6 same class sibling onEnter
+?update@Rva00544884@@UAE?AW4StateReturnType@@XZ,,0x00544707,56,Code/GameEngine/Source/Common/Rva0054467AFinish.cpp,matched,vslot slot 6 same class sibling onEnter

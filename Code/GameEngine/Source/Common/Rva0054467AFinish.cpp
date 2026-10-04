@@ -2,6 +2,9 @@
 // ?onEnter@Rva00544884@@UAE?AW4StateReturnType@@XZ, retail 0x0054467A, 141 bytes.
 // Virtual slot 4 (offset 0x10, onEnter) of vtable 0x00869C30, class of ??0Rva00544884@@QAE@PAVStateMachine@@@Z.
 // Gets TurretStateMachine goal via rowed getGoalObject 0x004D7726, finds BEC via rowed bfmeFindBEC 0x0028BCB4, calls slot 0x1C with owner and goalPosition, loads AI at owner+0x258, checks slot 0x48, regets goal and calls rowed ignoreObstacle 0x00268D88, CritterDesync log via theLogicRandomLogFile and _fprintf when g_00E03745 set, clears adjustsDestination at +0x48, tail-chains to pinned base onEnter 0x0034C146. Evidence: vslot slot 4; ctor TU Rva00544884Ctor; sibling Rva005447EDOnEnter same tri pattern; AIStatesSmallUpdates CritterDesync precedent.
+// ?update@Rva00544884@@UAE?AW4StateReturnType@@XZ, retail 0x00544707, 56 bytes.
+// Virtual slot 6 (offset 0x18, update) of vtable 0x00869C30, same class.
+// Gets goal via rowed getGoalObject, finds BEC via rowed bfmeFindBEC, calls slot 0x1C with owner and +0x20, tail-chains to pinned base update 0x00347460. Evidence: vslot slot 6; prev onEnter same TU.
 enum StateReturnType
 {
 	STATE_CONTINUE = 0,
@@ -107,6 +110,7 @@ class AIInternalMoveToState : public State
 {
 public:
 	virtual StateReturnType onEnter();
+	virtual StateReturnType update();
 protected:
 	unsigned char m_pad1C[0x20 - 0x1C];
 	Coord3D m_goalPosition; // +0x20
@@ -118,6 +122,7 @@ class Rva00544884 : public AIInternalMoveToState
 {
 public:
 	virtual StateReturnType onEnter();
+	virtual StateReturnType update();
 };
 
 extern unsigned char g_00E03745;
@@ -147,5 +152,17 @@ StateReturnType Rva00544884::onEnter()
 		}
 	}
 	return AIInternalMoveToState::onEnter();
+}
+
+StateReturnType Rva00544884::update()
+{
+	Object *goal = ((TurretStateMachine *)m_machine)->getGoalObject();
+	BfmeGotBEC *bec = 0;
+	if (goal != 0)
+		bec = ((BfmeSubBEC *)goal)->bfmeFindBEC();
+	if (bec == 0)
+		return STATE_FAILURE;
+	bec->v07(m_machine->getOwner(), &m_goalPosition);
+	return AIInternalMoveToState::update();
 }
 #pragma comment(linker, "/alternatename:_theLogicRandomLogFile=?g_00DFEFF0@@3PAXA")
