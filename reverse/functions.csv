@@ -51115,3 +51115,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??$__pop_heap_aux@PAHHVRva00204BB8@@@_STL@@YAXPAH00VRva00204BB8@@@Z,,0x0021D484,30,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_rva00204bb8.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??0?$vector@UBfmeRecord0040B61A@@V?$allocator@UBfmeRecord0040B61A@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x0040B3DE,93,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_BfmeRecord0040B61A_allocate_copy.cpp,matched,unique masked-byte placement (locate.py sweep)
 ?push_back@?$vector@VRva0040CB11Entry@@V?$allocator@VRva0040CB11Entry@@@_STL@@@_STL@@QAEXABVRva0040CB11Entry@@@Z,,0x0040E8D1,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_Rva0040CB11_allocate_copy.cpp,matched,unique masked-byte placement (locate.py sweep)
+??_GRva00255D17@@QAEPAXI@Z,,0x00256609,28,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00255d17_destroy.cpp,matched,unique masked-byte placement (locate.py sweep)
