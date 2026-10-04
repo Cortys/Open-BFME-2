@@ -599,7 +599,10 @@ def _same_body(a, b):
             return f"L+{value - start:#x}" if start <= value < start + size else match.group(0)
         return [(i.mnemonic, re.sub(r"0x[0-9a-f]+", local, i.op_str))
                 for i in md.disasm(build.read_target_bytes(start, size), start)]
-    one, two = listing(a), listing(b)
+    try:
+        one, two = listing(a), listing(b)
+    except ValueError:  # an address outside the image is not a function
+        return False
     return bool(one) and one == two
 
 
