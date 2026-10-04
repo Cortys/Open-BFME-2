@@ -1,9 +1,6 @@
 // ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z
-// partial score=0.93 date=2026-09-29
+// partial score=0.95 date=2026-10-04
 // ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z
-// partial score=0.93 date=2026-09-29
-// ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z
-// partial score=0.93 date=2026-09-29
 //
 // ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z @0x006D0A30 82B
 // Find interned payload by StringRef: walks the +0/+4 list comparing the
@@ -22,7 +19,7 @@ struct Payload
 {
 	int m_refcount;
 	char m_pad04[4];
-	const char *m_buffer;
+	Rva008B4260StringRef m_ref08;
 };
 
 struct Node
@@ -49,8 +46,7 @@ void Rva006D0A30::rva006D0A30(Payload **out, const Rva008B4260StringRef &key)
 		goto fail;
 loop:
 	{
-		const Rva008B4260StringRef *curRef = (const Rva008B4260StringRef *)((const char *)cur->m_payload + 8);
-		if (curRef->compare008B4260(key) == 0)
+		if (((const Rva008B4260StringRef *)((const char *)cur->m_payload + 8))->compare008B4260(key) == 0)
 			goto found;
 		cur = cur->m_next;
 		if (cur != 0)
@@ -65,5 +61,6 @@ found:
 		*out = hit;
 		if (hit != 0)
 			++hit->m_refcount;
+		(void)m_head;
 	}
 }
