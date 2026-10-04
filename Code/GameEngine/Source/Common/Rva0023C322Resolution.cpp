@@ -66,6 +66,7 @@ class OptionPreferences : public Rva002E4272
 {
 public:
 	OptionPreferences();
+	virtual ~OptionPreferences();
 };
 
 class GlobalData
