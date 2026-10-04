@@ -51076,3 +51076,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0Rva003F1FB6@@QAE@XZ,,0x003F1FB6,26,Code/GameEngine/Source/Common/System/Rva003F1FB6Ctor.cpp,matched,unlock lane ctor vector base at +0 int 1 at +0xC via Rva003F1F6A precedent
 ??$uninitialized_fill_n@PAV?$vector@IV?$allocator@I@_STL@@@_STL@@IV12@@_STL@@YAPAV?$vector@IV?$allocator@I@_STL@@@0@PAV10@IABV10@@Z,,0x003F1EEB,27,Code/Libraries/Source/WWVegas/WWLib/Rva003F1EEBFillN.cpp,matched,STLport UIntVec fill_n wrapper forwards to rowed worker 0x003F1A8C
 ?Rva003F1ECEFill@@YAXPAD00@Z,,0x003F1ECE,29,Code/Libraries/Source/WWVegas/WWLib/Rva003F1ECEFill.cpp,matched,Range fill stride 12 via vector uint assign 0x0026F4F4 callers 0x003F366A 0x003F36AA
+?rva0021BD22@Rva0021BD22@@QAEPAHH@Z,,0x0021BD22,31,Code/GameEngine/Source/Common/System/Rva0021BD22Find.cpp,matched,map-find wrapper at +0x54 via rowed _M_find callers 0x0021BDD3 0x0021BDFB
