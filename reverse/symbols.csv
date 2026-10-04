@@ -7916,3 +7916,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva005DC93B@Rva005DC87B@@QAE_NXZ,0x005DC93B,Rva005DC87B tactic base test; REL32 at 0x005A9BA3 in the SiegeGates slot 7
 ?rva005DCAF4@Rva005DC87B@@QAE_NXZ,0x005DCAF4,Rva005DC87B tactic base test; REL32 at 0x005A9BC0 in the SiegeGates slot 7
 ?xfer@Rva005DC87B@@UAEXPAVXfer@@@Z,0x005DC903,Rva005DC87B tactic base xfer (version 1 then the AITactic xfer 0x004EDA8C and the +0x58 ObjectID); REL32 at 0x005A9C14 in the SiegeGates slot 5
+??0Emotion@@QAE@PAVObject@@PAVEmotionTrackerUpdateEntry@@@Z,0x004DD206,address read from the REL32 displacement at a placed body
