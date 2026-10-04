@@ -51760,3 +51760,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?getObjectExitInterface@Object@@QBEPAVExitInterface@@XZ,,0x0028B445,55,Code/GameEngine/Source/GameLogic/Object/ObjectGetExitInterface.cpp,matched,Object exit scan via +0x244 +0x250 BFME1 donor Object.cpp
 ?rva0049D57F@Rva0049D526@@QAEXPAX@Z,,0x0049D57F,152,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D526.cpp,matched,chain via Object exit row and WeaponSetHead copy row
 ?rva0028B875@Object@@QBEHXZ,,0x0028B875,49,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B85B.cpp,matched,Object body slot15 mask via ThePlayerList row
+?rva003F3F83@Rva003F3F83@@QAEHXZ,,0x003F3F83,20,Code/GameEngine/Source/Common/System/Rva003F3F83Pred.cpp,matched,predicate over plus2c for 1 or 4 t=5
