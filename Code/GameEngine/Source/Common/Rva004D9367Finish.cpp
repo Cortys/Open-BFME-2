@@ -41,3 +41,10 @@ int __cdecl Rva004D93B5NotEqual(Rva004D9367Key const *a, Rva004D9367Key const *b
 	return 0;
 }
 #pragma auto_inline(on)
+
+#pragma auto_inline(off)
+int __cdecl Rva004D93E2Equal(Rva004D9367Key const *a, Rva004D9367Key const *b)
+{
+	return !(unsigned char)Rva004D93B5NotEqual(a, b);
+}
+#pragma auto_inline(on)

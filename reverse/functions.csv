@@ -51747,3 +51747,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva00357EDF@ScriptEngine@@QAEXHABVAsciiString@@H@Z,,0x00357EDF,50,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357EDF.cpp,matched,ScriptEngine per-player timer push m_lists1A308 crc plus push_back neighbours
 ?rva005FC02A@Rva005FC02A@@QAEXXZ,,0x005FC02A,58,Code/GameEngine/Source/Common/Rva005FC02A.cpp,matched,Apt FadeOut tail to rowed audio remove via TheTarget
 ?Rva004D93B5NotEqual@@YAHPBURva004D9367Key@@0@Z,,0x004D93B5,45,Code/GameEngine/Source/Common/Rva004D9367Finish.cpp,matched,inequality via Less both orders caller 0x004D93E2 neighbours 0x004D9367 0x004D93F7
+?Rva004D93E2Equal@@YAHPBURva004D9367Key@@0@Z,,0x004D93E2,21,Code/GameEngine/Source/Common/Rva004D9367Finish.cpp,matched,Equal via rowed NotEqual same TU neighbours matched
