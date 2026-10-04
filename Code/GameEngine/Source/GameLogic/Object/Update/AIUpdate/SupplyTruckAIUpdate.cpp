@@ -323,22 +323,7 @@ void SupplyTruckAIUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@SupplyTruckAIUpdate@@ present-unmatched
-void SupplyTruckAIUpdate::xfer( Xfer *xfer )
-{
-  XferVersion currentVersion = 1;
-  XferVersion version = currentVersion;
-  xfer->xferVersion( &version, currentVersion );
- 
- // extend base class
-	AIUpdateInterface::xfer(xfer);
-
-	xfer->xferSnapshot(m_supplyTruckStateMachine);
-	xfer->xferObjectID(&m_preferredDock);
-	xfer->xferInt(&m_numberBoxes);
-	xfer->xferBool(&m_forcePending);
-
-}  // end xfer
+// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/SupplyTruckAIUpdateXfer.cpp
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
