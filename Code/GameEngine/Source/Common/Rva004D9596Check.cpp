@@ -12,6 +12,7 @@ class Rva004D9596
 {
 public:
     bool rva004D9596();
+    int rva004D9586();
 
 private:
     int m_00;
@@ -27,4 +28,12 @@ bool Rva004D9596::rva004D9596()
     if (m_00 != -1 || (m_04 != 0 && (m_18 == 0 || m_0c != 0)))
         return true;
     return false;
+}
+
+int Rva004D9596::rva004D9586()
+{
+    int result = 0;
+    if (m_04 != 0 || m_00 != -1)
+        result = 1;
+    return result;
 }

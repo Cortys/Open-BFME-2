@@ -7183,3 +7183,4 @@ FUN_008616b1	0x004616B1	252	blocked	INI parse 252B with EH 12 callees strings Vi
 ??0Rva00568899@@QAE@ABUOpaqueRefElement4@@ABUBfmeEventPositionView@@H@Z	0x00568899	57	partial	exact 57B 14/14; only tail order differs: ours and [esi+0x8C] before lea, retail mov [eax+4] between base/derived vptr stores; immediates are DIR32 relocs gate fills; shape lever 21 suggests volatile only base pair t=28 model=muse-08 score=0.93 stash=reverse/attempts/0x00568899.cpp
 ?rva00553CDE@Rva00553CDE@@QAEGH@Z	0x00553CDE	72	blocked	frameless vs EBP frame plus EBX/ESI register wall and movsx vs mov ax word load t=12 model=muse-08
 ?Rva0021BBDCEqual@@YAEPAURva0021BBDCRec@@ABVAsciiString@@@Z	0x0021BBDC	22	blocked	disk full wine kernel32 missing no compare t=14 model=muse-08
+?rva004D9750@Rva004D9750@@QAEPAXPAXH@Z	0x004D9750	45	partial	missing push-ecx and-ebp-4-0 frame local and leave-vs-pop; 40of45 calls branches exact t=25 model=muse-05 score=0.89 stash=reverse/attempts/0x004d9750.cpp
