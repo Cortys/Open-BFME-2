@@ -60,21 +60,19 @@ class Rva00289ABD
 {
 public:
 	virtual void rva00289180();
-private:
 	char m_pad04[8];
 	WindowVideoMap *m_hash0C;
 	char m_pad10[0x18];
 	Rva0028881C m_map28;
 };
 
-// ?rva00289180@Rva00289ABD@@UAEXXZ present-unmatched
 void Rva00289ABD::rva00289180()
 {
 	WindowVideoMap::iterator tmp = m_hash0C->begin();
 	WindowVideoMap::iterator jt = tmp;
 	for (; jt != m_hash0C->end(); ++jt)
 	{
-		WindowVideo *v = (*jt).second;
+		WindowVideo *&v = (*jt).second;
 		for (ListNode *n = v->m_head; n != (ListNode *)v; n = n->m_next)
 			((Overridable *)((char *)n + 8))->deleteOverrides();
 	}
