@@ -51340,3 +51340,7 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva00CE1E14Base@@UAEPAXI@Z,,0x0065D190,31,Code/GameEngine/Source/Common/Rva00CE1E14BaseCtor.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
 ?winLayoutInitFunc@FunctionLexicon@@QAEP6AXPAVWindowLayout@@PAX@ZW4NameKeyType@@W4TableIndex@1@@Z,,0x002D23A1,48,Code/GameEngine/Source/Common/System/FunctionLexicon.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?keyToFunc@FunctionLexicon@@IAEPAXW4NameKeyType@@PAUTableEntry@1@@Z,,0x002D2235,42,Code/GameEngine/Source/Common/System/FunctionLexicon.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??_GRva00802380Base@@UAEPAXI@Z,,0x0066E5A0,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor
+??_GRva00802680Base@@UAEPAXI@Z,,0x0066E690,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor
+??_GRva00802CA0Base@@UAEPAXI@Z,,0x0066EBA0,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor
+??_GRva00802EC0Base@@UAEPAXI@Z,,0x0066EF30,31,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserDestructors.cpp,matched,deleting dtor in vftable slot 0; inline dtor

@@ -38,13 +38,9 @@
 // this file's own object symbol table, not written by hand.
 //
 // ??1Rva00802EC0Base@@UAE@XZ absent-from-retail
-// ??_GRva00802EC0Base@@UAEPAXI@Z absent-from-retail
 // ??1Rva00802CA0Base@@UAE@XZ absent-from-retail
-// ??_GRva00802CA0Base@@UAEPAXI@Z absent-from-retail
 // ??1Rva00802380Base@@UAE@XZ absent-from-retail
-// ??_GRva00802380Base@@UAEPAXI@Z absent-from-retail
 // ??1Rva00802680Base@@UAE@XZ absent-from-retail
-// ??_GRva00802680Base@@UAEPAXI@Z absent-from-retail
 
 // ---------------------------------------------------------------- callees
 class Rva00800290Buffer
