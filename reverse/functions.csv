@@ -52171,3 +52171,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ??0Rva004E32F2@@QAE@XZ,,0x004E32D5,29,Code/GameEngine/Source/Common/Rva004E32D5Ctor.cpp,matched,vtable 0x00861F68 caller 0x004E331C tree pin 0x005011C1
 ?Rva004E3300Parse@@YAXPAVINI@@PAVRva00566D7B@@@Z,,0x004E3300,130,Code/GameEngine/Source/Common/Rva004E3300Parse.cpp,matched,SplineCamera ParseINIBlock temp 0x004E32D5 append 0x00566D7B
 ?adjustTimer@ScriptEngine@@IAEXPAVScriptAction@@_N1@Z,,0x00209639,169,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineAdjustTimer.cpp,matched,ScriptEngine adjustTimer via float helper and shape levers
+?setTimer@ScriptEngine@@IAEXPAVScriptAction@@_N1@Z,,0x002094CB,255,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineSetTimer.cpp,matched,ScriptEngine setTimer via float helper chain
