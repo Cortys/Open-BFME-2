@@ -7811,3 +7811,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva0039E9E0@Rva005059A1Unit@@QAEXXZ,0x0039E9E0,fallback when no item claims the unit; REL32 at 0x00505A43 in Rva00506909::rva005059A1
 ?rva004ED6D2@Rva00506909Item@@QAEXPAURva005059A1Unit@@@Z,0x004ED6D2,item takes the unit; REL32 at 0x00505A4F in Rva00506909::rva005059A1
 ?rva004EDD4D@Rva00506909Item@@QAEXPAURva005059A1Unit@@@Z,0x004EDD4D,item releases the unit; REL32 at 0x00505AE6 in Rva00506909::rva00505A56
+??1ScriptAction@@UAE@XZ,0x003B43CC,dtor installs its own vftable 0x00C1F3FC (bytes at +11) and is the REL32 callee of the slot-0 ??_G at 0x003B53F7
+??1SupplyTruckAIUpdate@@UAE@XZ,0x004A69BF,dtor installs its own vftable 0x00C52FB0 (bytes at +19) and is the REL32 callee of the slot-0 ??_G at 0x004A6E72
