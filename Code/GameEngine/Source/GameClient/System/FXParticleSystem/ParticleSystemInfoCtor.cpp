@@ -1,7 +1,3 @@
-// ??0ParticleSystemInfo@FXParticleSystem@@QAE@XZ
-// partial score=0.96 date=2026-10-01
-// ??0ParticleSystemInfo@FXParticleSystem@@QAE@XZ
-// partial score=0.96 date=2026-10-01
 // cl: /O1 /MD /arch:SSE /Ireference/shims/bfme2_ascii
 // ??0ParticleSystemInfo@FXParticleSystem@@QAE@XZ @0x001F4E82 216B
 // Evidence: vtable 0x007BB5C8 store at [this]; ghidra ParticleSystemInfo size 216;
@@ -16,6 +12,12 @@ struct IntFloatFloat
     unsigned int a;
     float b;
     float c;
+    IntFloatFloat()
+    {
+        b = 0.0f;
+        c = 0.0f;
+        a = 0;
+    }
 };
 
 struct Coord3D
@@ -83,27 +85,14 @@ private:
     unsigned int m_unknown98;
 };
 
-// ??0ParticleSystemInfo@FXParticleSystem@@QAE@XZ present-unmatched
 ParticleSystemInfo::ParticleSystemInfo()
+    : m_angleZ(),
+      m_angularRateZ(),
+      m_angularDamping(),
+      m_velDamping(),
+      m_lifetime(),
+      m_startSize()
 {
-    m_angleZ.b = 0.0f;
-    m_angleZ.c = 0.0f;
-    m_angleZ.a = 0;
-    m_angularRateZ.b = 0.0f;
-    m_angularRateZ.c = 0.0f;
-    m_angularRateZ.a = 0;
-    m_angularDamping.b = 0.0f;
-    m_angularDamping.c = 0.0f;
-    m_angularDamping.a = 0;
-    m_velDamping.b = 0.0f;
-    m_velDamping.c = 0.0f;
-    m_velDamping.a = 0;
-    m_lifetime.b = 0.0f;
-    m_lifetime.c = 0.0f;
-    m_lifetime.a = 0;
-    m_startSize.b = 0.0f;
-    m_startSize.c = 0.0f;
-    m_startSize.a = 0;
     m_emissionVelocityType = 1;
     m_particleType = 1;
     m_shaderType = 1;
