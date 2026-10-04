@@ -12,6 +12,12 @@ struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
 #pragma optimize("gsy", on)
 static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #pragma optimize("", on)
+// Emit retail's /O1 COMDAT copies (Plane ctor, Vector3 operators).
+// TriClass::Collide rows below keep the TU flags.
+#pragma optimize("s", on)
+#include "vector3.h"
+#include "plane.h"
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "colmath.h"
 #include "aaplane.h"
