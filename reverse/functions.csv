@@ -51810,3 +51810,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0AssetReference@@QAE@PAVCountedAsset@@@Z,,0x0061FC30,15,Code/GameEngineDevice/Source/W3DDevice/GameClient/Find_Asset.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??0Rva006F7540@@QAE@XZ,,0x006F7530,13,Code/Libraries/Source/Apt/Rva006F6A50Cluster.cpp,matched,unique masked-byte placement (locate.py sweep)
 ??A?$vector@URva001D28F0Element@@V?$allocator@URva001D28F0Element@@@_STL@@@_STL@@QAEAAURva001D28F0Element@@I@Z,,0x00689280,14,Code/Libraries/Source/WWVegas/WWLib/Rva001D25F0VectorInsertOverflow.cpp,matched,unique masked-byte placement (locate.py sweep)
+??A?$vector@UBfmeObject476@@V?$allocator@UBfmeObject476@@@_STL@@@_STL@@QAEAAUBfmeObject476@@I@Z,,0x001FD260,15,Code/Libraries/Source/WWVegas/WWLib/StlportObject476Vector.cpp,matched,unique masked-byte placement (locate.py sweep)
