@@ -1,4 +1,6 @@
 // ?Rva0035D3C7@Rva0035D352@@UAEXH@Z
+// partial score=0.93 date=2026-10-04
+// ?Rva0035D3C7@Rva0035D352@@UAEXH@Z
 // partial score=0.9 date=2026-09-26
 // ?Rva0035D3C7@Rva0035D352@@UAEXH@Z
 // partial score=0.90 date=2026-09-26
@@ -159,11 +161,24 @@ Rva0035D352::~Rva0035D352()
 // ?Rva0035D3C7@Rva0035D352@@UAEXH@Z present-unmatched
 void Rva0035D352::Rva0035D3C7(int index)
 {
-	bool flag = m_9;
+	// Two orderings are load-bearing, and both were wrong in the banked body.
+	//
+	// (1) THE FLAG MUST BE READ AFTER BOTH RANGE GUARDS. Retail loads m_9 at
+	// +0x16 (`mov cl,BYTE PTR [esi+9]`), i.e. only once `cmp edi,edx; jl` and
+	// `cmp edi,eax; jg` have both fallen through. Reading it into a local first,
+	// as the banked body did, forces the load into the prolog and shifts the
+	// whole dispatch by three bytes (first diff +0x04).
+	//
+	// (2) THE TWO BLOCKS ARE LAID CLEAR-FIRST. Retail's SET body sits at
+	// +0x34..+0x5F and its CLEAR body at +0x5A..+0x74, with the final `pop
+	// ebx` shared as the join point. Spelling CLEAR first with an explicit
+	// `return;` between them reproduces that layout; the banked SET-first
+	// spelling put the dispatch's join before both bodies instead.
 	if (index < m_10)
 		return;
 	if (index > m_14)
 		return;
+	bool flag = m_9;
 	if (flag) {
 		if (index == m_14)
 			goto SET;
@@ -177,6 +192,12 @@ void Rva0035D352::Rva0035D3C7(int index)
 		if (m_10 != m_14)
 			goto CLEAR;
 	}
+CLEAR:
+	if (m_19)
+		return;
+	TheAudio->_pad65();
+	m_19 = true;
+	return;
 SET:
 	if (m_19) {
 		if (m_18)
@@ -187,9 +208,4 @@ SET:
 	}
 	m_8 = true;
 	return;
-CLEAR:
-	if (m_19)
-		return;
-	TheAudio->_pad65();
-	m_19 = true;
 }
