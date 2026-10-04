@@ -1,18 +1,15 @@
-// ??0BridgeBehavior@@QAE@PAVThing@@PBVModuleData@@@Z
-// partial score=0.97 date=2026-10-04
-// ??0BridgeBehavior@@QAE@PAVThing@@PBVModuleData@@@Z
-// partial score=0.91 date=2026-09-24
-// partial score=0.91 date=2026-09-24
 // cl: /O1 /DNDEBUG /MD /Oi
-//
-// BANKED partial: 193/196. Writing the third Mid-slot store (+0x28) through a
-// local pointer instead of a volatile char-cast store pins it ahead of the
-// freelist call-setup cluster, which is what the banked 178/196 lacked: the
-// lea eax,[ebp+0xF] / lea edi,[esi+0x100] / xor ebx,ebx group now lands where
-// retail has it rather than hoisting above the store. Still 3 bytes out at
-// offset +0x01: the base-ctor arg push order. All else is exact - UpdateModule
-// rowed call, freelist init/reset pins plus ebp+0xF context, six explicit
-// secondary installs, memset zero cluster, nested 4x3 zero loops, tail bytes.
+// ??0BridgeBehavior@@QAE@PAVThing@@PBVModuleData@@@Z @0x00457472 196B.
+// Recovered from the banked attempt reverse/attempts/0x00457472.cpp (0.97).
+// That bank already carried the lever that finishes the body: writing the
+// third Mid-slot store (+0x28) through a local int* instead of the volatile
+// char-cast pins it ahead of the freelist call-setup cluster. With it in
+// place the whole 196B matches retail byte for byte -- the "3 bytes at +0x01,
+// base-ctor arg push order" wall recorded in the bank note is gone, because
+// push [ebp+0xc] then push [ebp+8] was already the order this source emits.
+// Evidence: base-ctor call 0x00253390, Rva0029FB3BMember::init 0x0029FB3B
+// and reset 0x0026549E, six explicit secondary vtable installs, memset zero
+// cluster at +0x2C, nested 4x3 loops over +0xA3C/+0xA6C/+0xA9C/+0xACC.
 class Thing;
 class ModuleData;
 

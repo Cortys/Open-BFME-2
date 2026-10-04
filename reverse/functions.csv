@@ -50680,3 +50680,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003AD595Init@@YAXXZ,,0x003AD595,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD595Init.cpp,matched,guarded initializer hemispherical emission velocity via static holder
 ?Rva003AD5B6Init@@YAXXZ,,0x003AD5B6,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD5B6Init.cpp,matched,guarded initializer cylindrical emission velocity via static holder
 ?Rva003AD5D7Init@@YAXXZ,,0x003AD5D7,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD5D7Init.cpp,matched,guarded initializer outward emission velocity via static holder
+??0BridgeBehavior@@QAE@PAVThing@@PBVModuleData@@@Z,,0x00457472,196,Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeBehaviorCtor.cpp,matched,recovered from banked attempt; third Mid-slot store via local int* pins it ahead of the freelist cluster and the whole 196B matches including the base-ctor push pair
