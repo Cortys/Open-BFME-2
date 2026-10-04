@@ -8027,3 +8027,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?j_00003df0@@YAXXZ,0x00314596,callee read from the retail REL32 in placed BFME1-donor body ?input@Rva004BE120Input@@QAEHIII@Z (0x003206A4)
 ?bfmeCur1094@BfmeK1094@@QAEPAVBfmeR1094@@XZ,0x0028AFA9,callee read from the retail REL32 in placed BFME1-donor body ?bfmeVisitABG@BfmeHostABG@@QAEXPAX0@Z (0x0036E22F)
 ?bfmeApplyABG@BfmeK1094@@QAEXPAX0@Z,0x0029725B,callee read from the retail REL32 in placed BFME1-donor body ?bfmeVisitABG@BfmeHostABG@@QAEXPAX0@Z (0x0036E22F)
+?doXfer@Rva0026AFDAMember@@QAEXPAVXfer@@@Z,0x003533BF,"""non-virtual xfer of the 0xC4 DeployStyle +0x3E4 member (Version(1,2) via Xfer +0x28); DeployStyleAIUpdate::xfer calls it last, where Generals calls m_lastOutsideCommand.doXfer (AICommandParmsStorage, donor-carried lead); callers 0x2684A5 0x36ACAF 0x48E81E"""
