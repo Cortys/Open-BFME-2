@@ -51069,3 +51069,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva0037E7A5@Rva0037E421@@QAEPAXH@Z,,0x0037E7A5,23,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,chain of rva0037E421 then rowed 0x0037E270 null if missing 5 callers same class and flags
 ?push_back@?$vector@VDynamicPortalLink@@V?$allocator@VDynamicPortalLink@@@_STL@@@_STL@@QAEXABVDynamicPortalLink@@@Z,,0x0046167A,55,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0046152FFinish.cpp,matched,STLport vector DynamicPortalLink push_back with overflow to rowed insert 12B elements
 ?Rva00564CD4Copy@@YAPAVRva00564B1A@@PAV1@00@Z,,0x00564CD4,50,Code/GameEngine/Source/Common/Bfme/Rva00564CD4Copy.cpp,matched,range-copy via rowed 0x00564B1A caller 0x0056567B sibling pattern
+?Rva00565668Copy@@YAPAVRva00564B1A@@PAV1@00PAD@Z,,0x00565668,29,Code/GameEngine/Source/Common/Rva00565668Copy.cpp,matched,wrapper over rowed Copy 0x00564CD4 via caller 0x00565898 neighbours FillN
