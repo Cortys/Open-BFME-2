@@ -1,7 +1,13 @@
 // ?Rva00118AC0@@YAXXZ
-// partial score=0.98 date=2026-10-03
 // cl: /G7 /arch:SSE
-// ?Rva00118AC0@@YAXXZ 0x00118AC0 138 unlock stencil-gated Clear via Has_Stencil caller 0x000A5A51
+// ?Rva00118AC0@@YAXXZ @ 0x00118AC0 (138B): stencil-gated Clear unlock.
+// Sets the unlock flag, and when Has_Stencil (rowed in dx8wrapper.cpp) is true
+// decrements the gate counter 0x00DB5FB4, wrapping to 0xFF when it drops below
+// one, leaving early unless the counter now reads 0xFF; then issues a
+// stencil-only Clear. When Has_Stencil is false it issues a z+stencil Clear.
+// Sibling lane landings: Rva00118A90Stencil / Rva00118BA0State.
+// The predecrement form `--g_Va00DB5FB4` is load-bearing: `g - 1` makes VC7.1
+// emit `add eax,0xFFFFFFFF` where retail emits `sub eax,1`.
 struct Vector3
 {
 	float X;
@@ -16,14 +22,12 @@ public:
 };
 extern unsigned char g_Va00DB5FB8;
 extern int g_Va00DB5FB4;
-// ?Rva00118AC0@@YAXXZ present-unmatched
 void __cdecl Rva00118AC0()
 {
 	g_Va00DB5FB8 = 1;
 	if (DX8Wrapper::Has_Stencil())
 	{
-		int v = g_Va00DB5FB4 - 1;
-		g_Va00DB5FB4 = v;
+		int v = --g_Va00DB5FB4;
 		if (v < 1)
 			g_Va00DB5FB4 = 0xff;
 		else if (v != 0xff)

@@ -50648,3 +50648,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva007B6E86@@YAXXZ,,0x007B6E86,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6E86
 ?rva007B6E9A@@YAXXZ,,0x007B6E9A,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6E9A
 ?rva007B6EA4@@YAXXZ,,0x007B6EA4,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,Freelist pool clear thunk at 0x007B6EA4
+?Rva00118AC0@@YAXXZ,,0x00118AC0,138,Code/Libraries/Source/WWVegas/WW3D2/Rva00118AC0Finish.cpp,matched,stencil-gate unlock Clear; predecrement form reproduces retail sub eax 1; siblings Rva00118A90/BA0; /G7 SSE
