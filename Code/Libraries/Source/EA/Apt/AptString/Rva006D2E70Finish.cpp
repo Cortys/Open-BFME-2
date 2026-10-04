@@ -30,9 +30,8 @@ public:
 	void rva006D2E70();
 };
 
-// Retail empty singleton at VA 0x00DDC020. Per-TU definition; the DIR32
-// site in the body below auto-patches from retail at verify time.
-EAStringC::StringDataC g_eaEmptyStringData = { 0x0101, 0, 0, 0 };
+// Retail empty singleton at VA 0x00DDC020, defined in EAStringCRefCount.cpp.
+extern EAStringC::StringDataC g_eaEmptyStringData;
 
 void EAStringC::rva006D2E70()
 {
