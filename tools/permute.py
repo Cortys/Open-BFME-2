@@ -800,22 +800,38 @@ def main(argv=None):
                 if "pins" in result:
                     found.append(result)
                     print(json.dumps(result), flush=True)
-        if found:
-            import csv as _csv
-            have = set()
-            with (ROOT / "reverse" / "symbols.csv").open(encoding="utf-8", newline="") as handle:
-                have = {(r["name"], r["address"].upper()) for r in _csv.DictReader(handle)}
-            with (ROOT / "reverse" / "symbols.csv").open("a", encoding="utf-8", newline="") as handle:
-                writer = _csv.writer(handle, lineterminator="\n")
-                for result in found:
-                    for name, address in result["pins"].items():
-                        if (name, address.upper()) not in have:
-                            writer.writerow([name, address,
-                                             f"auto-pin (permute --pins): REL32 call target read from retail in "
-                                             f"{result['rva']}, whose banked body is byte-exact once this call resolves"])
-                            have.add((name, address.upper()))
-        print(f"permute: {len(found)} banked body(ies) close with pins; run tools/pin_consistency.py --check, "
-              "then --land")
+        import csv as _csv
+        import io as _io
+        import subprocess as _subprocess
+        symbols = ROOT / "reverse" / "symbols.csv"
+        kept = 0
+        for result in found:
+            # One body's pins at a time, each through pin_consistency: a pin
+            # the guard refuses (e.g. one name over divergent copies) is
+            # rolled back with its body's win, never left for the gate.
+            before = symbols.read_text(encoding="utf-8")
+            have = {(r["name"], r["address"].upper()) for r in _csv.DictReader(_io.StringIO(before))}
+            lines = []
+            for name, address in result["pins"].items():
+                if (name, address.upper()) not in have:
+                    out = _io.StringIO()
+                    _csv.writer(out, lineterminator="\n").writerow(
+                        [name, address, f"auto-pin (permute --pins): REL32 call target read from retail in "
+                                        f"{result['rva']}, whose banked body is byte-exact once this call resolves"])
+                    lines.append(out.getvalue())
+            if lines:
+                symbols.write_text(before + ("" if before.endswith("\n") else "\n") + "".join(lines),
+                                   encoding="utf-8")
+            check = _subprocess.run(["python3", "tools/pin_consistency.py", "--check"], cwd=ROOT,
+                                    capture_output=True, text=True)
+            if check.returncode != 0:
+                symbols.write_text(before, encoding="utf-8")
+                (OUT / result["rva"] / "win.cpp").unlink(missing_ok=True)
+                print(f"REFUSED {result['rva']}: pin_consistency rejects its pins", flush=True)
+                continue
+            kept += 1
+        print(f"permute: {kept} of {len(found)} banked body(ies) close with pins that pass "
+              "pin_consistency; --land lands them")
         return 0
     if args.offsets:
         # bodies the triage marked as a layout fact, or the RVAs given
