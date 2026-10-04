@@ -122,7 +122,7 @@ const Matrix3D	Matrix3D::RotateZ270
 );
 
 
-void Matrix3D::Set(const Matrix3 & rot,const Vector3 & pos)
+inline void Matrix3D::Set(const Matrix3 & rot,const Vector3 & pos)
 {
 	Row[0].Set( rot[0][0], rot[0][1], rot[0][2], pos[0]);
 	Row[1].Set( rot[1][0], rot[1][1], rot[1][2], pos[1]);
@@ -188,7 +188,7 @@ float Matrix3D::Get_Z_Rotation(void) const
 
 
 // ?Rotate_Vector@Matrix3D@@ present-unmatched
-Vector3 Matrix3D::Rotate_Vector(const Vector3 &vect) const
+inline Vector3 Matrix3D::Rotate_Vector(const Vector3 &vect) const
 {
 	return Vector3(
 		(Row[0][0]*vect[0] + Row[0][1]*vect[1] + Row[0][2]*vect[2]),
@@ -198,7 +198,7 @@ Vector3 Matrix3D::Rotate_Vector(const Vector3 &vect) const
 }
 
 
-Vector3 Matrix3D::Inverse_Rotate_Vector(const Vector3 &vect) const
+inline Vector3 Matrix3D::Inverse_Rotate_Vector(const Vector3 &vect) const
 {
 	return Vector3(
 		(Row[0][0]*vect[0] + Row[1][0]*vect[1] + Row[2][0]*vect[2]),
@@ -208,7 +208,7 @@ Vector3 Matrix3D::Inverse_Rotate_Vector(const Vector3 &vect) const
 }
 
 // ?Look_At@Matrix3D@@ present-unmatched
-void Matrix3D::Look_At(const Vector3 &p,const Vector3 &t,float roll)
+inline void Matrix3D::Look_At(const Vector3 &p,const Vector3 &t,float roll)
 {
 	float	dx,dy,dz;	//vector from p to t
 	float	len1,len2;
@@ -261,7 +261,7 @@ void Matrix3D::Look_At(const Vector3 &p,const Vector3 &t,float roll)
 // Create a matrix given a position and a direction (x axis will point in direction)
 // Make sure you pass in UNITIZED direction!!!
 // ?buildTransformMatrix@Matrix3D@@ present-unmatched
-void Matrix3D::buildTransformMatrix( const Vector3 &pos, const Vector3 &dir )
+inline void Matrix3D::buildTransformMatrix( const Vector3 &pos, const Vector3 &dir )
 {
 	float sinp, cosp;	// sine and cosine of the pitch ("up-down" tilt about y)
 	float siny, cosy;	// sine and cosine of the yaw ("left-right"tilt about z)
@@ -293,7 +293,7 @@ void Matrix3D::buildTransformMatrix( const Vector3 &pos, const Vector3 &dir )
 }
 
 // ?Obj_Look_At@Matrix3D@@ present-unmatched
-void Matrix3D::Obj_Look_At(const Vector3 &p,const Vector3 &t,float roll)
+inline void Matrix3D::Obj_Look_At(const Vector3 &p,const Vector3 &t,float roll)
 {
 	float	dx,dy,dz;	//vector from p to t
 	float	len1,len2;
@@ -338,7 +338,7 @@ void Matrix3D::Obj_Look_At(const Vector3 &p,const Vector3 &t,float roll)
 
 
 // ?Copy_3x3_Matrix@Matrix3D@@ present-unmatched
-void Matrix3D::Copy_3x3_Matrix(float matrix[3][3])
+inline void Matrix3D::Copy_3x3_Matrix(float matrix[3][3])
 {
 	Row[0][0] = matrix[0][0];
 	Row[0][1] = matrix[0][1];
@@ -356,7 +356,7 @@ void Matrix3D::Copy_3x3_Matrix(float matrix[3][3])
 
 
 // ?Is_Orthogonal@Matrix3D@@ present-unmatched
-int Matrix3D::Is_Orthogonal(void) const
+inline int Matrix3D::Is_Orthogonal(void) const
 {
 	Vector3 x(Row[0].X,Row[0].Y,Row[0].Z);
 	Vector3 y(Row[1].X,Row[1].Y,Row[1].Z);
@@ -374,7 +374,7 @@ int Matrix3D::Is_Orthogonal(void) const
 }
 
 // ?Re_Orthogonalize@Matrix3D@@ present-unmatched
-void Matrix3D::Re_Orthogonalize(void)
+inline void Matrix3D::Re_Orthogonalize(void)
 {
 	Vector3 x(Row[0][0],Row[0][1],Row[0][2]);
 	Vector3 y(Row[1][0],Row[1][1],Row[1][2]);
@@ -422,7 +422,7 @@ void Matrix3D::Re_Orthogonalize(void)
 
 
 // ?Solve_Linear_System@Matrix3D@@ present-unmatched
-bool Matrix3D::Solve_Linear_System(Matrix3D & system)
+inline bool Matrix3D::Solve_Linear_System(Matrix3D & system)
 {
 	/*
 	** Gauss-Jordan Elimination
@@ -448,4 +448,16 @@ bool Matrix3D::Solve_Linear_System(Matrix3D & system)
 	system[0] -= system[0][1] * system[1];			// (0,1) now equals 0.0, and we are done!
 
 	return true;
+}
+
+// Emission anchor (LINK-DUP): the 10 duplicate Matrix3D bodies above are now
+// inline, so the compiler discards them (nothing in this TU calls them) and with
+// them their only intra-TU users of four helpers this TU owns rows for
+// (Vector3::Dot_Product, Vector3(float,float,float), Vector4(float,float,float,float),
+// Vector3::Length2). This anchor keeps those four emitting; its own bytes are unclaimed.
+// ?Matrix3DHelperAnchor present-unmatched
+void Matrix3DHelperAnchor(Vector3 &a, Vector3 &b, Vector4 &c)
+{
+	Vector3 t(Vector3::Dot_Product(a, b), a.Length2(), 0.0f);
+	c = Vector4(t.X, t.Y, t.Z, 1.0f);
 }
