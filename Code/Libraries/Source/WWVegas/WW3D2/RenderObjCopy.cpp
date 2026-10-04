@@ -62,3 +62,15 @@ RenderObjClass::RenderObjClass(const RenderObjClass &src) :
         _bfme_indexed_factors[i] = src._bfme_indexed_factors[i];
     }
 }
+
+// RenderObjClass::Set_ObjectScale, the header inline virtual (slot 93): the
+// copy every RenderObjClass-derived vtable points at is the /arch:SSE body at
+// 0x0006CEBF. The anchor below only makes this SSE unit emit it (qualified
+// call with inlining disabled); it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRenderObjScaleAnchor@@YAXPAVRenderObjClass@@M@Z absent-from-retail
+void _bfmeRenderObjScaleAnchor(RenderObjClass *r, float scale)
+{
+    r->RenderObjClass::Set_ObjectScale(scale);
+}
+#pragma inline_depth()
