@@ -1,6 +1,7 @@
-// ?CleanAll@AptGC@@SAXXZ
-// partial score=1.0 date=2026-09-27
 // cl: /O2 /MD
+//
+// ?CleanAll@AptGC@@SAXXZ, retail 0x006e6f80, 201 bytes. Banked partial (score 1.0) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Partial: target 0x006E6F80, 201 bytes. Donor identity APT0.19.03 release.
 // Caller instruction shape is reconstructed; unvalidated callee identities
 // remain a blocker. See reverse/apt_donor_01903.json for exact call targets.

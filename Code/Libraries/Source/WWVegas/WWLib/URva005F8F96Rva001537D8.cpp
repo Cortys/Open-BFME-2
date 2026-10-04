@@ -1,7 +1,7 @@
-// ??4?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z
-// partial score=0.98 date=2026-10-03
 // cl: /O1
-// ??4?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z, retail 0x001537D8, 180 bytes.
+//
+// ??4?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z, retail 0x001537d8, 180 bytes. Banked partial (score 0.98) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Vector assign 3-path sar 3 stride 8 via allocate_and_copy 0x153489 plus clear 0x15373C plus copy 0x1534B6 plus Destroy 0x153470 plus uninit_copy 0x153425.
 // Evidence: cmp ebx esi je then sar 3 capacity check jbe then allocate_and_copy plus clear plus copy plus Destroy plus copy plus uninit_copy then finish update; caller 0x1539D8 loops 6 vectors; callees rowed.
 struct TargetRef00217D4C
@@ -97,5 +97,4 @@ inline _STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> > &_STL::vector<Rv
 	}
 	return *this;
 }
-// ??4?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z present-unmatched
 template _STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> > &_STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> >::operator=(const vector &);

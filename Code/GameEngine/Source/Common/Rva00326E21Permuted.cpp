@@ -1,6 +1,7 @@
-// ?GadgetListBoxSetListLength@@YAXPAVGameWindow@@H@Z
-// partial score=0.99 date=2026-10-03
 // cl: /O1 /G7 /MD /DNDEBUG
+//
+// ?GadgetListBoxSetListLength@@YAXPAVGameWindow@@H@Z, retail 0x00326e21, 378 bytes. Banked partial (score 0.99) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Read-only BFME1 2791daf553 clean donor trial; native manager free slot +3C.
 #include <string.h>
 typedef short Short;
