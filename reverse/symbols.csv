@@ -7583,3 +7583,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??$__copy@PAV?$BitFlags@$0HF@@@PAV1@H@_STL@@YAPAV?$BitFlags@$0HF@@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x00626EF0,callee REL32 read by locate.py from a unique masked-byte placement emitted by W3DModelDraw.cpp
 ??1BfmeStringRecord00426A5B@@QAE@XZ,0x00495C43,callee REL32 read by locate.py from a unique masked-byte placement emitted by Rva0042700FParse.cpp
 ??$_Construct@UGeometryShape@@U1@@_STL@@YAXPAUGeometryShape@@ABU1@@Z,0x005EA9A9,callee REL32 read by locate.py from a unique masked-byte placement emitted by GeometryInfoCopyConstructor.cpp
+??0HordeUpdateModuleData@@QAE@XZ,0x00253A78,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
+??0PointDefenseLaserUpdateModuleData@@QAE@XZ,0x00253510,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
+??0SpyVisionUpdateModuleData@@QAE@XZ,0x004930A0,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
+??1FXBoneInfo@@QAE@XZ,0x00495C43,callee REL32 read by locate.py from a unique masked-byte placement emitted by ModuleFactory.cpp
