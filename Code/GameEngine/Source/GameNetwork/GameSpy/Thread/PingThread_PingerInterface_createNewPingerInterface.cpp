@@ -97,8 +97,7 @@ PingerInterface* PingerInterface::createNewPingerInterface( void )
 {
 	return NEW Pinger;
 }
-
-PingerInterface *ThePinger;
+extern PingerInterface *ThePinger;
 
 //-------------------------------------------------------------------------
 

@@ -92,8 +92,7 @@ private:
 
 	PingThreadClass *m_workerThreads[NumWorkerThreads];
 };
-
-PingerInterface *ThePinger;
+extern PingerInterface *ThePinger;
 
 //-------------------------------------------------------------------------
 

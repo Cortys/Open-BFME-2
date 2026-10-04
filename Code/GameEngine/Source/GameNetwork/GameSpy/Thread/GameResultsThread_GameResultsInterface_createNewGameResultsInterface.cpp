@@ -106,8 +106,7 @@ GameResultsInterface* GameResultsInterface::createNewGameResultsInterface( void 
 {
 	return NEW GameResultsQueue;
 }
-
-GameResultsInterface *TheGameResultsQueue;
+extern GameResultsInterface *TheGameResultsQueue;
 
 //-------------------------------------------------------------------------
 

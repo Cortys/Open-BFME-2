@@ -101,8 +101,7 @@ private:
 
 	GameResultsThreadClass *m_workerThreads[NumWorkerThreads];
 };
-
-GameResultsInterface *TheGameResultsQueue;
+extern GameResultsInterface *TheGameResultsQueue;
 
 //-------------------------------------------------------------------------
 

@@ -45,8 +45,7 @@
 //#pragma optimize("", off)
 //#pragma MESSAGE("************************************** WARNING, optimization disabled for debugging purposes")
 #endif
-
-DLListClass<Smudge> SmudgeSet::m_freeSmudgeList;	///<list of unused smudges for use by SmudgeSets.
+/* SmudgeSet::m_freeSmudgeList: defined by its owning unit */	///<list of unused smudges for use by SmudgeSets.
 
 Smudge *SmudgeSet::addSmudgeToSet(void)
 {

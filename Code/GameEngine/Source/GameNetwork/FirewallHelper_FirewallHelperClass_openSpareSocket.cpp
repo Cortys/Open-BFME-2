@@ -71,8 +71,7 @@
 //#pragma optimize("", off)
 //#pragma MESSAGE("************************************** WARNING, optimization disabled for debugging purposes")
 #endif
-
-FirewallHelperClass *TheFirewallHelper = NULL;
+extern FirewallHelperClass *TheFirewallHelper;
 
 /***********************************************************************************************
  * FirewallHelperClass::FirewallHelperClass -- Constructor                                     *
@@ -88,7 +87,7 @@ FirewallHelperClass *TheFirewallHelper = NULL;
  * HISTORY:                                                                                    *
  *   3/15/01 5:03PM ST : Created                                                               *
  *=============================================================================================*/
-/* static */ Int FirewallHelperClass::m_sourcePortPool = 4096;
+/* FirewallHelperClass::m_sourcePortPool: defined by its owning unit */
 
 /***********************************************************************************************
  * FirewallHelperClass::Detect_Firewall -- See what our firewall is up to                      *
