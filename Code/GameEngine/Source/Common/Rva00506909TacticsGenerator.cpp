@@ -26,6 +26,27 @@ struct Rva00506909Item
 	void rva004ECE1C();
 };
 
+// The five objects 0x00505E5D seeds +0x04 with when empty, in order; the
+// vector holds them through one base pointer.
+struct Rva00506909Gen
+{
+};
+
+#define RVA00506909_GEN(name, size) \
+	class name : public Rva00506909Gen \
+	{ \
+	public: \
+		name(); \
+	private: \
+		unsigned char m_data[size]; \
+	};
+
+RVA00506909_GEN(Rva005AA6B4, 0x58)
+RVA00506909_GEN(Rva005AA23E, 0x5C)
+RVA00506909_GEN(Rva005A9D33, 0x60)
+RVA00506909_GEN(Rva005A9C1E, 0x60)
+RVA00506909_GEN(Rva005A9988, 0x58)
+
 // What 0x00505F80 and 0x00505FD0 seed +0x1C and +0x34 with when empty.
 class Rva005AA7DF
 {
@@ -68,7 +89,7 @@ private:
 	bool rva0050633B(Rva00506909Request *request, void *arg);
 
 	void *m_owner;					// +0x00
-	_STL::vector<Rva00506909Item *> m_04;
+	_STL::vector<Rva00506909Gen *> m_04;
 	_STL::vector<Rva00506909Item *> m_10;
 	_STL::vector<Rva005AA7DF *> m_1C;
 	_STL::vector<Rva00506909Item *> m_28;
@@ -143,4 +164,15 @@ void Rva00506909::rva00505FD0()
 {
 	if (m_34.empty())
 		m_34.push_back(new Rva005AA9DB);
+}
+
+void Rva00506909::rva00505E5D()
+{
+	if (m_04.empty()) {
+		m_04.push_back(new Rva005AA6B4);
+		m_04.push_back(new Rva005AA23E);
+		m_04.push_back(new Rva005A9D33);
+		m_04.push_back(new Rva005A9C1E);
+		m_04.push_back(new Rva005A9988);
+	}
 }

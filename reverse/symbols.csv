@@ -7768,3 +7768,10 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?push_back@?$vector@PAVRva005AA7DF@@V?$allocator@PAVRva005AA7DF@@@_STL@@@_STL@@QAEXABQAVRva005AA7DF@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32 at 0x00505FBE
 ??0Rva005AA9DB@@QAE@XZ,0x005AA9DB,ctor of the 0x60-byte object 0x00505FD0 seeds +0x34 with (REL32 at 0x00505FFC)
 ?push_back@?$vector@PAVRva005AA9DB@@V?$allocator@PAVRva005AA9DB@@@_STL@@@_STL@@QAEXABQAVRva005AA9DB@@@Z,0x004DFCB0,pointer-vector push_back fold; REL32 at 0x0050600E
+??0?$_Vector_base@PAURva00506909Gen@@V?$allocator@PAURva00506909Gen@@@_STL@@@_STL@@QAE@ABV?$allocator@PAURva00506909Gen@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor; REL32 at 0x00506926 for the +0x04 vector in the Rva00506909 ctor
+?push_back@?$vector@PAURva00506909Gen@@V?$allocator@PAURva00506909Gen@@@_STL@@@_STL@@QAEXABQAURva00506909Gen@@@Z,0x004DFCB0,pointer-vector push_back fold; five REL32s in Rva00506909::rva00505E5D
+??0Rva005AA6B4@@QAE@XZ,0x005AA6B4,ctor of the first 0x58-byte object 0x00505E5D seeds (REL32 at 0x00505E8C)
+??0Rva005AA23E@@QAE@XZ,0x005AA23E,ctor of the 0x5C-byte object 0x00505E5D seeds second (REL32 at 0x00505EBF)
+??0Rva005A9D33@@QAE@XZ,0x005A9D33,ctor of the first 0x60-byte object 0x00505E5D seeds third (REL32 at 0x00505EF2)
+??0Rva005A9C1E@@QAE@XZ,0x005A9C1E,ctor of the second 0x60-byte object 0x00505E5D seeds fourth (REL32 at 0x00505F25)
+??0Rva005A9988@@QAE@XZ,0x005A9988,ctor of the 0x58-byte object 0x00505E5D seeds fifth (REL32 at 0x00505F58)
