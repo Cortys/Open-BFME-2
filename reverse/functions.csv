@@ -50690,3 +50690,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?Rva003AD63AInit@@YAXXZ,,0x003AD63A,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD63AInit.cpp,matched,guarded static holder BOX_EMISSION_VOLUME via rowed getInstance
 ?Rva003AD65BInit@@YAXXZ,,0x003AD65B,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD65BInit.cpp,matched,guarded static holder SPHERE_EMISSION_VOLUME via rowed getInstance
 ?Rva003AD67CInit@@YAXXZ,,0x003AD67C,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD67CInit.cpp,matched,guarded static holder CYLINDER_EMISSION_VOLUME via rowed getInstance
+?Rva003AD69DInit@@YAXXZ,,0x003AD69D,33,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AD69DInit.cpp,matched,guarded static holder LIGHTNING_EMISSION via rowed getInstance
