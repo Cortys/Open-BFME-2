@@ -51073,3 +51073,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva00565898@Rva00565898@@QAEPAVRva00564B1A@@PAV2@0@Z,,0x00565898,51,Code/GameEngine/Source/Common/Rva00565898Erase.cpp,matched,erase via Copy 0x00565668 plus DestroyRange 0x0052C37A callers 0x00565A8E
 ?rva0006C995@Rva0006C995@@QAEPAV1@PAURva001408C0Target@@@Z,,0x0006C995,58,Code/Libraries/Source/WWVegas/WWLib/Rva0006C995Insert.cpp,matched,unlock set insert via rowed 0x00080691 and 0x0061F600 flag 0x10
 ?rva003A105B@Team@@QAEPAVObject@@XZ,,0x003A105B,101,Code/GameEngine/Source/Common/RTS/TeamRva003A105B.cpp,matched,Team target ObjectID validation via rowed findObjectByID getControllingPlayer rva002943B2
+??0Rva003F1FB6@@QAE@XZ,,0x003F1FB6,26,Code/GameEngine/Source/Common/System/Rva003F1FB6Ctor.cpp,matched,unlock lane ctor vector base at +0 int 1 at +0xC via Rva003F1F6A precedent
