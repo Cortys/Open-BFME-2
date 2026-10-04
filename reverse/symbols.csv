@@ -7970,3 +7970,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?bfmeTouch982C@BfmeT982@@QAEXXZ,0x000A9570,address read from the REL32 displacement at a placed body
 ?addConsumption@Energy@@AAEXH@Z,0x004DF1AF,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?addProduction@Energy@@AAEXH@Z,0x004DF18D,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?Rva003F29D2_CopyRange@@YAPAVLivingWorldRegionConnection@@PAV1@00ABU__false_type@_STL@@@Z,0x003F29D2,4-arg tag-ignored twin of rowed 3-arg CopyRange same 38B loop via caller 0x003F2CD6
