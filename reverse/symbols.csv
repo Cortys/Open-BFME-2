@@ -7844,3 +7844,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?erase@?$vector@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAEPAPAVRva002C589B@@PAPAV3@@Z,0x001FF51F,pointer-vector single erase fold (vector<void*> row); REL32 at 0x005057DA in Rva0050542B::xfer
 ?insert@?$vector@PAVRva002C589B@@V?$allocator@PAVRva002C589B@@@_STL@@@_STL@@QAEPAPAVRva002C589B@@PAPAV3@ABQAV3@@Z,0x003B67B3,pointer-vector insert fold; REL32 at 0x005058B6 in Rva0050542B::xfer
 ?rva005A91BE@Rva005A9562@@QAEXPAVXfer@@@Z,0x005A91BE,xfer of the +0x04 Rva005A9562; REL32 at 0x005058CA in Rva0050542B::xfer
+??_ERva002DAB18@@UAEPAXI@Z,0x002DABBB,weak-external alias MSVC emits for the vector deleting dtor when no new[] exists; resolves to the rowed scalar deleting dtor; retail adjustor thunk 0x002DAB64 jumps here
