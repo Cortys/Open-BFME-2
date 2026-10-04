@@ -51876,3 +51876,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ??0Rva003F9258Data@@QAE@XZ,,0x003F8DF8,40,Code/GameEngine/Source/Common/Rva003F9258DataCtor.cpp,matched,default ctor via rowed member 0x330757 and Vector_base 0x211E58 and vptr 0x83731C
 ?rva003F83B5@Rva003F83B5@@QAE?AVUnicodeString@@XZ,,0x003F83B5,36,Code/GameEngine/Source/Common/Rva003F83B5.cpp,matched,TheGameText slot 0x38 AsciiString at plus 0x18
 ?rva002CBA59@WeaponTemplate@@QAEXPAX@Z,,0x002CBA59,35,Code/GameEngine/Source/GameLogic/Object/WeaponTemplateRva002CBA59.cpp,matched,19 callers in WeaponNuggetParse pin notes no donor
+?rva002B69A6@Rva002B69A6@@QAEXPAX@Z,,0x002B69A6,94,Code/GameEngine/Source/Common/Rva002B69A6Finish.cpp,matched,clear arg via rowed 0x72FE6 then insert element ranks from vector at +0x8c via rowed set-int insert 0xBC15D; signed hand-span finish-start keeps count in eax
