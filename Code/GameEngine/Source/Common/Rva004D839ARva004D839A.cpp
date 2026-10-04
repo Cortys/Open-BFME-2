@@ -1,7 +1,7 @@
-// ?rva004D839A@Rva004D839A@@QAEXXZ
-// partial score=0.93 date=2026-10-03
 // cl: /O1 /arch:SSE /DNDEBUG /MD
-// ?rva004D839A@Rva004D839A@@QAEXXZ, retail 0x004D839A, 55 bytes.
+//
+// ?rva004D839A@Rva004D839A@@QAEXXZ, retail 0x004d839a, 55 bytes. Banked partial (score 0.93) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Evidence: unlock lane; caller 0x004D83D1 calls it; chain esi+0x18 -> +0x3c -> +8 -> lo/hi at +0x58/+0x5c; TheGameLogic+0x40 frame added; rowed GetGameLogicRandomValue; store to +0x20.
 
 class GameLogic
@@ -47,7 +47,6 @@ public:
 	void rva004D839A();
 };
 
-// ?rva004D839A@Rva004D839A@@QAEXXZ present-unmatched
 void Rva004D839A::rva004D839A()
 {
 	unsigned frame = TheGameLogic->getFrame();
