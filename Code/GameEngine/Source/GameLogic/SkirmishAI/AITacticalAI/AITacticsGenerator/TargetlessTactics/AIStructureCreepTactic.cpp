@@ -20,6 +20,11 @@
 //               creep structure names (record +0x160, +0x98 vector)
 //   0x005ABA59  the next creep structure name: a random one first, then
 //               round-robin
+//   0x005ABEA2  last to first over the owner record's +0x164 sites below
+//               state 2: a site with more than 15 live allied objects of
+//               kind 3 or 90 that are not kind 7 within its radius becomes
+//               the creep target (+0x68)
+#include <string.h>
 #include "ascii_string.h"
 
 extern int g_Va00DBA4E4;
@@ -210,6 +215,133 @@ struct Rva005AB7E5Names
 	Rva005AB7E5NameList m_names;	// +0x98
 };
 
+
+// BFME2's partition filters (Open-BFME-1 carries the same shape): a vptr, the
+// +0x04 link to the next filter of a chain, then each filter's own members.
+// Rva000421C8 is the base (ctor 0x000421C8, vftable 0x00BC26E0); the inline
+// destructors only restore that vftable, as retail does at every scope exit.
+class Object;
+class Rva000421C8
+{
+public:
+	Rva000421C8() : m_next(0) {}
+	virtual ~Rva000421C8() {}
+	virtual bool allow(Object *obj) = 0;
+	virtual int getPlayerMask();
+	Rva000421C8 *link(Rva000421C8 *next);	// 0x00625790
+	Rva000421C8 *m_next;
+};
+
+class BfmeFixedStorage0004543D
+{
+public:
+	BfmeFixedStorage0004543D(const BfmeFixedStorage0004543D &other) throw();
+private:
+	unsigned char m_bytes[28];
+};
+
+// A KindOfMaskType view: 224 bits, zeroed then set bit by bit.
+struct Rva005ABEA2Mask
+{
+	Rva005ABEA2Mask() { memset(this, 0, sizeof(*this)); }
+	void set(int bit) { m_bits[bit >> 5] |= 1u << (bit & 31); }
+	unsigned int m_bits[7];
+};
+
+struct Rva00045411BitSet
+{
+	Rva00045411BitSet(int unused, int bit);	// 0x00045411
+	unsigned int m_bits[7];
+};
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
+// vftable 0x00C1A268, allow 0x0026115D: reject what has any of the first
+// mask's kinds (ZH's PartitionFilterRejectByKindOf).
+class Rva00395A35 : public Rva000421C8
+{
+public:
+	Rva00395A35(const BfmeFixedStorage0004543D &a, const BfmeFixedStorage0004543D &b);
+	virtual bool allow(Object *obj);
+	BfmeFixedStorage0004543D m_08;
+	BfmeFixedStorage0004543D m_24;
+};
+
+// vftable 0x00C1A25C, allow 0x002610F2: accept what has any of the mask's kinds.
+class Rva003959FA : public Rva000421C8
+{
+public:
+	Rva003959FA(const BfmeFixedStorage0004543D &mask);
+	virtual bool allow(Object *obj);
+	BfmeFixedStorage0004543D m_08;
+};
+
+// vftable 0x00C004D8, allow 0x00261409: the player's relationship to the
+// object's team against the +0x10 flags (ZH's PartitionFilterRelationship
+// analogue), +0x0C whether a hit allows.
+class Rva00261409Filter : public Rva000421C8
+{
+public:
+	Rva00261409Filter(Player *player, bool match, int flags)
+		: m_player(player), m_match(match), m_flags(flags) {}
+	virtual bool allow(Object *obj);
+	virtual int getPlayerMask();
+	Player *m_player;
+	bool m_match;
+	int m_flags;
+};
+
+// vftable 0x00BFAD10, allow 0x0026119D: not effectively dead (status bit 0),
+// ZH's PartitionFilterAlive.
+class Rva0026119DFilter : public Rva000421C8
+{
+public:
+	virtual bool allow(Object *obj);
+};
+
+struct Rva005ABEA2Hit
+{
+	Object *m_object;
+	float m_distance;
+};
+
+struct Rva005ABEA2Payload
+{
+	Rva005ABEA2Hit *m_begin;
+	Rva005ABEA2Hit *m_end;
+	Rva005ABEA2Hit *m_capacity;
+	Rva005ABEA2Hit *m_current;
+	int m_references;
+};
+
+struct BfmeWideResult
+{
+	Rva005ABEA2Payload *m_value;
+	~BfmeWideResult();	// 0x0004AA28
+};
+
+class PartitionManager
+{
+public:
+	BfmeWideResult iterateObjectsInRange(const Coord3D *pos, float radius, int distCalc,
+		Rva000421C8 *filters, int order);	// 0x00625610
+};
+extern PartitionManager *ThePartitionManager;
+
+struct Rva005ABEA2Site
+{
+	unsigned int m_id;	// +0x00
+	Coord3D m_pos;		// +0x04
+	unsigned int m_10;	// +0x10
+	float m_radius;		// +0x14
+};
+
+struct Rva005ABEA2Sites
+{
+	char m_pad00[0x20];
+	Rva005ABEA2Site **m_begin;	// +0x20
+	Rva005ABEA2Site **m_end;	// +0x24
+};
+
 struct Rva002A8AB1Record
 {
 	void rva002C717E(const AsciiString &key, int value);
@@ -218,6 +350,7 @@ struct Rva002A8AB1Record
 	Rva00599825 m_140;		// +0x140
 	char m_pad141[0x160 - 0x141];
 	Rva005AB7E5Names *m_160;	// +0x160
+	Rva005ABEA2Sites *m_164;	// +0x164
 };
 
 class Rva002A8F24
@@ -247,9 +380,21 @@ public:
 	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
 	virtual void v11();
 	virtual void xfer(Xfer *xfer, void *owner);
-	char m_pad04[0x10 - 4];
+	float m_radius;		// +0x04
+	ObjectID m_08;		// +0x08
+	AsciiString m_name;	// +0x0C
 	int m_status;		// +0x10
-	char m_pad14[0x40 - 0x14];
+	char m_pad14[0x20 - 0x14];
+	bool m_20;		// +0x20
+	bool m_21;		// +0x21
+	char m_pad22[0x28 - 0x22];
+	bool m_28;		// +0x28
+	char m_pad29[0x40 - 0x29];
+};
+
+struct Rva00573A00
+{
+	void rva00573A00(const Coord3D *p);
 };
 
 class Rva004ECECD
@@ -289,6 +434,9 @@ public:
 	virtual void xfer(Xfer *xfer);
 	bool rva005ABEA2();
 	AsciiString rva005ABA59();
+	bool rva005ABCFE(Coord3DBase *out, const AsciiString &name);
+	bool rva005AC0B5(const AsciiString &name);
+	bool rva005AC294();
 private:
 	ObjectID m_58;		// +0x58
 	unsigned int m_5C;	// +0x5C
@@ -359,3 +507,32 @@ void Rva005AB7E5::v2()
 		record->m_140.rva00599825(m_58);
 	}
 }
+
+bool Rva005AB7E5::rva005ABEA2()
+{
+	Rva005ABEA2Sites *sites = g_00DFEEF8->rva002A8AB1(m_owner)->m_164;
+	if (sites->m_begin != sites->m_end) {
+	for (int i = (int)(sites->m_end - sites->m_begin) - 1; i >= 0; --i) {
+		Rva005ABEA2Site *site = sites->m_begin[i];
+		if (site->m_10 >= 2)
+			continue;
+		Rva005ABEA2Mask mask;
+		mask.set(3);
+		mask.set(90);
+		BfmeWideResult hits = ThePartitionManager->iterateObjectsInRange(&site->m_pos, site->m_radius, 0,
+			Rva0026119DFilter().link(&Rva00261409Filter(m_owner, true, 2))
+				->link(&Rva003959FA(*(BfmeFixedStorage0004543D *)&mask))
+				->link(&Rva00395A35(*(BfmeFixedStorage0004543D *)&Rva00045411BitSet(0, 7),
+					*(BfmeFixedStorage0004543D *)g_00DFEFA4StoragePrototype)), 0);
+		if ((unsigned int)(hits.m_value->m_end - hits.m_value->m_begin) > 15) {
+			m_68 = site->m_id;
+			return true;
+		}
+	}
+	}
+	return false;
+}
+
+// The base filter's slot 2 is the trivial virtual retail shares across 68
+// vftable slots (0x0036CC7A); bind the declaration to that row.
+#pragma comment(linker, "/alternatename:?getPlayerMask@Rva000421C8@@UAEHXZ=?Get_File_Handle@FileClass@@UAEPAXXZ")
