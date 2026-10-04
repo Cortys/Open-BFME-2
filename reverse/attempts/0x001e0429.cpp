@@ -1,7 +1,6 @@
 // ??0DynamicDecalFXNugget@@QAE@XZ
-// partial score=0.98 date=2026-09-29
+// partial score=0.98 date=2026-10-04
 // ??0DynamicDecalFXNugget@@QAE@XZ
-// partial score=0.98 date=2026-09-24
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // ??0DynamicDecalFXNugget@@QAE@XZ 147B @0x1E0429: no-arg ctor called by
@@ -15,6 +14,19 @@
 // shader ALPHA, size 0, type 13, color/offset/opacity zeros,
 // orientToObject true). Base 0x001DFEAA is a shared FXNugget-family base
 // ctor; pinned opaquely, do not name.
+//
+// Recovered from the banked attempt reverse/attempts/0x001e0429.cpp (score
+// 0.98), which was correct in every instruction but one: the placement of the
+// float zero. This pass moves the _ReadWriteBarrier to the top of the body,
+// which lets cl hoist the `xorps xmm0,xmm0` to its retail slot immediately
+// after the base-ctor call, instead of emitting it two instructions late.
+//
+// The bank also mis-attributed the `push edi` / `lea ecx,[esi+0x154]` pair at
+// +0x1A/+0x1F to the barrier's call setup. Those are setFromInt's own argument
+// push and receiver load; retail contains no barrier argument pair. The
+// remaining residue is that this toolchain still hoists that pair above the
+// `m_decalName` store while retail keeps it below. See the re_log row for the
+// orderings tried.
 
 class Rva001DFEAABase
 {
@@ -64,12 +76,12 @@ private:
 	float m_lifetime; // +0x188
 };
 
-// ??0DynamicDecalFXNugget@@QAE@XZ
+// ??0DynamicDecalFXNugget@@QAE@XZ present-unmatched
 DynamicDecalFXNugget::DynamicDecalFXNugget()
 {
+	_ReadWriteBarrier();
 	*(unsigned int *)this = 0x00BDD7A4;
 	m_decalName = 0;
-	_ReadWriteBarrier();
 	m_nuggetType = 13;
 	m_shader = 0;
 	m_size = 0.0f;
