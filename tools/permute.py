@@ -435,6 +435,8 @@ def permute(rva, minutes=10.0, seed=None):
         return {"rva": rva, "error": "no size in re_attempts.log"}
     workdir = OUT / rva
     workdir.mkdir(parents=True, exist_ok=True)
+    if (workdir / "flags_best.cpp").exists():  # --flags found better codegen flags
+        text = (workdir / "flags_best.cpp").read_text(encoding="latin-1", errors="replace")
     scorer = Scorer(rva, symbol, size, workdir)
     rng = random.Random(seed if seed is not None else int(rva, 16))
     best_text = text
@@ -732,6 +734,8 @@ def flag_search(rva, rounds=2):
               "exact": exact, "trials": scorer.trials, "mode": "flags"}
     if best > start and not exact:
         result["flags"] = next((l for l in text.split("\n")[:12] if l.startswith("// cl:")), "")
+        # the random search starts from here (permute reads it)
+        (workdir / "flags_best.cpp").write_text(text, encoding="latin-1", errors="replace")
     with (OUT / "flags.jsonl").open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(result) + "\n")
     return result
