@@ -9,8 +9,11 @@
 // MSVC keep the hidden-return pointer in ebx across getNthData (a named local
 // is rematerialized as lea and loses the byte).
 template <typename T> class StringBase {
-public: ~StringBase() { releaseBuffer(); } bool isEmpty() const;
+public: ~StringBase(); bool isEmpty() const;
 private: void releaseBuffer(); void *m_data; };
+// Retail's public ~StringBase<char> is the releaseBuffer body at 0x36410; an
+// inline body here would be emitted as a COMDAT copy every other unit binds to.
+#pragma comment(linker, "/alternatename:??1?$StringBase@D@@QAE@XZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
 class BFMERetailAsciiString : public StringBase<char>
 {
 };

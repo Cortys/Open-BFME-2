@@ -49,7 +49,10 @@ class WOLLoginAsciiStringLess
 public:
 	bool operator()(const AsciiString& lhs, const AsciiString& rhs) const
 	{
-		return lhs.compare(rhs) < 0;
+		// strcmp directly: the donor header's inline AsciiString::compare
+		// would be emitted here as an out-of-line COMDAT that is not retail's
+		// compare (0x69D6), and other units' references would bind to it.
+		return strcmp(lhs.str(), rhs.str()) < 0;
 	}
 };
 

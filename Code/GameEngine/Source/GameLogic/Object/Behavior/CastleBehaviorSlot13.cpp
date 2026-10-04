@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /ICode/GameEngine/Include /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva00455076@CastleBehavior@@QAEXABUOpaqueRefElement4@@H@Z 104B @0x00455076:
 // slot 13 of CastleBehavior vtable 0x0081A780 (and Rva00455050 0x00840608).
@@ -8,21 +8,7 @@
 // TheAudio/TheEmptyString-style extern names in packet, prev/next WallHub
 // neighbours. Owner class proven by vtable; method name stays honest.
 
-struct OpaqueRefElement4;
-
-class BfmeStringTailRecord144
-{
-public:
-	virtual ~BfmeStringTailRecord144();
-};
-
-class BfmeAudioEventPrefix136 : public BfmeStringTailRecord144
-{
-public:
-	BfmeAudioEventPrefix136(const OpaqueRefElement4 &o, int v);
-private:
-	char m_pad[136 - sizeof(BfmeStringTailRecord144)];
-};
+#include "Common/BfmeAudioEventPrefix136.h"
 
 class Rva002D9531
 {
