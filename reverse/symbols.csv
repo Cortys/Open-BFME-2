@@ -7939,3 +7939,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?xfer@Rva004ECECD@@UAEXPAVXfer@@@Z,0x004EDA8C,AITactic xfer (slot 5 of the tactic vtables that do not override it); REL32 at 0x005AA617 in the FlankAttack slot 5
 ?xfer@Rva0015334F@@QAEXPAVXfer@@@Z,0x005AA4C1,FlankAttack route xfer (rowed under the address name Rva005AA4C1); REL32 at 0x005AA623 in the FlankAttack slot 5
 ?rva005AA2D9@Rva0015334F@@QAEXPAURva005AA55DRecord@@PBUCoord3D@@1@Z,0x005AA2D9,FlankAttack route planner from a start to an end point; REL32 at 0x005AA5FB in the FlankAttack slot 6
+??0Elem003AF7A0@@QAE@ABU0@@Z,0x005DBCD1,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?_M_insert_overflow@?$vector@UElem003AF7A0@@V?$allocator@UElem003AF7A0@@@_STL@@@_STL@@IAEXPAUElem003AF7A0@@ABU3@ABU__false_type@2@I_N@Z,0x005DC499,address read from the REL32 displacement at a placed body
