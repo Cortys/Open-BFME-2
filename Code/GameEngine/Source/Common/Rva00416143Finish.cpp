@@ -25,7 +25,6 @@ struct Rva00416143
 	void rva00416143(const AsciiString &a);
 };
 
-// ?rva00416143@Rva00416143@@QAEXABVAsciiString@@@Z present-unmatched
 void Rva00416143::rva00416143(const AsciiString &a)
 {
 	void *h = *(void *const *)&a;
