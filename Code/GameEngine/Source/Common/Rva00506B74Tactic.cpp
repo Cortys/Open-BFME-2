@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
+// cl: /O1 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii
 // stlport
 //
 // The skirmish-AI object behind vtable 0x00863FAC, newed by 0x004EC430 in the
@@ -16,6 +16,7 @@
 //   +0x18 Coord3D, +0x24 flag, +0x28 Coord3D, both points seeded from the
 //         -1 triple at 0x00DD0870 (Gen00DD0870)
 #include <vector>
+#include "ascii_string.h"
 
 struct Coord3DBase
 {
@@ -157,4 +158,48 @@ void Rva00506B74::rva00507522()
 			rva0050722A(&m_28);
 	}
 	m_24 = true;
+}
+
+// 0x00506CC3: the waypoint with this name, walking TheTerrainLogic's list from
+// its first-waypoint virtual (+0x84) along the +0x1C links and comparing the
+// +0x08 name through AsciiString::compare (0x000069D6). Eight callers in the
+// script-engine range (0x0023FDBD..) plus two in this cluster.
+class Waypoint
+{
+public:
+	const AsciiString &getName() const { return m_name; }
+	Waypoint *getNext() const { return m_pNext; }
+private:
+	int m_00;
+	int m_04;
+	AsciiString m_name;		// +0x08
+	Coord3DBase m_location;	// +0x0C
+	int m_18;
+	Waypoint *m_pNext;		// +0x1C
+};
+
+class TerrainLogic
+{
+public:
+	virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
+	virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
+	virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32();
+	virtual Waypoint *getFirstWaypoint();	// +0x84
+};
+
+extern TerrainLogic *TheTerrainLogic;
+
+Waypoint *Rva00506CC3FindWaypoint(const AsciiString &name)
+{
+	for (Waypoint *way = TheTerrainLogic->getFirstWaypoint(); way; way = way->getNext()) {
+		if (way->getName() == name)
+			return way;
+	}
+	return 0;
 }

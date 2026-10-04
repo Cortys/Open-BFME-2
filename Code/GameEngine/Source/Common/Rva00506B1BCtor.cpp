@@ -7,12 +7,14 @@
 // ?rva00506B2F@Rva00506B1B@@QAEXXZ @0x00506B2F 12B: if (+4 flag) return else
 // tail-jmp second virtual (slot +4). Same +4 layout as the ctor above and
 // adjacent address; 8 callers. Honest Rva method of Rva00506B1B.
+// ??_GRva00506B1B@@UAEPAXI@Z @0x00506B3B 29B: vtable slot 0; the dtor is the
+// inline vptr reset (0x00506B28 is its out-of-line copy), then delete.
 
 class Rva00506B1B
 {
 public:
 	Rva00506B1B();
-	virtual void v0();
+	virtual ~Rva00506B1B() {}
 	virtual void v1();
 	void rva00506B2F();
 	bool m_04;

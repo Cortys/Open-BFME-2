@@ -51193,3 +51193,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva00507522@Rva00506B74@@QAEXXZ,,0x00507522,38,Code/GameEngine/Source/Common/Rva00506B74Tactic.cpp,matched,once: if +0x28 is set run 0x0050722A on it then raise +0x24; caller 0x004EBF99
 ??1Rva00506B74@@UAE@XZ,,0x005071DD,77,Code/GameEngine/Source/Common/Rva00506B74Tactic.cpp,matched,explicit dtor: vptr 0x00863FAC then slot-2 clear then vector free then base dtor 0x00506B28 (/GX gives the vector state step)
 ??_GRva00506B74@@UAEPAXI@Z,,0x00507506,28,Code/GameEngine/Source/Common/Rva00506B74Tactic.cpp,matched,vtable 0x00863FAC slot 0: dtor 0x005071DD then delete 0x0002FD60
+??_GRva00506B1B@@UAEPAXI@Z,,0x00506B3B,29,Code/GameEngine/Source/Common/Rva00506B1BCtor.cpp,matched,vtable 0x00863F9C slot 0: inline vptr-only base dtor then delete 0x0002FD60 on bit 0
+?Rva00506CC3FindWaypoint@@YAPAVWaypoint@@ABVAsciiString@@@Z,,0x00506CC3,50,Code/GameEngine/Source/Common/Rva00506B74Tactic.cpp,matched,waypoint by name: TheTerrainLogic first-waypoint virtual +0x84 then +0x1C links comparing +0x08 name via compare 0x000069D6; ten callers
