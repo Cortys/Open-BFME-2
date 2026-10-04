@@ -28,6 +28,7 @@ class TileData : public RefCountClass
 {
 public:
 	TileData();
+	virtual ~TileData();
 	UnsignedByte m_tileData[0x2000];
 	UnsignedByte m_tileDataMip32[0x800];
 	UnsignedByte m_tileDataMip16[0x200];

@@ -590,7 +590,8 @@ class Rva005DAA36
 {
 public:
 	Rva005DAA36(void *held);
-	virtual ~Rva005DAA36();
+	virtual void slot0() = 0;
+	virtual ~Rva005DAA36() {}
 
 	void *m_field04;
 };
