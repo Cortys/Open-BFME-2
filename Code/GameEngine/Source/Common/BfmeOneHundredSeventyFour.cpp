@@ -34,4 +34,28 @@ void BfmeThingBJ::bfmeGoBJ(void)
 	m_bfmeSub.bfmeDoBJ();
 }
 
+class BfmeThingBK
+{
+public:
+	virtual void bfmeSpare00BK(void) = 0;
+	virtual void bfmeSpare01BK(void) = 0;
+	virtual void bfmeSpare02BK(void) = 0;
+	virtual void bfmeSpare03BK(void) = 0;
+	virtual void bfmeSpare04BK(void) = 0;
+	virtual void bfmeSpare05BK(void) = 0;
+	virtual unsigned char bfmeTestBK(void) = 0;
+	virtual void bfmeNoBK(void) = 0;
+	virtual void bfmeYesBK(void) = 0;
+
+	void bfmeGoBK(void);
+};
+
+void BfmeThingBK::bfmeGoBK(void)
+{
+	if (bfmeTestBK() != 0)
+		bfmeYesBK();
+	else
+		bfmeNoBK();
+}
+
 
