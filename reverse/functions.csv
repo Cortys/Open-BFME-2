@@ -51144,3 +51144,5 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?rva00507943@Made002CC5E1@@UAE_NPBXH@Z,,0x00507943,21,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Rva00507991.cpp,matched,slot 2 of vtable 0x00864048 and eleven more nugget vtables (ICF): base slot-2 test 0x0050774A as bool
 ?rva0050797D@Made002CC5E1@@UAEXPAX0@Z,,0x0050797D,20,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Rva00507991.cpp,matched,slot 3 of vtables 0x00864048/0x00864C38/0x008650B8: slot 4 with second arg +0x38
 ?readWrapperMessage@NetPacket@@KAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E0E2,299,Code/GameEngine/Source/GameNetwork/NetPacketO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Rva00334DDFObjectDescribe@@YAHPAUlua_State@@@Z,,0x00334DDF,114,Code/GameEngine/Source/GameLogic/ScriptEngine/LuaScriptBindingsLuaAO1.cpp,matched,BFME1 donor LuaScriptBindingsLuaA.cpp at /O1; unique masked placement
+?ObjectDispatchEvent@@YAHPAUlua_State@@@Z,,0x0033594A,279,Code/GameEngine/Source/GameLogic/ScriptEngine/LuaScriptBindingsLuaAO1.cpp,matched,BFME1 donor LuaScriptBindingsLuaA.cpp at /O1; unique masked placement

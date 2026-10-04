@@ -7638,3 +7638,11 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?setNumChunks@NetWrapperCommandMsg@@QAEXI@Z,0x00210C87,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?setTotalDataLength@NetWrapperCommandMsg@@QAEXI@Z,0x0033F8CA,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?setWrappedCommandID@NetWrapperCommandMsg@@QAEXG@Z,0x004D58D2,address read from the REL32 displacement at a placed body
+?Rva00990030Lookup@@YAIPAUlua_State@@H@Z,0x00747190,address read from the REL32 displacement at a placed body
+?findObjectByID@GameLogic@@QAEPAVObject@@H@Z,0x00049DC5,address read from the REL32 displacement at a placed body
+?DescribeObject@@YA?AVAsciiString@@PBVObject@@@Z,0x0028F982,address read from the REL32 displacement at a placed body
+??0BfmeDelayedLuaEventList@@QAE@XZ,0x000B6D8B,address read from the REL32 displacement at a placed body
+?nameToKey@NameKeyGenerator@@QAEIPBD@Z,0x00148E1A,address read from the REL32 displacement at a placed body
+?invoke@BfmeCallJ63@@QAEPAXPAX@Z,0x00333918,address read from the REL32 displacement at a placed body
+?invoke@BfmeObjectEventDispatch@@QAEXPAX0PAUBfmeDelayedLuaEventList@@@Z,0x00334634,address read from the REL32 displacement at a placed body
+??1BfmeDelayedLuaEventList@@QAE@XZ,0x000B6DD2,address read from the REL32 displacement at a placed body
