@@ -7781,3 +7781,10 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0Rva005AB3BE@@QAE@XZ,0x005AB3BE,ctor of the second 0x68-byte object 0x00506020 seeds fourth (REL32 at 0x005060EC)
 ??0Rva005AB1B4@@QAE@XZ,0x005AB1B4,ctor of the 0x58-byte object 0x00506020 seeds fifth (REL32 at 0x0050611E)
 ??0Rva005AABC6@@QAE@XZ,0x005AABC6,ctor of the 0x5C-byte object 0x00506020 seeds sixth (REL32 at 0x00506150)
+?findWindow@WindowLayout@@AAEPAVGameWindow@@PAV2@@Z,0x00538B2F,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?winBringToTop@GameWindow@@QAEHXZ,0x0031475A,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?winGetNextInLayout@GameWindow@@QAEPAV1@XZ,0x0052A28E,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?winGetPrevInLayout@GameWindow@@QAEPAV1@XZ,0x0031412D,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?winSetLayout@GameWindow@@QAEHPAVWindowLayout@@@Z,0x0023C4EB,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?winSetNextInLayout@GameWindow@@QAEHPAV1@@Z,0x0031410C,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?winSetPrevInLayout@GameWindow@@QAEHPAV1@@Z,0x00314119,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
