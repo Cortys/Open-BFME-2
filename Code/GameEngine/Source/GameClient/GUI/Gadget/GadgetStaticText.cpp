@@ -63,12 +63,9 @@
 #include "string_base.h"
 
 // ?set@?$StringBase@G@@QAEXABV1@@Z at 0x00888530
-// ?set@UnicodeString@@QAEXABV1@@Z present-unmatched
-inline void UnicodeString::set( const UnicodeString &stringSrc )
-{
-	reinterpret_cast<StringBase<WideChar> &>( *this ).set(
-		reinterpret_cast<const StringBase<WideChar> &>( stringSrc ) );
-}
+// (UnicodeString::set forwarder removed: retail call sites encode the
+// StringBase<WideChar> body directly, so the extra UnicodeString copy only
+// broke the link census.)
 
 // ??0?$StringBase@G@@AAE@ABV0@@Z at 0x00888400 -- private, which is what
 // mangles it AAE.
