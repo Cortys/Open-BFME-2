@@ -51888,3 +51888,5 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?areBuildsComplete@TeamInQueue@@QAE_NXZ,,0x004F06CD,24,Code/GameEngine/Source/GameLogic/AI/TeamInQueueBuildPredicates.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?allow@PartitionFilterPlayer@@MAE_NPAVObject@@@Z,,0x0026137E,37,Code/GameEngine/Source/GameLogic/Object/PartitionFilters_allow_Thunk.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?allow@PartitionFilterIrregularArea@@MAE_NPAVObject@@@Z,,0x0026170A,25,Code/GameEngine/Source/GameLogic/Object/PartitionFilters_allow_Thunk.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?setViewFilterPos@W3DView@@UAEXPBUCoord3D@@@Z,,0x00085F12,26,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DView.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?setZoomToPos@ScreenMotionBlurFilter@@SAXPBUCoord3D@@@Z,,0x0008553B,24,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DView.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
