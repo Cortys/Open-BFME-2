@@ -50708,3 +50708,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva00513E4A@Rva00513E4A@@QAEHPAG@Z,,0x00513E4A,37,Code/GameEngine/Source/Common/System/Rva00513D8F.cpp,matched,chain triple calls 0x00513E25 plus ref copyPayloadTo returns sum
 ?Rva0045323CCopy@@YAXPAVRva004530ED@@ABV1@@Z,,0x0045323C,18,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0045323CCopy.cpp,matched,null-checked placement copy via rowed 0x004530ED copy ctor
 ?Rva004534A1Create@@YGPAXABVRva004530ED@@@Z,,0x004534A1,34,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004534A1Create.cpp,matched,list node create via rowed allocator and copy
+?Rva00453AB8Insert@@YGPAPAXPAPAXPAXABVRva004530ED@@@Z,,0x00453AB8,37,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00453AB8Insert.cpp,matched,list insert via rowed Create caller 0x00453B06 same shape as Rva00283401Insert
