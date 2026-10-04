@@ -50664,3 +50664,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ??0ParticleSystemInfo@FXParticleSystem@@QAE@XZ,0x001F4E82,0x001F4E82,216,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleSystemInfoCtor.cpp,matched,vtable 0x007BB5C8 store at this callers 0x001FC1F1 0x001FC71B init-list triples match copy layout
 ?rva00594B2E@UDP@@QAE_N_N@Z,,0x00594B2E,40,Code/GameEngine/Source/GameNetwork/UDPBroadcast.cpp,matched,UDP setsockopt SOL_SOCKET SO_BROADCAST via IAT wsock32
 ?rva00594976@UDP@@QAEHH@Z,,0x00594976,53,Code/GameEngine/Source/GameNetwork/UDPNonBlocking.cpp,matched,UDP ioctlsocket FIONBIO via IAT wsock32
+?rva00453DCF@GettingBuiltBehavior@@QAE_NXZ,,0x00453DCF,141,Code/GameEngine/Source/GameLogic/Object/Behavior/GettingBuiltBehaviorRva00453DCF.cpp,matched,GettingBuiltBehavior layout with secondary slot16 and workList plus Rva004530ED copy plus TheGameLogic findObjectByID plus Object rva0028BD17 plus iface slot15

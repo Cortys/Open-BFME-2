@@ -6980,3 +6980,7 @@ BfmeNarrowRecord28Deque::__destroy_aux	0x0041A382	33	landed	Ghidra33-byte bounda
 ?rva0037FF20@Rva0037FF20@@QAEXPAVRva0037F551@@ABV2@PBXI_N@Z	0x0037FF20	189	blocked	vector insert overflow needs G7 imul plus 4th param lea 0x1b mystery t=20 model=muse-06
 ?rva004F1138@Rva004F1138@@QAE_NXZ	0x004F1138	286	blocked	outer head plus func-ptr indirect plus return-true path plus frame mismatch 4 variants stall at 254 of 286 t=15 model=muse-spark
 ?Rva004F1B8CGet@@YAXPAMH@Z	0x004F1B8C	400	blocked	outer DLINK at +0x32c holder +0x334 Team chain via disp8 +0x40 Object pos +0x38 flag +0x108 needs shared-delta for iterator frame 0x3c vs 0x30 lea off and player-slot reuse t=25 model=muse-04
+?rva00594B56@UDP@@QAEHKG@Z	0x00594B56	188	blocked	UDP bind getsockname with htons htonl socket bind closesocket and rva00594A06 rva00594976 t=20 model=muse-04
+?Rva00594F19Compare@@YGHHPAG0PAHPAE@Z	0x00594F19	263	blocked	free stdcall 5-arg word-array stride compare with outRes outChanged t=15 model=muse-04
+?rva004D5112@Transport@@QAEH_N@Z	0x004D5112	33	partial	branchless neg-sbb-neg vs retail test-je-xor-inc branches; outer jne-xor-jmp vs je shared-false t=18 model=muse-04 score=0.9 stash=reverse/attempts/0x004d5112.cpp
+?rva004D5112@Transport@@QAEH_N@Z	0x004D5112	33	blocked	branchless neg-al-sbb-neg vs retail test-je-xor-inc branches; outer jne-xor-jmp vs je shared-false; bool callee rowed; tried uchar-local eq0 O2 O1-noG7 t=15 model=muse-04 (stash 0.9 kept)
