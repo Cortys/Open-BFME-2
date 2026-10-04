@@ -51490,3 +51490,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??0BfmeRectVNI@@QAE@ID@Z,,0x003FD64D,67,Code/GameEngine/Source/Common/BfmeRectVNI_ctor.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0BfmeRectVNH@@QAE@IABVAsciiString@@D@Z,,0x003FD498,66,Code/GameEngine/Source/Common/BfmeRectVNH_ctor.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?setFullyObscuredByShroud@Drawable@@QAEX_N@Z,,0x00278C29,66,Code/GameEngine/Source/GameClient/DrawableSetFullyObscuredByShroud.cpp,matched,ZH Drawable::setFullyObscuredByShroud; modules +0x14C flag +0x440; BFME2 calls rva0027893E when unobscured
+?bfmeSetupAPB@@YAHXZ,,0x003B9BE0,64,Code/GameEngine/Source/Common/BfmeSetupAPB.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
