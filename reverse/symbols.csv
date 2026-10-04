@@ -7890,3 +7890,5 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??0Rva005DCC24@@QAE@ABVAsciiString@@@Z,0x005DCC0A,tactic base ctor taking the tactic name (RoamingDefense/StartWoTRBattle/RingHero bases); REL32 at 0x005AABF1
 ??0Rva005DCB27@@QAE@ABVAsciiString@@@Z,0x005DCB0D,tactic base ctor taking the tactic name (SimpleDefense base); REL32 at 0x005AA80A
 ?erase@?$list@IV?$allocator@I@_STL@@@_STL@@QAE?AU?$_List_iterator@IU?$_Nonconst_traits@I@_STL@@@2@U32@@Z,0x00438539,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?bfmeCleanupCC@BfmeOwnerCC@@QAEXXZ,0x00072583,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?bfmeForgetCC@BfmeRegistryCC@@QAEXPAX@Z,0x000480ED,address read from the REL32 displacement at a placed body
