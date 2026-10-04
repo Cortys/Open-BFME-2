@@ -1,4 +1,4 @@
-// cl: /O1 /MD /DNDEBUG
+// cl: /O1 /MD /DNDEBUG /Ireference/shims/moduledata
 /*
 **	Command & Conquer Generals Zero Hour(tm)
 **	Copyright 2025 Electronic Arts Inc.
@@ -33,16 +33,73 @@
 // m_usedModules +0x10. In BFME 2 removeGhostObject is no longer virtual: the
 // manager vftable (0x00BC59B8) has no slot for it and reset calls it directly.
 
+#include "Common/Snapshot.h"
+
 typedef int Int;
 typedef bool Bool;
 
-class RenderObjClass
+class HAnimClass;
+class Matrix3D;
+struct DrawableInfo;
+
+// The BFME 2 TextureMapperClass, VertexMaterialClass and MaterialInfoClass
+// members disableUVAnimations reads: Mapper_ID is slot 2, the stage-0 mapper
+// sits at +0x20 and the vertex material count at +0x18.
+class TextureMapperClass
 {
 public:
+	enum { MAPPER_ID_LINEAR_OFFSET = 1 };
 	virtual void v00();
 	virtual void v01();
-	virtual void v02();
-	virtual void v03();
+	virtual int Mapper_ID( void ) const;																			///< slot 2
+};
+
+class VertexMaterialClass
+{
+public:
+	TextureMapperClass *Peek_Mapper( int stage = 0 ) { return Mapper[ stage ]; }
+private:
+	char m_unrecovered00[ 0x20 ];
+	TextureMapperClass *Mapper[ 2 ];																					///< 0x20
+};
+
+class RefCountClass
+{
+public:
+	virtual void Delete_This( void );																					///< slot 0
+	virtual ~RefCountClass();																									///< slot 1
+	void Release_Ref( void ) { NumRefs--; if (NumRefs == 0) Delete_This(); }
+private:
+	int NumRefs;																															///< 0x04
+};
+
+#define REF_PTR_RELEASE(x) { if (x) { x->Release_Ref(); x = 0; } }
+
+class MaterialInfoClass : public RefCountClass
+{
+public:
+	int Vertex_Material_Count( void ) const { return VertexMaterialCount; }
+	VertexMaterialClass *Peek_Vertex_Material( int index ) const
+	{
+		if (index < VertexMaterialCount) {
+			return VertexMaterials[ index ];
+		}
+		return 0;
+	}
+private:
+	char m_unrecovered08[ 0x0C - 0x08 ];
+	VertexMaterialClass **VertexMaterials;																		///< 0x0C
+	char m_unrecovered10[ 0x18 - 0x10 ];
+	int VertexMaterialCount;																									///< 0x18
+};
+
+// BFME 2 RenderObjClass slots used here (vftable 0x00BD2F68).
+class RenderObjClass : public RefCountClass
+{
+public:
+	enum { CLASSID_MESH = 0, CLASSID_HLOD = 0x19 };
+	virtual RenderObjClass *Clone( void ) const;															///< slot 2
+	virtual int Class_ID( void ) const;																				///< slot 3
 	virtual void v04();
 	virtual void v05();
 	virtual void v06();
@@ -58,6 +115,130 @@ public:
 	virtual void Remove( void );																							///< slot 16
 	virtual void v17();
 	virtual void *Peek_Scene( void );																					///< slot 18
+	virtual void v19();
+	virtual void Validate_Transform( void ) const;														///< slot 20
+	virtual void Set_Transform( const Matrix3D &m );													///< slot 21
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual int Get_Num_Sub_Objects( void ) const;														///< slot 28
+	virtual void v29();
+	virtual RenderObjClass *Get_Sub_Object( int index ) const;								///< slot 30
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual void v39();
+	virtual void v40();
+	virtual void v41();
+	virtual void v42();
+	virtual void v43();
+	virtual void v44();
+	virtual void Set_Animation( HAnimClass *motion, float frame, int anim_mode = 0 );	///< slot 45
+	virtual void v46();
+	virtual void v47();
+	virtual void v48();
+	virtual void v49();
+	virtual void v50();
+	virtual void v51();
+	virtual void v52();
+	virtual void v53();
+	virtual void v54();
+	virtual void v55();
+	virtual void v56();
+	virtual void v57();
+	virtual void v58();
+	virtual void v59();
+	virtual void v60();
+	virtual void v61();
+	virtual void v62();
+	virtual void v63();
+	virtual void v64();
+	virtual void v65();
+	virtual void v66();
+	virtual void v67();
+	virtual void v68();
+	virtual void v69();
+	virtual void v70();
+	virtual void v71();
+	virtual void v72();
+	virtual void v73();
+	virtual void v74();
+	virtual void v75();
+	virtual void v76();
+	virtual void v77();
+	virtual void v78();
+	virtual void v79();
+	virtual void v80();
+	virtual void v81();
+	virtual void v82();
+	virtual void v83();
+	virtual void v84();
+	virtual MaterialInfoClass *Get_Material_Info( void );											///< slot 85
+	virtual void Set_User_Data( void *value, bool recursive = false );				///< slot 86
+
+	const Matrix3D &Get_Transform( void ) const { Validate_Transform(); return *(const Matrix3D *)&Transform; }
+private:
+	char m_unrecovered08[ 0x18 - 0x08 ];
+	float Transform[ 12 ];																										///< 0x18
+};
+
+// BFME 2 HLodClass (Animatable3DObjClass) appends Peek_Animation_And_Info as a
+// virtual at slot 130 of its table.
+class HLodClass : public RenderObjClass
+{
+public:
+	virtual void v87();
+	virtual void v88();
+	virtual void v89();
+	virtual void v90();
+	virtual void v91();
+	virtual void v92();
+	virtual void v93();
+	virtual void v94();
+	virtual void v95();
+	virtual void v96();
+	virtual void v97();
+	virtual void v98();
+	virtual void v99();
+	virtual void v100();
+	virtual void v101();
+	virtual void v102();
+	virtual void v103();
+	virtual void v104();
+	virtual void v105();
+	virtual void v106();
+	virtual void v107();
+	virtual void v108();
+	virtual void v109();
+	virtual void v110();
+	virtual void v111();
+	virtual void v112();
+	virtual void v113();
+	virtual void v114();
+	virtual void v115();
+	virtual void v116();
+	virtual void v117();
+	virtual void v118();
+	virtual void v119();
+	virtual void v120();
+	virtual void v121();
+	virtual void v122();
+	virtual void v123();
+	virtual void v124();
+	virtual void v125();
+	virtual void v126();
+	virtual void v127();
+	virtual void v128();
+	virtual void v129();
+	virtual HAnimClass *Peek_Animation_And_Info( float &frame, int &numFrames, int &mode, float &mult );	///< slot 130
 };
 
 class RTS3DScene
@@ -171,15 +352,107 @@ extern GhostObjectManager *TheGhostObjectManager;
 class GhostObject;
 class W3DGhostObjectManager;
 
-class W3DRenderObjectSnapshot
+/**This class will hold all information about a W3D RenderObject needed to
+reconstruct it if necessary*/
+class W3DRenderObjectSnapshot : public Snapshot
 {
 	friend class W3DGhostObject;
-public:
-	virtual ~W3DRenderObjectSnapshot();
+
+	W3DRenderObjectSnapshot(RenderObjClass *m_parentRobj, DrawableInfo *drawInfo, Bool cloneParentRobj = true);
+	~W3DRenderObjectSnapshot();
+	void update(RenderObjClass *robj, DrawableInfo *drawInfo, Bool cloneParentRobj=true);	///<refresh the current snapshot with latest state
+
 protected:
+	virtual void crc( Xfer *xfer );
+	virtual void xfer( Xfer *xfer );
+	virtual void loadPostProcess( void );
+
 	RenderObjClass *m_robj;																			///< 0x04
 	W3DRenderObjectSnapshot *m_next;														///< 0x08
 };
+
+//Dummy material override which we assign to all ghost objects to disable their
+//texture animation.
+struct Material_Override
+{
+	char m_unrecovered00[ 0x10 ];
+};
+static Material_Override animationDisableOverride;
+
+//Helper function used to disable all UV mapper animations on a given model.
+//BFME 2 no longer hides MUZZLEFX sub-objects here.
+void disableUVAnimations(RenderObjClass *robj)
+{
+	if (robj && robj->Class_ID() == RenderObjClass::CLASSID_HLOD)
+	{
+		//Also disable any animations that may be playing using mappers (texture scrolling)
+		for (Int i=0; i < robj->Get_Num_Sub_Objects(); i++)
+		{
+			RenderObjClass *subObj=robj->Get_Sub_Object(i);
+			if (subObj && subObj->Class_ID() == RenderObjClass::CLASSID_MESH)
+			{	//check if sub-object has the correct material to do texture scrolling.
+				MaterialInfoClass *mat=subObj->Get_Material_Info();
+				if (mat)
+				{	for (Int j=0; j<mat->Vertex_Material_Count(); j++)
+					{
+						VertexMaterialClass *vmaterial=mat->Peek_Vertex_Material(j);
+						TextureMapperClass *mapper=vmaterial->Peek_Mapper();
+						if (mapper && mapper->Mapper_ID() == TextureMapperClass::MAPPER_ID_LINEAR_OFFSET)
+						{	
+							subObj->Set_User_Data(&animationDisableOverride);	//tell W3D about custom material settings
+						}
+					}
+					REF_PTR_RELEASE(mat);
+				}
+			}
+			REF_PTR_RELEASE(subObj);
+		}
+	}
+}
+
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
+void W3DRenderObjectSnapshot::update(RenderObjClass *robj, DrawableInfo *drawInfo,
+																		 Bool cloneParentRobj)
+{
+	if (m_robj)
+	{
+		m_robj->Remove();
+		REF_PTR_RELEASE(m_robj);
+	}
+
+	if( cloneParentRobj == true )
+	{
+
+		m_robj=robj->Clone();
+		//Set cloned object to same state as original object.
+		m_robj->Set_Transform(robj->Get_Transform());
+		if (robj->Class_ID() == RenderObjClass::CLASSID_HLOD)
+		{	
+			float frame,mult;
+			int mode,numFrames;
+
+			HAnimClass *hanim=((HLodClass *)robj)->Peek_Animation_And_Info(frame,numFrames,mode,mult);
+			m_robj->Set_Animation(hanim,frame);
+			disableUVAnimations(m_robj);
+		}	//HLOD
+	}
+	else
+		m_robj=robj;
+
+	m_robj->Set_User_Data(drawInfo);
+
+}
+
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
+W3DRenderObjectSnapshot::W3DRenderObjectSnapshot(RenderObjClass *robj, DrawableInfo *drawInfo,
+																								 Bool cloneParentRobj)
+{
+	m_robj=0;
+	m_next=0;
+	update(robj, drawInfo, cloneParentRobj);
+}
 
 class W3DGhostObject
 {
