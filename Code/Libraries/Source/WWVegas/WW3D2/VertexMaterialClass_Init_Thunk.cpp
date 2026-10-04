@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc
+// cl: /DNDEBUG /MD /EHsc /G7
 
 // VertexMaterialClass::Init (packet 00921eba) disagrees with the vendored
 // vertmaterial.h on two points, both confirmed directly against the retail
