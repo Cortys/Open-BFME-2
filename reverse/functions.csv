@@ -52443,3 +52443,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?send@Rva008038F0Sender@@QAEXPAVBfmeC994@@@Z,,0x0066F930,123,Code/GameEngine/Source/GameNetwork/Rva008038F0SenderSend.cpp,matched,FESL send via slot3 envelope vftable 011296B0 13 callers including bfmeUseSA
 ?rva002BFBF7@Rva002BFBF7@@QAEXXZ,,0x002BFBF7,87,Code/GameEngine/Source/Common/Rva002BFBF7.cpp,matched,unlock erase vector BfmePod16 plus curve set twice
 ??1Rva00575125@@UAE@XZ,,0x00574C6E,83,Code/GameEngine/Source/Common/Rva00575125Dtor.cpp,matched,MI dtor with erase 0x002B7250 and base 0x005746D2
+?Rva00337655Partition@@YAPAUS4SortElem20@@PAU1@0VRva003371B1@@@Z,,0x00337655,101,Code/GameEngine/Source/Common/Rva00337655Partition.cpp,matched,caller 0x00337D6D unguarded partition donor Intro
