@@ -451,8 +451,13 @@ void MeshClass::Scale(float scale)
    Invalidate_Cached_Bounding_Volumes();
 
    // Now update the object space bounding volumes of this object's container:
-   RenderObjClass *container = Get_Container();
-   if (container) container->Update_Obj_Space_Bounding_Volumes();
+   // Retail stores Container at +0x7c and calls Update_Obj_Space_Bounding_Volumes at vtable +0x114.
+   RenderObjClass *container = *reinterpret_cast<RenderObjClass **>(reinterpret_cast<char *>(this) + 0x7c);
+   if (container) {
+      typedef void (__fastcall *UpdateBoundingVolumes)(RenderObjClass *);
+      void **vtable = *reinterpret_cast<void ***>(container);
+      reinterpret_cast<UpdateBoundingVolumes>(vtable[0x45])(container);
+   }
 }
 
 

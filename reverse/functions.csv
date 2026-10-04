@@ -51666,3 +51666,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?v3@Rva005AAB91@@UAE_NPAXH@Z,,0x005AADD9,102,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 3: set the IsRunning key then the AITactic slot 3 0x004ECE61
 ?xfer@Rva005AAB91@@UAEXPAVXfer@@@Z,,0x005AABA5,33,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 5: the AITactic xfer then the +0x58 roaming flag
 ?v6@Rva005AAB91@@UAEXXZ,,0x005AAB9C,9,Code/GameEngine/Source/Common/Rva005AAB91Tactic.cpp,matched,AIRoamingDefenseTactic slot 6: set the running flag +0x10 and the roaming flag +0x58
+?Scale@MeshClass@@UAEXM@Z,,0x0014A630,103,Code/Libraries/Source/WWVegas/WW3D2/mesh.cpp,matched,MeshClass vtable BD35A8 slot92; ZH body with the Scale(xyz) container view at +7C slot 0x114
