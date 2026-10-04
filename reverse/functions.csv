@@ -52343,3 +52343,4 @@ _Rva0088E190TimerTick@16,,0x0003D870,9,Code/Libraries/Source/WWVegas/WWDebug/Rva
 ?rva004ED342@Rva004ECECD@@QAEXPAX@Z,,0x004ED342,48,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ED1A1.cpp,matched,leaf loop over node range via rva004ED1FD callers 5A9BB4 5AA66A
 ?rva0045C812@BezierProjectileBehavior@@QAEXPBVObject@@@Z,,0x0045C812,62,Code/GameEngine/Source/GameLogic/Object/Behavior/BezierProjectileBehaviorRva0045C812.cpp,matched,Bezier fire temp weapon via WeaponStore and list push
 ??0Rva00060850Record@@QAE@XZ,,0x003B943D,24,Code/gen_small/U3_leaf_ctors_Rva00060850Record.cpp,matched,BFME1 donor game/gen_small/U3_leaf_ctors.cpp recompiled /Os; unique masked placement on unclaimed .text
+?Rva0007C680Clamp@@YAHHHH@Z,,0x00078C82,26,Code/gen_small/U3_leaf_helpers_Rva0007C680Clamp.cpp,matched,BFME1 donor game/gen_small/U3_leaf_ctors.cpp recompiled /Os; unique masked placement on unclaimed .text
