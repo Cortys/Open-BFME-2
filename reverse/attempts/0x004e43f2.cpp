@@ -1,9 +1,7 @@
 // ?Rva004E43F2Find@@YAHH@Z
-// partial score=0.91 date=2026-10-04
+// partial score=0.93 date=2026-10-04
 // ?Rva004E43F2Find@@YAHH@Z
-// partial score=0.91 date=2026-09-29
-// ?Rva004E43F2Find@@YAHH@Z
-// partial score=0.91 date=2026-09-29
+// partial score=0.93 date=2026-10-04
 // cl: /O1 /MD
 // stlport
 // ?Rva004E43F2Find@@YAHH@Z @0x004E43F2 84B.
@@ -12,6 +10,14 @@
 // vector count, skipping skip matches of rowed rva0042680D, returning the
 // index or -1. Callers at 0x004E4483 0x004E4587; callee rowed in
 // Rva0042680DGetter.cpp.
+// 2026-10-04 re-bank: dropping the redundant `if (count <= 0) return -1;`
+// pre-test (the while guard already handles count<=0) drops the first diff
+// from +0x22 to +0x1B and the differing-instruction count from 24 to 19,
+// size 86 vs retail 84. The remaining wall is register-save/scheduling:
+// retail pushes esi then ebp at +0x14 (ebp first used as `cur` in the loop
+// body) and keeps a single top-of-loop `cmp ebx,esi / jge`; this build
+// pushes ebp before esi and duplicates the guard at the loop bottom as
+// `cmp ebx,esi / jl`, which costs the two extra bytes.
 // ?Rva004E43F2Find@@YAHH@Z present-unmatched
 #include <vector>
 class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
@@ -30,8 +36,6 @@ int Rva004E43F2Find(int skip)
 	Rva004266A1 *vec = v;
 	int i = 0;
 	int count = (int)vec->vec.size();
-	if (count <= 0)
-		return -1;
 	while (i < count)
 	{
 		int cur = i;
