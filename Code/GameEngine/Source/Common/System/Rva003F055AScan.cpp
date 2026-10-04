@@ -20,6 +20,7 @@ class Rva003F055A
 {
 public:
 	void rva003F055A();
+	void rva003F1044(int a, int b);
 private:
 	unsigned char m_pad[0x170];
 	struct Rva003F055AEntry **m_begin; // +0x170
@@ -34,4 +35,13 @@ void Rva003F055A::rva003F055A()
 		if (item != 0 && e->m_flag == 0)
 			item->rva004E0845();
 	}
+}
+
+// ?rva003F1044@Rva003F055A@@QAEXHH@Z 0x003F1044 15B
+// Checks second stack arg at [esp+8]; when zero calls rowed 0x003F055A on same this (ecx pass-through).
+// Evidence: callee rowed 0x003F055A; ret 8 with ecx preserved proves thiscall with 2 stack args.
+void Rva003F055A::rva003F1044(int a, int b)
+{
+	if (b == 0)
+		rva003F055A();
 }
