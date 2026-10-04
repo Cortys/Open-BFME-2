@@ -15,3 +15,7 @@ bool __stdcall Rva0037BD2BGet(void *holder)
 	const void *p = m ? (const void *)((char *)m + 8) : (const void *)TheNullChr;
 	return Rva006006A9Get((const char *)p);
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?TheNullChr@@3QBGB=?g_Va007BB5C4@@3GA")

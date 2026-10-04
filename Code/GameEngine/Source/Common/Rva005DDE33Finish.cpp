@@ -42,3 +42,7 @@ float Rva005DDE33::rva005DDE33(unsigned idx, unsigned lo, unsigned hi)
 		return g_Va00BBAEAC;
 	return ((Rva005DDC6B *)(m_04 + idx * 0x18))->rva005DDC6B(lo, hi);
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_Va00BBAEAC@@3MA=?BfmeZeroRange@@3MB")

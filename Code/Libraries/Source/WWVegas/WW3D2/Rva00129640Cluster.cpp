@@ -41,3 +41,7 @@ void Rva00129690(void)
 
 	g_stat10 = count + 1;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_Va00DEE910@@3HA=?g_stat8@@3HA")

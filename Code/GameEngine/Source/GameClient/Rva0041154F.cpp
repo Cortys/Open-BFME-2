@@ -54,3 +54,7 @@ void Rva0041154FHide()
 		iter.next();
 	}
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00E02FE4@@3VRva000427195@@A=?g_Va00E02FE4@@3URva004114EFGlobalTable@@A")

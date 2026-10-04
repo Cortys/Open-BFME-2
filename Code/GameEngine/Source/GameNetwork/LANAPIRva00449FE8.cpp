@@ -135,3 +135,7 @@ void LANAPI::rva00449FE8(void *arg)
 	m_28 = 2;
 	m_2c = timeGetTime() + m_30;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?TheNullChr@@3QBGB=?g_Va007BB5C4@@3GA")

@@ -39,3 +39,7 @@ bool BfmeThingDWC::bfmeGoDWC()
 	EnterCriticalSection(&g_bfmeCsDWC);
 	return false;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_bfmeCsDWC@@3UBfmeCsDWA@@A=?g_bfmeCsDWC@@3UDebugCriticalSection@@A")

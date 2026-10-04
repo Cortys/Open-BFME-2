@@ -14,3 +14,7 @@ const char *__stdcall Rva00202678Get(int i)
 		return "Unknown";
 	return g_00BBE8E8;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00DB96B0@@3PAPBDA=?bfmeTabEYC@@3PAPBDA")

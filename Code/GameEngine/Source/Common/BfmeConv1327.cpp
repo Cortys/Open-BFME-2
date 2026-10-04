@@ -83,3 +83,7 @@ void BfmeThingTYA::rva008020D0()
 // Retail's data references in this unit's matched rows land on globals defined
 // under other spellings at the same addresses (addend-corrected DIR32). Bind them.
 #pragma comment(linker, "/alternatename:?g_bfmeVftATYA@@3PAPAXA=??_7Rva00802040Owner@@6B@")
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_bfmeVftBTYA@@3PAPAXA=??_7Rva00802040OwnerBase@@6B@")

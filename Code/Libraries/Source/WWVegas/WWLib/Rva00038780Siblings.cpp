@@ -15,3 +15,7 @@ void __cdecl rva0038780()
 {
 	g_bfme00DE0880->m_flag = 1;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:_g_bfme00DE0880=?theDebug@@3PAVDebug@@A")

@@ -83,3 +83,7 @@ void Rva004EE5D2::rva004EE78A()
 	m_f8 = 1;
 	return rva004EE5D2();
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00E02E88@@3VRva002B7250@@A=?g_registryAtE02E88@@3VRva002B7250@@A")

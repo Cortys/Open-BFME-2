@@ -32,3 +32,7 @@ bool __stdcall Rva0020E354Cast(RenderObjClass *obj, const Vector3 &start, const 
 {
 	return g_00DFEF18->Cast(obj, start, dir, 0, 1, 1);
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00DFEF18@@3PAVRva00DFEF18Host@@A=?g_00DFEF18@@3PAVRva002D3627Host@@A")

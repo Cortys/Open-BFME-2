@@ -39,3 +39,7 @@ Rva00689320::Rva00689320(int first, int second, int third)
 	m_10 = second;
 	m_14 = third;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_Va00CE4918@@3DA=??_7VideoPlayer@@6B@")

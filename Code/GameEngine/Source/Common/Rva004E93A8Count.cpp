@@ -33,3 +33,7 @@ int Rva004E93A8::rva004E93A8()
     }
     return count;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00DFEEF8@@3PAUGlob004E93A8@@A=?g_00DFEEF8@@3PAVRva002A8F24@@A")

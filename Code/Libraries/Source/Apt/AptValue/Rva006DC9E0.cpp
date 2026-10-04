@@ -67,3 +67,7 @@ int Rva006DC9E0::rva006DC9E0()
 ret_true:
 	return 1;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00E18650@@3PAVRva0070A5C0@@A=?g_00E18650@@3VEAStringC@@A")

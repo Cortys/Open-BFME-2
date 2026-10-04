@@ -50,3 +50,7 @@ void Rva001DCD3C::rva001DCD3C()
     m_2C = zero;
     m_30 = 0;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_007BB9AC@@3MA=?g_00BBB9AC@@3MA")

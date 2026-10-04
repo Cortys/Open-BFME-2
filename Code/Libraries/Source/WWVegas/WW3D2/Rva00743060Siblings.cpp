@@ -26,3 +26,7 @@ void Rva00743060Class::Reset_Line()
 	m_lastUsedSyncTime = g_bfmeSyncTimeAtDEC3CC;
 	m_currentUVOffset.Set(0.0f, 0.0f);
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_bfmeSyncTimeAtDEC3CC@@3IA=?SyncTime@WW3D@@0IA")

@@ -54,3 +54,9 @@ void Rva0009A2CDRun()
 	if (g_00DE1FF8 != 0)
 		g_00DE1FF8->rva0007BA35();
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00DEBCD8@@3PAVRva000F278F@@A=?TheW3DVolumetricShadowManager@@3PAVW3DVolumetricShadowManager@@A")
+#pragma comment(linker, "/alternatename:?g_00DEC2CC@@3PAV?$StringBase@G@@A=?TheW3DProjectedShadowManager@@3PAVW3DProjectedShadowManager@@A")
+#pragma comment(linker, "/alternatename:?g_00DE1FF8@@3PAVRva0007BA35@@A=?Rva00DE1FF8Manager@@3PAVRva0007DA23ResourceManager@@A")

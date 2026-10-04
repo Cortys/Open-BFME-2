@@ -59,3 +59,7 @@ int Rva00431E95::rva00431E95(void *p)
 	q->rva00575674((Object *)h);
 	return 1;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00C3C9AC@@3QBQBXB=??_7Rva00431A34@@6B@")

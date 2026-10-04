@@ -23,3 +23,7 @@ void *FirewallHelperClass::rva00595D0B(unsigned int flags)
 		::operator delete(this);
 	return this;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00C70A2C@@3QBQBXB=??_7FirewallHelperClass@@6B@")

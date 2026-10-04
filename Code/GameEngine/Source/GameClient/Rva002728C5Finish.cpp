@@ -43,3 +43,7 @@ void Drawable::rva002728C5(float a, float b)
 		(*head)->slot54(a, b);
 	m_unkAC = (a + b) * g_00BC26F0;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?g_00BC26F0@@3MB=?g_Va007C26F0@@3MA")

@@ -59,3 +59,7 @@ int ScienceStore::getSciencePurchaseCost(ScienceType st) const
 	}
 	return 0;
 }
+
+// The global(s) below are defined elsewhere under another name at the same
+// address (the census owner of that DIR32 target); bind this unit's spelling.
+#pragma comment(linker, "/alternatename:?TheRecorder@@3PAVRecorderClass@@A=?g_bfme939Helper@@3PAUBfme939Helper@@A")
