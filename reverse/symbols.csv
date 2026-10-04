@@ -7633,3 +7633,8 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?resetPlayerTimeouts@DisconnectManager@@IAEXPAVConnectionManager@@@Z,0x004D3D2B,address read from the REL32 displacement at a placed body
 ?sendLocalCommandDirect@ConnectionManager@@QAEXPAVNetCommandMsg@@E@Z,0x004CF6E4,address read from the REL32 displacement at a placed body
 ?setPlayerIndex@NetDestroyPlayerCommandMsg@@QAEXI@Z,0x00318B09,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?setChunkNumber@NetWrapperCommandMsg@@QAEXI@Z,0x002B2210,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?setDataOffset@NetWrapperCommandMsg@@QAEXI@Z,0x005739F6,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?setNumChunks@NetWrapperCommandMsg@@QAEXI@Z,0x00210C87,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?setTotalDataLength@NetWrapperCommandMsg@@QAEXI@Z,0x0033F8CA,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?setWrappedCommandID@NetWrapperCommandMsg@@QAEXG@Z,0x004D58D2,address read from the REL32 displacement at a placed body
