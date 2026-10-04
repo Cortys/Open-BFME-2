@@ -5,6 +5,14 @@
 // The pointer constants and anchors below only make this TU emit the inline bodies out of line; they are not retail code or data.
 //
 #define Matrix4x4 Matrix4
+// LINK-COMDAT: Matrix3D::Transform_Vector is __forceinline in matrix3d.h, so
+// this TU emits a COMDAT copy that must match the kept (frameless, /O2-style)
+// copy from camera.cpp. Our /O1 row inlines it, so it cannot be declared;
+// compile the header inline with the kept flags while OBBoxClass::Transform
+// (from obbox.h below) keeps /O1.
+#pragma optimize("ty", on)
+#include "matrix3d.h"
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "winbase_shim.h"
 #include "mesh.h"
