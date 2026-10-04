@@ -51599,3 +51599,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?check@Rva00958730Box@@QAEHPAX@Z,,0x00176C90,31,Code/GameEngine/Source/Common/Small03eComGuard.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?Rva00372BA0ConditionalDispatcher@@YAXPAX0_N@Z,,0x00397CEB,31,Code/GameEngine/Source/Common/Rva00372BA0ConditionalDispatcher.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
 ?bfmeGoBSF@BfmeThingBSF@@QAEPAV1@PAGPAX@Z,,0x004D04FF,31,Code/GameEngine/Source/Common/BfmeConv526.cpp,matched,placed by masked whole-.text search of the compiled BFME1 donor body - single hit
+?matches@BfmeUnicodeTextTag@@QBE_NPBV1@@Z,,0x00406D1E,44,Code/GameEngine/Source/Common/BfmeUnicodeTextTagMatches.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
