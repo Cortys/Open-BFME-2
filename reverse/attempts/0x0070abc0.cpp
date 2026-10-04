@@ -1,5 +1,5 @@
 // ?rva0070ABC0@AptNativeHash@@QAEXXZ
-// partial score=0.95 date=2026-10-04
+// partial score=0.97 date=2026-10-04
 // cl: /O2 /MD
 // Reconstructed from BFME2 and APT 0.19.03 Xbox final donor evidence, matching
 // the layout and flags of Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp.
@@ -82,15 +82,18 @@ void AptNativeHash::rva0070ABC0()
 		if (e->key.hasData())
 		{
 			if (!((const EAStringC *)&e->key)->IsEmpty())
-				newTable.rva0070AC90(e, mpData[i].value);
+			{
+				AptValue *v = mpData[i].value;
+				newTable.rva0070AC90(e, v);
+			}
 		}
 	}
-	Entry *oldData = mpData;
-	int oldSize = mnTotalSize;
+	Entry *od = mpData;
+	int os = mnTotalSize;
 	mpData = newTable.mpData;
+	newTable.mpData = od;
 	mnTotalSize = newTable.mnTotalSize;
-	newTable.mpData = oldData;
-	newTable.mnTotalSize = oldSize;
+	newTable.mnTotalSize = os;
 	newTable.DestroyGCPointers();
 }
 
