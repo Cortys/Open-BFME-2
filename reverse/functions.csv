@@ -50762,3 +50762,4 @@ _rva006D9D70Comparator,,0x006D9D70,203,Code/Libraries/Source/Apt/AptValue/Rva006
 ?rva002DF872@Rva002DF872@@QAEXXZ,,0x002DF872,41,Code/GameEngine/Source/Common/Thing/Rva002DF872Dedup.cpp,matched,dedup adjacent 12-byte recs by first dword via rowed BfmePod12 erase caller 0x002DF985
 ??0Rva00091A80@@QAE@XZ,,0x00091A80,44,Code/GameEngine/Source/Common/Rva00091A80Ctor.cpp,matched,dual-vptr ctor over Rva002DAB18 base with ints and global W3DGCData00DE2000 caller 0x0004C5E7
 ?rva0004C5C6@Rva004C743@@UAEPAVRva00091A80@@XZ,,0x0004C5C6,50,Code/GameEngine/Source/Common/Rva004C5C6.cpp,matched,vtable slot 43 of 0x007C4738 new 0x24 ctor 0x00091A80
+?rva0004C553@Rva004C743@@UAEPAVRva00090360@@XZ,,0x0004C553,50,Code/GameEngine/Source/Common/Rva004C5C6.cpp,matched,vtable slot 41 of 0x007C4738 new 0x40 ctor 0x00090360
