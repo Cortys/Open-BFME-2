@@ -7166,3 +7166,5 @@ FUN_006069f0	0x002069F0	206	blocked	empty file no stash 5 sessions fleet-wide t=
 ?rva003F8052@Rva003F8052@@QAEEXZ	0x003F8052	21	blocked	infra no-space-left-on-device cl.exe c0000135 t=10 model=muse-spark
 ?rva003F83D9@Rva003F83D9@@QAENH@Z	0x003F83D9	37	partial	lea fusion: retail lea eax eax+ecx*4 then mov eax eax vs ours single indexed mov eax eax+ecx*4; tried named elem local and forceinline AsciiString-ref helper both still fuse t=18 model=muse-spark score=0.93 stash=reverse/attempts/0x003f83d9.cpp
 ?Rva003F8F2BParse@@YAXPAX0@Z	0x003F8F2B	104	partial	esi-edi swapped whole body 7 reg diffs push-edi delayed only wall definition-order swap tried t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x003f8f2b.cpp
+??0Rva003F86F9@@QAE@HH@Z	0x003F86F9	47	partial	single dword store at +0x19 differs: retail mov [esi],0x00C37314 vs ours 0; 47B/18insns identical else t=12 agent=muse-05 score=0.93 stash=reverse/attempts/0x003f86f9.cpp
+?Rva003F8F2BParse@@YAXPAX0@Z	0x003F8F2B	104	blocked	esi-edi swapped whole body 7 reg diffs push-edi delayed def-order plus param-direct plus EHsc tried t=18 agent=muse-05 (stash 0.95 kept)

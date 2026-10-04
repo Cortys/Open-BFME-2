@@ -1,5 +1,3 @@
-// ?rva003F83D9@Rva003F83D9@@QAENH@Z
-// partial score=0.93 date=2026-10-04
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?rva003F83D9@Rva003F83D9@@QAENH@Z @0x003F83D9 37B.
@@ -21,14 +19,7 @@ private:
 	AsciiString *m_arr0C;
 };
 
-// ?rva003F83D9@Rva003F83D9@@QAENH@Z present-unmatched
-__forceinline const char *GetStr003F83D9(const AsciiString &s)
-{
-	char *t = *(char * *)(void *)&s;
-	return t ? t + 8 : g_Rva0107301CEmptyString;
-}
-
 double Rva003F83D9::rva003F83D9(int i)
 {
-	return atof(GetStr003F83D9(m_arr0C[i]));
+	return atof(m_arr0C[i].str());
 }
