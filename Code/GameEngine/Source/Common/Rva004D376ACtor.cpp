@@ -12,7 +12,7 @@ class Rva004D376A
 {
 public:
 	Rva004D376A();
-	virtual void unk();
+	virtual ~Rva004D376A() {}
 	int m_04;
 	int m_08;
 	int m_0c;
