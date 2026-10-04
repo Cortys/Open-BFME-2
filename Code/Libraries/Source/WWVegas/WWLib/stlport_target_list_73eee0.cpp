@@ -96,3 +96,25 @@ void __stdcall EraseTargetListNode0073EFFC(void **ppNext, ListNode0073EFFC *pNod
     free(pNode);
     *ppNext = pNext;
 }
+
+// ?rva0073F061@Rva0073F061@@QAEXXZ, retail 0x0073F061 49B. Clears the
+// heap-sentinel node list of Rva0073EEE0ListValue: destroys each value via
+// the rowed ??1Rva0073EEE0ListValue (0x0073EF44), frees the node via the
+// rowed _free (0x00030830), then resets the sentinel links. Caller
+// 0x0073F368 frees the sentinel afterwards. Node layout reuses
+// ListNode0073EFFC (value at +8, same as retail lea ecx,[ebx+8]).
+struct Rva0073F061 { ListNode0073EFFC *m_head; void rva0073F061(); };
+void Rva0073F061::rva0073F061() {
+    ListNode0073EFFC *cur = m_head->m_next;
+    if (cur != m_head) {
+        ListNode0073EFFC *b;
+        do {
+            b = cur;
+            cur = cur->m_next;
+            b->m_value.~Rva0073EEE0ListValue();
+            free(b);
+        } while (cur != m_head);
+    }
+    m_head->m_next = m_head;
+    m_head->m_prev = m_head;
+}
