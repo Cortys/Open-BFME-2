@@ -7430,3 +7430,4 @@ FUN_008f7883	0x004F7883	168	blocked	EH prolog push ecx plus frame plus copy_back
 ?rva00209144@ScriptEngine@@IAEXPAVScriptAction@@H_N1@Z	0x00209144	436	blocked	ebx holds counter vs retail ebx-1 with counter spilled plus tails via bl 426 vs 436 8 regions t=10 model=muse-02 (stash 0.92 kept)
 ?rva002C600A@Rva002C600A@@QAE_NPAXPAVObject@@@Z	0x002C600A	159	partial	size-exact 159B branch tails inline vs shared plus push order plus add-esi-258 vs mov plus sete-vs-branch t=20 model=muse-02 score=0.94 stash=reverse/attempts/0x002c600a.cpp
 ?rva005A6DAC@Rva005A6DAC@@QAE_NIGPAH@Z	0x005A6DAC	206	partial	merged new-temp stores retail 2x mov ours xor+mov 205/206B 73/73ins 0reg IAT-reloc-only t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x005a6dac.cpp
+?update@Rva00544C03@@UAE?AW4StateReturnType@@XZ	0x00544FC6	239	blocked	compile error m_20 not member of Object, Object layout unproven t=5 model=muse-07
