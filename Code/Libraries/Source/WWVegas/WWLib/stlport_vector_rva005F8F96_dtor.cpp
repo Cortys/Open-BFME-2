@@ -4,6 +4,8 @@
 // ?_M_clear@?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@IAEXXZ, retail 0x0015373C, 30 bytes.
 // Vector<Rva005F8F96> dtor (EH) plus _M_clear via rowed _Destroy 0x00153470 and _free 0x30830.
 // Same 63B+30B pair shape as Owner900 vector dtor+clear; /EHs provides the or [ebp-4],-1 state.
+// Only the two members rowed from this file are instantiated here; whole-class
+// instantiation emitted a non-retail COMDAT copy of operator=.
 // The emitted unsigned max copy must match retail RVA 0x00013740.
 // Define it for speed, then restore this unit's flags for its vector bodies.
 #pragma optimize("s", off)
@@ -26,4 +28,5 @@ struct Rva005F8F96
 	int m_04;
 };
 
-template class _STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> >;
+template _STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> >::~vector();
+template void _STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> >::_M_clear();
