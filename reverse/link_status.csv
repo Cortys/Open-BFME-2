@@ -10348,7 +10348,7 @@ Code/GameEngineDevice/Source/W3DDevice/GameClient/WorldHeightMapTiles.cpp,yes,0,
 Code/GameEngineDevice/Source/W3DDevice/GameClient/camerashakesystem.cpp,yes,0,0,0,0,0
 Code/GameEngineDevice/Source/W3DDevice/GameLogic/Rva0061FC70CleanupDeletingCtor.cpp,no,1,0,0,0,0
 Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DGhostObject.cpp,no,12,0,9,0,9
-Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DRenderObjectSnapshotDestructor.cpp,no,1,0,1,0,0
+Code/GameEngineDevice/Source/W3DDevice/GameLogic/Rva0061EEE0Destructor.cpp,no,1,0,1,0,0
 Code/GameEngineDevice/Source/W3DDevice/GameLogic/W3DTerrainLogic.cpp,no,42,0,10,0,0
 Code/GameEngineDevice/Source/Win32Device/GameClient/Win32Mouse_addWin32Event.cpp,yes,0,0,0,0,0
 Code/GameEngineDevice/Source/Win32Device/GameClient/Win32Mouse_reset.cpp,no,0,0,0,0,1
