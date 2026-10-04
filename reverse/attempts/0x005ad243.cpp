@@ -1,3 +1,5 @@
+// ?rva005AD243@Rva005ACCE4@@QAEPAVObject@@PAVPlayer@@@Z
+// partial score=0.75 date=2026-10-04
 // cl: /O1 /G7 /MD /GX /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE /Ireference/shims/bfme2_ascii
 // stlport
 //
@@ -16,9 +18,8 @@
 //   0x005ACEC8  slot 5: xfer, version 1: the AITactic's, then both ids
 //   0x005ACDD2  the distance between two points
 //   0x005ACE15  (not here yet) the distance from a point to the line through two others
-//   0x005AD152  the player's first tracked object whose template has +0x120
-//               bit 2 (the base building the squad farms around)
 #include <vector>
+#include <map>
 #include "ascii_string.h"
 
 static inline float sqr(float x)
@@ -289,6 +290,7 @@ public:
 	Object *rva005AD0E6();
 	float rva005ACE15(const Coord3D *point, const Coord3D *from, const Coord3D *to);
 	Object *rva005AD152(Player *player);
+	Object *rva005AD243(Player *player);
 private:
 	ObjectID m_58;		// +0x58
 	ObjectID m_5C;		// +0x5C
@@ -378,4 +380,40 @@ Object *Rva005ACCE4::rva005AD152(Player *player)
 			found = obj;
 	}
 	return found;
+}
+
+Object *Rva005ACCE4::rva005AD243(Player *player)
+{
+	Rva005ACCE4Holder *holder = (Rva005ACCE4Holder *)g_00DFEEF8->rva002A8F24(player);
+	Coord3D center;
+	center.x = 0.0f;
+	center.y = 0.0f;
+	center.z = 0.0f;
+	rva004ECECD(0)->rva0039E5B9(&center);
+	_STL::vector<ObjectID> ids(*(const _STL::vector<ObjectID> *)holder->m_08->get());
+	Object *building = rva005AD152(player);
+	if (building) {
+		Coord3D base;
+		base.x = building->m_pos.x;
+		base.y = building->m_pos.y;
+		base.z = building->m_pos.z;
+		Object *farm = rva005AD0E6();
+		_STL::map<float, Object *> byDistance;
+		for (ObjectID *it = ids.begin(); it != ids.end(); ++it) {
+			Object *obj = TheGameLogic->findObjectByID(*it);
+			if (obj && !(obj->m_04->m_10E & 4) && building != obj
+				&& TheAI->pathfinder()->rva002F4B33(farm, &farm->m_pos, obj, 0)) {
+				float distance = rva005ACE15(&obj->m_pos, &center, &base);
+				byDistance.insert(_STL::pair<const float, Object *>(distance, obj));
+			}
+		}
+		if (byDistance.size() != 0)
+			return (--byDistance.end())->second;
+		return 0;
+	}
+	if (ids.empty())
+		return 0;
+	return TheGameLogic->findObjectByID(ids[GetGameLogicRandomValue(0, ids.size() - 1,
+		"C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\SkirmishAI\\AITacticalAI\\AITacticsGenerator\\TargetlessTactics\\AIFarmKillSquad.cpp",
+		250)]);
 }
