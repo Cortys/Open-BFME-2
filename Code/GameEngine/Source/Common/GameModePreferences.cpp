@@ -101,6 +101,7 @@ public:
 	void rva0044DDFB(int *vals);
 	Int rva0044D836(void);
 	Int rva0044D88C(void);
+	AsciiString rva0044DAA8(const AsciiString &def);
 	AsciiString rva0044DBA5(void);
 	void rva0044DC54(Int val);
 	void rva0044DCB9(Int val);
@@ -300,6 +301,24 @@ Int GameModePreferences::rva0044D88C(void)
 	if (v == -1 && (TheWritableGlobalData->m_flag9D4 & 3) != 0)
 		return ThePlayerTemplateStore->m_map.begin()->first;
 	return v;
+}
+
+// ?rva0044DAA8@GameModePreferences@@QAE?AVAsciiString@@ABV2@@Z @0x0044DAA8 172B:
+// GameName getter over the mode-keyed map: find makeKey("GameName"), default
+// when missing, else QuotedPrintable decode plus trim.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; quoted 0x005356BF;
+// set 0x000366F0; trim 0x00037CF0; callers 0x005A0E14 0x005A28F7;
+// prev 0x0044D88C next 0x0044DBA5.
+AsciiString QuotedPrintableToAsciiString(AsciiString original);
+AsciiString GameModePreferences::rva0044DAA8(const AsciiString &def)
+{
+	AsciiString ret;
+	PreferenceMap::const_iterator it = find(makeKey("GameName"));
+	if (it == end())
+		return def;
+	ret.set(QuotedPrintableToAsciiString(it->second));
+	ret.trim();
+	return ret;
 }
 
 // ?rva0044DBA5@GameModePreferences@@QAE?AVAsciiString@@XZ @0x0044DBA5 175B:
