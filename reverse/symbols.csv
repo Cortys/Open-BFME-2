@@ -7885,3 +7885,7 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ??1BfmeEmotionName@@QAE@XZ,0x00036410,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?bfmeCopyVKC@BfmeThingVKC@@QAEXABV1@@Z,0x004DC788,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?findNugget@EmotionSystem@@QAEPAVEmotionNugget@@ABVBfmeEmotionName@@@Z,0x004264F4,address read from the REL32 displacement at a placed body
+??0Rva005DC87B@@QAE@ABVAsciiString@@@Z,0x005DC85F,tactic base ctor taking the tactic name (SiegeGates and SimpleSiege bases); REL32 at 0x005A9C49
+??0Rva005DCBE3@@QAE@ABVAsciiString@@H@Z,0x005DCBC7,tactic base ctor taking the tactic name and a kind (SimpleExpansion base); REL32 at 0x005AAA08
+??0Rva005DCC24@@QAE@ABVAsciiString@@@Z,0x005DCC0A,tactic base ctor taking the tactic name (RoamingDefense/StartWoTRBattle/RingHero bases); REL32 at 0x005AABF1
+??0Rva005DCB27@@QAE@ABVAsciiString@@@Z,0x005DCB0D,tactic base ctor taking the tactic name (SimpleDefense base); REL32 at 0x005AA80A

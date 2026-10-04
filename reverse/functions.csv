@@ -51420,3 +51420,12 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?parseEmotionNuggetCopyFrom@@YAXPAVINI@@PAX1PBX@Z,,0x004DCA34,158,Code/GameEngine/Source/Common/INI/INIEmotionCopyFrom.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Clear@?$DynamicVectorClass@VKeyClass@Curve3DClass@@@@UAEXXZ,,0x000F1C0D,9,Code/Libraries/Source/WWVegas/WWMath/curve.cpp,matched,vftable slot 3 of ??_7DynamicVectorClass<Curve3DClass::KeyClass>; zero ActiveCount then tail-jump to the base Clear
 ?Restart@ParticleEmitterClass@@UAEXXZ,,0x001A2660,5,Code/Libraries/Source/WWVegas/WW3D2/part_emt.cpp,matched,vftable slot 14 of ??_7ParticleEmitterClass; tail-jump to rowed Start
+??0Rva005A990B@@QAE@XZ,,0x005A9988,79,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIBasePenetrationTroopsTactic tactic ctor: base ctor with the AIBasePenetrationTroopsTactic name then own fields cleared
+??0Rva005A9ACD@@QAE@XZ,,0x005A9C1E,83,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,SiegeGates tactic ctor: base ctor with the SiegeGates name then own fields cleared
+??0Rva005A9CB3@@QAE@XZ,,0x005A9D33,83,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,SimpleSiege tactic ctor: base ctor with the SimpleSiege name then own fields cleared
+??0Rva005AA55D@@QAE@XZ,,0x005AA23E,105,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,FlankAttack tactic ctor: base ctor with the FlankAttack name then own fields cleared
+??0Rva005AA735@@QAE@XZ,,0x005AA7DF,79,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,SimpleDefense tactic ctor: base ctor with the SimpleDefense name then own fields cleared
+??0Rva005AA860@@QAE@XZ,,0x005AA9DB,89,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,SimpleExpansion tactic ctor: base ctor with the SimpleExpansion name then own fields cleared
+??0Rva005AAB91@@QAE@XZ,,0x005AABC6,83,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIRoamingDefenseTactic tactic ctor: base ctor with the AIRoamingDefenseTactic name then own fields cleared
+??0Rva005AB125@@QAE@XZ,,0x005AB1B4,79,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIStartWoTRBattleTactic tactic ctor: base ctor with the AIStartWoTRBattleTactic name then own fields cleared
+??0Rva005AC7E1@@QAE@XZ,,0x005AC7EC,94,Code/GameEngine/Source/Common/Rva004ECECDTacticCtors.cpp,matched,AIRingHeroTactic tactic ctor: base ctor with the AIRingHeroTactic name then own fields cleared
