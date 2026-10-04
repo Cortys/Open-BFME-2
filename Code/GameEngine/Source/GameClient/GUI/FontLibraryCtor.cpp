@@ -50,7 +50,7 @@ class SubsystemInterface
 {
 public:
 	SubsystemInterface();
-	~SubsystemInterface();
+	virtual ~SubsystemInterface();
 	virtual void init();
 	void setName(AsciiString name);
 
@@ -62,7 +62,7 @@ class FontLibrary : public SubsystemInterface
 {
 public:
 	FontLibrary();
-	~FontLibrary();
+	virtual ~FontLibrary();
 
 private:
 	void *m_fontList;

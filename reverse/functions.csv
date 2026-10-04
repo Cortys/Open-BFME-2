@@ -51355,3 +51355,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ??_GRva0007DF07@@UAEPAXI@Z,,0x0007E5EE,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
 ??_GRva0030D346@@UAEPAXI@Z,,0x0030D35A,29,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,deleting dtor in vftable slot 0; dtor inline (vptr reset only)
 ?setPosition@DirectInputMouse@@UAEXHH@Z,,0x00041AD4,60,Code/GameEngineDevice/Source/Win32Device/GameClient/Win32DIMouse.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??_GFontLibrary@@UAEPAXI@Z,,0x002189A9,28,Code/GameEngine/Source/GameClient/GUI/FontLibraryCtor.cpp,matched,scalar deleting dtor; vftable slot 0 of 0xBE5AD0; calls pinned dtor 0x00218415

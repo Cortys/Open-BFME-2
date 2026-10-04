@@ -7826,3 +7826,4 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?rva002C5AE6@Rva002C589B@@QAEMXZ,0x002C5AE6,entry value compared against the store threshold +0x54; REL32 at 0x00505383
 ?rva0030F2C7@Rva002C589B@@QBEHXZ,0x0030F2C7,entry count getter (folded disp8 dword getter); REL32s at 0x005053BE and 0x005053EC
 ?setPosition@Mouse@@UAEXHH@Z,0x001EDE4C,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??1FontLibrary@@UAE@XZ,0x00218415,dtor installs its own vftable 0x00BE5AD0 (bytes at +17) and is the REL32 callee of the slot-0 ??_G at 0x002189A9
