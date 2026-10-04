@@ -52081,3 +52081,4 @@ _Rva008143F0,,0x006802F0,5,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matc
 ?rva0054C88A@Rva0054C88A@@QAE_NXZ,,0x0054C88A,14,Code/GameEngine/Source/Common/Rva0054C88APtrChase.cpp,matched,ptr-chase bool nonzero test via caller tail-jmp
 ??1Rva0054C742@@UAE@XZ,,0x0054C742,18,Code/GameEngine/Source/Common/Rva0054C742Dtor.cpp,matched,vtable store zero global tail-jmp base dtor
 ??_GRva0054C742@@UAEPAXI@Z,,0x0054C754,28,Code/GameEngine/Source/Common/Rva0054C742Dtor.cpp,matched,deleting dtor from own dtor unit
+??1Rva004482FB@@QAE@XZ,,0x004482FB,87,Code/GameEngine/Source/Common/Rva004482FBDtor.cpp,matched,unlock lane caller 0x004482DF deleting dtor prev array shape wide release
