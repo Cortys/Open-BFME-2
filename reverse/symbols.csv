@@ -7870,3 +7870,12 @@ _Rva0030CAF8CursorEqual,0x0007E394,twin of dup_0007e394 29B exact cursor equalit
 ?setFullyObscuredByShroud@Drawable@@QAEX_N@Z,0x00278C29,ZH Drawable::setFullyObscuredByShroud: retail 66B body compares the +0x440 flag; walks the +0x14C draw-module array calling each module's setFullyObscuredByShroud (vslot 35) and stores the flag. Called by W3DGhostObject remove/restoreParentObject (0x00063426/0x00063467) with 1/0
 ?getDrawModules@Drawable@@QAEPAPAVDrawModule@@XZ,0x002B224B,ZH Drawable::getDrawModules returning the +0x14C module array; the folded dword getter rowed at this address; called by W3DGhostObject remove/restoreParentObject and by Drawable::setFullyObscuredByShroud's loop source
 ?getShroudedStatus@PartitionData@@QAE?AW4ObjectShroudStatus@@H@Z,0x0073A6D0,ZH PartitionData::getShroudedStatus(Int): retail 392B body range-checks the player index against 20; returns the cached per-player status at +0x24 or recounts shrouded/fogged cells over the touched-cell array (+0x1C count +0x20); W3DGhostObject::getShroudStatus (0x00063508) tail-jumps here with the ghost object's +0x7C partition data
+??0Rva005A990B@@QAE@XZ,0x005A9988,AIBasePenetrationTroopsTactic tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005A9A57
+??0Rva005A9ACD@@QAE@XZ,0x005A9C1E,SiegeGates tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005A9C71
+??0Rva005A9CB3@@QAE@XZ,0x005A9D33,SimpleSiege tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005A9DA2
+??0Rva005AA55D@@QAE@XZ,0x005AA23E,FlankAttack tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AA2A7
+??0Rva005AA735@@QAE@XZ,0x005AA7DF,SimpleDefense tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AA82E
+??0Rva005AA860@@QAE@XZ,0x005AA9DB,SimpleExpansion tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AAAD6
+??0Rva005AAB91@@QAE@XZ,0x005AABC6,AIRoamingDefenseTactic tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AADA7
+??0Rva005AB125@@QAE@XZ,0x005AB1B4,AIStartWoTRBattleTactic tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AB203
+??0Rva005AC7E1@@QAE@XZ,0x005AC7EC,AIRingHeroTactic tactic ctor (base ctor with that name); REL32 in its slot-9 create 0x005AC8F2
