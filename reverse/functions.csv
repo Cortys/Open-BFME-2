@@ -51078,3 +51078,4 @@ catch_0032db06,,0x0032DB06,20,Code/GameEngine/Source/GameLogic/Map/SidesListTeam
 ?Rva003F1ECEFill@@YAXPAD00@Z,,0x003F1ECE,29,Code/Libraries/Source/WWVegas/WWLib/Rva003F1ECEFill.cpp,matched,Range fill stride 12 via vector uint assign 0x0026F4F4 callers 0x003F366A 0x003F36AA
 ?rva0021BD22@Rva0021BD22@@QAEPAHH@Z,,0x0021BD22,31,Code/GameEngine/Source/Common/System/Rva0021BD22Find.cpp,matched,map-find wrapper at +0x54 via rowed _M_find callers 0x0021BDD3 0x0021BDFB
 ?rva004D9586@Rva004D9596@@QAEHXZ,,0x004D9586,16,Code/GameEngine/Source/Common/Rva004D9596Check.cpp,matched,sibling bool predicate same offsets m00 -1 m04 0 caller 0x004DBBE9
+??0Rva0010EEF1@@QAE@ABVRva0036CA00Str@@M@Z,,0x0010EEF1,35,Code/GameEngine/Source/Common/Rva0010EEF1Ctor.cpp,matched,derived float ctor same base 0x001164D3 vtable 0xBCFA7C caller 0x0010FD21
