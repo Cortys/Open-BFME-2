@@ -1,17 +1,17 @@
 // ?rva006C2FB0@Rva006C2D20Sink@@QAEXPBD0@Z
-// partial score=0.93 date=2026-10-04
+// partial score=0.95 date=2026-10-04
 // ?rva006C2FB0@Rva006C2D20Sink@@QAEXPBD0@Z
-// partial score=0.9 date=2026-10-04
+// partial score=0.95 date=2026-10-04
 // cl: /O2 /DNDEBUG /MD
 // Retail body 0x006C2FB0, 100 bytes. Log/chat line formatter: it copies the
-// first stack argument into a 0x300-byte stack buffer, appends a newline after
-// it, then hands the REMAINDER of the buffer plus the second stack argument and
+// second stack argument into a 0x300-byte stack buffer, appends a newline after
+// it, then hands the REMAINDER of the buffer plus the first stack argument and
 // the remaining room to a thiscall sink on `this`.
 //
 // Evidence (retail bytes):
-//   mov edx,[esp+8]            first stack argument (the text)
+//   mov edx,[esp+8]            second stack argument (the text copied)
 //   sub esp,0x300              0x300-byte stack buffer, buffer base at esp+8
-//   mov eax,edx; lea esi,[eax+1]
+//   push ebx ; mov eax,edx ; push esi ; lea esi,[eax+1]
 //   strlen loop (mov bl,[eax]; inc eax; test bl,bl; jne)  eax-esi = strlen
 //   lea esi,[eax+1]           esi = strlen+1
 //   cmp esi,0x2ff; jae done    bail when the copy would not fit
@@ -20,7 +20,7 @@
 //   mov edx,0x2fe; sub edx,eax third argument = 0x2FE - strlen(text)
 //   mov byte [esp+eax+0xc],0x0a   buffer[strlen] = '\n'
 //   lea eax,[esp+eax+0xd]     first sink argument = buffer + strlen + 1
-//   push eax; push edx; push [esp+0x310]   ... and the second stack argument
+//   push eax; push edx; push [esp+0x310]   ... and the first stack argument
 //   call 0x006C2D20            thiscall sink (ecx is still the incoming `this`)
 //   pop esi; pop ebx; add esp,0x300; ret 8
 //
@@ -39,22 +39,25 @@ public:
 void Rva006C2D20Sink::rva006C2FB0(const char *text, const char *extra)
 {
 	char buffer[0x300];
-	const char *base;
 	const char *p = extra;
+	const char *base = p + 1;
 	char c;
-	base = p + 1;
 	do
 	{
 		c = *p;
 		++p;
 	} while (c);
 	int len = (int)(p - base);
-	if (len + 1 < 0x2ff)
+	if ((unsigned int)(len + 1) < 0x2ff)
 	{
 		const char *src = extra;
 		char *dst = buffer;
-		while (*src)
-			*dst++ = *src++;
+		do
+		{
+			*dst = *src;
+			++dst;
+			++src;
+		} while (*src);
 		buffer[len] = '\n';
 		rva006C2D20(buffer + len + 1, text, 0x2fe - len);
 	}
